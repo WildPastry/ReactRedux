@@ -10,6 +10,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
+    "tar": "^4.4.8",
     "typescript": "3.4.4"
   },
   "scripts": {
@@ -26,5 +27,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
 }
