@@ -5,12 +5,15 @@
   "dependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.13.6",
-    "@types/react": "16.8.14",
+    "@types/react": "^16.8.14",
     "@types/react-dom": "16.8.4",
+    "bootstrap": "^4.3.1",
+    "isotope-layout": "^3.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "tar": "^4.4.8",
+    "tslib": "^1.9.3",
     "typescript": "3.4.4"
   },
   "scripts": {
