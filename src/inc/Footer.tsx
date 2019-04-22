@@ -75,7 +75,6 @@ class Footer extends Component<any, any> {
 
   render() {
     var weather = this.state.weather;
-    // console.log(weather);
     var { isLoaded } = this.state;
     if (!isLoaded) {
       return (

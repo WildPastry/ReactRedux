@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as spaceFunction from './../data/space.js';
+import './../data/space.ts';
 
 class Space extends Component<any, any> {
   private space: React.RefObject<HTMLDivElement>;
@@ -8,11 +8,10 @@ class Space extends Component<any, any> {
     this.space = React.createRef();
   }
   render() {
-    console.log(spaceFunction.spaceFunction);
     return (
       <React.Fragment>
         <div id='space' ref={this.space}>
-          {/* {spaceFunction} */}
+        <p>space</p>
         </div>
       </React.Fragment>
     );
