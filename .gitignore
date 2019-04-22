@@ -8,8 +8,6 @@
 
 # development
 /dev
-/src
-/public
 
 # production
 /build

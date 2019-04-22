@@ -1,0 +1,6 @@
+{
+	"CORS": "https://cors-anywhere.herokuapp.com/",
+	"SKYKEY": "d81889ae141f2a188008c3f6f9632222",
+  "REQUEST": "https://api.darksky.net/forecast/",
+  "UNITS": "?units=si"
+}

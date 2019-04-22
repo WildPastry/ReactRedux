@@ -1,0 +1,26 @@
+// IMPORT
+@import "variables";
+@import "mixins";
+
+// RESET
+* {
+	@include reset(0, 0, border-box, none, none);
+	font-family: $font;
+}
+
+// BODY
+body {
+	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: $grey;
+  color: $white;
+}
+
+// CODE
+code {
+  font-family: $font;
+}
+
+p {
+  font-weight: $light;
+}

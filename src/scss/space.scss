@@ -1,0 +1,12 @@
+// IMPORT
+@import "variables";
+@import "mixins";
+
+#space {
+  cursor: pointer;
+  font-size: 0;
+  height: 700px;
+  line-height: 0;
+  margin: 50px 0;
+  width: 100%;
+}
