@@ -30,10 +30,10 @@ class Space extends Component<any, any> {
     // console.log(this.space)
     return (
       <React.Fragment>
-        <div id='space' ref={this.space}>
+        <h1 className='textGreen' id='space' ref={this.space}>
           {/* <p>{add(2, 8)}</p> */}
           {/* <Parent /> */}
-        </div>
+        </h1>
         {/* <div>{this.initSpace}</div> */}
       </React.Fragment>
     );

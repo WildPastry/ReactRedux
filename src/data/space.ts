@@ -13,10 +13,10 @@ export function initSpace() {
 
   // console.log('loaded external script...');
   const spaceDiv = document.getElementById('space');
-  const d = document.createElement('div');
+  // const d = document.createElement('div');
   const p = document.createElement('type');
-  d.appendChild(p);
-  spaceDiv.appendChild(d)
+  // d.appendChild(p);
+  spaceDiv.appendChild(p)
   // console.log(spaceDiv);
 
   const prefix = 'MAKING ART WITH ';
