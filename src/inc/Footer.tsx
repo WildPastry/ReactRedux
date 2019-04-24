@@ -47,8 +47,8 @@ class Footer extends Component<any, any> {
   }
 
   getData() {
-    console.log('lat: ' + lat);
-    console.log('lng: ' + lng);
+    // console.log('lat: ' + lat);
+    // console.log('lng: ' + lng);
     fetch(cors + request + skyKey + '/' + lat + ',' + lng + units)
       .then(res => res.json())
       .then(json => {
@@ -69,7 +69,7 @@ class Footer extends Component<any, any> {
   }
 
   componentDidMount() {
-    console.log('component loaded...');
+    // console.log('footer component loaded...');
     this.getLocation();
   }
 
