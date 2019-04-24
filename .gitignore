@@ -9,7 +9,7 @@
 # development
 config.json
 /dev
-/img
+src/img
 
 # production
 /build
