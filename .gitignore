@@ -7,8 +7,10 @@
 /coverage
 
 # development
+config.json
+projects.json
+space.ts
 /dev
-/data
 src/img
 
 # production
