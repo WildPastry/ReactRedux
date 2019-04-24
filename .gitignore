@@ -8,6 +8,7 @@
 
 # development
 config.json
+projects.json
 /dev
 src/img
 

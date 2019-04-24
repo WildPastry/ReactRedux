@@ -1,0 +1,12 @@
+// IMPORT
+@import "variables";
+@import "mixins";
+
+.imgWrap {
+	padding: 10px;
+}
+
+.imgWrap img {
+	height: auto;
+	width: 100%;
+}

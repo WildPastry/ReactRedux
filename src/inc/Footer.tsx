@@ -87,7 +87,7 @@ class Footer extends Component<any, any> {
         <React.Fragment>
           <h4>footer</h4>
           <p>{weather.currently.icon}</p>
-          <p>{Math.trunc(weather.currently.temperature)}</p>
+          <p>{Math.trunc(weather.currently.temperature) + '°'}</p>
         </React.Fragment>
       );
     }

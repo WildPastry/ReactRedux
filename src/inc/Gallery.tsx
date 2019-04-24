@@ -39,11 +39,14 @@ class Gallery extends Component {
     //     key={myProjects.price}>
     //   </p>
     // ));
+
     return myProjects.map((myProjects: singleProject) => (
-      <li key={myProjects.id}>
-        {myProjects.name}
-      </li>
+      <div key={myProjects.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-3'>
+        <p>{myProjects.name}</p>
+        <img src={require('../img/thumbs/1.jpg')} />
+      </div>
     ));
+
     // return (
     //   <React.Fragment>
     //     {/* <singleProject /> */}
