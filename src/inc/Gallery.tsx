@@ -12,7 +12,7 @@ export interface singleProject {
   desc: string;
 }
 
-class Gallery extends Component {
+class Gallery extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -41,9 +41,10 @@ class Gallery extends Component {
     // ));
 
     return myProjects.map((myProjects: singleProject) => (
-      <div key={myProjects.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-3'>
+      <div key={myProjects.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
         <p>{myProjects.name}</p>
-        <img src={require('../img/thumbs/1.jpg')} />
+        <img src={require('./../img/thumb/' + myProjects.image)} />
+        <p>{myProjects.price}</p>
       </div>
     ));
 

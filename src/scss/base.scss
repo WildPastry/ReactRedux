@@ -24,3 +24,12 @@ code {
 p {
   font-weight: $light;
 }
+
+// SELECTION
+::selection {
+  background: $black;
+}
+
+::-moz-selection {
+  background: $black;
+}
