@@ -16,9 +16,9 @@ class App extends Component {
         <div className='container-fluid'>
           <Nav />
           <Type />
-          <div className='row'>
+          {/* <div className='row'> */}
             <Gallery />
-          </div>
+          {/* </div> */}
           <Project />
         </div>
         <Footer />

@@ -8,8 +8,11 @@
     "@types/react": "^16.8.14",
     "@types/react-dom": "16.8.4",
     "bootstrap": "^4.3.1",
+    "isotope-layout": "^3.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-masonry-component": "^6.2.1",
+    "react-masonry-layout": "^0.4.0",
     "react-scripts": "^3.0.0",
     "tslib": "^1.9.3",
     "typescript": "3.4.4"
