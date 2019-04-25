@@ -1,44 +1,44 @@
 import React, { Component } from 'react';
-import { initSpace } from './../data/space';
+import { initType } from '../data/type';
 
-class Space extends Component<any, any> {
-  private space: React.RefObject<HTMLDivElement>;
+class Type extends Component<any, any> {
+  private type: React.RefObject<HTMLDivElement>;
   constructor(props: any) {
     super(props);
-    this.space = React.createRef();
+    this.type = React.createRef();
   }
 
   componentWillMount() {
-    // console.log('space component loading...');
+    // console.log('type component loading...');
   }
 
   componentDidMount() {
-    // console.log('space component loaded...');
-    // console.log(this.space.current);
-    // console.log(this.space);
-    // console.log(initSpace);
-    {
-      initSpace();
-    }
-    // console.log({initSpace})
-    // console.log(this.props.initSpace)
-    // console.log(this.initSpace)
+    // console.log('type component loaded...');
+    // console.log(this.type.current);
+    // console.log(this.type);
+    // console.log(initType);
+    
+      initType();
+    
+    // console.log({initType})
+    // console.log(this.props.initType)
+    // console.log(this.initType)
   }
 
   render() {
-    // console.log(this.space.current)
-    // console.log(this.space)
+    // console.log(this.type.current)
+    // console.log(this.type)
     return (
       <React.Fragment>
-        <h1 className='textGreen' id='space' ref={this.space}>
+        <h1 className='textGreen' id='type' ref={this.type}>
           {/* <p>{add(2, 8)}</p> */}
           {/* <Parent /> */}
         </h1>
-        {/* <div>{this.initSpace}</div> */}
+        {/* <div>{this.initType}</div> */}
       </React.Fragment>
     );
   }
-  initSpace(): React.ReactNode {
+  initType(): React.ReactNode {
     throw new Error('Method not implemented.');
   }
 }
@@ -81,4 +81,4 @@ class Space extends Component<any, any> {
 //   }
 // }
 
-export default Space;
+export default Type;

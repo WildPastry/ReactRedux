@@ -43,7 +43,7 @@ class Gallery extends Component<any, any> {
     return myProjects.map((myProjects: singleProject) => (
       <div key={myProjects.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
         <p>{myProjects.name}</p>
-        <img src={require('./../img/thumb/' + myProjects.image)} />
+        <img src={require('./../img/thumb/' + myProjects.image)} alt='Gallery' />
         <p>{myProjects.price}</p>
       </div>
     ));

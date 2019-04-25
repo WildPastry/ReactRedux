@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
-class Nav extends Component {
+class Nav extends Component<any, any> {
+
+  // componentDidMount() {
+  //   {
+  //     initType();
+  //   }
+  // }
+
   render() {
     return (
       <React.Fragment>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './inc/Header';
 import Nav from './inc/Nav';
-import Space from './inc/Space';
+import Type from './inc/Type';
 import Gallery from './inc/Gallery';
 import Project from './inc/Project';
 import Footer from './inc/Footer';
@@ -15,7 +15,7 @@ class App extends Component {
         <Header />
         <div className='container-fluid'>
           <Nav />
-          <Space />
+          <Type />
           <div className='row'>
             <Gallery />
           </div>
