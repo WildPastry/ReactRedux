@@ -135,5 +135,5 @@ export function initType() {
     );
     setTimeout(render, timeout);
   }
-  setTimeout(render, 2500);
+  setTimeout(render, 3000);
 }

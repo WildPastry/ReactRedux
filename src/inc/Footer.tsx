@@ -72,9 +72,7 @@ class Footer extends Component<any, any> {
   componentDidMount() {
     // console.log('footer component loaded...');
     // var weather = this.state.weather;
-
     // currentIcon = weather.currently.icon;
-
     this.getLocation();
   }
 
