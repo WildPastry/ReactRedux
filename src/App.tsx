@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './inc/Header';
+// import Header from './inc/Header';
 import Nav from './inc/Nav';
 import Type from './inc/Type';
 import Gallery from './inc/Gallery';
@@ -22,14 +22,14 @@ class App extends Component<any, any> {
 
     return (
       <React.Fragment>
-        <Header />
+        {/* <Header /> */}
         <div className='container-fluid'>
           <Nav />
           <Type />
           <Gallery projectsFromApp={allProjects} />
           <Project />
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     );
   }

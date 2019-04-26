@@ -5,7 +5,7 @@
 // BOOTSTRAP
 .container-fluid {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .row {
@@ -14,17 +14,16 @@
 }
 
 // NAV
-.navWrap {
-  justify-content: end;
-}
-
 .navItem {
   cursor: pointer;
 }
 
+// FOOTER
+
 // FILTER
 .filterWrap {
-  line-height: 39px;
+  line-height: 30px;
+  margin-bottom: 10px;
 }
 
 .filterItem {
@@ -33,12 +32,5 @@
 
 // TYPE
 .typeWrap {
-  height: 38px;
   line-height: 38px;
-}
-
-.typeBorder {
-  border-bottom: 3px solid $lightGrey;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }

@@ -40,6 +40,26 @@ p {
   flex-direction: row;
 }
 
+// WRAP
+.wrap {
+  justify-content: space-between;
+}
+
+.wrapEnd {
+  justify-content: start;
+}
+
+.wrapEnd {
+  justify-content: end;
+}
+
+// LINE
+.line {
+  border-bottom: 3px solid $lightGrey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 // PAD
 .pad {
   padding: 5px;
@@ -51,4 +71,13 @@ p {
 
 .padRight {
   padding-right: 0;
+}
+
+// MAR 
+.marTop {
+  margin-top: 20px;
+}
+
+.marBot {
+  margin-bottom: 20px;
 }

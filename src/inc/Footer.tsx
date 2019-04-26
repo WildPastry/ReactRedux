@@ -47,8 +47,6 @@ class Footer extends Component<any, any> {
   }
 
   getData() {
-    // console.log('lat: ' + lat);
-    // console.log('lng: ' + lng);
     fetch(cors + request + skyKey + '/' + lat + ',' + lng + units)
       .then(res => res.json())
       .then(json => {
@@ -66,6 +64,7 @@ class Footer extends Component<any, any> {
         }
         console.log(error.config);
       });
+
   }
 
   componentDidMount() {
@@ -73,20 +72,31 @@ class Footer extends Component<any, any> {
   }
 
   render() {
+    
     var weather = this.state.weather;
     var { isLoaded } = this.state;
     if (!isLoaded) {
       return (
-        <div>
-          <h4 className='textPeach'>loading...</h4>
-        </div>
+        <React.Fragment>
+          <div className='line marTop' />
+          <div>
+            <h4 className='textPeach'>loading...</h4>
+          </div>
+        </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
-          <h4>footer</h4>
-          <p>{weather.currently.icon}</p>
-          <p>{Math.trunc(weather.currently.temperature) + '°'}</p>
+          <div className='line marTop' />
+          <div className='flex wrap'>
+            <div>
+              <h4>links</h4>
+            </div>
+            <div className='flex weather'>
+              <div>{weather.currently.icon}</div>
+              <div>{Math.trunc(weather.currently.temperature) + '°'}</div>
+            </div>
+          </div>
         </React.Fragment>
       );
     }

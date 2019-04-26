@@ -18,7 +18,7 @@ class Type extends Component<any, any> {
         <div className='typeWrap'>
           <div id='type' ref={this.type} />
         </div>
-        <div className='typeBorder' />
+        <div className='line' />
       </React.Fragment>
     );
   }

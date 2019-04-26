@@ -4,8 +4,9 @@ class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        <h4>header</h4>
-        <p>mike parker | portfolio</p>
+        <div className='nav'>
+          <p>mike parker | portfolio</p>
+        </div>
       </React.Fragment>
     );
   }
