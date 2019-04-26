@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Header from './inc/Header';
 import Nav from './inc/Nav';
 import Type from './inc/Type';
 import Gallery from './inc/Gallery';
