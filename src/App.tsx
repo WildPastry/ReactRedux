@@ -19,7 +19,6 @@ class App extends Component<any, any> {
 
   render() {
     var allProjects = this.state['projects'];
-    // console.log(allProjects);
 
     return (
       <React.Fragment>

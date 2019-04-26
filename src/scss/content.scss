@@ -12,6 +12,13 @@
   margin-right: 0;
 }
 
-.buttons {
+.filterWrap {
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  line-height: 39px;
+}
+
+.filter {
+  padding: 5px;
 }

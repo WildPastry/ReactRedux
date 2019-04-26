@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import configData from './../data/config.json';
 
 var lat: string, lng: string;
-// var currentIcon: any;
 const cors = (configData as any).CORS;
 const skyKey = (configData as any).SKYKEY;
 const request = (configData as any).REQUEST;
@@ -70,17 +69,11 @@ class Footer extends Component<any, any> {
   }
 
   componentDidMount() {
-    // console.log('footer component loaded...');
-    // var weather = this.state.weather;
-    // currentIcon = weather.currently.icon;
     this.getLocation();
   }
 
   render() {
     var weather = this.state.weather;
-    // currentIcon = weather;
-    // console.log(currentIcon);
-
     var { isLoaded } = this.state;
     if (!isLoaded) {
       return (
