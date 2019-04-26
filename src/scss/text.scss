@@ -1,23 +1,41 @@
 // IMPORT
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
-.textGreen{
-  color: $green
+// TEXT COLOURS
+.textGreen {
+  color: $green;
 }
 
-.textGrey{
-  color: $grey
+.textGrey {
+  color: $grey;
 }
 
-.textPeach{
-  color: $peach
+.textPeach {
+  color: $peach;
 }
 
-.textPink{
-  color: $pink
+.textPink {
+  color: $pink;
 }
 
-.textPurple{
-  color: $purple
+.textLightGrey {
+  color: $lightGrey;
+}
+
+// TEXT WEIGHTS
+.text100 {
+  font-weight: $thin;
+}
+
+.text300 {
+  font-weight: $light;
+}
+
+.text400 {
+  font-weight: $regular;
+}
+
+.text700 {
+  font-weight: $bold;
 }

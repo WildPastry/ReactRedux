@@ -7,7 +7,7 @@ export function initType() {
   const timeValue = (configData as any).TIMEOUT;
 
   const typeDiv = document.getElementById('type');
-  const p = document.createElement('type');
+  const p = document.createElement('h1');
   typeDiv.appendChild(p)
 
   const prefix = 'MAKING ART WITH ';

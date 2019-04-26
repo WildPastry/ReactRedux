@@ -1,16 +1,16 @@
 // IMPORT
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 // RESET
 * {
-	@include reset(0, 0, border-box, none, none);
-	font-family: $font;
+  @include reset(0, 0, border-box, none, none);
+  font-family: $font;
 }
 
 // BODY
 body {
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background: $grey;
   color: $white;
@@ -32,4 +32,23 @@ p {
 
 ::-moz-selection {
   background: $black;
+}
+
+// FLEX
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+// PAD
+.pad {
+  padding: 5px;
+}
+
+.padLeft {
+  padding-left: 0;
+}
+
+.padRight {
+  padding-right: 0;
 }

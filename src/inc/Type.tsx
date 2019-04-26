@@ -15,7 +15,10 @@ class Type extends Component<any, any> {
   render() {
     return (
       <React.Fragment>
-        <h1 className='textPurple' id='type' ref={this.type} />
+        <div className='typeWrap'>
+          <div id='type' ref={this.type} />
+        </div>
+        <div className='typeBorder' />
       </React.Fragment>
     );
   }

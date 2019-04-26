@@ -44,30 +44,30 @@ class Gallery extends Component<any, any> {
   render() {
     return (
       <React.Fragment>
-				{/* PROJECTS FILTER */}
+        {/* PROJECTS FILTER */}
         <div className='row'>
-          <div className='filterWrap'>
-            <h2 className='filter textPink' onClick={this.filterReset}>
-              All
-            </h2>
-            <h3 className='filter' onClick={this.filter.bind(this, 'App')}>
+          <div className='filterWrap flex'>
+            <h4 className='pad padLeft textPink filterItem' onClick={this.filterReset}>
+              ALL
+            </h4>
+            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'App')}>
               App
-            </h3>
-            <h3 className='filter' onClick={this.filter.bind(this, 'Branding')}>
+            </h4>
+            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'Branding')}>
               Branding
-            </h3>
-            <h3 className='filter' onClick={this.filter.bind(this, 'Graphic')}>
+            </h4>
+            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'Graphic')}>
               Graphic
-            </h3>
-            <h3 className='filter' onClick={this.filter.bind(this, 'UX')}>
+            </h4>
+            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'UX')}>
               UX
-            </h3>
-            <h3 className='filter' onClick={this.filter.bind(this, 'Web')}>
+            </h4>
+            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'Web')}>
               Web
-            </h3>
+            </h4>
           </div>
         </div>
-				{/* PROJECTS MAP */}
+        {/* PROJECTS MAP */}
         <div className='row'>
           {this.state.projects.map(
             (singleProject: {
@@ -75,13 +75,17 @@ class Gallery extends Component<any, any> {
               name: React.ReactNode;
               fields: React.ReactNode;
               image: string;
-              price: React.ReactNode;
             }) => (
               <div key={singleProject.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
-                <p>{singleProject.name}</p>
-                <p>{singleProject.fields}</p>
                 <img src={require('./../img/thumb/' + singleProject.image)} alt='Gallery' />
-                <p>{singleProject.price}</p>
+                <p>{singleProject.name}</p>
+                <p>
+                  {singleProject.fields[0]}
+                  <span className='textLightGrey text700'> </span>
+                  {singleProject.fields[1]}
+                  <span className='textLightGrey text700'> </span>
+                  {singleProject.fields[2]}
+                </p>
               </div>
             )
           )}
