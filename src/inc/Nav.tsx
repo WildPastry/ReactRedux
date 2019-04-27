@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class Nav extends Component<any, any> {
+  constructor(props: any) {
+    super(props);
+    this.state = {};
+    this.changePageFromNav = this.changePageFromNav.bind(this);
+  }
+
+  changePageFromNav(value: any) {
+    this.props.changePageFromNav(value);
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -9,9 +19,15 @@ class Nav extends Component<any, any> {
             <p className='brand'>mike parker | portfolio</p>
           </div>
           <div className='flex'>
-            <h4 className='navItem'>gallery</h4>
-            <h4 className='navItem'>space</h4>
-            <h4 className='navItem'>info</h4>
+            <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'gallery')}>
+              gallery
+            </h4>
+            <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'space')}>
+              space
+            </h4>
+            <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'about')}>
+              about
+            </h4>
           </div>
         </div>
       </React.Fragment>

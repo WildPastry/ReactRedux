@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Project extends Component<any, any> {
+class About extends Component {
   render() {
     return (
       <React.Fragment>
-        <h4>project</h4>
+        <h4>about</h4>
       </React.Fragment>
     );
   }
 }
 
-export default Project;
+export default About;

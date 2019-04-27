@@ -8,6 +8,11 @@ class Gallery extends Component<any, any> {
     };
     this.filter = this.filter.bind(this);
     this.filterReset = this.filterReset.bind(this);
+    this.changePageFromGallery = this.changePageFromGallery.bind(this);
+  }
+
+  changePageFromGallery(value: any) {
+    this.props.changePageFromGallery(value);
   }
 
   filter(value: any) {
@@ -47,12 +52,12 @@ class Gallery extends Component<any, any> {
         {/* PROJECTS FILTER */}
         <div className='row'>
           <div className='filterWrap flex'>
-            <h4 className='filterItem' onClick={this.filterReset}>
-              All
+            <h4 className='filterItem textPeach text700' onClick={this.filterReset}>
+              X
             </h4>
-            <h4 className='filterItem' onClick={this.filter.bind(this, 'App')}>
+            {/* <h4 className='filterItem' onClick={this.filter.bind(this, 'App')}>
               App
-            </h4>
+            </h4> */}
             <h4 className='filterItem' onClick={this.filter.bind(this, 'Branding')}>
               Branding
             </h4>
@@ -77,7 +82,7 @@ class Gallery extends Component<any, any> {
               image: string;
             }) => (
               <div key={singleProject.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
-                <img src={require('./../img/thumb/' + singleProject.image)} alt='Gallery' />
+                <img onClick={this.changePageFromGallery.bind(this, 'project')} src={require('./../img/thumb/' + singleProject.image)} alt='Gallery' />
                 <p>{singleProject.name}</p>
                 <p>
                   {singleProject.fields[0]}

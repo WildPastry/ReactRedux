@@ -25,6 +25,17 @@ p {
   font-weight: $light;
 }
 
+h1,
+h2 {
+  font-weight: $bold;
+}
+
+h3,
+h4,
+h5 {
+  font-weight: $regular;
+}
+
 li {
   color: $lightGrey;
   cursor: pointer;
@@ -60,21 +71,17 @@ li {
   justify-content: end;
 }
 
-.wrapBetween {
-  justify-content: space-between;
-}
-
 // LINE
 .line {
   border-bottom: 3px solid $lightGrey;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .lineThin {
   border-bottom: 1px solid $lightGrey;
-  margin-bottom: 7px;
-  margin-top: 7px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 // PAD
@@ -90,7 +97,7 @@ li {
   padding-right: 0;
 }
 
-// MAR 
+// MAR
 .marTop {
   margin-top: 20px;
 }

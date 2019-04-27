@@ -88,16 +88,16 @@ class Footer extends Component<any, any> {
         <React.Fragment>
           <div className='line' />
           <div className='row'>
-            <div className='imgWrap col-xs-12 col-sm-12 col-md-6 col-lg-8'>
+            <div className='imgWrap marBot col-xs-12 col-sm-12 col-md-6 col-lg-6'>
               <FontAwesomeIcon icon={['fab', 'facebook-square']} className='faIcon' />
               <FontAwesomeIcon icon={['fab', 'linkedin-in']} className='faIcon' />
               <FontAwesomeIcon icon={['fab', 'pinterest']} className='faIcon' />
               <FontAwesomeIcon icon={['fab', 'github']} className='faIcon' />
               <FontAwesomeIcon icon={['fab', 'facebook-messenger']} className='faIcon' />
               <FontAwesomeIcon icon={['fas', 'envelope']} className='faIcon' />
-              <FontAwesomeIcon icon={['fas', 'star-of-life']} className='faIcon slow-spin' />
+              <FontAwesomeIcon icon={['fas', 'star-of-life']} className='faIcon textPeach slow-spin' />
             </div>
-            <div className='imgWrap col-xs-6 col-sm-6 col-md-3 col-lg-2'>
+            <div className='imgWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
               <h4 className='marBot'>contact details</h4>
               <ul>
                 <li>+64 022 5025 485</li>
@@ -105,23 +105,25 @@ class Footer extends Component<any, any> {
                 <li>WildPastry@WhatsApp</li>
               </ul>
             </div>
-            <div className='imgWrap col-xs-6 col-sm-6 col-md-3 col-lg-2'>
+            <div className='imgWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
               <h4 className='marBot'>archived websites</h4>
               <ul>
                 <li>fearboard.mparker.co.nz</li>
+                <li>sok.mparker.co.nz</li>
                 <li>nat.mparker.co.nz</li>
                 <li>mykdesign.mparker.co.nz</li>
               </ul>
             </div>
           </div>
-          <div className='row wrapEnd marTop'>
+          <div className='row wrapEnd'>
             <div className='footerWrap'>
-              <div className='flex'>
-                <h4 className='footerItem' id='weatherIcon'>
-                  {weather.currently.icon}
-                </h4>
+              <div className='lineThin' />
+              <div className='flex wrapEnd'>
+                <div id='weatherIcon'>
+                <img className='weatherIcon' src={require('./../icon/weather/sleet.svg')} alt='Weather Icon' />
+                </div>
                 <h4 className='footerItem'>{Math.trunc(weather.currently.temperature) + '°'} </h4>
-                <p className='footerItem textPink'>&copy; mike parker 2019</p>
+                <p className='footerItem textPeach'>&copy; mike parker 2019</p>
               </div>
             </div>
           </div>

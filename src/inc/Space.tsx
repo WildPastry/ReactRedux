@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Project extends Component<any, any> {
+class Space extends Component {
   render() {
     return (
       <React.Fragment>
-        <h4>project</h4>
+        <h4>space</h4>
       </React.Fragment>
     );
   }
 }
 
-export default Project;
+export default Space;
