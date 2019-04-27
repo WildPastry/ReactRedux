@@ -16,7 +16,9 @@ class Nav extends Component<any, any> {
       <React.Fragment>
         <div className='flex wrap navWrap'>
           <div>
-            <p className='brand'>mike parker | portfolio</p>
+            <p className='brand' onClick={this.changePageFromNav.bind(this, 'gallery')}>
+              mike parker | portfolio
+            </p>
           </div>
           <div className='flex'>
             <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'gallery')}>

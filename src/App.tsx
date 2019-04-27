@@ -50,8 +50,8 @@ class App extends Component<any, any> {
           <Nav changePageFromNav={this.changePage} />
           <Type />
           <React.Fragment>{display}</React.Fragment>
-          <Footer />
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

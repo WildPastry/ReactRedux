@@ -30,7 +30,7 @@ class Gallery extends Component<any, any> {
         projects: projectsFiltered
       },
       () => {
-        console.log(this.state.projects);
+        // console.log(this.state.projects);
       }
     );
   }
@@ -41,7 +41,7 @@ class Gallery extends Component<any, any> {
         projects: this.props.projectsFromApp
       },
       () => {
-        console.log(this.state.projects);
+        // console.log(this.state.projects);
       }
     );
   }
@@ -52,8 +52,8 @@ class Gallery extends Component<any, any> {
         {/* PROJECTS FILTER */}
         <div className='row'>
           <div className='filterWrap flex'>
-            <h4 className='filterItem textPeach text700' onClick={this.filterReset}>
-              X
+            <h4 className='filterItem text700' onClick={this.filterReset}>
+              All
             </h4>
             {/* <h4 className='filterItem' onClick={this.filter.bind(this, 'App')}>
               App
