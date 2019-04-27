@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import { initSpace } from '../data/space';
 
-class Space extends Component {
+class Space extends Component<any, any> {
+  private space: React.RefObject<HTMLDivElement>;
+  constructor(props: any) {
+    super(props);
+    this.space = React.createRef();
+  }
+
+  componentDidMount() {
+    initSpace();
+  }
+
   render() {
     return (
       <React.Fragment>
-        <h4>space</h4>
+        <div id='space' ref={this.space} />
       </React.Fragment>
     );
   }

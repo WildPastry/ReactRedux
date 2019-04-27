@@ -41,6 +41,13 @@
   line-height: 40px;
 }
 
+// SPACE
+#space {
+  cursor: pointer;
+  height: 500px;
+  z-index: -1;
+}
+
 // FILTER
 .filterWrap {
   line-height: 30px;
