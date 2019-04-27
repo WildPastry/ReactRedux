@@ -24,7 +24,7 @@ class Gallery extends Component<any, any> {
       }
     );
     console.log('Filtered by: ' + value);
-    console.log(projectsFiltered);
+    // console.log(projectsFiltered);
     this.setState(
       {
         projects: projectsFiltered
@@ -41,9 +41,13 @@ class Gallery extends Component<any, any> {
         projects: this.props.projectsFromApp
       },
       () => {
-        // console.log(this.state.projects);
+        console.log('Reset filter');
       }
     );
+  }
+
+  componentDidMount() {
+    console.log('Gallery component loaded...')
   }
 
   render() {

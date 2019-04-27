@@ -10,6 +10,7 @@ class Space extends Component<any, any> {
 
   componentDidMount() {
     initSpace();
+    console.log('Space component loaded...')
   }
 
   render() {

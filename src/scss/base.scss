@@ -28,6 +28,7 @@ code {
 
 p {
   font-weight: $light;
+  line-height: 1.5em;
 }
 
 h1,
@@ -45,7 +46,7 @@ li {
   color: $lightGrey;
   cursor: pointer;
   font-weight: $light;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 
 // SELECTION

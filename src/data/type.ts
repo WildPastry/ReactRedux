@@ -10,7 +10,7 @@ export function initType() {
   const p = document.createElement('h1');
   typeDiv.appendChild(p);
 
-  const prefix = 'MAKING ART WITH ';
+  const prefix = 'DEVELOPING WITH ';
   const skills = [
     'HTML & CSS',
     'JavaScript',

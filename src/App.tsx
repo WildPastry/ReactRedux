@@ -30,6 +30,10 @@ class App extends Component<any, any> {
     });
   }
 
+  componentDidMount() {
+    console.log('App loaded...')
+  }
+
   render() {
     var allProjects = this.state['projects'];
     var currentPage = this.state.currentPage;

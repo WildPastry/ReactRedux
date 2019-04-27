@@ -70,6 +70,7 @@ class Footer extends Component<any, any> {
 
   componentDidMount() {
     this.getLocation();
+    console.log('Footer component loaded...');
   }
   render() {
     var weather = this.state.weather;
@@ -77,9 +78,8 @@ class Footer extends Component<any, any> {
     if (!isLoaded) {
       return (
         <React.Fragment>
-          <div className='line marTop' />
-          <div>
-            <h4 className='textPeach'>loading...</h4>
+          <div id='loader'>
+            <div className='loader' />
           </div>
         </React.Fragment>
       );
@@ -89,7 +89,7 @@ class Footer extends Component<any, any> {
           <div className='footer'>
             <div className='line' />
             <div className='row'>
-              <div className='imgWrap marBot col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+              <div className='colWrap marBot col-xs-12 col-sm-12 col-md-6 col-lg-6'>
                 <FontAwesomeIcon icon={['fab', 'facebook-square']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'linkedin-in']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'pinterest']} className='faIcon' />
@@ -101,7 +101,7 @@ class Footer extends Component<any, any> {
                   className='faIcon textPeach slow-spin'
                 />
               </div>
-              <div className='imgWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
+              <div className='colWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>contact details</h4>
                 <ul>
                   <li>+64 022 5025 485</li>
@@ -109,7 +109,7 @@ class Footer extends Component<any, any> {
                   <li>WildPastry@WhatsApp</li>
                 </ul>
               </div>
-              <div className='imgWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
+              <div className='colWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>archived websites</h4>
                 <ul>
                   <li>fearboard.mparker.co.nz</li>

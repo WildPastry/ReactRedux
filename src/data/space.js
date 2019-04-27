@@ -1,8 +1,5 @@
 // @ts-ignore
 export function initSpace() {
-  // let COLOUR_ADJUSTMENT = 0.8;
-  // const FRAMES_PER_SECOND = 24;
-  // const MAX_DEPTH = 32;
   const TAU = 2 * Math.PI;
   const OFFSET = 0;
 
@@ -21,9 +18,9 @@ export function initSpace() {
           background: [32, 32, 32],
           line: [107, 228, 212]
         },
-        depth: 10,
-        lineWidth: 2,
-        scale: 0.9,
+        depth: 9,
+        lineWidth: 1,
+        scale: 1,
         opacity: 0.6,
         showFps: false
       };
@@ -38,7 +35,7 @@ export function initSpace() {
 
       this.ctx = this.dom.canvas.getContext('2d');
       this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-
+      this.ctx.ImageSmoothingEnabled = true;
       this.isPaused = false;
       this.isTicking = false;
 
@@ -65,8 +62,6 @@ export function initSpace() {
             this.settings.opacity = Math.max(this.settings.opacity - 0.05, 0);
             break;
           case 67:
-            // this.dom.canvas.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() *
-            //   255}, ${Math.random() * 255}`;
             this.settings.colour.line = [
               Math.random() * 255,
               Math.random() * 255,
@@ -91,16 +86,15 @@ export function initSpace() {
           case 32:
             this.isPaused = !this.isPaused;
             this.animate();
-          default:
-          
             break;
+
+          default:
         }
       });
 
       this.buildCanvas();
-      this.buildOverlay();
 
-      this.dom.overlay.addEventListener('click', () => {
+      this.dom.body.addEventListener('click', () => {
         this.settings.colour.line = [Math.random() * 255, Math.random() * 255, Math.random() * 255];
       });
 
@@ -229,8 +223,7 @@ export function initSpace() {
     }
 
     updateAngles() {
-      const now = FractalClock.getNow();
-
+      // const now = FractalClock.getNow();
       const date = new Date();
       const seconds = (date.getSeconds() * 1000 + date.getMilliseconds()) / 1000;
       const minutes = date.getMinutes() + seconds / 60;
@@ -272,19 +265,6 @@ export function initSpace() {
       }
     }
 
-    buildOverlay() {
-      FractalClock.applyStyles(this.dom.overlay, {
-        position: 'absolute',
-        top: '0px',
-        left: '0px',
-        right: '0px',
-        bottom: '0px',
-        zIndex: 2
-      });
-
-      this.dom.body.appendChild(this.dom.overlay);
-    }
-
     static getRootAndRotators() {
       const now = FractalClock.getNow();
       const hourRotation = FractalClock.getRotation(now, 12 * 60 * 60 * 1000);
@@ -322,4 +302,5 @@ export function initSpace() {
   }
 
   const fractalClock = new FractalClock();
+  console.log(fractalClock);
 }

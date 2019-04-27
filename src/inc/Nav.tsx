@@ -11,12 +11,16 @@ class Nav extends Component<any, any> {
     this.props.changePageFromNav(value);
   }
 
+  componentDidMount() {
+    console.log('Nav component loaded...')
+  }
+
   render() {
     return (
       <React.Fragment>
         <div className='flex wrap navWrap'>
           <div>
-            <p className='brand' onClick={this.changePageFromNav.bind(this, 'gallery')}>
+            <p className='brand textLightGrey' onClick={this.changePageFromNav.bind(this, 'gallery')}>
               mike parker | portfolio
             </p>
           </div>

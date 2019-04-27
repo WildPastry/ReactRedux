@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class Project extends Component<any, any> {
+
+  componentDidMount() {
+    console.log('Project component loaded...')
+  }
+
   render() {
     return (
       <React.Fragment>
