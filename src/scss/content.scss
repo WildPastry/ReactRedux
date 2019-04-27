@@ -4,8 +4,8 @@
 
 // BOOTSTRAP
 .container-fluid {
+  margin: 20px auto 40px auto;
   max-width: 1400px;
-  margin: 20px auto;
 }
 
 .row {
@@ -14,11 +14,20 @@
 }
 
 // NAV
-.navItem {
-  cursor: pointer;
+.navWrap {
+  line-height: 30px;
+  margin-bottom: 10px;
 }
 
-// FOOTER
+.navItem {
+  cursor: pointer;
+  margin-left: 13px;
+}
+
+// TYPE
+.typeWrap {
+  line-height: 40px;
+}
 
 // FILTER
 .filterWrap {
@@ -28,9 +37,19 @@
 
 .filterItem {
   cursor: pointer;
+  margin-right: 13px;
 }
 
-// TYPE
-.typeWrap {
-  line-height: 38px;
+// FOOTER
+.footerWrap {
+  line-height: 30px;
+  margin-top: 10px;
+}
+
+.footerItem {
+  margin-left: 13px;
+}
+
+.copyright {
+  border-top: 1.5px solid $peach;
 }

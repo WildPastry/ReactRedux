@@ -8,7 +8,7 @@ export function initType() {
 
   const typeDiv = document.getElementById('type');
   const p = document.createElement('h1');
-  typeDiv.appendChild(p)
+  typeDiv.appendChild(p);
 
   const prefix = 'MAKING ART WITH ';
   const skills = [
@@ -135,5 +135,5 @@ export function initType() {
     );
     setTimeout(render, timeout);
   }
-  setTimeout(render, 3000);
+  setTimeout(render, 0);
 }

@@ -25,6 +25,13 @@ p {
   font-weight: $light;
 }
 
+li {
+  color: $lightGrey;
+  cursor: pointer;
+  font-weight: $light;
+  line-height: 1.4em;
+}
+
 // SELECTION
 ::selection {
   background: $black;
@@ -53,11 +60,21 @@ p {
   justify-content: end;
 }
 
+.wrapBetween {
+  justify-content: space-between;
+}
+
 // LINE
 .line {
   border-bottom: 3px solid $lightGrey;
-  margin-top: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.lineThin {
+  border-bottom: 1px solid $lightGrey;
+  margin-bottom: 7px;
+  margin-top: 7px;
 }
 
 // PAD
@@ -79,5 +96,5 @@ p {
 }
 
 .marBot {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }

@@ -47,22 +47,22 @@ class Gallery extends Component<any, any> {
         {/* PROJECTS FILTER */}
         <div className='row'>
           <div className='filterWrap flex'>
-            <h4 className='pad padLeft textPink filterItem' onClick={this.filterReset}>
-              ALL
+            <h4 className='filterItem' onClick={this.filterReset}>
+              All
             </h4>
-            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'App')}>
+            <h4 className='filterItem' onClick={this.filter.bind(this, 'App')}>
               App
             </h4>
-            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'Branding')}>
+            <h4 className='filterItem' onClick={this.filter.bind(this, 'Branding')}>
               Branding
             </h4>
-            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'Graphic')}>
+            <h4 className='filterItem' onClick={this.filter.bind(this, 'Graphic')}>
               Graphic
             </h4>
-            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'UX')}>
+            <h4 className='filterItem' onClick={this.filter.bind(this, 'UX')}>
               UX
             </h4>
-            <h4 className='pad filterItem' onClick={this.filter.bind(this, 'Web')}>
+            <h4 className='filterItem' onClick={this.filter.bind(this, 'Web')}>
               Web
             </h4>
           </div>

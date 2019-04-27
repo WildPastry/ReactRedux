@@ -4,13 +4,14 @@ class Nav extends Component<any, any> {
   render() {
     return (
       <React.Fragment>
-        <div className='flex wrap'>
+        <div className='flex wrap navWrap'>
           <div>
-            <p className='pad padLeft'>mike parker | portfolio</p>
+            <p className='brand'>mike parker | portfolio</p>
           </div>
           <div className='flex'>
-            <h4 className='pad navItem'>gallery</h4>
-            <h4 className='pad navItem padRight'>contact</h4>
+            <h4 className='navItem'>gallery</h4>
+            <h4 className='navItem'>space</h4>
+            <h4 className='navItem'>info</h4>
           </div>
         </div>
       </React.Fragment>

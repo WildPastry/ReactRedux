@@ -3,13 +3,13 @@
 @import "mixins";
 
 .imgWrap {
-	padding: 0;
+	padding: 5px;
 }
 
 .imgWrap img {
+	cursor: pointer;
 	height: auto;
 	width: 100%;
-	cursor: pointer;
 }
 
 .grid {
