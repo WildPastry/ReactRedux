@@ -24,11 +24,9 @@ class Gallery extends Component<any, any> {
       projectImages: value[7],
       projectIcons: value[8],
       projectIntro: value[9],
-      projectDesc: value[10],
+      projectDesc: value[10]
     };
     this.props.changePageFromGallery(options);
-    // console.dir(value);
-    console.dir(options);
   }
 
   filter(value: any) {
@@ -40,15 +38,9 @@ class Gallery extends Component<any, any> {
       }
     );
     console.log('Filtered by: ' + value);
-    // console.log(projectsFiltered);
-    this.setState(
-      {
-        projects: projectsFiltered
-      },
-      () => {
-        // console.log(this.state.projects);
-      }
-    );
+    this.setState({
+      projects: projectsFiltered
+    });
   }
 
   filterReset() {
@@ -71,7 +63,7 @@ class Gallery extends Component<any, any> {
       <React.Fragment>
         {/* PROJECTS FILTER */}
         <div className='row'>
-          <div className='filterWrap flex'>
+          <div className='filterWrap flex pad'>
             <h4 className='filterItem text700' onClick={this.filterReset}>
               All
             </h4>
@@ -118,19 +110,22 @@ class Gallery extends Component<any, any> {
                     singleProject.images,
                     singleProject.icons,
                     singleProject.intro,
-                    singleProject.desc,
+                    singleProject.desc
                   ])}
                   src={require('./../img/thumb/' + singleProject.thumb)}
                   alt='Gallery'
                 />
+                <div className='flex wrap'>
                 <p>{singleProject.name}</p>
-                <p>
+                <p><span className='textSpotGrey text300'>
                   {singleProject.fields[0]}
-                  <span className='textLightGrey text700'> </span>
+                  <span className='textLightGrey text700'> / </span>
                   {singleProject.fields[1]}
-                  <span className='textLightGrey text700'> </span>
+                  <span className='textLightGrey text700'> / </span>
                   {singleProject.fields[2]}
+                  </span>
                 </p>
+                </div>
               </div>
             )
           )}

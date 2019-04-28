@@ -16,10 +16,10 @@ class Type extends Component<any, any> {
   render() {
     return (
       <React.Fragment>
-        <div className='typeWrap'>
+        <div className='typeWrap pad'>
           <div id='type' ref={this.type} />
         </div>
-        <div className='line' />
+        <div className='lineNoMar' />
       </React.Fragment>
     );
   }

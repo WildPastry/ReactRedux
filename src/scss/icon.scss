@@ -11,16 +11,47 @@
 
 .projectIcon {
   font-size: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
+  // margin-left: 10px;
+  margin-right: 15px;
+}
+
+.undoIcon {
+  color: $lightGrey;
+  cursor: pointer;
+  font-size: 35px;
 }
 
 .prevIcon,
 .nextIcon {
-  cursor: pointer;
-  font-size: 60px;
-  margin-right: 40px;
   color: $lightGrey;
+  cursor: pointer;
+  font-size: 40px;
+  // margin-right: 40px;
+}
+
+// INDIVIDUAL FA ICONS
+.fa-adobe {
+  color: #ff0000;
+}
+
+.fa-sass {
+  color: #cf649a;
+}
+
+.fa-react {
+  color: #61dafb;
+}
+
+.fa-bootstrap {
+  color: #563d7c;
+}
+
+.fa-js {
+  color: #f5de19;
+}
+
+.fa-git {
+  color: #f05033;
 }
 
 // ICON ANIMATION

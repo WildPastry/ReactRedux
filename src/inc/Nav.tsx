@@ -18,7 +18,7 @@ class Nav extends Component<any, any> {
   render() {
     return (
       <React.Fragment>
-        <div className='flex wrap navWrap'>
+        <div className='flex wrap pad navWrap'>
           <div>
             <p className='brand textPeach' onClick={this.changePageFromNav.bind(this, 'gallery')}>
               mike parker | portfolio

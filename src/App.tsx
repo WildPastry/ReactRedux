@@ -12,12 +12,13 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faStarOfLife,
   faEnvelope,
+  faUndoAlt,
   faChevronLeft,
   faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
 
-library.add(fab, faEnvelope, faStarOfLife, faChevronLeft, faChevronRight);
+library.add(fab, faStarOfLife, faEnvelope, faUndoAlt, faChevronLeft, faChevronRight);
 
 class App extends Component<any, any> {
   constructor(props: any) {
@@ -98,6 +99,7 @@ class App extends Component<any, any> {
           currentProjectIcons={this.state.currentProjectIcons}
           currentProjectIntro={this.state.currentProjectIntro}
           currentProjectDesc={this.state.currentProjectDesc}
+          changePageFromProject={this.changePage}
         />
       );
     } else if (currentPage === 'space') {
