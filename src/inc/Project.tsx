@@ -8,10 +8,15 @@ class Project extends Component<any, any> {
       projects: this.props.projectsFromApp,
       currentProject: this.props.currentProject,
       currentProjectName: this.props.currentProjectName,
+      currentProjectFields: this.props.currentProjectFields,
+      currentProjectClient: this.props.currentProjectClient,
+      currentProjectTimeline: this.props.currentProjectTimeline,
+      currentProjectWebsite: this.props.currentProjectWebsite,
+      currentProjectThumb: this.props.currentProjectThumb,
+      currentProjectImages: this.props.currentProjectImages,
+      currentProjectIcons: this.props.currentProjectIcons,
+      currentProjectIntro: this.props.currentProjectIntro,
       currentProjectDesc: this.props.currentProjectDesc,
-      fieldsOne: this.props.fieldsOne,
-      fieldsTwo: this.props.fieldsTwo,
-      fieldsThree: this.props.fieldsThree
     };
     this.changeProject = this.changeProject.bind(this);
   }
@@ -21,10 +26,15 @@ class Project extends Component<any, any> {
       {
         currentProject: '',
         currentProjectName: '',
+        currentProjectFields: [],
+        currentProjectClient: '',
+        currentProjectTimeline: '',
+        currentProjectWebsite: '',
+        currentProjectThumb: '',
+        currentProjectImages: [],
+        currentProjectIcons: [],
+        currentProjectIntro: '',
         currentProjectDesc: '',
-        fieldsOne: '',
-        fieldsTwo: '',
-        fieldsThree: ''
       },
       () => {
         // console.dir(this.state);

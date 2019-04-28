@@ -27,10 +27,15 @@ class App extends Component<any, any> {
       currentPage: 'gallery',
       currentProject: '',
       currentProjectName: '',
+      currentProjectFields: [],
+      currentProjectClient: '',
+      currentProjectTimeline: '',
+      currentProjectWebsite: '',
+      currentProjectThumb: '',
+      currentProjectImages: [],
+      currentProjectIcons: [],
+      currentProjectIntro: '',
       currentProjectDesc: '',
-      fieldsOne: '',
-      fieldsTwo: '',
-      fieldsThree: ''
     };
     this.changePage = this.changePage.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
@@ -48,14 +53,19 @@ class App extends Component<any, any> {
         currentPage: value['page'],
         currentProject: value['project'],
         currentProjectName: value['projectName'],
-        currentProjectDesc: value['projectDesc'],
-        fieldsOne: value['fieldsOne'],
-        fieldsTwo: value['fieldsTwo'],
-        fieldsThree: value['fieldsThree']
+        currentProjectFields: value['projectFields'],
+        currentProjectClient: value['projectClient'],
+        currentProjectTimeline: value['projectTimeline'],
+        currentProjectWebsite: value['projectWebsite'],
+        currentProjectThumb: value['projectThumb'],
+        currentProjectImages: value['projectImages'],
+        currentProjectIcons: value['projectIcons'],
+        currentProjectIntro: value['projectIntro'],
+        currentProjectDesc: value['projectDesc']
       },
       () => {
-        // console.dir(value);
-        // console.log(this.state);
+        console.dir(value);
+        console.log(this.state);
       }
     );
   }
@@ -79,10 +89,15 @@ class App extends Component<any, any> {
           projectsFromApp={allProjects}
           currentProject={this.state.currentProject}
           currentProjectName={this.state.currentProjectName}
+          currentProjectFields={this.state.currentProjectFields}
+          currentProjectClient={this.state.currentProjectClient}
+          currentProjectTimeline={this.state.currentProjectTimeline}
+          currentProjectWebsite={this.state.currentProjectWebsite}
+          currentProjectThumb={this.state.currentProjectThumb}
+          currentProjectImages={this.state.currentProjectImages}
+          currentProjectIcons={this.state.currentProjectIcons}
+          currentProjectIntro={this.state.currentProjectIntro}
           currentProjectDesc={this.state.currentProjectDesc}
-          fieldsOne={this.state.fieldsOne}
-          fieldsTwo={this.state.fieldsTwo}
-          fieldsThree={this.state.fieldsThree}
         />
       );
     } else if (currentPage === 'space') {

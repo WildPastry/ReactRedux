@@ -16,13 +16,19 @@ class Gallery extends Component<any, any> {
       page: 'project',
       project: value[0],
       projectName: value[1],
-      projectDesc: value[2],
-      fieldsOne: value[3],
-      fieldsTwo: value[4],
-      fieldsThree: value[5]
+      projectFields: value[2],
+      projectClient: value[3],
+      projectTimeline: value[4],
+      projectWebsite: value[5],
+      projectThumb: value[6],
+      projectImages: value[7],
+      projectIcons: value[8],
+      projectIntro: value[9],
+      projectDesc: value[10],
     };
     this.props.changePageFromGallery(options);
-    // console.dir(options);
+    // console.dir(value);
+    console.dir(options);
   }
 
   filter(value: any) {
@@ -89,8 +95,14 @@ class Gallery extends Component<any, any> {
             (singleProject: {
               id: React.Key;
               name: React.ReactNode;
-              fields: React.ReactNode;
+              fields: Array<[]>;
+              client: React.ReactNode;
+              timeline: React.ReactNode;
+              website: React.ReactNode;
               thumb: string;
+              images: Array<[]>;
+              icons: Array<[]>;
+              intro: string;
               desc: string;
             }) => (
               <div key={singleProject.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
@@ -98,10 +110,15 @@ class Gallery extends Component<any, any> {
                   onClick={this.changePageFromGallery.bind(this, [
                     singleProject.id,
                     singleProject.name,
+                    singleProject.fields,
+                    singleProject.client,
+                    singleProject.timeline,
+                    singleProject.website,
+                    singleProject.thumb,
+                    singleProject.images,
+                    singleProject.icons,
+                    singleProject.intro,
                     singleProject.desc,
-                    singleProject.fields[0],
-                    singleProject.fields[1],
-                    singleProject.fields[2]
                   ])}
                   src={require('./../img/thumb/' + singleProject.thumb)}
                   alt='Gallery'
