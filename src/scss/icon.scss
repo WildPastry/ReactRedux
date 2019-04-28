@@ -9,6 +9,13 @@
 	margin-right: 13px;
 }
 
+.toolIcon {
+  cursor: pointer;
+  font-size: 25px;
+  margin-left: 6.5px;
+	margin-right: 6.5px;
+}
+
 .slow-spin {
   -webkit-animation: fa-spin 4s infinite linear;
   animation: fa-spin 4s infinite linear;

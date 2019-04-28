@@ -43,7 +43,7 @@ h5 {
 }
 
 li {
-  color: $lightGrey;
+  color: $spotGrey;
   cursor: pointer;
   font-weight: $light;
   line-height: 1.5em;
@@ -79,7 +79,7 @@ li {
 
 // LINE
 .line {
-  border-bottom: 3px solid $lightGrey;
+  border-bottom: 4px solid $lightGrey;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -110,4 +110,9 @@ li {
 
 .marBot {
   margin-bottom: 10px;
+}
+
+// ALIGN
+.center {
+  text-align: center;
 }

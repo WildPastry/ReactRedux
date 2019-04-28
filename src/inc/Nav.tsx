@@ -20,7 +20,7 @@ class Nav extends Component<any, any> {
       <React.Fragment>
         <div className='flex wrap navWrap'>
           <div>
-            <p className='brand textLightGrey' onClick={this.changePageFromNav.bind(this, 'gallery')}>
+            <p className='brand textSpotGrey' onClick={this.changePageFromNav.bind(this, 'gallery')}>
               mike parker | portfolio
             </p>
           </div>
