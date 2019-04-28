@@ -2,28 +2,52 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Project extends Component<any, any> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      projects: this.props.projectsFromApp,
+      currentProject: this.props.currentProject,
+      currentProjectName: this.props.currentProjectName,
+      currentProjectDesc: this.props.currentProjectDesc,
+      fieldsOne: this.props.fieldsOne,
+      fieldsTwo: this.props.fieldsTwo,
+      fieldsThree: this.props.fieldsThree
+    };
+    this.changeProject = this.changeProject.bind(this);
+  }
+
+  changeProject() {
+    this.setState(
+      {
+        currentProject: '',
+        currentProjectName: '',
+        currentProjectDesc: '',
+        fieldsOne: '',
+        fieldsTwo: '',
+        fieldsThree: ''
+      },
+      () => {
+        // console.dir(this.state);
+      }
+    );
+  }
+
   componentDidMount() {
     console.log('Project component loaded...');
+    // console.log(this.state.projects)
   }
 
   render() {
+    // console.dir(this.state);
     return (
       <React.Fragment>
         {/* DESCRIPTION */}
         <div className='row wrap'>
           <div className='colWrap col-xs-12 col-sm-12 col-md-7 col-lg-7'>
-            <h1 className='textPeach marBot'>Wagamama</h1>
-            <h2>
-              Wagamama wants to improve customer engagement and sales of some of their more unique
-              offerings by providing table ordering via digital devices.
-            </h2>
+            <h1 className='textPeach marBot'>{this.state.currentProjectName}</h1>
+            <h2>Hero statement...</h2>
             <br />
-            <p>
-              Customers will be able to use touch screens at their table or booth, tablet type
-              devices mounted at the bar or their own phones anywhere within the venue. They require
-              a system that enable customers to easily order and see the progress of their order and
-              makes suggestions and/or offers.
-            </p>
+            <p>{this.state.currentProjectDesc}</p>
           </div>
           {/* PROJECT DETAILS */}
           <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
@@ -32,8 +56,11 @@ class Project extends Component<any, any> {
               <li className='projectListItem'>
                 FIELDS&nbsp;&nbsp;
                 <span className='textWhite text700'>
-                  UX<span className='textLightGrey text700'> / </span>WEB
-                  <span className='textLightGrey text700'> / </span>DATA
+                  {this.state.fieldsOne}
+                  <span className='textLightGrey text700'> / </span>
+                  {this.state.fieldsTwo}
+                  <span className='textLightGrey text700'> / </span>
+                  {this.state.fieldsThree}
                 </span>
               </li>
               <li className='projectListItem'>

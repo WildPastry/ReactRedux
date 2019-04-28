@@ -9,7 +9,12 @@ import Footer from './inc/Footer';
 import projectData from './data/projects.json';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faStarOfLife, faEnvelope, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faStarOfLife,
+  faEnvelope,
+  faChevronLeft,
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
 
 library.add(fab, faEnvelope, faStarOfLife, faChevronLeft, faChevronRight);
@@ -19,9 +24,16 @@ class App extends Component<any, any> {
     super(props);
     this.state = {
       projects: projectData,
-      currentPage: 'gallery'
+      currentPage: 'gallery',
+      currentProject: '',
+      currentProjectName: '',
+      currentProjectDesc: '',
+      fieldsOne: '',
+      fieldsTwo: '',
+      fieldsThree: ''
     };
     this.changePage = this.changePage.bind(this);
+    this.changePageAndProject = this.changePageAndProject.bind(this);
   }
 
   changePage(value: any) {
@@ -30,8 +42,26 @@ class App extends Component<any, any> {
     });
   }
 
+  changePageAndProject(value: any) {
+    this.setState(
+      {
+        currentPage: value['page'],
+        currentProject: value['project'],
+        currentProjectName: value['projectName'],
+        currentProjectDesc: value['projectDesc'],
+        fieldsOne: value['fieldsOne'],
+        fieldsTwo: value['fieldsTwo'],
+        fieldsThree: value['fieldsThree']
+      },
+      () => {
+        // console.dir(value);
+        // console.log(this.state);
+      }
+    );
+  }
+
   componentDidMount() {
-    console.log('App loaded...')
+    console.log('App loaded...');
   }
 
   render() {
@@ -40,9 +70,21 @@ class App extends Component<any, any> {
     let display;
 
     if (currentPage === 'gallery') {
-      display = <Gallery projectsFromApp={allProjects} changePageFromGallery={this.changePage} />;
+      display = (
+        <Gallery projectsFromApp={allProjects} changePageFromGallery={this.changePageAndProject} />
+      );
     } else if (currentPage === 'project') {
-      display = <Project />;
+      display = (
+        <Project
+          projectsFromApp={allProjects}
+          currentProject={this.state.currentProject}
+          currentProjectName={this.state.currentProjectName}
+          currentProjectDesc={this.state.currentProjectDesc}
+          fieldsOne={this.state.fieldsOne}
+          fieldsTwo={this.state.fieldsTwo}
+          fieldsThree={this.state.fieldsThree}
+        />
+      );
     } else if (currentPage === 'space') {
       display = <Space />;
     } else if (currentPage === 'about') {
