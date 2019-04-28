@@ -25,7 +25,7 @@ class About extends Component {
           </div>
           <div className='aboutWrap col-xs-12 col-sm-6 col-md-6 col-lg-6'>
             <h2 className='marBot'>contact</h2>
-            <p>form here...</p>
+            <p>form here?</p>
           </div>
         </div>
       </React.Fragment>

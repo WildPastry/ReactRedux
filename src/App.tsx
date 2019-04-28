@@ -9,10 +9,10 @@ import Footer from './inc/Footer';
 import projectData from './data/projects.json';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faStarOfLife, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faStarOfLife, faEnvelope, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
 
-library.add(fab, faEnvelope, faStarOfLife);
+library.add(fab, faEnvelope, faStarOfLife, faChevronLeft, faChevronRight);
 
 class App extends Component<any, any> {
   constructor(props: any) {

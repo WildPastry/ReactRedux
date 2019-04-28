@@ -104,6 +104,10 @@ li {
 }
 
 // MAR
+.mar {
+  margin: 15px auto;
+}
+
 .marTop {
   margin-top: 20px;
 }
@@ -112,7 +116,19 @@ li {
   margin-bottom: 10px;
 }
 
+.marBotProject {
+  margin-bottom: 19px;
+}
+
 // ALIGN
 .center {
   text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }

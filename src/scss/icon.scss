@@ -4,18 +4,26 @@
 
 // FA ICONS
 .faIcon {
-	cursor: pointer;
-	font-size: 25px;
-	margin-right: 13px;
-}
-
-.toolIcon {
   cursor: pointer;
   font-size: 25px;
-  margin-left: 6.5px;
-	margin-right: 6.5px;
+  margin-right: 13px;
 }
 
+.projectIcon {
+  font-size: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.prevIcon,
+.nextIcon {
+  cursor: pointer;
+  font-size: 60px;
+  margin-right: 40px;
+  color: $lightGrey;
+}
+
+// ICON ANIMATION
 .slow-spin {
   -webkit-animation: fa-spin 4s infinite linear;
   animation: fa-spin 4s infinite linear;

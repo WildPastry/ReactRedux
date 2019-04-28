@@ -106,8 +106,22 @@
 
 // PROJECT
 .projectWrap {
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 5px;
+}
+
+.projectWrap img {
+	height: auto;
+	width: 100%;
+}
+
+.projectListItem {
+  cursor: default;
+  font-weight: $light;
+  font-size: 1.2em;
+}
+
+.prevNextIconWrap{
+  margin-top: 20px;
 }
 
 // ABOUT
