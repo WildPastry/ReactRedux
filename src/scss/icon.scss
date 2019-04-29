@@ -10,9 +10,8 @@
 }
 
 .projectIcon {
-  font-size: 30px;
-  // margin-left: 10px;
-  margin-right: 15px;
+  font-size: 25px;
+  margin-right: 13px;
 }
 
 .undoIcon {
@@ -26,12 +25,11 @@
   color: $lightGrey;
   cursor: pointer;
   font-size: 40px;
-  // margin-right: 40px;
 }
 
 // INDIVIDUAL FA ICONS
 .fa-adobe {
-  color: #ff0000;
+  color: #fb3e44;
 }
 
 .fa-sass {
@@ -43,7 +41,7 @@
 }
 
 .fa-bootstrap {
-  color: #563d7c;
+  color: #7251a3;
 }
 
 .fa-js {
@@ -54,6 +52,53 @@
   color: #f05033;
 }
 
+.fa-node {
+  color: #79b461;
+}
+
+.fa-npm {
+  color: #fb3e44;
+}
+
+.fa-grunt {
+  color: #fba919;
+}
+
+.fa-less {
+  color: #4b8fe9;
+}
+
+.fa-html5 {
+  color: #ee681f;
+}
+
+.fa-gulp {
+  color: #f05033;
+}
+
+.fa-facebook-square:hover {
+  color: #5f83cd;
+}
+
+.fa-linkedin-in:hover {
+  color: #098cd3;
+}
+
+.fa-pinterest:hover {
+  color: #e60023;
+}
+
+.fa-github:hover {
+  color: $spotGrey;
+}
+
+.fa-facebook-messenger:hover {
+  color: #01c5ff;
+}
+
+.fa-envelope:hover{
+  color: $spotGrey;
+}
 // ICON ANIMATION
 .slow-spin {
   -webkit-animation: fa-spin 4s infinite linear;

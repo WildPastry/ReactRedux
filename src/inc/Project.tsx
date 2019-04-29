@@ -61,7 +61,7 @@ class Project extends Component<any, any> {
           </div>
           {/* PROJECT DETAILS */}
           <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
-            <h2 className='marBot text300'>PROJECT DETAILS</h2>
+            <h2 className='marBot text300 textLightGrey'>PROJECT DETAILS</h2>
             <ul>
               <li className='projectListItem'>
                 FIELDS&nbsp;&nbsp;
@@ -82,7 +82,7 @@ class Project extends Component<any, any> {
                 <span className='textWhite text700'>{this.state.currentProjectTimeline}</span>
               </li>
               <li className='projectListItem'>
-                LIVE SITE&nbsp;&nbsp;
+                WEBSITE&nbsp;&nbsp;
                 <span className='textWhite text700'>{this.state.currentProjectWebsite}</span>
               </li>
             </ul>

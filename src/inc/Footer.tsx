@@ -96,10 +96,10 @@ class Footer extends Component<any, any> {
                 <FontAwesomeIcon icon={['fab', 'github']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'facebook-messenger']} className='faIcon' />
                 <FontAwesomeIcon icon={['fas', 'envelope']} className='faIcon' />
-                <FontAwesomeIcon
+                {/* <FontAwesomeIcon
                   icon={['fas', 'star-of-life']}
                   className='faIcon textPeach slow-spin'
-                />
+                /> */}
               </div>
               <div className='colWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>contact details</h4>
