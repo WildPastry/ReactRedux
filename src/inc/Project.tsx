@@ -16,7 +16,7 @@ class Project extends Component<any, any> {
       currentProjectImages: this.props.currentProjectImages,
       currentProjectIcons: this.props.currentProjectIcons,
       currentProjectIntro: this.props.currentProjectIntro,
-      currentProjectDesc: this.props.currentProjectDesc
+      currentProjectDesc: this.props.currentProjectDesc,
     };
     this.changeProject = this.changeProject.bind(this);
     this.changePageFromProject = this.changePageFromProject.bind(this);
@@ -35,7 +35,7 @@ class Project extends Component<any, any> {
         currentProjectImages: [],
         currentProjectIcons: [],
         currentProjectIntro: '',
-        currentProjectDesc: ''
+        currentProjectDesc: '',
       },
     );
   }
@@ -46,9 +46,20 @@ class Project extends Component<any, any> {
 
   componentDidMount() {
     console.log('Project component loaded...');
+    // console.log(this.state.currentProjectImages);
+    // console.log(this.state.currentProjectImages[0]['src']);
+    // console.log(this.state.currentProjectImages[0]['id']);
+    // var imageSrc = this.state.currentProjectImages[0]['src'];
+    // console.log(imageSrc);
+    // var imageId = this.state.currentProjectImages[0]['id'];
+    // console.log(imageId);
   }
 
   render() {
+    // var imageSrc = this.state.currentProjectImages['src'];
+    // console.log(imageSrc);
+    // var imageId = this.state.currentProjectImages['id'];
+    // console.log(imageId);
     return (
       <React.Fragment>
         {/* DESCRIPTION */}
@@ -88,7 +99,7 @@ class Project extends Component<any, any> {
             </ul>
             <div className='prevNextIconWrap'>
               {this.state.currentProjectIcons.map((currentIcon: any) => (
-                <FontAwesomeIcon icon={['fab', currentIcon]} className='projectIcon' />
+                <FontAwesomeIcon key={currentIcon['id']} icon={['fab', currentIcon['src']]} className='projectIcon' />
               ))}
             </div>
           </div>
@@ -107,10 +118,10 @@ class Project extends Component<any, any> {
         {/* IMAGES */}
         <div className='row'>
           {this.state.currentProjectImages.map(
-            (currentImage: { currentProjectName: string; currentImage: string }) => (
-              <div className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            (currentImage: { [x: string]: string; }) => (
+              <div key={currentImage['id']} className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
                 <img
-                  src={require('./../img/project/' + currentImage)}
+                  src={require('./../img/project/' + currentImage['src'])}
                   alt={this.state.currentProjectName}
                 />
               </div>

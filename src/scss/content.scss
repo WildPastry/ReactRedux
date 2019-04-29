@@ -81,6 +81,10 @@
   margin-left: 13px;
 }
 
+.navItem:hover {
+  color: $peach;
+}
+
 // TYPE
 .typeWrap {
   line-height: 40px;
@@ -106,6 +110,10 @@
   margin-right: 13px;
 }
 
+.filterItem:hover {
+  color: $peach;
+}
+
 // PROJECT
 .projectWrap {
   padding: 5px;
@@ -113,8 +121,8 @@
 }
 
 .projectWrap img {
-	height: auto;
-	width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 .projectListItem {
@@ -123,7 +131,7 @@
   font-size: 1.2em;
 }
 
-.prevNextIconWrap{
+.prevNextIconWrap {
   margin-top: 20px;
 }
 
@@ -145,6 +153,10 @@
 .footerWrap {
   line-height: 30px;
   margin-top: 10px;
+}
+
+.footerListWrap li:hover {
+  color: $peach;
 }
 
 .footerItem {

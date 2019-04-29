@@ -103,7 +103,7 @@ class Footer extends Component<any, any> {
               </div>
               <div className='colWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>contact details</h4>
-                <ul>
+                <ul className='footerListWrap'>
                   <li>+64 022 5025 485</li>
                   <li>mike@mparker.co.nz</li>
                   <li>WildPastry@WhatsApp</li>
@@ -111,8 +111,8 @@ class Footer extends Component<any, any> {
               </div>
               <div className='colWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>archived websites</h4>
-                <ul>
-                  <li>fearboard.mparker.co.nz</li>
+                <ul className='footerListWrap'>
+                  <li>fear.mparker.co.nz</li>
                   <li>sok.mparker.co.nz</li>
                   <li>nat.mparker.co.nz</li>
                   <li>mykdesign.mparker.co.nz</li>

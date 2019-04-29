@@ -24,7 +24,7 @@ class Gallery extends Component<any, any> {
       projectImages: value[7],
       projectIcons: value[8],
       projectIntro: value[9],
-      projectDesc: value[10]
+      projectDesc: value[10],
     };
     this.props.changePageFromGallery(options);
   }
@@ -110,7 +110,7 @@ class Gallery extends Component<any, any> {
                     singleProject.images,
                     singleProject.icons,
                     singleProject.intro,
-                    singleProject.desc
+                    singleProject.desc,
                   ])}
                   src={require('./../img/thumb/' + singleProject.thumb)}
                   alt='Gallery'

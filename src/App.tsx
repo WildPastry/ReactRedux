@@ -62,11 +62,7 @@ class App extends Component<any, any> {
         currentProjectImages: value['projectImages'],
         currentProjectIcons: value['projectIcons'],
         currentProjectIntro: value['projectIntro'],
-        currentProjectDesc: value['projectDesc']
-      },
-      () => {
-        console.dir(value);
-        console.log(this.state);
+        currentProjectDesc: value['projectDesc'],
       }
     );
   }
