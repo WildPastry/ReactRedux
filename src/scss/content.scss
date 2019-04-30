@@ -72,6 +72,10 @@
   cursor: pointer;
 }
 
+.brand:hover {
+  color: $spotGrey;
+}
+
 .navWrap {
   line-height: 30px;
 }
@@ -97,6 +101,11 @@
   height: 50vh;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+#space canvas {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 // GALLERY
@@ -127,8 +136,9 @@
 
 .projectListItem {
   cursor: default;
-  font-weight: $light;
+  font-weight: $bold;
   font-size: 1.2em;
+  color: $lightGrey;
 }
 
 .prevNextIconWrap {
@@ -136,9 +146,9 @@
 }
 
 // ABOUT
-.aboutWrap {
-  padding: 0 10% 0 10%;
-}
+// .aboutWrap {
+//   padding: 0 10% 0 10%;
+// }
 
 // FOOTER
 .footer {
@@ -166,3 +176,12 @@
 .copyright {
   border-top: 1.5px solid $peach;
 }
+
+// SCROLL
+// .hideScrollButton {
+//   display: none;
+// }
+
+// .showScrollButton {
+//   display: block;
+// }

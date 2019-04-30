@@ -7,6 +7,7 @@ import About from './inc/About';
 import Space from './inc/Space';
 import Footer from './inc/Footer';
 import projectData from './data/projects.json';
+import ScrollUpButton from 'react-scroll-up-button';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -14,11 +15,19 @@ import {
   faEnvelope,
   faUndoAlt,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faChevronCircleUp
 } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
-
-library.add(fab, faStarOfLife, faEnvelope, faUndoAlt, faChevronLeft, faChevronRight);
+library.add(
+  fab,
+  faStarOfLife,
+  faEnvelope,
+  faUndoAlt,
+  faChevronLeft,
+  faChevronRight,
+  faChevronCircleUp
+);
 
 class App extends Component<any, any> {
   constructor(props: any) {
@@ -37,9 +46,20 @@ class App extends Component<any, any> {
       currentProjectIcons: [],
       currentProjectIntro: '',
       currentProjectDesc: '',
+      isTop: true,
     };
+    this.scrollTop = this.scrollTop.bind(this);
+    this.onScroll = this.onScroll.bind(this);
     this.changePage = this.changePage.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
+  }
+
+  scrollTop() {
+    window.scrollTo(0, 0);
+  }
+
+  onScroll(isTop: boolean) {
+    this.setState({ isTop });
   }
 
   changePage(value: any) {
@@ -49,26 +69,30 @@ class App extends Component<any, any> {
   }
 
   changePageAndProject(value: any) {
-    this.setState(
-      {
-        currentPage: value['page'],
-        currentProject: value['project'],
-        currentProjectName: value['projectName'],
-        currentProjectFields: value['projectFields'],
-        currentProjectClient: value['projectClient'],
-        currentProjectTimeline: value['projectTimeline'],
-        currentProjectWebsite: value['projectWebsite'],
-        currentProjectThumb: value['projectThumb'],
-        currentProjectImages: value['projectImages'],
-        currentProjectIcons: value['projectIcons'],
-        currentProjectIntro: value['projectIntro'],
-        currentProjectDesc: value['projectDesc'],
-      }
-    );
+    this.setState({
+      currentPage: value['page'],
+      currentProject: value['project'],
+      currentProjectName: value['projectName'],
+      currentProjectFields: value['projectFields'],
+      currentProjectClient: value['projectClient'],
+      currentProjectTimeline: value['projectTimeline'],
+      currentProjectWebsite: value['projectWebsite'],
+      currentProjectThumb: value['projectThumb'],
+      currentProjectImages: value['projectImages'],
+      currentProjectIcons: value['projectIcons'],
+      currentProjectIntro: value['projectIntro'],
+      currentProjectDesc: value['projectDesc']
+    });
   }
 
   componentDidMount() {
     console.log('App loaded...');
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 100;
+      if (isTop !== this.state.isTop) {
+        this.onScroll(isTop);
+      }
+    });
   }
 
   render() {
@@ -111,6 +135,15 @@ class App extends Component<any, any> {
           <React.Fragment>{display}</React.Fragment>
         </div>
         <Footer />
+        <div className='backToTop' onClick={this.scrollTop}>
+          <ScrollUpButton
+            StopPosition={0}
+            ShowAtPosition={200}
+            EasingType='easeOutCubic'
+            AnimationDuration={300}
+            ContainerClassName="backToTopIcon"
+          />
+        </div>
       </React.Fragment>
     );
   }

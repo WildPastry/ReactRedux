@@ -14,6 +14,16 @@
   margin-right: 13px;
 }
 
+.backToTop {
+  position: fixed;
+  right: 50px;
+  top: 50px;
+}
+
+.backToTopIcon {
+  background-color: rgba(30, 30, 30, 0.850) !important;
+}
+
 .undoIcon {
   color: $lightGrey;
   cursor: pointer;
@@ -25,6 +35,12 @@
   color: $lightGrey;
   cursor: pointer;
   font-size: 40px;
+}
+
+.prevIcon:hover,
+.nextIcon:hover,
+.undoIcon:hover {
+  color: $spotGrey;
 }
 
 // INDIVIDUAL FA ICONS
@@ -96,9 +112,10 @@
   color: #01c5ff;
 }
 
-.fa-envelope:hover{
+.fa-envelope:hover {
   color: $spotGrey;
 }
+
 // ICON ANIMATION
 .slow-spin {
   -webkit-animation: fa-spin 4s infinite linear;

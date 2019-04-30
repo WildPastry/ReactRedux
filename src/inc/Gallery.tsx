@@ -117,14 +117,14 @@ class Gallery extends Component<any, any> {
                 />
                 <div className='flex wrap'>
                 <p>{singleProject.name}</p>
-                <p><span className='textSpotGrey text300'>
+                {/* <p><span className='textSpotGrey text300'>
                   {singleProject.fields[0]}
                   <span className='textLightGrey text700'> / </span>
                   {singleProject.fields[1]}
                   <span className='textLightGrey text700'> / </span>
                   {singleProject.fields[2]}
                   </span>
-                </p>
+                </p> */}
                 </div>
               </div>
             )

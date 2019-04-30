@@ -46,20 +46,9 @@ class Project extends Component<any, any> {
 
   componentDidMount() {
     console.log('Project component loaded...');
-    // console.log(this.state.currentProjectImages);
-    // console.log(this.state.currentProjectImages[0]['src']);
-    // console.log(this.state.currentProjectImages[0]['id']);
-    // var imageSrc = this.state.currentProjectImages[0]['src'];
-    // console.log(imageSrc);
-    // var imageId = this.state.currentProjectImages[0]['id'];
-    // console.log(imageId);
   }
 
   render() {
-    // var imageSrc = this.state.currentProjectImages['src'];
-    // console.log(imageSrc);
-    // var imageId = this.state.currentProjectImages['id'];
-    // console.log(imageId);
     return (
       <React.Fragment>
         {/* DESCRIPTION */}
@@ -72,11 +61,11 @@ class Project extends Component<any, any> {
           </div>
           {/* PROJECT DETAILS */}
           <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
-            <h2 className='marBot text300 textLightGrey'>PROJECT DETAILS</h2>
+            <h1 className='marBot text300 textGrey'>PROJECT DETAILS</h1>
             <ul>
               <li className='projectListItem'>
                 FIELDS&nbsp;&nbsp;
-                <span className='textWhite text700'>
+                <span className='textWhite text300'>
                   {this.state.currentProjectFields[0]}
                   <span className='textLightGrey text700'> / </span>
                   {this.state.currentProjectFields[1]}
@@ -86,15 +75,15 @@ class Project extends Component<any, any> {
               </li>
               <li className='projectListItem'>
                 CLIENT&nbsp;&nbsp;
-                <span className='textWhite text700'>{this.state.currentProjectClient}</span>
+                <span className='textWhite text300'>{this.state.currentProjectClient}</span>
               </li>
               <li className='projectListItem'>
                 TIMELINE&nbsp;&nbsp;
-                <span className='textWhite text700'>{this.state.currentProjectTimeline}</span>
+                <span className='textWhite text300'>{this.state.currentProjectTimeline}</span>
               </li>
               <li className='projectListItem'>
                 WEBSITE&nbsp;&nbsp;
-                <span className='textWhite text700'>{this.state.currentProjectWebsite}</span>
+                <span className='textWhite text300'>{this.state.currentProjectWebsite}</span>
               </li>
             </ul>
             <div className='prevNextIconWrap'>

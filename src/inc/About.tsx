@@ -8,7 +8,7 @@ class About extends Component {
     return (
       <React.Fragment>
         <div className='row'>
-          <div className='aboutWrap col-xs-12 col-sm-6 col-md-6 col-lg-6'>
+          <div className='colWrap col-xs-12 col-sm-6 col-md-6 col-lg-6'>
             <h2 className='marBot'>about me</h2>
             <p>
               Experienced Web and Graphic Designer from Christchurch, New Zealand. Currently
