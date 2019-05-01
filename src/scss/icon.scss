@@ -5,33 +5,41 @@
 // FA
 .faIcon {
   cursor: pointer;
-  font-size: 35px;
+  font-size: 30px;
   margin-right: 20px;
 }
 
 // PROJECT
 .projectIcon {
-  font-size: 35px;
+  font-size: 30px;
   margin-right: 20px;
 }
 
 .gridIcon {
   color: $lightGrey;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .prevIcon,
 .nextIcon {
   color: $lightGrey;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .prevIcon:hover,
 .nextIcon:hover,
 .gridIcon:hover {
   color: $spotGrey;
+}
+
+// FOOTER
+.footerIcon {
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 13px;
+  margin-top: 13px;
 }
 
 // SCROLL UP

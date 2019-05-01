@@ -17,6 +17,7 @@ import {
   faChevronRight,
   faChevronCircleUp,
   faTh,
+  faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
 library.add(
@@ -27,7 +28,8 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faChevronCircleUp,
-  faTh
+  faTh,
+  faMapMarkerAlt
 );
 
 class App extends Component<any, any> {
