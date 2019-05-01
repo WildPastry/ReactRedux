@@ -1,0 +1,14 @@
+// IMPORT
+@import 'variables';
+@import 'mixins';
+
+@media screen and (max-width: 576px) {
+  .right {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .lineThinFooter {
+    margin-top: 10px;
+  }
+}

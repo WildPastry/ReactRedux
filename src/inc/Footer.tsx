@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import configData from './../data/config.json';
-// import { ReactComponent as IconWindy } from './../icon/weather/iconWindy.svg';
-// import { ReactComponent as IconSunny } from './../icon/weather/iconSunny.svg';
-// import { ReactComponent as IconPartlyCloudy } from './../icon/weather/iconPartlyCloudy.svg';
+import { ReactComponent as IconCloudy } from './../icon/weather/iconCloudy.svg';
+import { ReactComponent as IconPartlyCloudy } from './../icon/weather/iconPartlyCloudy.svg';
+import { ReactComponent as IconRainbow } from './../icon/weather/iconRainbow.svg';
+import { ReactComponent as IconRainy } from './../icon/weather/iconRainy.svg';
+import { ReactComponent as IconSnowy } from './../icon/weather/iconSnowy.svg';
+import { ReactComponent as IconSunny } from './../icon/weather/iconSunny.svg';
+import { ReactComponent as IconWindy } from './../icon/weather/iconWindy.svg';
 
-var lat = -41.2865,
-  lng = 174.7762;
 const cors = (configData as any).CORS;
 const skyKey = (configData as any).SKYKEY;
 const request = (configData as any).REQUEST;
@@ -18,48 +20,59 @@ class Footer extends Component<any, any> {
     this.state = {
       weather: [],
       currentWeather: '',
+      currentLat: -41.2865,
+      currentLng: 174.7762,
       geo: false,
       isLoaded: false
     };
-    // this.locationReady = this.locationReady.bind(this);
-    // this.getLocation = this.getLocation.bind(this);
-    // this.showPosition = this.showPosition.bind(this);
+    this.locationReady = this.locationReady.bind(this);
+    this.getLocation = this.getLocation.bind(this);
+    this.showPosition = this.showPosition.bind(this);
   }
 
-  // getLocation() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(this.showPosition);
-  //   } else {
-  //     console.log('geolocation unavailable...');
-  //   }
-  // }
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.showPosition);
+    } else {
+      console.log('geolocation unavailable...');
+    }
+  }
 
-  // showPosition(position: {
-  //   coords: {
-  //     latitude: { toFixed: (arg0: number) => string };
-  //     longitude: { toFixed: (arg0: number) => string };
-  //   };
-  // }) {
-  //   lat = position.coords.latitude.toFixed(4);
-  //   lng = position.coords.longitude.toFixed(4);
-  //   this.locationReady();
-  // }
+  showPosition(position: {
+    coords: {
+      latitude: { toFixed: (arg0: number) => string };
+      longitude: { toFixed: (arg0: number) => string };
+    };
+  }) {
+    var lat = position.coords.latitude.toFixed(4);
+    var lng = position.coords.longitude.toFixed(4);
+    this.setState({
+      currentLat: lat,
+      currentLng: lng
+    });
+    this.locationReady();
+  }
 
-  // locationReady() {
-  //   this.setState({
-  //     geo: true
-  //   });
-  //   this.getData();
-  // }
+  locationReady() {
+    this.setState({
+      geo: true,
+    });
+    this.getData();
+  }
 
   getData() {
-    fetch(cors + request + skyKey + '/' + lat + ',' + lng + units)
+    fetch(cors + request + skyKey + '/' + this.state.currentLat + ',' + this.state.currentLng + units)
       .then(res => res.json())
       .then(jsonp => {
-        this.setState({
-          weather: jsonp,
-          isLoaded: true
-        });
+        this.setState(
+          {
+            weather: jsonp,
+            isLoaded: true
+          },
+          () => {
+            this.setWeatherIcon();
+          }
+        );
       })
       .catch(error => {
         if (error.res) {
@@ -72,17 +85,46 @@ class Footer extends Component<any, any> {
       });
   }
 
-  componentDidMount() {
+  setWeatherIcon() {
+    this.setState({
+      currentWeather: this.state.weather.currently.icon
+    });
+  }
+
+  componentWillMount() {
     this.getData();
-    // this.getLocation();
+  }
+
+  componentDidMount() {
     console.log('Footer component loaded...');
   }
+
   render() {
     let weatherDisplay;
     var currentWeather = this.state.currentWeather;
-
     var weather = this.state.weather;
     var { isLoaded } = this.state;
+    if (currentWeather === 'cloudy') {
+      weatherDisplay = <IconCloudy />;
+    } else if (currentWeather === 'partly-cloudy-day') {
+      weatherDisplay = <IconPartlyCloudy />;
+    } else if (currentWeather === 'fog') {
+      weatherDisplay = <IconRainbow />;
+    } else if (currentWeather === 'rain') {
+      weatherDisplay = <IconRainy />;
+    } else if (currentWeather === 'snow') {
+      weatherDisplay = <IconSnowy />;
+    } else if (currentWeather === 'clear-day') {
+      weatherDisplay = <IconSunny />;
+    } else if (currentWeather === 'wind') {
+      weatherDisplay = <IconWindy />;
+    } else if (currentWeather === 'sleet') {
+      weatherDisplay = <IconSnowy />;
+    } else if (currentWeather === 'clear-night') {
+      weatherDisplay = <IconSunny />;
+    } else if (currentWeather === 'partly-cloudy-night') {
+      weatherDisplay = <IconPartlyCloudy />;
+    }
     if (!isLoaded) {
       return (
         <React.Fragment>
@@ -101,9 +143,10 @@ class Footer extends Component<any, any> {
                 <FontAwesomeIcon icon={['fab', 'linkedin-in']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'facebook-square']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'pinterest']} className='faIcon' />
+                <FontAwesomeIcon icon={['fab', 'twitter']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'github']} className='faIcon' />
-                <FontAwesomeIcon icon={['fab', 'facebook-messenger']} className='faIcon' />
                 <FontAwesomeIcon icon={['fas', 'envelope']} className='faIcon' />
+                <FontAwesomeIcon icon={['fab', 'facebook-messenger']} className='faIcon' />
               </div>
 
               {/* ARCHIVES */}
@@ -142,7 +185,7 @@ class Footer extends Component<any, any> {
                 <div className='flex'>
                   {weatherDisplay}
                   <h2 className='footerTemp'>{Math.trunc(weather.currently.temperature) + '°'} </h2>
-                  <FontAwesomeIcon icon={['fas', 'map-marker-alt']} className='footerIcon' />
+                  <div className='footerIconWrap' onClick={this.getLocation}><FontAwesomeIcon icon={['fas', 'map-marker-alt']} className='footerIcon' /></div>
                   {/* <p className='footerCopyright'>Wellington</p> */}
                   <p className='footerCopyright textSpotGrey'>&copy; mike parker 2019</p>
                 </div>

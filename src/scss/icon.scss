@@ -11,7 +11,7 @@
 
 // PROJECT
 .projectIcon {
-  font-size: 30px;
+  font-size: 35px;
   margin-right: 20px;
 }
 
@@ -40,6 +40,9 @@
   font-size: 22px;
   margin-left: 13px;
   margin-top: 13px;
+  :hover {
+    color: $spotGrey;
+  }
 }
 
 // SCROLL UP
@@ -129,9 +132,3 @@
 // .fa-envelope:hover {
 //   color: $spotGrey;
 // }
-
-// WEATHER
-.weatherIcon {
-  height: 30px;
-  width: 30px;
-}

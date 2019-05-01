@@ -48,7 +48,7 @@ class App extends Component<any, any> {
       currentProjectImages: [],
       currentProjectIcons: [],
       currentProjectIntro: '',
-      currentProjectDesc: '',
+      currentProjectDesc: ''
     };
     this.changePage = this.changePage.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
@@ -119,13 +119,13 @@ class App extends Component<any, any> {
           <React.Fragment>{display}</React.Fragment>
         </div>
         <Footer />
-          <ScrollUpButton
-            StopPosition={0}
-            ShowAtPosition={200}
-            EasingType='easeOutCubic'
-            AnimationDuration={300}
-            ContainerClassName="scrollUpIcon"
-          />
+        <ScrollUpButton
+          StopPosition={0}
+          ShowAtPosition={200}
+          EasingType='easeOutCubic'
+          AnimationDuration={300}
+          ContainerClassName='scrollUpIcon'
+        />
       </React.Fragment>
     );
   }

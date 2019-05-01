@@ -2,24 +2,6 @@
 @import 'variables';
 @import 'mixins';
 
-.showbox {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.div-icons {
-  position: absolute;
-  display: block;
-  width: 620px;
-  text-align: center;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .icon {
   width: 50px;
   height: 50px;

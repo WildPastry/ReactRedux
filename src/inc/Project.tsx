@@ -16,28 +16,26 @@ class Project extends Component<any, any> {
       currentProjectImages: this.props.currentProjectImages,
       currentProjectIcons: this.props.currentProjectIcons,
       currentProjectIntro: this.props.currentProjectIntro,
-      currentProjectDesc: this.props.currentProjectDesc,
+      currentProjectDesc: this.props.currentProjectDesc
     };
     this.changeProject = this.changeProject.bind(this);
     this.changePageFromProject = this.changePageFromProject.bind(this);
   }
 
   changeProject() {
-    this.setState(
-      {
-        currentProject: '',
-        currentProjectName: '',
-        currentProjectFields: [],
-        currentProjectClient: '',
-        currentProjectTimeline: '',
-        currentProjectWebsite: '',
-        currentProjectThumb: '',
-        currentProjectImages: [],
-        currentProjectIcons: [],
-        currentProjectIntro: '',
-        currentProjectDesc: '',
-      },
-    );
+    this.setState({
+      currentProject: '',
+      currentProjectName: '',
+      currentProjectFields: [],
+      currentProjectClient: '',
+      currentProjectTimeline: '',
+      currentProjectWebsite: '',
+      currentProjectThumb: '',
+      currentProjectImages: [],
+      currentProjectIcons: [],
+      currentProjectIntro: '',
+      currentProjectDesc: ''
+    });
   }
 
   changePageFromProject(value: any) {
@@ -53,15 +51,16 @@ class Project extends Component<any, any> {
       <React.Fragment>
         {/* DESCRIPTION */}
         <div className='row wrap'>
-          <div className='colWrap col-xs-12 col-sm-12 col-md-7 col-lg-7'>
+          <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
             <h1 className='marBot'>{this.state.currentProjectName}</h1>
+          </div>
+          <div className='colWrap col-xs-12 col-sm-12 col-md-7 col-lg-7'>
             <h2 className='textSpotGrey text300'>{this.state.currentProjectIntro}</h2>
             <br />
             <p>{this.state.currentProjectDesc}</p>
           </div>
           {/* PROJECT DETAILS */}
           <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
-            <h1 className='marBot text300 textGrey'>PROJECT DETAILS</h1>
             <ul>
               <li className='projectListItem'>
                 FIELDS&nbsp;&nbsp;
@@ -83,12 +82,16 @@ class Project extends Component<any, any> {
               </li>
               <li className='projectListItem'>
                 WEBSITE&nbsp;&nbsp;
-                <span className='textWhite text300'>{this.state.currentProjectWebsite}</span>
+                <span className='textWhite text300'><a href='index.html'>{this.state.currentProjectWebsite}</a></span>
               </li>
             </ul>
             <div className='prevNextIconWrap'>
               {this.state.currentProjectIcons.map((currentIcon: any) => (
-                <FontAwesomeIcon key={currentIcon['id']} icon={['fab', currentIcon['src']]} className='projectIcon' />
+                <FontAwesomeIcon
+                  key={currentIcon['id']}
+                  icon={['fab', currentIcon['src']]}
+                  className='projectIcon'
+                />
               ))}
             </div>
           </div>
@@ -106,16 +109,16 @@ class Project extends Component<any, any> {
         </div>
         {/* IMAGES */}
         <div className='row'>
-          {this.state.currentProjectImages.map(
-            (currentImage: { [x: string]: string; }) => (
-              <div key={currentImage['id']} className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-                <img
-                  src={require('./../img/project/' + currentImage['src'])}
-                  alt={this.state.currentProjectName}
-                />
-              </div>
-            )
-          )}
+          {this.state.currentProjectImages.map((currentImage: { [x: string]: string }) => (
+            <div
+              key={currentImage['id']}
+              className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <img
+                src={require('./../img/project/' + currentImage['src'])}
+                alt={this.state.currentProjectName}
+              />
+            </div>
+          ))}
         </div>
       </React.Fragment>
     );

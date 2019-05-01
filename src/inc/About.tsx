@@ -15,8 +15,10 @@ class About extends Component<any, any> {
     return (
       <React.Fragment>
         <div className='row'>
-          <div className='colWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+          <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
             <h2 className='marBot'>about me</h2>
+          </div>
+          <div className='colWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
             <p>
               Experienced Web and Graphic Designer from Christchurch, New Zealand. Currently
               upskilling further in Web and UX development at Yoobee School of Design and have
@@ -28,7 +30,24 @@ class About extends Component<any, any> {
               <br />
               <br />
             </p>
-            <h3 className='textSpotGrey' x-ms-format-detection='none'>Call / Text (+64) 022 5025 485</h3>
+            <h3 className='textSpotGrey' x-ms-format-detection='none'>
+              Call / Text <span className='textPeach'>+64 022 5025 485</span>
+            </h3>
+            <h2 className='marBot marTop'>clients</h2>
+                <ul className='footerListWrap'>
+                  <li>
+                    <a href='index.html'>Wagamana, Yoobee School of Design</a>
+                  </li>
+                  <li>
+                    <a href='index.html'>Tourism NZ, Yoobee School of Design</a>
+                  </li>
+                  <li>
+                    <a href='index.html'>Hanover UK, Solcroft UK</a>
+                  </li>
+                  <li>
+                    <a href='index.html'>English Cricket Board, Solcroft UK</a>
+                  </li>
+                </ul>
           </div>
           <div className='colWrap col-xs-12 col-sm-6 col-md-8 col-lg-8'>
             <div id='space' ref={this.space} />
