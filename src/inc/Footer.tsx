@@ -89,6 +89,7 @@ class Footer extends Component<any, any> {
           <div className='footer'>
             <div className='line' />
             <div className='row'>
+
               <div className='colWrap marBot col-xs-12 col-sm-12 col-md-6 col-lg-6'>
                 <FontAwesomeIcon icon={['fab', 'facebook-square']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'linkedin-in']} className='faIcon' />
@@ -96,33 +97,32 @@ class Footer extends Component<any, any> {
                 <FontAwesomeIcon icon={['fab', 'github']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'facebook-messenger']} className='faIcon' />
                 <FontAwesomeIcon icon={['fas', 'envelope']} className='faIcon' />
-                {/* <FontAwesomeIcon
-                  icon={['fas', 'star-of-life']}
-                  className='faIcon textPeach slow-spin'
-                /> */}
               </div>
+
               <div className='colWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>contact details</h4>
                 <ul className='footerListWrap'>
-                  <li>+64 022 5025 485</li>
-                  <li>mike@mparker.co.nz</li>
-                  <li>WildPastry@WhatsApp</li>
+                  <li x-ms-format-detection="none">+64 022 5025 485</li>
+                  <li><a href="mailto:mykdsn@gmail.com">mike@mparker.co.nz</a></li>
+                  {/* <li><a href="https://wa.me/64225025485">WildPastry@WhatsApp</a></li> */}
                 </ul>
               </div>
+
               <div className='colWrap col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>archived websites</h4>
                 <ul className='footerListWrap'>
-                  <li>fear.mparker.co.nz</li>
-                  <li>sok.mparker.co.nz</li>
-                  <li>nat.mparker.co.nz</li>
-                  <li>mykdesign.mparker.co.nz</li>
+                  <li><a href="index.html">fear.mparker.co.nz</a></li>
+                  <li><a href="index.html">sok.mparker.co.nz</a></li>
+                  <li><a href="index.html">nat.mparker.co.nz</a></li>
+                  <li><a href="index.html">myk.mparker.co.nz</a></li>
                 </ul>
               </div>
+              
             </div>
-            <div className='row wrapEnd'>
+            <div className='row'>
               <div className='footerWrap'>
                 <div className='lineThin' />
-                <div className='flex wrapEnd'>
+                <div className='flex'>
                   <div id='weatherIcon'>
                     <img
                       className='weatherIcon'
@@ -131,7 +131,7 @@ class Footer extends Component<any, any> {
                     />
                   </div>
                   <h4 className='footerItem'>{Math.trunc(weather.currently.temperature) + '°'} </h4>
-                  <p className='footerItem textPeach'>&copy; mike parker 2019</p>
+                  <p className='footerItem textSpotGrey'>&copy; mike parker 2019</p>
                 </div>
               </div>
             </div>

@@ -99,7 +99,7 @@ class Project extends Component<any, any> {
           <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
             <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
             <div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
-              <FontAwesomeIcon icon={['fas', 'undo-alt']} className='undoIcon' />
+              <FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
             </div>
             <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
           </div>

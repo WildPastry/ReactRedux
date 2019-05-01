@@ -2,32 +2,23 @@
 @import 'variables';
 @import 'mixins';
 
-// FA ICONS
+// FA
 .faIcon {
   cursor: pointer;
   font-size: 25px;
   margin-right: 13px;
 }
 
+// PROJECT
 .projectIcon {
   font-size: 25px;
   margin-right: 13px;
 }
 
-.backToTop {
-  position: fixed;
-  right: 50px;
-  top: 50px;
-}
-
-.backToTopIcon {
-  background-color: rgba(30, 30, 30, 0.850) !important;
-}
-
-.undoIcon {
+.gridIcon {
   color: $lightGrey;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .prevIcon,
@@ -39,11 +30,22 @@
 
 .prevIcon:hover,
 .nextIcon:hover,
-.undoIcon:hover {
+.gridIcon:hover {
   color: $spotGrey;
 }
 
-// INDIVIDUAL FA ICONS
+// SCROLL UP
+.scrollUpIcon {
+  background: $grey-t !important;
+  svg {
+    fill: $white !important;
+  }
+  :hover {
+    fill: $spotGrey !important;
+  }
+}
+
+// BRAND
 .fa-adobe {
   color: #fb3e44;
 }
@@ -92,35 +94,33 @@
   color: #f05033;
 }
 
-.fa-facebook-square:hover {
-  color: #5f83cd;
-}
-
-.fa-linkedin-in:hover {
-  color: #098cd3;
-}
-
-.fa-pinterest:hover {
-  color: #e60023;
-}
-
-.fa-github:hover {
+.faIcon:hover {
   color: $spotGrey;
 }
 
-.fa-facebook-messenger:hover {
-  color: #01c5ff;
-}
+// .fa-facebook-square:hover {
+//   color: #5f83cd;
+// }
 
-.fa-envelope:hover {
-  color: $spotGrey;
-}
+// .fa-linkedin-in:hover {
+//   color: #098cd3;
+// }
 
-// ICON ANIMATION
-.slow-spin {
-  -webkit-animation: fa-spin 4s infinite linear;
-  animation: fa-spin 4s infinite linear;
-}
+// .fa-pinterest:hover {
+//   color: #e60023;
+// }
+
+// .fa-github:hover {
+//   color: $spotGrey;
+// }
+
+// .fa-facebook-messenger:hover {
+//   color: #01c5ff;
+// }
+
+// .fa-envelope:hover {
+//   color: $spotGrey;
+// }
 
 // WEATHER
 .weatherIcon {

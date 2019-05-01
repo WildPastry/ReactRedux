@@ -9,3 +9,11 @@
   text-decoration: $deco;
   list-style-type: $listo;
 }
+
+// TRANSITIONS
+@mixin transitions ($web: null, $moz: null, $o: null, $all: null) {
+  -webkit-transition: $web;
+  -moz-transition: $moz;
+  -o-transition: $o;
+  transition: $all;
+}

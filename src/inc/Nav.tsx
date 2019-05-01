@@ -20,7 +20,7 @@ class Nav extends Component<any, any> {
       <React.Fragment>
         <div className='flex wrap pad navWrap'>
           <div>
-            <p className='brand textPeach' onClick={this.changePageFromNav.bind(this, 'gallery')}>
+            <p className='brand textSpotGrey'>
               mike parker | portfolio
             </p>
           </div>
@@ -28,9 +28,9 @@ class Nav extends Component<any, any> {
             <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'gallery')}>
               gallery
             </h4>
-            <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'space')}>
+            {/* <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'space')}>
               space
-            </h4>
+            </h4> */}
             <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'about')}>
               about
             </h4>

@@ -68,13 +68,13 @@
 }
 
 // NAV
-.brand {
-  cursor: pointer;
-}
+// .brand {
+//   cursor: pointer;
+// }
 
-.brand:hover {
-  color: $spotGrey;
-}
+// .brand:hover {
+//   color: $yellow;
+// }
 
 .navWrap {
   line-height: 30px;
@@ -101,11 +101,10 @@
   height: 50vh;
   padding-left: 5px;
   padding-right: 5px;
-}
-
-#space canvas {
-  height: 100% !important;
-  width: 100% !important;
+  canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
 }
 
 // GALLERY
@@ -145,11 +144,6 @@
   margin-top: 20px;
 }
 
-// ABOUT
-// .aboutWrap {
-//   padding: 0 10% 0 10%;
-// }
-
 // FOOTER
 .footer {
   flex-shrink: 0;
@@ -165,10 +159,6 @@
   margin-top: 10px;
 }
 
-.footerListWrap li:hover {
-  color: $peach;
-}
-
 .footerItem {
   margin-left: 13px;
 }
@@ -176,12 +166,3 @@
 .copyright {
   border-top: 1.5px solid $peach;
 }
-
-// SCROLL
-// .hideScrollButton {
-//   display: none;
-// }
-
-// .showScrollButton {
-//   display: block;
-// }

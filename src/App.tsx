@@ -16,7 +16,8 @@ import {
   faUndoAlt,
   faChevronLeft,
   faChevronRight,
-  faChevronCircleUp
+  faChevronCircleUp,
+  faTh,
 } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
 library.add(
@@ -26,7 +27,8 @@ library.add(
   faUndoAlt,
   faChevronLeft,
   faChevronRight,
-  faChevronCircleUp
+  faChevronCircleUp,
+  faTh
 );
 
 class App extends Component<any, any> {
@@ -46,20 +48,9 @@ class App extends Component<any, any> {
       currentProjectIcons: [],
       currentProjectIntro: '',
       currentProjectDesc: '',
-      isTop: true,
     };
-    this.scrollTop = this.scrollTop.bind(this);
-    this.onScroll = this.onScroll.bind(this);
     this.changePage = this.changePage.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
-  }
-
-  scrollTop() {
-    window.scrollTo(0, 0);
-  }
-
-  onScroll(isTop: boolean) {
-    this.setState({ isTop });
   }
 
   changePage(value: any) {
@@ -87,12 +78,6 @@ class App extends Component<any, any> {
 
   componentDidMount() {
     console.log('App loaded...');
-    document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 100;
-      if (isTop !== this.state.isTop) {
-        this.onScroll(isTop);
-      }
-    });
   }
 
   render() {
@@ -135,15 +120,13 @@ class App extends Component<any, any> {
           <React.Fragment>{display}</React.Fragment>
         </div>
         <Footer />
-        <div className='backToTop' onClick={this.scrollTop}>
           <ScrollUpButton
             StopPosition={0}
             ShowAtPosition={200}
             EasingType='easeOutCubic'
             AnimationDuration={300}
-            ContainerClassName="backToTopIcon"
+            ContainerClassName="scrollUpIcon"
           />
-        </div>
       </React.Fragment>
     );
   }
