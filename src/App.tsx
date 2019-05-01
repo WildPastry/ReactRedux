@@ -4,7 +4,6 @@ import Type from './inc/Type';
 import Gallery from './inc/Gallery';
 import Project from './inc/Project';
 import About from './inc/About';
-import Space from './inc/Space';
 import Footer from './inc/Footer';
 import projectData from './data/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
@@ -107,8 +106,6 @@ class App extends Component<any, any> {
           changePageFromProject={this.changePage}
         />
       );
-    } else if (currentPage === 'space') {
-      display = <Space />;
     } else if (currentPage === 'about') {
       display = <About />;
     }

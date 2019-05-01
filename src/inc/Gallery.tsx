@@ -27,6 +27,7 @@ class Gallery extends Component<any, any> {
       projectDesc: value[10],
     };
     this.props.changePageFromGallery(options);
+    window.scrollTo(0, 0); 
   }
 
   filter(value: any) {

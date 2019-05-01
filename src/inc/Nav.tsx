@@ -28,9 +28,6 @@ class Nav extends Component<any, any> {
             <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'gallery')}>
               gallery
             </h4>
-            {/* <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'space')}>
-              space
-            </h4> */}
             <h4 className='navItem' onClick={this.changePageFromNav.bind(this, 'about')}>
               about
             </h4>
