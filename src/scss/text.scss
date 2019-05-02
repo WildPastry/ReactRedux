@@ -3,6 +3,10 @@
 @import 'mixins';
 
 // TEXT COLOURS
+.textBlue {
+  color: $blue;
+}
+
 .textGreen {
   color: $green;
 }
@@ -33,6 +37,12 @@
 
 .textYellow {
   color: $yellow;
+}
+
+.textThis {
+  color: $peach;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 // TEXT BG COLOURS

@@ -5,12 +5,13 @@ import Gallery from './inc/Gallery';
 import Project from './inc/Project';
 import About from './inc/About';
 import Footer from './inc/Footer';
+import Theme from './inc/Theme';
 import projectData from './data/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
-  faStarOfLife,
+  faPaintRoller,
   faEnvelope,
   faUndoAlt,
   faChevronLeft,
@@ -22,7 +23,7 @@ import {
 import './scss/main.scss';
 library.add(
   fab,
-  faStarOfLife,
+  faPaintRoller,
   faEnvelope,
   faUndoAlt,
   faChevronLeft,
@@ -36,8 +37,10 @@ class App extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      projects: projectData,
+      theme: false,
       currentPage: 'gallery',
+      imgTheme: 'imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4',
+      projects: projectData,
       currentProject: '',
       currentProjectName: '',
       currentProjectFields: [],
@@ -51,6 +54,7 @@ class App extends Component<any, any> {
       currentProjectDesc: ''
     };
     this.changePage = this.changePage.bind(this);
+    this.changeImageTheme = this.changeImageTheme.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
   }
 
@@ -58,6 +62,20 @@ class App extends Component<any, any> {
     this.setState({
       currentPage: value
     });
+  }
+
+  changeImageTheme() {
+    if (this.state.theme === false) {
+      this.setState({
+        theme: true,
+        imgTheme: 'imgWrapSwap col-xs-12 col-sm-6 col-md-4 col-lg-4'
+      });
+    } else {
+      this.setState({
+        theme: false,
+        imgTheme: 'imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'
+      });
+    }
   }
 
   changePageAndProject(value: any) {
@@ -79,6 +97,7 @@ class App extends Component<any, any> {
 
   componentDidMount() {
     console.log('App loaded...');
+    console.log(Theme);
   }
 
   render() {
@@ -88,7 +107,12 @@ class App extends Component<any, any> {
 
     if (currentPage === 'gallery') {
       display = (
-        <Gallery projectsFromApp={allProjects} changePageFromGallery={this.changePageAndProject} />
+        <Gallery
+          projectsFromApp={allProjects}
+          changePageFromGallery={this.changePageAndProject}
+          changeImageTheme={this.changeImageTheme}
+          imgTheme={this.state.imgTheme}
+        />
       );
     } else if (currentPage === 'project') {
       display = (

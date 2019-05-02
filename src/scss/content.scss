@@ -67,17 +67,33 @@
   padding: 5px;
 }
 
+// NAV
 .navWrap {
-  line-height: 30px;
+  align-items: center;
 }
 
 .navItem {
+  color: $spotGrey;
   cursor: pointer;
   margin-left: 13px;
+  border-bottom: 2px solid $grey;
+  padding-bottom: 3px;
 }
 
 .navItem:hover {
-  color: $peach;
+  color: $white;
+  border-bottom: 2px solid $peach;
+}
+
+.brand {
+  cursor: pointer;
+  border-bottom: 2px solid $grey;
+  padding-bottom: 3px;
+}
+
+.brand:hover {
+  border-bottom: 2px solid $peach;
+  color: $white;
 }
 
 // TYPE
@@ -89,7 +105,6 @@
 #space {
   cursor: pointer;
   height: 55vh;
-  // width: 100%;
   canvas {
     height: 100% !important;
     width: 100% !important;
@@ -97,18 +112,31 @@
 }
 
 // GALLERY
-.filterWrap {
+.galleryWrap {
   line-height: 30px;
   margin-bottom: 10px;
 }
 
+.galleryWrap:hover .galleryIcon {
+  color: $spotGrey;
+}
+
+.filterWrap {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .filterItem {
+  color: $spotGrey;
   cursor: pointer;
   margin-right: 13px;
+  border-bottom: 2px solid $grey;
+  padding-bottom: 3px;
 }
 
 .filterItem:hover {
-  color: $peach;
+  color: $white;
+  border-bottom: 2px solid $peach;
 }
 
 // PROJECT

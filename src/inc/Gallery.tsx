@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Gallery extends Component<any, any> {
   constructor(props: any) {
@@ -63,10 +64,10 @@ class Gallery extends Component<any, any> {
     return (
       <React.Fragment>
         {/* PROJECTS FILTER */}
-        <div className='row'>
+        <div className='row wrap'>
           <div className='filterWrap flex pad'>
             <h4 className='filterItem text700' onClick={this.filterReset}>
-              All
+              EVERYTHING
             </h4>
             <h4 className='filterItem' onClick={this.filter.bind(this, 'Branding')}>
               Branding
@@ -80,6 +81,9 @@ class Gallery extends Component<any, any> {
             <h4 className='filterItem' onClick={this.filter.bind(this, 'Web')}>
               Web
             </h4>
+          </div>
+          <div className='galleryWrap pad' onClick={this.props.changeImageTheme}>
+          <FontAwesomeIcon icon={['fas', 'paint-roller']} className='galleryIcon' />
           </div>
         </div>
         {/* PROJECTS MAP */}
@@ -98,7 +102,7 @@ class Gallery extends Component<any, any> {
               intro: string;
               desc: string;
             }) => (
-              <div key={singleProject.id} className='imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+              <div key={singleProject.id} className={this.props.imgTheme}>
                 <img
                   onClick={this.changePageFromGallery.bind(this, [
                     singleProject.id,

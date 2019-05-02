@@ -1,20 +1,37 @@
 // IMPORT
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 .imgWrap {
-	padding: 5px;
+  padding: 5px;
 }
 
 .imgWrap img {
-	cursor: pointer;
-	height: auto;
-	width: 100%;
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+  cursor: pointer;
+  height: auto;
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .imgWrap img:hover {
-	-webkit-filter: grayscale(0%);
-	filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.imgWrapSwap {
+  padding: 5px;
+}
+
+.imgWrapSwap img {
+  cursor: pointer;
+  height: auto;
+  width: 100%;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.imgWrapSwap img:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
