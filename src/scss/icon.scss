@@ -9,6 +9,10 @@
   margin-right: 20px;
 }
 
+.faIcon:hover {
+  color: $peach;
+}
+
 // GALLERY
 .galleryIcon {
   cursor: pointer;
@@ -48,7 +52,7 @@
   margin-left: 13px;
   margin-top: 13px;
   :hover {
-    color: $spotGrey;
+    color: $peach;
   }
 }
 
@@ -110,10 +114,6 @@
 
 .fa-gulp {
   color: #f05033;
-}
-
-.faIcon:hover {
-  color: $spotGrey;
 }
 
 // .fa-facebook-square:hover {

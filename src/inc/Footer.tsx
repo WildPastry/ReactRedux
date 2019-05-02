@@ -148,7 +148,6 @@ class Footer extends Component<any, any> {
                 <FontAwesomeIcon icon={['fas', 'envelope']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'facebook-messenger']} className='faIcon' />
               </div>
-
               {/* ARCHIVES */}
               <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className='marBot'>archives</h4>
@@ -181,14 +180,14 @@ class Footer extends Component<any, any> {
             {/* COPYRIGHT AND WEATHER */}
             <div className='row'>
               <div className='footerWrap'>
-              <p className='pad marBotFooter textSpotGrey'><span className='textThis'>this </span>portfolio powered by react</p>
+              <p className='pad marBotFooter textSpotGrey'><span className='textThis'>this </span>site powered by react + typescript</p>
                 <div className='lineThinFooter' />
                 <div className='flex'>
                   {weatherDisplay}
                   <h2 className='footerTemp'>{Math.trunc(weather.currently.temperature) + '°'} </h2>
                   <div className='footerIconWrap' onClick={this.getLocation}><FontAwesomeIcon icon={['fas', 'map-marker-alt']} className='footerIcon' /></div>
                   {/* <p className='footerCopyright'>Wellington</p> */}
-                  <p className='footerCopyright textSpotGrey'>&copy; mike parker 2019</p>
+                  <p className='footerCopyright textWhite'>&copy; mike parker 2019</p>
                 </div>
               </div>
             </div>

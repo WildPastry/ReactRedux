@@ -33,7 +33,7 @@ class About extends Component<any, any> {
             <h3 className='textSpotGrey' x-ms-format-detection='none'>
               Call / Text <span className='textPeach'>+64 022 5025 485</span>
             </h3>
-            <h2 className='marBot marTop'>clients</h2>
+            {/* <h2 className='marBot marTop'>clients</h2>
                 <ul className='footerListWrap'>
                   <li>
                     <a href='index.html'>Wagamana, Yoobee School of Design</a>
@@ -47,7 +47,7 @@ class About extends Component<any, any> {
                   <li>
                     <a href='index.html'>English Cricket Board, Solcroft UK</a>
                   </li>
-                </ul>
+                </ul> */}
           </div>
           <div className='colWrap col-xs-12 col-sm-6 col-md-8 col-lg-8'>
             <div id='space' ref={this.space} />

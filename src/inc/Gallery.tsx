@@ -56,6 +56,18 @@ class Gallery extends Component<any, any> {
     );
   }
 
+  // setFilterItemActive() {
+  //   if (this.props.currentPage === 'gallery') {
+  //     this.setState({
+  //       filterALL: 'filterItem filterItemActive text700',
+  //     });
+  //   } else if (this.props.currentPage === 'about') {
+  //     this.setState({
+  //       filterALL: 'filterItem text700',
+  //     });
+  //   }
+  // }
+
   componentDidMount() {
     console.log('Gallery component loaded...');
   }
@@ -66,24 +78,24 @@ class Gallery extends Component<any, any> {
         {/* PROJECTS FILTER */}
         <div className='row wrap'>
           <div className='filterWrap flex pad'>
-            <h4 className='filterItem text700' onClick={this.filterReset}>
+            <h4 className='filterItem filterItemActive text700' onClick={this.filterReset}>
               EVERYTHING
             </h4>
             <h4 className='filterItem' onClick={this.filter.bind(this, 'Branding')}>
-              Branding
+              branding
             </h4>
             <h4 className='filterItem' onClick={this.filter.bind(this, 'Graphic')}>
-              Graphic
+              graphic
             </h4>
             <h4 className='filterItem' onClick={this.filter.bind(this, 'UX')}>
-              UX
+              ux
             </h4>
             <h4 className='filterItem' onClick={this.filter.bind(this, 'Web')}>
-              Web
+              web
             </h4>
           </div>
           <div className='galleryWrap pad' onClick={this.props.changeImageTheme}>
-          <FontAwesomeIcon icon={['fas', 'paint-roller']} className='galleryIcon' />
+          <FontAwesomeIcon icon={['fas', 'palette']} className='galleryIcon' />
           </div>
         </div>
         {/* PROJECTS MAP */}

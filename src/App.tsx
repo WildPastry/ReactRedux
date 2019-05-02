@@ -11,7 +11,8 @@ import ScrollUpButton from 'react-scroll-up-button';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
-  faPaintRoller,
+  faFillDrip,
+  faPalette,
   faEnvelope,
   faUndoAlt,
   faChevronLeft,
@@ -23,7 +24,8 @@ import {
 import './scss/main.scss';
 library.add(
   fab,
-  faPaintRoller,
+  faFillDrip,
+  faPalette,
   faEnvelope,
   faUndoAlt,
   faChevronLeft,
@@ -138,7 +140,10 @@ class App extends Component<any, any> {
     return (
       <React.Fragment>
         <div className='container-fluid'>
-          <Nav changePageFromNav={this.changePage} />
+          <Nav
+            changePageFromNav={this.changePage}
+            currentPage={this.state.currentPage}
+          />
           <Type />
           <React.Fragment>{display}</React.Fragment>
         </div>
