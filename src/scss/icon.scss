@@ -14,10 +14,25 @@
 }
 
 // GALLERY
-.galleryIcon {
+.galleryFillIcon {
   cursor: pointer;
   font-size: 30px;
+  color: $white;
+  margin-left: 20px;
+}
+
+.galleryFillIcon:hover {
   color: $peach;
+}
+
+.galleryRGBIcon {
+  cursor: pointer;
+  height: 30px;
+  color: $yellow;
+}
+
+.galleryRGBIcon:hover {
+  opacity: 0.6;
 }
 
 // PROJECT

@@ -5,7 +5,12 @@ class Gallery extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      projects: this.props.projectsFromApp
+      projects: this.props.projectsFromApp,
+      everything: 'filterItem filterItemActive text700',
+      branding: 'filterItem',
+      graphic: 'filterItem',
+      ux: 'filterItem',
+      web: 'filterItem'
     };
     this.filter = this.filter.bind(this);
     this.filterReset = this.filterReset.bind(this);
@@ -25,10 +30,10 @@ class Gallery extends Component<any, any> {
       projectImages: value[7],
       projectIcons: value[8],
       projectIntro: value[9],
-      projectDesc: value[10],
+      projectDesc: value[10]
     };
     this.props.changePageFromGallery(options);
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }
 
   filter(value: any) {
@@ -40,6 +45,39 @@ class Gallery extends Component<any, any> {
       }
     );
     console.log('Filtered by: ' + value);
+    if (value === 'Branding') {
+      this.setState({
+        everything: 'filterItem text700',
+        branding: 'filterItem filterItemActive',
+        graphic: 'filterItem',
+        ux: 'filterItem',
+        web: 'filterItem'
+      });
+    } else if (value === 'Graphic') {
+      this.setState({
+        everything: 'filterItem',
+        branding: 'filterItem',
+        graphic: 'filterItem filterItemActive',
+        ux: 'filterItem',
+        web: 'filterItem'
+      });
+    } else if (value === 'UX') {
+      this.setState({
+        everything: 'filterItem',
+        branding: 'filterItem',
+        graphic: 'filterItem',
+        ux: 'filterItem filterItemActive',
+        web: 'filterItem'
+      });
+    } else if (value === 'Web') {
+      this.setState({
+        everything: 'filterItem',
+        branding: 'filterItem',
+        graphic: 'filterItem',
+        ux: 'filterItem',
+        web: 'filterItem filterItemActive'
+      });
+    }
     this.setState({
       projects: projectsFiltered
     });
@@ -48,25 +86,18 @@ class Gallery extends Component<any, any> {
   filterReset() {
     this.setState(
       {
-        projects: this.props.projectsFromApp
+        projects: this.props.projectsFromApp,
+        everything: 'filterItem filterItemActive text700',
+        branding: 'filterItem',
+        graphic: 'filterItem',
+        ux: 'filterItem',
+        web: 'filterItem'
       },
       () => {
         console.log('Reset filter');
       }
     );
   }
-
-  // setFilterItemActive() {
-  //   if (this.props.currentPage === 'gallery') {
-  //     this.setState({
-  //       filterALL: 'filterItem filterItemActive text700',
-  //     });
-  //   } else if (this.props.currentPage === 'about') {
-  //     this.setState({
-  //       filterALL: 'filterItem text700',
-  //     });
-  //   }
-  // }
 
   componentDidMount() {
     console.log('Gallery component loaded...');
@@ -78,24 +109,35 @@ class Gallery extends Component<any, any> {
         {/* PROJECTS FILTER */}
         <div className='row wrap'>
           <div className='filterWrap flex pad'>
-            <h4 className='filterItem filterItemActive text700' onClick={this.filterReset}>
+            <h4
+              className={this.state.everything}
+              onClick={this.filterReset.bind(this, 'EVERYTHING')}>
               EVERYTHING
             </h4>
-            <h4 className='filterItem' onClick={this.filter.bind(this, 'Branding')}>
+            <h4 className={this.state.branding} onClick={this.filter.bind(this, 'Branding')}>
               branding
             </h4>
-            <h4 className='filterItem' onClick={this.filter.bind(this, 'Graphic')}>
+            <h4 className={this.state.graphic} onClick={this.filter.bind(this, 'Graphic')}>
               graphic
             </h4>
-            <h4 className='filterItem' onClick={this.filter.bind(this, 'UX')}>
+            <h4 className={this.state.ux} onClick={this.filter.bind(this, 'UX')}>
               ux
             </h4>
-            <h4 className='filterItem' onClick={this.filter.bind(this, 'Web')}>
+            <h4 className={this.state.web} onClick={this.filter.bind(this, 'Web')}>
               web
             </h4>
           </div>
-          <div className='galleryWrap pad' onClick={this.props.changeImageTheme}>
-          <FontAwesomeIcon icon={['fas', 'palette']} className='galleryIcon' />
+          {/* IMAGE THEME ICON */}
+          <div className='galleryWrap pad flex'>
+            <img
+              className='galleryRGBIcon'
+              src={require('./../icon/rgb.svg')}
+              onClick={this.props.changeImageTheme}
+              alt='RBG Icon'
+            />
+            <div onClick={this.props.changeTheme}>
+              <FontAwesomeIcon icon={['fas', 'fill-drip']} className='galleryFillIcon' />
+            </div>
           </div>
         </div>
         {/* PROJECTS MAP */}
@@ -115,6 +157,7 @@ class Gallery extends Component<any, any> {
               desc: string;
             }) => (
               <div key={singleProject.id} className={this.props.imgTheme}>
+                {/* IMAGES */}
                 <img
                   onClick={this.changePageFromGallery.bind(this, [
                     singleProject.id,
@@ -127,14 +170,14 @@ class Gallery extends Component<any, any> {
                     singleProject.images,
                     singleProject.icons,
                     singleProject.intro,
-                    singleProject.desc,
+                    singleProject.desc
                   ])}
                   src={require('./../img/thumb/' + singleProject.thumb)}
                   alt='Gallery'
                 />
                 <div className='flex wrap'>
-                <p>{singleProject.name}</p>
-                {/* <p><span className='textSpotGrey text300'>
+                  <p>{singleProject.name}</p>
+                  {/* <p><span className='textSpotGrey text300'>
                   {singleProject.fields[0]}
                   <span className='textLightGrey text700'> / </span>
                   {singleProject.fields[1]}

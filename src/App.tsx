@@ -35,6 +35,8 @@ library.add(
   faMapMarkerAlt
 );
 
+var htmlBody = document.getElementById('bg');
+
 class App extends Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -42,6 +44,8 @@ class App extends Component<any, any> {
       theme: false,
       currentPage: 'gallery',
       imgTheme: 'imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4',
+      navGallery: 'navItem navItemActive',
+      navAbout: 'navItem',
       projects: projectData,
       currentProject: '',
       currentProjectName: '',
@@ -53,14 +57,27 @@ class App extends Component<any, any> {
       currentProjectImages: [],
       currentProjectIcons: [],
       currentProjectIntro: '',
-      currentProjectDesc: ''
+      currentProjectDesc: '',
+      type: 'textWhite'
     };
     this.changePage = this.changePage.bind(this);
+    this.changeTheme = this.changeTheme.bind(this);
     this.changeImageTheme = this.changeImageTheme.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
   }
 
   changePage(value: any) {
+    if (this.state.currentPage === 'gallery') {
+      this.setState({
+        navGallery: 'navItem',
+        navAbout: 'navItem navItemActive'
+      });
+    } else if (this.state.currentPage === 'about') {
+      this.setState({
+        navGallery: 'navItem navItemActive',
+        navAbout: 'navItem'
+      });
+    }
     this.setState({
       currentPage: value
     });
@@ -76,6 +93,22 @@ class App extends Component<any, any> {
       this.setState({
         theme: false,
         imgTheme: 'imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'
+      });
+    }
+  }
+
+  changeTheme() {
+    if (this.state.light === false) {
+      htmlBody.className = 'bgLight';
+      this.setState({
+        light: true,
+        type: 'textGrey'
+      });
+    } else {
+      htmlBody.className = 'bgDark';
+      this.setState({
+        light: false,
+        type: 'textWhite'
       });
     }
   }
@@ -113,6 +146,7 @@ class App extends Component<any, any> {
           projectsFromApp={allProjects}
           changePageFromGallery={this.changePageAndProject}
           changeImageTheme={this.changeImageTheme}
+          changeTheme={this.changeTheme}
           imgTheme={this.state.imgTheme}
         />
       );
@@ -142,9 +176,10 @@ class App extends Component<any, any> {
         <div className='container-fluid'>
           <Nav
             changePageFromNav={this.changePage}
-            currentPage={this.state.currentPage}
+            navGallery={this.state.navGallery}
+            navAbout={this.state.navAbout}
           />
-          <Type />
+          <Type type={this.state.type} />
           <React.Fragment>{display}</React.Fragment>
         </div>
         <Footer />

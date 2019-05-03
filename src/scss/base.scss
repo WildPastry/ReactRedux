@@ -21,6 +21,15 @@ body {
   color: $white;
 }
 
+// BODY BGS
+.bgLight {
+  background: $white;
+}
+
+.bgDark {
+  background: $grey;
+}
+
 // CODE
 code {
   font-family: $font;

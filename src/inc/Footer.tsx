@@ -100,6 +100,7 @@ class Footer extends Component<any, any> {
   }
 
   render() {
+    // WEATHER ICONS
     let weatherDisplay;
     var currentWeather = this.state.currentWeather;
     var weather = this.state.weather;
@@ -136,9 +137,11 @@ class Footer extends Component<any, any> {
     } else {
       return (
         <React.Fragment>
+          {/* FOOTER */}
           <div className='footer'>
             <div className='line' />
             <div className='row'>
+            {/* FA ICONS */}
               <div className='colWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
                 <FontAwesomeIcon icon={['fab', 'linkedin-in']} className='faIcon' />
                 <FontAwesomeIcon icon={['fab', 'facebook-square']} className='faIcon' />

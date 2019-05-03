@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Theme extends Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = {};
-    this.changePageFromTheme = this.changePageFromTheme.bind(this);
-  }
-
-  changePageFromTheme(value: any) {
-    this.props.changePageFromTheme(value);
-  }
 
   componentDidMount() {
     console.log('Theme component loaded...');
@@ -18,6 +10,7 @@ class Theme extends Component<any, any> {
   render() {
     return (
       <React.Fragment>
+        <FontAwesomeIcon icon={['fas', 'fill-drip']} className='galleryFillIcon' />
       </React.Fragment>
     );
   }

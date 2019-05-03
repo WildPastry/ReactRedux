@@ -17,7 +17,7 @@ class Type extends Component<any, any> {
     return (
       <React.Fragment>
         <div className='typeWrap pad'>
-          <div id='type' ref={this.type} />
+          <div id='type' className={this.props.type} ref={this.type} />
         </div>
         <div className='lineNoMar' />
       </React.Fragment>
