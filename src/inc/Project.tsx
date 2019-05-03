@@ -18,6 +18,8 @@ class Project extends Component<any, any> {
       currentProjectIntro: this.props.currentProjectIntro,
       currentProjectDesc: this.props.currentProjectDesc
     };
+    this.prevProject = this.prevProject.bind(this);
+    this.nextProject = this.nextProject.bind(this);
     this.changeProject = this.changeProject.bind(this);
     this.changePageFromProject = this.changePageFromProject.bind(this);
   }
@@ -35,6 +37,90 @@ class Project extends Component<any, any> {
       currentProjectIcons: [],
       currentProjectIntro: '',
       currentProjectDesc: ''
+    });
+  }
+
+  prevProject() {
+    var i;
+    if (this.state.currentProject === '001') {
+      i = 11;
+    } else if (this.state.currentProject === '002') {
+      i = 0;
+    } else if (this.state.currentProject === '003') {
+      i = 1;
+    } else if (this.state.currentProject === '004') {
+      i = 2;
+    } else if (this.state.currentProject === '005') {
+      i = 3;
+    } else if (this.state.currentProject === '006') {
+      i = 4;
+    } else if (this.state.currentProject === '007') {
+      i = 5;
+    } else if (this.state.currentProject === '008') {
+      i = 6;
+    } else if (this.state.currentProject === '009') {
+      i = 7;
+    } else if (this.state.currentProject === '010') {
+      i = 8;
+    } else if (this.state.currentProject === '011') {
+      i = 9;
+    } else if (this.state.currentProject === '012') {
+      i = 10;
+    }
+    this.setState({
+      currentProject: this.state.projects[i].id,
+      currentProjectName: this.state.projects[i].name,
+      currentProjectFields: this.state.projects[i].fields,
+      currentProjectClient: this.state.projects[i].client,
+      currentProjectTimeline: this.state.projects[i].timeline,
+      currentProjectWebsite: this.state.projects[i].website,
+      currentProjectThumb: this.state.projects[i].thumb,
+      currentProjectImages: this.state.projects[i].images,
+      currentProjectIcons: this.state.projects[i].icons,
+      currentProjectIntro: this.state.projects[i].intro,
+      currentProjectDesc: this.state.projects[i].desc
+    });
+  }
+
+  nextProject() {
+    var i;
+    if (this.state.currentProject === '001') {
+      i = 1;
+    } else if (this.state.currentProject === '002') {
+      i = 2;
+    } else if (this.state.currentProject === '003') {
+      i = 3;
+    } else if (this.state.currentProject === '004') {
+      i = 4;
+    } else if (this.state.currentProject === '005') {
+      i = 5;
+    } else if (this.state.currentProject === '006') {
+      i = 6;
+    } else if (this.state.currentProject === '007') {
+      i = 7;
+    } else if (this.state.currentProject === '008') {
+      i = 8;
+    } else if (this.state.currentProject === '009') {
+      i = 9;
+    } else if (this.state.currentProject === '010') {
+      i = 10;
+    } else if (this.state.currentProject === '011') {
+      i = 11;
+    } else if (this.state.currentProject === '012') {
+      i = 0;
+    }
+    this.setState({
+      currentProject: this.state.projects[i].id,
+      currentProjectName: this.state.projects[i].name,
+      currentProjectFields: this.state.projects[i].fields,
+      currentProjectClient: this.state.projects[i].client,
+      currentProjectTimeline: this.state.projects[i].timeline,
+      currentProjectWebsite: this.state.projects[i].website,
+      currentProjectThumb: this.state.projects[i].thumb,
+      currentProjectImages: this.state.projects[i].images,
+      currentProjectIcons: this.state.projects[i].icons,
+      currentProjectIntro: this.state.projects[i].intro,
+      currentProjectDesc: this.state.projects[i].desc
     });
   }
 
@@ -82,7 +168,9 @@ class Project extends Component<any, any> {
               </li>
               <li className='projectListItem'>
                 WEBSITE&nbsp;&nbsp;
-                <span className='textWhite text300'><a href='index.html'>{this.state.currentProjectWebsite}</a></span>
+                <span className='textWhite text300'>
+                  <a href='index.html'>{this.state.currentProjectWebsite}</a>
+                </span>
               </li>
             </ul>
             <div className='prevNextIconWrap'>
@@ -100,11 +188,16 @@ class Project extends Component<any, any> {
             <div className='lineThin mar' />
           </div>
           <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
+            {/* PROJECT CONTROL ICONS */}
+            <div className='iconWrap' onClick={this.prevProject}>
+              <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
+            </div>
             <div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
               <FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
             </div>
-            <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
+            <div className='iconWrap' onClick={this.nextProject}>
+              <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
+            </div>
           </div>
         </div>
         {/* IMAGES */}
