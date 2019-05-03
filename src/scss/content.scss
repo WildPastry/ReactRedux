@@ -72,7 +72,8 @@
   align-items: center;
 }
 
-.navItem {
+//NAV ITEM DARK
+.navItemDark {
   color: $spotGrey;
   cursor: pointer;
   margin-left: 13px;
@@ -80,25 +81,57 @@
   padding-bottom: 3px;
 }
 
-.navItem:hover {
+.navItemDark:hover {
   color: $white;
   border-bottom: 2px solid $peach;
 }
 
-.navItemActive {
+.navItemActiveDark {
   color: $white;
   border-bottom: 2px solid $peach;
 }
 
-.brand {
+//NAV ITEM LIGHT
+.navItemLight {
+  color: $lightGrey;
+  cursor: pointer;
+  margin-left: 13px;
+  border-bottom: 2px solid $white;
+  padding-bottom: 3px;
+}
+
+.navItemLight:hover {
+  color: $grey;
+  border-bottom: 2px solid $peach;
+}
+
+.navItemActiveLight {
+  color: $grey;
+  border-bottom: 2px solid $peach;
+}
+
+// NAV BRAND DARK
+.brandDark {
   cursor: pointer;
   border-bottom: 2px solid $grey;
   padding-bottom: 3px;
 }
 
-.brand:hover {
+.brandDark:hover {
   border-bottom: 2px solid $peach;
   color: $white;
+}
+
+// NAV BRAND LIGHT
+.brandLight {
+  cursor: pointer;
+  border-bottom: 2px solid $white;
+  padding-bottom: 3px;
+}
+
+.brandLight:hover {
+  border-bottom: 2px solid $peach;
+  color: $grey;
 }
 
 // TYPE

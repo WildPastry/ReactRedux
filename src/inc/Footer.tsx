@@ -55,13 +55,15 @@ class Footer extends Component<any, any> {
 
   locationReady() {
     this.setState({
-      geo: true,
+      geo: true
     });
     this.getData();
   }
 
   getData() {
-    fetch(cors + request + skyKey + '/' + this.state.currentLat + ',' + this.state.currentLng + units)
+    fetch(
+      cors + request + skyKey + '/' + this.state.currentLat + ',' + this.state.currentLng + units
+    )
       .then(res => res.json())
       .then(jsonp => {
         this.setState(
@@ -141,20 +143,23 @@ class Footer extends Component<any, any> {
           <div className='footer'>
             <div className='line' />
             <div className='row'>
-            {/* FA ICONS */}
+              {/* FA ICONS */}
               <div className='colWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
-                <FontAwesomeIcon icon={['fab', 'linkedin-in']} className='faIcon' />
-                <FontAwesomeIcon icon={['fab', 'facebook-square']} className='faIcon' />
-                <FontAwesomeIcon icon={['fab', 'pinterest']} className='faIcon' />
-                <FontAwesomeIcon icon={['fab', 'twitter']} className='faIcon' />
-                <FontAwesomeIcon icon={['fab', 'github']} className='faIcon' />
-                <FontAwesomeIcon icon={['fas', 'envelope']} className='faIcon' />
-                <FontAwesomeIcon icon={['fab', 'facebook-messenger']} className='faIcon' />
+                <FontAwesomeIcon icon={['fab', 'linkedin-in']} className={this.props.faIcon} />
+                <FontAwesomeIcon icon={['fab', 'facebook-square']} className={this.props.faIcon} />
+                <FontAwesomeIcon icon={['fab', 'pinterest']} className={this.props.faIcon} />
+                <FontAwesomeIcon icon={['fab', 'twitter']} className={this.props.faIcon} />
+                <FontAwesomeIcon icon={['fab', 'github']} className={this.props.faIcon} />
+                <FontAwesomeIcon icon={['fas', 'envelope']} className={this.props.faIcon} />
+                <FontAwesomeIcon
+                  icon={['fab', 'facebook-messenger']}
+                  className={this.props.faIcon}
+                />
               </div>
               {/* ARCHIVES */}
               <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
-                <h4 className='marBot'>archives</h4>
-                <ul className='footerListWrap'>
+                <h4 className={this.props.footerHeading}>archives</h4>
+                <ul className={this.props.list}>
                   <li>
                     <a href='index.html'>The Fear Board</a>
                   </li>
@@ -171,8 +176,8 @@ class Footer extends Component<any, any> {
               </div>
               {/* CONTACT DETAILS */}
               <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
-                <h4 className='marBot'>contact details</h4>
-                <ul className='footerListWrap'>
+                <h4 className={this.props.footerHeading}>contact details</h4>
+                <ul className={this.props.list}>
                   <li x-ms-format-detection='none'>+64 022 5025 485</li>
                   <li>
                     <a href='mailto:mykdsn@gmail.com'>mike@mparker.co.nz</a>
@@ -183,14 +188,22 @@ class Footer extends Component<any, any> {
             {/* COPYRIGHT AND WEATHER */}
             <div className='row'>
               <div className='footerWrap'>
-              <p className='pad marBotFooter textSpotGrey'><span className='textThis'>this </span>site powered by react + typescript</p>
+                <p className={this.props.footerPara}>
+                  <span className='textThis'>this </span>site powered by react + typescript
+                </p>
                 <div className='lineThinFooter' />
                 <div className='flex'>
                   {weatherDisplay}
-                  <h2 className='footerTemp'>{Math.trunc(weather.currently.temperature) + '°'} </h2>
-                  <div className='footerIconWrap' onClick={this.getLocation}><FontAwesomeIcon icon={['fas', 'map-marker-alt']} className='footerIcon' /></div>
-                  {/* <p className='footerCopyright'>Wellington</p> */}
-                  <p className='footerCopyright textWhite'>&copy; mike parker 2019</p>
+                  <h2 className={this.props.footerTemp}>
+                    {Math.trunc(weather.currently.temperature) + '°'}{' '}
+                  </h2>
+                  <div className='footerIconWrap' onClick={this.getLocation}>
+                    <FontAwesomeIcon
+                      icon={['fas', 'map-marker-alt']}
+                      className={this.props.footerIcon}
+                    />
+                  </div>
+                  <p className={this.props.footerCopyright}>&copy; mike parker 2019</p>
                 </div>
               </div>
             </div>

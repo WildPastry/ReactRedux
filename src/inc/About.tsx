@@ -50,7 +50,7 @@ class About extends Component<any, any> {
                 </ul> */}
           </div>
           <div className='colWrap col-xs-12 col-sm-6 col-md-8 col-lg-8'>
-            <div id='space' ref={this.space} />
+            <div id='space' className={this.props.space} ref={this.space} />
           </div>
         </div>
       </React.Fragment>

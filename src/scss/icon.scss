@@ -3,28 +3,57 @@
 @import 'mixins';
 
 // FA
-.faIcon {
+
+// FA DARK
+.faIconDark {
   cursor: pointer;
   font-size: 30px;
   margin-right: 20px;
 }
 
-.faIcon:hover {
+.faIconDark:hover {
+  color: $peach;
+}
+
+// FA LIGHT
+.faIconLight {
+  cursor: pointer;
+  color: $grey;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.faIconLight:hover {
   color: $peach;
 }
 
 // GALLERY
-.galleryFillIcon {
+
+// GALLERY FILL ICON DARK
+.galleryFillIconDark {
   cursor: pointer;
   font-size: 30px;
   color: $white;
   margin-left: 20px;
 }
 
-.galleryFillIcon:hover {
+.galleryFillIconDark:hover {
   color: $peach;
 }
 
+// GALLERY FILL ICON LIGHT
+.galleryFillIconLight {
+  cursor: pointer;
+  font-size: 30px;
+  color: $grey;
+  margin-left: 20px;
+}
+
+.galleryFillIconLight:hover {
+  color: $peach;
+}
+
+// GALLERY RGB ICON
 .galleryRGBIcon {
   cursor: pointer;
   height: 30px;

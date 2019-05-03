@@ -5,35 +5,20 @@ import Gallery from './inc/Gallery';
 import Project from './inc/Project';
 import About from './inc/About';
 import Footer from './inc/Footer';
-import Theme from './inc/Theme';
 import projectData from './data/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faFillDrip,
-  faPalette,
   faEnvelope,
-  faUndoAlt,
   faChevronLeft,
   faChevronRight,
-  faChevronCircleUp,
   faTh,
   faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
-library.add(
-  fab,
-  faFillDrip,
-  faPalette,
-  faEnvelope,
-  faUndoAlt,
-  faChevronLeft,
-  faChevronRight,
-  faChevronCircleUp,
-  faTh,
-  faMapMarkerAlt
-);
+library.add(fab, faFillDrip, faEnvelope, faChevronLeft, faChevronRight, faTh, faMapMarkerAlt);
 
 var htmlBody = document.getElementById('bg');
 
@@ -42,11 +27,24 @@ class App extends Component<any, any> {
     super(props);
     this.state = {
       theme: false,
-      currentPage: 'gallery',
-      imgTheme: 'imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4',
-      navGallery: 'navItem navItemActive',
-      navAbout: 'navItem',
+      light: false,
       projects: projectData,
+      currentPage: 'gallery',
+      imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4',
+      navGallery: 'navItemDark navItemActiveDark',
+      navAbout: 'navItemDark',
+      type: 'textWhite',
+      space: 'space textGreyBg',
+      brand: 'brandDark textSpotGrey',
+      galleryFillIcon: 'galleryFillIconDark',
+      singleProjectName: 'textWhite',
+      faIcon: 'faIconDark',
+      list: 'listDark footerListWrap',
+      footerHeading: 'marBot textWhite',
+      footerPara: 'pad marBotFooter textSpotGrey',
+      footerTemp: 'footerTemp textWhite',
+      footerIcon: 'footerIcon textWhite',
+      footerCopyright: 'footerCopyright textWhite',
       currentProject: '',
       currentProjectName: '',
       currentProjectFields: [],
@@ -57,13 +55,57 @@ class App extends Component<any, any> {
       currentProjectImages: [],
       currentProjectIcons: [],
       currentProjectIntro: '',
-      currentProjectDesc: '',
-      type: 'textWhite'
+      currentProjectDesc: ''
     };
     this.changePage = this.changePage.bind(this);
     this.changeTheme = this.changeTheme.bind(this);
     this.changeImageTheme = this.changeImageTheme.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
+  }
+
+  changeTheme() {
+    // LIGHT THEME
+    if (this.state.light === false) {
+      htmlBody.className = 'bgLight';
+      this.changeImageTheme();
+      this.setState({
+        light: true,
+        type: 'textGrey',
+        space: 'space textWhiteBg',
+        brand: 'brandLight textLightGrey',
+        navGallery: 'navItemLight navItemActiveLight',
+        navAbout: 'navItemLight',
+        galleryFillIcon: 'galleryFillIconLight',
+        singleProjectName: 'textLightGrey',
+        faIcon: 'faIconLight',
+        list: 'listLight',
+        footerHeading: 'marBot textGrey',
+        footerPara: 'pad marBotFooter textLightGrey',
+        footerTemp: 'footerTemp textGrey',
+        footerIcon: 'footerIcon textGrey',
+        footerCopyright: 'footerCopyright textGrey'
+      });
+      // DARK THEME
+    } else {
+      htmlBody.className = 'bgDark';
+      this.setState({
+        light: false,
+        type: 'textWhite',
+        space: 'space textGreyBg',
+        brand: 'brandDark textSpotGrey',
+        navGallery: 'navItemDark navItemActiveDark',
+        navAbout: 'navItemDark',
+        galleryFillIcon: 'galleryFillIconDark',
+        singleProjectName: 'textWhite',
+        faIcon: 'faIconDark',
+        list: 'listDark',
+        footerHeading: 'marBot textWhite',
+        footerPara: 'pad marBotFooter textSpotGrey',
+        footerTemp: 'footerTemp textWhite',
+        footerIcon: 'footerIcon textWhite',
+        footerCopyright: 'footerCopyright textWhite'
+      });
+    }
   }
 
   changePage(value: any) {
@@ -84,31 +126,17 @@ class App extends Component<any, any> {
   }
 
   changeImageTheme() {
+    // LIGHT THEME
     if (this.state.theme === false) {
       this.setState({
         theme: true,
-        imgTheme: 'imgWrapSwap col-xs-12 col-sm-6 col-md-4 col-lg-4'
+        imgTheme: 'imgWrapLight col-xs-12 col-sm-6 col-md-4 col-lg-4'
       });
+      // DARK THEME
     } else {
       this.setState({
         theme: false,
-        imgTheme: 'imgWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'
-      });
-    }
-  }
-
-  changeTheme() {
-    if (this.state.light === false) {
-      htmlBody.className = 'bgLight';
-      this.setState({
-        light: true,
-        type: 'textGrey'
-      });
-    } else {
-      htmlBody.className = 'bgDark';
-      this.setState({
-        light: false,
-        type: 'textWhite'
+        imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4'
       });
     }
   }
@@ -131,8 +159,8 @@ class App extends Component<any, any> {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     console.log('App loaded...');
-    console.log(Theme);
   }
 
   render() {
@@ -148,6 +176,8 @@ class App extends Component<any, any> {
           changeImageTheme={this.changeImageTheme}
           changeTheme={this.changeTheme}
           imgTheme={this.state.imgTheme}
+          galleryFillIcon={this.state.galleryFillIcon}
+          singleProjectName={this.state.singleProjectName}
         />
       );
     } else if (currentPage === 'project') {
@@ -169,7 +199,7 @@ class App extends Component<any, any> {
         />
       );
     } else if (currentPage === 'about') {
-      display = <About />;
+      display = <About space={this.state.space} />;
     }
     return (
       <React.Fragment>
@@ -178,11 +208,20 @@ class App extends Component<any, any> {
             changePageFromNav={this.changePage}
             navGallery={this.state.navGallery}
             navAbout={this.state.navAbout}
+            brand={this.state.brand}
           />
           <Type type={this.state.type} />
           <React.Fragment>{display}</React.Fragment>
         </div>
-        <Footer />
+        <Footer
+          faIcon={this.state.faIcon}
+          list={this.state.list}
+          footerHeading={this.state.footerHeading}
+          footerPara={this.state.footerPara}
+          footerTemp={this.state.footerTemp}
+          footerIcon={this.state.footerIcon}
+          footerCopyright={this.state.footerCopyright}
+        />
         <ScrollUpButton
           StopPosition={0}
           ShowAtPosition={200}

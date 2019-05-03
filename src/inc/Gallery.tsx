@@ -127,7 +127,7 @@ class Gallery extends Component<any, any> {
               web
             </h4>
           </div>
-          {/* IMAGE THEME ICON */}
+          {/* IMAGE THEME ICONS */}
           <div className='galleryWrap pad flex'>
             <img
               className='galleryRGBIcon'
@@ -136,7 +136,7 @@ class Gallery extends Component<any, any> {
               alt='RBG Icon'
             />
             <div onClick={this.props.changeTheme}>
-              <FontAwesomeIcon icon={['fas', 'fill-drip']} className='galleryFillIcon' />
+              <FontAwesomeIcon icon={['fas', 'fill-drip']} className={this.props.galleryFillIcon} />
             </div>
           </div>
         </div>
@@ -176,7 +176,7 @@ class Gallery extends Component<any, any> {
                   alt='Gallery'
                 />
                 <div className='flex wrap'>
-                  <p>{singleProject.name}</p>
+                  <p className={this.props.singleProjectName}>{singleProject.name}</p>
                   {/* <p><span className='textSpotGrey text300'>
                   {singleProject.fields[0]}
                   <span className='textLightGrey text700'> / </span>

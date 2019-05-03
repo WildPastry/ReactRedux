@@ -66,20 +66,33 @@ h5 {
   font-weight: $regular;
 }
 
-li {
+// LIST DARK
+.listDark li {
   color: $spotGrey;
   font-weight: $light;
   line-height: 1.5em;
 }
 
-a {
+.listDark a {
   color: $spotGrey;
-  :hover {
-    color: $peach;
-  }
 }
 
-a:hover {
+.listDark a:hover {
+  color: $peach;
+}
+
+// LIST LIGHT
+.listLight li {
+  color: $lightGrey;
+  font-weight: $light;
+  line-height: 1.5em;
+}
+
+.listLight a {
+  color: $lightGrey;
+}
+
+.listLight a:hover {
   color: $peach;
 }
 

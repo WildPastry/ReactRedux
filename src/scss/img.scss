@@ -2,11 +2,11 @@
 @import 'variables';
 @import 'mixins';
 
-.imgWrap {
+.imgWrapDark {
   padding: 5px;
 }
 
-.imgWrap img {
+.imgWrapDark img {
   cursor: pointer;
   height: auto;
   width: 100%;
@@ -14,16 +14,16 @@
   filter: grayscale(100%);
 }
 
-.imgWrap img:hover {
+.imgWrapDark img:hover {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 
-.imgWrapSwap {
+.imgWrapLight {
   padding: 5px;
 }
 
-.imgWrapSwap img {
+.imgWrapLight img {
   cursor: pointer;
   height: auto;
   width: 100%;
@@ -31,7 +31,7 @@
   filter: grayscale(0%);
 }
 
-.imgWrapSwap img:hover {
+.imgWrapLight img:hover {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
