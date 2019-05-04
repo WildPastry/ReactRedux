@@ -41,6 +41,7 @@ class Project extends Component<any, any> {
   }
 
   prevProject() {
+    window.scrollTo(0, 0);
     var i;
     if (this.state.currentProject === '001') {
       i = 11;
@@ -83,6 +84,7 @@ class Project extends Component<any, any> {
   }
 
   nextProject() {
+    window.scrollTo(0, 0);
     var i;
     if (this.state.currentProject === '001') {
       i = 1;
@@ -130,7 +132,7 @@ class Project extends Component<any, any> {
 
   componentDidMount() {
     console.log('Project component loaded...');
-    console.log(this.props.projectDetails)
+    console.log(this.props.projectDetails);
   }
 
   render() {
@@ -165,12 +167,16 @@ class Project extends Component<any, any> {
               </li>
               <li className='projectListItem'>
                 TIMELINE&nbsp;&nbsp;
-                <span className={this.props.projectDetails}>{this.state.currentProjectTimeline}</span>
+                <span className={this.props.projectDetails}>
+                  {this.state.currentProjectTimeline}
+                </span>
               </li>
               <li className='projectListItem'>
                 WEBSITE&nbsp;&nbsp;
                 <span className={this.props.projectDetails}>
-                  <a className={this.props.link} href='index.html'>{this.state.currentProjectWebsite}</a>
+                  <a className={this.props.link} href='index.html'>
+                    {this.state.currentProjectWebsite}
+                  </a>
                 </span>
               </li>
             </ul>
@@ -188,8 +194,8 @@ class Project extends Component<any, any> {
           <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
             <div className='lineThin mar' />
           </div>
+          {/* PROJECT CONTROL ICONS */}
           <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            {/* PROJECT CONTROL ICONS */}
             <div className='iconWrap' onClick={this.prevProject}>
               <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
             </div>
@@ -213,6 +219,18 @@ class Project extends Component<any, any> {
               />
             </div>
           ))}
+        </div>
+        {/* PROJECT CONTROL ICONS */}
+        <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          <div className='iconWrap' onClick={this.prevProject}>
+            <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
+          </div>
+          <div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
+            <FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
+          </div>
+          <div className='iconWrap' onClick={this.nextProject}>
+            <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
+          </div>
         </div>
       </React.Fragment>
     );

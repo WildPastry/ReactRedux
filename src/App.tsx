@@ -38,6 +38,7 @@ class App extends Component<any, any> {
       imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4',
       navGallery: 'navItemDark navItemActiveDark',
       navAbout: 'navItemDark',
+      navProject: 'navItemDark',
       type: 'textWhite',
       space: 'space textGreyBg',
       brand: 'brandDark textSpotGrey',
@@ -90,35 +91,20 @@ class App extends Component<any, any> {
 
     // LIGHT THEME
     if (this.state.light === false) {
+      currentEverything = 'filterItemLight text700';
+      currentBranding = 'filterItemLight';
+      currentGraphic = 'filterItemLight';
+      currentUx = 'filterItemLight';
+      currentWeb = 'filterItemLight';
       if (currentFilter === 'everything') {
         currentEverything = 'filterItemLight filterItemActiveLight text700';
-        currentBranding = 'filterItemLight';
-        currentGraphic = 'filterItemLight';
-        currentUx = 'filterItemLight';
-        currentWeb = 'filterItemLight';
       } else if (currentFilter === 'branding') {
-        currentEverything = 'filterItemLight text700';
         currentBranding = 'filterItemLight filterItemActiveLight';
-        currentGraphic = 'filterItemLight';
-        currentUx = 'filterItemLight';
-        currentWeb = 'filterItemLight';
       } else if (currentFilter === 'graphic') {
-        currentEverything = 'filterItemLight text700';
-        currentBranding = 'filterItemLight';
         currentGraphic = 'filterItemLight filterItemActiveLight';
-        currentUx = 'filterItemLight';
-        currentWeb = 'filterItemLight';
       } else if (currentFilter === 'ux') {
-        currentEverything = 'filterItemLight text700';
-        currentBranding = 'filterItemLight';
-        currentGraphic = 'filterItemLight';
         currentUx = 'filterItemLight filterItemActiveLight';
-        currentWeb = 'filterItemLight';
       } else if (currentFilter === 'web') {
-        currentEverything = 'filterItemLight text700';
-        currentBranding = 'filterItemLight';
-        currentGraphic = 'filterItemLight';
-        currentUx = 'filterItemLight';
         currentWeb = 'filterItemLight filterItemActiveLight';
       }
     // LIGHT THEME
@@ -130,6 +116,7 @@ class App extends Component<any, any> {
         brand: 'brandLight textLightGrey',
         navGallery: 'navItemLight navItemActiveLight',
         navAbout: 'navItemLight',
+        navProject: 'navItemLight',
         galleryFillIcon: 'galleryFillIconLight',
         singleProjectName: 'textLightGrey',
         faIcon: 'faIconLight',
@@ -155,35 +142,20 @@ class App extends Component<any, any> {
       });
       // DARK THEME
     } else {
+      currentEverything = 'filterItemDark text700';
+      currentBranding = 'filterItemDark';
+      currentGraphic = 'filterItemDark';
+      currentUx = 'filterItemDark';
+      currentWeb = 'filterItemDark';
       if (currentFilter === 'everything') {
         currentEverything = 'filterItemDark filterItemActiveDark text700';
-        currentBranding = 'filterItemDark';
-        currentGraphic = 'filterItemDark';
-        currentUx = 'filterItemDark';
-        currentWeb = 'filterItemDark';
       } else if (currentFilter === 'branding') {
-        currentEverything = 'filterItemDark text700';
         currentBranding = 'filterItemDark filterItemActiveDark';
-        currentGraphic = 'filterItemDark';
-        currentUx = 'filterItemDark';
-        currentWeb = 'filterItemDark';
       } else if (currentFilter === 'graphic') {
-        currentEverything = 'filterItemDark text700';
-        currentBranding = 'filterItemDark';
         currentGraphic = 'filterItemDark filterItemActiveDark';
-        currentUx = 'filterItemDark';
-        currentWeb = 'filterItemDark';
       } else if (currentFilter === 'ux') {
-        currentEverything = 'filterItemDark text700';
-        currentBranding = 'filterItemDark';
-        currentGraphic = 'filterItemDark';
         currentUx = 'filterItemDark filterItemActiveDark';
-        currentWeb = 'filterItemDark';
       } else if (currentFilter === 'web') {
-        currentEverything = 'filterItemDark text700';
-        currentBranding = 'filterItemDark';
-        currentGraphic = 'filterItemDark';
-        currentUx = 'filterItemDark';
         currentWeb = 'filterItemDark filterItemActiveDark';
       }
           // DARK THEME
@@ -195,6 +167,7 @@ class App extends Component<any, any> {
         brand: 'brandDark textSpotGrey',
         navGallery: 'navItemDark navItemActiveDark',
         navAbout: 'navItemDark',
+        navProject: 'navItemDark',
         galleryFillIcon: 'galleryFillIconDark',
         singleProjectName: 'textWhite',
         faIcon: 'faIconDark',
@@ -353,28 +326,44 @@ class App extends Component<any, any> {
   changePage(value: any) {
     // DARK THEME
     if (this.state.light === false) {
-      if (this.state.currentPage === 'gallery') {
-        this.setState({
-          navGallery: 'navItemDark',
-          navAbout: 'navItemDark navItemActiveDark'
-        });
-      } else if (this.state.currentPage === 'about') {
+      if (value === 'gallery') {
         this.setState({
           navGallery: 'navItemDark navItemActiveDark',
-          navAbout: 'navItemDark'
+          navAbout: 'navItemDark',
+          navProject: 'navItemDark'
+        });
+      } else if (value === 'about') {
+        this.setState({
+          navGallery: 'navItemDark',
+          navAbout: 'navItemDark navItemActiveDark',
+          navProject: 'navItemDark'
+        });
+      } else if (value === 'project') {
+        this.setState({
+          navGallery: 'navItemDark',
+          navAbout: 'navItemDark',
+          navProject: 'navItemDark navItemActiveDark'
         });
       }
       // LIGHT THEME
     } else if (this.state.light === true) {
-      if (this.state.currentPage === 'gallery') {
-        this.setState({
-          navGallery: 'navItemLight',
-          navAbout: 'navItemLight navItemActiveLight'
-        });
-      } else if (this.state.currentPage === 'about') {
+      if (value === 'gallery') {
         this.setState({
           navGallery: 'navItemLight navItemActiveLight',
-          navAbout: 'navItemLight'
+          navAbout: 'navItemLight',
+          navProject: 'navItemLight'
+        });
+      } else if (value === 'about') {
+        this.setState({
+          navGallery: 'navItemLight',
+          navAbout: 'navItemLight navItemActiveLight',
+          navProject: 'navItemLight'
+        });
+      } else if (value === 'project') {
+        this.setState({
+          navGallery: 'navItemLight',
+          navAbout: 'navItemLight',
+          navProject: 'navItemLight navItemActiveLight'
         });
       }
     }
@@ -484,6 +473,7 @@ class App extends Component<any, any> {
             changePageFromNav={this.changePage}
             navGallery={this.state.navGallery}
             navAbout={this.state.navAbout}
+            navProject={this.state.navProject}
             brand={this.state.brand}
           />
           <Type type={this.state.type} />

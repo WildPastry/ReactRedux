@@ -72,6 +72,25 @@
   align-items: center;
 }
 
+#navProject {
+  cursor: default;
+}
+
+.navItemDarkProject {
+  color: $spotGrey;
+  margin-left: 13px;
+  border-bottom: 2px solid $grey;
+  padding-bottom: 3px;
+}
+
+// .navItemLightProject {
+//   color: $lightGrey;
+//   cursor: default;
+//   margin-left: 13px;
+//   border-bottom: 2px solid $white;
+//   padding-bottom: 3px;
+// }
+
 //NAV ITEM DARK
 .navItemDark {
   color: $spotGrey;
@@ -267,6 +286,15 @@
 .footerTemp {
   line-height: 50px;
   margin-left: 5px;
+}
+
+// FOOTER LINK LIGHT
+.footer a {
+  color: $white;
+}
+
+.footer a:hover {
+  color: $peach;
 }
 
 // FOOTER LIST DARK

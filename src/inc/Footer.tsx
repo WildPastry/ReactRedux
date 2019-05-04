@@ -148,16 +148,30 @@ class Footer extends Component<any, any> {
             <div className='row'>
               {/* FA ICONS */}
               <div className='colWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
-                <FontAwesomeIcon icon={['fab', 'linkedin-in']} className={this.props.faIcon} />
-                <FontAwesomeIcon icon={['fab', 'facebook-square']} className={this.props.faIcon} />
-                <FontAwesomeIcon icon={['fab', 'pinterest']} className={this.props.faIcon} />
-                <FontAwesomeIcon icon={['fab', 'twitter']} className={this.props.faIcon} />
-                <FontAwesomeIcon icon={['fab', 'github']} className={this.props.faIcon} />
-                <FontAwesomeIcon icon={['fas', 'envelope']} className={this.props.faIcon} />
-                <FontAwesomeIcon
-                  icon={['fab', 'facebook-messenger']}
-                  className={this.props.faIcon}
-                />
+                <a href='https://www.linkedin.com/in/michael-parker-aa084310a/' target='new'>
+                  <FontAwesomeIcon icon={['fab', 'linkedin-in']} className={this.props.faIcon} />
+                </a>
+                <a href='https://www.facebook.com/michael.parker.3532507' target='new'>
+                  <FontAwesomeIcon
+                    icon={['fab', 'facebook-square']}
+                    className={this.props.faIcon}
+                  />
+                </a>
+                <a href='https://www.pinterest.co.uk/WildPastry/' target='new'>
+                  <FontAwesomeIcon icon={['fab', 'pinterest']} className={this.props.faIcon} />
+                </a>
+                <a href='https://github.com/WildPastry' target='new'>
+                  <FontAwesomeIcon icon={['fab', 'github']} className={this.props.faIcon} />
+                </a>
+                <a href='mailto:mykdsn@gmail.com'>
+                  <FontAwesomeIcon icon={['fas', 'envelope']} className={this.props.faIcon} />
+                </a>
+                <a href='https://www.facebook.com/michael.parker.3532507' target='new'>
+                  <FontAwesomeIcon
+                    icon={['fab', 'facebook-messenger']}
+                    className={this.props.faIcon}
+                  />
+                </a>
               </div>
               {/* ARCHIVES */}
               <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
