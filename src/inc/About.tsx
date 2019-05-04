@@ -16,10 +16,10 @@ class About extends Component<any, any> {
       <React.Fragment>
         <div className='row'>
           <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <h2 className='marBot'>about me</h2>
+            <h2 className={this.props.aboutHeading}>about me</h2>
           </div>
           <div className='colWrap col-xs-12 col-sm-6 col-md-4 col-lg-4'>
-            <p>
+            <p className={this.props.aboutPara}>
               Experienced Web and Graphic Designer from Christchurch, New Zealand. Currently
               upskilling further in Web and UX development at Yoobee School of Design and have
               included a recent selection of work on my site.
@@ -30,7 +30,7 @@ class About extends Component<any, any> {
               <br />
               <br />
             </p>
-            <h3 className='textSpotGrey' x-ms-format-detection='none'>
+            <h3 className={this.props.aboutPhone} x-ms-format-detection='none'>
               Call / Text <span className='textPeach'>+64 022 5025 485</span>
             </h3>
             {/* <h2 className='marBot marTop'>clients</h2>

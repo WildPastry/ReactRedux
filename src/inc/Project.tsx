@@ -5,7 +5,7 @@ class Project extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      projects: this.props.projectsFromApp,
+      projects: this.props.projects,
       currentProject: this.props.currentProject,
       currentProjectName: this.props.currentProjectName,
       currentProjectFields: this.props.currentProjectFields,
@@ -130,6 +130,7 @@ class Project extends Component<any, any> {
 
   componentDidMount() {
     console.log('Project component loaded...');
+    console.log(this.props.projectDetails)
   }
 
   render() {
@@ -138,38 +139,38 @@ class Project extends Component<any, any> {
         {/* DESCRIPTION */}
         <div className='row wrap'>
           <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <h1 className='marBot'>{this.state.currentProjectName}</h1>
+            <h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
           </div>
           <div className='colWrap col-xs-12 col-sm-12 col-md-7 col-lg-7'>
-            <h2 className='textSpotGrey text300'>{this.state.currentProjectIntro}</h2>
+            <h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
             <br />
-            <p>{this.state.currentProjectDesc}</p>
+            <p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
           </div>
           {/* PROJECT DETAILS */}
           <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
             <ul>
               <li className='projectListItem'>
                 FIELDS&nbsp;&nbsp;
-                <span className='textWhite text300'>
+                <span className={this.props.projectDetails}>
                   {this.state.currentProjectFields[0]}
-                  <span className='textLightGrey text700'> / </span>
+                  <span className='textLightGrey text300'> / </span>
                   {this.state.currentProjectFields[1]}
-                  <span className='textLightGrey text700'> / </span>
+                  <span className='textLightGrey text300'> / </span>
                   {this.state.currentProjectFields[2]}
                 </span>
               </li>
               <li className='projectListItem'>
                 CLIENT&nbsp;&nbsp;
-                <span className='textWhite text300'>{this.state.currentProjectClient}</span>
+                <span className={this.props.projectDetails}>{this.state.currentProjectClient}</span>
               </li>
               <li className='projectListItem'>
                 TIMELINE&nbsp;&nbsp;
-                <span className='textWhite text300'>{this.state.currentProjectTimeline}</span>
+                <span className={this.props.projectDetails}>{this.state.currentProjectTimeline}</span>
               </li>
               <li className='projectListItem'>
                 WEBSITE&nbsp;&nbsp;
-                <span className='textWhite text300'>
-                  <a href='index.html'>{this.state.currentProjectWebsite}</a>
+                <span className={this.props.projectDetails}>
+                  <a className={this.props.link} href='index.html'>{this.state.currentProjectWebsite}</a>
                 </span>
               </li>
             </ul>

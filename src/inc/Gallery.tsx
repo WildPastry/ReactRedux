@@ -4,16 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Gallery extends Component<any, any> {
   constructor(props: any) {
     super(props);
-    this.state = {
-      projects: this.props.projectsFromApp,
-      everything: this.props.everything,
-      branding: this.props.branding,
-      graphic: this.props.graphic,
-      ux: this.props.ux,
-      web: this.props.web
-    };
-    this.filter = this.filter.bind(this);
-    this.filterReset = this.filterReset.bind(this);
     this.changePageFromGallery = this.changePageFromGallery.bind(this);
   }
 
@@ -36,122 +26,6 @@ class Gallery extends Component<any, any> {
     window.scrollTo(0, 0);
   }
 
-  filter(value: any) {
-    var projects = this.props.projectsFromApp;
-    var filter = value;
-    var projectsFiltered = projects.filter(
-      (project: { fields: { indexOf: (arg0: string) => number } }) => {
-        return project.fields.indexOf(filter) >= 0;
-      }
-    );
-    console.log('Filtered by: ' + value);
-    if (this.props.light === false) {
-      if (value === 'Branding') {
-        this.setState({
-          everything: 'filterItemDark text700',
-          branding: 'filterItemDark filterItemActiveDark',
-          graphic: this.props.graphic,
-          ux: this.props.ux,
-          web: this.props.web
-        });
-      } else if (value === 'Graphic') {
-        this.setState({
-          everything: 'filterItemDark text700',
-          branding: this.props.branding,
-          graphic: 'filterItemDark filterItemActiveDark',
-          ux: this.props.ux,
-          web: this.props.web
-        });
-      } else if (value === 'UX') {
-        this.setState({
-          everything: 'filterItemDark text700',
-          branding: this.props.branding,
-          graphic: this.props.graphic,
-          ux: 'filterItemDark filterItemActiveDark',
-          web: this.props.web
-        });
-      } else if (value === 'Web') {
-        this.setState({
-          everything: 'filterItemDark text700',
-          branding: this.props.branding,
-          graphic: this.props.graphic,
-          ux: this.props.ux,
-          web: 'filterItemDark filterItemActiveDark'
-        });
-      }
-    } else if (this.props.light === true) {
-      if (value === 'Branding') {
-        this.setState({
-          everything: 'filterItemLight text700',
-          branding: 'filterItemLight filterItemActiveLight',
-          graphic: this.props.graphic,
-          ux: this.props.ux,
-          web: this.props.web
-        });
-      } else if (value === 'Graphic') {
-        this.setState({
-          everything: 'filterItemLight text700',
-          branding: this.props.branding,
-          graphic: 'filterItemLight filterItemActiveLight',
-          ux: this.props.ux,
-          web: this.props.web
-        });
-      } else if (value === 'UX') {
-        this.setState({
-          everything: 'filterItemLight text700',
-          branding: this.props.branding,
-          graphic: this.props.graphic,
-          ux: 'filterItemLight filterItemActiveLight',
-          web: this.props.web
-        });
-      } else if (value === 'Web') {
-        this.setState({
-          everything: 'filterItemLight text700',
-          branding: this.props.branding,
-          graphic: this.props.graphic,
-          ux: this.props.ux,
-          web: 'filterItemLight filterItemActiveLight'
-        });
-      }
-    }
-    this.setState({
-      projects: projectsFiltered
-    });
-  }
-
-  filterReset() {
-    if (this.props.light === false) {
-      this.setState(
-        {
-          projects: this.props.projectsFromApp,
-          everything: this.props.everything,
-          branding: this.props.branding,
-          graphic: this.props.graphic,
-          ux: this.props.ux,
-          web: this.props.web
-        },
-        () => {
-          console.log('Reset filter');
-        }
-      );
-    } else if (this.props.light === true) {
-      this.setState(
-        {
-          projects: this.props.projectsFromApp,
-          everything: this.props.everything,
-          branding: this.props.branding,
-          graphic: this.props.graphic,
-          ux: this.props.ux,
-          web: this.props.web
-        },
-        () => {
-          console.log('Reset filter');
-        }
-      );
-
-    }
-  }
-
   componentDidMount() {
     console.log('Gallery component loaded...');
   }
@@ -163,20 +37,20 @@ class Gallery extends Component<any, any> {
         <div className='row wrap'>
           <div className='filterWrap flex pad'>
             <h4
-              className={this.state.everything}
-              onClick={this.filterReset.bind(this, 'EVERYTHING')}>
+              className={this.props.everything}
+              onClick={this.props.filterReset.bind(this, 'EVERYTHING')}>
               EVERYTHING
             </h4>
-            <h4 className={this.state.branding} onClick={this.filter.bind(this, 'Branding')}>
+            <h4 className={this.props.branding} onClick={this.props.filter.bind(this, 'Branding')}>
               branding
             </h4>
-            <h4 className={this.state.graphic} onClick={this.filter.bind(this, 'Graphic')}>
+            <h4 className={this.props.graphic} onClick={this.props.filter.bind(this, 'Graphic')}>
               graphic
             </h4>
-            <h4 className={this.state.ux} onClick={this.filter.bind(this, 'UX')}>
+            <h4 className={this.props.ux} onClick={this.props.filter.bind(this, 'UX')}>
               ux
             </h4>
-            <h4 className={this.state.web} onClick={this.filter.bind(this, 'Web')}>
+            <h4 className={this.props.web} onClick={this.props.filter.bind(this, 'Web')}>
               web
             </h4>
           </div>
@@ -195,7 +69,7 @@ class Gallery extends Component<any, any> {
         </div>
         {/* PROJECTS MAP */}
         <div className='row'>
-          {this.state.projects.map(
+          {this.props.projects.map(
             (singleProject: {
               id: React.Key;
               name: React.ReactNode;

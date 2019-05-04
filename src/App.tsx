@@ -21,6 +21,11 @@ import './scss/main.scss';
 library.add(fab, faFillDrip, faEnvelope, faChevronLeft, faChevronRight, faTh, faMapMarkerAlt);
 
 var htmlBody = document.getElementById('bg');
+var currentEverything: string;
+var currentBranding: string;
+var currentGraphic: string;
+var currentUx: string;
+var currentWeb: string;
 
 class App extends Component<any, any> {
   constructor(props: any) {
@@ -50,6 +55,15 @@ class App extends Component<any, any> {
       graphic: 'filterItemDark',
       ux: 'filterItemDark',
       web: 'filterItemDark',
+      filter: 'everything',
+      aboutHeading: 'marBot textWhite',
+      aboutPara: 'textWhite',
+      aboutPhone: 'textSpotGrey',
+      projectHeading: 'marBot textWhite',
+      projectIntro: 'textSpotGrey text300',
+      projectDesc: 'textWhite',
+      projectDetails: 'textWhite text300',
+      link: 'textWhite text300',
       currentProject: '',
       currentProjectName: '',
       currentProjectFields: [],
@@ -62,6 +76,8 @@ class App extends Component<any, any> {
       currentProjectIntro: '',
       currentProjectDesc: ''
     };
+    this.filter = this.filter.bind(this);
+    this.filterReset = this.filterReset.bind(this);
     this.changePage = this.changePage.bind(this);
     this.changeTheme = this.changeTheme.bind(this);
     this.changeImageTheme = this.changeImageTheme.bind(this);
@@ -69,8 +85,43 @@ class App extends Component<any, any> {
   }
 
   changeTheme() {
+    // CHECK FILTER
+    var currentFilter = this.state.filter;
+
     // LIGHT THEME
     if (this.state.light === false) {
+      if (currentFilter === 'everything') {
+        currentEverything = 'filterItemLight filterItemActiveLight text700';
+        currentBranding = 'filterItemLight';
+        currentGraphic = 'filterItemLight';
+        currentUx = 'filterItemLight';
+        currentWeb = 'filterItemLight';
+      } else if (currentFilter === 'branding') {
+        currentEverything = 'filterItemLight text700';
+        currentBranding = 'filterItemLight filterItemActiveLight';
+        currentGraphic = 'filterItemLight';
+        currentUx = 'filterItemLight';
+        currentWeb = 'filterItemLight';
+      } else if (currentFilter === 'graphic') {
+        currentEverything = 'filterItemLight text700';
+        currentBranding = 'filterItemLight';
+        currentGraphic = 'filterItemLight filterItemActiveLight';
+        currentUx = 'filterItemLight';
+        currentWeb = 'filterItemLight';
+      } else if (currentFilter === 'ux') {
+        currentEverything = 'filterItemLight text700';
+        currentBranding = 'filterItemLight';
+        currentGraphic = 'filterItemLight';
+        currentUx = 'filterItemLight filterItemActiveLight';
+        currentWeb = 'filterItemLight';
+      } else if (currentFilter === 'web') {
+        currentEverything = 'filterItemLight text700';
+        currentBranding = 'filterItemLight';
+        currentGraphic = 'filterItemLight';
+        currentUx = 'filterItemLight';
+        currentWeb = 'filterItemLight filterItemActiveLight';
+      }
+    // LIGHT THEME
       htmlBody.className = 'bgLight';
       this.setState({
         light: true,
@@ -88,14 +139,54 @@ class App extends Component<any, any> {
         footerTemp: 'footerTemp textGrey',
         footerIcon: 'footerIcon textLightGrey',
         footerCopyright: 'footerCopyright textGrey',
-        everything: 'filterItemLight filterItemActiveLight text700',
-        branding: 'filterItemLight',
-        graphic: 'filterItemLight',
-        ux: 'filterItemLight',
-        web: 'filterItemLight'
+        everything: currentEverything,
+        branding: currentBranding,
+        graphic: currentGraphic,
+        ux: currentUx,
+        web: currentWeb,
+        aboutHeading: 'marBot textGrey',
+        aboutPara: 'textGrey',
+        aboutPhone: 'textLightGrey',
+        projectHeading: 'marBot textGrey',
+        projectIntro: 'textLightGrey text300',
+        projectDesc: 'textGrey',
+        projectDetails: 'textGrey text300',
+        link: 'textGrey text300',
       });
       // DARK THEME
     } else {
+      if (currentFilter === 'everything') {
+        currentEverything = 'filterItemDark filterItemActiveDark text700';
+        currentBranding = 'filterItemDark';
+        currentGraphic = 'filterItemDark';
+        currentUx = 'filterItemDark';
+        currentWeb = 'filterItemDark';
+      } else if (currentFilter === 'branding') {
+        currentEverything = 'filterItemDark text700';
+        currentBranding = 'filterItemDark filterItemActiveDark';
+        currentGraphic = 'filterItemDark';
+        currentUx = 'filterItemDark';
+        currentWeb = 'filterItemDark';
+      } else if (currentFilter === 'graphic') {
+        currentEverything = 'filterItemDark text700';
+        currentBranding = 'filterItemDark';
+        currentGraphic = 'filterItemDark filterItemActiveDark';
+        currentUx = 'filterItemDark';
+        currentWeb = 'filterItemDark';
+      } else if (currentFilter === 'ux') {
+        currentEverything = 'filterItemDark text700';
+        currentBranding = 'filterItemDark';
+        currentGraphic = 'filterItemDark';
+        currentUx = 'filterItemDark filterItemActiveDark';
+        currentWeb = 'filterItemDark';
+      } else if (currentFilter === 'web') {
+        currentEverything = 'filterItemDark text700';
+        currentBranding = 'filterItemDark';
+        currentGraphic = 'filterItemDark';
+        currentUx = 'filterItemDark';
+        currentWeb = 'filterItemDark filterItemActiveDark';
+      }
+          // DARK THEME
       htmlBody.className = 'bgDark';
       this.setState({
         light: false,
@@ -113,26 +204,179 @@ class App extends Component<any, any> {
         footerTemp: 'footerTemp textWhite',
         footerIcon: 'footerIcon textWhite',
         footerCopyright: 'footerCopyright textWhite',
-        everything: 'filterItemDark filterItemActiveDark text700',
-        branding: 'filterItemDark',
-        graphic: 'filterItemDark',
-        ux: 'filterItemDark',
-        web: 'filterItemDark'
+        everything: currentEverything,
+        branding: currentBranding,
+        graphic: currentGraphic,
+        ux: currentUx,
+        web: currentWeb,
+        aboutHeading: 'marBot textWhite',
+        aboutPara: 'textWhite',
+        aboutPhone: 'textSpotGrey',
+        projectHeading: 'marBot textWhite',
+        projectIntro: 'textSpotGrey text300',
+        projectDesc: 'textWhite',
+        projectDetails: 'textWhite text700',
+        link: 'textWhite text300',
       });
     }
   }
 
+  filter(value: any) {
+    var projects = projectData;
+    var filter = value;
+    var projectsFiltered = projects.filter(
+      (project: { fields: { indexOf: (arg0: string) => number } }) => {
+        return project.fields.indexOf(filter) >= 0;
+      }
+    );
+    console.log('Filtered by: ' + value);
+    // DARK THEME
+    if (this.state.light === false) {
+      if (value === 'Branding') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: 'filterItemDark filterItemActiveDark',
+          graphic: 'filterItemDark',
+          ux: 'filterItemDark',
+          web: 'filterItemDark',
+          filter: 'branding'
+        });
+      } else if (value === 'Graphic') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: 'filterItemDark',
+          graphic: 'filterItemDark filterItemActiveDark',
+          ux: 'filterItemDark',
+          web: 'filterItemDark',
+          filter: 'graphic'
+        });
+      } else if (value === 'UX') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: 'filterItemDark',
+          graphic: 'filterItemDark',
+          ux: 'filterItemDark filterItemActiveDark',
+          web: 'filterItemDark',
+          filter: 'ux'
+        });
+      } else if (value === 'Web') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: 'filterItemDark',
+          graphic: 'filterItemDark',
+          ux: 'filterItemDark',
+          web: 'filterItemDark filterItemActiveDark',
+          filter: 'web'
+        });
+      }
+      // LIGHT THEME
+    } else if (this.state.light === true) {
+      if (value === 'Branding') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: 'filterItemLight filterItemActiveLight',
+          graphic: 'filterItemLight',
+          ux: 'filterItemLight',
+          web: 'filterItemLight',
+          filter: 'branding'
+        });
+      } else if (value === 'Graphic') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: 'filterItemLight',
+          graphic: 'filterItemLight filterItemActiveLight',
+          ux: 'filterItemLight',
+          web: 'filterItemLight',
+          filter: 'graphic'
+        });
+      } else if (value === 'UX') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: 'filterItemLight',
+          graphic: 'filterItemLight',
+          ux: 'filterItemLight filterItemActiveLight',
+          web: 'filterItemLight',
+          filter: 'ux'
+        });
+      } else if (value === 'Web') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: 'filterItemLight',
+          graphic: 'filterItemLight',
+          ux: 'filterItemLight',
+          web: 'filterItemLight filterItemActiveLight',
+          filter: 'web'
+        });
+      }
+    }
+    this.setState({
+      projects: projectsFiltered
+    });
+  }
+
+  filterReset() {
+    // DARK THEME
+    if (this.state.light === false) {
+      this.setState(
+        {
+          projects: projectData,
+          everything: 'filterItemDark filterItemActiveDark text700',
+          branding: 'filterItemDark',
+          graphic: 'filterItemDark',
+          ux: 'filterItemDark',
+          web: 'filterItemDark',
+          filter: 'everything'
+        },
+        () => {
+          console.log('Reset filter');
+        }
+      );
+      // lIGHT THEME
+    } else if (this.state.light === true) {
+      this.setState(
+        {
+          projects: projectData,
+          everything: 'filterItemLight filterItemActiveLight text700',
+          branding: 'filterItemLight',
+          graphic: 'filterItemLight',
+          ux: 'filterItemLight',
+          web: 'filterItemLight',
+          filter: 'everything'
+        },
+        () => {
+          console.log('Reset filter');
+        }
+      );
+    }
+  }
+
   changePage(value: any) {
-    if (this.state.currentPage === 'gallery') {
-      this.setState({
-        navGallery: 'navItemDark',
-        navAbout: 'navItemDark navItemActiveDark'
-      });
-    } else if (this.state.currentPage === 'about') {
-      this.setState({
-        navGallery: 'navItemDark navItemActiveDark',
-        navAbout: 'navItemDark'
-      });
+    // DARK THEME
+    if (this.state.light === false) {
+      if (this.state.currentPage === 'gallery') {
+        this.setState({
+          navGallery: 'navItemDark',
+          navAbout: 'navItemDark navItemActiveDark'
+        });
+      } else if (this.state.currentPage === 'about') {
+        this.setState({
+          navGallery: 'navItemDark navItemActiveDark',
+          navAbout: 'navItemDark'
+        });
+      }
+      // LIGHT THEME
+    } else if (this.state.light === true) {
+      if (this.state.currentPage === 'gallery') {
+        this.setState({
+          navGallery: 'navItemLight',
+          navAbout: 'navItemLight navItemActiveLight'
+        });
+      } else if (this.state.currentPage === 'about') {
+        this.setState({
+          navGallery: 'navItemLight navItemActiveLight',
+          navAbout: 'navItemLight'
+        });
+      }
     }
     this.setState({
       currentPage: value
@@ -178,15 +422,13 @@ class App extends Component<any, any> {
   }
 
   render() {
-    var allProjects = this.state['projects'];
     var currentPage = this.state.currentPage;
     let display;
 
     if (currentPage === 'gallery') {
       display = (
         <Gallery
-          light={this.state.light}
-          projectsFromApp={allProjects}
+          projects={this.state.projects}
           changePageFromGallery={this.changePageAndProject}
           changeImageTheme={this.changeImageTheme}
           changeTheme={this.changeTheme}
@@ -198,12 +440,14 @@ class App extends Component<any, any> {
           graphic={this.state.graphic}
           ux={this.state.ux}
           web={this.state.web}
+          filter={this.filter}
+          filterReset={this.filterReset}
         />
       );
     } else if (currentPage === 'project') {
       display = (
         <Project
-          projectsFromApp={allProjects}
+          projects={this.state.projects}
           currentProject={this.state.currentProject}
           currentProjectName={this.state.currentProjectName}
           currentProjectFields={this.state.currentProjectFields}
@@ -216,10 +460,22 @@ class App extends Component<any, any> {
           currentProjectIntro={this.state.currentProjectIntro}
           currentProjectDesc={this.state.currentProjectDesc}
           changePageFromProject={this.changePage}
+          projectHeading={this.state.projectHeading}
+          projectIntro={this.state.projectIntro}
+          projectDesc={this.state.projectDesc}
+          projectDetails={this.state.projectDetails}
+          link={this.state.link}
         />
       );
     } else if (currentPage === 'about') {
-      display = <About space={this.state.space} />;
+      display = (
+        <About
+          space={this.state.space}
+          aboutHeading={this.state.aboutHeading}
+          aboutPara={this.state.aboutPara}
+          aboutPhone={this.state.aboutPhone}
+        />
+      );
     }
     return (
       <React.Fragment>

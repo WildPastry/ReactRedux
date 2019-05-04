@@ -241,6 +241,10 @@
   margin-top: 20px;
 }
 
+.projectListItem a:hover {
+  color: $peach;
+}
+
 // FOOTER
 .footer {
   flex-shrink: 0;
