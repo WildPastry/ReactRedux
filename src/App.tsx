@@ -45,6 +45,11 @@ class App extends Component<any, any> {
       footerTemp: 'footerTemp textWhite',
       footerIcon: 'footerIcon textWhite',
       footerCopyright: 'footerCopyright textWhite',
+      everything: 'filterItemDark filterItemActiveDark text700',
+      branding: 'filterItemDark',
+      graphic: 'filterItemDark',
+      ux: 'filterItemDark',
+      web: 'filterItemDark',
       currentProject: '',
       currentProjectName: '',
       currentProjectFields: [],
@@ -67,7 +72,6 @@ class App extends Component<any, any> {
     // LIGHT THEME
     if (this.state.light === false) {
       htmlBody.className = 'bgLight';
-      this.changeImageTheme();
       this.setState({
         light: true,
         type: 'textGrey',
@@ -82,8 +86,13 @@ class App extends Component<any, any> {
         footerHeading: 'marBot textGrey',
         footerPara: 'pad marBotFooter textLightGrey',
         footerTemp: 'footerTemp textGrey',
-        footerIcon: 'footerIcon textGrey',
-        footerCopyright: 'footerCopyright textGrey'
+        footerIcon: 'footerIcon textLightGrey',
+        footerCopyright: 'footerCopyright textGrey',
+        everything: 'filterItemLight filterItemActiveLight text700',
+        branding: 'filterItemLight',
+        graphic: 'filterItemLight',
+        ux: 'filterItemLight',
+        web: 'filterItemLight'
       });
       // DARK THEME
     } else {
@@ -103,7 +112,12 @@ class App extends Component<any, any> {
         footerPara: 'pad marBotFooter textSpotGrey',
         footerTemp: 'footerTemp textWhite',
         footerIcon: 'footerIcon textWhite',
-        footerCopyright: 'footerCopyright textWhite'
+        footerCopyright: 'footerCopyright textWhite',
+        everything: 'filterItemDark filterItemActiveDark text700',
+        branding: 'filterItemDark',
+        graphic: 'filterItemDark',
+        ux: 'filterItemDark',
+        web: 'filterItemDark'
       });
     }
   }
@@ -111,13 +125,13 @@ class App extends Component<any, any> {
   changePage(value: any) {
     if (this.state.currentPage === 'gallery') {
       this.setState({
-        navGallery: 'navItem',
-        navAbout: 'navItem navItemActive'
+        navGallery: 'navItemDark',
+        navAbout: 'navItemDark navItemActiveDark'
       });
     } else if (this.state.currentPage === 'about') {
       this.setState({
-        navGallery: 'navItem navItemActive',
-        navAbout: 'navItem'
+        navGallery: 'navItemDark navItemActiveDark',
+        navAbout: 'navItemDark'
       });
     }
     this.setState({
@@ -171,6 +185,7 @@ class App extends Component<any, any> {
     if (currentPage === 'gallery') {
       display = (
         <Gallery
+          light={this.state.light}
           projectsFromApp={allProjects}
           changePageFromGallery={this.changePageAndProject}
           changeImageTheme={this.changeImageTheme}
@@ -178,6 +193,11 @@ class App extends Component<any, any> {
           imgTheme={this.state.imgTheme}
           galleryFillIcon={this.state.galleryFillIcon}
           singleProjectName={this.state.singleProjectName}
+          everything={this.state.everything}
+          branding={this.state.branding}
+          graphic={this.state.graphic}
+          ux={this.state.ux}
+          web={this.state.web}
         />
       );
     } else if (currentPage === 'project') {

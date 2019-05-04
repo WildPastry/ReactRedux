@@ -6,11 +6,11 @@ class Gallery extends Component<any, any> {
     super(props);
     this.state = {
       projects: this.props.projectsFromApp,
-      everything: 'filterItem filterItemActive text700',
-      branding: 'filterItem',
-      graphic: 'filterItem',
-      ux: 'filterItem',
-      web: 'filterItem'
+      everything: this.props.everything,
+      branding: this.props.branding,
+      graphic: this.props.graphic,
+      ux: this.props.ux,
+      web: this.props.web
     };
     this.filter = this.filter.bind(this);
     this.filterReset = this.filterReset.bind(this);
@@ -45,38 +45,74 @@ class Gallery extends Component<any, any> {
       }
     );
     console.log('Filtered by: ' + value);
-    if (value === 'Branding') {
-      this.setState({
-        everything: 'filterItem text700',
-        branding: 'filterItem filterItemActive',
-        graphic: 'filterItem',
-        ux: 'filterItem',
-        web: 'filterItem'
-      });
-    } else if (value === 'Graphic') {
-      this.setState({
-        everything: 'filterItem',
-        branding: 'filterItem',
-        graphic: 'filterItem filterItemActive',
-        ux: 'filterItem',
-        web: 'filterItem'
-      });
-    } else if (value === 'UX') {
-      this.setState({
-        everything: 'filterItem',
-        branding: 'filterItem',
-        graphic: 'filterItem',
-        ux: 'filterItem filterItemActive',
-        web: 'filterItem'
-      });
-    } else if (value === 'Web') {
-      this.setState({
-        everything: 'filterItem',
-        branding: 'filterItem',
-        graphic: 'filterItem',
-        ux: 'filterItem',
-        web: 'filterItem filterItemActive'
-      });
+    if (this.props.light === false) {
+      if (value === 'Branding') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: 'filterItemDark filterItemActiveDark',
+          graphic: this.props.graphic,
+          ux: this.props.ux,
+          web: this.props.web
+        });
+      } else if (value === 'Graphic') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: this.props.branding,
+          graphic: 'filterItemDark filterItemActiveDark',
+          ux: this.props.ux,
+          web: this.props.web
+        });
+      } else if (value === 'UX') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: this.props.branding,
+          graphic: this.props.graphic,
+          ux: 'filterItemDark filterItemActiveDark',
+          web: this.props.web
+        });
+      } else if (value === 'Web') {
+        this.setState({
+          everything: 'filterItemDark text700',
+          branding: this.props.branding,
+          graphic: this.props.graphic,
+          ux: this.props.ux,
+          web: 'filterItemDark filterItemActiveDark'
+        });
+      }
+    } else if (this.props.light === true) {
+      if (value === 'Branding') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: 'filterItemLight filterItemActiveLight',
+          graphic: this.props.graphic,
+          ux: this.props.ux,
+          web: this.props.web
+        });
+      } else if (value === 'Graphic') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: this.props.branding,
+          graphic: 'filterItemLight filterItemActiveLight',
+          ux: this.props.ux,
+          web: this.props.web
+        });
+      } else if (value === 'UX') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: this.props.branding,
+          graphic: this.props.graphic,
+          ux: 'filterItemLight filterItemActiveLight',
+          web: this.props.web
+        });
+      } else if (value === 'Web') {
+        this.setState({
+          everything: 'filterItemLight text700',
+          branding: this.props.branding,
+          graphic: this.props.graphic,
+          ux: this.props.ux,
+          web: 'filterItemLight filterItemActiveLight'
+        });
+      }
     }
     this.setState({
       projects: projectsFiltered
@@ -84,19 +120,36 @@ class Gallery extends Component<any, any> {
   }
 
   filterReset() {
-    this.setState(
-      {
-        projects: this.props.projectsFromApp,
-        everything: 'filterItem filterItemActive text700',
-        branding: 'filterItem',
-        graphic: 'filterItem',
-        ux: 'filterItem',
-        web: 'filterItem'
-      },
-      () => {
-        console.log('Reset filter');
-      }
-    );
+    if (this.props.light === false) {
+      this.setState(
+        {
+          projects: this.props.projectsFromApp,
+          everything: this.props.everything,
+          branding: this.props.branding,
+          graphic: this.props.graphic,
+          ux: this.props.ux,
+          web: this.props.web
+        },
+        () => {
+          console.log('Reset filter');
+        }
+      );
+    } else if (this.props.light === true) {
+      this.setState(
+        {
+          projects: this.props.projectsFromApp,
+          everything: this.props.everything,
+          branding: this.props.branding,
+          graphic: this.props.graphic,
+          ux: this.props.ux,
+          web: this.props.web
+        },
+        () => {
+          console.log('Reset filter');
+        }
+      );
+
+    }
   }
 
   componentDidMount() {

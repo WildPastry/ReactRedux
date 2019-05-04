@@ -31,6 +31,9 @@ class Footer extends Component<any, any> {
   }
 
   getLocation() {
+    this.setState({
+      isLoaded: false
+    });
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.showPosition);
     } else {

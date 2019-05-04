@@ -122,6 +122,14 @@
   color: $white;
 }
 
+.brandDark a {
+  color: $spotGrey;
+}
+
+.brandDark a:hover {
+  color: $white;
+}
+
 // NAV BRAND LIGHT
 .brandLight {
   cursor: pointer;
@@ -131,6 +139,14 @@
 
 .brandLight:hover {
   border-bottom: 2px solid $peach;
+  color: $grey;
+}
+
+.brandLight a {
+  color: $lightGrey;
+}
+
+.brandLight a:hover {
   color: $grey;
 }
 
@@ -159,12 +175,14 @@
   color: $spotGrey;
 }
 
+// FILTER MENU
 .filterWrap {
   align-items: center;
   margin-bottom: 10px;
 }
 
-.filterItem {
+// FILTER MENU DARK
+.filterItemDark {
   color: $spotGrey;
   cursor: pointer;
   margin-right: 13px;
@@ -172,13 +190,32 @@
   padding-bottom: 3px;
 }
 
-.filterItem:hover {
+.filterItemDark:hover {
   color: $white;
   border-bottom: 2px solid $peach;
 }
 
-.filterItemActive {
+.filterItemActiveDark {
   color: $white;
+  border-bottom: 2px solid $peach;
+}
+
+// FILTER MENU LIGHT
+.filterItemLight {
+  color: $lightGrey;
+  cursor: pointer;
+  margin-right: 13px;
+  border-bottom: 2px solid $white;
+  padding-bottom: 3px;
+}
+
+.filterItemLight:hover {
+  color: $grey;
+  border-bottom: 2px solid $peach;
+}
+
+.filterItemActiveLight {
+  color: $grey;
   border-bottom: 2px solid $peach;
 }
 
@@ -210,7 +247,7 @@
   margin: 0 auto 40px auto;
   max-width: 1400px;
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: 15px; 
   width: 100%;
 }
 
@@ -226,4 +263,34 @@
 .footerTemp {
   line-height: 50px;
   margin-left: 5px;
+}
+
+// FOOTER LIST DARK
+.listDark li {
+  color: $spotGrey;
+  font-weight: $light;
+  line-height: 1.5em;
+}
+
+.listDark a {
+  color: $spotGrey;
+}
+
+.listDark a:hover {
+  color: $peach;
+}
+
+// FOOTER LIST LIGHT
+.listLight li {
+  color: $lightGrey;
+  font-weight: $light;
+  line-height: 1.5em;
+}
+
+.listLight a {
+  color: $lightGrey;
+}
+
+.listLight a:hover {
+  color: $peach;
 }
