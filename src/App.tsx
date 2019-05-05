@@ -40,8 +40,9 @@ class App extends Component<any, any> {
       navAbout: 'navItemDark',
       navProject: 'navItemDark',
       type: 'textWhite',
+      thisType: 'textWhite',
       space: 'space textGreyBg',
-      brand: 'brandDark textSpotGrey',
+      brand: 'brandDark',
       galleryFillIcon: 'galleryFillIconDark',
       singleProjectName: 'textWhite',
       faIcon: 'faIconDark',
@@ -65,6 +66,7 @@ class App extends Component<any, any> {
       projectDesc: 'textWhite',
       projectDetails: 'textWhite text300',
       link: 'textWhite text300',
+      projectRow: 'projectRowDark',
       currentProject: '',
       currentProjectName: '',
       currentProjectFields: [],
@@ -107,13 +109,14 @@ class App extends Component<any, any> {
       } else if (currentFilter === 'web') {
         currentWeb = 'filterItemLight filterItemActiveLight';
       }
-    // LIGHT THEME
+      // LIGHT THEME
       htmlBody.className = 'bgLight';
       this.setState({
         light: true,
         type: 'textGrey',
+        thisType: 'textGrey',
         space: 'space textWhiteBg',
-        brand: 'brandLight textLightGrey',
+        brand: 'brandLight',
         navGallery: 'navItemLight navItemActiveLight',
         navAbout: 'navItemLight',
         navProject: 'navItemLight',
@@ -139,6 +142,7 @@ class App extends Component<any, any> {
         projectDesc: 'textGrey',
         projectDetails: 'textGrey text300',
         link: 'textGrey text300',
+        projectRow: 'projectRowLight',
       });
       // DARK THEME
     } else {
@@ -158,13 +162,14 @@ class App extends Component<any, any> {
       } else if (currentFilter === 'web') {
         currentWeb = 'filterItemDark filterItemActiveDark';
       }
-          // DARK THEME
+      // DARK THEME
       htmlBody.className = 'bgDark';
       this.setState({
         light: false,
         type: 'textWhite',
+        thisType: 'textWhite',
         space: 'space textGreyBg',
-        brand: 'brandDark textSpotGrey',
+        brand: 'brandDark',
         navGallery: 'navItemDark navItemActiveDark',
         navAbout: 'navItemDark',
         navProject: 'navItemDark',
@@ -190,6 +195,7 @@ class App extends Component<any, any> {
         projectDesc: 'textWhite',
         projectDetails: 'textWhite text700',
         link: 'textWhite text300',
+        projectRow: 'projectRowDark'
       });
     }
   }
@@ -412,6 +418,7 @@ class App extends Component<any, any> {
 
   render() {
     var currentPage = this.state.currentPage;
+    let projectDisplay;
     let display;
 
     if (currentPage === 'gallery') {
@@ -434,7 +441,8 @@ class App extends Component<any, any> {
         />
       );
     } else if (currentPage === 'project') {
-      display = (
+      display = '';
+      projectDisplay = (
         <Project
           projects={this.state.projects}
           currentProject={this.state.currentProject}
@@ -454,6 +462,7 @@ class App extends Component<any, any> {
           projectDesc={this.state.projectDesc}
           projectDetails={this.state.projectDetails}
           link={this.state.link}
+          projectRow={this.state.projectRow}
         />
       );
     } else if (currentPage === 'about') {
@@ -476,9 +485,10 @@ class App extends Component<any, any> {
             navProject={this.state.navProject}
             brand={this.state.brand}
           />
-          <Type type={this.state.type} />
+          <Type type={this.state.type} thisType={this.state.thisType} />
           <React.Fragment>{display}</React.Fragment>
         </div>
+        <React.Fragment>{projectDisplay}</React.Fragment>
         <Footer
           faIcon={this.state.faIcon}
           list={this.state.list}

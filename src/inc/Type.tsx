@@ -10,13 +10,16 @@ class Type extends Component<any, any> {
 
   componentDidMount() {
     initType();
-    console.log('Type component loaded...')
+    console.log('Type component loaded...');
   }
 
   render() {
     return (
       <React.Fragment>
         <div className='typeWrap pad'>
+          <p className={this.props.thisType}>
+            <span className='textThis'>this </span>portfolio built with react and typescript
+          </p>
           <div id='type' className={this.props.type} ref={this.type} />
         </div>
         <div className='lineNoMar' />

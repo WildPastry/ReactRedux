@@ -28,14 +28,8 @@ class Nav extends Component<any, any> {
             id='navGallery'
               className={this.props.navGallery}
               onClick={this.changePageFromNav.bind(this, 'gallery')}>
-              work
+              gallery
             </h4>
-            {/* <h4
-            id='navProject'
-              className={this.props.navProject}
-              onClick={this.changePageFromNav.bind(this, 'project')}>
-              project
-            </h4> */}
             <h4
             id='navAbout'
               className={this.props.navAbout}

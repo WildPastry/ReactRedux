@@ -205,9 +205,6 @@ class Footer extends Component<any, any> {
             {/* COPYRIGHT AND WEATHER */}
             <div className='row'>
               <div className='footerWrap'>
-                <p className={this.props.footerPara}>
-                  <span className='textThis'>this </span>site powered by react + typescript
-                </p>
                 <div className='lineThinFooter' />
                 <div className='flex'>
                   {weatherDisplay}

@@ -37,7 +37,7 @@
 
 @-webkit-keyframes spin {
   to {
-    border-top-color: $peachPink;
+    border-top-color: $peach;
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
@@ -45,7 +45,7 @@
 
 @keyframes spin {
   to {
-    border-top-color: $peachPink;
+    border-top-color: $peach;
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
@@ -72,10 +72,6 @@
   align-items: center;
 }
 
-#navProject {
-  cursor: default;
-}
-
 .navItemDarkProject {
   color: $spotGrey;
   margin-left: 13px;
@@ -83,20 +79,12 @@
   padding-bottom: 3px;
 }
 
-// .navItemLightProject {
-//   color: $lightGrey;
-//   cursor: default;
-//   margin-left: 13px;
-//   border-bottom: 2px solid $white;
-//   padding-bottom: 3px;
-// }
-
 //NAV ITEM DARK
 .navItemDark {
   color: $spotGrey;
   cursor: pointer;
   margin-left: 13px;
-  border-bottom: 2px solid $grey;
+  border-bottom: 2px solid transparent;
   padding-bottom: 3px;
 }
 
@@ -115,7 +103,7 @@
   color: $lightGrey;
   cursor: pointer;
   margin-left: 13px;
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid transparent;
   padding-bottom: 3px;
 }
 
@@ -132,42 +120,48 @@
 // NAV BRAND DARK
 .brandDark {
   cursor: pointer;
-  border-bottom: 2px solid $grey;
+  border-bottom: 2px solid transparent;
   padding-bottom: 3px;
+  font-weight: $bold;
+  letter-spacing: 0.3px;
+  @include transitions($speed, $speed, $speed, $speed);
 }
 
 .brandDark:hover {
-  border-bottom: 2px solid $peach;
+  border-bottom: 2px solid $yellow;
   color: $white;
 }
 
 .brandDark a {
-  color: $spotGrey;
+  color: $yellow;
 }
 
-.brandDark a:hover {
-  color: $white;
-}
+// .brandDark a:hover {
+//   color: $white;
+// }
 
 // NAV BRAND LIGHT
 .brandLight {
   cursor: pointer;
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid transparent;
   padding-bottom: 3px;
+  font-weight: $bold;
+  letter-spacing: 0.3px;
+  @include transitions($speed, $speed, $speed, $speed);
 }
 
 .brandLight:hover {
-  border-bottom: 2px solid $peach;
+  border-bottom: 2px solid $green;
   color: $grey;
 }
 
 .brandLight a {
-  color: $lightGrey;
+  color: $green;
 }
 
-.brandLight a:hover {
-  color: $grey;
-}
+// .brandLight a:hover {
+//   color: $grey;
+// }
 
 // TYPE
 .typeWrap {
@@ -205,7 +199,7 @@
   color: $spotGrey;
   cursor: pointer;
   margin-right: 13px;
-  border-bottom: 2px solid $grey;
+  border-bottom: 2px solid transparent;
   padding-bottom: 3px;
 }
 
@@ -224,7 +218,7 @@
   color: $lightGrey;
   cursor: pointer;
   margin-right: 13px;
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid transparent;
   padding-bottom: 3px;
 }
 
@@ -239,6 +233,18 @@
 }
 
 // PROJECT
+.projectRowDark {
+  background: $white;
+  border-bottom: 10px solid $spotGrey;
+  border-top: 10px solid $spotGrey;
+}
+
+.projectRowLight {
+  background: $white;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+
 .projectWrap {
   padding: 5px;
   margin: 10px auto;
@@ -254,6 +260,7 @@
   font-weight: $bold;
   font-size: 1.2em;
   color: $lightGrey;
+  line-height: 1.5em;
 }
 
 .prevNextIconWrap {
@@ -267,10 +274,10 @@
 // FOOTER
 .footer {
   flex-shrink: 0;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 30px auto;
   max-width: 1400px;
   padding-left: 15px;
-  padding-right: 15px; 
+  padding-right: 15px;
   width: 100%;
 }
 
@@ -288,7 +295,7 @@
   margin-left: 5px;
 }
 
-// FOOTER LINK LIGHT
+// FOOTER LINK
 .footer a {
   color: $white;
 }

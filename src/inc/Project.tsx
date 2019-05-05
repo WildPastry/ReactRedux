@@ -139,62 +139,97 @@ class Project extends Component<any, any> {
     return (
       <React.Fragment>
         {/* DESCRIPTION */}
-        <div className='row wrap'>
-          <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
+        <div className='container-fluid'>
+          <div className='row wrap marBotProject'>
+            <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
+            </div>
+            <div className='colWrap col-xs-12 col-sm-12 col-md-7 col-lg-7'>
+              <h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
+              <br />
+              <p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
+            </div>
+            {/* PROJECT DETAILS */}
+            <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+              <ul>
+                <li className='projectListItem'>
+                  FIELDS&nbsp;&nbsp;
+                  <span className={this.props.projectDetails}>
+                    {this.state.currentProjectFields[0]}
+                    <span className='textLightGrey text300'> / </span>
+                    {this.state.currentProjectFields[1]}
+                    <span className='textLightGrey text300'> / </span>
+                    {this.state.currentProjectFields[2]}
+                  </span>
+                </li>
+                <li className='projectListItem'>
+                  CLIENT&nbsp;&nbsp;
+                  <span className={this.props.projectDetails}>
+                    {this.state.currentProjectClient}
+                  </span>
+                </li>
+                <li className='projectListItem'>
+                  TIMELINE&nbsp;&nbsp;
+                  <span className={this.props.projectDetails}>
+                    {this.state.currentProjectTimeline}
+                  </span>
+                </li>
+                <li className='projectListItem'>
+                  WEBSITE&nbsp;&nbsp;
+                  <span className={this.props.projectDetails}>
+                    <a className={this.props.link} href='index.html'>
+                      {this.state.currentProjectWebsite}
+                    </a>
+                  </span>
+                </li>
+              </ul>
+              <div className='prevNextIconWrap'>
+                {this.state.currentProjectIcons.map((currentIcon: any) => (
+                  <FontAwesomeIcon
+                    key={currentIcon['id']}
+                    icon={['fab', currentIcon['src']]}
+                    className='projectIcon'
+                  />
+                ))}
+              </div>
+            </div>
+            {/* TOOLS */}
+            <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <div className='lineThin mar' />
+            </div>
+            {/* PROJECT CONTROL ICONS */}
+            <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <div className='iconWrap' onClick={this.prevProject}>
+                <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
+              </div>
+              <div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
+                <FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
+              </div>
+              <div className='iconWrap' onClick={this.nextProject}>
+                <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
+              </div>
+            </div>
           </div>
-          <div className='colWrap col-xs-12 col-sm-12 col-md-7 col-lg-7'>
-            <h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
-            <br />
-            <p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
-          </div>
-          {/* PROJECT DETAILS */}
-          <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
-            <ul>
-              <li className='projectListItem'>
-                FIELDS&nbsp;&nbsp;
-                <span className={this.props.projectDetails}>
-                  {this.state.currentProjectFields[0]}
-                  <span className='textLightGrey text300'> / </span>
-                  {this.state.currentProjectFields[1]}
-                  <span className='textLightGrey text300'> / </span>
-                  {this.state.currentProjectFields[2]}
-                </span>
-              </li>
-              <li className='projectListItem'>
-                CLIENT&nbsp;&nbsp;
-                <span className={this.props.projectDetails}>{this.state.currentProjectClient}</span>
-              </li>
-              <li className='projectListItem'>
-                TIMELINE&nbsp;&nbsp;
-                <span className={this.props.projectDetails}>
-                  {this.state.currentProjectTimeline}
-                </span>
-              </li>
-              <li className='projectListItem'>
-                WEBSITE&nbsp;&nbsp;
-                <span className={this.props.projectDetails}>
-                  <a className={this.props.link} href='index.html'>
-                    {this.state.currentProjectWebsite}
-                  </a>
-                </span>
-              </li>
-            </ul>
-            <div className='prevNextIconWrap'>
-              {this.state.currentProjectIcons.map((currentIcon: any) => (
-                <FontAwesomeIcon
-                  key={currentIcon['id']}
-                  icon={['fab', currentIcon['src']]}
-                  className='projectIcon'
-                />
+        </div>
+        {/* IMAGES */}
+        <div className={this.props.projectRow}>
+          <div className='container-fluid'>
+            <div className='row marBotProject'>
+              {this.state.currentProjectImages.map((currentImage: { [x: string]: string }) => (
+                <div
+                  key={currentImage['id']}
+                  className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                  <img
+                    src={require('./../img/project/' + currentImage['src'])}
+                    alt={this.state.currentProjectName}
+                  />
+                </div>
               ))}
             </div>
           </div>
-          {/* TOOLS */}
-          <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <div className='lineThin mar' />
-          </div>
-          {/* PROJECT CONTROL ICONS */}
+        </div>
+        {/* PROJECT CONTROL ICONS */}
+        <div className='container-fluid'>
           <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
             <div className='iconWrap' onClick={this.prevProject}>
               <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
@@ -205,31 +240,6 @@ class Project extends Component<any, any> {
             <div className='iconWrap' onClick={this.nextProject}>
               <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
             </div>
-          </div>
-        </div>
-        {/* IMAGES */}
-        <div className='row'>
-          {this.state.currentProjectImages.map((currentImage: { [x: string]: string }) => (
-            <div
-              key={currentImage['id']}
-              className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <img
-                src={require('./../img/project/' + currentImage['src'])}
-                alt={this.state.currentProjectName}
-              />
-            </div>
-          ))}
-        </div>
-        {/* PROJECT CONTROL ICONS */}
-        <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='iconWrap' onClick={this.prevProject}>
-            <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
-          </div>
-          <div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
-            <FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
-          </div>
-          <div className='iconWrap' onClick={this.nextProject}>
-            <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
           </div>
         </div>
       </React.Fragment>
