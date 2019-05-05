@@ -64,8 +64,8 @@ class App extends Component<any, any> {
       projectHeading: 'marBot textWhite',
       projectIntro: 'textSpotGrey text300',
       projectDesc: 'textWhite',
-      projectDetails: 'textWhite text300',
-      link: 'textWhite text300',
+      projectDetails: 'textWhite text700',
+      link: 'textWhite',
       projectRow: 'projectRowDark',
       currentProject: '',
       currentProjectName: '',
@@ -140,9 +140,9 @@ class App extends Component<any, any> {
         projectHeading: 'marBot textGrey',
         projectIntro: 'textLightGrey text300',
         projectDesc: 'textGrey',
-        projectDetails: 'textGrey text300',
-        link: 'textGrey text300',
-        projectRow: 'projectRowLight',
+        projectDetails: 'textGrey text700',
+        link: 'textGrey',
+        projectRow: 'projectRowLight'
       });
       // DARK THEME
     } else {
@@ -194,7 +194,7 @@ class App extends Component<any, any> {
         projectIntro: 'textSpotGrey text300',
         projectDesc: 'textWhite',
         projectDetails: 'textWhite text700',
-        link: 'textWhite text300',
+        link: 'textWhite',
         projectRow: 'projectRowDark'
       });
     }

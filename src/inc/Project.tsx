@@ -150,15 +150,15 @@ class Project extends Component<any, any> {
               <p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
             </div>
             {/* PROJECT DETAILS */}
-            <div className='colWrap col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+            <div className='colWrap right col-xs-12 col-sm-12 col-md-4 col-lg-4'>
               <ul>
                 <li className='projectListItem'>
                   FIELDS&nbsp;&nbsp;
                   <span className={this.props.projectDetails}>
                     {this.state.currentProjectFields[0]}
-                    <span className='textLightGrey text300'> / </span>
+                    <span className='textLightGrey text700'> / </span>
                     {this.state.currentProjectFields[1]}
-                    <span className='textLightGrey text300'> / </span>
+                    <span className='textLightGrey text700'> / </span>
                     {this.state.currentProjectFields[2]}
                   </span>
                 </li>

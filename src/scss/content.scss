@@ -136,10 +136,6 @@
   color: $yellow;
 }
 
-// .brandDark a:hover {
-//   color: $white;
-// }
-
 // NAV BRAND LIGHT
 .brandLight {
   cursor: pointer;
@@ -158,10 +154,6 @@
 .brandLight a {
   color: $green;
 }
-
-// .brandLight a:hover {
-//   color: $grey;
-// }
 
 // TYPE
 .typeWrap {
@@ -257,9 +249,9 @@
 
 .projectListItem {
   cursor: default;
-  font-weight: $bold;
+  font-weight: $light;
   font-size: 1.2em;
-  color: $lightGrey;
+  color: $spotGrey;
   line-height: 1.5em;
 }
 
