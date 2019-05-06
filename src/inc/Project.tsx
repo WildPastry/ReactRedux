@@ -127,6 +127,7 @@ class Project extends Component<any, any> {
   }
 
   changePageFromProject(value: any) {
+    window.scrollTo(0, 0);
     this.props.changePageFromProject(value);
   }
 

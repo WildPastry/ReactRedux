@@ -61,13 +61,18 @@ class Gallery extends Component<any, any> {
               src={require('./../icon/rgb.svg')}
               onClick={this.props.changeImageTheme}
               alt='RBG Icon'
+              title='Hue'
             />
             <div onClick={this.props.changeTheme}>
-              <FontAwesomeIcon icon={['fas', 'fill-drip']} className={this.props.galleryFillIcon} />
+              <FontAwesomeIcon
+                icon={['fas', 'fill-drip']}
+                title='Theme'
+                className={this.props.galleryFillIcon}
+              />
             </div>
           </div>
         </div>
-        {/* PROJECTS MAP */}
+        {/* IMAGE MAP */}
         <div className='row'>
           {this.props.projects.map(
             (singleProject: {
@@ -99,19 +104,21 @@ class Gallery extends Component<any, any> {
                     singleProject.intro,
                     singleProject.desc
                   ])}
-                  src={require('./../img/thumb/' + singleProject.thumb)}
+                  src={require('./../img/thumb/' + singleProject.thumb[Math.round(Math.random())])}
                   alt='Gallery'
                 />
-                <div className='flex wrap'>
+                {/* IMAGE DESCRIPTIONS */}
+                <div className='descriptionWrap'>
                   <p className={this.props.singleProjectName}>{singleProject.name}</p>
-                  {/* <p><span className='textSpotGrey text300'>
-                  {singleProject.fields[0]}
-                  <span className='textLightGrey text700'> / </span>
-                  {singleProject.fields[1]}
-                  <span className='textLightGrey text700'> / </span>
-                  {singleProject.fields[2]}
-                  </span>
-                </p> */}
+                  <p>
+                    <span className='textSpotGrey text400'>
+                      {singleProject.fields[0]}
+                      <span className='textLightGrey text400'> / </span>
+                      {singleProject.fields[1]}
+                      <span className='textLightGrey text400'> / </span>
+                      {singleProject.fields[2]}
+                    </span>
+                  </p>
                 </div>
               </div>
             )

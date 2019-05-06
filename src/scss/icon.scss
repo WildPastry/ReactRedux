@@ -33,24 +33,24 @@
 .galleryFillIconDark {
   cursor: pointer;
   font-size: 30px;
-  color: $white;
+  color: $yellow;
   margin-left: 20px;
 }
 
 .galleryFillIconDark:hover {
-  color: $peach;
+  opacity: 0.5;
 }
 
 // GALLERY FILL ICON LIGHT
 .galleryFillIconLight {
   cursor: pointer;
   font-size: 30px;
-  color: $grey;
+  color: $green;
   margin-left: 20px;
 }
 
 .galleryFillIconLight:hover {
-  color: $peach;
+  opacity: 0.5;
 }
 
 // GALLERY RGB ICON
@@ -61,7 +61,7 @@
 }
 
 .galleryRGBIcon:hover {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 // PROJECT

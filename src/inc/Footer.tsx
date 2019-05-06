@@ -134,9 +134,9 @@ class Footer extends Component<any, any> {
     if (!isLoaded) {
       return (
         <React.Fragment>
-          <div id='loader'>
-            <div className='loader' />
-          </div>
+            <div id='loader'>
+              <div className='loader' />
+            </div>
         </React.Fragment>
       );
     } else {
@@ -215,6 +215,7 @@ class Footer extends Component<any, any> {
                     <FontAwesomeIcon
                       icon={['fas', 'map-marker-alt']}
                       className={this.props.footerIcon}
+                      title='Get your location'
                     />
                   </div>
                   <p className={this.props.footerCopyright}>&copy; mike parker 2019</p>
