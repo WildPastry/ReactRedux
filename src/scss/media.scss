@@ -22,6 +22,16 @@
   padding: 0 !important;
 }
 
+.visible {
+  visibility: visible;
+  display: block;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
 // MEDIA QUERIES
 @media screen and (max-width: 768px) {
   .responsiveText {
@@ -80,7 +90,8 @@
     font-size: 1.4em;
   }
   .filterWrap {
-    display: block;
+    display: none;
+    visibility: hidden;
   }
   .filterItemDark,
   .filterItemLight {
@@ -89,46 +100,42 @@
   .responsiveFooterWrap {
     display: block;
   }
-  .responsiveCopyRight{
+  .responsiveCopyRight {
     margin-left: 0;
+    line-height: 24px;
   }
   .weatherWrap {
     justify-content: space-between;
   }
-  // .navWrap {
-  //   display: block;
-  // }
-  // .navItemDark,.navItemLight {
-  //   margin-right: 13px;
-  //   margin-left: 0;
-  // }
-
-  // .lineNoMar {
-  //   margin-top: 5px;
-  // }
-  // .projectIcon {
-  //   font-size: 25px;
-  //   margin-right: 10px;
-  //   margin-bottom: 0;
-  // }
-  // .faIconDark,
-  // .faIconLight {
-  //   font-size: 25px;
-  //   margin-right: 10px;
-  // }
-  // .lineThin {
-  //   margin-top: 0;
-  // }
-  // .projectListItem {
-  //   font-size: 1em;
-  // }
+  .galleryWrap {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 390px) {
-  // p {
-  //   font-size: 0.9em;
-  // }
-  // h2 {
-  //   font-size: 1.4em;
-  // }
+  .textHide {
+    display: none;
+    visibility: hidden;
+  }
+  .typeWrap h1 {
+    font-size: 1.1em;
+  }
+  .typeWrap {
+    line-height: 20px;
+  }
+  .projectIconsWrap {
+    margin-top: 0;
+  }
+  .projectIcon {
+    font-size: 25px;
+  }
+  .projectListItem {
+    display: none;
+    visibility: hidden;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
 }

@@ -40,7 +40,7 @@ class App extends Component<any, any> {
       navAbout: 'navItemDark',
       navProject: 'navItemDark',
       type: 'textWhite',
-      thisType: 'textWhite',
+      thisType: 'textWhite textHide',
       space: 'space textGreyBg',
       brand: 'brandDark',
       galleryFillIcon: 'galleryFillIconDark',
@@ -67,6 +67,7 @@ class App extends Component<any, any> {
       projectDetails: 'textWhite text700',
       link: 'textWhite',
       projectRow: 'projectRowDark',
+      barColor: 'textWhite',
       currentProject: '',
       currentProjectName: '',
       currentProjectFields: [],
@@ -114,7 +115,7 @@ class App extends Component<any, any> {
       this.setState({
         light: true,
         type: 'textGrey',
-        thisType: 'textGrey',
+        thisType: 'textGrey textHide',
         space: 'space textWhiteBg',
         brand: 'brandLight',
         navGallery: 'navItemLight navItemActiveLight',
@@ -128,7 +129,7 @@ class App extends Component<any, any> {
         footerPara: 'pad marBotFooter textLightGrey',
         footerTemp: 'footerTemp textGrey',
         footerIcon: 'footerIcon textLightGrey',
-        footerCopyright: 'footerCopyright textGreen text700',
+        footerCopyright: 'footerCopyright textGreen text700 responsiveCopyRight',
         everything: currentEverything,
         branding: currentBranding,
         graphic: currentGraphic,
@@ -142,7 +143,8 @@ class App extends Component<any, any> {
         projectDesc: 'textGrey',
         projectDetails: 'textGrey text700',
         link: 'textGrey',
-        projectRow: 'projectRowLight'
+        projectRow: 'projectRowLight',
+        barColor: 'textGrey',
       });
       // DARK THEME
     } else {
@@ -167,7 +169,7 @@ class App extends Component<any, any> {
       this.setState({
         light: false,
         type: 'textWhite',
-        thisType: 'textWhite',
+        thisType: 'textWhite textHide',
         space: 'space textGreyBg',
         brand: 'brandDark',
         navGallery: 'navItemDark navItemActiveDark',
@@ -181,7 +183,7 @@ class App extends Component<any, any> {
         footerPara: 'pad marBotFooter textSpotGrey',
         footerTemp: 'footerTemp textWhite',
         footerIcon: 'footerIcon textWhite',
-        footerCopyright: 'footerCopyright textYellow text700',
+        footerCopyright: 'footerCopyright textYellow text700 responsiveCopyRight',
         everything: currentEverything,
         branding: currentBranding,
         graphic: currentGraphic,
@@ -195,7 +197,8 @@ class App extends Component<any, any> {
         projectDesc: 'textWhite',
         projectDetails: 'textWhite text700',
         link: 'textWhite',
-        projectRow: 'projectRowDark'
+        projectRow: 'projectRowDark',
+        barColor: 'textWhite',
       });
     }
   }
@@ -484,6 +487,7 @@ class App extends Component<any, any> {
             navGallery={this.state.navGallery}
             navAbout={this.state.navAbout}
             navProject={this.state.navProject}
+            barColor={this.state.barColor}
             brand={this.state.brand}
           />
           <Type type={this.state.type} thisType={this.state.thisType} />

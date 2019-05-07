@@ -5,7 +5,10 @@ class Nav extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      isActive: false
+      isActive: false,
+      collapseMenu: false,
+      collapseMenuFalse: 'hidden',
+      collapseMenuTrue: 'visible'
     };
     this.changePageFromNav = this.changePageFromNav.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
@@ -20,12 +23,57 @@ class Nav extends Component<any, any> {
   }
 
   toggleMenu = () => {
+    if (this.state.collapseMenu === false) {
+      this.setState({
+        collapseMenu: true
+      });
+    } else if (this.state.collapseMenu === true) {
+      this.setState({
+        collapseMenu: false
+      });
+    }
     this.setState({
       isActive: !this.state.isActive
     });
   };
 
   render() {
+    let collapseMenu;
+    if (this.state.collapseMenu === true) {
+      collapseMenu = (
+        <div className={this.state.collapseMenuTrue}>
+          <h4
+            id='navGallery'
+            className={this.props.navGallery}
+            onClick={this.changePageFromNav.bind(this, 'gallery')}>
+            gallery
+          </h4>
+          <h4
+            id='navAbout'
+            className={this.props.navAbout}
+            onClick={this.changePageFromNav.bind(this, 'about')}>
+            about
+          </h4>
+        </div>
+      );
+    } else if (this.state.collapseMenu === false) {
+      collapseMenu = (
+        <div className={this.state.collapseMenuFalse}>
+          <h4
+            id='navGallery'
+            className={this.props.navGallery}
+            onClick={this.changePageFromNav.bind(this, 'gallery')}>
+            gallery
+          </h4>
+          <h4
+            id='navAbout'
+            className={this.props.navAbout}
+            onClick={this.changePageFromNav.bind(this, 'about')}>
+            about
+          </h4>
+        </div>
+      );
+    }
     return (
       <React.Fragment>
         {/* BRAND */}
@@ -41,8 +89,9 @@ class Nav extends Component<any, any> {
               toggleButton={this.toggleMenu}
               barColor='white'
             />
+            {collapseMenu}
           </div>
-          <div className='flex menuCollapseItems'>
+          {/* <div className={this.state.collapseMenu}>
             <h4
               id='navGallery'
               className={this.props.navGallery}
@@ -55,7 +104,7 @@ class Nav extends Component<any, any> {
               onClick={this.changePageFromNav.bind(this, 'about')}>
               about
             </h4>
-          </div>
+          </div> */}
         </div>
       </React.Fragment>
     );

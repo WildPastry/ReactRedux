@@ -18,7 +18,7 @@ class Type extends Component<any, any> {
       <React.Fragment>
         <div className='typeWrap pad'>
           <p className={this.props.thisType}>
-            <span className='textThis'>this </span>portfolio built with react and typescript
+            <span className='textThis'>this </span>site built with react & typescript
           </p>
           <div id='type' className={this.props.type} ref={this.type} />
         </div>
