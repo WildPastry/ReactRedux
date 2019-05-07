@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import Zoom from '@material-ui/core/Zoom';
 
 class Gallery extends Component<any, any> {
   constructor(props: any) {

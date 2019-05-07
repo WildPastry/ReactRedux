@@ -12,3 +12,6 @@ declare module 'react-scroll-up-button';
 
 // TRANSITIONS
 declare module 'react-transition-group';
+
+// ANIMATED BURGER
+declare module 'react-animated-burgers';

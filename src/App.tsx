@@ -51,7 +51,7 @@ class App extends Component<any, any> {
       footerPara: 'pad marBotFooter textSpotGrey',
       footerTemp: 'footerTemp textWhite',
       footerIcon: 'footerIcon textWhite',
-      footerCopyright: 'footerCopyright textYellow text700',
+      footerCopyright: 'footerCopyright textYellow text700 responsiveCopyRight',
       everything: 'filterItemDark filterItemActiveDark text700',
       branding: 'filterItemDark',
       graphic: 'filterItemDark',

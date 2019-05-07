@@ -206,13 +206,13 @@ class Project extends Component<any, any> {
             <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
             </div>
-            <div className='colWrap col-xs-12 col-sm-12 col-md-7 col-lg-7'>
+            <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-7'>
               <h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
               <br />
               <p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
             </div>
             {/* PROJECT DETAILS */}
-            <div className='colWrap right col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+            <div className='colWrap right col-xs-12 col-sm-12 col-md-12 col-lg-5'>
               <ul>
                 <li className='projectListItem'>
                   FIELDS&nbsp;&nbsp;
@@ -245,7 +245,8 @@ class Project extends Component<any, any> {
                   </span>
                 </li>
               </ul>
-              <div className='projectIconsWrap'>
+              {/* TOOLS */}
+              <div className='projectIconsWrap responsiveWrap'>
                 {this.state.currentProjectIcons.map((currentIcon: any) => (
                   <FontAwesomeIcon
                     key={currentIcon['id']}
@@ -255,7 +256,7 @@ class Project extends Component<any, any> {
                 ))}
               </div>
             </div>
-            {/* TOOLS */}
+            {/* LINE BREAK */}
             <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <div className='lineThin mar' />
             </div>
@@ -310,7 +311,7 @@ class Project extends Component<any, any> {
             <div className='moreProjectsWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3 className='center marBotProject textPeach'>more projects</h3>
             </div>
-            <div className='imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+            <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
               <img
                 onClick={this.moreProjects.bind(this, randomNumber[0])}
                 src={require('./../img/thumb/' +
@@ -318,7 +319,7 @@ class Project extends Component<any, any> {
                 alt='Gallery'
               />
             </div>
-            <div className='imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+            <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
               <img
                 onClick={this.moreProjects.bind(this, randomNumber[1])}
                 src={require('./../img/thumb/' +
@@ -326,7 +327,7 @@ class Project extends Component<any, any> {
                 alt='Gallery'
               />
             </div>
-            <div className='imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+            <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
               <img
                 onClick={this.moreProjects.bind(this, randomNumber[2])}
                 src={require('./../img/thumb/' +

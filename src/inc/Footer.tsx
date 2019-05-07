@@ -134,9 +134,9 @@ class Footer extends Component<any, any> {
     if (!isLoaded) {
       return (
         <React.Fragment>
-            <div id='loader'>
-              <div className='loader' />
-            </div>
+          <div id='loader'>
+            <div className='loader' />
+          </div>
         </React.Fragment>
       );
     } else {
@@ -147,7 +147,7 @@ class Footer extends Component<any, any> {
             <div className='line' />
             <div className='row'>
               {/* FA ICONS */}
-              <div className='colWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+              <div className='colWrap responsiveWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
                 <a href='https://www.linkedin.com/in/michael-parker-aa084310a/' target='new'>
                   <FontAwesomeIcon icon={['fab', 'linkedin-in']} className={this.props.faIcon} />
                 </a>
@@ -204,23 +204,33 @@ class Footer extends Component<any, any> {
             </div>
             {/* COPYRIGHT AND WEATHER */}
             <div className='row'>
+
               <div className='footerWrap'>
+
                 <div className='lineThinFooter' />
-                <div className='flex'>
-                  {weatherDisplay}
-                  <h2 className={this.props.footerTemp}>
-                    {Math.trunc(weather.currently.temperature) + '°'}{' '}
-                  </h2>
-                  <div className='footerIconWrap' onClick={this.getLocation}>
-                    <FontAwesomeIcon
-                      icon={['fas', 'map-marker-alt']}
-                      className={this.props.footerIcon}
-                      title='Get your location'
-                    />
+
+                <div className='flex wrap responsiveFooterWrap'>
+
+                  <div className='weatherWrap flex'>
+                    {weatherDisplay}
+                    <h2 className={this.props.footerTemp}>
+                      {Math.trunc(weather.currently.temperature) + '°'}{' '}
+                    </h2>
+                    <div className='footerIconWrap' onClick={this.getLocation}>
+                      <FontAwesomeIcon
+                        icon={['fas', 'map-marker-alt']}
+                        className={this.props.footerIcon}
+                        title='Get your location'
+                      />
+                    </div>
                   </div>
+
                   <p className={this.props.footerCopyright}>&copy; mike parker 2019</p>
+
                 </div>
+
               </div>
+
             </div>
           </div>
         </React.Fragment>
