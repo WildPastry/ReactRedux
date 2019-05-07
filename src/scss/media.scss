@@ -2,13 +2,56 @@
 @import 'variables';
 @import 'mixins';
 
+.responsiveMar {
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .responsiveText {
+    text-align: left;
+  }
+  .right {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .responsiveMar {
+    margin-top: 5px;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .right {
     text-align: left;
-    margin-top: 10px;
   }
 
   .lineThinFooter {
     margin-top: 10px;
+  }
+  .responsive {
+    margin-bottom: 0;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  .projectIcon {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  .filterWrap {
+    display: block;
+  }
+  .filterItemDark,
+  .filterItemLight {
+    margin-top: 7px;
+  }
+  .lineNoMar {
+    margin-top: 5px;
+  }
+  .projectIcon {
+    font-size: 30px;
   }
 }

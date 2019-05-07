@@ -201,7 +201,7 @@ class Project extends Component<any, any> {
     return (
       <React.Fragment>
         {/* DESCRIPTION */}
-        <div className='container-fluid'>
+        <div className='container-fluid responsiveMar'>
           <div className='row wrap marBotProject'>
             <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
@@ -245,7 +245,7 @@ class Project extends Component<any, any> {
                   </span>
                 </li>
               </ul>
-              <div className='prevNextIconWrap'>
+              <div className='projectIconsWrap'>
                 {this.state.currentProjectIcons.map((currentIcon: any) => (
                   <FontAwesomeIcon
                     key={currentIcon['id']}

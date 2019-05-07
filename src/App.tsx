@@ -461,8 +461,9 @@ class App extends Component<any, any> {
           projectIntro={this.state.projectIntro}
           projectDesc={this.state.projectDesc}
           projectDetails={this.state.projectDetails}
-          link={this.state.link}
           projectRow={this.state.projectRow}
+          link={this.state.link}
+          
         />
       );
     } else if (currentPage === 'about') {

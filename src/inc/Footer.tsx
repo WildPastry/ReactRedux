@@ -174,7 +174,7 @@ class Footer extends Component<any, any> {
                 </a>
               </div>
               {/* ARCHIVES */}
-              <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
+              <div className='colWrap right responsiveText col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className={this.props.footerHeading}>archives</h4>
                 <ul className={this.props.list}>
                   <li>
