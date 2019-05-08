@@ -7,8 +7,8 @@ class Nav extends Component<any, any> {
     this.state = {
       isActive: false,
       collapseMenu: false,
-      collapseMenuFalse: 'hidden',
-      collapseMenuTrue: 'visible'
+      collapseMenuFalse: 'hidden menuActive',
+      collapseMenuTrue: 'visible menuActive'
     };
     this.changePageFromNav = this.changePageFromNav.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
@@ -39,18 +39,43 @@ class Nav extends Component<any, any> {
 
   render() {
     let collapseMenu;
-    if (this.state.collapseMenu === true) {
+    let burgerMenu
+    if (this.props.light === false){
+      burgerMenu = (
+        <div className='menuCollapse'>
+        <HamburgerSqueeze
+          className='menuBurger'
+          isActive={this.state.isActive}
+          toggleButton={this.toggleMenu}
+          buttonWidth={30}
+          barColor={'#fff'}
+        />
+      </div>
+      )
+    } else if (this.props.light === true){
+      burgerMenu = (
+        <div className='menuCollapse'>
+        <HamburgerSqueeze
+          className='menuBurger'
+          isActive={this.state.isActive}
+          toggleButton={this.toggleMenu}
+          buttonWidth={30}
+          barColor={'#292929'}
+        />
+      </div>
+      )
+    } if (this.state.collapseMenu === true) {
       collapseMenu = (
         <div className={this.state.collapseMenuTrue}>
           <h4
             id='navGallery'
-            className={this.props.navGallery}
+            className={this.props.navGalleryActive}
             onClick={this.changePageFromNav.bind(this, 'gallery')}>
             gallery
           </h4>
           <h4
             id='navAbout'
-            className={this.props.navAbout}
+            className={this.props.navAboutActive}
             onClick={this.changePageFromNav.bind(this, 'about')}>
             about
           </h4>
@@ -79,19 +104,13 @@ class Nav extends Component<any, any> {
         {/* BRAND */}
         <div className='flex wrap pad navWrap'>
           <p className={this.props.brand}>
-            <a href='index.html'> mike parker | portfolio </a>
+            <a href='index.html'>
+              mike parker <span className='text300'> portfolio </span>
+            </a>
           </p>
           {/* NAV */}
-          <div className='menuCollapse'>
-            <HamburgerSqueeze
-              className='menuBurger'
-              isActive={this.state.isActive}
-              toggleButton={this.toggleMenu}
-              barColor='white'
-            />
-            {collapseMenu}
-          </div>
-          {/* <div className={this.state.collapseMenu}>
+          {burgerMenu}
+          <div className='menu flex'>
             <h4
               id='navGallery'
               className={this.props.navGallery}
@@ -104,8 +123,10 @@ class Nav extends Component<any, any> {
               onClick={this.changePageFromNav.bind(this, 'about')}>
               about
             </h4>
-          </div> */}
+          </div>
         </div>
+        {/* COLLAPSE MENU */}
+        {collapseMenu}
       </React.Fragment>
     );
   }

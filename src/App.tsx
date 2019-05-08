@@ -38,7 +38,8 @@ class App extends Component<any, any> {
       imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4',
       navGallery: 'navItemDark navItemActiveDark',
       navAbout: 'navItemDark',
-      navProject: 'navItemDark',
+      navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+      navAboutActive: 'navItemDarkCollapse menuActiveItem',
       type: 'textWhite',
       thisType: 'textWhite textHide',
       space: 'space textGreyBg',
@@ -120,7 +121,8 @@ class App extends Component<any, any> {
         brand: 'brandLight',
         navGallery: 'navItemLight navItemActiveLight',
         navAbout: 'navItemLight',
-        navProject: 'navItemLight',
+        navGalleryActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+        navAboutActive: 'navItemLightCollapse menuActiveItem',
         galleryFillIcon: 'galleryFillIconLight',
         singleProjectName: 'textLightGrey text700',
         faIcon: 'faIconLight',
@@ -174,7 +176,8 @@ class App extends Component<any, any> {
         brand: 'brandDark',
         navGallery: 'navItemDark navItemActiveDark',
         navAbout: 'navItemDark',
-        navProject: 'navItemDark',
+        navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+        navAboutActive: 'navItemDarkCollapse menuActiveItem',
         galleryFillIcon: 'galleryFillIconDark',
         singleProjectName: 'textWhite text700',
         faIcon: 'faIconDark',
@@ -486,9 +489,11 @@ class App extends Component<any, any> {
             changePageFromNav={this.changePage}
             navGallery={this.state.navGallery}
             navAbout={this.state.navAbout}
-            navProject={this.state.navProject}
+            navGalleryActive={this.state.navGalleryActive}
+            navAboutActive={this.state.navAboutActive}
             barColor={this.state.barColor}
             brand={this.state.brand}
+            light={this.state.light}
           />
           <Type type={this.state.type} thisType={this.state.thisType} />
           <React.Fragment>{display}</React.Fragment>

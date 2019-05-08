@@ -8,14 +8,19 @@
 }
 
 // MENU COLLAPSE
+.menuActive {
+  padding: 5px;
+}
+
+.menuActiveItem {
+  margin: 10px 0 10px 0;
+  text-align: right;
+}
+
 .menuCollapse {
   display: none;
   visibility: hidden;
   cursor: pointer;
-}
-
-.menuCollapseItems {
-  visibility: visible;
 }
 
 .menuBurger {
@@ -32,11 +37,46 @@
   display: none;
 }
 
+// COLLAPSE NAV ITEM DARK
+.navItemDarkCollapse {
+  color: $spotGrey;
+  cursor: pointer;
+  padding: 10px;
+  border: 0.5px solid $spotGrey-t;
+}
+
+.navItemDarkCollapse:hover {
+  color: $peach;
+  background: $white
+}
+
+.navItemActiveDarkCollapse {
+  color: $peach;
+}
+
+// COLLAPSE NAV ITEM LIGHT
+.navItemLightCollapse {
+  color: $lightGrey;
+  cursor: pointer;
+  padding: 10px;
+  border: 0.5px solid $lightGrey-t;
+}
+
+.navItemLightCollapse:hover {
+  color: $white;
+  background: $grey
+}
+
+.navItemActiveLightCollapse {
+  color: $peach;
+}
+
 // MEDIA QUERIES
 @media screen and (max-width: 768px) {
   .responsiveText {
     text-align: left;
   }
+
   .right {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -44,42 +84,57 @@
 }
 
 @media screen and (max-width: 576px) {
+  .menu {
+    display: none;
+    visibility: hidden;
+  }
+
   .menuCollapse {
     display: inline;
     visibility: visible;
   }
+
   .menuCollapseItems {
     display: none;
     visibility: hidden;
   }
+
   .responsiveWrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
   }
+
   .projectIcon {
-    margin-right: 0;
+    margin-right: 15px;
     margin-left: 0;
   }
+
   .faIconDark,
   .faIconLight {
-    margin-right: 0;
+    margin-right: 15px;
     margin-left: 0;
   }
+
   .responsiveText {
     margin-bottom: 0;
   }
+
   .right {
     text-align: left;
   }
+
   .lineThinFooter {
     margin-top: 10px;
   }
+
   .lineThin {
     margin-top: 0;
   }
+
   .responsive {
     margin-bottom: 0;
   }
+
   .typeWrap h1 {
     font-size: 1.6em;
   }
@@ -89,27 +144,33 @@
   .typeWrap h1 {
     font-size: 1.4em;
   }
+
   .filterWrap {
     display: none;
     visibility: hidden;
   }
+
   .filterItemDark,
   .filterItemLight {
     margin-top: 10px;
   }
+
   .responsiveFooterWrap {
     display: block;
   }
+
   .responsiveCopyRight {
     margin-left: 0;
     line-height: 24px;
   }
+
   .weatherWrap {
     justify-content: space-between;
   }
+
   .galleryWrap {
     width: 100%;
-    justify-content: space-between;
+    justify-content: end;
     margin-bottom: 0;
   }
 }
@@ -119,22 +180,28 @@
     display: none;
     visibility: hidden;
   }
+
   .typeWrap h1 {
     font-size: 1.1em;
   }
+
   .typeWrap {
     line-height: 20px;
   }
+
   .projectIconsWrap {
     margin-top: 0;
   }
+
   .projectIcon {
     font-size: 25px;
   }
+
   .projectListItem {
     display: none;
     visibility: hidden;
   }
+
   h2 {
     font-size: 1.3em;
   }
