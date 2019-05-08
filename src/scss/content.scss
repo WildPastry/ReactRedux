@@ -123,7 +123,7 @@
   border-bottom: 2px solid transparent;
   padding-bottom: 3px;
   font-weight: $bold;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   @include transitions($speed, $speed, $speed, $speed);
 }
 
@@ -142,7 +142,7 @@
   border-bottom: 2px solid transparent;
   padding-bottom: 3px;
   font-weight: $bold;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   @include transitions($speed, $speed, $speed, $speed);
 }
 
@@ -224,6 +224,33 @@
   border-bottom: 2px solid $peach;
 }
 
+// ABOUT
+.aboutListWrap {
+  line-height: 1.5em;
+}
+
+// ABOUT LIST DARK
+.aboutListDark li {
+  color: $spotGrey;
+  font-weight: $light;
+  line-height: 1.5em;
+}
+
+.aboutListDark a {
+  color: $spotGrey;
+}
+
+// ABOUT LIST LIGHT
+.aboutListLight li {
+  color: $lightGrey;
+  font-weight: $light;
+  line-height: 1.5em;
+}
+
+.aboutListLight a {
+  color: $lightGrey;
+}
+
 // PROJECT
 .projectRowDark {
   background: $white;
@@ -279,6 +306,10 @@
 
 .footerWrap {
   line-height: 30px;
+}
+
+.footerListWrap {
+  line-height: 1.5em;
 }
 
 .footerCopyright {

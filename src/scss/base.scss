@@ -39,6 +39,7 @@ code {
 p {
   font-weight: $light;
   line-height: 1.5em;
+  letter-spacing: 0.2px;
 }
 
 h1,
@@ -58,12 +59,14 @@ img,
 h1,
 h2 {
   font-weight: $bold;
+  letter-spacing: 0.8px;
 }
 
 h3,
 h4,
 h5 {
   font-weight: $regular;
+  letter-spacing: 0.4px;
 }
 
 // SELECTION
@@ -126,6 +129,11 @@ h5 {
 .lineThinFooter {
   border-bottom: 1px solid $lightGrey;
   margin-left: 5px;
+}
+
+.lineThinAbout {
+  border-bottom: 1px solid $lightGrey;
+  margin: 15px 0 15px 0;
 }
 
 // PAD

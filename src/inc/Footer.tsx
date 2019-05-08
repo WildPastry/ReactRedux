@@ -175,7 +175,7 @@ class Footer extends Component<any, any> {
               </div>
               {/* ARCHIVES */}
               <div className='colWrap right responsiveText col-xs-6 col-sm-6 col-md-3 col-lg-3'>
-                <h4 className={this.props.footerHeading}>archives</h4>
+                <h4 className={this.props.footerHeading}>ARCHIVES</h4>
                 <ul className={this.props.list}>
                   <li>
                     <a href='index.html'>The Fear Board</a>
@@ -193,7 +193,7 @@ class Footer extends Component<any, any> {
               </div>
               {/* CONTACT DETAILS */}
               <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
-                <h4 className={this.props.footerHeading}>contact details</h4>
+                <h4 className={this.props.footerHeading}>CONTACT</h4>
                 <ul className={this.props.list}>
                   <li x-ms-format-detection='none'>+64 022 5025 485</li>
                   <li>
@@ -204,13 +204,9 @@ class Footer extends Component<any, any> {
             </div>
             {/* COPYRIGHT AND WEATHER */}
             <div className='row'>
-
               <div className='footerWrap'>
-
                 <div className='lineThinFooter' />
-
                 <div className='flex wrap responsiveFooterWrap'>
-
                   <div className='weatherWrap flex'>
                     {weatherDisplay}
                     <h2 className={this.props.footerTemp}>
@@ -224,13 +220,9 @@ class Footer extends Component<any, any> {
                       />
                     </div>
                   </div>
-
-                  <p className={this.props.footerCopyright}>&copy; mike parker 2019</p>
-
+                  <p className={this.props.footerCopyright}>&copy; mike parker <span className='text300'>2019</span></p>
                 </div>
-
               </div>
-
             </div>
           </div>
         </React.Fragment>

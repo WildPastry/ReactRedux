@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MDBAnimation } from 'mdbreact';
 
 var randomNumber: any[] | number[] | (string | number)[];
 
@@ -200,67 +201,102 @@ class Project extends Component<any, any> {
   render() {
     return (
       <React.Fragment>
-        {/* DESCRIPTION */}
-        <div className='container-fluid responsiveMar'>
-          <div className='row wrap marBotProject'>
-            <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
+        <MDBAnimation type='fadeIn'>
+          {/* DESCRIPTION */}
+          <div className='container-fluid responsiveMar'>
+            <div className='row wrap marBotProject'>
+              <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                <h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
+              </div>
+              <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-7'>
+                <h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
+                <br />
+                <p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
+              </div>
+              {/* PROJECT DETAILS */}
+              <div className='colWrap right col-xs-12 col-sm-12 col-md-12 col-lg-5'>
+                <ul>
+                  <li className='projectListItem'>
+                    FIELDS&nbsp;&nbsp;
+                    <span className={this.props.projectDetails}>
+                      {this.state.currentProjectFields[0]}
+                      <span className='textLightGrey text700'> / </span>
+                      {this.state.currentProjectFields[1]}
+                      <span className='textLightGrey text700'> / </span>
+                      {this.state.currentProjectFields[2]}
+                    </span>
+                  </li>
+                  <li className='projectListItem'>
+                    CLIENT&nbsp;&nbsp;
+                    <span className={this.props.projectDetails}>
+                      {this.state.currentProjectClient}
+                    </span>
+                  </li>
+                  <li className='projectListItem'>
+                    TIMELINE&nbsp;&nbsp;
+                    <span className={this.props.projectDetails}>
+                      {this.state.currentProjectTimeline}
+                    </span>
+                  </li>
+                  <li className='projectListItem'>
+                    WEBSITE&nbsp;&nbsp;
+                    <span className={this.props.projectDetails}>
+                      <a className={this.props.link} href='index.html'>
+                        {this.state.currentProjectWebsite}
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+                {/* TOOLS */}
+                <div className='projectIconsWrap responsiveWrap'>
+                  {this.state.currentProjectIcons.map((currentIcon: any) => (
+                    <FontAwesomeIcon
+                      key={currentIcon['id']}
+                      icon={['fab', currentIcon['src']]}
+                      className='projectIcon'
+                    />
+                  ))}
+                </div>
+              </div>
+              {/* LINE BREAK */}
+              <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                <div className='lineThin mar' />
+              </div>
+              {/* TOP PROJECT CONTROL ICONS */}
+              <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                <div className='iconWrap' onClick={this.prevProject}>
+                  <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
+                </div>
+                <div
+                  className='iconWrap'
+                  onClick={this.changePageFromProject.bind(this, 'gallery')}>
+                  <FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
+                </div>
+                <div className='iconWrap' onClick={this.nextProject}>
+                  <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
+                </div>
+              </div>
             </div>
-            <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-7'>
-              <h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
-              <br />
-              <p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
-            </div>
-            {/* PROJECT DETAILS */}
-            <div className='colWrap right col-xs-12 col-sm-12 col-md-12 col-lg-5'>
-              <ul>
-                <li className='projectListItem'>
-                  FIELDS&nbsp;&nbsp;
-                  <span className={this.props.projectDetails}>
-                    {this.state.currentProjectFields[0]}
-                    <span className='textLightGrey text700'> / </span>
-                    {this.state.currentProjectFields[1]}
-                    <span className='textLightGrey text700'> / </span>
-                    {this.state.currentProjectFields[2]}
-                  </span>
-                </li>
-                <li className='projectListItem'>
-                  CLIENT&nbsp;&nbsp;
-                  <span className={this.props.projectDetails}>
-                    {this.state.currentProjectClient}
-                  </span>
-                </li>
-                <li className='projectListItem'>
-                  TIMELINE&nbsp;&nbsp;
-                  <span className={this.props.projectDetails}>
-                    {this.state.currentProjectTimeline}
-                  </span>
-                </li>
-                <li className='projectListItem'>
-                  WEBSITE&nbsp;&nbsp;
-                  <span className={this.props.projectDetails}>
-                    <a className={this.props.link} href='index.html'>
-                      {this.state.currentProjectWebsite}
-                    </a>
-                  </span>
-                </li>
-              </ul>
-              {/* TOOLS */}
-              <div className='projectIconsWrap responsiveWrap'>
-                {this.state.currentProjectIcons.map((currentIcon: any) => (
-                  <FontAwesomeIcon
-                    key={currentIcon['id']}
-                    icon={['fab', currentIcon['src']]}
-                    className='projectIcon'
-                  />
+          </div>
+          {/* IMAGES */}
+          <div className={this.props.projectRow}>
+            <div className='container-fluid'>
+              <div className='row marBotProject'>
+                {this.state.currentProjectImages.map((currentImage: { [x: string]: string }) => (
+                  <div
+                    key={currentImage['id']}
+                    className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                    <img
+                      src={require('./../img/project/' + currentImage['src'])}
+                      alt={this.state.currentProjectName}
+                    />
+                  </div>
                 ))}
               </div>
             </div>
-            {/* LINE BREAK */}
-            <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <div className='lineThin mar' />
-            </div>
-            {/* TOP PROJECT CONTROL ICONS */}
+          </div>
+          {/* BOTTOM PROJECT CONTROL ICONS */}
+          <div className='container-fluid'>
             <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <div className='iconWrap' onClick={this.prevProject}>
                 <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
@@ -273,70 +309,39 @@ class Project extends Component<any, any> {
               </div>
             </div>
           </div>
-        </div>
-        {/* IMAGES */}
-        <div className={this.props.projectRow}>
+          {/* MORE PROJECTS */}
           <div className='container-fluid'>
-            <div className='row marBotProject'>
-              {this.state.currentProjectImages.map((currentImage: { [x: string]: string }) => (
-                <div
-                  key={currentImage['id']}
-                  className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-                  <img
-                    src={require('./../img/project/' + currentImage['src'])}
-                    alt={this.state.currentProjectName}
-                  />
-                </div>
-              ))}
+            <div className='row'>
+              <div className='moreProjectsWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                <h3 className='center marBotProject textPeach'>more projects</h3>
+              </div>
+              <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+                <img
+                  onClick={this.moreProjects.bind(this, randomNumber[0])}
+                  src={require('./../img/thumb/' +
+                    this.state.projects[randomNumber[0]].thumb[Math.round(Math.random())])}
+                  alt='Gallery'
+                />
+              </div>
+              <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+                <img
+                  onClick={this.moreProjects.bind(this, randomNumber[1])}
+                  src={require('./../img/thumb/' +
+                    this.state.projects[randomNumber[1]].thumb[Math.round(Math.random())])}
+                  alt='Gallery'
+                />
+              </div>
+              <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+                <img
+                  onClick={this.moreProjects.bind(this, randomNumber[2])}
+                  src={require('./../img/thumb/' +
+                    this.state.projects[randomNumber[2]].thumb[Math.round(Math.random())])}
+                  alt='Gallery'
+                />
+              </div>
             </div>
           </div>
-        </div>
-        {/* BOTTOM PROJECT CONTROL ICONS */}
-        {/* <div className='container-fluid'>
-          <div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <div className='iconWrap' onClick={this.prevProject}>
-              <FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
-            </div>
-            <div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
-              <FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
-            </div>
-            <div className='iconWrap' onClick={this.nextProject}>
-              <FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
-            </div>
-          </div>
-        </div> */}
-        {/* MORE PROJECTS */}
-        <div className='container-fluid'>
-          <div className='row'>
-            <div className='moreProjectsWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <h3 className='center marBotProject textPeach'>more projects</h3>
-            </div>
-            <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-              <img
-                onClick={this.moreProjects.bind(this, randomNumber[0])}
-                src={require('./../img/thumb/' +
-                  this.state.projects[randomNumber[0]].thumb[Math.round(Math.random())])}
-                alt='Gallery'
-              />
-            </div>
-            <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-              <img
-                onClick={this.moreProjects.bind(this, randomNumber[1])}
-                src={require('./../img/thumb/' +
-                  this.state.projects[randomNumber[1]].thumb[Math.round(Math.random())])}
-                alt='Gallery'
-              />
-            </div>
-            <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-              <img
-                onClick={this.moreProjects.bind(this, randomNumber[2])}
-                src={require('./../img/thumb/' +
-                  this.state.projects[randomNumber[2]].thumb[Math.round(Math.random())])}
-                alt='Gallery'
-              />
-            </div>
-          </div>
-        </div>
+        </MDBAnimation>
       </React.Fragment>
     );
   }

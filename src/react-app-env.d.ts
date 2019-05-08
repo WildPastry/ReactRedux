@@ -10,8 +10,8 @@ declare var require: {
 // SCROLL BUTTON
 declare module 'react-scroll-up-button';
 
-// TRANSITIONS
-declare module 'react-transition-group';
-
 // ANIMATED BURGER
 declare module 'react-animated-burgers';
+
+// MDB ANIMATIONS
+declare module 'mdbreact';

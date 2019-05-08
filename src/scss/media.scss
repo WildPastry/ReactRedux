@@ -42,7 +42,7 @@
   color: $spotGrey;
   cursor: pointer;
   padding: 10px;
-  border: 0.5px solid $spotGrey-t;
+  border: 0.5px solid transparent;
 }
 
 .navItemDarkCollapse:hover {
@@ -52,6 +52,7 @@
 
 .navItemActiveDarkCollapse {
   color: $peach;
+  border: 0.5px solid $spotGrey-t;
 }
 
 // COLLAPSE NAV ITEM LIGHT
@@ -59,7 +60,7 @@
   color: $lightGrey;
   cursor: pointer;
   padding: 10px;
-  border: 0.5px solid $lightGrey-t;
+  border: 0.5px solid transparent;
 }
 
 .navItemLightCollapse:hover {
@@ -69,6 +70,7 @@
 
 .navItemActiveLightCollapse {
   color: $peach;
+  border: 0.5px solid $lightGrey-t;
 }
 
 // MEDIA QUERIES
@@ -79,6 +81,10 @@
 
   .right {
     margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .aboutListWrap {
     margin-bottom: 15px;
   }
 }

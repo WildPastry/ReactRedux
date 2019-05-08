@@ -7,6 +7,7 @@ import About from './inc/About';
 import Footer from './inc/Footer';
 import projectData from './data/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
+// import { MDBAnimation } from 'mdbreact';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -46,8 +47,10 @@ class App extends Component<any, any> {
       brand: 'brandDark',
       galleryFillIcon: 'galleryFillIconDark',
       singleProjectName: 'textWhite text700',
+      singleProjectDesc: 'textSpotGrey text400',
       faIcon: 'faIconDark',
       list: 'listDark footerListWrap',
+      aboutList: 'aboutListDark aboutListWrap',
       footerHeading: 'marBot textWhite',
       footerPara: 'pad marBotFooter textSpotGrey',
       footerTemp: 'footerTemp textWhite',
@@ -125,8 +128,10 @@ class App extends Component<any, any> {
         navAboutActive: 'navItemLightCollapse menuActiveItem',
         galleryFillIcon: 'galleryFillIconLight',
         singleProjectName: 'textLightGrey text700',
+        singleProjectDesc: 'textGrey text400',
         faIcon: 'faIconLight',
         list: 'listLight',
+        aboutList: 'aboutListLight aboutListWrap',
         footerHeading: 'marBot textGrey',
         footerPara: 'pad marBotFooter textLightGrey',
         footerTemp: 'footerTemp textGrey',
@@ -146,7 +151,7 @@ class App extends Component<any, any> {
         projectDetails: 'textGrey text700',
         link: 'textGrey',
         projectRow: 'projectRowLight',
-        barColor: 'textGrey',
+        barColor: 'textGrey'
       });
       // DARK THEME
     } else {
@@ -180,8 +185,10 @@ class App extends Component<any, any> {
         navAboutActive: 'navItemDarkCollapse menuActiveItem',
         galleryFillIcon: 'galleryFillIconDark',
         singleProjectName: 'textWhite text700',
+        singleProjectDesc: 'textSpotGrey text400',
         faIcon: 'faIconDark',
         list: 'listDark',
+        aboutList: 'aboutListDark aboutListWrap',
         footerHeading: 'marBot textWhite',
         footerPara: 'pad marBotFooter textSpotGrey',
         footerTemp: 'footerTemp textWhite',
@@ -201,7 +208,7 @@ class App extends Component<any, any> {
         projectDetails: 'textWhite text700',
         link: 'textWhite',
         projectRow: 'projectRowDark',
-        barColor: 'textWhite',
+        barColor: 'textWhite'
       });
     }
   }
@@ -342,19 +349,22 @@ class App extends Component<any, any> {
         this.setState({
           navGallery: 'navItemDark navItemActiveDark',
           navAbout: 'navItemDark',
-          navProject: 'navItemDark'
+          navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+          navAboutActive: 'navItemDarkCollapse menuActiveItem'
         });
       } else if (value === 'about') {
         this.setState({
           navGallery: 'navItemDark',
           navAbout: 'navItemDark navItemActiveDark',
-          navProject: 'navItemDark'
+          navGalleryActive: 'navItemDarkCollapse menuActiveItem',
+          navAboutActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem'
         });
       } else if (value === 'project') {
         this.setState({
-          navGallery: 'navItemDark',
+          navGallery: 'navItemDark navItemActiveDark',
           navAbout: 'navItemDark',
-          navProject: 'navItemDark navItemActiveDark'
+          navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+          navAboutActive: 'navItemDarkCollapse menuActiveItem'
         });
       }
       // LIGHT THEME
@@ -363,19 +373,22 @@ class App extends Component<any, any> {
         this.setState({
           navGallery: 'navItemLight navItemActiveLight',
           navAbout: 'navItemLight',
-          navProject: 'navItemLight'
+          navGalleryActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+          navAboutActive: 'navItemLightCollapse menuActiveItem'
         });
       } else if (value === 'about') {
         this.setState({
           navGallery: 'navItemLight',
           navAbout: 'navItemLight navItemActiveLight',
-          navProject: 'navItemLight'
+          navGalleryActive: 'navItemLightCollapse menuActiveItem',
+          navAboutActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem'
         });
       } else if (value === 'project') {
         this.setState({
-          navGallery: 'navItemLight',
+          navGallery: 'navItemLight navItemActiveLight',
           navAbout: 'navItemLight',
-          navProject: 'navItemLight navItemActiveLight'
+          navGalleryActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+          navAboutActive: 'navItemLightCollapse menuActiveItem'
         });
       }
     }
@@ -437,6 +450,7 @@ class App extends Component<any, any> {
           imgTheme={this.state.imgTheme}
           galleryFillIcon={this.state.galleryFillIcon}
           singleProjectName={this.state.singleProjectName}
+          singleProjectDesc={this.state.singleProjectDesc}
           everything={this.state.everything}
           branding={this.state.branding}
           graphic={this.state.graphic}
@@ -469,13 +483,13 @@ class App extends Component<any, any> {
           projectDetails={this.state.projectDetails}
           projectRow={this.state.projectRow}
           link={this.state.link}
-          
         />
       );
     } else if (currentPage === 'about') {
       display = (
         <About
           space={this.state.space}
+          aboutList={this.state.aboutList}
           aboutHeading={this.state.aboutHeading}
           aboutPara={this.state.aboutPara}
           aboutPhone={this.state.aboutPhone}
@@ -496,7 +510,11 @@ class App extends Component<any, any> {
             light={this.state.light}
           />
           <Type type={this.state.type} thisType={this.state.thisType} />
-          <React.Fragment>{display}</React.Fragment>
+          <React.Fragment>
+            {/* <MDBAnimation type='zoomIn'> */}
+              {display}
+            {/* </MDBAnimation> */}
+          </React.Fragment>
         </div>
         <React.Fragment>{projectDisplay}</React.Fragment>
         <Footer

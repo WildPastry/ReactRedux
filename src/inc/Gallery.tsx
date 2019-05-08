@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import Zoom from '@material-ui/core/Zoom';
+import { MDBAnimation } from 'mdbreact';
 
 class Gallery extends Component<any, any> {
   constructor(props: any) {
@@ -43,16 +43,16 @@ class Gallery extends Component<any, any> {
               EVERYTHING
             </h4>
             <h4 className={this.props.branding} onClick={this.props.filter.bind(this, 'Branding')}>
-              branding
+              Branding
             </h4>
             <h4 className={this.props.graphic} onClick={this.props.filter.bind(this, 'Graphic')}>
-              graphic
+              Graphic
             </h4>
             <h4 className={this.props.ux} onClick={this.props.filter.bind(this, 'UX')}>
-              ux
+              UX
             </h4>
             <h4 className={this.props.web} onClick={this.props.filter.bind(this, 'Web')}>
-              web
+              Web
             </h4>
           </div>
           {/* IMAGE THEME ICONS */}
@@ -91,28 +91,31 @@ class Gallery extends Component<any, any> {
             }) => (
               <div key={singleProject.id} className={this.props.imgTheme}>
                 {/* IMAGES */}
-                <img
-                  onClick={this.changePageFromGallery.bind(this, [
-                    singleProject.id,
-                    singleProject.name,
-                    singleProject.fields,
-                    singleProject.client,
-                    singleProject.timeline,
-                    singleProject.website,
-                    singleProject.thumb,
-                    singleProject.images,
-                    singleProject.icons,
-                    singleProject.intro,
-                    singleProject.desc
-                  ])}
-                  src={require('./../img/thumb/' + singleProject.thumb[Math.round(Math.random())])}
-                  alt='Gallery'
-                />
+                <MDBAnimation type='zoomIn'>
+                  <img
+                    onClick={this.changePageFromGallery.bind(this, [
+                      singleProject.id,
+                      singleProject.name,
+                      singleProject.fields,
+                      singleProject.client,
+                      singleProject.timeline,
+                      singleProject.website,
+                      singleProject.thumb,
+                      singleProject.images,
+                      singleProject.icons,
+                      singleProject.intro,
+                      singleProject.desc
+                    ])}
+                    src={require('./../img/thumb/' +
+                      singleProject.thumb[Math.round(Math.random())])}
+                    alt='Gallery'
+                  />
+                </MDBAnimation>
                 {/* IMAGE DESCRIPTIONS */}
                 <div className='descriptionWrap'>
                   <p className={this.props.singleProjectName}>{singleProject.name}</p>
                   <p>
-                    <span className='textSpotGrey text400'>
+                    <span className={this.props.singleProjectDesc}>
                       {singleProject.fields[0]}
                       <span className='textLightGrey text400'> / </span>
                       {singleProject.fields[1]}

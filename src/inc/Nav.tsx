@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HamburgerSqueeze } from 'react-animated-burgers';
+import { MDBAnimation } from 'mdbreact';
 
 class Nav extends Component<any, any> {
   constructor(props: any) {
@@ -39,45 +40,46 @@ class Nav extends Component<any, any> {
 
   render() {
     let collapseMenu;
-    let burgerMenu
-    if (this.props.light === false){
+    let burgerMenu;
+    if (this.props.light === false) {
       burgerMenu = (
         <div className='menuCollapse'>
-        <HamburgerSqueeze
-          className='menuBurger'
-          isActive={this.state.isActive}
-          toggleButton={this.toggleMenu}
-          buttonWidth={30}
-          barColor={'#fff'}
-        />
-      </div>
-      )
-    } else if (this.props.light === true){
+          <HamburgerSqueeze
+            className='menuBurger'
+            isActive={this.state.isActive}
+            toggleButton={this.toggleMenu}
+            buttonWidth={30}
+            barColor={'#fff'}
+          />
+        </div>
+      );
+    } else if (this.props.light === true) {
       burgerMenu = (
         <div className='menuCollapse'>
-        <HamburgerSqueeze
-          className='menuBurger'
-          isActive={this.state.isActive}
-          toggleButton={this.toggleMenu}
-          buttonWidth={30}
-          barColor={'#292929'}
-        />
-      </div>
-      )
-    } if (this.state.collapseMenu === true) {
+          <HamburgerSqueeze
+            className='menuBurger'
+            isActive={this.state.isActive}
+            toggleButton={this.toggleMenu}
+            buttonWidth={30}
+            barColor={'#292929'}
+          />
+        </div>
+      );
+    }
+    if (this.state.collapseMenu === true) {
       collapseMenu = (
         <div className={this.state.collapseMenuTrue}>
           <h4
             id='navGallery'
             className={this.props.navGalleryActive}
             onClick={this.changePageFromNav.bind(this, 'gallery')}>
-            gallery
+            GALLERY
           </h4>
           <h4
             id='navAbout'
             className={this.props.navAboutActive}
             onClick={this.changePageFromNav.bind(this, 'about')}>
-            about
+            ABOUT
           </h4>
         </div>
       );
@@ -88,45 +90,47 @@ class Nav extends Component<any, any> {
             id='navGallery'
             className={this.props.navGallery}
             onClick={this.changePageFromNav.bind(this, 'gallery')}>
-            gallery
+            GALLERY
           </h4>
           <h4
             id='navAbout'
             className={this.props.navAbout}
             onClick={this.changePageFromNav.bind(this, 'about')}>
-            about
+            ABOUT
           </h4>
         </div>
       );
     }
     return (
       <React.Fragment>
-        {/* BRAND */}
-        <div className='flex wrap pad navWrap'>
-          <p className={this.props.brand}>
-            <a href='index.html'>
-              mike parker <span className='text300'> portfolio </span>
-            </a>
-          </p>
-          {/* NAV */}
-          {burgerMenu}
-          <div className='menu flex'>
-            <h4
-              id='navGallery'
-              className={this.props.navGallery}
-              onClick={this.changePageFromNav.bind(this, 'gallery')}>
-              gallery
-            </h4>
-            <h4
-              id='navAbout'
-              className={this.props.navAbout}
-              onClick={this.changePageFromNav.bind(this, 'about')}>
-              about
-            </h4>
+        <MDBAnimation type='fadeIn'>
+          {/* BRAND */}
+          <div className='flex wrap pad navWrap'>
+            <p className={this.props.brand}>
+              <a href='index.html'>
+                mike parker <span className='text300'> portfolio </span>
+              </a>
+            </p>
+            {/* NAV */}
+            {burgerMenu}
+            <div className='menu flex'>
+              <h4
+                id='navGallery'
+                className={this.props.navGallery}
+                onClick={this.changePageFromNav.bind(this, 'gallery')}>
+                GALLERY
+              </h4>
+              <h4
+                id='navAbout'
+                className={this.props.navAbout}
+                onClick={this.changePageFromNav.bind(this, 'about')}>
+                ABOUT
+              </h4>
+            </div>
           </div>
-        </div>
-        {/* COLLAPSE MENU */}
-        {collapseMenu}
+          {/* COLLAPSE MENU */}
+          {collapseMenu}
+        </MDBAnimation>
       </React.Fragment>
     );
   }
