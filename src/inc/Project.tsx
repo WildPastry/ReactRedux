@@ -286,10 +286,12 @@ class Project extends Component<any, any> {
                   <div
                     key={currentImage['id']}
                     className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                    <MDBAnimation type='zoomIn'>
                     <img
                       src={require('./../img/project/' + currentImage['src'])}
                       alt={this.state.currentProjectName}
                     />
+                    </MDBAnimation>
                   </div>
                 ))}
               </div>
