@@ -241,8 +241,8 @@ class Project extends Component<any, any> {
                   <li className='projectListItem'>
                     WEBSITE&nbsp;&nbsp;
                     <span className={this.props.projectDetails}>
-                      <a className={this.props.link} href='index.html'>
-                        {this.state.currentProjectWebsite}
+                      <a target='new' className={this.props.link} href={this.state.currentProjectWebsite}>
+                      {this.state.currentProjectWebsite}
                       </a>
                     </span>
                   </li>

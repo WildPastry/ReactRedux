@@ -178,16 +178,16 @@ class Footer extends Component<any, any> {
                 <h4 className={this.props.footerHeading}>ARCHIVES</h4>
                 <ul className={this.props.list}>
                   <li>
-                    <a href='index.html'>The Fear Board</a>
+                    <a target='new' href='http://www.fear.mykdesign.co.nz/'>The Fear Board</a>
                   </li>
                   <li>
-                    <a href='index.html'>School of Kennedy</a>
+                    <a target='new' href='http://kennedy.mykdesign.co.nz/'>School of Kennedy</a>
                   </li>
                   <li>
-                    <a href='index.html'>Let Nature In</a>
+                    <a target='new' href='http://nat.mykdesign.co.nz/'>Let Nature In</a>
                   </li>
                   <li>
-                    <a href='index.html'>MYK Design</a>
+                    <a target='new' href='http://www.mykdesign.co.nz/index.php'>MYK Design</a>
                   </li>
                 </ul>
               </div>
