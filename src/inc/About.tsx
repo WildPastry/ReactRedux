@@ -8,10 +8,11 @@ class About extends Component<any, any> {
     super(props);
     this.space = React.createRef();
   }
+  
   componentDidMount() {
     initSpace();
-    console.log('About component loaded...');
   }
+
   render() {
     return (
       <React.Fragment>

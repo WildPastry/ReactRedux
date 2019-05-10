@@ -29,10 +29,6 @@ class Gallery extends Component<any, any> {
     window.scrollTo(0, 0);
   }
 
-  componentDidMount() {
-    console.log('Gallery component loaded...');
-  }
-
   render() {
     return (
       <React.Fragment>

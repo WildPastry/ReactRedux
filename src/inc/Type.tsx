@@ -10,7 +10,6 @@ class Type extends Component<any, any> {
 
   componentDidMount() {
     initType();
-    console.log('Type component loaded...');
   }
 
   render() {

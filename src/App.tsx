@@ -107,16 +107,11 @@ class App extends Component<any, any> {
       var r = Math.floor(Math.random() * 12);
       if (randomNumber.indexOf(r) === -1) {
         randomNumber.push(r);
-        console.log(randomNumber);
-        console.log(this.state.randomNumber);
       }
     }
     this.setState(
       {
         randomNumber: randomNumber
-      },
-      () => {
-        console.log(this.state.randomNumber);
       }
     );
   }
@@ -248,7 +243,6 @@ class App extends Component<any, any> {
         return project.fields.indexOf(filter) >= 0;
       }
     );
-    console.log('Filtered by: ' + value);
     // DARK THEME
     if (this.state.light === false) {
       if (value === 'Branding') {
@@ -345,9 +339,6 @@ class App extends Component<any, any> {
           ux: 'filterItemDark',
           web: 'filterItemDark',
           filter: 'everything'
-        },
-        () => {
-          console.log('Reset filter');
         }
       );
       // lIGHT THEME
@@ -361,9 +352,6 @@ class App extends Component<any, any> {
           ux: 'filterItemLight',
           web: 'filterItemLight',
           filter: 'everything'
-        },
-        () => {
-          console.log('Reset filter');
         }
       );
     }
@@ -456,12 +444,10 @@ class App extends Component<any, any> {
       currentProjectDesc: value['projectDesc'],
       currentProjectUrl: value['projectUrl']
     });
-    console.log(value);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    console.log('App loaded...');
   }
 
   render() {

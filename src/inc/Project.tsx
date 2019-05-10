@@ -137,7 +137,6 @@ class Project extends Component<any, any> {
   moreProjects(value: any) {
     this.props.randomProject();
     window.scrollTo(0, 0);
-    console.log(value);
     var j;
     if (value === 0) {
       j = 0;
@@ -183,10 +182,6 @@ class Project extends Component<any, any> {
   changePageFromProject(value: any) {
     window.scrollTo(0, 0);
     this.props.changePageFromProject(value);
-  }
-
-  componentDidMount() {
-    console.log('Project component loaded...');
   }
 
   render() {
@@ -235,7 +230,7 @@ class Project extends Component<any, any> {
                       <a
                         target='new'
                         className={this.props.link}
-                        href={this.state.currentProjectWebsite}>
+                        href={this.state.currentProjectUrl}>
                         {this.state.currentProjectWebsite}
                       </a>
                     </span>

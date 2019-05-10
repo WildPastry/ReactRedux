@@ -100,10 +100,6 @@ class Footer extends Component<any, any> {
     this.getData();
   }
 
-  componentDidMount() {
-    console.log('Footer component loaded...');
-  }
-
   render() {
     // WEATHER ICONS
     let weatherDisplay;
@@ -166,7 +162,7 @@ class Footer extends Component<any, any> {
                 <a href='mailto:mykdsn@gmail.com'>
                   <FontAwesomeIcon icon={['fas', 'envelope']} className={this.props.faIcon} />
                 </a>
-                <a href='https://www.facebook.com/michael.parker.3532507' target='new'>
+                <a href='m.me/michael.parker.3532507' target='new'>
                   <FontAwesomeIcon
                     icon={['fab', 'facebook-messenger']}
                     className={this.props.faIcon}
