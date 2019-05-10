@@ -224,7 +224,7 @@ class Project extends Component<any, any> {
                       {this.state.currentProjectTimeline}
                     </span>
                   </li>
-                  <li className='projectListItem marTop'>
+                  <li className='projectListItem marTop projectListItemVisible'>
                     {/* WEBSITE&nbsp;&nbsp; */}
                     <span className={this.props.projectDetails}>
                       <a

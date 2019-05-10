@@ -188,7 +188,7 @@
   }
 
   .typeWrap h1 {
-    font-size: 0.9em;
+    font-size: 1.1em;
     font-weight: $regular;
     letter-spacing: 0px;
   }
@@ -206,8 +206,8 @@
   }
 
   .projectIcon {
-    font-size: 22px;
-    margin-right: 12px;
+    font-size: 25px;
+    margin-right: 15px;
   }
 
   .faIconDark,
@@ -221,8 +221,15 @@
     visibility: hidden;
   }
 
+ .projectListItemVisible {
+   display: block;
+   visibility: visible;
+   margin-top: 0;
+   margin-bottom: 20px;
+ }
+
   h1 {
-    font-size: 1.8em;
+    font-size: 1.4em;
   }
 
   h2 {

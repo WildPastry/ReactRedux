@@ -162,7 +162,7 @@ class Footer extends Component<any, any> {
                 <a href='mailto:mike@mikeparker.co.nz'>
                   <FontAwesomeIcon icon={['fas', 'envelope']} className={this.props.faIcon} />
                 </a>
-                <a href='m.me/michael.parker.3532507' target='new'>
+                <a href='https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F598356603%2F' target='new'>
                   <FontAwesomeIcon
                     icon={['fab', 'facebook-messenger']}
                     className={this.props.faIcon}
@@ -182,9 +182,9 @@ class Footer extends Component<any, any> {
                   <li>
                     <a target='new' href='https://nat.mikeparker.co.nz/'>Let Nature In</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a target='new' href='https://myk.mikeparker.co.nz/index.php'>MYK Design</a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               {/* CONTACT DETAILS */}
