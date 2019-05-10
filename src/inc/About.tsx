@@ -19,7 +19,7 @@ class About extends Component<any, any> {
           <div className='row'>
             {/* DESCRIPTION */}
             <div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <h2 className={this.props.aboutHeading}>about me</h2>
+              <h1 className={this.props.aboutHeading}>about me</h1>
             </div>
             <div className='colWrap col-xs-12 col-sm-12 col-md-6 col-lg-4'>
               <p className={this.props.aboutPara}>
@@ -34,7 +34,7 @@ class About extends Component<any, any> {
                 <br />
               </p>
               <h3 className={this.props.aboutPhone} x-ms-format-detection='none'>
-                Call / Text <span className='textPeach'>+64 022 5025 485</span>
+                Call / Text <span className='textPeach'>022 5025 485</span>
               </h3>
               <div className='lineThinAbout' />
               <h2 className={this.props.aboutHeading}>clients</h2>

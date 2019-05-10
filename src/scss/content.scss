@@ -180,6 +180,11 @@
   color: $spotGrey;
 }
 
+.descriptionWrap {
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
 // FILTER MENU
 .filterWrap {
   align-items: center;
@@ -292,6 +297,17 @@
 
 .projectListItem a:hover {
   color: $peach;
+}
+
+.projectsLink {
+  font-weight: $regular;
+  font-size: 1em;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+}
+
+.projectsLink:hover {
+  border-bottom: 2px solid $peach;
 }
 
 // FOOTER

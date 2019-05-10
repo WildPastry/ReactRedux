@@ -9,6 +9,7 @@ class Gallery extends Component<any, any> {
   }
 
   changePageFromGallery(value: any) {
+    this.props.randomProject();
     var options = {
       page: 'project',
       project: value[0],
@@ -21,7 +22,8 @@ class Gallery extends Component<any, any> {
       projectImages: value[7],
       projectIcons: value[8],
       projectIntro: value[9],
-      projectDesc: value[10]
+      projectDesc: value[10],
+      projectUrl: value[11]
     };
     this.props.changePageFromGallery(options);
     window.scrollTo(0, 0);
@@ -88,6 +90,7 @@ class Gallery extends Component<any, any> {
               icons: Array<[]>;
               intro: string;
               desc: string;
+              url: string;
             }) => (
               <div key={singleProject.id} className={this.props.imgTheme}>
                 {/* IMAGES */}
@@ -104,10 +107,11 @@ class Gallery extends Component<any, any> {
                       singleProject.images,
                       singleProject.icons,
                       singleProject.intro,
-                      singleProject.desc
+                      singleProject.desc,
+                      singleProject.url
                     ])}
                     src={require('./../img/thumb/' +
-                      singleProject.thumb[Math.round(Math.random())])}
+                      singleProject.thumb[0])}
                     alt='Gallery'
                   />
                 </MDBAnimation>

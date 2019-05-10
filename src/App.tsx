@@ -7,7 +7,7 @@ import About from './inc/About';
 import Footer from './inc/Footer';
 import projectData from './data/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
-// import { MDBAnimation } from 'mdbreact';
+import { MDBAnimation } from 'mdbreact';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -20,6 +20,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
 library.add(fab, faFillDrip, faEnvelope, faChevronLeft, faChevronRight, faTh, faMapMarkerAlt);
+
+var randomNumber: any[] | number[] | (string | number)[];
 
 var htmlBody = document.getElementById('bg');
 var currentEverything: string;
@@ -34,6 +36,7 @@ class App extends Component<any, any> {
     this.state = {
       theme: false,
       light: false,
+      randomNumber: [],
       projects: projectData,
       currentPage: 'gallery',
       imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4',
@@ -69,7 +72,7 @@ class App extends Component<any, any> {
       projectIntro: 'textSpotGrey text300',
       projectDesc: 'textWhite',
       projectDetails: 'textWhite text700',
-      link: 'textWhite',
+      link: 'textPeach projectsLink',
       projectRow: 'projectRowDark',
       barColor: 'textWhite',
       currentProject: '',
@@ -82,7 +85,8 @@ class App extends Component<any, any> {
       currentProjectImages: [],
       currentProjectIcons: [],
       currentProjectIntro: '',
-      currentProjectDesc: ''
+      currentProjectDesc: '',
+      currentProjectUrl: ''
     };
     this.filter = this.filter.bind(this);
     this.filterReset = this.filterReset.bind(this);
@@ -90,6 +94,31 @@ class App extends Component<any, any> {
     this.changeTheme = this.changeTheme.bind(this);
     this.changeImageTheme = this.changeImageTheme.bind(this);
     this.changePageAndProject = this.changePageAndProject.bind(this);
+    this.randomProject = this.randomProject.bind(this);
+  }
+
+  componentWillMount() {
+    this.randomProject();
+  }
+
+  randomProject() {
+    randomNumber = [];
+    while (randomNumber.length < 3) {
+      var r = Math.floor(Math.random() * 12);
+      if (randomNumber.indexOf(r) === -1) {
+        randomNumber.push(r);
+        console.log(randomNumber);
+        console.log(this.state.randomNumber);
+      }
+    }
+    this.setState(
+      {
+        randomNumber: randomNumber
+      },
+      () => {
+        console.log(this.state.randomNumber);
+      }
+    );
   }
 
   changeTheme() {
@@ -149,7 +178,6 @@ class App extends Component<any, any> {
         projectIntro: 'textLightGrey text300',
         projectDesc: 'textGrey',
         projectDetails: 'textGrey text700',
-        link: 'textGrey',
         projectRow: 'projectRowLight',
         barColor: 'textGrey'
       });
@@ -206,7 +234,6 @@ class App extends Component<any, any> {
         projectIntro: 'textSpotGrey text300',
         projectDesc: 'textWhite',
         projectDetails: 'textWhite text700',
-        link: 'textWhite',
         projectRow: 'projectRowDark',
         barColor: 'textWhite'
       });
@@ -426,8 +453,10 @@ class App extends Component<any, any> {
       currentProjectImages: value['projectImages'],
       currentProjectIcons: value['projectIcons'],
       currentProjectIntro: value['projectIntro'],
-      currentProjectDesc: value['projectDesc']
+      currentProjectDesc: value['projectDesc'],
+      currentProjectUrl: value['projectUrl']
     });
+    console.log(value);
   }
 
   componentDidMount() {
@@ -458,6 +487,7 @@ class App extends Component<any, any> {
           web={this.state.web}
           filter={this.filter}
           filterReset={this.filterReset}
+          randomProject={this.randomProject}
         />
       );
     } else if (currentPage === 'project') {
@@ -476,6 +506,7 @@ class App extends Component<any, any> {
           currentProjectIcons={this.state.currentProjectIcons}
           currentProjectIntro={this.state.currentProjectIntro}
           currentProjectDesc={this.state.currentProjectDesc}
+          currentProjectUrl={this.state.currentProjectUrl}
           changePageFromProject={this.changePage}
           projectHeading={this.state.projectHeading}
           projectIntro={this.state.projectIntro}
@@ -483,6 +514,8 @@ class App extends Component<any, any> {
           projectDetails={this.state.projectDetails}
           projectRow={this.state.projectRow}
           link={this.state.link}
+          randomNumber={this.state.randomNumber}
+          randomProject={this.randomProject}
         />
       );
     } else if (currentPage === 'about') {
@@ -499,24 +532,26 @@ class App extends Component<any, any> {
     return (
       <React.Fragment>
         <div className='container-fluid'>
-          <Nav
-            changePageFromNav={this.changePage}
-            navGallery={this.state.navGallery}
-            navAbout={this.state.navAbout}
-            navGalleryActive={this.state.navGalleryActive}
-            navAboutActive={this.state.navAboutActive}
-            barColor={this.state.barColor}
-            brand={this.state.brand}
-            light={this.state.light}
-          />
+          <MDBAnimation type='fadeIn'>
+            <Nav
+              changePageFromNav={this.changePage}
+              navGallery={this.state.navGallery}
+              navAbout={this.state.navAbout}
+              navGalleryActive={this.state.navGalleryActive}
+              navAboutActive={this.state.navAboutActive}
+              barColor={this.state.barColor}
+              brand={this.state.brand}
+              light={this.state.light}
+            />
+          </MDBAnimation>
           <Type type={this.state.type} thisType={this.state.thisType} />
           <React.Fragment>
-            {/* <MDBAnimation type='zoomIn'> */}
-              {display}
-            {/* </MDBAnimation> */}
+            <MDBAnimation type='fadeIn'>{display}</MDBAnimation>
           </React.Fragment>
         </div>
-        <React.Fragment>{projectDisplay}</React.Fragment>
+        <React.Fragment>
+          <MDBAnimation type='fadeIn'>{projectDisplay}</MDBAnimation>
+        </React.Fragment>
         <Footer
           faIcon={this.state.faIcon}
           list={this.state.list}

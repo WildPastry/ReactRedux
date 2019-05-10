@@ -147,7 +147,7 @@ class Footer extends Component<any, any> {
             <div className='line' />
             <div className='row'>
               {/* FA ICONS */}
-              <div className='colWrap responsiveWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+              <div className='colWrap responsiveWrap miniWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
                 <a href='https://www.linkedin.com/in/michael-parker-aa084310a/' target='new'>
                   <FontAwesomeIcon icon={['fab', 'linkedin-in']} className={this.props.faIcon} />
                 </a>
@@ -195,9 +195,9 @@ class Footer extends Component<any, any> {
               <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
                 <h4 className={this.props.footerHeading}>CONTACT</h4>
                 <ul className={this.props.list}>
-                  <li x-ms-format-detection='none'>+64 022 5025 485</li>
+                  <li x-ms-format-detection='none'>022 5025 485</li>
                   <li>
-                    <a href='mailto:mykdsn@gmail.com'>mike@mparker.co.nz</a>
+                    <a href='mailto:mike@mikeparker.co.nz'>mike@mikeparker.co.nz</a>
                   </li>
                 </ul>
               </div>

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
 
-var randomNumber: any[] | number[] | (string | number)[];
-
 class Project extends Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -19,21 +17,14 @@ class Project extends Component<any, any> {
       currentProjectImages: this.props.currentProjectImages,
       currentProjectIcons: this.props.currentProjectIcons,
       currentProjectIntro: this.props.currentProjectIntro,
-      currentProjectDesc: this.props.currentProjectDesc
+      currentProjectDesc: this.props.currentProjectDesc,
+      currentProjectUrl: this.props.currentProjectUrl
     };
     this.prevProject = this.prevProject.bind(this);
     this.nextProject = this.nextProject.bind(this);
     this.changeProject = this.changeProject.bind(this);
     this.moreProjects = this.moreProjects.bind(this);
     this.changePageFromProject = this.changePageFromProject.bind(this);
-  }
-
-  randomProject() {
-    randomNumber = [];
-    while (randomNumber.length < 3) {
-      var r = Math.floor(Math.random() * 12);
-      if (randomNumber.indexOf(r) === -1) randomNumber.push(r);
-    }
   }
 
   changeProject() {
@@ -48,12 +39,13 @@ class Project extends Component<any, any> {
       currentProjectImages: [],
       currentProjectIcons: [],
       currentProjectIntro: '',
-      currentProjectDesc: ''
+      currentProjectDesc: '',
+      currentProjectUrl: ''
     });
   }
 
   prevProject() {
-    this.randomProject();
+    this.props.randomProject();
     window.scrollTo(0, 0);
     var i;
     if (this.state.currentProject === '001') {
@@ -92,12 +84,13 @@ class Project extends Component<any, any> {
       currentProjectImages: this.state.projects[i].images,
       currentProjectIcons: this.state.projects[i].icons,
       currentProjectIntro: this.state.projects[i].intro,
-      currentProjectDesc: this.state.projects[i].desc
+      currentProjectDesc: this.state.projects[i].desc,
+      currentProjectUrl: this.state.projects[i].url
     });
   }
 
   nextProject() {
-    this.randomProject();
+    this.props.randomProject();
     window.scrollTo(0, 0);
     var i;
     if (this.state.currentProject === '001') {
@@ -136,16 +129,19 @@ class Project extends Component<any, any> {
       currentProjectImages: this.state.projects[i].images,
       currentProjectIcons: this.state.projects[i].icons,
       currentProjectIntro: this.state.projects[i].intro,
-      currentProjectDesc: this.state.projects[i].desc
+      currentProjectDesc: this.state.projects[i].desc,
+      currentProjectUrl: this.state.projects[i].url
     });
   }
 
   moreProjects(value: any) {
-    this.randomProject();
+    this.props.randomProject();
     window.scrollTo(0, 0);
     console.log(value);
     var j;
-    if (value === 1) {
+    if (value === 0) {
+      j = 0;
+    } else if (value === 1) {
       j = 1;
     } else if (value === 2) {
       j = 2;
@@ -167,8 +163,6 @@ class Project extends Component<any, any> {
       j = 10;
     } else if (value === 11) {
       j = 11;
-    } else if (value === 12) {
-      j = 12;
     }
     this.setState({
       currentProject: this.state.projects[j].id,
@@ -181,17 +175,14 @@ class Project extends Component<any, any> {
       currentProjectImages: this.state.projects[j].images,
       currentProjectIcons: this.state.projects[j].icons,
       currentProjectIntro: this.state.projects[j].intro,
-      currentProjectDesc: this.state.projects[j].desc
+      currentProjectDesc: this.state.projects[j].desc,
+      currentProjectUrl: this.state.projects[j].url
     });
   }
 
   changePageFromProject(value: any) {
     window.scrollTo(0, 0);
     this.props.changePageFromProject(value);
-  }
-
-  componentWillMount() {
-    this.randomProject();
   }
 
   componentDidMount() {
@@ -217,7 +208,7 @@ class Project extends Component<any, any> {
               <div className='colWrap right col-xs-12 col-sm-12 col-md-12 col-lg-5'>
                 <ul>
                   <li className='projectListItem'>
-                    FIELDS&nbsp;&nbsp;
+                    {/* FIELDS&nbsp;&nbsp; */}
                     <span className={this.props.projectDetails}>
                       {this.state.currentProjectFields[0]}
                       <span className='textLightGrey text700'> / </span>
@@ -227,22 +218,25 @@ class Project extends Component<any, any> {
                     </span>
                   </li>
                   <li className='projectListItem'>
-                    CLIENT&nbsp;&nbsp;
+                    {/* CLIENT&nbsp;&nbsp; */}
                     <span className={this.props.projectDetails}>
                       {this.state.currentProjectClient}
                     </span>
                   </li>
                   <li className='projectListItem'>
-                    TIMELINE&nbsp;&nbsp;
+                    {/* TIMELINE&nbsp;&nbsp; */}
                     <span className={this.props.projectDetails}>
                       {this.state.currentProjectTimeline}
                     </span>
                   </li>
-                  <li className='projectListItem'>
-                    WEBSITE&nbsp;&nbsp;
+                  <li className='projectListItem marTop'>
+                    {/* WEBSITE&nbsp;&nbsp; */}
                     <span className={this.props.projectDetails}>
-                      <a target='new' className={this.props.link} href={this.state.currentProjectWebsite}>
-                      {this.state.currentProjectWebsite}
+                      <a
+                        target='new'
+                        className={this.props.link}
+                        href={this.state.currentProjectWebsite}>
+                        {this.state.currentProjectWebsite}
                       </a>
                     </span>
                   </li>
@@ -287,10 +281,10 @@ class Project extends Component<any, any> {
                     key={currentImage['id']}
                     className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
                     <MDBAnimation type='zoomIn'>
-                    <img
-                      src={require('./../img/project/' + currentImage['src'])}
-                      alt={this.state.currentProjectName}
-                    />
+                      <img
+                        src={require('./../img/project/' + currentImage['src'])}
+                        alt={this.state.currentProjectName}
+                      />
                     </MDBAnimation>
                   </div>
                 ))}
@@ -319,25 +313,25 @@ class Project extends Component<any, any> {
               </div>
               <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
                 <img
-                  onClick={this.moreProjects.bind(this, randomNumber[0])}
+                  onClick={this.moreProjects.bind(this, this.props.randomNumber[0])}
                   src={require('./../img/thumb/' +
-                    this.state.projects[randomNumber[0]].thumb[Math.round(Math.random())])}
+                    this.state.projects[this.props.randomNumber[0]].thumb[1])}
                   alt='Gallery'
                 />
               </div>
               <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
                 <img
-                  onClick={this.moreProjects.bind(this, randomNumber[1])}
+                  onClick={this.moreProjects.bind(this, this.props.randomNumber[1])}
                   src={require('./../img/thumb/' +
-                    this.state.projects[randomNumber[1]].thumb[Math.round(Math.random())])}
+                    this.state.projects[this.props.randomNumber[1]].thumb[1])}
                   alt='Gallery'
                 />
               </div>
               <div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
                 <img
-                  onClick={this.moreProjects.bind(this, randomNumber[2])}
+                  onClick={this.moreProjects.bind(this, this.props.randomNumber[2])}
                   src={require('./../img/thumb/' +
-                    this.state.projects[randomNumber[2]].thumb[Math.round(Math.random())])}
+                    this.state.projects[this.props.randomNumber[2]].thumb[1])}
                   alt='Gallery'
                 />
               </div>

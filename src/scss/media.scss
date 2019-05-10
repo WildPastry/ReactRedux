@@ -47,7 +47,7 @@
 
 .navItemDarkCollapse:hover {
   color: $peach;
-  background: $white
+  background: $white;
 }
 
 .navItemActiveDarkCollapse {
@@ -65,7 +65,7 @@
 
 .navItemLightCollapse:hover {
   color: $white;
-  background: $grey
+  background: $grey;
 }
 
 .navItemActiveLightCollapse {
@@ -74,16 +74,27 @@
 }
 
 // MEDIA QUERIES
+@media screen and (max-width: 992px) {
+  .right {
+    margin-top: 15px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .responsiveText {
     text-align: left;
   }
 
   .right {
-    margin-top: 15px;
     margin-bottom: 15px;
+    text-align: left;
   }
-  
+
+  .projectIcon {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+
   .aboutListWrap {
     margin-bottom: 15px;
   }
@@ -110,23 +121,8 @@
     justify-content: flex-start;
   }
 
-  .projectIcon {
-    margin-right: 15px;
-    margin-left: 0;
-  }
-
-  .faIconDark,
-  .faIconLight {
-    margin-right: 15px;
-    margin-left: 0;
-  }
-
   .responsiveText {
     margin-bottom: 0;
-  }
-
-  .right {
-    text-align: left;
   }
 
   .lineThinFooter {
@@ -142,13 +138,17 @@
   }
 
   .typeWrap h1 {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
 }
 
 @media screen and (max-width: 480px) {
   .typeWrap h1 {
-    font-size: 1.4em;
+    font-size: 1.2em;
+  }
+
+  .projectIcon {
+    font-size: 26px;
   }
 
   .filterWrap {
@@ -188,11 +188,17 @@
   }
 
   .typeWrap h1 {
-    font-size: 1.1em;
+    font-size: 0.9em;
+    font-weight: $regular;
+    letter-spacing: 0px;
   }
 
   .typeWrap {
     line-height: 20px;
+  }
+
+  .miniWrap {
+    justify-content: space-between;
   }
 
   .projectIconsWrap {
@@ -200,7 +206,14 @@
   }
 
   .projectIcon {
+    font-size: 22px;
+    margin-right: 12px;
+  }
+
+  .faIconDark,
+  .faIconLight {
     font-size: 25px;
+    margin-right: 0;
   }
 
   .projectListItem {
@@ -208,7 +221,12 @@
     visibility: hidden;
   }
 
+  h1 {
+    font-size: 1.8em;
+  }
+
   h2 {
-    font-size: 1.3em;
+    font-size: 1.1em;
+    line-height: 1.3em;
   }
 }
