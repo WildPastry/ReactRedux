@@ -159,7 +159,7 @@ class Footer extends Component<any, any> {
                 <a href='https://github.com/WildPastry' target='new'>
                   <FontAwesomeIcon icon={['fab', 'github']} className={this.props.faIcon} />
                 </a>
-                <a href='mailto:mykdsn@gmail.com'>
+                <a href='mailto:mike@mikeparker.co.nz'>
                   <FontAwesomeIcon icon={['fas', 'envelope']} className={this.props.faIcon} />
                 </a>
                 <a href='m.me/michael.parker.3532507' target='new'>
@@ -174,16 +174,16 @@ class Footer extends Component<any, any> {
                 <h4 className={this.props.footerHeading}>ARCHIVES</h4>
                 <ul className={this.props.list}>
                   <li>
-                    <a target='new' href='http://www.fear.mykdesign.co.nz/'>The Fear Board</a>
+                    <a target='new' href='https://fear.mikeparker.co.nz/'>The Fear Board</a>
                   </li>
                   <li>
-                    <a target='new' href='http://kennedy.mykdesign.co.nz/'>School of Kennedy</a>
+                    <a target='new' href='https://sok.mikeparker.co.nz/'>School of Kennedy</a>
                   </li>
                   <li>
-                    <a target='new' href='http://nat.mykdesign.co.nz/'>Let Nature In</a>
+                    <a target='new' href='https://nat.mikeparker.co.nz/'>Let Nature In</a>
                   </li>
                   <li>
-                    <a target='new' href='http://www.mykdesign.co.nz/index.php'>MYK Design</a>
+                    <a target='new' href='https://myk.mikeparker.co.nz/index.php'>MYK Design</a>
                   </li>
                 </ul>
               </div>
