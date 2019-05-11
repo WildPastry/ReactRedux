@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import configData from './../data/config.json';
+import Tooltip from 'react-simple-tooltip';
+import { css } from 'styled-components';
 import { ReactComponent as IconCloudy } from './../icon/weather/iconCloudy.svg';
 import { ReactComponent as IconPartlyCloudy } from './../icon/weather/iconPartlyCloudy.svg';
 import { ReactComponent as IconRainbow } from './../icon/weather/iconRainbow.svg';
@@ -162,7 +164,9 @@ class Footer extends Component<any, any> {
                 <a href='mailto:mike@mikeparker.co.nz'>
                   <FontAwesomeIcon icon={['fas', 'envelope']} className={this.props.faIcon} />
                 </a>
-                <a href='https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F598356603%2F' target='new'>
+                <a
+                  href='https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F598356603%2F'
+                  target='new'>
                   <FontAwesomeIcon
                     icon={['fab', 'facebook-messenger']}
                     className={this.props.faIcon}
@@ -174,17 +178,20 @@ class Footer extends Component<any, any> {
                 <h4 className={this.props.footerHeading}>ARCHIVES</h4>
                 <ul className={this.props.list}>
                   <li>
-                    <a target='new' href='https://fear.mikeparker.co.nz/'>The Fear Board</a>
+                    <a target='new' href='https://fear.mikeparker.co.nz/'>
+                      The Fear Board
+                    </a>
                   </li>
                   <li>
-                    <a target='new' href='https://sok.mikeparker.co.nz/'>School of Kennedy</a>
+                    <a target='new' href='https://sok.mikeparker.co.nz/'>
+                      School of Kennedy
+                    </a>
                   </li>
                   <li>
-                    <a target='new' href='https://nat.mikeparker.co.nz/'>Let Nature In</a>
+                    <a target='new' href='https://nat.mikeparker.co.nz/'>
+                      Let Nature In
+                    </a>
                   </li>
-                  {/* <li>
-                    <a target='new' href='https://myk.mikeparker.co.nz/index.php'>MYK Design</a>
-                  </li> */}
                 </ul>
               </div>
               {/* CONTACT DETAILS */}
@@ -203,20 +210,38 @@ class Footer extends Component<any, any> {
               <div className='footerWrap'>
                 <div className='lineThinFooter' />
                 <div className='flex wrap responsiveFooterWrap'>
+                  {/* WEATHER ICON/TEMP/GEO */}
                   <div className='weatherWrap flex'>
                     {weatherDisplay}
                     <h2 className={this.props.footerTemp}>
                       {Math.trunc(weather.currently.temperature) + '°'}{' '}
                     </h2>
-                    <div className='footerIconWrap' onClick={this.getLocation}>
-                      <FontAwesomeIcon
-                        icon={['fas', 'map-marker-alt']}
-                        className={this.props.footerIcon}
-                        title='Get your location'
-                      />
+                    {/* TOOLTIP AND WEATHER ICON */}
+                    <div className='tooltipWrap'>
+                      <Tooltip
+                        content='Get&nbsp;your&nbsp;location'
+                        background='#ff6666'
+                        fadeDuration={300}
+                        border='#000'
+                        radius={3}
+                        offset={5}
+                        padding={7}
+                        color='#fff'
+                        customCss={css`
+                          font-weight: 400;
+                        `}>
+                        <div className='footerIconWrap' onClick={this.getLocation}>
+                          <FontAwesomeIcon
+                            icon={['fas', 'map-marker-alt']}
+                            className={this.props.footerIcon}
+                          />
+                        </div>
+                      </Tooltip>
                     </div>
                   </div>
-                  <p className={this.props.footerCopyright}>&copy; mike parker <span className='text300'>2019</span></p>
+                  <p className={this.props.footerCopyright}>
+                    &copy; mike parker <span className='text300'>2019</span>
+                  </p>
                 </div>
               </div>
             </div>

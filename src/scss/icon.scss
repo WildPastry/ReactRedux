@@ -45,7 +45,7 @@
 .galleryFillIconLight {
   cursor: pointer;
   font-size: 30px;
-  color: $green;
+  color: $blue;
   margin-left: 20px;
 }
 
@@ -91,13 +91,9 @@
 
 // FOOTER
 .footerIcon {
-  cursor: pointer;
   font-size: 22px;
-  margin-left: 13px;
+  // margin-left: 13px;
   margin-top: 13px;
-  :hover {
-    color: $peach;
-  }
 }
 
 // SCROLL UP

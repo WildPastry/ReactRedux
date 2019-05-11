@@ -15,3 +15,9 @@ declare module 'react-animated-burgers';
 
 // MDB ANIMATIONS
 declare module 'mdbreact';
+
+// TOOLTIPS
+declare module 'react-simple-tooltip';
+
+// STYLES
+declare module 'styled-components';

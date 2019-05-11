@@ -60,12 +60,10 @@ class Gallery extends Component<any, any> {
               src={require('./../icon/rgb.svg')}
               onClick={this.props.changeImageTheme}
               alt='RBG Icon'
-              title='Hue'
             />
             <div onClick={this.props.changeTheme}>
               <FontAwesomeIcon
                 icon={['fas', 'fill-drip']}
-                title='Theme'
                 className={this.props.galleryFillIcon}
               />
             </div>

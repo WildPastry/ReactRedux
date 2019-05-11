@@ -21,7 +21,9 @@
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.0",
     "react-scroll-up-button": "^1.6.4",
+    "react-simple-tooltip": "^2.5.0",
     "react-transition-group": "^4.0.0",
+    "reactjs-mappletooltip": "^1.4.63",
     "styled-components": "^4.2.0",
     "tslib": "^1.9.3",
     "typescript": "3.4.4"

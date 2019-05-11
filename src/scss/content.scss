@@ -147,12 +147,12 @@
 }
 
 .brandLight:hover {
-  border-bottom: 2px solid $green;
+  border-bottom: 2px solid $blue;
   color: $grey;
 }
 
 .brandLight a {
-  color: $green;
+  color: $blue;
 }
 
 // TYPE
@@ -374,5 +374,15 @@
 }
 
 .listLight a:hover {
+  color: $peach;
+}
+
+// TOOLTIP
+.tooltipWrap {
+  cursor: pointer;
+  margin-left: 13px;
+}
+
+.tooltipWrap:hover .footerIcon {
   color: $peach;
 }

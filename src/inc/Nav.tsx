@@ -19,10 +19,6 @@ class Nav extends Component<any, any> {
     this.props.changePageFromNav(value);
   }
 
-  componentDidMount() {
-    console.log('Nav component loaded...');
-  }
-
   toggleMenu = () => {
     if (this.state.collapseMenu === false) {
       this.setState({
