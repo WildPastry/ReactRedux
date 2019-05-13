@@ -83,6 +83,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  #space {
+    padding-left: 0;
+  }
+
   .responsiveText {
     text-align: left;
   }
