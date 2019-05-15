@@ -23,7 +23,9 @@ class Gallery extends Component<any, any> {
       projectIcons: value[8],
       projectIntro: value[9],
       projectDesc: value[10],
-      projectUrl: value[11]
+      projectUrl: value[11],
+      projectGit: value[12],
+      projectGitUrl: value[13]
     };
     this.props.changePageFromGallery(options);
     window.scrollTo(0, 0);
@@ -85,6 +87,8 @@ class Gallery extends Component<any, any> {
               intro: string;
               desc: string;
               url: string;
+              git: string;
+              gitUrl: string;
             }) => (
               <div key={singleProject.id} className={this.props.imgTheme}>
                 {/* IMAGES */}
@@ -102,7 +106,9 @@ class Gallery extends Component<any, any> {
                       singleProject.icons,
                       singleProject.intro,
                       singleProject.desc,
-                      singleProject.url
+                      singleProject.url,
+                      singleProject.git,
+                      singleProject.gitUrl
                     ])}
                     src={require('./../img/thumb/' +
                       singleProject.thumb[0])}

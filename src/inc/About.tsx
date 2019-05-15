@@ -25,7 +25,7 @@ class About extends Component<any, any> {
             <div className='colWrap col-xs-12 col-sm-12 col-md-6 col-lg-4'>
               <p className={this.props.aboutPara}>
                 Javascript, PHP, and React Web Developer from Christchurch, New Zealand. Looking for
-                a full-time position in a digital agency, tech company, or as part of an in-house
+                a full-time position at the right digital agency, tech company, or as part of an in-house
                 development team.
                 <br />
                 <br /> If you have any questions, would like to know more information about me or

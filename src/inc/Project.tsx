@@ -18,7 +18,9 @@ class Project extends Component<any, any> {
       currentProjectIcons: this.props.currentProjectIcons,
       currentProjectIntro: this.props.currentProjectIntro,
       currentProjectDesc: this.props.currentProjectDesc,
-      currentProjectUrl: this.props.currentProjectUrl
+      currentProjectUrl: this.props.currentProjectUrl,
+      currentProjectGit: this.props.currentProjectGit,
+      currentProjectGitUrl: this.props.currentProjectGitUrl
     };
     this.prevProject = this.prevProject.bind(this);
     this.nextProject = this.nextProject.bind(this);
@@ -40,7 +42,9 @@ class Project extends Component<any, any> {
       currentProjectIcons: [],
       currentProjectIntro: '',
       currentProjectDesc: '',
-      currentProjectUrl: ''
+      currentProjectUrl: '',
+      currentProjectGit: '',
+      currentProjectGitUrl: ''
     });
   }
 
@@ -85,7 +89,9 @@ class Project extends Component<any, any> {
       currentProjectIcons: this.state.projects[i].icons,
       currentProjectIntro: this.state.projects[i].intro,
       currentProjectDesc: this.state.projects[i].desc,
-      currentProjectUrl: this.state.projects[i].url
+      currentProjectUrl: this.state.projects[i].url,
+      currentProjectGit: this.state.projects[i].git,
+      currentProjectGitUrl: this.state.projects[i].gitUrl,
     });
   }
 
@@ -130,7 +136,9 @@ class Project extends Component<any, any> {
       currentProjectIcons: this.state.projects[i].icons,
       currentProjectIntro: this.state.projects[i].intro,
       currentProjectDesc: this.state.projects[i].desc,
-      currentProjectUrl: this.state.projects[i].url
+      currentProjectUrl: this.state.projects[i].url,
+      currentProjectGit: this.state.projects[i].git,
+      currentProjectGitUrl: this.state.projects[i].gitUrl,
     });
   }
 
@@ -175,7 +183,9 @@ class Project extends Component<any, any> {
       currentProjectIcons: this.state.projects[j].icons,
       currentProjectIntro: this.state.projects[j].intro,
       currentProjectDesc: this.state.projects[j].desc,
-      currentProjectUrl: this.state.projects[j].url
+      currentProjectUrl: this.state.projects[j].url,
+      currentProjectGit: this.state.projects[j].git,
+      currentProjectGitUrl: this.state.projects[j].gitUrl,
     });
   }
 
@@ -232,6 +242,16 @@ class Project extends Component<any, any> {
                         className={this.props.link}
                         href={this.state.currentProjectUrl}>
                         {this.state.currentProjectWebsite}
+                      </a>
+                    </span>
+                  </li>
+                  <li className='projectListItem projectListItemVisible'>
+                    <span className={this.props.projectDetails}>
+                      <a
+                        target='new'
+                        className={this.props.link}
+                        href={this.state.currentProjectGitUrl}>
+                        {this.state.currentProjectGit}
                       </a>
                     </span>
                   </li>

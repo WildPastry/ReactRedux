@@ -86,7 +86,9 @@ class App extends Component<any, any> {
       currentProjectIcons: [],
       currentProjectIntro: '',
       currentProjectDesc: '',
-      currentProjectUrl: ''
+      currentProjectUrl: '',
+      currentProjectGit: '',
+      currentProjectGitUrl: ''
     };
     this.filter = this.filter.bind(this);
     this.filterReset = this.filterReset.bind(this);
@@ -442,7 +444,9 @@ class App extends Component<any, any> {
       currentProjectIcons: value['projectIcons'],
       currentProjectIntro: value['projectIntro'],
       currentProjectDesc: value['projectDesc'],
-      currentProjectUrl: value['projectUrl']
+      currentProjectUrl: value['projectUrl'],
+      currentProjectGit: value['projectGit'],
+      currentProjectGitUrl: value['projectGitUrl']
     });
   }
 
@@ -493,6 +497,8 @@ class App extends Component<any, any> {
           currentProjectIntro={this.state.currentProjectIntro}
           currentProjectDesc={this.state.currentProjectDesc}
           currentProjectUrl={this.state.currentProjectUrl}
+          currentProjectGit={this.state.currentProjectGit}
+          currentProjectGitUrl={this.state.currentProjectGitUrl}
           changePageFromProject={this.changePage}
           projectHeading={this.state.projectHeading}
           projectIntro={this.state.projectIntro}
