@@ -213,7 +213,7 @@ class Project extends Component<any, any> {
               <div className='colWrap right col-xs-12 col-sm-12 col-md-12 col-lg-5'>
                 <ul>
                   <li className='projectListItem'>
-                    {/* FIELDS&nbsp;&nbsp; */}
+                    {/* FIELDS */}
                     <span className={this.props.projectDetails}>
                       {this.state.currentProjectFields[0]}
                       <span className='textLightGrey text700'> / </span>
@@ -223,22 +223,22 @@ class Project extends Component<any, any> {
                     </span>
                   </li>
                   <li className='projectListItem'>
-                    {/* CLIENT&nbsp;&nbsp; */}
+                    {/* CLIENT */}
                     <span className={this.props.projectDetails}>
                       {this.state.currentProjectClient}
                     </span>
                   </li>
                   <li className='projectListItem'>
-                    {/* TIMELINE&nbsp;&nbsp; */}
+                    {/* TIMELINE */}
                     <span className={this.props.projectDetails}>
                       {this.state.currentProjectTimeline}
                     </span>
                   </li>
                   <li className='projectListItem marTop projectListItemVisible'>
-                    {/* WEBSITE&nbsp;&nbsp; */}
+                    {/* WEBSITE */}
                     <span className={this.props.projectDetails}>
                       <a
-                        target='new'
+                        target='_blank'
                         className={this.props.link}
                         href={this.state.currentProjectUrl}>
                         {this.state.currentProjectWebsite}
@@ -248,7 +248,7 @@ class Project extends Component<any, any> {
                   <li className='projectListItem projectListItemVisible'>
                     <span className={this.props.projectDetails}>
                       <a
-                        target='new'
+                        target='_blank'
                         className={this.props.link}
                         href={this.state.currentProjectGitUrl}>
                         {this.state.currentProjectGit}
