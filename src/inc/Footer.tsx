@@ -16,6 +16,16 @@ const skyKey = (configData as any).SKYKEY;
 const request = (configData as any).REQUEST;
 const units = (configData as any).UNITS;
 
+Math.trunc = Math.trunc || function(x) {
+  if (isNaN(x)) {
+    return NaN;
+  }
+  if (x > 0) {
+    return Math.floor(x);
+  }
+  return Math.ceil(x);
+};
+
 class Footer extends Component<any, any> {
   constructor(props: any) {
     super(props);
