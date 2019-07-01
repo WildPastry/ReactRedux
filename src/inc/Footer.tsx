@@ -156,19 +156,19 @@ class Footer extends Component<any, any> {
             <div className='row'>
               {/* FA ICONS */}
               <div className='colWrap responsiveWrap miniWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
-                <a href='https://www.linkedin.com/in/michael-parker-aa084310a/' target='_blank'>
+                <a href='https://www.linkedin.com/in/michael-parker-aa084310a/' target='_blank' rel="noopener noreferrer">
                   <FontAwesomeIcon icon={['fab', 'linkedin-in']} className={this.props.faIcon} />
                 </a>
-                <a href='https://www.facebook.com/michael.parker.3532507' target='_blank'>
+                <a href='https://www.facebook.com/michael.parker.3532507' target='_blank' rel="noopener noreferrer">
                   <FontAwesomeIcon
                     icon={['fab', 'facebook-square']}
                     className={this.props.faIcon}
                   />
                 </a>
-                <a href='https://www.pinterest.co.uk/WildPastry/' target='_blank'>
+                <a href='https://www.pinterest.co.uk/WildPastry/' target='_blank' rel="noopener noreferrer">
                   <FontAwesomeIcon icon={['fab', 'pinterest']} className={this.props.faIcon} />
                 </a>
-                <a href='https://github.com/WildPastry' target='_blank'>
+                <a href='https://github.com/WildPastry' target='_blank' rel="noopener noreferrer">
                   <FontAwesomeIcon icon={['fab', 'github']} className={this.props.faIcon} />
                 </a>
                 <a href='mailto:mike@mikeparker.co.nz'>
@@ -176,7 +176,7 @@ class Footer extends Component<any, any> {
                 </a>
                 <a
                   href='https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F598356603%2F'
-                  target='_blank'>
+                  target='_blank' rel="noopener noreferrer">
                   <FontAwesomeIcon
                     icon={['fab', 'facebook-messenger']}
                     className={this.props.faIcon}
@@ -188,17 +188,17 @@ class Footer extends Component<any, any> {
                 <h4 className={this.props.footerHeading}>ARCHIVES</h4>
                 <ul className={this.props.list}>
                   <li>
-                    <a target='_blank' href='https://fear.mikeparker.co.nz/'>
+                    <a target='_blank' rel="noopener noreferrer" href='https://fear.mikeparker.co.nz/'>
                       The Fear Board
                     </a>
                   </li>
                   <li>
-                    <a target='_blank' href='https://sok.mikeparker.co.nz/'>
+                    <a target='_blank' rel="noopener noreferrer" href='https://sok.mikeparker.co.nz/'>
                       School of Kennedy
                     </a>
                   </li>
                   <li>
-                    <a target='_blank' href='https://nat.mikeparker.co.nz/'>
+                    <a target='_blank' rel="noopener noreferrer" href='https://nat.mikeparker.co.nz/'>
                       Let Nature In
                     </a>
                   </li>

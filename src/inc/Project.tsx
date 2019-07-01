@@ -239,6 +239,7 @@ class Project extends Component<any, any> {
                     <span className={this.props.projectDetails}>
                       <a
                         target='_blank'
+                        rel="noopener noreferrer"
                         className={this.props.link}
                         href={this.state.currentProjectUrl}>
                         {this.state.currentProjectWebsite}
@@ -249,6 +250,7 @@ class Project extends Component<any, any> {
                     <span className={this.props.projectDetails}>
                       <a
                         target='_blank'
+                        rel="noopener noreferrer"
                         className={this.props.link}
                         href={this.state.currentProjectGitUrl}>
                         {this.state.currentProjectGit}
