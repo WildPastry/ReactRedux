@@ -1,33 +1,49 @@
+// IMPORTS
 import React, { Component } from 'react';
 import { initType } from '../data/type';
 
+// CLASS TYPE
 class Type extends Component<any, any> {
-  private type: React.RefObject<HTMLDivElement>;
-  constructor(props: any) {
-    super(props);
-    this.type = React.createRef();
-  }
+	private type: React.RefObject<HTMLDivElement>;
+	// TYPE STATE
+	constructor(props: any) {
+		super(props);
+		this.type = React.createRef();
+	}
 
-  componentDidMount() {
-    initType();
-  }
+	// INITIATE FUNCTION ON LOAD
+	componentDidMount() {
+		initType();
+	}
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className='typeWrap pad'>
-          <p className={this.props.thisType}>
-            <span className='textThis'>this </span>site built with react & typescript
-          </p>
-          <div id='type' className={this.props.type} ref={this.type} />
-        </div>
-        <div className='lineNoMar' />
-      </React.Fragment>
-    );
-  }
-  initType(): React.ReactNode {
-    throw new Error('Method not implemented.');
-  }
+	// RENDER COMPONENT
+	render() {
+		// RETURN
+		return (
+			// FRAGMENT
+			<React.Fragment>
+				<div className='typeWrap pad'>
+					{/* THIS SITE */}
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://github.com/WildPastry/React-Typescript'>
+						<p className={this.props.thisType}>
+							<span className='textThis'>this </span>site built with react & typescript
+						</p>
+					</a>
+					{/* ANIMATED TYPE */}
+					<div id='type' className={this.props.type} ref={this.type} />
+				</div>
+				<div className='lineNoMar' />
+			</React.Fragment>
+		);
+	}
+	// INITIATE ERROR
+	initType(): React.ReactNode {
+		throw new Error('Method not implemented.');
+	}
 }
 
+// EXPORT
 export default Type;

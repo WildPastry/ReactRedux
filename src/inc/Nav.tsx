@@ -1,8 +1,11 @@
+// IMPORTS
 import React, { Component } from 'react';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { MDBAnimation } from 'mdbreact';
 
+// CLASS NAV
 class Nav extends Component<any, any> {
+	// NAV STATE
 	constructor(props: any) {
 		super(props);
 		this.state = {
@@ -15,10 +18,12 @@ class Nav extends Component<any, any> {
 		this.toggleMenu = this.toggleMenu.bind(this);
 	}
 
+	// CHANGE PAGE FUNCTION
 	changePageFromNav(value: any) {
 		this.props.changePageFromNav(value);
 	}
 
+	// TOGGLE MENU FUNCTION
 	toggleMenu = () => {
 		if (this.state.collapseMenu === false) {
 			this.setState({
@@ -34,9 +39,12 @@ class Nav extends Component<any, any> {
 		});
 	};
 
+	// RENDER COMPONENTS
 	render() {
+		// NAVIGATION MENU
 		let collapseMenu;
 		let burgerMenu;
+		// DARK THEME
 		if (this.props.light === false) {
 			burgerMenu = (
 				<div className='menuCollapse'>
@@ -49,6 +57,7 @@ class Nav extends Component<any, any> {
 					/>
 				</div>
 			);
+			// LIGHT THEME
 		} else if (this.props.light === true) {
 			burgerMenu = (
 				<div className='menuCollapse'>
@@ -62,15 +71,18 @@ class Nav extends Component<any, any> {
 				</div>
 			);
 		}
+		// MOBILE MENU
 		if (this.state.collapseMenu === true) {
 			collapseMenu = (
 				<div className={this.state.collapseMenuTrue}>
+					{/* GALLERY */}
 					<h4
 						id='navGallery'
 						className={this.props.navGalleryActive}
 						onClick={this.changePageFromNav.bind(this, 'gallery')}>
 						GALLERY
 					</h4>
+					{/* ABOUT */}
 					<h4
 						id='navAbout'
 						className={this.props.navAboutActive}
@@ -79,15 +91,18 @@ class Nav extends Component<any, any> {
 					</h4>
 				</div>
 			);
+			// DESKTOP MENU
 		} else if (this.state.collapseMenu === false) {
 			collapseMenu = (
 				<div className={this.state.collapseMenuFalse}>
+					{/* GALLERY */}
 					<h4
 						id='navGallery'
 						className={this.props.navGallery}
 						onClick={this.changePageFromNav.bind(this, 'gallery')}>
 						GALLERY
 					</h4>
+					{/* ABOUT */}
 					<h4
 						id='navAbout'
 						className={this.props.navAbout}
@@ -97,12 +112,15 @@ class Nav extends Component<any, any> {
 				</div>
 			);
 		}
+		// RETURN
 		return (
+			// FRAGMENTS AND ANIMATION
 			<React.Fragment>
 				<MDBAnimation type='fadeIn'>
 					{/* BRAND */}
 					<div className='flex wrap pad navWrap'>
 						<p className={this.props.brand}>
+							{/* LINK TO HOME */}
 							<a href='index.html'>
 								mike parker <span className='text300'> portfolio </span>
 							</a>
@@ -110,19 +128,21 @@ class Nav extends Component<any, any> {
 						{/* NAV */}
 						{burgerMenu}
 						<div className='menu flex'>
-              {/* IN PROGRESS - ADDING FEATURE SECTION */}
+							{/* IN PROGRESS - ADDING FEATURE SECTION */}
 							{/* <h4
 								id='navFeature'
 								className={this.props.navFeature}
 								onClick={this.changePageFromNav.bind(this, 'feature')}>
 								FEATURE
 							</h4> */}
+							{/* GALLERY */}
 							<h4
 								id='navGallery'
 								className={this.props.navGallery}
 								onClick={this.changePageFromNav.bind(this, 'gallery')}>
 								GALLERY
 							</h4>
+							{/* ABOUT */}
 							<h4
 								id='navAbout'
 								className={this.props.navAbout}
@@ -139,4 +159,5 @@ class Nav extends Component<any, any> {
 	}
 }
 
+// EXPORT
 export default Nav;

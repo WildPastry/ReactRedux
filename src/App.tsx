@@ -122,10 +122,12 @@ class App extends Component<any, any> {
 		this.randomProject = this.randomProject.bind(this);
 	}
 
+	// DISPLAY 3 RANDOM PROJECTS
 	componentWillMount() {
 		this.randomProject();
 	}
 
+	// RANDOM PROJECT MATH FUNCTION
 	randomProject() {
 		randomNumber = [];
 		while (randomNumber.length < 3) {
@@ -270,6 +272,7 @@ class App extends Component<any, any> {
 		}
 	}
 
+	// FILTER FUCNTION
 	filter(value: any) {
 		var projects = projectData;
 		var filter = value;
@@ -364,6 +367,7 @@ class App extends Component<any, any> {
 		});
 	}
 
+	// FILTER SYSTEM RESET
 	filterReset() {
 		// DARK THEME
 		if (this.state.light === false) {
@@ -491,6 +495,7 @@ class App extends Component<any, any> {
 		window.scrollTo(0, 0);
 	}
 
+	// RENDER COMPONENTS
 	render() {
 		var currentPage = this.state.currentPage;
 		let projectDisplay;
@@ -498,6 +503,7 @@ class App extends Component<any, any> {
 
 		if (currentPage === 'gallery') {
 			display = (
+				// GALLERY PAGE
 				<Gallery
 					projects={this.state.projects}
 					changePageFromGallery={this.changePageAndProject}
@@ -519,6 +525,7 @@ class App extends Component<any, any> {
 			);
 		} else if (currentPage === 'project') {
 			display = '';
+			// PROJECT PAGE
 			projectDisplay = (
 				<Project
 					projects={this.state.projects}
@@ -549,6 +556,7 @@ class App extends Component<any, any> {
 			);
 		} else if (currentPage === 'about') {
 			display = (
+				// ABOUT PAGE
 				<About
 					space={this.state.space}
 					aboutList={this.state.aboutList}
@@ -558,10 +566,13 @@ class App extends Component<any, any> {
 				/>
 			);
 		}
+		// RETURN
 		return (
+			// FRAGMENTS AND ANIMATION
 			<React.Fragment>
 				<div className='container-fluid'>
 					<MDBAnimation type='fadeIn'>
+						{/* NAV */}
 						<Nav
 							changePageFromNav={this.changePage}
 							navGallery={this.state.navGallery}
@@ -573,6 +584,7 @@ class App extends Component<any, any> {
 							light={this.state.light}
 						/>
 					</MDBAnimation>
+					{/* ANIMATED TYPE */}
 					<Type type={this.state.type} thisType={this.state.thisType} />
 					<React.Fragment>
 						<MDBAnimation type='fadeIn'>{display}</MDBAnimation>
@@ -581,6 +593,7 @@ class App extends Component<any, any> {
 				<React.Fragment>
 					<MDBAnimation type='fadeIn'>{projectDisplay}</MDBAnimation>
 				</React.Fragment>
+				{/* FOOTER */}
 				<Footer
 					faIcon={this.state.faIcon}
 					list={this.state.list}
@@ -590,6 +603,7 @@ class App extends Component<any, any> {
 					footerIcon={this.state.footerIcon}
 					footerCopyright={this.state.footerCopyright}
 				/>
+				{/* SCROLL BUTTON */}
 				<ScrollUpButton
 					StopPosition={0}
 					ShowAtPosition={200}
@@ -602,4 +616,5 @@ class App extends Component<any, any> {
 	}
 }
 
+// EXPORT
 export default App;
