@@ -119,11 +119,9 @@ class Nav extends Component<any, any> {
 				<MDBAnimation type='fadeIn'>
 					{/* BRAND */}
 					<div className='flex wrap pad navWrap'>
-						<p className={this.props.brand}>
+						<p className={this.props.brand} onClick={this.changePageFromNav.bind(this, 'gallery')}>
 							{/* LINK TO HOME */}
-							<a href='index.html'>
-								mike parker <span className='text300'> portfolio </span>
-							</a>
+							mike parker <span className='text300'> portfolio </span>
 						</p>
 						{/* NAV */}
 						{burgerMenu}

@@ -119,6 +119,7 @@
 
 // NAV BRAND DARK
 .brandDark {
+  color: $yellow;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   padding-bottom: 3px;
@@ -129,7 +130,7 @@
 
 .brandDark:hover {
   border-bottom: 2px solid $yellow;
-  color: $white;
+  color: $yellow;
 }
 
 .brandDark a {
@@ -138,6 +139,7 @@
 
 // NAV BRAND LIGHT
 .brandLight {
+  color: $blue;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   padding-bottom: 3px;
@@ -148,7 +150,7 @@
 
 .brandLight:hover {
   border-bottom: 2px solid $blue;
-  color: $grey;
+  color: $blue;
 }
 
 .brandLight a {
