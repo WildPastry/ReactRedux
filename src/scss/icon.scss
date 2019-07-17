@@ -1,0 +1,165 @@
+// IMPORT
+@import 'variables';
+@import 'mixins';
+
+// FA
+
+// FA DARK
+.faIconDark {
+  cursor: pointer;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.faIconDark:hover {
+  color: $peach;
+}
+
+// FA LIGHT
+.faIconLight {
+  cursor: pointer;
+  color: $grey;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.faIconLight:hover {
+  color: $peach;
+}
+
+// GALLERY
+
+// GALLERY FILL ICON DARK
+.galleryFillIconDark {
+  cursor: pointer;
+  font-size: 30px;
+  color: $yellow;
+  margin-left: 20px;
+}
+
+.galleryFillIconDark:hover {
+  opacity: 0.5;
+}
+
+// GALLERY FILL ICON LIGHT
+.galleryFillIconLight {
+  cursor: pointer;
+  font-size: 30px;
+  color: $blue;
+  margin-left: 20px;
+}
+
+.galleryFillIconLight:hover {
+  opacity: 0.5;
+}
+
+// GALLERY RGB ICON
+.galleryRGBIcon {
+  cursor: pointer;
+  height: 30px;
+  color: $yellow;
+}
+
+.galleryRGBIcon:hover {
+  opacity: 0.5;
+}
+
+// PROJECT
+.projectIcon {
+  font-size: 35px;
+  margin-left: 20px;
+}
+
+.gridIcon {
+  color: $lightGrey;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.prevIcon,
+.nextIcon {
+  color: $lightGrey;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.prevIcon:hover,
+.nextIcon:hover,
+.gridIcon:hover {
+  color: $spotGrey;
+}
+
+// FOOTER
+.footerIcon {
+  font-size: 22px;
+  // margin-left: 13px;
+  margin-top: 13px;
+}
+
+// SCROLL UP
+.scrollUpIcon {
+  background: $grey-t !important;
+  svg {
+    fill: $white !important;
+  }
+  :hover {
+    fill: $spotGrey !important;
+  }
+}
+
+// FA BRAND COLOURS
+.fa-adobe {
+  color: #fb3e44;
+}
+
+.fa-sass {
+  color: #cf649a;
+}
+
+.fa-react {
+  color: #61dafb;
+}
+
+.fa-bootstrap {
+  color: #7251a3;
+}
+
+.fa-js {
+  color: #f5de19;
+}
+
+.fa-git {
+  color: #f05033;
+}
+
+.fa-node {
+  color: #79b461;
+}
+
+.fa-npm {
+  color: #fb3e44;
+}
+
+.fa-grunt {
+  color: #fba919;
+}
+
+.fa-less {
+  color: #4b8fe9;
+}
+
+.fa-html5 {
+  color: #ee681f;
+}
+
+.fa-gulp {
+  color: #f05033;
+}
+
+.fa-php {
+  color: #8892BF;
+}
+
+.fa-wordpress {
+  color: #00A0D2;
+}
