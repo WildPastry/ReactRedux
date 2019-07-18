@@ -1,16 +1,21 @@
+// IMPORTS
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
 
+// CLASS GALLERY
 class Gallery extends Component<any, any> {
+  // GALLERY STATE
   constructor(props: any) {
     super(props);
     this.changePageFromGallery = this.changePageFromGallery.bind(this);
   }
 
+  // CHANGE PAGE FUNCTION
   changePageFromGallery(value: any) {
     this.props.randomProject();
     var options = {
+      // DECLARE OPTIONS
       page: 'project',
       project: value[0],
       projectName: value[1],
@@ -31,38 +36,52 @@ class Gallery extends Component<any, any> {
     window.scrollTo(0, 0);
   }
 
+  // RENDER COMPONENT
   render() {
+    // RETURN
     return (
+      // FRAGMENT
       <React.Fragment>
         {/* PROJECTS FILTER */}
         <div className='row wrap'>
           <div className='filterWrap flex pad'>
+            {/* EVERYTHING */}
             <h4
               className={this.props.everything}
               onClick={this.props.filterReset.bind(this, 'EVERYTHING')}>
               EVERYTHING
             </h4>
+            {/* BRANDING */}
             <h4 className={this.props.branding} onClick={this.props.filter.bind(this, 'Branding')}>
               Branding
             </h4>
+            {/* GRAPHIC */}
             <h4 className={this.props.graphic} onClick={this.props.filter.bind(this, 'Graphic')}>
               Graphic
             </h4>
+            {/* UX */}
             <h4 className={this.props.ux} onClick={this.props.filter.bind(this, 'UX')}>
               UX
             </h4>
+            {/* WEB */}
             <h4 className={this.props.web} onClick={this.props.filter.bind(this, 'Web')}>
               Web
             </h4>
           </div>
           {/* IMAGE THEME ICONS */}
           <div className='galleryWrap pad flex'>
+            {/* HEADING */}
+            <h4 className={this.props.singleProjectDesc}>
+              THEME
+            </h4>
+            {/* RGB ICON */}
             <img
               className='galleryRGBIcon'
               src={require('./../icon/rgb.svg')}
               onClick={this.props.changeImageTheme}
               alt='RBG Icon'
             />
+            {/* PAINT BUCKET ICON */}
             <div onClick={this.props.changeTheme}>
               <FontAwesomeIcon
                 icon={['fas', 'fill-drip']}
@@ -75,6 +94,7 @@ class Gallery extends Component<any, any> {
         <div className='row'>
           {this.props.projects.map(
             (singleProject: {
+              // DECLARE TYPES
               id: React.Key;
               name: React.ReactNode;
               fields: Array<[]>;
@@ -95,6 +115,7 @@ class Gallery extends Component<any, any> {
                 <MDBAnimation type='zoomIn'>
                   <img
                     onClick={this.changePageFromGallery.bind(this, [
+                      // STORE DATA FROM CLICK
                       singleProject.id,
                       singleProject.name,
                       singleProject.fields,
@@ -137,4 +158,5 @@ class Gallery extends Component<any, any> {
   }
 }
 
+// EXPORT
 export default Gallery;
