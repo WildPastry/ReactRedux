@@ -174,7 +174,7 @@ class Footer extends Component<any, any> {
 							<div className='colWrap responsiveWrap miniWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
 								{/* LINKEDIN */}
 								<a
-									href='https://www.linkedin.com/in/michael-parker-aa084310a/'
+									href='https://www.linkedin.com/in/mike-parker-aa084310a'
 									target='_blank'
 									rel='noopener noreferrer'>
 									<FontAwesomeIcon icon={['fab', 'linkedin-in']} className={this.props.faIcon} />
