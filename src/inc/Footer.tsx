@@ -214,6 +214,16 @@ class Footer extends Component<any, any> {
 										className={this.props.faIcon}
 									/>
 								</a>
+									{/* INSTAGRAM */}
+									<a
+									href='https://www.instagram.com/mikeparkernz/'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<FontAwesomeIcon
+										icon={['fab', 'instagram']}
+										className={this.props.faIcon}
+									/>
+								</a>
 							</div>
 							{/* ARCHIVES */}
 							<div className='colWrap right responsiveText col-xs-6 col-sm-6 col-md-3 col-lg-3'>

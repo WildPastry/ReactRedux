@@ -32,6 +32,7 @@ library.add(fab, faFillDrip, faEnvelope, faChevronLeft, faChevronRight, faTh, fa
 // VARIABLES AND TYPES
 var randomNumber: any[] | number[] | (string | number)[];
 var htmlBody = document.getElementById('bg');
+htmlBody.className = 'bgDark';
 var currentEverything: string;
 var currentBranding: string;
 var currentGraphic: string;
@@ -45,8 +46,8 @@ class App extends Component<any, any> {
 		super(props);
 		this.state = {
 			// THEME
-			theme: true,
-			light: true,
+			theme: false,
+			light: false,
 			// RANDOM NUMBER ARRAY
 			randomNumber: [],
 			// PROJECT DATA
@@ -54,47 +55,47 @@ class App extends Component<any, any> {
 			// CURRENT PAGE
 			currentPage: 'gallery',
 			// IMAGE THEME
-			imgTheme: 'imgWrapLight col-xs-12 col-sm-6 col-md-4 col-lg-4',
+			imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4',
 			// NAV COLOURS
-			navGallery: 'navItemLight navItemActiveLight',
-			navAbout: 'navItemLight',
-			navGalleryActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
-			navAboutActive: 'navItemLightCollapse menuActiveItem',
+			navGallery: 'navItemDark navItemActiveDark',
+			navAbout: 'navItemDark',
+			navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+			navAboutActive: 'navItemDarkCollapse menuActiveItem',
 			// TEXT AND ICON COLOURS
-			type: 'textGrey',
-			thisType: 'textGrey textHide',
-			space: 'space textWhiteBg',
-			brand: 'brandLight',
-			galleryFillIcon: 'galleryFillIconLight',
-			singleProjectName: 'textLightGrey text700',
-			singleProjectDesc: 'textGrey text400',
-			faIcon: 'faIconLight',
-			list: 'listLight',
-			aboutList: 'aboutListLight aboutListWrap',
-			footerHeading: 'marBot textGrey',
-			footerPara: 'pad marBotFooter textLightGrey',
-			footerTemp: 'footerTemp textGrey',
-			footerIcon: 'footerIcon textLightGrey',
-			footerCopyright: 'footerCopyright textBlue text700 responsiveCopyRight',
+			type: 'textWhite',
+			thisType: 'textWhite textHide',
+			space: 'space textGreyBg',
+			brand: 'brandDark',
+			galleryFillIcon: 'galleryFillIconDark',
+			singleProjectName: 'textWhite text700',
+			singleProjectDesc: 'textSpotGrey text400',
+			faIcon: 'faIconDark',
+			list: 'listDark',
+			aboutList: 'aboutListDark aboutListWrap',
+			footerHeading: 'marBot textWhite',
+			footerPara: 'pad marBotFooter textSpotGrey',
+			footerTemp: 'footerTemp textWhite',
+			footerIcon: 'footerIcon textWhite',
+			footerCopyright: 'footerCopyright textYellow text700 responsiveCopyRight',
 			// FILTER SETTING
 			filter: 'everything',
 			// FILTER COLOURS
-			everything: 'filterItemLight filterItemActiveLight text700',
-			branding: 'filterItemLight',
-			graphic: 'filterItemLight',
-			ux: 'filterItemLight',
-			web: 'filterItemLight',
+			everything: 'filterItemDark filterItemActiveDark text700',
+			branding: 'filterItemDark',
+			graphic: 'filterItemDark',
+			ux: 'filterItemDark',
+			web: 'filterItemDark',
 			// ABOUT PAGE COLOURS
-			aboutHeading: 'marBot textGrey',
-			aboutPara: 'textGrey',
-			aboutPhone: 'textLightGrey',
+			aboutHeading: 'marBot textWhite',
+			aboutPara: 'textWhite',
+			aboutPhone: 'textSpotGrey',
 			// PROJECT PAGE COLOURS
-			projectHeading: 'marBot textGrey',
-			projectIntro: 'textLightGrey text300',
-			projectDesc: 'textGrey',
-			projectDetails: 'textGrey text700',
-			projectRow: 'projectRowLight',
-			barColor: 'textGrey',
+			projectHeading: 'marBot textWhite',
+			projectIntro: 'textSpotGrey text300',
+			projectDesc: 'textWhite',
+			projectDetails: 'textWhite text700',
+			projectRow: 'projectRowDark',
+			barColor: 'textWhite',
 			// PROJECT PAGE LINK
 			link: 'textPeach projectsLink',
 			// CURRENT PROJECT INFORMATION

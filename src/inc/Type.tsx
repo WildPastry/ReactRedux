@@ -5,6 +5,7 @@ import { initType } from '../data/type';
 // CLASS TYPE
 class Type extends Component<any, any> {
 	private type: React.RefObject<HTMLDivElement>;
+	props: any;
 	// TYPE STATE
 	constructor(props: any) {
 		super(props);
@@ -24,14 +25,9 @@ class Type extends Component<any, any> {
 			<React.Fragment>
 				<div className='typeWrap pad'>
 					{/* THIS SITE */}
-					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://github.com/WildPastry/React-Typescript'>
 						<p className={this.props.thisType}>
 							<span className='textThis'>this </span>site built with react & typescript
 						</p>
-					</a>
 					{/* ANIMATED TYPE */}
 					<div id='type' className={this.props.type} ref={this.type} />
 				</div>

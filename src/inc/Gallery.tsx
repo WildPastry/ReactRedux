@@ -5,6 +5,7 @@ import { MDBAnimation } from 'mdbreact';
 
 // CLASS GALLERY
 class Gallery extends Component<any, any> {
+  props: any;
   // GALLERY STATE
   constructor(props: any) {
     super(props);
