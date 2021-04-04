@@ -1,0 +1,99 @@
+// IMPORT
+@import 'variables';
+@import 'mixins';
+
+// TEXT STYLES
+.textItalic {
+  font-style: italic;
+}
+// TEXT COLOURS
+.textBlue {
+  color: $blue;
+}
+
+.textGrey {
+  color: $grey;
+}
+
+.textPeach {
+  color: $peach;
+}
+
+.textPink {
+  color: $pink;
+}
+
+.textLightGrey {
+  color: $lightGrey;
+}
+
+.textSpotGrey {
+  color: $spotGrey;
+}
+
+.textWhite {
+  color: $white;
+}
+
+.textYellow {
+  color: $yellow;
+}
+
+.textThis {
+  color: $peach;
+  font-style: italic;
+  font-weight: $bold;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+// TEXT BG COLOURS
+.textGreyBg {
+  background: $grey;
+}
+
+.textPeachBg {
+  background: $peach;
+}
+
+.textPinkBg {
+  background: $pink;
+}
+
+.textLightGreyBg {
+  background: $lightGrey;
+}
+
+.textSpotGreyBg {
+  background: $spotGrey;
+}
+
+.textWhiteBg {
+  background: $white;
+}
+
+.textBlackBg {
+  background: $black;
+}
+
+.textYellowBg {
+  background: $yellow;
+}
+
+// TEXT WEIGHTS
+.text100 {
+  font-weight: $thin;
+}
+
+.text300 {
+  font-weight: $light;
+}
+
+.text400 {
+  font-weight: $regular;
+}
+
+.text700 {
+  font-weight: $bold;
+  letter-spacing: 0.5px;
+}
