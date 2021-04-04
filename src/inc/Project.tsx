@@ -217,11 +217,11 @@ class Project extends Component<any, any> {
 					{/* DESCRIPTION */}
 					<div className='container-fluid responsiveMar'>
 						<div className='row wrap marBotProject'>
-							<div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+							<div className='colWrap col-12'>
 								{/* HEADING */}
 								<h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
 							</div>
-							<div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-7'>
+							<div className='colWrap col-sm-12 col-lg-7'>
 								{/* INTRO */}
 								<h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
 								<br />
@@ -229,7 +229,7 @@ class Project extends Component<any, any> {
 								<p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
 							</div>
 							{/* PROJECT DETAILS */}
-							<div className='colWrap right col-xs-12 col-sm-12 col-md-12 col-lg-5'>
+							<div className='colWrap right col-sm-12 col-lg-5'>
 								<ul>
 									<li className='projectListItem'>
 										{/* FIELDS */}
@@ -290,11 +290,11 @@ class Project extends Component<any, any> {
 								</div>
 							</div>
 							{/* LINE BREAK */}
-							<div className='colWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+							<div className='colWrap col-12'>
 								<div className='lineThin mar' />
 							</div>
 							{/* TOP PROJECT CONTROL ICONS */}
-							<div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+							<div className='colWrap flex wrap col-12'>
 								{/* PREVIOUS PROJECT ICON */}
 								<div className='iconWrap' onClick={this.prevProject}>
 									<FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
@@ -320,7 +320,7 @@ class Project extends Component<any, any> {
 								{this.state.currentProjectImages.map((currentImage: { [x: string]: string }) => (
 									<div
 										key={currentImage['id']}
-										className='projectWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+										className='projectWrap col-12'>
 										<MDBAnimation type='zoomIn'>
 											{/* IMAGE LOOP PULLED FROM JSON */}
 											<img
@@ -335,7 +335,7 @@ class Project extends Component<any, any> {
 					</div>
 					{/* BOTTOM PROJECT CONTROL ICONS */}
 					<div className='container-fluid'>
-						<div className='colWrap flex wrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+						<div className='colWrap flex wrap col-12'>
 							{/* PREVIOUS PROJECT ICON */}
 							<div className='iconWrap' onClick={this.prevProject}>
 								<FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
@@ -353,11 +353,11 @@ class Project extends Component<any, any> {
 					{/* MORE PROJECTS */}
 					<div className='container-fluid'>
 						<div className='row'>
-							<div className='moreProjectsWrap col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+							<div className='moreProjectsWrap col-12'>
 								{/* HEADING */}
 								<h3 className='center marBotProject textPeach'>more projects</h3>
 							</div>
-							<div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+							<div className='imgWrapDark col-sm-12 col-lg-4'>
 								{/* RANDOM PROJECT IMAGE 1 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[0])}
@@ -366,7 +366,7 @@ class Project extends Component<any, any> {
 									alt='Gallery'
 								/>
 							</div>
-							<div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+							<div className='imgWrapDark col-sm-12 col-lg-4'>
 								{/* RANDOM PROJECT IMAGE 2 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[1])}
@@ -375,7 +375,7 @@ class Project extends Component<any, any> {
 									alt='Gallery'
 								/>
 							</div>
-							<div className='imgWrapDark col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+							<div className='imgWrapDark col-sm-12 col-lg-4'>
 								{/* RANDOM PROJECT IMAGE 3 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[2])}

@@ -3,7 +3,7 @@
 // IMPORTS
 import React, {Component} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import configData from './../data/config.json';
+// import configData from './../data/config.json';
 // import Tooltip from 'react-simple-tooltip';
 // import {css} from 'styled-components';
 // import {ReactComponent as IconCloudy} from './../icon/weather/iconCloudy.svg';
@@ -15,10 +15,10 @@ import configData from './../data/config.json';
 // import {ReactComponent as IconWindy} from './../icon/weather/iconWindy.svg';
 
 // SECURE DATA
-const cors = (configData as any).CORS;
-const skyKey = (configData as any).SKYKEY;
-const request = (configData as any).REQUEST;
-const units = (configData as any).UNITS;
+// const cors = (configData as any).CORS;
+// const skyKey = (configData as any).SKYKEY;
+// const request = (configData as any).REQUEST;
+// const units = (configData as any).UNITS;
 
 // MATH FUNCTION
 Math.trunc =
@@ -43,100 +43,117 @@ class Footer extends Component<any, any> {
       currentLat: -41.2865,
       currentLng: 174.7762,
       geo: false,
+      currentYear: '',
       isLoaded: false,
     };
-    this.locationReady = this.locationReady.bind(this);
-    this.getLocation = this.getLocation.bind(this);
-    this.showPosition = this.showPosition.bind(this);
+    this.getDate = this.getDate.bind(this);
+    // this.locationReady = this.locationReady.bind(this);
+    // this.getLocation = this.getLocation.bind(this);
+    // this.showPosition = this.showPosition.bind(this);
+  }
+
+  // DATE FUNCTION
+  getDate() {
+    this.setState({
+      currentYear: new Date().getFullYear(),
+      isLoaded: true,
+    });
   }
 
   // GET USER LOCATION
-  getLocation() {
-    this.setState({
-      isLoaded: false,
-    });
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.showPosition);
-    } else {
-      console.log('geolocation unavailable...');
-    }
-  }
+  // getLocation() {
+  //   this.setState({
+  //     isLoaded: false,
+  //   });
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(this.showPosition);
+  //   } else {
+  //     console.log('geolocation unavailable...');
+  //   }
+  // }
 
   // GET USER LAT & LNG
-  showPosition(position: {
-    coords: {
-      latitude: {toFixed: (arg0: number) => string};
-      longitude: {toFixed: (arg0: number) => string};
-    };
-  }) {
-    var lat = position.coords.latitude.toFixed(4);
-    var lng = position.coords.longitude.toFixed(4);
-    this.setState({
-      currentLat: lat,
-      currentLng: lng,
-    });
-    this.locationReady();
-  }
+  // showPosition(position: {
+  //   coords: {
+  //     latitude: {toFixed: (arg0: number) => string};
+  //     longitude: {toFixed: (arg0: number) => string};
+  //   };
+  // }) {
+  //   var lat = position.coords.latitude.toFixed(4);
+  //   var lng = position.coords.longitude.toFixed(4);
+  //   this.setState({
+  //     currentLat: lat,
+  //     currentLng: lng,
+  //   });
+  //   this.locationReady();
+  // }
 
   // GEO LOCATION FUNCTION INTO WEATHER DATA FUNCTION
-  locationReady() {
-    this.setState({
-      geo: true,
-    });
-    // RUN WEATHER DATA FUNCTION
-    this.getData();
-  }
+  // locationReady() {
+  //   this.setState({
+  //     geo: true,
+  //   });
+  //   // RUN WEATHER DATA FUNCTION
+  //   this.getData();
+  // }
 
   // WEATHER DATA FUNCTION
-  getData() {
-    // FETCH DATA
-    fetch(
-      cors +
-        request +
-        skyKey +
-        '/' +
-        this.state.currentLat +
-        ',' +
-        this.state.currentLng +
-        units
-    )
-      .then((res) => res.json())
-      .then((jsonp) => {
-        this.setState(
-          {
-            weather: jsonp,
-            isLoaded: true,
-          },
-          () => {
-            this.setWeatherIcon();
-          }
-        );
-      })
-      // ERROR
-      .catch((error) => {
-        if (error.res) {
-        } else if (error.request) {
-          console.log(error.request);
-        } else {
-          console.log('error ', error.message);
-        }
-        console.log(error.config);
-      });
-  }
+  // getData() {
+  //   // FETCH DATA
+  //   fetch(
+  //     cors +
+  //       request +
+  //       skyKey +
+  //       '/' +
+  //       this.state.currentLat +
+  //       ',' +
+  //       this.state.currentLng +
+  //       units
+  //   )
+  //     .then((res) => res.json())
+  //     .then((jsonp) => {
+  //       this.setState(
+  //         {
+  //           weather: jsonp,
+  //           isLoaded: true,
+  //         },
+  //         () => {
+  //           this.setWeatherIcon();
+  //         }
+  //       );
+  //     })
+  //     // ERROR
+  //     .catch((error) => {
+  //       if (error.res) {
+  //       } else if (error.request) {
+  //         console.log(error.request);
+  //       } else {
+  //         console.log('error ', error.message);
+  //       }
+  //       console.log(error.config);
+  //     });
+  // }
 
   // SET WEATHER ICON
-  setWeatherIcon() {
-    this.setState({
-      currentWeather: this.state.weather.currently.icon,
-    });
-  }
+  // setWeatherIcon() {
+  //   this.setState({
+  //     currentWeather: this.state.weather.currently.icon,
+  //   });
+  // }
 
   // GET WEATHER DATA ON LOAD
   componentWillMount() {
-    this.getData();
+    console.log('Footer loaded...');
+    this.getDate();
+    // this.getData();
+    // this.setState({
+    //   isLoaded: true,
+    // });
   }
 
   render() {
+    // DATE DISPLAY
+    // let dateDisplay;
     // DYNAMIC WEATHER ICONS BASED ON WEATHER
     // let weatherDisplay;
     // var currentWeather = this.state.currentWeather;
@@ -180,7 +197,7 @@ class Footer extends Component<any, any> {
             <div className='line' />
             <div className='row'>
               {/* FA ICONS */}
-              <div className='colWrap responsiveWrap miniWrap col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+              <div className='colWrap responsiveWrap miniWrap col-sm-12 col-md-6'>
                 {/* LINKEDIN */}
                 <a
                   href='https://www.linkedin.com/in/mike-parker-aa084310a'
@@ -250,7 +267,7 @@ class Footer extends Component<any, any> {
                 </a>
               </div>
               {/* ARCHIVES */}
-              <div className='colWrap right responsiveText col-xs-6 col-sm-6 col-md-3 col-lg-3'>
+              <div className='colWrap right responsiveText col-sm-6 col-md-3'>
                 {/* ARCHIVES HEADING */}
                 <h4 className={this.props.footerHeading}>ARCHIVES</h4>
                 {/* ARCHIVES LIST */}
@@ -283,7 +300,7 @@ class Footer extends Component<any, any> {
                 </ul>
               </div>
               {/* CONTACT DETAILS */}
-              <div className='colWrap right col-xs-6 col-sm-6 col-md-3 col-lg-3'>
+              <div className='colWrap right col-sm-6 col-md-3'>
                 {/* CONTACT HEADING */}
                 <h4 className={this.props.footerHeading}>CONTACT</h4>
                 {/* CONTACT LIST */}
@@ -334,7 +351,8 @@ class Footer extends Component<any, any> {
                   </div> */}
                   {/* COPYRIGHT */}
                   <p className={this.props.footerCopyright}>
-                    &copy; mike parker <span className='text300'>2019</span>
+                    &copy; mike parker{' '}
+                    <span className='text300'>{this.state.currentYear}</span>
                   </p>
                 </div>
               </div>
