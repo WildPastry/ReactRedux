@@ -1,0 +1,51 @@
+{
+  "name": "mparker",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^3.9.3",
+    "@types/classnames": "^2.2.7",
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.6",
+    "@types/react": "^16.8.14",
+    "@types/react-dom": "16.8.4",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "mdbreact": "^4.13.0",
+    "react": "^16.8.6",
+    "react-animated-burgers": "^1.2.6",
+    "react-app-polyfill": "^1.0.1",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.0.0",
+    "react-scroll-up-button": "^1.6.4",
+    "react-simple-tooltip": "^2.5.0",
+    "react-transition-group": "^4.0.0",
+    "reactjs-mappletooltip": "^1.4.63",
+    "styled-components": "^4.2.0",
+    "tslib": "^1.9.3",
+    "typescript": "3.4.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "ts-loader": "^5.4.4"
+  }
+}
