@@ -26,7 +26,7 @@
     "reactjs-mappletooltip": "^1.4.63",
     "styled-components": "^4.4.1",
     "tslib": "^1.10.0",
-    "typescript": "3.4.4"
+    "typescript": "^3.9.9"
   },
   "scripts": {
     "start": "react-scripts start",

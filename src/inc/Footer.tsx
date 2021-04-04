@@ -6,13 +6,13 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import configData from './../data/config.json';
 // import Tooltip from 'react-simple-tooltip';
 // import {css} from 'styled-components';
-import {ReactComponent as IconCloudy} from './../icon/weather/iconCloudy.svg';
-import {ReactComponent as IconPartlyCloudy} from './../icon/weather/iconPartlyCloudy.svg';
-import {ReactComponent as IconRainbow} from './../icon/weather/iconRainbow.svg';
-import {ReactComponent as IconRainy} from './../icon/weather/iconRainy.svg';
-import {ReactComponent as IconSnowy} from './../icon/weather/iconSnowy.svg';
-import {ReactComponent as IconSunny} from './../icon/weather/iconSunny.svg';
-import {ReactComponent as IconWindy} from './../icon/weather/iconWindy.svg';
+// import {ReactComponent as IconCloudy} from './../icon/weather/iconCloudy.svg';
+// import {ReactComponent as IconPartlyCloudy} from './../icon/weather/iconPartlyCloudy.svg';
+// import {ReactComponent as IconRainbow} from './../icon/weather/iconRainbow.svg';
+// import {ReactComponent as IconRainy} from './../icon/weather/iconRainy.svg';
+// import {ReactComponent as IconSnowy} from './../icon/weather/iconSnowy.svg';
+// import {ReactComponent as IconSunny} from './../icon/weather/iconSunny.svg';
+// import {ReactComponent as IconWindy} from './../icon/weather/iconWindy.svg';
 
 // SECURE DATA
 const cors = (configData as any).CORS;
@@ -138,31 +138,31 @@ class Footer extends Component<any, any> {
 
   render() {
     // DYNAMIC WEATHER ICONS BASED ON WEATHER
-    let weatherDisplay;
-    var currentWeather = this.state.currentWeather;
+    // let weatherDisplay;
+    // var currentWeather = this.state.currentWeather;
     // var weather = this.state.weather;
     var {isLoaded} = this.state;
-    if (currentWeather === 'cloudy') {
-      weatherDisplay = <IconCloudy />;
-    } else if (currentWeather === 'partly-cloudy-day') {
-      weatherDisplay = <IconPartlyCloudy />;
-    } else if (currentWeather === 'fog') {
-      weatherDisplay = <IconRainbow />;
-    } else if (currentWeather === 'rain') {
-      weatherDisplay = <IconRainy />;
-    } else if (currentWeather === 'snow') {
-      weatherDisplay = <IconSnowy />;
-    } else if (currentWeather === 'clear-day') {
-      weatherDisplay = <IconSunny />;
-    } else if (currentWeather === 'wind') {
-      weatherDisplay = <IconWindy />;
-    } else if (currentWeather === 'sleet') {
-      weatherDisplay = <IconSnowy />;
-    } else if (currentWeather === 'clear-night') {
-      weatherDisplay = <IconSunny />;
-    } else if (currentWeather === 'partly-cloudy-night') {
-      weatherDisplay = <IconPartlyCloudy />;
-    }
+    // if (currentWeather === 'cloudy') {
+    //   weatherDisplay = <IconCloudy />;
+    // } else if (currentWeather === 'partly-cloudy-day') {
+    //   weatherDisplay = <IconPartlyCloudy />;
+    // } else if (currentWeather === 'fog') {
+    //   weatherDisplay = <IconRainbow />;
+    // } else if (currentWeather === 'rain') {
+    //   weatherDisplay = <IconRainy />;
+    // } else if (currentWeather === 'snow') {
+    //   weatherDisplay = <IconSnowy />;
+    // } else if (currentWeather === 'clear-day') {
+    //   weatherDisplay = <IconSunny />;
+    // } else if (currentWeather === 'wind') {
+    //   weatherDisplay = <IconWindy />;
+    // } else if (currentWeather === 'sleet') {
+    //   weatherDisplay = <IconSnowy />;
+    // } else if (currentWeather === 'clear-night') {
+    //   weatherDisplay = <IconSunny />;
+    // } else if (currentWeather === 'partly-cloudy-night') {
+    //   weatherDisplay = <IconPartlyCloudy />;
+    // }
     if (!isLoaded) {
       // RENDER LOADING ICON
       return (
