@@ -34,18 +34,16 @@ class About extends Component<any, any> {
             <div className='colWrap col-sm-12 col-md-6 col-lg-4'>
               {/* BODY */}
               <p className={this.props.aboutPara}>
-                JavaScript, TypeScript, and REACT Web Developer with a strong background in
+                JavaScript, TypeScript, and REACT front-end developer with a strong background in
                 design.
                 <br />
-                <br /> If you have any questions, would like to know more information
-                about me or any of my projects, or would like to work together on a future
-                project, give me a shout and I'll be happy to respond.
+                <br />Currently developing software in Wellington for international government agencies. Love the gym, tramping, swimming, DNB, animals and craft beer. Constantly learning new techniques and improving my code.
                 <br />
                 <br />
               </p>
               {/* CONTACT NUMBER */}
               <h3 className={this.props.aboutPhone} x-ms-format-detection='none'>
-                Call / Text <span className='textPeach'>022 5025 485</span>
+                Call/Text <span className='textPeach ml-1'>022 5025 485</span>
               </h3>
               <div className='lineThinAbout' />
               {/* CLIENTS HEADING */}
@@ -58,7 +56,6 @@ class About extends Component<any, any> {
                 <li>Kuoni Travel</li>
                 <li>England and Wales Cricket Board</li>
                 <li>Hanover Communications</li>
-                <li>Tight 5 Hospitality</li>
                 <li>Queensland Police</li>
                 <li>Bushfires Northern Territory</li>
                 <li>Main Roads Western Australia</li>
