@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // COMPONENTS
 import Nav from './inc/Nav';
-import Type from './inc/Type';
+// import Type from './inc/Type';
 import Gallery from './inc/Gallery';
 import Project from './inc/Project';
 import About from './inc/About';
@@ -130,11 +130,6 @@ class App extends Component<any, any> {
 		this.changePageAndProject = this.changePageAndProject.bind(this);
 		this.randomProject = this.randomProject.bind(this);
 	}
-
-	// DISPLAY 3 RANDOM PROJECTS
-	// componentWillMount() {
-	// 	this.randomProject();
-	// }
 
 	// RANDOM PROJECT MATH FUNCTION
 	randomProject() {
@@ -404,7 +399,7 @@ class App extends Component<any, any> {
 					web: 'filterItemLight filterItemActiveLight',
 					filter: 'web'
 				});
-			}
+			} 
 		}
 		this.setState({
 			projects: projectsFiltered

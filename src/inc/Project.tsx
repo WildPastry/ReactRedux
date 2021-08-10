@@ -1,6 +1,7 @@
 // IMPORTS
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight, faTh } from '@fortawesome/free-solid-svg-icons';
 import { MDBAnimation } from 'mdbreact';
 
 // CLASS PROJECT
@@ -60,7 +61,7 @@ class Project extends Component<any, any> {
 		window.scrollTo(0, 0);
 		var i;
 		if (this.state.currentProject === '001') {
-			i = 11;
+			i = 13;
 		} else if (this.state.currentProject === '002') {
 			i = 0;
 		} else if (this.state.currentProject === '003') {
@@ -83,6 +84,10 @@ class Project extends Component<any, any> {
 			i = 9;
 		} else if (this.state.currentProject === '012') {
 			i = 10;
+		} else if (this.state.currentProject === '013') {
+			i = 11;
+		} else if (this.state.currentProject === '014') {
+			i = 12;
 		}
 		this.setState({
 			// SET STATE WITH DATA
@@ -131,8 +136,12 @@ class Project extends Component<any, any> {
 		} else if (this.state.currentProject === '011') {
 			i = 11;
 		} else if (this.state.currentProject === '012') {
+			i = 12;
+		} else if (this.state.currentProject === '013') {
+			i = 13;
+		} else if (this.state.currentProject === '014') {
 			i = 0;
-		}
+		} 
 		this.setState({
 			// SET STATE WITH DATA
 			currentProject: this.state.projects[i].id,
@@ -181,6 +190,10 @@ class Project extends Component<any, any> {
 			j = 10;
 		} else if (value === 11) {
 			j = 11;
+		} else if (value === 12) {
+			j = 12;
+		} else if (value === 13) {
+			j = 13;
 		}
 		this.setState({
 			// SET STATE WITH DATA
@@ -297,17 +310,17 @@ class Project extends Component<any, any> {
 							<div className='colWrap flex wrap col-12'>
 								{/* PREVIOUS PROJECT ICON */}
 								<div className='iconWrap' onClick={this.prevProject}>
-									<FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
+									<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 								</div>
 								{/* GALLERY ICON */}
 								<div
 									className='iconWrap'
 									onClick={this.changePageFromProject.bind(this, 'gallery')}>
-									<FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
+									<FontAwesomeIcon icon={faTh} className='gridIcon' />
 								</div>
 								{/* NEXT PROJECT ICON */}
 								<div className='iconWrap' onClick={this.nextProject}>
-									<FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
+									<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 								</div>
 							</div>
 						</div>
@@ -338,15 +351,15 @@ class Project extends Component<any, any> {
 						<div className='colWrap flex wrap col-12'>
 							{/* PREVIOUS PROJECT ICON */}
 							<div className='iconWrap' onClick={this.prevProject}>
-								<FontAwesomeIcon icon={['fas', 'chevron-left']} className='prevIcon' />
+								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 							</div>
 							{/* GALLERY ICON */}
 							<div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
-								<FontAwesomeIcon icon={['fas', 'th']} className='gridIcon' />
+								<FontAwesomeIcon icon={faTh} className='gridIcon' />
 							</div>
 							{/* NEXT PROJECT ICON */}
 							<div className='iconWrap' onClick={this.nextProject}>
-								<FontAwesomeIcon icon={['fas', 'chevron-right']} className='nextIcon' />
+								<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 							</div>
 						</div>
 					</div>
