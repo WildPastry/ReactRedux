@@ -4,96 +4,122 @@
 
 // TEXT STYLES
 .textItalic {
-  font-style: italic;
+	font-style: italic;
 }
+
 // TEXT COLOURS
 .textBlue {
-  color: $blue;
+	color: $blue;
 }
 
 .textGrey {
-  color: $grey;
+	color: $grey;
 }
 
 .textPeach {
-  color: $peach;
+	color: $peach;
+}
+
+.textPeachPink {
+	color: $peachPink;
 }
 
 .textPink {
-  color: $pink;
+	color: $pink;
 }
 
 .textLightGrey {
-  color: $lightGrey;
+	color: $lightGrey;
 }
 
 .textSpotGrey {
-  color: $spotGrey;
+	color: $spotGrey;
 }
 
 .textWhite {
-  color: $white;
+	color: $white;
 }
 
 .textYellow {
-  color: $yellow;
+	color: $yellow;
 }
 
 .textThis {
-  color: $peach;
-  font-style: italic;
-  font-weight: $bold;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
+	color: $peach;
+	font-style: italic;
+	font-weight: $bold;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
 }
 
 // TEXT BG COLOURS
 .textGreyBg {
-  background: $grey;
+	background: $grey;
 }
 
 .textPeachBg {
-  background: $peach;
+	background: $peach;
 }
 
 .textPinkBg {
-  background: $pink;
+	background: $pink;
 }
 
 .textLightGreyBg {
-  background: $lightGrey;
+	background: $lightGrey;
 }
 
 .textSpotGreyBg {
-  background: $spotGrey;
+	background: $spotGrey;
 }
 
 .textWhiteBg {
-  background: $white;
+	background: $white;
 }
 
 .textBlackBg {
-  background: $black;
+	background: $black;
 }
 
 .textYellowBg {
-  background: $yellow;
+	background: $yellow;
 }
 
 // TEXT WEIGHTS
 .text100 {
-  font-weight: $thin;
+	font-weight: $thin;
 }
 
 .text300 {
-  font-weight: $light;
+	font-weight: $light;
 }
 
 .text400 {
-  font-weight: $regular;
+	font-weight: $regular;
 }
 
 .text700 {
-  font-weight: $bold;
-  letter-spacing: 0.5px;
+	font-weight: $bold;
+	letter-spacing: 0.5px;
+}
+
+// LOAD MORE
+.loadMoreLight {
+	color: $teal;
+	font-weight: $regular;
+	padding: 5px;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.loadMoreDark {
+	color: $pink;
+	font-weight: $regular;
+	padding: 5px;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.5;
+	}
 }

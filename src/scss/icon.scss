@@ -28,7 +28,7 @@
 // FA LIGHT
 .faIconLight {
 	cursor: pointer;
-  color: $grey;
+	color: $grey;
 	font-size: 30px;
 	margin-right: 20px;
 }
@@ -41,10 +41,9 @@
 	font-size: 30px;
 	color: $yellow;
 	margin-left: 20px;
-}
-
-.galleryFillIconDark:hover {
-	opacity: 0.5;
+	&:hover {
+		opacity: 0.5;
+	}
 }
 
 // GALLERY FILL ICON LIGHT
@@ -53,10 +52,9 @@
 	font-size: 30px;
 	color: $blue;
 	margin-left: 20px;
-}
-
-.galleryFillIconLight:hover {
-	opacity: 0.5;
+	&:hover {
+		opacity: 0.5;
+	}
 }
 
 // GALLERY RGB ICON
@@ -65,10 +63,9 @@
 	cursor: pointer;
 	height: 30px;
 	color: $yellow;
-}
-
-.galleryRGBIcon:hover {
-	opacity: 0.5;
+	&:hover {
+		opacity: 0.5;
+	}
 }
 
 // PROJECT
@@ -115,7 +112,7 @@
 }
 
 // FA BRAND COLOURS
-.fa-adobe {
+.fa-buffer {
 	color: #fb3e44;
 }
 

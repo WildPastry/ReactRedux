@@ -4,387 +4,378 @@
 
 // ROOT
 #root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
 }
 
 // LOADER
 #loader {
-  background: $black-t;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 10;
+	background: $black-t;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 10;
 }
 
 .loader {
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
-  border: 5px solid #ddd;
-  border-top: 5px solid $blue;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  left: 50%;
-  margin-left: -50px;
-  margin-top: -50px;
-  position: absolute;
-  top: 50%;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+	border: 5px solid #ddd;
+	border-top: 5px solid $blue;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	left: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+	position: absolute;
+	top: 50%;
 }
 
 @-webkit-keyframes spin {
-  to {
-    border-top-color: $peach;
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	to {
+		border-top-color: $peach;
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes spin {
-  to {
-    border-top-color: $peach;
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+	to {
+		border-top-color: $peach;
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 
 // BOOTSTRAP
 .container-fluid {
-  flex-grow: 1;
-  margin: 20px auto 0 auto;
-  max-width: 1400px;
+	flex-grow: 1;
+	margin: 20px auto 0 auto;
+	max-width: 1400px;
 }
 
 .row {
-  margin-left: 0;
-  margin-right: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .colWrap {
-  padding: 5px;
+	padding: 5px;
 }
 
 // NAV
 .navWrap {
-  align-items: center;
+	align-items: center;
 }
 
 .navItemDarkProject {
-  color: $spotGrey;
-  margin-left: 13px;
-  border-bottom: 2px solid $grey;
-  padding-bottom: 3px;
+	color: $spotGrey;
+	margin-left: 13px;
+	border-bottom: 2px solid $grey;
+	padding-bottom: 3px;
 }
 
 // NAV ITEM DARK
 .navItemDark {
-  color: $spotGrey;
-  cursor: pointer;
-  margin-left: 13px;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
+	color: $spotGrey;
+	cursor: pointer;
+	margin-left: 13px;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
 }
 
 .navItemDark:hover {
-  color: $white;
-  border-bottom: 2px solid $peach;
+	color: $white;
+	border-bottom: 2px solid $peach;
 }
 
 .navItemActiveDark {
-  color: $white;
-  border-bottom: 2px solid $peach;
+	color: $white;
+	border-bottom: 2px solid $peach;
 }
 
 // NAV ITEM LIGHT
 .navItemLight {
-  color: $lightGrey;
-  cursor: pointer;
-  margin-left: 13px;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
+	color: $lightGrey;
+	cursor: pointer;
+	margin-left: 13px;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
 }
 
 .navItemLight:hover {
-  color: $grey;
-  border-bottom: 2px solid $peach;
+	color: $grey;
+	border-bottom: 2px solid $peach;
 }
 
 .navItemActiveLight {
-  color: $grey;
-  border-bottom: 2px solid $peach;
+	color: $grey;
+	border-bottom: 2px solid $peach;
 }
 
 // NAV BRAND DARK
 .brandDark {
-  color: $yellow;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-  font-weight: $bold;
-  letter-spacing: 0.4px;
-  @include transitions($speed, $speed, $speed, $speed);
-}
-
-.brandDark:hover {
-  border-bottom: 2px solid $yellow;
-  color: $yellow;
+	color: $yellow;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
+	font-weight: $bold;
+	letter-spacing: 0.4px;
+	@include transitions($speed, $speed, $speed, $speed);
+	&:hover {
+		border-bottom: 2px solid $yellow;
+		color: $yellow;
+	}
 }
 
 .brandDark a {
-  color: $yellow;
+	color: $yellow;
 }
 
 // NAV BRAND LIGHT
 .brandLight {
-  color: $blue;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-  font-weight: $bold;
-  letter-spacing: 0.4px;
-  @include transitions($speed, $speed, $speed, $speed);
-}
-
-.brandLight:hover {
-  border-bottom: 2px solid $blue;
-  color: $blue;
+	color: $blue;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
+	font-weight: $bold;
+	letter-spacing: 0.4px;
+	@include transitions($speed, $speed, $speed, $speed);
+	&:hover {
+		border-bottom: 2px solid $blue;
+		color: $blue;
+	}
 }
 
 .brandLight a {
-  color: $blue;
+	color: $blue;
 }
 
 // TYPE
 .typeWrap {
-  line-height: 40px;
+	line-height: 40px;
 }
 
 // SPACE
 #space {
-  cursor: pointer;
-  height: 55vh;
-  padding-left: 50px;
-  canvas {
-    height: 100% !important;
-    width: 100% !important;
-  }
+	cursor: pointer;
+	height: 55vh;
+	padding-left: 50px;
+	canvas {
+		height: 100% !important;
+		width: 100% !important;
+	}
 }
 
 // GALLERY
 .galleryWrap {
-  line-height: 30px;
-  margin-bottom: 10px;
+	line-height: 30px;
+	margin-bottom: 10px;
 }
 
 .galleryWrap:hover .galleryIcon {
-  color: $spotGrey;
+	color: $spotGrey;
 }
 
 .descriptionWrap {
-  margin-top: 2px;
-  margin-bottom: 5px;
+	margin-top: 2px;
+	margin-bottom: 5px;
 }
 
 // FILTER MENU
 .filterWrap {
-  align-items: center;
-  margin-bottom: 10px;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
 // FILTER MENU DARK
 .filterItemDark {
-  color: $spotGrey;
-  cursor: pointer;
-  margin-right: 13px;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-}
-
-.filterItemDark:hover {
-  color: $white;
-  border-bottom: 2px solid $peach;
+	color: $spotGrey;
+	cursor: pointer;
+	margin-right: 13px;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
+	&:hover {
+		color: $white;
+		border-bottom: 2px solid $peach;
+	}
 }
 
 .filterItemActiveDark {
-  color: $white;
-  border-bottom: 2px solid $peach;
+	color: $white;
+	border-bottom: 2px solid $peach;
 }
 
 // FILTER MENU LIGHT
 .filterItemLight {
-  color: $lightGrey;
-  cursor: pointer;
-  margin-right: 13px;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-}
-
-.filterItemLight:hover {
-  color: $grey;
-  border-bottom: 2px solid $peach;
+	color: $lightGrey;
+	cursor: pointer;
+	margin-right: 13px;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
+	&:hover {
+		color: $grey;
+		border-bottom: 2px solid $peach;
+	}
 }
 
 .filterItemActiveLight {
-  color: $grey;
-  border-bottom: 2px solid $peach;
+	color: $grey;
+	border-bottom: 2px solid $peach;
 }
 
 // ABOUT
 .aboutListWrap {
-  line-height: 1.5em;
+	line-height: 1.5em;
 }
 
 // ABOUT LIST DARK
 .aboutListDark li {
-  color: $spotGrey;
-  font-weight: $light;
-  line-height: 1.5em;
+	color: $spotGrey;
+	font-weight: $light;
+	line-height: 1.5em;
 }
 
 .aboutListDark a {
-  color: $spotGrey;
+	color: $spotGrey;
 }
 
 // ABOUT LIST LIGHT
 .aboutListLight li {
-  color: $lightGrey;
-  font-weight: $light;
-  line-height: 1.5em;
+	color: $lightGrey;
+	font-weight: $light;
+	line-height: 1.5em;
 }
 
 .aboutListLight a {
-  color: $lightGrey;
+	color: $lightGrey;
 }
 
 // PROJECT
 .projectRowDark {
-  background: $white;
-  border-bottom: 10px solid $spotGrey;
-  border-top: 10px solid $spotGrey;
+	background: $white;
+	border-bottom: 10px solid $spotGrey;
+	border-top: 10px solid $spotGrey;
 }
 
 .projectRowLight {
-  background: $white;
-  border-bottom: 10px solid transparent;
-  border-top: 10px solid transparent;
+	background: $white;
+	border-bottom: 10px solid transparent;
+	border-top: 10px solid transparent;
 }
 
 .projectWrap {
-  padding: 5px;
-  margin: 10px auto;
+	padding: 5px;
+	margin: 10px auto;
 }
 
 .projectWrap img {
-  height: auto;
-  width: 100%;
+	height: auto;
+	width: 100%;
 }
 
 .projectListItem {
-  cursor: default;
-  font-weight: $light;
-  font-size: 1.2em;
-  color: $spotGrey;
-  line-height: 1.5em;
+	cursor: default;
+	font-weight: $light;
+	font-size: 1.2em;
+	color: $spotGrey;
+	line-height: 1.5em;
+	&:hover {
+		color: $peach;
+	}
 }
 
 .projectIconsWrap {
-  margin-top: 25px;
+	margin-top: 25px;
 }
 
 .prevNextIconWrap {
-  margin-top: 20px;
-}
-
-.projectListItem a:hover {
-  color: $peach;
+	margin-top: 20px;
 }
 
 .projectsLink {
-  font-weight: $regular;
-  font-size: 1em;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 1px;
-}
-
-.projectsLink:hover {
-  border-bottom: 2px solid $peach;
+	font-weight: $regular;
+	font-size: 1em;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 1px;
+	&:hover {
+		border-bottom: 2px solid $peach;
+	}
 }
 
 // FOOTER
 .footer {
-  flex-shrink: 0;
-  margin: 0 auto 30px auto;
-  max-width: 1400px;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 100%;
+	flex-shrink: 0;
+	margin: 0 auto 30px auto;
+	max-width: 1400px;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
 }
 
 .footerWrap {
-  line-height: 30px;
+	line-height: 30px;
 }
 
 .footerListWrap {
-  line-height: 1.5em;
+	line-height: 1.5em;
 }
 
 .footerCopyright {
-  line-height: 50px;
+	line-height: 50px;
 }
 
 .footerTemp {
-  line-height: 50px;
-  margin-left: 5px;
+	line-height: 50px;
+	margin-left: 5px;
 }
 
 // FOOTER LINK
 .footer a {
-  color: $white;
-}
-
-.footer a:hover {
-  color: $peach;
+	color: $white;
+	&:hover {
+		color: $peach;
+	}
 }
 
 // FOOTER LIST DARK
 .listDark li {
-  color: $spotGrey;
-  font-weight: $light;
-  line-height: 1.5em;
+	color: $spotGrey;
+	font-weight: $light;
+	line-height: 1.5em;
 }
 
 .listDark a {
-  color: $spotGrey;
-}
-
-.listDark a:hover {
-  color: $peach;
+	color: $spotGrey;
+	&:hover {
+		color: $peach;
+	}
 }
 
 // FOOTER LIST LIGHT
 .listLight li {
-  color: $lightGrey;
-  font-weight: $light;
-  line-height: 1.5em;
+	color: $lightGrey;
+	font-weight: $light;
+	line-height: 1.5em;
 }
 
 .listLight a {
-  color: $lightGrey;
-}
-
-.listLight a:hover {
-  color: $peach;
+	color: $lightGrey;
+	&:hover {
+		color: $peach;
+	}
 }
 
 // TOOLTIP
 .tooltipWrap {
-  cursor: pointer;
-  margin-left: 13px;
+	cursor: pointer;
+	margin-left: 13px;
 }
 
 .tooltipWrap:hover .footerIcon {
-  color: $peach;
+	color: $peach;
 }

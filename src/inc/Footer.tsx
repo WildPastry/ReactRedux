@@ -4,8 +4,8 @@ import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faGithub,
-	faLinkedin,
-	faFacebookSquare,
+	faLinkedinIn,
+	faFacebook,
 	faFacebookMessenger,
 	faPinterest,
 	faInstagram
@@ -74,6 +74,13 @@ class Footer extends Component<any, any> {
 						<Row>
 							{/* FA ICONS */}
 							<Col sm={12} md={6} className='colWrap responsiveWrap miniWrap'>
+								{/* LINKEDIN */}
+								<a
+									href='https://www.linkedin.com/in/mike-parker-aa084310a'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<FontAwesomeIcon icon={faLinkedinIn} className={this.props.faIcon} />
+								</a>
 								{/* GITHUB */}
 								<a
 									href='https://github.com/WildPastry'
@@ -81,22 +88,12 @@ class Footer extends Component<any, any> {
 									rel='noopener noreferrer'>
 									<FontAwesomeIcon icon={faGithub} className={this.props.faIcon} />
 								</a>
-								{/* LINKEDIN */}
-								<a
-									href='https://www.linkedin.com/in/mike-parker-aa084310a'
-									target='_blank'
-									rel='noopener noreferrer'>
-									<FontAwesomeIcon icon={faLinkedin} className={this.props.faIcon} />
-								</a>
 								{/* FACEBOOK */}
 								<a
 									href='https://www.facebook.com/michael.parker.3532507'
 									target='_blank'
 									rel='noopener noreferrer'>
-									<FontAwesomeIcon
-										icon={faFacebookSquare}
-										className={this.props.faIcon}
-									/>
+									<FontAwesomeIcon icon={faFacebook} className={this.props.faIcon} />
 								</a>
 								{/* MESSENGER */}
 								<a
@@ -181,7 +178,7 @@ class Footer extends Component<any, any> {
 							</Col>
 						</Row>
 						{/* COPYRIGHT AND WEATHER */}
-						<Row>
+						<Row className='row'>
 							<div className='footerWrap'>
 								<div className='lineThinFooter' />
 								<div className='flex wrap responsiveFooterWrap'>

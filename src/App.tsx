@@ -85,6 +85,7 @@ class App extends Component<any, any> {
 			footerTemp: 'footerTemp textWhite',
 			footerIcon: 'footerIcon textWhite',
 			footerCopyright: 'footerCopyright textYellow text700 responsiveCopyRight',
+			loadMore: 'loadMoreDark',
 			// FILTER SETTING
 			filter: 'everything',
 			// FILTER COLOURS
@@ -213,6 +214,7 @@ class App extends Component<any, any> {
 				footerTemp: 'footerTemp textGrey',
 				footerIcon: 'footerIcon textLightGrey',
 				footerCopyright: 'footerCopyright textBlue text700 responsiveCopyRight',
+				loadMore: 'loadMoreLight',
 				// FILTER COLOURS
 				everything: currentEverything,
 				branding: currentBranding,
@@ -290,6 +292,7 @@ class App extends Component<any, any> {
 				footerTemp: 'footerTemp textWhite',
 				footerIcon: 'footerIcon textWhite',
 				footerCopyright: 'footerCopyright textYellow text700 responsiveCopyRight',
+				loadMore: 'loadMoreDark',
 				// FILTER COLOURS
 				everything: currentEverything,
 				branding: currentBranding,
@@ -565,6 +568,7 @@ class App extends Component<any, any> {
 					filter={this.filter}
 					filterReset={this.filterReset}
 					randomProject={this.randomProject}
+					loadMore={this.state.loadMore}
 				/>
 			);
 		} else if (currentPage === 'project') {
