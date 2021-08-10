@@ -126,13 +126,6 @@ class Nav extends Component<any, any> {
 						{/* NAV */}
 						{burgerMenu}
 						<div className='menu flex'>
-							{/* IN PROGRESS - ADDING FEATURE SECTION */}
-							{/* <h4
-								id='navFeature'
-								className={this.props.navFeature}
-								onClick={this.changePageFromNav.bind(this, 'feature')}>
-								FEATURE
-							</h4> */}
 							{/* GALLERY */}
 							<h4
 								id='navGallery'

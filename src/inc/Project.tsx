@@ -1,5 +1,6 @@
 // IMPORTS
 import React, { Component } from 'react';
+import { Container, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faTh } from '@fortawesome/free-solid-svg-icons';
 import { MDBAnimation } from 'mdbreact';
@@ -10,7 +11,7 @@ class Project extends Component<any, any> {
 	constructor(props: any) {
 		super(props);
 		this.state = {
-      // STATE FROM EXTERNAL PROPS
+			// STATE FROM EXTERNAL PROPS
 			projects: this.props.projects,
 			currentProject: this.props.currentProject,
 			currentProjectName: this.props.currentProjectName,
@@ -25,7 +26,7 @@ class Project extends Component<any, any> {
 			currentProjectDesc: this.props.currentProjectDesc,
 			currentProjectUrl: this.props.currentProjectUrl,
 			currentProjectGit: this.props.currentProjectGit,
-			currentProjectGitUrl: this.props.currentProjectGitUrl,
+			currentProjectGitUrl: this.props.currentProjectGitUrl
 		};
 		this.prevProject = this.prevProject.bind(this);
 		this.nextProject = this.nextProject.bind(this);
@@ -51,7 +52,7 @@ class Project extends Component<any, any> {
 			currentProjectDesc: '',
 			currentProjectUrl: '',
 			currentProjectGit: '',
-			currentProjectGitUrl: '',
+			currentProjectGitUrl: ''
 		});
 	}
 
@@ -104,7 +105,7 @@ class Project extends Component<any, any> {
 			currentProjectDesc: this.state.projects[i].desc,
 			currentProjectUrl: this.state.projects[i].url,
 			currentProjectGit: this.state.projects[i].git,
-			currentProjectGitUrl: this.state.projects[i].gitUrl,
+			currentProjectGitUrl: this.state.projects[i].gitUrl
 		});
 	}
 
@@ -141,7 +142,7 @@ class Project extends Component<any, any> {
 			i = 13;
 		} else if (this.state.currentProject === '014') {
 			i = 0;
-		} 
+		}
 		this.setState({
 			// SET STATE WITH DATA
 			currentProject: this.state.projects[i].id,
@@ -157,7 +158,7 @@ class Project extends Component<any, any> {
 			currentProjectDesc: this.state.projects[i].desc,
 			currentProjectUrl: this.state.projects[i].url,
 			currentProjectGit: this.state.projects[i].git,
-			currentProjectGitUrl: this.state.projects[i].gitUrl,
+			currentProjectGitUrl: this.state.projects[i].gitUrl
 		});
 	}
 
@@ -210,7 +211,7 @@ class Project extends Component<any, any> {
 			currentProjectDesc: this.state.projects[j].desc,
 			currentProjectUrl: this.state.projects[j].url,
 			currentProjectGit: this.state.projects[j].git,
-			currentProjectGitUrl: this.state.projects[j].gitUrl,
+			currentProjectGitUrl: this.state.projects[j].gitUrl
 		});
 	}
 
@@ -228,21 +229,25 @@ class Project extends Component<any, any> {
 			<React.Fragment>
 				<MDBAnimation type='fadeIn'>
 					{/* DESCRIPTION */}
-					<div className='container-fluid responsiveMar'>
-						<div className='row wrap marBotProject'>
-							<div className='colWrap col-12'>
+					<Container fluid className='responsiveMar'>
+						<Row className='wrap marBotProject'>
+							<Col sm={12} className='colWrap'>
 								{/* HEADING */}
-								<h1 className={this.props.projectHeading}>{this.state.currentProjectName}</h1>
-							</div>
-							<div className='colWrap col-sm-12 col-lg-7'>
+								<h1 className={this.props.projectHeading}>
+									{this.state.currentProjectName}
+								</h1>
+							</Col>
+							<Col sm={12} lg={7} className='colWrap'>
 								{/* INTRO */}
-								<h2 className={this.props.projectIntro}>{this.state.currentProjectIntro}</h2>
+								<h2 className={this.props.projectIntro}>
+									{this.state.currentProjectIntro}
+								</h2>
 								<br />
 								{/* BODY */}
 								<p className={this.props.projectDesc}>{this.state.currentProjectDesc}</p>
-							</div>
+							</Col>
 							{/* PROJECT DETAILS */}
-							<div className='colWrap right col-sm-12 col-lg-5'>
+							<Col sm={12} lg={5} className='colWrap right'>
 								<ul>
 									<li className='projectListItem'>
 										{/* FIELDS */}
@@ -301,13 +306,13 @@ class Project extends Component<any, any> {
 										/>
 									))}
 								</div>
-							</div>
+							</Col>
 							{/* LINE BREAK */}
-							<div className='colWrap col-12'>
+							<Col sm={12} className='colWrap'>
 								<div className='lineThin mar' />
-							</div>
+							</Col>
 							{/* TOP PROJECT CONTROL ICONS */}
-							<div className='colWrap flex wrap col-12'>
+							<Col sm={12} className='colWrap flex wrap'>
 								{/* PREVIOUS PROJECT ICON */}
 								<div className='iconWrap' onClick={this.prevProject}>
 									<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
@@ -322,39 +327,41 @@ class Project extends Component<any, any> {
 								<div className='iconWrap' onClick={this.nextProject}>
 									<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 								</div>
-							</div>
-						</div>
-					</div>
+							</Col>
+						</Row>
+					</Container>
 					{/* IMAGES */}
 					<div className={this.props.projectRow}>
-						<div className='container-fluid'>
-							<div className='row marBotProject'>
+						<Container fluid>
+							<Row className='marBotProject'>
 								{/* IMAGE MAP */}
-								{this.state.currentProjectImages.map((currentImage: { [x: string]: string }) => (
-									<div
-										key={currentImage['id']}
-										className='projectWrap col-12'>
-										<MDBAnimation type='zoomIn'>
-											{/* IMAGE LOOP PULLED FROM JSON */}
-											<img
-												src={require('./../img/project/' + currentImage['src'])}
-												alt={this.state.currentProjectName}
-											/>
-										</MDBAnimation>
-									</div>
-								))}
-							</div>
-						</div>
+								{this.state.currentProjectImages.map(
+									(currentImage: { [x: string]: string }) => (
+										<Col sm={12} key={currentImage['id']} className='projectWrap'>
+											<MDBAnimation type='zoomIn'>
+												{/* IMAGE LOOP INSIDE MAP */}
+												<img
+													src={require('./../img/project/' + currentImage['src'])}
+													alt={this.state.currentProjectName}
+												/>
+											</MDBAnimation>
+										</Col>
+									)
+								)}
+							</Row>
+						</Container>
 					</div>
 					{/* BOTTOM PROJECT CONTROL ICONS */}
-					<div className='container-fluid'>
+					<Container fluid>
 						<div className='colWrap flex wrap col-12'>
 							{/* PREVIOUS PROJECT ICON */}
 							<div className='iconWrap' onClick={this.prevProject}>
 								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 							</div>
 							{/* GALLERY ICON */}
-							<div className='iconWrap' onClick={this.changePageFromProject.bind(this, 'gallery')}>
+							<div
+								className='iconWrap'
+								onClick={this.changePageFromProject.bind(this, 'gallery')}>
 								<FontAwesomeIcon icon={faTh} className='gridIcon' />
 							</div>
 							{/* NEXT PROJECT ICON */}
@@ -362,15 +369,15 @@ class Project extends Component<any, any> {
 								<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 							</div>
 						</div>
-					</div>
+					</Container>
 					{/* MORE PROJECTS */}
-					<div className='container-fluid'>
-						<div className='row'>
-							<div className='moreProjectsWrap col-12'>
+					<Container fluid>
+						<Row>
+							<Col sm={12} className='moreProjectsWrap'>
 								{/* HEADING */}
 								<h3 className='center marBotProject textPeach'>more projects</h3>
-							</div>
-							<div className='imgWrapDark col-sm-12 col-lg-4'>
+							</Col>
+							<Col sm={12} lg={4} className='imgWrapDark'>
 								{/* RANDOM PROJECT IMAGE 1 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[0])}
@@ -378,8 +385,8 @@ class Project extends Component<any, any> {
 										this.state.projects[this.props.randomNumber[0]].thumb[1])}
 									alt='Gallery'
 								/>
-							</div>
-							<div className='imgWrapDark col-sm-12 col-lg-4'>
+							</Col>
+							<Col sm={12} lg={4} className='imgWrapDark'>
 								{/* RANDOM PROJECT IMAGE 2 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[1])}
@@ -387,8 +394,8 @@ class Project extends Component<any, any> {
 										this.state.projects[this.props.randomNumber[1]].thumb[1])}
 									alt='Gallery'
 								/>
-							</div>
-							<div className='imgWrapDark col-sm-12 col-lg-4'>
+							</Col>
+							<Col sm={12} lg={4} className='imgWrapDark'>
 								{/* RANDOM PROJECT IMAGE 3 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[2])}
@@ -396,9 +403,9 @@ class Project extends Component<any, any> {
 										this.state.projects[this.props.randomNumber[2]].thumb[1])}
 									alt='Gallery'
 								/>
-							</div>
-						</div>
-					</div>
+							</Col>
+						</Row>
+					</Container>
 				</MDBAnimation>
 			</React.Fragment>
 		);

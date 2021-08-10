@@ -1,5 +1,6 @@
 // IMPORTS
 import React, { Component } from 'react';
+import { Col, Row } from 'react-bootstrap';
 import { initSpace } from '../data/space';
 import { MDBAnimation } from 'mdbreact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,12 +15,12 @@ class About extends Component<any, any> {
 
 	// INITIATE FUNCTION ON LOAD AND UPDATE
 	componentDidMount() {
-    console.log('componentDidMount');
+		console.log('componentDidMount');
 		initSpace();
 	}
 
 	componentDidUpdate() {
-    console.log('componentDidUpdate');
+		console.log('componentDidUpdate');
 		initSpace();
 	}
 
@@ -30,7 +31,7 @@ class About extends Component<any, any> {
 			// FRAGMENTS AND ANIMATION
 			<React.Fragment>
 				<MDBAnimation type='fadeIn'>
-					<div className='row wrap'>
+					<Row className='wrap'>
 						{/* DESCRIPTION */}
 						<div className='colWrap'>
 							{/* TITLE */}
@@ -48,9 +49,9 @@ class About extends Component<any, any> {
 								/>
 							</div>
 						</div>
-					</div>
-					<div className='row'>
-						<div className='colWrap col-sm-12 col-md-6 col-lg-4'>
+					</Row>
+					<Row>
+						<Col sm={12} md={6} lg={4} className='colWrap'>
 							{/* BODY */}
 							<p className={this.props.aboutPara}>
 								JavaScript, TypeScript, and REACT front-end developer with a strong
@@ -85,12 +86,12 @@ class About extends Component<any, any> {
 								<li>Water Corporation Western Australia</li>
 								<li>Tasmania Police</li>
 							</ul>
-						</div>
+						</Col>
 						{/* SPACE */}
-						<div className='colWrap col-sm-12 col-md-6 col-lg-8'>
+						<Col sm={12} md={6} lg={8} className='colWrap'>
 							<div id='space' className={this.props.space} ref={this.space} />
-						</div>
-					</div>
+						</Col>
+					</Row>
 				</MDBAnimation>
 			</React.Fragment>
 		);

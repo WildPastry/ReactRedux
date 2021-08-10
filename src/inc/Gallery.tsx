@@ -1,5 +1,6 @@
 // IMPORTS
 import React, { Component } from 'react';
+import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
 
@@ -59,7 +60,7 @@ class Gallery extends Component<any, any> {
       <React.Fragment>
         {/* PROJECTS FILTER */}
         <MDBAnimation type='fadeIn'>
-        <div className='row wrap'>
+        <Row className='wrap'>
           <div className='filterWrap flex pad'>
             {/* EVERYTHING */}
             <h4
@@ -105,10 +106,10 @@ class Gallery extends Component<any, any> {
               />
             </div>
           </div>
-        </div>
+        </Row>
         </MDBAnimation>
         {/* IMAGE MAP */}
-        <div className='row'>
+        <Row>
           {this.props.projects.map(
             (singleProject: {
               // DECLARE TYPES
@@ -169,7 +170,8 @@ class Gallery extends Component<any, any> {
               </div>
             )
           )}
-        </div>
+        </Row>
+        <Row><Col className='spotGrey text400 pad'><h4>LOAD MORE [ ... ]</h4></Col></Row>
       </React.Fragment>
     );
   }

@@ -1,5 +1,6 @@
 // IMPORTS
 import React, { Component } from 'react';
+import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faGithub,
@@ -70,9 +71,9 @@ class Footer extends Component<any, any> {
 					{/* FOOTER */}
 					<div className='footer'>
 						<div className='line' />
-						<div className='row'>
+						<Row>
 							{/* FA ICONS */}
-							<div className='colWrap responsiveWrap miniWrap col-sm-12 col-md-6'>
+							<Col sm={12} md={6} className='colWrap responsiveWrap miniWrap'>
 								{/* GITHUB */}
 								<a
 									href='https://github.com/WildPastry'
@@ -121,9 +122,9 @@ class Footer extends Component<any, any> {
 									rel='noopener noreferrer'>
 									<FontAwesomeIcon icon={faInstagram} className={this.props.faIcon} />
 								</a>
-							</div>
+							</Col>
 							{/* ARCHIVES */}
-							<div className='colWrap right responsiveText col-sm-6 col-md-3'>
+							<Col sm={12} md={3} className='colWrap right responsiveText'>
 								{/* ARCHIVES HEADING */}
 								<h4 className={this.props.footerHeading}>ARCHIVES</h4>
 								{/* ARCHIVES LIST */}
@@ -154,9 +155,9 @@ class Footer extends Component<any, any> {
 										</a>
 									</li>
 								</ul>
-							</div>
+							</Col>
 							{/* CONTACT DETAILS */}
-							<div className='colWrap right col-sm-6 col-md-3'>
+							<Col sm={12} md={3} className='colWrap right'>
 								{/* CONTACT HEADING */}
 								<h4 className={this.props.footerHeading}>CONTACT</h4>
 								{/* CONTACT LIST */}
@@ -177,10 +178,10 @@ class Footer extends Component<any, any> {
 										</a>
 									</li>
 								</ul>
-							</div>
-						</div>
+							</Col>
+						</Row>
 						{/* COPYRIGHT AND WEATHER */}
-						<div className='row'>
+						<Row>
 							<div className='footerWrap'>
 								<div className='lineThinFooter' />
 								<div className='flex wrap responsiveFooterWrap'>
@@ -191,7 +192,7 @@ class Footer extends Component<any, any> {
 									</p>
 								</div>
 							</div>
-						</div>
+						</Row>
 					</div>
 				</React.Fragment>
 			);
