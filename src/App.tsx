@@ -22,12 +22,20 @@ import {
 	faChevronLeft,
 	faChevronRight,
 	faTh,
-	faMapMarkerAlt,
+	faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 // SASS
 import './scss/main.scss';
 // ADD FONT ICONS TO LIBRARY
-library.add(fab, faFillDrip, faEnvelope, faChevronLeft, faChevronRight, faTh, faMapMarkerAlt);
+library.add(
+	fab,
+	faFillDrip,
+	faEnvelope,
+	faChevronLeft,
+	faChevronRight,
+	faTh,
+	faMapMarkerAlt
+);
 
 // VARIABLES AND TYPES
 var randomNumber: any[] | number[] | (string | number)[];
@@ -112,7 +120,7 @@ class App extends Component<any, any> {
 			currentProjectDesc: '',
 			currentProjectUrl: '',
 			currentProjectGit: '',
-			currentProjectGitUrl: '',
+			currentProjectGitUrl: ''
 		};
 		this.filter = this.filter.bind(this);
 		this.filterReset = this.filterReset.bind(this);
@@ -124,9 +132,9 @@ class App extends Component<any, any> {
 	}
 
 	// DISPLAY 3 RANDOM PROJECTS
-	componentWillMount() {
-		this.randomProject();
-	}
+	// componentWillMount() {
+	// 	this.randomProject();
+	// }
 
 	// RANDOM PROJECT MATH FUNCTION
 	randomProject() {
@@ -138,13 +146,18 @@ class App extends Component<any, any> {
 			}
 		}
 		this.setState({
-			randomNumber: randomNumber,
+			randomNumber: randomNumber
 		});
 	}
 
 	changeTheme() {
-		// CHECK FILTER
+		// CHECK FILTER & PAGE
 		var currentFilter = this.state.filter;
+		var currentPage = this.state.currentPage;
+		var currentNavGallery,
+			currentNavAbout,
+			currentNavGalleryActive,
+			currentNavAboutActive;
 
 		// LIGHT THEME
 		if (this.state.light === false) {
@@ -164,16 +177,30 @@ class App extends Component<any, any> {
 			} else if (currentFilter === 'web') {
 				currentWeb = 'filterItemLight filterItemActiveLight';
 			}
+			// PAGE CHECK
+			if (currentPage === 'gallery') {
+				currentNavGallery = 'navItemLight navItemActiveLight';
+				currentNavAbout = 'navItemLight';
+				currentNavGalleryActive =
+					'navItemLightCollapse navItemActiveLightCollapse menuActiveItem';
+				currentNavAboutActive = 'navItemLightCollapse menuActiveItem';
+			} else if (currentPage === 'about') {
+				currentNavGallery = 'navItemLight';
+				currentNavAbout = 'navItemLight navItemActiveLight';
+				currentNavGalleryActive = 'navItemLightCollapse menuActiveItem';
+				currentNavAboutActive =
+					'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
+			}
 			// LIGHT THEME
 			htmlBody.className = 'bgLight';
 			this.setState({
 				// THEME
 				light: true,
 				// NAV COLOURS
-				navGallery: 'navItemLight navItemActiveLight',
-				navAbout: 'navItemLight',
-				navGalleryActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
-				navAboutActive: 'navItemLightCollapse menuActiveItem',
+				navGallery: currentNavGallery,
+				navAbout: currentNavAbout,
+				navGalleryActive: currentNavGalleryActive,
+				navAboutActive: currentNavAboutActive,
 				// TEXT AND ICON COLOURS
 				type: 'textGrey',
 				thisType: 'textGrey textHide',
@@ -206,7 +233,7 @@ class App extends Component<any, any> {
 				projectDesc: 'textGrey',
 				projectDetails: 'textGrey text700',
 				projectRow: 'projectRowLight',
-				barColor: 'textGrey',
+				barColor: 'textGrey'
 			});
 			// DARK THEME
 		} else {
@@ -226,16 +253,30 @@ class App extends Component<any, any> {
 			} else if (currentFilter === 'web') {
 				currentWeb = 'filterItemDark filterItemActiveDark';
 			}
+			// PAGE CHECK
+			if (currentPage === 'gallery') {
+				currentNavGallery = 'navItemDark navItemActiveDark';
+				currentNavAbout = 'navItemDark';
+				currentNavGalleryActive =
+					'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem';
+				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem';
+			} else if (currentPage === 'about') {
+				currentNavGallery = 'navItemDark';
+				currentNavAbout = 'navItemDark navItemActiveDark';
+				currentNavGalleryActive = 'navItemDarkCollapse menuActiveItem';
+				currentNavAboutActive =
+					'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
+			}
 			// DARK THEME
 			htmlBody.className = 'bgDark';
 			this.setState({
 				// THEME
 				light: false,
 				// NAV COLOURS
-				navGallery: 'navItemDark navItemActiveDark',
-				navAbout: 'navItemDark',
-				navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
-				navAboutActive: 'navItemDarkCollapse menuActiveItem',
+				navGallery: currentNavGallery,
+				navAbout: currentNavAbout,
+				navGalleryActive: currentNavGalleryActive,
+				navAboutActive: currentNavAboutActive,
 				// TEXT AND ICON COLOURS
 				type: 'textWhite',
 				thisType: 'textWhite textHide',
@@ -268,7 +309,7 @@ class App extends Component<any, any> {
 				projectDesc: 'textWhite',
 				projectDetails: 'textWhite text700',
 				projectRow: 'projectRowDark',
-				barColor: 'textWhite',
+				barColor: 'textWhite'
 			});
 		}
 	}
@@ -292,7 +333,7 @@ class App extends Component<any, any> {
 					graphic: 'filterItemDark',
 					ux: 'filterItemDark',
 					web: 'filterItemDark',
-					filter: 'branding',
+					filter: 'branding'
 				});
 			} else if (value === 'Graphic') {
 				this.setState({
@@ -301,7 +342,7 @@ class App extends Component<any, any> {
 					graphic: 'filterItemDark filterItemActiveDark',
 					ux: 'filterItemDark',
 					web: 'filterItemDark',
-					filter: 'graphic',
+					filter: 'graphic'
 				});
 			} else if (value === 'UX') {
 				this.setState({
@@ -310,7 +351,7 @@ class App extends Component<any, any> {
 					graphic: 'filterItemDark',
 					ux: 'filterItemDark filterItemActiveDark',
 					web: 'filterItemDark',
-					filter: 'ux',
+					filter: 'ux'
 				});
 			} else if (value === 'Web') {
 				this.setState({
@@ -319,7 +360,7 @@ class App extends Component<any, any> {
 					graphic: 'filterItemDark',
 					ux: 'filterItemDark',
 					web: 'filterItemDark filterItemActiveDark',
-					filter: 'web',
+					filter: 'web'
 				});
 			}
 			// LIGHT THEME
@@ -332,7 +373,7 @@ class App extends Component<any, any> {
 					graphic: 'filterItemLight',
 					ux: 'filterItemLight',
 					web: 'filterItemLight',
-					filter: 'branding',
+					filter: 'branding'
 				});
 			} else if (value === 'Graphic') {
 				this.setState({
@@ -341,7 +382,7 @@ class App extends Component<any, any> {
 					graphic: 'filterItemLight filterItemActiveLight',
 					ux: 'filterItemLight',
 					web: 'filterItemLight',
-					filter: 'graphic',
+					filter: 'graphic'
 				});
 			} else if (value === 'UX') {
 				this.setState({
@@ -350,7 +391,7 @@ class App extends Component<any, any> {
 					graphic: 'filterItemLight',
 					ux: 'filterItemLight filterItemActiveLight',
 					web: 'filterItemLight',
-					filter: 'ux',
+					filter: 'ux'
 				});
 			} else if (value === 'Web') {
 				this.setState({
@@ -359,12 +400,12 @@ class App extends Component<any, any> {
 					graphic: 'filterItemLight',
 					ux: 'filterItemLight',
 					web: 'filterItemLight filterItemActiveLight',
-					filter: 'web',
+					filter: 'web'
 				});
 			}
 		}
 		this.setState({
-			projects: projectsFiltered,
+			projects: projectsFiltered
 		});
 	}
 
@@ -380,7 +421,7 @@ class App extends Component<any, any> {
 				graphic: 'filterItemDark',
 				ux: 'filterItemDark',
 				web: 'filterItemDark',
-				filter: 'everything',
+				filter: 'everything'
 			});
 			// lIGHT THEME
 		} else if (this.state.light === true) {
@@ -392,7 +433,7 @@ class App extends Component<any, any> {
 				graphic: 'filterItemLight',
 				ux: 'filterItemLight',
 				web: 'filterItemLight',
-				filter: 'everything',
+				filter: 'everything'
 			});
 		}
 	}
@@ -405,22 +446,24 @@ class App extends Component<any, any> {
 				this.setState({
 					navGallery: 'navItemDark navItemActiveDark',
 					navAbout: 'navItemDark',
-					navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
-					navAboutActive: 'navItemDarkCollapse menuActiveItem',
+					navGalleryActive:
+						'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+					navAboutActive: 'navItemDarkCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
 					navGallery: 'navItemDark',
 					navAbout: 'navItemDark navItemActiveDark',
 					navGalleryActive: 'navItemDarkCollapse menuActiveItem',
-					navAboutActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+					navAboutActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem'
 				});
 			} else if (value === 'project') {
 				this.setState({
 					navGallery: 'navItemDark navItemActiveDark',
 					navAbout: 'navItemDark',
-					navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
-					navAboutActive: 'navItemDarkCollapse menuActiveItem',
+					navGalleryActive:
+						'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+					navAboutActive: 'navItemDarkCollapse menuActiveItem'
 				});
 			}
 			// LIGHT THEME
@@ -429,27 +472,29 @@ class App extends Component<any, any> {
 				this.setState({
 					navGallery: 'navItemLight navItemActiveLight',
 					navAbout: 'navItemLight',
-					navGalleryActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse menuActiveItem',
+					navGalleryActive:
+						'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+					navAboutActive: 'navItemLightCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
 					navGallery: 'navItemLight',
 					navAbout: 'navItemLight navItemActiveLight',
 					navGalleryActive: 'navItemLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+					navAboutActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem'
 				});
 			} else if (value === 'project') {
 				this.setState({
 					navGallery: 'navItemLight navItemActiveLight',
 					navAbout: 'navItemLight',
-					navGalleryActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse menuActiveItem',
+					navGalleryActive:
+						'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+					navAboutActive: 'navItemLightCollapse menuActiveItem'
 				});
 			}
 		}
 		this.setState({
-			currentPage: value,
+			currentPage: value
 		});
 	}
 
@@ -459,13 +504,13 @@ class App extends Component<any, any> {
 		if (this.state.theme === false) {
 			this.setState({
 				theme: true,
-				imgTheme: 'imgWrapLight col-xs-12 col-sm-6 col-md-4 col-lg-4',
+				imgTheme: 'imgWrapLight col-xs-12 col-sm-6 col-md-4 col-lg-4'
 			});
 			// DARK THEME
 		} else {
 			this.setState({
 				theme: false,
-				imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4',
+				imgTheme: 'imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4'
 			});
 		}
 	}
@@ -487,12 +532,13 @@ class App extends Component<any, any> {
 			currentProjectDesc: value['projectDesc'],
 			currentProjectUrl: value['projectUrl'],
 			currentProjectGit: value['projectGit'],
-			currentProjectGitUrl: value['projectGitUrl'],
+			currentProjectGitUrl: value['projectGitUrl']
 		});
 	}
 
 	// COMPONENT SCROLL FUNCTION
 	componentDidMount() {
+		this.randomProject();
 		window.scrollTo(0, 0);
 	}
 
@@ -564,6 +610,10 @@ class App extends Component<any, any> {
 					aboutHeading={this.state.aboutHeading}
 					aboutPara={this.state.aboutPara}
 					aboutPhone={this.state.aboutPhone}
+					changeImageTheme={this.changeImageTheme}
+					changeTheme={this.changeTheme}
+					galleryFillIcon={this.state.galleryFillIcon}
+					singleProjectDesc={this.state.singleProjectDesc}
 				/>
 			);
 		}
@@ -586,7 +636,8 @@ class App extends Component<any, any> {
 						/>
 					</MDBAnimation>
 					{/* ANIMATED TYPE */}
-					<Type type={this.state.type} thisType={this.state.thisType} />
+					{/* <Type type={this.state.type} thisType={this.state.thisType} /> */}
+					<div className='typeWrap pad'>...</div>
 					<React.Fragment>
 						<MDBAnimation type='fadeIn'>{display}</MDBAnimation>
 					</React.Fragment>

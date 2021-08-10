@@ -1,5 +1,3 @@
-/** @format */
-
 // IMPORTS
 import React, {Component} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -142,8 +140,7 @@ class Footer extends Component<any, any> {
   // }
 
   // GET WEATHER DATA ON LOAD
-  componentWillMount() {
-    console.log('Footer loaded...');
+  componentDidMount() {
     this.getDate();
     // this.getData();
     // this.setState({

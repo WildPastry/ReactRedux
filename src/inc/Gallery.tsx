@@ -70,7 +70,7 @@ class Gallery extends Component<any, any> {
             </h4>
           </div>
           {/* IMAGE THEME ICONS */}
-          <div className='galleryWrap pad flex'>
+          <div className='galleryWrap flex pad'>
             {/* HEADING */}
             <h4 className={this.props.singleProjectDesc}>
               THEME

@@ -76,6 +76,12 @@
 }
 
 // MEDIA QUERIES
+@media screen and (min-width: 577px) {
+  .menuActive {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .right {
     margin-top: 15px;
