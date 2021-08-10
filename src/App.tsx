@@ -210,6 +210,7 @@ class App extends Component<any, any> {
 				singleProjectName: 'textLightGrey text700',
 				singleProjectDesc: 'textGrey text400',
 				faIcon: 'faIconLight',
+				faIconSm: 'faIconSmLight',
 				list: 'listLight',
 				aboutList: 'aboutListLight aboutListWrap',
 				footerHeading: 'marBot textGrey',
@@ -286,6 +287,7 @@ class App extends Component<any, any> {
 				singleProjectName: 'textWhite text700',
 				singleProjectDesc: 'textSpotGrey text400',
 				faIcon: 'faIconDark',
+				faIconSm: 'faIconSmDark',
 				list: 'listDark',
 				aboutList: 'aboutListDark aboutListWrap',
 				footerHeading: 'marBot textWhite',
@@ -648,6 +650,7 @@ class App extends Component<any, any> {
 				{/* FOOTER */}
 				<Footer
 					faIcon={this.state.faIcon}
+					faIconSm={this.state.faIconSm}
 					list={this.state.list}
 					footerHeading={this.state.footerHeading}
 					footerPara={this.state.footerPara}

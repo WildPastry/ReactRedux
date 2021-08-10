@@ -37,13 +37,28 @@ class Gallery extends Component<any, any> {
     window.scrollTo(0, 0);
   }
 
+  // SHUFFLE PROJECTS
+  // shuffleArray(array: any) {
+  //   let i = array.length - 1;
+  //   for (; i > 0; i--) {
+  //     const j = Math.floor(Math.random() * (i + 1));
+  //     const temp = array[i];
+  //     array[i] = array[j];
+  //     array[j] = temp;
+  //   }
+  //   return array;
+  // }
+
   // RENDER COMPONENT
   render() {
+    // SHUFFLE PROJECTS
+    // const shuffledProjects = this.shuffleArray(this.props.projects);
     // RETURN
     return (
       // FRAGMENT
       <React.Fragment>
         {/* PROJECTS FILTER */}
+        <MDBAnimation type='fadeIn'>
         <div className='row wrap'>
           <div className='filterWrap flex pad'>
             {/* EVERYTHING */}
@@ -91,6 +106,7 @@ class Gallery extends Component<any, any> {
             </div>
           </div>
         </div>
+        </MDBAnimation>
         {/* IMAGE MAP */}
         <div className='row'>
           {this.props.projects.map(
