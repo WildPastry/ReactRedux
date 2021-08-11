@@ -105,19 +105,21 @@
 
 // LOAD MORE
 .loadMoreLight {
-	color: $teal;
+	color: $blue;
 	font-weight: $regular;
 	cursor: pointer;
+	width: 300px;
 	&:hover {
-		opacity: 0.5;
+		color: $peach;
 	}
 }
 
 .loadMoreDark {
-	color: $pink;
+	color: $yellow;
 	font-weight: $regular;
 	cursor: pointer;
+	width: 300px;
 	&:hover {
-		opacity: 0.5;
+		color: $peach;
 	}
 }

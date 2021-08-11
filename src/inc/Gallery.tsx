@@ -46,10 +46,6 @@ class Gallery extends Component<any, any> {
 
 	// RECENT PROJECTS
 	recentProjects = (size: number) => {
-		console.log(size);
-
-		// let currentData = [...this.props.projects];
-		// currentData = currentData.slice(0, size);
 
 		var lessMore;
 		if (size === 9) {
@@ -58,15 +54,20 @@ class Gallery extends Component<any, any> {
 			lessMore = false;
 		}
 
-		this.setState(
-			{
-				currentSize: size,
-				lessMore: lessMore
-			},
-			() => {
-				console.log(this.state);
-			}
-		);
+		this.setState({
+			currentSize: size,
+			lessMore: lessMore
+		});
+
+		// this.setState(
+		// 	{
+		// 		currentSize: size,
+		// 		lessMore: lessMore
+		// 	},
+		// 	() => {
+		// 		console.log(this.state);
+		// 	}
+		// );
 	};
 
 	// RENDER COMPONENT
@@ -75,21 +76,21 @@ class Gallery extends Component<any, any> {
 			if (this.state.lessMore) {
 				return (
 					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(14)}>
-						SHOW MORE PROJECTS [{' '}
+						SHOW MORE PROJECTS <span className={this.props.singleProjectName}>[ </span>
 						<span className={this.props.singleProjectDesc}>
 							COUNT: {this.state.currentSize}
 						</span>{' '}
-						]
+						<span className={this.props.singleProjectName}>]</span>
 					</h4>
 				);
 			} else {
 				return (
 					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(9)}>
-						SHOW LESS PROJECTS [{' '}
+						SHOW LESS PROJECTS <span className={this.props.singleProjectName}>[ </span>
 						<span className={this.props.singleProjectDesc}>
 							COUNT: {this.state.currentSize}
 						</span>{' '}
-						]
+						<span className={this.props.singleProjectName}>]</span>
 					</h4>
 				);
 			}
@@ -155,7 +156,7 @@ class Gallery extends Component<any, any> {
 				</MDBAnimation>
 				{/* PROJECT MAP */}
 				<Row>
-					{this.props.projects.map(
+					{this.props.projects.slice(0, this.state.currentSize).map(
 						(singleProject: {
 							// DECLARE TYPES
 							id: React.Key;
