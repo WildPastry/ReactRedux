@@ -107,6 +107,7 @@
 .loadMoreLight {
 	color: $blue;
 	font-weight: $regular;
+	margin-top: 0.5rem;
 	cursor: pointer;
 	width: 300px;
 	&:hover {
@@ -117,6 +118,7 @@
 .loadMoreDark {
 	color: $yellow;
 	font-weight: $regular;
+	margin-top: 0.5rem;
 	cursor: pointer;
 	width: 300px;
 	&:hover {

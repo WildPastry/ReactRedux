@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // COMPONENTS
 import Nav from './inc/Nav';
-// import Type from './inc/Type';
+import Type from './inc/Type';
 import Gallery from './inc/Gallery';
 import Project from './inc/Project';
 import About from './inc/About';
@@ -637,8 +637,8 @@ class App extends Component<any, any> {
 						/>
 					</MDBAnimation>
 					{/* ANIMATED TYPE */}
-					{/* <Type type={this.state.type} thisType={this.state.thisType} /> */}
-					<div className='typeWrap pad'>...</div>
+					<Type type={this.state.type} thisType={this.state.thisType} />
+					{/* <div className='typeWrap pad'>...</div> */}
 					<React.Fragment>
 						<MDBAnimation type='fadeIn'>{display}</MDBAnimation>
 					</React.Fragment>

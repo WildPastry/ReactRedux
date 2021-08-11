@@ -10,7 +10,7 @@ import {
 	faPinterest,
 	faInstagram
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
+// import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
 // MATH FUNCTION
 Math.trunc =
@@ -161,16 +161,16 @@ class Footer extends Component<any, any> {
 								<ul className={this.props.list}>
 									{/* PHONE NUMBER */}
 									<li x-ms-format-detection='none'>
-										<FontAwesomeIcon icon={faMobileAlt} className={this.props.faIconSm} />
+										{/* <FontAwesomeIcon icon={faMobileAlt} className={this.props.faIconSm} /> */}
 										<span className='ml-2'>022 5025 485</span>
 									</li>
 									{/* EMAIL ADDRESS */}
 									<li>
 										<a href='mailto:mike@mikeparker.co.nz'>
-											<FontAwesomeIcon
+											{/* <FontAwesomeIcon
 												icon={faEnvelope}
 												className={this.props.faIconSm}
-											/>
+											/> */}
 											<span className='ml-2'>mike@mikeparker.co.nz</span>
 										</a>
 									</li>
