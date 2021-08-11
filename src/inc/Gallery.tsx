@@ -11,9 +11,10 @@ class Gallery extends Component<any, any> {
 	constructor(props: any) {
 		super(props);
 		this.state = {
-      currentSize: '',
+			lessMore: true,
+			currentSize: 9,
 			currentProjects: [],
-			projectText: ''
+			currentText: 'MORE PROJECTS [ ... ]'
 		};
 		this.changePageFromGallery = this.changePageFromGallery.bind(this);
 	}
@@ -45,46 +46,55 @@ class Gallery extends Component<any, any> {
 
 	// RECENT PROJECTS
 	recentProjects = (size: number) => {
-		// console.log(array, size);
-		let data = [...this.props.projects];
-		data = data.slice(0, size);
+		console.log(size);
 
-		var currentProjectText;
-		size === 9 ? (currentProjectText = 'MORE PROJECTS [ ... ]') : (currentProjectText ='LESS PROJECTS [ ... ]')
+		// let currentData = [...this.props.projects];
+		// currentData = currentData.slice(0, size);
 
-		this.setState({
-      currentSize: size,
-			currentProjects: data,
-			projectText: currentProjectText
-		});
-		// const sortEvent = () => {
-		//   setNumbers((num) => num.slice().sort());
-		// };
+		var lessMore;
+		if (size === 9) {
+			lessMore = true;
+		} else if (size === 14) {
+			lessMore = false;
+		}
+
+		this.setState(
+			{
+				currentSize: size,
+				lessMore: lessMore
+			},
+			() => {
+				console.log(this.state);
+			}
+		);
 	};
-
-	// COMPONENT SCROLL FUNCTION
-	componentDidMount() {
-		this.recentProjects(9);
-	}
-
-	// SHUFFLE PROJECTS
-	// shuffleArray(array: any) {
-	//   let i = array.length - 1;
-	//   for (; i > 0; i--) {
-	//     const j = Math.floor(Math.random() * (i + 1));
-	//     const temp = array[i];
-	//     array[i] = array[j];
-	//     array[j] = temp;
-	//   }
-	//   return array;
-	// }
 
 	// RENDER COMPONENT
 	render() {
-		// RECENT PROJECTS
-		// const recentProjects = this.recentArray(9);
-		// SHUFFLE PROJECTS
-		// const shuffledProjects = this.shuffleArray(this.props.projects);
+		const renderLessMore = () => {
+			if (this.state.lessMore) {
+				return (
+					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(14)}>
+						SHOW MORE PROJECTS [{' '}
+						<span className={this.props.singleProjectDesc}>
+							COUNT: {this.state.currentSize}
+						</span>{' '}
+						]
+					</h4>
+				);
+			} else {
+				return (
+					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(9)}>
+						SHOW LESS PROJECTS [{' '}
+						<span className={this.props.singleProjectDesc}>
+							COUNT: {this.state.currentSize}
+						</span>{' '}
+						]
+					</h4>
+				);
+			}
+		};
+
 		// RETURN
 		return (
 			// FRAGMENT
@@ -143,9 +153,9 @@ class Gallery extends Component<any, any> {
 						</div>
 					</Row>
 				</MDBAnimation>
-				{/* IMAGE MAP */}
+				{/* PROJECT MAP */}
 				<Row>
-					{this.state.currentProjects.map(
+					{this.props.projects.map(
 						(singleProject: {
 							// DECLARE TYPES
 							id: React.Key;
@@ -206,9 +216,7 @@ class Gallery extends Component<any, any> {
 					)}
 				</Row>
 				<Row>
-					<Col className={this.props.loadMore}>
-						<h4 onClick={() => this.recentProjects(14)}>{this.state.projectText}</h4>
-					</Col>
+					<Col className='pad'>{renderLessMore()}</Col>
 				</Row>
 			</React.Fragment>
 		);

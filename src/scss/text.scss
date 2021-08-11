@@ -107,7 +107,6 @@
 .loadMoreLight {
 	color: $teal;
 	font-weight: $regular;
-	padding: 5px;
 	cursor: pointer;
 	&:hover {
 		opacity: 0.5;
@@ -117,7 +116,6 @@
 .loadMoreDark {
 	color: $pink;
 	font-weight: $regular;
-	padding: 5px;
 	cursor: pointer;
 	&:hover {
 		opacity: 0.5;

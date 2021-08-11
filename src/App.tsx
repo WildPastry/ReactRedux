@@ -84,7 +84,7 @@ class App extends Component<any, any> {
 			footerPara: 'pad marBotFooter textSpotGrey',
 			footerTemp: 'footerTemp textWhite',
 			footerIcon: 'footerIcon textWhite',
-			footerCopyright: 'footerCopyright textYellow text700 responsiveCopyRight',
+			footerCopyright: 'footerCopyright textYellow text400 responsiveCopyRight',
 			loadMore: 'loadMoreDark',
 			// FILTER SETTING
 			filter: 'everything',
@@ -213,7 +213,7 @@ class App extends Component<any, any> {
 				footerPara: 'pad marBotFooter textLightGrey',
 				footerTemp: 'footerTemp textGrey',
 				footerIcon: 'footerIcon textLightGrey',
-				footerCopyright: 'footerCopyright textBlue text700 responsiveCopyRight',
+				footerCopyright: 'footerCopyright textBlue text400 responsiveCopyRight',
 				loadMore: 'loadMoreLight',
 				// FILTER COLOURS
 				everything: currentEverything,
@@ -291,7 +291,7 @@ class App extends Component<any, any> {
 				footerPara: 'pad marBotFooter textSpotGrey',
 				footerTemp: 'footerTemp textWhite',
 				footerIcon: 'footerIcon textWhite',
-				footerCopyright: 'footerCopyright textYellow text700 responsiveCopyRight',
+				footerCopyright: 'footerCopyright textYellow text400 responsiveCopyRight',
 				loadMore: 'loadMoreDark',
 				// FILTER COLOURS
 				everything: currentEverything,

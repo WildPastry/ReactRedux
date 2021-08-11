@@ -178,7 +178,7 @@ class Footer extends Component<any, any> {
 							</Col>
 						</Row>
 						{/* COPYRIGHT AND WEATHER */}
-						<Row className='row'>
+						<Row>
 							<div className='footerWrap'>
 								<div className='lineThinFooter' />
 								<div className='flex wrap responsiveFooterWrap'>
