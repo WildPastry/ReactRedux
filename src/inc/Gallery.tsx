@@ -46,7 +46,6 @@ class Gallery extends Component<any, any> {
 
 	// RECENT PROJECTS
 	recentProjects = (size: number) => {
-
 		var lessMore;
 		if (size === 9) {
 			lessMore = true;
@@ -59,24 +58,14 @@ class Gallery extends Component<any, any> {
 			lessMore: lessMore
 		});
 
-		// 	this.setState(
-		// 	{
-		// 		currentSize: size,
-		// 		lessMore: lessMore
-		// 	},
-		// 	() => {
-		// 		this.props.sortData(this.props.projects);
-		// 	}
-		// );
-
 	};
 
-		// SHUFFLE THUMBNAILS
-		// shuffleThumbs = () => {
-		// 	var thumb = Math.floor(Math.random()) 
-		// 	thumb < 0.5 ? 0 : 1
-		// 	return thumb;
-		// };
+	// SHUFFLE THUMBNAILS
+	// shuffleThumbs = () => {
+	// 	var thumb = Math.floor(Math.random())
+	// 	thumb < 0.5 ? 0 : 1
+	// 	return thumb;
+	// };
 
 	// RENDER COMPONENT
 	render() {

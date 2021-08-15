@@ -131,6 +131,7 @@ class App extends Component<any, any> {
 		this.changeTheme = this.changeTheme.bind(this);
 		this.changeImageTheme = this.changeImageTheme.bind(this);
 		this.changePageAndProject = this.changePageAndProject.bind(this);
+		this.changeProjectName = this.changeProjectName.bind(this);
 		this.randomProject = this.randomProject.bind(this);
 	}
 
@@ -182,7 +183,8 @@ class App extends Component<any, any> {
 				currentNavGallery = 'navItemLight navItemActiveLight';
 				currentNavAbout = 'navItemLight';
 				currentNavProject = 'fakeNavItemLight';
-				currentNavGalleryActive = 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem';
+				currentNavGalleryActive =
+					'navItemLightCollapse navItemActiveLightCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemLightCollapse menuActiveItem';
 				currentNavProjectActive = 'fakeNavItemLightCollapse menuActiveItem';
 			} else if (currentPage === 'about') {
@@ -190,7 +192,8 @@ class App extends Component<any, any> {
 				currentNavAbout = 'navItemLight navItemActiveLight';
 				currentNavProject = 'fakeNavItemLight';
 				currentNavGalleryActive = 'navItemLightCollapse menuActiveItem';
-				currentNavAboutActive = 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
+				currentNavAboutActive =
+					'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
 				currentNavProjectActive = 'fakeNavItemLightCollapse menuActiveItem';
 			} else if (currentPage === 'project') {
 				currentNavGallery = 'navItemLight';
@@ -198,7 +201,8 @@ class App extends Component<any, any> {
 				currentNavProject = 'fakeNavItemLight navItemActiveLight';
 				currentNavGalleryActive = 'navItemLightCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemLightCollapse menuActiveItem';
-				currentNavProjectActive = 'fakeNavItemLightCollapse menuActiveItem fakeNavItemActiveLightCollapse';
+				currentNavProjectActive =
+					'fakeNavItemLightCollapse menuActiveItem fakeNavItemActiveLightCollapse';
 			}
 			// LIGHT THEME
 			htmlBody.className = 'bgLight';
@@ -271,7 +275,8 @@ class App extends Component<any, any> {
 				currentNavGallery = 'navItemDark navItemActiveDark';
 				currentNavAbout = 'navItemDark';
 				currentNavProject = 'fakeNavItemDark';
-				currentNavGalleryActive = 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem';
+				currentNavGalleryActive =
+					'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem';
 				currentNavProjectActive = 'fakeNavItemDarkCollapse menuActiveItem';
 			} else if (currentPage === 'about') {
@@ -279,7 +284,8 @@ class App extends Component<any, any> {
 				currentNavAbout = 'navItemDark navItemActiveDark';
 				currentNavProject = 'fakeNavItemDark';
 				currentNavGalleryActive = 'navItemDarkCollapse menuActiveItem';
-				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
+				currentNavAboutActive =
+					'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
 				currentNavProjectActive = 'fakeNavItemDarkCollapse menuActiveItem';
 			} else if (currentPage === 'project') {
 				currentNavGallery = 'navItemDark';
@@ -287,7 +293,8 @@ class App extends Component<any, any> {
 				currentNavProject = 'fakeNavItemDark fakeNavItemActiveDark';
 				currentNavGalleryActive = 'navItemDarkCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem';
-				currentNavProjectActive = 'fakeNavItemDarkCollapse menuActiveItem fakeNavItemActiveDarkCollapse';
+				currentNavProjectActive =
+					'fakeNavItemDarkCollapse menuActiveItem fakeNavItemActiveDarkCollapse';
 			}
 			// DARK THEME
 			htmlBody.className = 'bgDark';
@@ -342,8 +349,7 @@ class App extends Component<any, any> {
 
 	// SORT FUNCTION
 	sortData(data: any[]) {
-		data = [].concat(data)
-    .sort((a, b) => a.id > b.id ? 1 : -1)
+		data = [].concat(data).sort((a, b) => (a.id > b.id ? 1 : -1));
 		this.setState({
 			projects: data
 		});
@@ -437,7 +443,7 @@ class App extends Component<any, any> {
 					web: 'filterItemLight filterItemActiveLight',
 					filter: 'web'
 				});
-			} 
+			}
 		}
 		this.setState({
 			projects: projectsFiltered
@@ -479,15 +485,18 @@ class App extends Component<any, any> {
 		if (this.state.light === false) {
 			if (value === 'gallery') {
 				this.setState({
+					currentProjectName: '',
 					navGallery: 'navItemDark navItemActiveDark',
 					navAbout: 'navItemDark',
 					navProject: 'fakeNavItemDark',
-					navGalleryActive: 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse',
+					navGalleryActive:
+						'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse',
 					navAboutActive: 'navItemDarkCollapse menuActiveItem',
 					navProjectActive: 'fakeNavItemDarkCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
+					currentProjectName: '',
 					navGallery: 'navItemDark',
 					navAbout: 'navItemDark navItemActiveDark',
 					navProject: 'fakeNavItemDark',
@@ -502,27 +511,32 @@ class App extends Component<any, any> {
 					navProject: 'fakeNavItemDark fakeNavItemActiveDark',
 					navGalleryActive: 'navItemDarkCollapse menuActiveItem',
 					navAboutActive: 'navItemDarkCollapse menuActiveItem',
-					navProjectActive: 'fakeNavItemDarkCollapse fakeNavItemActiveDarkCollapse menuActiveItem'
+					navProjectActive:
+						'fakeNavItemDarkCollapse fakeNavItemActiveDarkCollapse menuActiveItem'
 				});
 			}
 			// LIGHT THEME
 		} else if (this.state.light === true) {
 			if (value === 'gallery') {
 				this.setState({
+					currentProjectName: '',
 					navGallery: 'navItemLight navItemActiveLight',
 					navAbout: 'navItemLight',
 					navProject: 'fakeNavItemLight',
-					navGalleryActive: 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse',
+					navGalleryActive:
+						'navItemLightCollapse menuActiveItem navItemActiveLightCollapse',
 					navAboutActive: 'navItemLightCollapse menuActiveItem',
 					navProjectActive: 'fakeNavItemLightCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
+					currentProjectName: '',
 					navGallery: 'navItemLight',
 					navAbout: 'navItemLight navItemActiveLight',
 					navProject: 'fakeNavItemLight',
 					navGalleryActive: 'navItemLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse',
+					navAboutActive:
+						'navItemLightCollapse menuActiveItem navItemActiveLightCollapse',
 					navProjectActive: 'fakeNavItemLightCollapse menuActiveItem'
 				});
 			} else if (value === 'project') {
@@ -532,12 +546,20 @@ class App extends Component<any, any> {
 					navProject: 'fakeNavItemLight fakeNavItemActiveLight',
 					navGalleryActive: 'navItemLightCollapse menuActiveItem',
 					navAboutActive: 'navItemLightCollapse menuActiveItem',
-					navProjectActive: 'fakeNavItemLightCollapse fakeNavItemActiveLightCollapse menuActiveItem'
+					navProjectActive:
+						'fakeNavItemLightCollapse fakeNavItemActiveLightCollapse menuActiveItem'
 				});
 			}
 		}
 		this.setState({
 			currentPage: value
+		});
+	}
+
+	// CHANGE PROJECT NAME
+	changeProjectName(value: any) {
+		this.setState({
+			currentProjectName: value
 		});
 	}
 
@@ -577,6 +599,7 @@ class App extends Component<any, any> {
 			currentProjectGit: value['projectGit'],
 			currentProjectGitUrl: value['projectGitUrl']
 		});
+		this.changePage(value['page']);
 	}
 
 	// COMPONENT SCROLL FUNCTION
@@ -645,6 +668,7 @@ class App extends Component<any, any> {
 					link={this.state.link}
 					randomNumber={this.state.randomNumber}
 					randomProject={this.randomProject}
+					changeProjectName={this.changeProjectName}
 				/>
 			);
 		} else if (currentPage === 'about') {
@@ -671,7 +695,10 @@ class App extends Component<any, any> {
 					<MDBAnimation type='fadeIn'>
 						{/* NAV */}
 						<Nav
+							singleProjectName={this.state.singleProjectName}
+							singleProjectDesc={this.state.singleProjectDesc}
 							changePageFromNav={this.changePage}
+							currentPage={this.state.currentPage}
 							currentProjectName={this.state.currentProjectName}
 							navGallery={this.state.navGallery}
 							navAbout={this.state.navAbout}

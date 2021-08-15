@@ -33,6 +33,12 @@ class Project extends Component<any, any> {
 		this.changeProject = this.changeProject.bind(this);
 		this.moreProjects = this.moreProjects.bind(this);
 		this.changePageFromProject = this.changePageFromProject.bind(this);
+		this.changeProjectName = this.changeProjectName.bind(this);
+	}
+
+	// CHANGE PROJECT NAME
+	changeProjectName(value: any) {
+		this.props.changeProjectName(value);
 	}
 
 	// CHANGE PROJECT FUNCTION
@@ -127,6 +133,7 @@ class Project extends Component<any, any> {
 			currentProjectGit: this.state.projects[i].git,
 			currentProjectGitUrl: this.state.projects[i].gitUrl
 		});
+		this.changeProjectName(this.state.projects[i].name);
 	}
 
 	// NEXT PROJECT FUNCTION
@@ -200,6 +207,7 @@ class Project extends Component<any, any> {
 			currentProjectGit: this.state.projects[i].git,
 			currentProjectGitUrl: this.state.projects[i].gitUrl
 		});
+		this.changeProjectName(this.state.projects[i].name);
 	}
 
 	// RANDOM PROJECTS BEFORE FOOTER

@@ -12,7 +12,7 @@ class Nav extends Component<any, any> {
 			isActive: false,
 			collapseMenu: false,
 			collapseMenuFalse: 'hidden menuActive',
-			collapseMenuTrue: 'visible menuActive',
+			collapseMenuTrue: 'visible menuActive'
 		};
 		this.changePageFromNav = this.changePageFromNav.bind(this);
 		this.toggleMenu = this.toggleMenu.bind(this);
@@ -27,23 +27,24 @@ class Nav extends Component<any, any> {
 	toggleMenu = () => {
 		if (this.state.collapseMenu === false) {
 			this.setState({
-				collapseMenu: true,
+				collapseMenu: true
 			});
 		} else if (this.state.collapseMenu === true) {
 			this.setState({
-				collapseMenu: false,
+				collapseMenu: false
 			});
 		}
 		this.setState({
-			isActive: !this.state.isActive,
+			isActive: !this.state.isActive
 		});
 	};
 
 	// RENDER COMPONENTS
 	render() {
-		
 		let projectName;
-		this.props.currentProjectName != '' ? projectName = this.props.currentProjectName : projectName = ' ... ';
+		this.props.currentProjectName != ''
+			? (projectName = this.props.currentProjectName)
+			: (projectName = ' ... ');
 
 		// NAVIGATION MENU
 		let collapseMenu;
@@ -87,10 +88,12 @@ class Nav extends Component<any, any> {
 						GALLERY
 					</h4>
 					{/* PROJECT */}
-					<h4
-						id='navProject'
-						className={this.props.navProjectActive}>
-						PROJECT<span className='textLightGrey text400 ml-2'> [ {projectName} ]</span>
+					<h4 id='navProject' className={this.props.navProjectActive}>
+						PROJECT<span className={this.props.singleProjectName}>[ </span>
+						<span className={this.props.singleProjectDesc}>
+						{projectName}
+						</span>{' '}
+						<span className={this.props.singleProjectName}>]</span>
 					</h4>
 					{/* ABOUT */}
 					<h4
@@ -113,11 +116,13 @@ class Nav extends Component<any, any> {
 						GALLERY
 					</h4>
 					{/* PROJECT */}
-					<h4
-						id='navProject'
-						className={this.props.navProject}>
-						PROJECT<span className='textLightGrey text400 ml-2'> [ {projectName} ]</span>
-					</h4>					
+					<h4 id='navProject' className={this.props.navProject}>
+						PROJECT<span className={this.props.singleProjectName}>[ </span>
+						<span className={this.props.singleProjectDesc}>
+						{projectName}
+						</span>{' '}
+						<span className={this.props.singleProjectName}>]</span>
+					</h4>
 					{/* ABOUT */}
 					<h4
 						id='navAbout'
@@ -135,7 +140,9 @@ class Nav extends Component<any, any> {
 				<MDBAnimation type='fadeIn'>
 					{/* BRAND */}
 					<div className='flex wrap pad navWrap'>
-						<p className={this.props.brand} onClick={this.changePageFromNav.bind(this, 'gallery')}>
+						<p
+							className={this.props.brand}
+							onClick={this.changePageFromNav.bind(this, 'gallery')}>
 							{/* LINK TO HOME */}
 							mike parker <span className='text300'> portfolio </span>
 						</p>
@@ -150,11 +157,10 @@ class Nav extends Component<any, any> {
 								GALLERY
 							</h4>
 							{/* PROJECT */}
-							<h4
-								id='navProject'
-								className={this.props.navProject}>
-								PROJECT<span className='textLightGrey text400'>[ {projectName} ]</span>
-							</h4>							
+							<h4 id='navProject' className={this.props.navProject}>
+								PROJECT
+								<span className='textLightGrey text400 marLeft'>[ {projectName} ]</span>
+							</h4>
 							{/* ABOUT */}
 							<h4
 								id='navAbout'
