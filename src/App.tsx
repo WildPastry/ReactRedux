@@ -445,9 +445,10 @@ class App extends Component<any, any> {
 				});
 			}
 		}
-		this.setState({
-			projects: projectsFiltered
-		});
+		// this.setState({
+		// 	projects: projectsFiltered
+		// });
+		this.sortData(projectsFiltered)
 	}
 
 	// FILTER SYSTEM RESET
@@ -456,7 +457,6 @@ class App extends Component<any, any> {
 		if (this.state.light === false) {
 			// FILTER SYSTEM RESET
 			this.setState({
-				projects: projectData,
 				everything: 'filterItemDark filterItemActiveDark text700',
 				branding: 'filterItemDark',
 				graphic: 'filterItemDark',
@@ -468,7 +468,6 @@ class App extends Component<any, any> {
 		} else if (this.state.light === true) {
 			// FILTER SYSTEM RESET
 			this.setState({
-				projects: projectData,
 				everything: 'filterItemLight filterItemActiveLight text700',
 				branding: 'filterItemLight',
 				graphic: 'filterItemLight',
@@ -477,6 +476,7 @@ class App extends Component<any, any> {
 				filter: 'everything'
 			});
 		}
+		this.sortData(projectData)
 	}
 
 	// COLOURS BASED ON PAGE

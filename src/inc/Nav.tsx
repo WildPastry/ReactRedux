@@ -89,11 +89,8 @@ class Nav extends Component<any, any> {
 					</h4>
 					{/* PROJECT */}
 					<h4 id='navProject' className={this.props.navProjectActive}>
-						PROJECT<span className={this.props.singleProjectName}>[ </span>
-						<span className={this.props.singleProjectDesc}>
-						{projectName}
-						</span>{' '}
-						<span className={this.props.singleProjectName}>]</span>
+						PROJECT
+						<span className='textLightGrey text400 marLeft'> [ {projectName} ]</span>
 					</h4>
 					{/* ABOUT */}
 					<h4
@@ -117,11 +114,8 @@ class Nav extends Component<any, any> {
 					</h4>
 					{/* PROJECT */}
 					<h4 id='navProject' className={this.props.navProject}>
-						PROJECT<span className={this.props.singleProjectName}>[ </span>
-						<span className={this.props.singleProjectDesc}>
-						{projectName}
-						</span>{' '}
-						<span className={this.props.singleProjectName}>]</span>
+						PROJECT
+						<span className='textLightGrey text400 marLeft'> [ {projectName} ]</span>
 					</h4>
 					{/* ABOUT */}
 					<h4

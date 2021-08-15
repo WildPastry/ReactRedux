@@ -57,27 +57,22 @@ class Gallery extends Component<any, any> {
 			currentSize: size,
 			lessMore: lessMore
 		});
-
 	};
-
-	// SHUFFLE THUMBNAILS
-	// shuffleThumbs = () => {
-	// 	var thumb = Math.floor(Math.random())
-	// 	thumb < 0.5 ? 0 : 1
-	// 	return thumb;
-	// };
 
 	// RENDER COMPONENT
 	render() {
-		// const shuffleThumb = this.shuffleThumbs();
-		// console.log(shuffleThumb)
+		// RANDOMIZE THUMBNAIL IMAGES
+		function getRandomInt(max: number) {
+			return Math.floor(Math.random() * max);
+		}
 		const renderLessMore = () => {
 			if (this.state.lessMore) {
 				return (
 					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(18)}>
 						SHOW MORE PROJECTS <span className={this.props.singleProjectName}>[ </span>
 						<span className={this.props.singleProjectDesc}>
-							COUNT: {this.state.currentSize}
+							{/* COUNT: {this.state.currentSize} */}
+							...
 						</span>{' '}
 						<span className={this.props.singleProjectName}>]</span>
 					</h4>
@@ -87,7 +82,8 @@ class Gallery extends Component<any, any> {
 					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(9)}>
 						SHOW LESS PROJECTS <span className={this.props.singleProjectName}>[ </span>
 						<span className={this.props.singleProjectDesc}>
-							COUNT: {this.state.currentSize}
+							{/* COUNT: {this.state.currentSize} */}
+							...
 						</span>{' '}
 						<span className={this.props.singleProjectName}>]</span>
 					</h4>
@@ -107,29 +103,53 @@ class Gallery extends Component<any, any> {
 							<h4
 								className={this.props.everything}
 								onClick={this.props.filterReset.bind(this, 'EVERYTHING')}>
-								EVERYTHING
+								ALL
 							</h4>
 							{/* BRANDING */}
 							<h4
 								className={this.props.branding}
 								onClick={this.props.filter.bind(this, 'Branding')}>
-								Branding
+								UI/UX
+							</h4>
+							{/* REACT */}
+							<h4
+								className={this.props.web}
+								onClick={this.props.filter.bind(this, 'Web')}>
+								TypeScript
 							</h4>
 							{/* GRAPHIC */}
 							<h4
 								className={this.props.graphic}
 								onClick={this.props.filter.bind(this, 'Graphic')}>
-								Graphic
+								JavaScript
 							</h4>
 							{/* UX */}
 							<h4 className={this.props.ux} onClick={this.props.filter.bind(this, 'UX')}>
-								UX
+								JQuery
 							</h4>
 							{/* WEB */}
 							<h4
 								className={this.props.web}
 								onClick={this.props.filter.bind(this, 'Web')}>
-								Web
+								React
+							</h4>
+							{/* REACT */}
+							<h4
+								className={this.props.web}
+								onClick={this.props.filter.bind(this, 'Web')}>
+								Native
+							</h4>
+							{/* REACT */}
+							<h4
+								className={this.props.web}
+								onClick={this.props.filter.bind(this, 'Web')}>
+								API
+							</h4>
+							{/* REACT */}
+							<h4
+								className={this.props.web}
+								onClick={this.props.filter.bind(this, 'Web')}>
+								PHP
 							</h4>
 						</div>
 						{/* IMAGE THEME ICONS */}
@@ -194,7 +214,8 @@ class Gallery extends Component<any, any> {
 											singleProject.git,
 											singleProject.gitUrl
 										])}
-										src={require('./../img/thumb/' + singleProject.thumb[0])}
+										src={require('./../img/thumb/' +
+											singleProject.thumb[getRandomInt(2)])}
 										alt='Gallery'
 									/>
 								</MDBAnimation>
