@@ -86,14 +86,27 @@
 	margin-left: 13px;
 	border-bottom: 2px solid transparent;
 	padding-bottom: 3px;
+	&:hover {
+		color: $white;
+		border-bottom: 2px solid $peach;
+	}
 }
 
-.navItemDark:hover {
+.navItemActiveDark {
 	color: $white;
 	border-bottom: 2px solid $peach;
 }
 
-.navItemActiveDark {
+.fakeNavItemDark {
+	cursor: default;
+	color: $spotGrey;
+	margin-left: 13px;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
+}
+
+.fakeNavItemActiveDark {
+	cursor: default;
 	color: $white;
 	border-bottom: 2px solid $peach;
 }
@@ -105,14 +118,27 @@
 	margin-left: 13px;
 	border-bottom: 2px solid transparent;
 	padding-bottom: 3px;
+	&:hover {
+		color: $grey;
+		border-bottom: 2px solid $peach;
+	}
 }
 
-.navItemLight:hover {
+.navItemActiveLight {
 	color: $grey;
 	border-bottom: 2px solid $peach;
 }
 
-.navItemActiveLight {
+.fakeNavItemLight {
+	cursor: default;
+	color: $lightGrey;
+	margin-left: 13px;
+	border-bottom: 2px solid transparent;
+	padding-bottom: 3px;
+}
+
+.fakeNavItemActiveLight {
+	cursor: default;
 	color: $grey;
 	border-bottom: 2px solid $peach;
 }

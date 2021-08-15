@@ -44,11 +44,10 @@
   padding: 10px;
   border: 0.5px solid transparent;
   border-radius: 3px;
-}
-
-.navItemDarkCollapse:hover {
-  color: $peach;
-  background: $white;
+  &:hover {
+    color: $peach;
+    background: $white;
+	}
 }
 
 .navItemActiveDarkCollapse {
@@ -63,14 +62,42 @@
   padding: 10px;
   border: 0.5px solid transparent;
   border-radius: 3px;
-}
-
-.navItemLightCollapse:hover {
-  color: $white;
-  background: $grey;
+  &:hover {
+    color: $white;
+    background: $grey;
+	}
 }
 
 .navItemActiveLightCollapse {
+  color: $peach;
+  border: 0.5px solid $lightGrey-t;
+}
+
+// PROJECT PAGE MENU STYLES
+// COLLAPSE NAV ITEM DARK
+.fakeNavItemDarkCollapse {
+  color: $spotGrey;
+  cursor: default;
+  padding: 10px;
+  border: 0.5px solid transparent;
+  border-radius: 3px;
+}
+
+.fakeNavItemActiveDarkCollapse {
+  color: $peach;
+  border: 0.5px solid $spotGrey-t;
+}
+
+// COLLAPSE NAV ITEM LIGHT
+.fakeNavItemLightCollapse {
+  color: $lightGrey;
+  cursor: default;
+  padding: 10px;
+  border: 0.5px solid transparent;
+  border-radius: 3px;
+}
+
+.fakeNavItemActiveLightCollapse {
   color: $peach;
   border: 0.5px solid $lightGrey-t;
 }

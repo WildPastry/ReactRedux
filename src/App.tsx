@@ -67,10 +67,10 @@ class App extends Component<any, any> {
 			// NAV COLOURS
 			navGallery: 'navItemDark navItemActiveDark',
 			navAbout: 'navItemDark',
-			navProject: 'navItemDark',
+			navProject: 'fakeNavItemDark',
 			navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
 			navAboutActive: 'navItemDarkCollapse menuActiveItem',
-			navProjectActive: 'navItemDarkCollapse menuActiveItem',
+			navProjectActive: 'fakeNavItemDarkCollapse menuActiveItem',
 			// TEXT AND ICON COLOURS
 			type: 'textWhite',
 			thisType: 'textWhite textHide',
@@ -181,24 +181,24 @@ class App extends Component<any, any> {
 			if (currentPage === 'gallery') {
 				currentNavGallery = 'navItemLight navItemActiveLight';
 				currentNavAbout = 'navItemLight';
-				currentNavProject = 'navItemLight';
+				currentNavProject = 'fakeNavItemLight';
 				currentNavGalleryActive = 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemLightCollapse menuActiveItem';
-				currentNavProjectActive = 'navItemLightCollapse menuActiveItem';
+				currentNavProjectActive = 'fakeNavItemLightCollapse menuActiveItem';
 			} else if (currentPage === 'about') {
 				currentNavGallery = 'navItemLight';
 				currentNavAbout = 'navItemLight navItemActiveLight';
-				currentNavProject = 'navItemLight';
+				currentNavProject = 'fakeNavItemLight';
 				currentNavGalleryActive = 'navItemLightCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
-				currentNavProjectActive = 'navItemLightCollapse menuActiveItem';
+				currentNavProjectActive = 'fakeNavItemLightCollapse menuActiveItem';
 			} else if (currentPage === 'project') {
 				currentNavGallery = 'navItemLight';
 				currentNavAbout = 'navItemLight';
-				currentNavProject = 'navItemLight navItemActiveLight';
+				currentNavProject = 'fakeNavItemLight navItemActiveLight';
 				currentNavGalleryActive = 'navItemLightCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemLightCollapse menuActiveItem';
-				currentNavProjectActive = 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
+				currentNavProjectActive = 'fakeNavItemLightCollapse menuActiveItem fakeNavItemActiveLightCollapse';
 			}
 			// LIGHT THEME
 			htmlBody.className = 'bgLight';
@@ -270,24 +270,24 @@ class App extends Component<any, any> {
 			if (currentPage === 'gallery') {
 				currentNavGallery = 'navItemDark navItemActiveDark';
 				currentNavAbout = 'navItemDark';
-				currentNavProject = 'navItemDark';
+				currentNavProject = 'fakeNavItemDark';
 				currentNavGalleryActive = 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem';
-				currentNavProjectActive = 'navItemDarkCollapse menuActiveItem';
+				currentNavProjectActive = 'fakeNavItemDarkCollapse menuActiveItem';
 			} else if (currentPage === 'about') {
 				currentNavGallery = 'navItemDark';
 				currentNavAbout = 'navItemDark navItemActiveDark';
-				currentNavProject = 'navItemDark';
+				currentNavProject = 'fakeNavItemDark';
 				currentNavGalleryActive = 'navItemDarkCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
-				currentNavProjectActive = 'navItemDarkCollapse menuActiveItem';
+				currentNavProjectActive = 'fakeNavItemDarkCollapse menuActiveItem';
 			} else if (currentPage === 'project') {
 				currentNavGallery = 'navItemDark';
 				currentNavAbout = 'navItemDark';
-				currentNavProject = 'navItemDark navItemActiveDark';
+				currentNavProject = 'fakeNavItemDark fakeNavItemActiveDark';
 				currentNavGalleryActive = 'navItemDarkCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem';
-				currentNavProjectActive = 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
+				currentNavProjectActive = 'fakeNavItemDarkCollapse menuActiveItem fakeNavItemActiveDarkCollapse';
 			}
 			// DARK THEME
 			htmlBody.className = 'bgDark';
@@ -481,30 +481,28 @@ class App extends Component<any, any> {
 				this.setState({
 					navGallery: 'navItemDark navItemActiveDark',
 					navAbout: 'navItemDark',
-					navProject: 'navItemDark',
-					navGalleryActive:
-						'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+					navProject: 'fakeNavItemDark',
+					navGalleryActive: 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse',
 					navAboutActive: 'navItemDarkCollapse menuActiveItem',
-					navProjectActive: 'navItemDarkCollapse menuActiveItem'
+					navProjectActive: 'fakeNavItemDarkCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
 					navGallery: 'navItemDark',
 					navAbout: 'navItemDark navItemActiveDark',
-					navProject: 'navItemDark',
+					navProject: 'fakeNavItemDark',
 					navGalleryActive: 'navItemDarkCollapse menuActiveItem',
-					navAboutActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
-					navProjectActive: 'navItemDarkCollapse menuActiveItem'
+					navAboutActive: 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse',
+					navProjectActive: 'fakeNavItemDarkCollapse menuActiveItem'
 				});
 			} else if (value === 'project') {
 				this.setState({
 					navGallery: 'navItemDark',
 					navAbout: 'navItemDark',
-					navProject: 'navItemDark navItemActiveDark',
-					navGalleryActive:
-						'navItemDarkCollapse menuActiveItem',
+					navProject: 'fakeNavItemDark fakeNavItemActiveDark',
+					navGalleryActive: 'navItemDarkCollapse menuActiveItem',
 					navAboutActive: 'navItemDarkCollapse menuActiveItem',
-					navProjectActive: 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse'
+					navProjectActive: 'fakeNavItemDarkCollapse fakeNavItemActiveDarkCollapse menuActiveItem'
 				});
 			}
 			// LIGHT THEME
@@ -513,30 +511,28 @@ class App extends Component<any, any> {
 				this.setState({
 					navGallery: 'navItemLight navItemActiveLight',
 					navAbout: 'navItemLight',
-					navProject: 'navItemLight',
-					navGalleryActive:
-						'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+					navProject: 'fakeNavItemLight',
+					navGalleryActive: 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse',
 					navAboutActive: 'navItemLightCollapse menuActiveItem',
-					navProjectActive: 'navItemLightCollapse menuActiveItem'
+					navProjectActive: 'fakeNavItemLightCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
 					navGallery: 'navItemLight',
 					navAbout: 'navItemLight navItemActiveLight',
-					navProject: 'navItemLight',
+					navProject: 'fakeNavItemLight',
 					navGalleryActive: 'navItemLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
-					navProjectActive: 'navItemLightCollapse menuActiveItem'
+					navAboutActive: 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse',
+					navProjectActive: 'fakeNavItemLightCollapse menuActiveItem'
 				});
 			} else if (value === 'project') {
 				this.setState({
 					navGallery: 'navItemLight',
 					navAbout: 'navItemLight',
-					navProject: 'navItemLight navItemActiveLight',
-					navGalleryActive:
-						'navItemLightCollapse menuActiveItem',
+					navProject: 'fakeNavItemLight fakeNavItemActiveLight',
+					navGalleryActive: 'navItemLightCollapse menuActiveItem',
 					navAboutActive: 'navItemLightCollapse menuActiveItem',
-					navProjectActive: 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse'
+					navProjectActive: 'fakeNavItemLightCollapse fakeNavItemActiveLightCollapse menuActiveItem'
 				});
 			}
 		}
@@ -676,6 +672,7 @@ class App extends Component<any, any> {
 						{/* NAV */}
 						<Nav
 							changePageFromNav={this.changePage}
+							currentProjectName={this.state.currentProjectName}
 							navGallery={this.state.navGallery}
 							navAbout={this.state.navAbout}
 							navProject={this.state.navProject}

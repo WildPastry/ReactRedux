@@ -41,6 +41,10 @@ class Nav extends Component<any, any> {
 
 	// RENDER COMPONENTS
 	render() {
+		
+		let projectName;
+		this.props.currentProjectName != '' ? projectName = this.props.currentProjectName : projectName = ' ... ';
+
 		// NAVIGATION MENU
 		let collapseMenu;
 		let burgerMenu;
@@ -86,7 +90,7 @@ class Nav extends Component<any, any> {
 					<h4
 						id='navProject'
 						className={this.props.navProjectActive}>
-						PROJECT<span className='textLightGrey text400'>[ ... ]</span>
+						PROJECT<span className='textLightGrey text400 ml-2'> [ {projectName} ]</span>
 					</h4>
 					{/* ABOUT */}
 					<h4
@@ -112,7 +116,7 @@ class Nav extends Component<any, any> {
 					<h4
 						id='navProject'
 						className={this.props.navProject}>
-						PROJECT []
+						PROJECT<span className='textLightGrey text400 ml-2'> [ {projectName} ]</span>
 					</h4>					
 					{/* ABOUT */}
 					<h4
@@ -149,7 +153,7 @@ class Nav extends Component<any, any> {
 							<h4
 								id='navProject'
 								className={this.props.navProject}>
-								PROJECT []
+								PROJECT<span className='textLightGrey text400'>[ {projectName} ]</span>
 							</h4>							
 							{/* ABOUT */}
 							<h4
