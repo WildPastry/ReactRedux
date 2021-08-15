@@ -89,6 +89,26 @@ class Project extends Component<any, any> {
 			i = 11;
 		} else if (this.state.currentProject === '014') {
 			i = 12;
+		} else if (this.state.currentProject === '015') {
+			i = 13;
+		} else if (this.state.currentProject === '016') {
+			i = 14;
+		} else if (this.state.currentProject === '017') {
+			i = 15;
+		} else if (this.state.currentProject === '018') {
+			i = 16;
+		} else if (this.state.currentProject === '019') {
+			i = 17;
+		} else if (this.state.currentProject === '020') {
+			i = 18;
+		} else if (this.state.currentProject === '021') {
+			i = 19;
+		} else if (this.state.currentProject === '022') {
+			i = 20;
+		} else if (this.state.currentProject === '023') {
+			i = 21;
+		} else if (this.state.currentProject === '024') {
+			i = 22;
 		}
 		this.setState({
 			// SET STATE WITH DATA
@@ -141,6 +161,26 @@ class Project extends Component<any, any> {
 		} else if (this.state.currentProject === '013') {
 			i = 13;
 		} else if (this.state.currentProject === '014') {
+			i = 14;
+		} else if (this.state.currentProject === '015') {
+			i = 15;
+		} else if (this.state.currentProject === '016') {
+			i = 16;
+		} else if (this.state.currentProject === '017') {
+			i = 17;
+		} else if (this.state.currentProject === '018') {
+			i = 18;
+		} else if (this.state.currentProject === '019') {
+			i = 19;
+		} else if (this.state.currentProject === '020') {
+			i = 20;
+		} else if (this.state.currentProject === '021') {
+			i = 21;
+		} else if (this.state.currentProject === '022') {
+			i = 22;
+		} else if (this.state.currentProject === '023') {
+			i = 23;
+		} else if (this.state.currentProject === '024') {
 			i = 0;
 		}
 		this.setState({
@@ -195,6 +235,28 @@ class Project extends Component<any, any> {
 			j = 12;
 		} else if (value === 13) {
 			j = 13;
+		} else if (value === 14) {
+			j = 14;
+		} else if (value === 15) {
+			j = 15;
+		} else if (value === 16) {
+			j = 16;
+		} else if (value === 17) {
+			j = 17;
+		} else if (value === 18) {
+			j = 18;
+		} else if (value === 19) {
+			j = 19;
+		} else if (value === 20) {
+			j = 20;
+		} else if (value === 21) {
+			j = 21;
+		} else if (value === 22) {
+			j = 22;
+		} else if (value === 23) {
+			j = 23;
+		} else if (value === 24) {
+			j = 24;
 		}
 		this.setState({
 			// SET STATE WITH DATA
@@ -375,9 +437,9 @@ class Project extends Component<any, any> {
 						<Row>
 							<Col sm={12} className='moreProjectsWrap'>
 								{/* HEADING */}
-								<h3 className='center marBotProject textPeach'>more projects</h3>
+								<h3 className='center marBotProject textPeach'>MORE PROJECTS</h3>
 							</Col>
-							<Col sm={12} lg={4} className='imgWrapDark'>
+							<Col xs={12} sm={4} className='imgWrapDark'>
 								{/* RANDOM PROJECT IMAGE 1 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[0])}
@@ -386,7 +448,7 @@ class Project extends Component<any, any> {
 									alt='Gallery'
 								/>
 							</Col>
-							<Col sm={12} lg={4} className='imgWrapDark'>
+							<Col xs={12} sm={4} className='imgWrapDark'>
 								{/* RANDOM PROJECT IMAGE 2 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[1])}
@@ -395,7 +457,7 @@ class Project extends Component<any, any> {
 									alt='Gallery'
 								/>
 							</Col>
-							<Col sm={12} lg={4} className='imgWrapDark'>
+							<Col xs={12} sm={4} className='imgWrapDark'>
 								{/* RANDOM PROJECT IMAGE 3 */}
 								<img
 									onClick={this.moreProjects.bind(this, this.props.randomNumber[2])}

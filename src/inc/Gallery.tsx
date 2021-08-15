@@ -50,7 +50,7 @@ class Gallery extends Component<any, any> {
 		var lessMore;
 		if (size === 9) {
 			lessMore = true;
-		} else if (size === 14) {
+		} else if (size === 18) {
 			lessMore = false;
 		}
 
@@ -59,23 +59,33 @@ class Gallery extends Component<any, any> {
 			lessMore: lessMore
 		});
 
-		// this.setState(
+		// 	this.setState(
 		// 	{
 		// 		currentSize: size,
 		// 		lessMore: lessMore
 		// 	},
 		// 	() => {
-		// 		console.log(this.state);
+		// 		this.props.sortData(this.props.projects);
 		// 	}
 		// );
+
 	};
+
+		// SHUFFLE THUMBNAILS
+		// shuffleThumbs = () => {
+		// 	var thumb = Math.floor(Math.random()) 
+		// 	thumb < 0.5 ? 0 : 1
+		// 	return thumb;
+		// };
 
 	// RENDER COMPONENT
 	render() {
+		// const shuffleThumb = this.shuffleThumbs();
+		// console.log(shuffleThumb)
 		const renderLessMore = () => {
 			if (this.state.lessMore) {
 				return (
-					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(14)}>
+					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(18)}>
 						SHOW MORE PROJECTS <span className={this.props.singleProjectName}>[ </span>
 						<span className={this.props.singleProjectDesc}>
 							COUNT: {this.state.currentSize}

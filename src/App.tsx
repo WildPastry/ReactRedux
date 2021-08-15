@@ -67,8 +67,10 @@ class App extends Component<any, any> {
 			// NAV COLOURS
 			navGallery: 'navItemDark navItemActiveDark',
 			navAbout: 'navItemDark',
+			navProject: 'navItemDark',
 			navGalleryActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
 			navAboutActive: 'navItemDarkCollapse menuActiveItem',
+			navProjectActive: 'navItemDarkCollapse menuActiveItem',
 			// TEXT AND ICON COLOURS
 			type: 'textWhite',
 			thisType: 'textWhite textHide',
@@ -152,8 +154,10 @@ class App extends Component<any, any> {
 		var currentPage = this.state.currentPage;
 		var currentNavGallery,
 			currentNavAbout,
+			currentNavProject,
 			currentNavGalleryActive,
-			currentNavAboutActive;
+			currentNavAboutActive,
+			currentNavProjectActive;
 
 		// LIGHT THEME
 		if (this.state.light === false) {
@@ -177,15 +181,24 @@ class App extends Component<any, any> {
 			if (currentPage === 'gallery') {
 				currentNavGallery = 'navItemLight navItemActiveLight';
 				currentNavAbout = 'navItemLight';
-				currentNavGalleryActive =
-					'navItemLightCollapse navItemActiveLightCollapse menuActiveItem';
+				currentNavProject = 'navItemLight';
+				currentNavGalleryActive = 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemLightCollapse menuActiveItem';
+				currentNavProjectActive = 'navItemLightCollapse menuActiveItem';
 			} else if (currentPage === 'about') {
 				currentNavGallery = 'navItemLight';
 				currentNavAbout = 'navItemLight navItemActiveLight';
+				currentNavProject = 'navItemLight';
 				currentNavGalleryActive = 'navItemLightCollapse menuActiveItem';
-				currentNavAboutActive =
-					'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
+				currentNavAboutActive = 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
+				currentNavProjectActive = 'navItemLightCollapse menuActiveItem';
+			} else if (currentPage === 'project') {
+				currentNavGallery = 'navItemLight';
+				currentNavAbout = 'navItemLight';
+				currentNavProject = 'navItemLight navItemActiveLight';
+				currentNavGalleryActive = 'navItemLightCollapse menuActiveItem';
+				currentNavAboutActive = 'navItemLightCollapse menuActiveItem';
+				currentNavProjectActive = 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse';
 			}
 			// LIGHT THEME
 			htmlBody.className = 'bgLight';
@@ -195,8 +208,10 @@ class App extends Component<any, any> {
 				// NAV COLOURS
 				navGallery: currentNavGallery,
 				navAbout: currentNavAbout,
+				navProject: currentNavProject,
 				navGalleryActive: currentNavGalleryActive,
 				navAboutActive: currentNavAboutActive,
+				navProjectActive: currentNavProjectActive,
 				// TEXT AND ICON COLOURS
 				type: 'textGrey',
 				thisType: 'textGrey textHide',
@@ -255,15 +270,24 @@ class App extends Component<any, any> {
 			if (currentPage === 'gallery') {
 				currentNavGallery = 'navItemDark navItemActiveDark';
 				currentNavAbout = 'navItemDark';
-				currentNavGalleryActive =
-					'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem';
+				currentNavProject = 'navItemDark';
+				currentNavGalleryActive = 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem';
 				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem';
+				currentNavProjectActive = 'navItemDarkCollapse menuActiveItem';
 			} else if (currentPage === 'about') {
 				currentNavGallery = 'navItemDark';
 				currentNavAbout = 'navItemDark navItemActiveDark';
+				currentNavProject = 'navItemDark';
 				currentNavGalleryActive = 'navItemDarkCollapse menuActiveItem';
-				currentNavAboutActive =
-					'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
+				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
+				currentNavProjectActive = 'navItemDarkCollapse menuActiveItem';
+			} else if (currentPage === 'project') {
+				currentNavGallery = 'navItemDark';
+				currentNavAbout = 'navItemDark';
+				currentNavProject = 'navItemDark navItemActiveDark';
+				currentNavGalleryActive = 'navItemDarkCollapse menuActiveItem';
+				currentNavAboutActive = 'navItemDarkCollapse menuActiveItem';
+				currentNavProjectActive = 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse';
 			}
 			// DARK THEME
 			htmlBody.className = 'bgDark';
@@ -273,8 +297,10 @@ class App extends Component<any, any> {
 				// NAV COLOURS
 				navGallery: currentNavGallery,
 				navAbout: currentNavAbout,
+				navProject: currentNavProject,
 				navGalleryActive: currentNavGalleryActive,
 				navAboutActive: currentNavAboutActive,
+				navProjectActive: currentNavProjectActive,
 				// TEXT AND ICON COLOURS
 				type: 'textWhite',
 				thisType: 'textWhite textHide',
@@ -312,6 +338,15 @@ class App extends Component<any, any> {
 				barColor: 'textWhite'
 			});
 		}
+	}
+
+	// SORT FUNCTION
+	sortData(data: any[]) {
+		data = [].concat(data)
+    .sort((a, b) => a.id > b.id ? 1 : -1)
+		this.setState({
+			projects: data
+		});
 	}
 
 	// FILTER FUCNTION
@@ -446,24 +481,30 @@ class App extends Component<any, any> {
 				this.setState({
 					navGallery: 'navItemDark navItemActiveDark',
 					navAbout: 'navItemDark',
+					navProject: 'navItemDark',
 					navGalleryActive:
 						'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
-					navAboutActive: 'navItemDarkCollapse menuActiveItem'
+					navAboutActive: 'navItemDarkCollapse menuActiveItem',
+					navProjectActive: 'navItemDarkCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
 					navGallery: 'navItemDark',
 					navAbout: 'navItemDark navItemActiveDark',
+					navProject: 'navItemDark',
 					navGalleryActive: 'navItemDarkCollapse menuActiveItem',
-					navAboutActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem'
+					navAboutActive: 'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
+					navProjectActive: 'navItemDarkCollapse menuActiveItem'
 				});
 			} else if (value === 'project') {
 				this.setState({
-					navGallery: 'navItemDark navItemActiveDark',
+					navGallery: 'navItemDark',
 					navAbout: 'navItemDark',
+					navProject: 'navItemDark navItemActiveDark',
 					navGalleryActive:
-						'navItemDarkCollapse navItemActiveDarkCollapse menuActiveItem',
-					navAboutActive: 'navItemDarkCollapse menuActiveItem'
+						'navItemDarkCollapse menuActiveItem',
+					navAboutActive: 'navItemDarkCollapse menuActiveItem',
+					navProjectActive: 'navItemDarkCollapse menuActiveItem navItemActiveDarkCollapse'
 				});
 			}
 			// LIGHT THEME
@@ -472,24 +513,30 @@ class App extends Component<any, any> {
 				this.setState({
 					navGallery: 'navItemLight navItemActiveLight',
 					navAbout: 'navItemLight',
+					navProject: 'navItemLight',
 					navGalleryActive:
 						'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse menuActiveItem'
+					navAboutActive: 'navItemLightCollapse menuActiveItem',
+					navProjectActive: 'navItemLightCollapse menuActiveItem'
 				});
 			} else if (value === 'about') {
 				this.setState({
 					navGallery: 'navItemLight',
 					navAbout: 'navItemLight navItemActiveLight',
+					navProject: 'navItemLight',
 					navGalleryActive: 'navItemLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem'
+					navAboutActive: 'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
+					navProjectActive: 'navItemLightCollapse menuActiveItem'
 				});
 			} else if (value === 'project') {
 				this.setState({
-					navGallery: 'navItemLight navItemActiveLight',
+					navGallery: 'navItemLight',
 					navAbout: 'navItemLight',
+					navProject: 'navItemLight navItemActiveLight',
 					navGalleryActive:
-						'navItemLightCollapse navItemActiveLightCollapse menuActiveItem',
-					navAboutActive: 'navItemLightCollapse menuActiveItem'
+						'navItemLightCollapse menuActiveItem',
+					navAboutActive: 'navItemLightCollapse menuActiveItem',
+					navProjectActive: 'navItemLightCollapse menuActiveItem navItemActiveLightCollapse'
 				});
 			}
 		}
@@ -538,6 +585,7 @@ class App extends Component<any, any> {
 
 	// COMPONENT SCROLL FUNCTION
 	componentDidMount() {
+		this.sortData(projectData);
 		this.randomProject();
 		window.scrollTo(0, 0);
 	}
@@ -552,6 +600,7 @@ class App extends Component<any, any> {
 			display = (
 				// GALLERY PAGE
 				<Gallery
+					sortData={this.sortData}
 					projects={this.state.projects}
 					changePageFromGallery={this.changePageAndProject}
 					changeImageTheme={this.changeImageTheme}
@@ -629,8 +678,10 @@ class App extends Component<any, any> {
 							changePageFromNav={this.changePage}
 							navGallery={this.state.navGallery}
 							navAbout={this.state.navAbout}
+							navProject={this.state.navProject}
 							navGalleryActive={this.state.navGalleryActive}
 							navAboutActive={this.state.navAboutActive}
+							navProjectActive={this.state.navProjectActive}
 							barColor={this.state.barColor}
 							brand={this.state.brand}
 							light={this.state.light}

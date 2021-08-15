@@ -82,6 +82,12 @@ class Nav extends Component<any, any> {
 						onClick={this.changePageFromNav.bind(this, 'gallery')}>
 						GALLERY
 					</h4>
+					{/* PROJECT */}
+					<h4
+						id='navProject'
+						className={this.props.navProjectActive}>
+						PROJECT<span className='textLightGrey text400'>[ ... ]</span>
+					</h4>
 					{/* ABOUT */}
 					<h4
 						id='navAbout'
@@ -102,6 +108,12 @@ class Nav extends Component<any, any> {
 						onClick={this.changePageFromNav.bind(this, 'gallery')}>
 						GALLERY
 					</h4>
+					{/* PROJECT */}
+					<h4
+						id='navProject'
+						className={this.props.navProject}>
+						PROJECT []
+					</h4>					
 					{/* ABOUT */}
 					<h4
 						id='navAbout'
@@ -133,6 +145,12 @@ class Nav extends Component<any, any> {
 								onClick={this.changePageFromNav.bind(this, 'gallery')}>
 								GALLERY
 							</h4>
+							{/* PROJECT */}
+							<h4
+								id='navProject'
+								className={this.props.navProject}>
+								PROJECT []
+							</h4>							
 							{/* ABOUT */}
 							<h4
 								id='navAbout'
