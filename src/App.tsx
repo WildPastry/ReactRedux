@@ -445,9 +445,6 @@ class App extends Component<any, any> {
 				});
 			}
 		}
-		// this.setState({
-		// 	projects: projectsFiltered
-		// });
 		this.sortData(projectsFiltered)
 	}
 
