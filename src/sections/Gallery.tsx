@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
 
+import Test from './Test';
+
 // CLASS GALLERY
 class Gallery extends Component<any, any> {
 	props: any;
@@ -238,6 +240,7 @@ class Gallery extends Component<any, any> {
 				</Row>
 				<Row>
 					<Col className='pad'>{renderLessMore()}</Col>
+					<Test />
 				</Row>
 			</React.Fragment>
 		);

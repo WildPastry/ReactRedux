@@ -20,11 +20,13 @@
     "react-app-polyfill": "^1.0.5",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^16.12.0",
+    "react-redux": "^7.2.4",
     "react-scripts": "^3.3.0",
     "react-scroll-up-button": "^1.6.4",
     "react-simple-tooltip": "^2.6.1",
     "react-transition-group": "^4.3.0",
     "reactjs-mappletooltip": "^1.4.63",
+    "redux": "^4.1.1",
     "styled-components": "^4.4.1",
     "tslib": "^2.3.0",
     "typescript": "^3.9.9"

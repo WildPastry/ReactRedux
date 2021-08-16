@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faTh } from '@fortawesome/free-solid-svg-icons';
 import { MDBAnimation } from 'mdbreact';
 
+// import store from '../redux';
+
+
 // CLASS PROJECT
 class Project extends Component<any, any> {
 	// PROJECT STATE
@@ -293,6 +296,14 @@ class Project extends Component<any, any> {
 
 	// RENDER COMPONENT
 	render() {
+
+		// console.log(store.getState())
+		// Object.defineProperty(window, 'reduxStore', {
+		// 	get() {
+		// 		return store.getState();
+		// 	},
+		// });
+
 		// RETURN
 		return (
 			// FRAGMENTS AND ANIMATION

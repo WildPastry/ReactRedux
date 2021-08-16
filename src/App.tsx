@@ -1,12 +1,12 @@
 // IMPORTS
 import React, { Component } from 'react';
 // COMPONENTS
-import Nav from './inc/Nav';
-import Type from './inc/Type';
-import Gallery from './inc/Gallery';
-import Project from './inc/Project';
-import About from './inc/About';
-import Footer from './inc/Footer';
+import Nav from './sections/Nav';
+import Type from './sections/Type';
+import Gallery from './sections/Gallery';
+import Project from './sections/Project';
+import About from './sections/About';
+import Footer from './sections/Footer';
 // DATA
 import projectData from './data/projects.json';
 // SCROLL
@@ -356,7 +356,7 @@ class App extends Component<any, any> {
 	}
 
 	// FILTER FUCNTION
-	filter(value: any) {
+	filter(value: string) {
 		var projects = projectData;
 		var filter = value;
 		var projectsFiltered = projects.filter(
@@ -477,7 +477,7 @@ class App extends Component<any, any> {
 	}
 
 	// COLOURS BASED ON PAGE
-	changePage(value: any) {
+	changePage(value: string) {
 		// DARK THEME
 		if (this.state.light === false) {
 			if (value === 'gallery') {
@@ -554,7 +554,7 @@ class App extends Component<any, any> {
 	}
 
 	// CHANGE PROJECT NAME
-	changeProjectName(value: any) {
+	changeProjectName(value: string) {
 		this.setState({
 			currentProjectName: value
 		});
@@ -578,7 +578,7 @@ class App extends Component<any, any> {
 	}
 
 	// CHANGE PAGE AND PROJECT FUNCTION
-	changePageAndProject(value: any) {
+	changePageAndProject(value: any[]) {
 		this.setState({
 			currentPage: value['page'],
 			currentProject: value['project'],
@@ -608,6 +608,9 @@ class App extends Component<any, any> {
 
 	// RENDER COMPONENTS
 	render() {
+
+
+		
 		var currentPage = this.state.currentPage;
 		let projectDisplay;
 		let display;
