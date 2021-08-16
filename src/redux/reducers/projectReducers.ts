@@ -2,9 +2,7 @@
 import { SET_PROJECT } from '../../constants/actions-types';
 
 const initialState = {
-  projects: [{
-    title: 'THIS'
-  }] as any[]
+  projects: [] as any[]
 };
 
 function rootReducer(state = initialState, action: any) {
