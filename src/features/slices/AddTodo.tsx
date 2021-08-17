@@ -1,29 +1,42 @@
 import React from 'react'
+import  { useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import { addTodo } from './todoSlice';
 
+import projectData from '../../data/projects.json';
+
 export default function AddTodo(): JSX.Element {
+
+    useEffect(() => {
+        console.log(projectData)
+        // projects = projectData
+        handleSubmit(projectData[0].desc)
+        // Your code here
+      }, []);
+      
     const dispatch = useDispatch();
-    const [text, setText] = React.useState('');
 
-    function handleChange(e: { target: HTMLInputElement; }) {
-        setText(e.target.value);
-    }
+    // const [projects, setProjects] = React.useState('');
 
-    function handleSubmit(e: any) {
-        e.preventDefault()
+    // function handleChange(e: { target: HTMLInputElement; }) {
+    //     setProjects(e.target.value);
+    // }
 
-        if (!text.trim()) {
-            return
-        }
-        dispatch(addTodo(text))
+    function handleSubmit(projects: any) {
+        // e.preventDefault()
 
-        setText('');
+        // if (!projects.trim()) {
+        //     return
+        // }
+
+        dispatch(addTodo(projects))
+
+        // setProjects('');
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <input value={text} onChange={handleChange} />
+            {/* <input value={projects} onChange={handleChange} /> */}
             <button type="submit">Add Todo</button>
         </form>
     )
