@@ -7,7 +7,6 @@ import { MDBAnimation } from 'mdbreact';
 
 // import store from '../redux';
 
-
 // CLASS PROJECT
 class Project extends Component<any, any> {
 	// PROJECT STATE

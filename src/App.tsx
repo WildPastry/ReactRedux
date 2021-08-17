@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // COMPONENTS
 import Nav from './sections/Nav';
-import Type from './sections/Type';
+// import Type from './sections/Type';
 import Gallery from './sections/Gallery';
 import Project from './sections/Project';
 import About from './sections/About';
@@ -609,8 +609,6 @@ class App extends Component<any, any> {
 	// RENDER COMPONENTS
 	render() {
 
-
-		
 		var currentPage = this.state.currentPage;
 		let projectDisplay;
 		let display;
@@ -712,7 +710,7 @@ class App extends Component<any, any> {
 						/>
 					</MDBAnimation>
 					{/* ANIMATED TYPE */}
-					<Type type={this.state.type} thisType={this.state.thisType} />
+					{/* <Type type={this.state.type} thisType={this.state.thisType} /> */}
 					{/* <div className='typeWrap pad'>...</div> */}
 					<React.Fragment>
 						<MDBAnimation type='fadeIn'>{display}</MDBAnimation>

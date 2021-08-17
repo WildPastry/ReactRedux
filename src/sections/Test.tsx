@@ -14,7 +14,7 @@ import List from "./List";
 const Test = () => {
 	return (
 		<div>
-    <h2>Articles</h2>
+    <h2>Projects</h2>
       <List />
   </div>
 	);

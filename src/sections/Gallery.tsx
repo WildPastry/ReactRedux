@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
-
-import Test from './Test';
+// import Form from '../components/Form';
+// import Test from './Test';
 
 // CLASS GALLERY
 class Gallery extends Component<any, any> {
@@ -240,7 +240,8 @@ class Gallery extends Component<any, any> {
 				</Row>
 				<Row>
 					<Col className='pad'>{renderLessMore()}</Col>
-					<Test />
+					{/* <Test /> */}
+						{/* <Form /> */}
 				</Row>
 			</React.Fragment>
 		);
