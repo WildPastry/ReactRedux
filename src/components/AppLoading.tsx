@@ -1,6 +1,7 @@
-// IMPORTS
+// import frameworks
 import React from 'react';
 
+// AppLoading
 const AppLoading = () => {
 	return (
 		<>
@@ -27,4 +28,6 @@ const AppLoading = () => {
 	);
 };
 
+// export AppLoading
+AppLoading.displayName = 'AppLoading';
 export default AppLoading;

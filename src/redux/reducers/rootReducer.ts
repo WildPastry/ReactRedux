@@ -1,11 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit'
 
-import todos from '../../features/slices/projectSlice';
-import visibilityFilter from '../../features/slices/visibilityFilterSlice';
+import projects from '../../features/slices/projectSlice';
+import projectFilter from '../../features/slices/filterSlice';
 
 const rootReducer = combineReducers({
-  todos,
-  visibilityFilter
+  projects,
+  projectFilter
 })
 
 export type RootState = ReturnType<typeof rootReducer>

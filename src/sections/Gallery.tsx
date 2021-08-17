@@ -3,28 +3,9 @@ import React, { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
-// import Form from '../components/Form';
-// import Test from './Test';
-import AddTodo from '../features/slices/AddTodo';
-import TodoList from '../features/slices/TodoList';
-import Bottom from '../features/slices/Bottom';
-
-// import projectData from '../data/projects.json';
-// import { useDispatch } from 'react-redux'
-// import { addTodo } from '../features/slices/todoSlice';
-
-// const dispatch = useDispatch();
-// function handleSubmit(projects: any) {
-// 	// e.preventDefault()
-
-// 	// if (!projects.trim()) {
-// 	//     return
-// 	// }
-
-// 	dispatch(addTodo(projects))
-
-// 	// setProjects('');
-// }
+import SetProjects from '../features/SetProjects';
+import ProjectGallery from '../features/ProjectGallery';
+import ProjectFilters from '../features/ProjectFilters';
 
 // CLASS GALLERY
 class Gallery extends Component<any, any> {
@@ -260,11 +241,9 @@ class Gallery extends Component<any, any> {
 				</Row>
 				<Row>
 					<Col className='pad'>{renderLessMore()}</Col>
-					{/* <Test /> */}
-						{/* <Form /> */}
-						<AddTodo />
-						<TodoList />
-						<Bottom />
+						<SetProjects />
+						<ProjectGallery />
+						<ProjectFilters />
 				</Row>
 			</React.Fragment>
 		);

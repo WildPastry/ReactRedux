@@ -19,7 +19,7 @@ interface ProjectProps {
   onClick: () => any
 }
 
-export default function TodoListItem({ completed, desc, onClick }: ProjectProps) {
+export default function ProjectItem({ completed, desc, onClick }: ProjectProps) {
   return (
     <div className='row'>
     <li

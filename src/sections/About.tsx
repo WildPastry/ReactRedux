@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import { initSpace } from '../data/space';
 import { MDBAnimation } from 'mdbreact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TodoList from '../features/slices/TodoList';
+import TodoList from '../features/ProjectGallery';
 class About extends Component<any, any> {
 	private space: React.RefObject<HTMLDivElement>;
 	// ABOUT STATE
