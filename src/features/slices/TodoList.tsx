@@ -2,11 +2,11 @@ import React from 'react'
 import TodoListItem from './TodoListItem'
 import { RootState } from '../../redux/reducers/rootReducer';
 import { useSelector, useDispatch  } from 'react-redux';
-import { toggleTodo } from './todoSlice';
+import { toggleTodo } from './projectSlice';
 import { VisibilityFilter } from './visibilityFilterSlice';
-import { Todo } from '../types/types';
+import { Project } from '../types';
 
-const getVisibleTodos = (todos: Todo[], filter: VisibilityFilter) => {
+const getVisibleTodos = (todos: Project[], filter: VisibilityFilter) => {
   switch (filter) {
     case VisibilityFilter.ShowAll:
       return todos

@@ -1,9 +1,5 @@
-// export interface Todo {
-//   id: string,
-//   completed: boolean
-//   text: string
-// }
-export interface Todo {
+// create Project interface
+export interface Project {
   id: string,
   name: string,
   fields: any[],

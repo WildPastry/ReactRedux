@@ -1,7 +1,7 @@
 import React from 'react'
 import  { useEffect} from 'react'
 import { useDispatch } from 'react-redux'
-import { addTodo } from './todoSlice';
+import { setProjects } from './projectSlice';
 
 import projectData from '../../data/projects.json';
 
@@ -47,8 +47,8 @@ export default function AddTodo(): JSX.Element {
         // if (!projects.trim()) {
         //     return
         // }
-
-        dispatch(addTodo(projects))
+        // console.log(projects)
+        dispatch(setProjects(projects))
 
         // setProjects('');
     }

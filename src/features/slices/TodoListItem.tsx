@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface TodoProps {
+interface ProjectProps {
   id: string,
   name: string,
   fields: any[],
@@ -19,8 +19,9 @@ interface TodoProps {
   onClick: () => any
 }
 
-export default function TodoListItem({ completed, desc, onClick }: TodoProps) {
+export default function TodoListItem({ completed, desc, onClick }: ProjectProps) {
   return (
+    <div className='row'>
     <li
     onClick={onClick}
       style={{
@@ -30,5 +31,6 @@ export default function TodoListItem({ completed, desc, onClick }: TodoProps) {
     >
       {desc}
     </li>
+    </div>
   )
 }
