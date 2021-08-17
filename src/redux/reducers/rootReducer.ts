@@ -1,7 +1,13 @@
-import { combineReducers } from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit'
 
-const rootReducer = combineReducers({});
+import todos from '../../features/slices/todoSlice';
+import visibilityFilter from '../../features/slices/visibilityFilterSlice';
 
-export type RootState = ReturnType<typeof rootReducer>;
+const rootReducer = combineReducers({
+  todos,
+  visibilityFilter
+})
 
-export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer>
+
+export default rootReducer

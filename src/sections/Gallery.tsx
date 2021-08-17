@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
 // import Form from '../components/Form';
 // import Test from './Test';
+import AddTodo from '../features/slices/AddTodo';
+import TodoList from '../features/slices/TodoList';
+import Bottom from '../features/slices/Bottom';
 
 // CLASS GALLERY
 class Gallery extends Component<any, any> {
@@ -242,6 +245,9 @@ class Gallery extends Component<any, any> {
 					<Col className='pad'>{renderLessMore()}</Col>
 					{/* <Test /> */}
 						{/* <Form /> */}
+						<AddTodo />
+						<TodoList />
+						<Bottom />
 				</Row>
 			</React.Fragment>
 		);

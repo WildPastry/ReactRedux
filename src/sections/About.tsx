@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import { initSpace } from '../data/space';
 import { MDBAnimation } from 'mdbreact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import TodoList from '../features/slices/TodoList';
 class About extends Component<any, any> {
 	private space: React.RefObject<HTMLDivElement>;
 	// ABOUT STATE
@@ -49,6 +49,7 @@ class About extends Component<any, any> {
 								/>
 							</div>
 						</div>
+						<TodoList />
 					</Row>
 					<Row>
 						<Col sm={12} md={6} lg={4} className='colWrap'>
