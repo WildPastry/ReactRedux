@@ -42,7 +42,7 @@ class Nav extends Component<any, any> {
 	// RENDER COMPONENTS
 	render() {
 		let projectName;
-		this.props.currentProjectName != ''
+		this.props.currentProjectName !== ''
 			? (projectName = this.props.currentProjectName)
 			: (projectName = ' ... ');
 

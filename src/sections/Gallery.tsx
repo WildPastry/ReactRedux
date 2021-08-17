@@ -9,6 +9,23 @@ import AddTodo from '../features/slices/AddTodo';
 import TodoList from '../features/slices/TodoList';
 import Bottom from '../features/slices/Bottom';
 
+// import projectData from '../data/projects.json';
+// import { useDispatch } from 'react-redux'
+// import { addTodo } from '../features/slices/todoSlice';
+
+// const dispatch = useDispatch();
+// function handleSubmit(projects: any) {
+// 	// e.preventDefault()
+
+// 	// if (!projects.trim()) {
+// 	//     return
+// 	// }
+
+// 	dispatch(addTodo(projects))
+
+// 	// setProjects('');
+// }
+
 // CLASS GALLERY
 class Gallery extends Component<any, any> {
 	props: any;

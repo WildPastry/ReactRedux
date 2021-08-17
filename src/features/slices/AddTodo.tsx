@@ -7,10 +7,29 @@ import projectData from '../../data/projects.json';
 
 export default function AddTodo(): JSX.Element {
 
+    function resizeData(dataArray: any[], size: number)  {
+        const resizedData = [].concat(dataArray).slice(0, size);
+        // const resizedData = resizedData.slice(0, size);
+        console.log(resizedData, size)
+
+        handleSubmit(resizedData)
+        // handleSubmit(resizedData[0].desc)
+        // console.log(resizedData)
+    }
+
+   function sortData(dataArray: any[], size: number)  {
+    // dataArray = [].concat(dataArray).sort(function (a, b) {  return a - b;  });
+    // const sortedData = [].concat(dataArray).sort((a, b) => (a.id - b.id));
+        const sortedData = [].concat(dataArray).sort((a, b) => (a.id > b.id ? 1 : -1));
+        resizeData(sortedData, size)
+        // handleSubmit(sortedData)
+        // console.log(sortedData)
+    }
+    
     useEffect(() => {
-        console.log(projectData)
-        // projects = projectData
-        handleSubmit(projectData[0].desc)
+        sortData(projectData, 9)
+        // console.log(projectData)
+        // resizeData(projectData, 9)
         // Your code here
       }, []);
       
@@ -22,7 +41,7 @@ export default function AddTodo(): JSX.Element {
     //     setProjects(e.target.value);
     // }
 
-    function handleSubmit(projects: any) {
+    function handleSubmit(projects: any[]) {
         // e.preventDefault()
 
         // if (!projects.trim()) {
@@ -35,9 +54,10 @@ export default function AddTodo(): JSX.Element {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
             {/* <input value={projects} onChange={handleChange} /> */}
-            <button type="submit">Add Todo</button>
-        </form>
+            <button onClick={() => sortData(projectData, 18)}>SHOW MORE PROJECTS</button>
+            <button onClick={() => sortData(projectData, 9)}>SHOW LESS PROJECTS</button>
+        </div>
     )
 }

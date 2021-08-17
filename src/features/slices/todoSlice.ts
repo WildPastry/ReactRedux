@@ -25,12 +25,24 @@ const todoSlice = createSlice({
 export const { toggleTodo } = todoSlice.actions;
 
 export const addTodo =
-	(text: string): AppThunk =>
+	(projects: any[]): AppThunk =>
 	async (dispatch: AppDispatch) => {
 		const newTodo: Todo = {
-			id: Math.random().toString(36).substr(2, 9),
-			completed: false,
-			text: text
+			id: projects[0].id,
+			desc: projects[0].desc,
+			name: '',
+			fields: [],
+			client: '',
+			timeline: '',
+			website: '',
+			thumb: [],
+			images: [{src:'', id:''}],
+			icons: [{src:'', id:''}],
+			intro: '',
+			url: '',
+			git: '',
+			gitUrl: '',
+			completed: false
 		};
 
 		dispatch(todoSlice.actions.addTodo(newTodo));
