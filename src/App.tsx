@@ -617,24 +617,24 @@ class App extends Component<any, any> {
 			display = (
 				// GALLERY PAGE
 				<Gallery
-					sortData={this.sortData}
-					projects={this.state.projects}
-					changePageFromGallery={this.changePageAndProject}
-					changeImageTheme={this.changeImageTheme}
-					changeTheme={this.changeTheme}
-					imgTheme={this.state.imgTheme}
-					galleryFillIcon={this.state.galleryFillIcon}
-					singleProjectName={this.state.singleProjectName}
-					singleProjectDesc={this.state.singleProjectDesc}
-					everything={this.state.everything}
-					branding={this.state.branding}
-					graphic={this.state.graphic}
-					ux={this.state.ux}
-					web={this.state.web}
-					filter={this.filter}
-					filterReset={this.filterReset}
-					randomProject={this.randomProject}
-					loadMore={this.state.loadMore}
+					// sortData={this.sortData}
+					// projects={this.state.projects}
+					// changePageFromGallery={this.changePageAndProject}
+					// changeImageTheme={this.changeImageTheme}
+					// changeTheme={this.changeTheme}
+					// imgTheme={this.state.imgTheme}
+					// galleryFillIcon={this.state.galleryFillIcon}
+					// singleProjectName={this.state.singleProjectName}
+					// singleProjectDesc={this.state.singleProjectDesc}
+					// everything={this.state.everything}
+					// branding={this.state.branding}
+					// graphic={this.state.graphic}
+					// ux={this.state.ux}
+					// web={this.state.web}
+					// filter={this.filter}
+					// filterReset={this.filterReset}
+					// randomProject={this.randomProject}
+					// loadMore={this.state.loadMore}
 				/>
 			);
 		} else if (currentPage === 'project') {

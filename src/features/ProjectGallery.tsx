@@ -1,4 +1,5 @@
 import React from 'react'
+import { Row } from 'react-bootstrap';
 import ProjectItem from './ProjectItem'
 import { RootState } from '../redux/reducers/rootReducer';
 import { useSelector, useDispatch  } from 'react-redux';
@@ -27,10 +28,10 @@ export default function ProjectList() {
 );
 
   return (
-    <ul>
+    <Row>
       {projects.map(project => (
         <ProjectItem key={project.id} {...project} onClick={() => dispatch(filterProjects(project))} />
       ))}
-    </ul>
+    </Row>
   );
 }
