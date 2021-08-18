@@ -1,9 +1,8 @@
-// import frameworks
 import React from 'react';
-import { useCallback, useEffect } from 'react';
+import { Row } from 'react-bootstrap';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setProjects } from './slices/projectSlice';
-// import projects
 import projectData from '../data/projects.json';
 
 // SetProjects
@@ -12,9 +11,12 @@ export default function SetProjects(): JSX.Element {
 	const dispatch = useDispatch();
 
 	// send resized and sorted data to dispatch
-	const handleSubmit = useCallback((projects: any[]) => {
-		dispatch(setProjects(projects));
-	}, [dispatch]);
+	const handleSubmit = useCallback(
+		(projects: any[]) => {
+			dispatch(setProjects(projects));
+		},
+		[dispatch]
+	);
 
 	// resize the current data array
 	const resizeData = useCallback(
@@ -34,16 +36,42 @@ export default function SetProjects(): JSX.Element {
 		[resizeData]
 	);
 
-	// sort data on page load (default to 9)
+	// sort data on page load (default to 9 for now - seems okay)
 	useEffect(() => {
 		sortData(projectData, 9);
 	}, [sortData]);
 
+	// toggle LessMore state
+	const [showLessMore, setShowLessMore] = useState(false);
+
+	// toggleLessMore
+	const toggleLessMore = (size: number) =>
+		showLessMore === false
+			? (setShowLessMore(true), sortData(projectData, size))
+			: (setShowLessMore(false), sortData(projectData, size));
+
+	// renderMore button
+	const renderMore = () => {
+		return (
+			<h4 className='loadMoreDark' onClick={() => toggleLessMore(18)}>
+				SHOW MORE PROJECTS<span className={'ms-2 textWhite text700'}>[ </span>
+				<span className={'textSpotGrey text400'}>...</span>{' '}
+				<span className={'textWhite text700'}>]</span>
+			</h4>
+		);
+	};
+
+	// renderLess button
+	const renderLess = () => {
+		return (
+			<h4 className='loadMoreDark' onClick={() => toggleLessMore(9)}>
+				SHOW LESS PROJECTS<span className={'ms-2 textWhite text700'}>[ </span>
+				<span className={'textSpotGrey text400'}>...</span>{' '}
+				<span className={'textWhite text700'}>]</span>
+			</h4>
+		);
+	};
+
 	// buttons to show more or less projects
-	return (
-		<div>
-			<button onClick={() => sortData(projectData, 18)}>SHOW MORE PROJECTS</button>
-			<button onClick={() => sortData(projectData, 9)}>SHOW LESS PROJECTS</button>
-		</div>
-	);
+	return <Row>{showLessMore ? renderLess() : renderMore()}</Row>;
 }

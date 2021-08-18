@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React from 'react';
+import { Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
 import SetProjects from '../features/SetProjects';
@@ -9,56 +9,40 @@ import ProjectFilters from '../features/ProjectFilters';
 // Gallery
 const Gallery: React.FC = () => {
 	return (
-		<div>
+		<React.Fragment>
+			<MDBAnimation type='fadeIn'>
 				<Row className='wrap'>
-								{/* <MDBAnimation type='fadeIn'> */}
+					<ProjectFilters />
 					<div className='filterWrap flex pad'>
-						<h4>
-							ALL
-						</h4>
-						<h4>
-							UI/UX
-						</h4>
-						<h4>
-							TypeScript
-						</h4>
-						<h4>
-							JavaScript
-						</h4>
-						<h4>
-							JQuery
-						</h4>
-						<h4>
-							React
-						</h4>
-						<h4>
-							Native
-						</h4>
-						<h4>
-							API
-						</h4>
-						<h4>
-							PHP
-						</h4>
-						<h4>
-							Graphic
-						</h4>
+						<h4 className='filterItemDark'>ALL</h4>
+						<h4 className='filterItemDark'>UI/UX</h4>
+						<h4 className='filterItemDark'>TypeScript</h4>
+						<h4 className='filterItemDark'>JavaScript</h4>
+						<h4 className='filterItemDark'>JQuery</h4>
+						<h4 className='filterItemDark'>React</h4>
+						<h4 className='filterItemDark'>Native</h4>
+						<h4 className='filterItemDark'>API</h4>
+						<h4 className='filterItemDark'>PHP</h4>
+						<h4 className='filterItemDark'>Graphic</h4>
 					</div>
 					<div className='galleryWrap flex pad'>
 						<img
 							className='galleryRGBIcon'
 							src={require('./../icon/rgb.svg')}
-							alt='RBG Icon' />
+							alt='RBG Icon'
+						/>
 						<div>
 							<FontAwesomeIcon
-								icon={['fas', 'fill-drip']}/>
+								icon={['fas', 'fill-drip']}
+								className={'galleryFillIconDark'}
+							/>
 						</div>
 					</div>
-				<SetProjects />
-				<ProjectGallery />
-				<ProjectFilters />
-			</Row>
-			</div>
+				</Row>
+			</MDBAnimation>
+			<ProjectGallery />
+			<SetProjects />
+		</React.Fragment>
 	);
 };
 
