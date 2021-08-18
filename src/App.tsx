@@ -1,6 +1,10 @@
+// import frameworks
+import { useRef, useEffect, useState } from 'react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
+import { setLoading } from './features/slices/loadingSlice';
+import { useDispatch } from 'react-redux';
 import Nav from './sections/Nav';
 import Type from './sections/Type';
 import Gallery from './sections/Gallery';
@@ -48,11 +52,14 @@ const App: React.FC = () => {
 	// const pageData = useSelector((state: RootState) => {
 	// 	return state.imageData;
 	// });
+	// dispatch
+	const dispatch = useDispatch();
 
 	const pageData = useSelector((state: RootState) => {
 		console.log(state.loadPage);
 		console.log(state.setProjects);
 		console.log(state.filterProjects);
+		// dispatch(setLoading(false));
 		return state.loadPage;
 	});
 
@@ -66,6 +73,16 @@ const App: React.FC = () => {
 		return <Error />;
 	};
 
+	// toggle about page
+	const [showAbout, setShowAbout] = useState(false);
+	const toggleAbout = () =>
+		showAbout === false ? setShowAbout(true) : setShowAbout(false);
+
+	// toggle project page
+	const [showProject, setShowProject] = useState(false);
+	const toggleProject = () =>
+		showProject === false ? setShowProject(true) : setShowProject(false);
+
 	// renderPage
 	const renderPage = (pageData: any) => {
 		console.log(pageData);
@@ -76,10 +93,12 @@ const App: React.FC = () => {
 		) : (
 			<>
 				<Nav />
+				<button onClick={() => toggleAbout()}>ABOUT</button>
+				<button onClick={() => toggleProject()}>PROJECT</button>
 				{/* <Type /> */}
 				<Gallery />
-				{/* <Project /> */}
-				{/* <About /> */}
+				{showProject ? <Project /> : null}
+				{showAbout ? <About /> : null}
 				<Footer />
 				<ScrollUpButton
 					StopPosition={0}

@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk, AppDispatch } from '../../redux';
-import { Loading, Project } from '../types';
+import { setError } from './loadingSlice';
+import { Project } from '../types';
 
 const initialState: Project[] = [];
 
@@ -9,9 +10,6 @@ const projectSlice = createSlice({
 	initialState,
 	reducers: {
 		resetProjects: (_state) => initialState,
-		// setPageLoading(state, action: PayloadAction<Loading>) {
-		// 	state.push(action.payload);
-		// },
 		setProjects(state, action: PayloadAction<Project>) {
 			state.push(action.payload);
 		},
@@ -24,7 +22,6 @@ const projectSlice = createSlice({
 	}
 });
 
-// export const { setPageLoading } = projectSlice.actions;
 export const { filterProjects } = projectSlice.actions;
 
 export const setProjects =
@@ -52,11 +49,7 @@ export const setProjects =
 			};
 			dispatch(projectSlice.actions.setProjects(setProject));
 		}
-		// var setLoading = {
-		// 	isLoading: false,
-		// 	isError: false
-		// };
-		// dispatch(projectSlice.actions.setPageLoading(setLoading));
+		// dispatch(setError(true));
 	};
 
 export default projectSlice.reducer;

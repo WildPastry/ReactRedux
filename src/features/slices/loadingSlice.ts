@@ -1,21 +1,24 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Loading } from '../types';
 
-const initialState: Loading = {
-	isLoading: true,
+const initialState = {
+	isLoading: false,
 	isError: false
-};
+} as Loading;
 
 const loadingSlice = createSlice({
 	name: 'loadPage',
 	initialState,
 	reducers: {
-		setLoading(_state, action: PayloadAction<Loading>) {
-			return action.payload;
+		setLoading(state, action: PayloadAction<boolean>) {
+			state.isLoading = action.payload;
+		},
+		setError(state, action: PayloadAction<boolean>) {
+			state.isError = action.payload;
 		}
 	}
 });
 
-export const { setLoading } = loadingSlice.actions;
+export const { setLoading, setError } = loadingSlice.actions;
 
 export default loadingSlice.reducer;

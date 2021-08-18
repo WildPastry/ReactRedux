@@ -27,3 +27,11 @@ export enum ProjectFilter {
 	ShowCompleted = 'SHOW_COMPLETED',
 	ShowActive = 'SHOW_ACTIVE'
 }
+
+interface ToggleAbout {
+	toggleAbout(): any;
+}
+
+interface ToggleProject {
+	toggleProject(): any;
+}

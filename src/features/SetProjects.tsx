@@ -11,7 +11,7 @@ export default function SetProjects(): JSX.Element {
 	const dispatch = useDispatch();
 
 	// send resized and sorted data to dispatch
-	const handleSubmit = useCallback(
+	const handleDispatch = useCallback(
 		(projects: any[]) => {
 			dispatch(setProjects(projects));
 		},
@@ -22,9 +22,9 @@ export default function SetProjects(): JSX.Element {
 	const resizeData = useCallback(
 		(dataArray: any[], size: number) => {
 			const resizedData = [].concat(dataArray).slice(0, size);
-			handleSubmit(resizedData);
+			handleDispatch(resizedData);
 		},
-		[handleSubmit]
+		[handleDispatch]
 	);
 
 	// sort the current data array
