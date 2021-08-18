@@ -11,19 +11,19 @@ const getfilteredProjects = (projects: Project[], filter: ProjectFilter) => {
     case ProjectFilter.ShowAll:
       return projects
     case ProjectFilter.ShowCompleted:
-      return projects.filter(t => t.completed)
+      return projects.filter(t => t.filtered)
     case ProjectFilter.ShowActive:
-      return projects.filter(t => !t.completed)
+      return projects.filter(t => !t.filtered)
     default:
       throw new Error('Unknown filter: ' + filter)
   }
 }
 
-export default function TodoList() {
+export default function ProjectList() {
   const dispatch = useDispatch();
   
   const projects = useSelector(
-    (state: RootState) => getfilteredProjects(state.projects, state.projectFilter)
+    (state: RootState) => getfilteredProjects(state.setProjects, state.filterProjects)
 );
 
   return (

@@ -2,7 +2,7 @@
 export interface Project {
   id: string,
   name: string,
-  fields: any[],
+  fields: [{ src: string; id: string }];
   client: string,
   timeline: string,
   website: string,
@@ -14,5 +14,5 @@ export interface Project {
   url: string,
   git: string,
   gitUrl: string,
-  completed: boolean
+  filtered: boolean
 }

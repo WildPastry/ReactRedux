@@ -96,77 +96,66 @@ class Gallery extends Component<any, any> {
 
 		// RETURN
 		return (
-			// FRAGMENT
 			<React.Fragment>
-				{/* PROJECTS FILTER */}
 				<MDBAnimation type='fadeIn'>
 					<Row className='wrap'>
 						<div className='filterWrap flex pad'>
-							{/* EVERYTHING */}
 							<h4
 								className={this.props.everything}
 								onClick={this.props.filterReset.bind(this, 'EVERYTHING')}>
 								ALL
 							</h4>
-							{/* BRANDING */}
 							<h4
 								className={this.props.branding}
 								onClick={this.props.filter.bind(this, 'Branding')}>
 								UI/UX
 							</h4>
-							{/* REACT */}
 							<h4
 								className={this.props.web}
 								onClick={this.props.filter.bind(this, 'Web')}>
 								TypeScript
 							</h4>
-							{/* GRAPHIC */}
 							<h4
 								className={this.props.graphic}
 								onClick={this.props.filter.bind(this, 'Graphic')}>
 								JavaScript
 							</h4>
-							{/* UX */}
 							<h4 className={this.props.ux} onClick={this.props.filter.bind(this, 'UX')}>
 								JQuery
 							</h4>
-							{/* WEB */}
 							<h4
 								className={this.props.web}
 								onClick={this.props.filter.bind(this, 'Web')}>
 								React
 							</h4>
-							{/* REACT */}
 							<h4
 								className={this.props.web}
 								onClick={this.props.filter.bind(this, 'Web')}>
 								Native
 							</h4>
-							{/* REACT */}
 							<h4
 								className={this.props.web}
 								onClick={this.props.filter.bind(this, 'Web')}>
 								API
 							</h4>
-							{/* REACT */}
 							<h4
 								className={this.props.web}
 								onClick={this.props.filter.bind(this, 'Web')}>
 								PHP
 							</h4>
+							<h4
+								className={this.props.web}
+								onClick={this.props.filter.bind(this, 'Web')}>
+								Graphic
+							</h4>
 						</div>
-						{/* IMAGE THEME ICONS */}
 						<div className='galleryWrap flex pad'>
-							{/* HEADING */}
-							<h4 className={this.props.singleProjectDesc}>THEME</h4>
-							{/* RGB ICON */}
 							<img
 								className='galleryRGBIcon'
 								src={require('./../icon/rgb.svg')}
 								onClick={this.props.changeImageTheme}
 								alt='RBG Icon'
 							/>
-							{/* PAINT BUCKET ICON */}
 							<div onClick={this.props.changeTheme}>
 								<FontAwesomeIcon
 									icon={['fas', 'fill-drip']}
@@ -176,11 +165,9 @@ class Gallery extends Component<any, any> {
 						</div>
 					</Row>
 				</MDBAnimation>
-				{/* PROJECT MAP */}
-				<Row>
+				{/* <Row>
 					{this.props.projects.slice(0, this.state.currentSize).map(
 						(singleProject: {
-							// DECLARE TYPES
 							id: React.Key;
 							name: React.ReactNode;
 							fields: Array<[]>;
@@ -197,11 +184,9 @@ class Gallery extends Component<any, any> {
 							gitUrl: string;
 						}) => (
 							<div key={singleProject.id} className={this.props.imgTheme}>
-								{/* IMAGES */}
 								<MDBAnimation type='zoomIn'>
 									<img
 										onClick={this.changePageFromGallery.bind(this, [
-											// STORE DATA FROM CLICK
 											singleProject.id,
 											singleProject.name,
 											singleProject.fields,
@@ -222,7 +207,6 @@ class Gallery extends Component<any, any> {
 										alt='Gallery'
 									/>
 								</MDBAnimation>
-								{/* IMAGE DESCRIPTIONS */}
 								<div className='descriptionWrap'>
 									<p className={this.props.singleProjectName}>{singleProject.name}</p>
 									<p>
@@ -238,7 +222,7 @@ class Gallery extends Component<any, any> {
 							</div>
 						)
 					)}
-				</Row>
+				</Row> */}
 				<Row>
 					<Col className='pad'>{renderLessMore()}</Col>
 						<SetProjects />

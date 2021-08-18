@@ -160,7 +160,7 @@ class Footer extends Component<any, any> {
 									{/* PHONE NUMBER */}
 									<li x-ms-format-detection='none'>
 										<FontAwesomeIcon icon={faMobileAlt} className={this.props.faIconSm} />
-										<span className='ml-2'>022 5025 485</span>
+										<span className='ms-2'>022 5025 485</span>
 									</li>
 									{/* EMAIL ADDRESS */}
 									<li>
@@ -169,7 +169,7 @@ class Footer extends Component<any, any> {
 												icon={faEnvelope}
 												className={this.props.faIconSm}
 											/>
-											<span className='ml-2'>mike@mikeparker.co.nz</span>
+											<span className='ms-2'>mike@mikeparker.co.nz</span>
 										</a>
 									</li>
 								</ul>

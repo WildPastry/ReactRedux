@@ -9,14 +9,14 @@ const projectSlice = createSlice({
 	name: 'projects',
 	initialState,
 	reducers: {
+		resetProjects: state => initialState,
 		setProjects(state, action: PayloadAction<Project>) {
-				state.push(action.payload);
+			state.push(action.payload);
 		},
 		filterProjects(state, action: PayloadAction<Project>) {
 			let project = state.find((project) => project.id === action.payload.id);
-
 			if (project) {
-				project.completed = !project.completed;
+				project.filtered = !project.filtered;
 			}
 		}
 	}
@@ -27,25 +27,32 @@ export const { filterProjects } = projectSlice.actions;
 export const setProjects =
 	(projects: any[]): AppThunk =>
 	async (dispatch: AppDispatch) => {
-		console.log(projects);
-		const setProjects: Project = {
-			id: projects[0].id,
-			desc: projects[0].desc,
-			name: '',
-			fields: [],
-			client: '',
-			timeline: '',
-			website: '',
-			thumb: [],
-			images: [{ src: '', id: '' }],
-			icons: [{ src: '', id: '' }],
-			intro: '',
-			url: '',
-			git: '',
-			gitUrl: '',
-			completed: false
-		};
-		dispatch(projectSlice.actions.setProjects(setProjects));
+		console.log(projects, projects.length);
+		
+		dispatch(projectSlice.actions.resetProjects());
+
+		for (let i = 0; i < projects.length; i++) {
+
+			var setProject: Project = {
+				id: projects[i].id,
+				desc: projects[i].desc,
+				name: projects[i].name,
+				fields: projects[i].fields,
+				client: projects[i].client,
+				timeline: projects[i].timeline,
+				website: projects[i].website,
+				thumb: projects[i].thumb,
+				images: projects[i].images,
+				icons: projects[i].icons,
+				intro: projects[i].intro,
+				url: projects[i].url,
+				git: projects[i].git,
+				gitUrl: projects[i].gitUrl,
+				filtered: false
+			};
+
+			dispatch(projectSlice.actions.setProjects(setProject));
+		}
 	};
 
 export default projectSlice.reducer;
