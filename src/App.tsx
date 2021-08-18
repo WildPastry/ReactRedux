@@ -76,10 +76,10 @@ const App: React.FC = () => {
 		) : (
 			<>
 				<Nav />
-				<Type />
+				{/* <Type /> */}
 				<Gallery />
 				{/* <Project /> */}
-				<About />
+				{/* <About /> */}
 				<Footer />
 				<ScrollUpButton
 					StopPosition={0}
