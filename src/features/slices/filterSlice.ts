@@ -1,18 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export enum ProjectFilter {
-	ShowAll = 'SHOW_ALL',
-	ShowCompleted = 'SHOW_COMPLETED',
-	ShowActive = 'SHOW_ACTIVE'
-}
+import { ProjectFilter } from '../types';
 
 const initialState = ProjectFilter.ShowAll;
 
 const projectFilterSlice = createSlice({
-	name: 'visibilityFilter',
+	name: 'filterProjects',
 	initialState,
 	reducers: {
-		setProjectFilter(state, action: PayloadAction<ProjectFilter>) {
+		setProjectFilter(_state, action: PayloadAction<ProjectFilter>) {
 			return action.payload;
 		}
 	}

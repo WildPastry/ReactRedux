@@ -26,7 +26,7 @@ class Type extends Component<any, any> {
 				<div className='typeWrap pad'>
 					{/* THIS SITE */}
 						<p className={this.props.thisType}>
-							<span className='textThis'>this </span>site built with react & typescript
+							<span className='textThis'>this </span>stack using react<span className='textLightGrey text400'> / </span>redux<span className='textLightGrey text400'> / </span>typescript
 						</p>
 					{/* ANIMATED TYPE */}
 					<div id='type' className={this.props.type} ref={this.type} />

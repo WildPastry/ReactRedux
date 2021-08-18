@@ -1,4 +1,3 @@
-// import frameworks
 import React from 'react';
 
 // AppLoading

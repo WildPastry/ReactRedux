@@ -1,15 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
 import { AppThunk, AppDispatch } from '../../redux';
 import { Project } from '../types';
 
 const initialState: Project[] = [];
 
 const projectSlice = createSlice({
-	name: 'projects',
+	name: 'setProjects',
 	initialState,
 	reducers: {
-		resetProjects: state => initialState,
+		resetProjects: (_state) => initialState,
 		setProjects(state, action: PayloadAction<Project>) {
 			state.push(action.payload);
 		},
@@ -28,11 +27,8 @@ export const setProjects =
 	(projects: any[]): AppThunk =>
 	async (dispatch: AppDispatch) => {
 		console.log(projects, projects.length);
-		
 		dispatch(projectSlice.actions.resetProjects());
-
 		for (let i = 0; i < projects.length; i++) {
-
 			var setProject: Project = {
 				id: projects[i].id,
 				desc: projects[i].desc,
@@ -50,7 +46,6 @@ export const setProjects =
 				gitUrl: projects[i].gitUrl,
 				filtered: false
 			};
-
 			dispatch(projectSlice.actions.setProjects(setProject));
 		}
 	};
