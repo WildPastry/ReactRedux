@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Loading } from '../types';
 
 const initialState: Loading = {
-	isLoading: true,
+	isLoading: false,
 	isError: false
 };
 

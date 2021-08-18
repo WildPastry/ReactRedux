@@ -4,10 +4,17 @@ import React from 'react';
 const Error: React.FC = () => {
 	return (
 		<>
-			<div className='fullPageFixed bg-dark'>
+			<div className='fullPageFixed'>
 				<div className='fullPageFixedInner'>
-					<h1 className='spotOrange text-center'>ERROR LOADING DATA</h1>
-					<h5 className='light text-center'>Please try again later</h5>
+					<h1 className='textYellow textCenter mb-2'>ERROR LOADING PAGE</h1>
+					<h4 className='textWhite textCenter mb-2'>
+						Oops! I'm sure it will be an easy fix. Hit me up below if you feel like it...
+					</h4>
+					<h3 className='listDark textCenter'>
+						<a href='mailto:mike@mikeparker.co.nz'>
+							<span>mike@mikeparker.co.nz</span>
+						</a>
+					</h3>
 				</div>
 			</div>
 		</>

@@ -2,16 +2,16 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
 import Nav from './sections/Nav';
-// import Type from './sections/Type';
+import Type from './sections/Type';
 import Gallery from './sections/Gallery';
 import Project from './sections/Project';
 import About from './sections/About';
 import Footer from './sections/Footer';
 import Error from './components/Error';
 import AppLoading from './components/AppLoading';
-// import projectData from './data/projects.json';
-// import ScrollUpButton from 'react-scroll-up-button';
-// import { MDBAnimation } from 'mdbreact';
+import projectData from './data/projects.json';
+import ScrollUpButton from 'react-scroll-up-button';
+import { MDBAnimation } from 'mdbreact';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -51,6 +51,8 @@ const App: React.FC = () => {
 
 	const pageData = useSelector((state: RootState) => {
 		console.log(state.loadPage);
+		console.log(state.setProjects);
+		console.log(state.filterProjects);
 		return state.loadPage;
 	});
 
@@ -74,11 +76,18 @@ const App: React.FC = () => {
 		) : (
 			<>
 				<Nav />
-				{/* <Type /> */}
+				<Type />
 				<Gallery />
-				<Project />
+				{/* <Project /> */}
 				<About />
 				<Footer />
+				<ScrollUpButton
+					StopPosition={0}
+					ShowAtPosition={200}
+					EasingType='easeOutCubic'
+					AnimationDuration={300}
+					ContainerClassName='scrollUpIcon'
+				/>
 			</>
 		);
 	};
