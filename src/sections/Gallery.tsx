@@ -1,7 +1,4 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MDBAnimation } from 'mdbreact';
 import SetProjects from '../features/SetProjects';
 import ProjectGallery from '../features/ProjectGallery';
 import ProjectFilters from '../features/ProjectFilters';
@@ -10,36 +7,7 @@ import ProjectFilters from '../features/ProjectFilters';
 const Gallery: React.FC = () => {
 	return (
 		<React.Fragment>
-			<MDBAnimation type='fadeIn'>
-				<Row className='wrap'>
-					<ProjectFilters />
-					<div className='filterWrap flex pad'>
-						<h4 className='filterItemDark'>ALL</h4>
-						<h4 className='filterItemDark'>UI/UX</h4>
-						<h4 className='filterItemDark'>TypeScript</h4>
-						<h4 className='filterItemDark'>JavaScript</h4>
-						<h4 className='filterItemDark'>JQuery</h4>
-						<h4 className='filterItemDark'>React</h4>
-						<h4 className='filterItemDark'>Native</h4>
-						<h4 className='filterItemDark'>API</h4>
-						<h4 className='filterItemDark'>PHP</h4>
-						<h4 className='filterItemDark'>Graphic</h4>
-					</div>
-					<div className='galleryWrap flex pad'>
-						<img
-							className='galleryRGBIcon'
-							src={require('./../icon/rgb.svg')}
-							alt='RBG Icon'
-						/>
-						<div>
-							<FontAwesomeIcon
-								icon={['fas', 'fill-drip']}
-								className={'galleryFillIconDark'}
-							/>
-						</div>
-					</div>
-				</Row>
-			</MDBAnimation>
+			<ProjectFilters />
 			<ProjectGallery />
 			<SetProjects />
 		</React.Fragment>
@@ -101,33 +69,6 @@ export default Gallery;
 // 	};
 
 // 	render() {
-// 		function getRandomInt(max: number) {
-// 			return Math.floor(Math.random() * max);
-// 		}
-// 		const renderLessMore = () => {
-// 			if (this.state.lessMore) {
-// 				return (
-// 					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(18)}>
-// 						SHOW MORE PROJECTS <span className={this.props.singleProjectName}>[ </span>
-// 						<span className={this.props.singleProjectDesc}>
-// 							...
-// 						</span>{' '}
-// 						<span className={this.props.singleProjectName}>]</span>
-// 					</h4>
-// 				);
-// 			} else {
-// 				return (
-// 					<h4 className={this.props.loadMore} onClick={() => this.recentProjects(9)}>
-// 						SHOW LESS PROJECTS <span className={this.props.singleProjectName}>[ </span>
-// 						<span className={this.props.singleProjectDesc}>
-// 							...
-// 						</span>{' '}
-// 						<span className={this.props.singleProjectName}>]</span>
-// 					</h4>
-// 				);
-// 			}
-// 		};
-
 // 		return (
 // 			<React.Fragment>
 // 				<Row>

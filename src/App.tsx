@@ -92,9 +92,8 @@ const App: React.FC = () => {
 			errorContainer()
 		) : (
 			<>
-				<Nav />
-				<button onClick={() => toggleAbout()}>ABOUT</button>
-				<button onClick={() => toggleProject()}>PROJECT</button>
+				<Nav toggleAbout={toggleAbout}/>				
+				{/* <button onClick={() => toggleProject()}>PROJECT</button> */}
 				{/* <Type /> */}
 				<Gallery />
 				{showProject ? <Project /> : null}
