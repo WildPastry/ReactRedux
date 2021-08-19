@@ -41,23 +41,36 @@ import { RootState } from '../redux/reducers/rootReducer';
 const Nav: React.FC<SetSection> = (props) => {
 	// const dispatch = useDispatch();
 	return (
-		<div>
-{/* <button onClick={() => props.toggleAbout()}>ABOUT</button> */}
-{/* <button onClick={() => props.handleSection.bind(this)}>ABOUT</button> */}
-{/* onClick={this.handleClick.bind(this)} */}
-{/* <button onClick={(event: React.MouseEvent<HTMLElement>) => {
- props.handleSection((event.target as any).index)}}></button> */}
-
-<button onClick={() => props.handleSection('GALLERY')}>
-GALLERY
-</button>
-<button onClick={() => props.handleSection('PROJECT')}>
-PROJECT
-</button>
-<button onClick={() => props.handleSection('ABOUT')}>
-ABOUT
-</button>
-</div>
+		<React.Fragment>
+			<div className='flex wrap pad navWrap'>
+				<p className={'brandDark'} onClick={() => props.handleSection('GALLERY')}>
+					mike parker <span className='text300'> portfolio </span>
+				</p>
+				{/* {burgerMenu} */}
+				<div className='menu flex'>
+					<h4
+						id='navGallery'
+						onClick={() => props.handleSection('GALLERY')}
+						className={'navItemDark navItemActiveDark'}>
+						GALLERY
+					</h4>
+					<h4
+						onClick={() => props.handleSection('PROJECT')}
+						id='navProject'
+						className={'navItemDark'}>
+						PROJECT
+						{/* <span className='textLightGrey text400 marLeft'>[ {projectName} ]</span> */}
+					</h4>
+					<h4
+						id='navAbout'
+						onClick={() => props.handleSection('ABOUT')}
+						className={'navItemDark'}>
+						ABOUT
+					</h4>
+				</div>
+			</div>
+			{/* {collapseMenu} */}
+		</React.Fragment>
 	);
 };
 

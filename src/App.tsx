@@ -1,6 +1,7 @@
 // import frameworks
 import { useRef, useEffect, useState } from 'react';
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
 import { setLoading } from './features/slices/loadingSlice';
@@ -50,6 +51,9 @@ library.add(
 
 // App
 const App: React.FC = () => {
+	var htmlBody = document.getElementById('bg');
+	htmlBody.className = 'bgDark';
+
 	// const pageData = useSelector((state: RootState) => {
 	// 	return state.imageData;
 	// });
@@ -84,41 +88,45 @@ const App: React.FC = () => {
 	// const toggleProject = () =>
 	// 	showProject === false ? setShowProject(true) : setShowProject(false);
 
-			// Declare multiple state variables!
-			const [section, setSection] = useState('GALLERY');
-			// const [project, setProject] = useState('PROJECT');
-			// const [about, setAbout] = useState('ABOUT');
-			const handleSection = (section: string) => { 
-				console.log(section)
-				setSection(section) 
-			};
+	// Declare multiple state variables!
+	const [section, setSection] = useState('GALLERY');
+	// const [project, setProject] = useState('PROJECT');
+	// const [about, setAbout] = useState('ABOUT');
+	const handleSection = (section: string) => {
+		console.log(section);
+		setSection(section);
+	};
 
-				let renderSection: JSX.Element;
+	let renderSection: JSX.Element;
 
-		// section === 'GALLERY' ? currentSection = <Gallery /> :
+	// section === 'GALLERY' ? currentSection = <Gallery /> :
 
-		// const renderSection = () => { 
-			// function renderSection() {
-			if (section === 'GALLERY') { renderSection = <Gallery />}
-			else if (section === 'PROJECT') { renderSection = <Project />}
-			else if (section === 'ABOUT') { renderSection = <About />}
-		//  };
+	// const renderSection = () => {
+	// function renderSection() {
+	if (section === 'GALLERY') {
+		renderSection = <Gallery />;
+	} else if (section === 'PROJECT') {
+		renderSection = <Project />;
+	} else if (section === 'ABOUT') {
+		renderSection = <About />;
+	}
+	//  };
 
-		// 		if (currentPage === 'gallery') {
-		// 	display = (
-		// 	<div>gallery</div>
-		// 	);
-		// } else if (currentPage === 'project') {
-		// 	// PROJECT PAGE
-		// 	display = (
-		// 		<div>project</div>
-		// 	);
-		// } else if (currentPage === 'about') {
-		// 	display = (
-		// 		<div>about</div>
-		// 	);
-		// }
-// console.log(section)
+	// 		if (currentPage === 'gallery') {
+	// 	display = (
+	// 	<div>gallery</div>
+	// 	);
+	// } else if (currentPage === 'project') {
+	// 	// PROJECT PAGE
+	// 	display = (
+	// 		<div>project</div>
+	// 	);
+	// } else if (currentPage === 'about') {
+	// 	display = (
+	// 		<div>about</div>
+	// 	);
+	// }
+	// console.log(section)
 
 	// renderApp
 	const renderApp = (pageData: any) => {
@@ -128,9 +136,11 @@ const App: React.FC = () => {
 		return pageData.isError ? (
 			errorContainer()
 		) : (
-			<>
-				<Nav handleSection={handleSection} />	
-				{renderSection}			
+			<React.Fragment>
+				<Container fluid>
+					<Nav handleSection={handleSection} />
+					<MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
+				</Container>
 				{/* <button onClick={() => toggleProject()}>PROJECT</button> */}
 				{/* <Type /> */}
 				{/* <Gallery /> */}
@@ -145,7 +155,7 @@ const App: React.FC = () => {
 					AnimationDuration={300}
 					ContainerClassName='scrollUpIcon'
 				/>
-			</>
+			</React.Fragment>
 		);
 	};
 	// wait for page to load before displaying
