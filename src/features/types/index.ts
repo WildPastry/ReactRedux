@@ -28,10 +28,6 @@ export enum ProjectFilter {
 	ShowActive = 'SHOW_ACTIVE'
 }
 
-export interface ToggleAbout {
-	toggleAbout(): void;
-}
-
-export interface ToggleProject {
-	toggleProject(): void;
+export interface SetSection {
+	handleSection: (section: string) => void
 }

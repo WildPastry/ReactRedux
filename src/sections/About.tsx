@@ -4,7 +4,6 @@ import { Col, Row } from 'react-bootstrap';
 import { initSpace } from '../data/space';
 import { MDBAnimation } from 'mdbreact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TodoList from '../features/ProjectGallery';
 
 // About
 const About: React.FC = () => {
@@ -25,7 +24,6 @@ const About: React.FC = () => {
 								/>
 							</div>
 						</div>
-						<TodoList />
 					</Row>
 					<Row>
 						<Col sm={12} md={6} lg={4} className='colWrap'>
@@ -108,7 +106,6 @@ export default About;
 // 								/>
 // 							</div>
 // 						</div>
-// 						<TodoList />
 // 					</Row>
 // 					<Row>
 // 						<Col sm={12} md={6} lg={4} className='colWrap'>

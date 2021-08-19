@@ -2,19 +2,68 @@
 import React from 'react';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { MDBAnimation } from 'mdbreact';
-import { ToggleAbout } from '../features/types';
+import { SetSection } from '../features/types';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../redux/reducers/rootReducer';
 
 // Nav
-const Nav: React.FC<ToggleAbout> = (props) => {
+// export default function Nav({
+// 	navigateSections,
+// 	text
+// }: NavButtonProps): JSX.Element {
+// 	const dispatch = useDispatch();
+
+// 	const currentvisibilityFilter = useSelector((state: RootState) => state.filterProjects);
+
+// 	return (
+// 		<button
+// 			onClick={() => dispatch(setNavigation(navigateSections))}>
+// 			{text}
+// 		</button>
+// 	);
+// }
+// interface SetSection {
+// 	handleSection: (section: string) => void
+// }
+// }
+// const Child: React.FC<ChildProps> = (props) => {
+// 	 return (
+// 			 <p onClick={props.fire}>Click Me</p>
+// 	 )
+// }
+// interface SetSection {
+// 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+// }
+// export interface SetSection {
+// 	handleSection(): any;
+// }
+
+const Nav: React.FC<SetSection> = (props) => {
+	// const dispatch = useDispatch();
 	return (
-<button onClick={() => props.toggleAbout()}>ABOUT</button>
+		<div>
+{/* <button onClick={() => props.toggleAbout()}>ABOUT</button> */}
+{/* <button onClick={() => props.handleSection.bind(this)}>ABOUT</button> */}
+{/* onClick={this.handleClick.bind(this)} */}
+{/* <button onClick={(event: React.MouseEvent<HTMLElement>) => {
+ props.handleSection((event.target as any).index)}}></button> */}
+
+<button onClick={() => props.handleSection('GALLERY')}>
+GALLERY
+</button>
+<button onClick={() => props.handleSection('PROJECT')}>
+PROJECT
+</button>
+<button onClick={() => props.handleSection('ABOUT')}>
+ABOUT
+</button>
+</div>
 	);
 };
 
 // EXPORT Nav
 Nav.displayName = 'Nav';
 export default Nav;
-
 
 // class Nav extends Component<any, any> {
 // 	constructor(props: any) {

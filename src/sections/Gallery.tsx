@@ -9,7 +9,7 @@ const Gallery: React.FC = () => {
 		<React.Fragment>
 			<ProjectFilters />
 			<ProjectGallery />
-			<SetProjects />
+			<SetProjects />			
 		</React.Fragment>
 	);
 };

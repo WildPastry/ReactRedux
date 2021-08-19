@@ -13,6 +13,7 @@ import About from './sections/About';
 import Footer from './sections/Footer';
 import Error from './components/Error';
 import AppLoading from './components/AppLoading';
+import SetProjects from './features/SetProjects';
 import projectData from './data/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
 import { MDBAnimation } from 'mdbreact';
@@ -56,9 +57,9 @@ const App: React.FC = () => {
 	const dispatch = useDispatch();
 
 	const pageData = useSelector((state: RootState) => {
-		console.log(state.loadPage);
-		console.log(state.setProjects);
-		console.log(state.filterProjects);
+		// console.log(state.loadPage);
+		// console.log(state.setProjects);
+		// console.log(state.filterProjects);
 		// dispatch(setLoading(false));
 		return state.loadPage;
 	});
@@ -73,18 +74,54 @@ const App: React.FC = () => {
 		return <Error />;
 	};
 
-	// toggle about page
-	const [showAbout, setShowAbout] = useState(false);
-	const toggleAbout = () =>
-		showAbout === false ? setShowAbout(true) : setShowAbout(false);
+	// // toggle about page
+	// const [showAbout, setShowAbout] = useState(false);
+	// const toggleAbout = () =>
+	// 	showAbout === false ? setShowAbout(true) : setShowAbout(false);
 
-	// toggle project page
-	const [showProject, setShowProject] = useState(false);
-	const toggleProject = () =>
-		showProject === false ? setShowProject(true) : setShowProject(false);
+	// // toggle project page
+	// const [showProject, setShowProject] = useState(false);
+	// const toggleProject = () =>
+	// 	showProject === false ? setShowProject(true) : setShowProject(false);
 
-	// renderPage
-	const renderPage = (pageData: any) => {
+			// Declare multiple state variables!
+			const [section, setSection] = useState('GALLERY');
+			// const [project, setProject] = useState('PROJECT');
+			// const [about, setAbout] = useState('ABOUT');
+			const handleSection = (section: string) => { 
+				console.log(section)
+				setSection(section) 
+			};
+
+				let renderSection: JSX.Element;
+
+		// section === 'GALLERY' ? currentSection = <Gallery /> :
+
+		// const renderSection = () => { 
+			// function renderSection() {
+			if (section === 'GALLERY') { renderSection = <Gallery />}
+			else if (section === 'PROJECT') { renderSection = <Project />}
+			else if (section === 'ABOUT') { renderSection = <About />}
+		//  };
+
+		// 		if (currentPage === 'gallery') {
+		// 	display = (
+		// 	<div>gallery</div>
+		// 	);
+		// } else if (currentPage === 'project') {
+		// 	// PROJECT PAGE
+		// 	display = (
+		// 		<div>project</div>
+		// 	);
+		// } else if (currentPage === 'about') {
+		// 	display = (
+		// 		<div>about</div>
+		// 	);
+		// }
+// console.log(section)
+
+	// renderApp
+	const renderApp = (pageData: any) => {
 		console.log(pageData);
 		// show error container if there is one
 		// otherwise display the app
@@ -92,12 +129,14 @@ const App: React.FC = () => {
 			errorContainer()
 		) : (
 			<>
-				<Nav toggleAbout={toggleAbout}/>				
+				<Nav handleSection={handleSection} />	
+				{renderSection}			
 				{/* <button onClick={() => toggleProject()}>PROJECT</button> */}
 				{/* <Type /> */}
-				<Gallery />
-				{showProject ? <Project /> : null}
-				{showAbout ? <About /> : null}
+				{/* <Gallery /> */}
+				{/* <SetProjects /> */}
+				{/* {showProject ? <Project /> : null}
+				{showAbout ? <About /> : null} */}
 				<Footer />
 				<ScrollUpButton
 					StopPosition={0}
@@ -110,7 +149,7 @@ const App: React.FC = () => {
 		);
 	};
 	// wait for page to load before displaying
-	return pageData.isLoading ? showLoader() : renderPage(pageData);
+	return pageData.isLoading ? showLoader() : renderApp(pageData);
 };
 
 // EXPORT App
