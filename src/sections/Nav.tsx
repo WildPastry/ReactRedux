@@ -1,45 +1,10 @@
-// IMPORTS
+// imports
 import React from 'react';
-import { HamburgerSqueeze } from 'react-animated-burgers';
-import { MDBAnimation } from 'mdbreact';
 import { SetSection } from '../types';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/reducers/rootReducer';
+import AppTheme from '../components/AppTheme';
 
 // Nav
-// export default function Nav({
-// 	navigateSections,
-// 	text
-// }: NavButtonProps): JSX.Element {
-// 	const dispatch = useDispatch();
-
-// 	const currentvisibilityFilter = useSelector((state: RootState) => state.filterProjects);
-
-// 	return (
-// 		<button
-// 			onClick={() => dispatch(setNavigation(navigateSections))}>
-// 			{text}
-// 		</button>
-// 	);
-// }
-// interface SetSection {
-// 	handleSection: (section: string) => void
-// }
-// }
-// const Child: React.FC<ChildProps> = (props) => {
-// 	 return (
-// 			 <p onClick={props.fire}>Click Me</p>
-// 	 )
-// }
-// interface SetSection {
-// 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-// }
-// export interface SetSection {
-// 	handleSection(): any;
-// }
-
 const Nav: React.FC<SetSection> = (props) => {
-	// const dispatch = useDispatch();
 	return (
 		<React.Fragment>
 			<div className='flex wrap pad navWrap'>
@@ -67,6 +32,7 @@ const Nav: React.FC<SetSection> = (props) => {
 						className={'navItemDark'}>
 						ABOUT
 					</h4>
+					<AppTheme />
 				</div>
 			</div>
 			{/* {collapseMenu} */}

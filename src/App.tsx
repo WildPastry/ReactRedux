@@ -26,12 +26,13 @@ import {
 	faChevronLeft,
 	faChevronRight,
 	faTh,
-	faMapMarkerAlt
+	faMapMarkerAlt,
+	faImage
 } from '@fortawesome/free-solid-svg-icons';
 import './scss/main.scss';
 library.add(
 	fab,
-	faFillDrip,
+	faImage,
 	faEnvelope,
 	faChevronLeft,
 	faChevronRight,

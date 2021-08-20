@@ -2,7 +2,6 @@ import React from 'react';
 import SetProjects from '../components/SetProjects';
 import ProjectGallery from '../components/ProjectGallery';
 import ProjectFilters from '../components/ProjectFilters';
-import AppTheme from '../components/AppTheme';
 import { Row } from 'react-bootstrap';
 
 // Gallery
@@ -11,7 +10,6 @@ const Gallery: React.FC = () => {
 		<React.Fragment>
 			<Row className='wrap'>
 			<ProjectFilters />
-			<AppTheme />
 		</Row>
 			<ProjectGallery />
 			<SetProjects />			

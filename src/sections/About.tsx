@@ -1,28 +1,23 @@
-// IMPORTS
+// imports
 import React from 'react';
+import { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { initSpace } from '../data/space';
 import { MDBAnimation } from 'mdbreact';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // About
 const About: React.FC = () => {
+		// load effect
+		useEffect(() => {
+			initSpace();
+		}, [initSpace]);
+
 	return (
 <React.Fragment>
 				<MDBAnimation type='fadeIn'>
 					<Row className='wrap'>
 						<div className='colWrap'>
 							<h1 className={'marBot textWhite'}>about me</h1>
-						</div>
-						<div className='galleryWrap pad flex'>
-							<h4 className={'textWhite text400'}>THEME</h4>
-							{/* <div onClick={this.props.changeTheme}> */}
-							<div>
-								<FontAwesomeIcon
-									icon={['fas', 'fill-drip']}
-									className={'galleryFillIconDark'}
-								/>
-							</div>
 						</div>
 					</Row>
 					<Row>
@@ -59,7 +54,7 @@ const About: React.FC = () => {
 							</ul>
 						</Col>
 						<Col sm={12} md={6} lg={8} className='colWrap'>
-						<div id='space' className={'space textWhiteBg'} />
+						<div id='space' className={'space textGreyBg'} />
 							{/* <div id='space' className={'space textWhiteBg'} ref={this.space} /> */}
 						</Col>
 					</Row>
