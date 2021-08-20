@@ -1,46 +1,50 @@
 import React from 'react';
-import { useCallback, useEffect, useState } from 'react';
-import { setProjectFilter } from '../redux/slices/filterSlice';
-import { ProjectFilter } from '../types';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
-import { setTheme, setImgTheme  } from '../redux/slices/themeSlice';
+import { setTheme, setImgTheme } from '../redux/slices/themeSlice';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function AppTheme(): JSX.Element {
-  // dispatch
-  const dispatch = useDispatch();
+	// dispatch
+	const dispatch = useDispatch();
 
-  const handleDispatch = useCallback(
-		(themeType: string) => {
-      console.log(themeType)
+	const appTheme = useSelector((state: RootState) => {
+		return state.setTheme.theme;
+	});
 
-      // useSelector((state: RootState) => {
-      //   console.log(state.setTheme);
+	const ImgTheme = useSelector((state: RootState) => {
+		return state.setTheme.imgTheme;
+	});
 
-      // });
-			dispatch(setTheme('LIGHT'));
-		},
-		[dispatch]
-	);
+	const handleAppTheme = () => {
+		let currentTheme: string;
+		appTheme === 'DARK' ? (currentTheme = 'LIGHT') : (currentTheme = 'DARK');
+		dispatch(setTheme(currentTheme));
+	};
+
+	const handleImgTheme = () => {
+		let currentTheme: string;
+		ImgTheme === 'DARK' ? (currentTheme = 'LIGHT') : (currentTheme = 'DARK');
+		dispatch(setImgTheme(currentTheme));
+	};
 
 	return (
-    <div className='galleryWrap flex pad'>
-    <h4 className={'textWhite text400'}>THEME</h4>
-      <img
-        onClick={() => handleDispatch('IMG')}
-        className='galleryRGBIcon'
-        src={require('./../icon/rgb.svg')}
-        alt='RBG Icon'
-      />
-      <div>
-        <FontAwesomeIcon
-          onClick={() => handleDispatch('APP')}
-          icon={['fas', 'fill-drip']}
-          className={'galleryFillIconDark'}
-        />
-      </div>
-    </div>
+		<div className='galleryWrap flex pad'>
+			<h4 className={'textWhite text400'}>THEME</h4>
+			<img
+				onClick={() => handleImgTheme()}
+				className='galleryRGBIcon'
+				src={require('./../icon/rgb.svg')}
+				alt='RBG Icon'
+			/>
+			<div>
+				<FontAwesomeIcon
+					onClick={() => handleAppTheme()}
+					icon={['fas', 'fill-drip']}
+					className={'galleryFillIconDark'}
+				/>
+			</div>
+		</div>
 	);
 }
