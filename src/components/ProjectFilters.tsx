@@ -10,7 +10,7 @@ export default function ProjectFilters(): JSX.Element {
 			<FilterButton projectFilter={ProjectFilter.ShowActive} text={'Active'} />
 			<FilterButton projectFilter={ProjectFilter.ShowCompleted} text={'Completed'} /> */}
 			<div className='filterWrap flex pad'>
-				<h4 className='filterItemDark'>ALL</h4>
+				<h4 className='filterItemDark filterItemActiveDark'>ALL</h4>
 				<h4 className='filterItemDark'>UI/UX</h4>
 				<h4 className='filterItemDark'>Graphics</h4>
 				<h4 className='filterItemDark'>TypeScript</h4>

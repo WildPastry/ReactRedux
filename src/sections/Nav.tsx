@@ -19,13 +19,6 @@ const Nav: React.FC<SetSection> = (props) => {
 						className={'navItemDark navItemActiveDark'}>
 						GALLERY
 					</h4>
-					{/* <h4
-						onClick={() => props.handleSection('PROJECT')}
-						id='navProject'
-						className={'navItemDark'}>
-						PROJECT
-						<span className='textLightGrey text400 marLeft'>[ {projectName} ]</span>
-					</h4> */}
 					<h4
 						id='navAbout'
 						onClick={() => props.handleSection('ABOUT')}

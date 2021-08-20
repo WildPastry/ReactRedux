@@ -42,10 +42,12 @@
 	color: $spotGrey;
 	cursor: pointer;
 	margin-left: 13px;
+	padding-top: 5px;
 	border-bottom: 2px solid transparent;
 	padding-bottom: 3px;
 	&:hover {
-		color: $white;
+		// color: $peach;
+		// text-decoration-line: line-through;
 		border-bottom: 2px solid $peach;
 	}
 }
@@ -53,6 +55,8 @@
 .navItemActiveDark {
 	color: $white;
 	border-bottom: 2px solid $peach;
+	// color: $peach;
+	// text-decoration-line: line-through;
 }
 
 .fakeNavItemDark {
