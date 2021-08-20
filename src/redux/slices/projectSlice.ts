@@ -7,7 +7,8 @@ import { Project } from '../../types';
 // set initialState
 const initialState: Project[] = [];
 
-// create slice with combined actions
+// create projectSlice with combined actions
+// including: reset projectSlice, set projects and filter projects
 const projectSlice = createSlice({
 	name: 'setProjects',
 	initialState,
@@ -25,7 +26,7 @@ const projectSlice = createSlice({
 	}
 });
 
-// export filter actions from project actions
+// export filter actions from projectSlice
 export const { filterProjects } = projectSlice.actions;
 
 // setProjects function
@@ -57,8 +58,10 @@ export const setProjects =
 			// dispatch projects once finished mapping
 			dispatch(projectSlice.actions.setProjects(setProject));
 		} catch (err) {
+			// create error page if errors
 			dispatch(setError(true));
 		}
 	};
 
+// export reducer
 export default projectSlice.reducer;

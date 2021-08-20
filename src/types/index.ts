@@ -23,7 +23,7 @@ export interface Loading {
 }
 
 export interface Theme {
-	theme: string;
+	appTheme: string;
 	imgTheme: string;
 }
 
