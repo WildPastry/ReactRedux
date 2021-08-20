@@ -2,35 +2,33 @@
 @import 'variables';
 @import 'mixins';
 
-.imgWrapDark,
-.imgWrapLight {
+.imgWrapDARK,
+.imgWrapLIGHT {
 	padding: 5px;
 }
 
 // IMAGE DARK
-.imgWrapDark img {
+.imgWrapDARK img {
 	cursor: pointer;
 	height: auto;
 	width: 100%;
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
-}
-
-.imgWrapDark img:hover {
-	-webkit-filter: grayscale(0%);
-	filter: grayscale(0%);
+	&:hover {
+		-webkit-filter: grayscale(0%);
+		filter: grayscale(0%);
+	}
 }
 
 // IMAGE LIGHT
-.imgWrapLight img {
+.imgWrapLIGHT img {
 	cursor: pointer;
 	height: auto;
 	width: 100%;
 	-webkit-filter: grayscale(0%);
 	filter: grayscale(0%);
-}
-
-.imgWrapLight img:hover {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+	&:hover {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
 }

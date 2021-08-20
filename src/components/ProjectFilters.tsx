@@ -10,15 +10,15 @@ export default function ProjectFilters(): JSX.Element {
 			<FilterButton projectFilter={ProjectFilter.ShowActive} text={'Active'} />
 			<FilterButton projectFilter={ProjectFilter.ShowCompleted} text={'Completed'} /> */}
 			<div className='filterWrap flex pad'>
-				<h4 className='filterItemDark filterItemActiveDark'>ALL</h4>
-				<h4 className='filterItemDark'>UI/UX</h4>
-				<h4 className='filterItemDark'>Graphics</h4>
-				<h4 className='filterItemDark'>TypeScript</h4>
-				<h4 className='filterItemDark'>JavaScript</h4>
-				<h4 className='filterItemDark'>JQuery</h4>
-				<h4 className='filterItemDark'>React</h4>
-				<h4 className='filterItemDark'>React Native</h4>
-				<h4 className='filterItemDark'>PHP</h4>
+				<h4 className='filterItemDARK filterItemActiveDARK'>ALL</h4>
+				<h4 className='filterItemDARK'>UI/UX</h4>
+				<h4 className='filterItemDARK'>Graphics</h4>
+				<h4 className='filterItemDARK'>TypeScript</h4>
+				<h4 className='filterItemDARK'>JavaScript</h4>
+				<h4 className='filterItemDARK'>JQuery</h4>
+				<h4 className='filterItemDARK'>React</h4>
+				<h4 className='filterItemDARK'>React Native</h4>
+				<h4 className='filterItemDARK'>PHP</h4>
 			</div>
 		</React.Fragment>
 	);

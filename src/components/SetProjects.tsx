@@ -3,11 +3,18 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/reducers/rootReducer';
 import { setProjects } from '../redux/slices/projectSlice';
-import projectData from '../data/projects.json';
+import projectData from '../utilities/projects.json';
 
 // SetProjects
 export default function SetProjects(): JSX.Element {
+	// useSelector for app theme
+	const appTheme = useSelector((state: RootState) => {
+		return state.setTheme.appTheme;
+	});
+
 	// dispatch
 	const dispatch = useDispatch();
 
@@ -42,22 +49,22 @@ export default function SetProjects(): JSX.Element {
 		sortData(projectData, 9);
 	}, [sortData]);
 
-	// toggle FewerMore state
-	const [showFewerMore, setShowFewerMore] = useState(false);
+	// toggle MoreFewer state
+	const [showMoreFewer, setShowMoreFewer] = useState(false);
 
-	// toggleFewerMore
-	const toggleFewerMore = (size: number) =>
-		showFewerMore === false
-			? (setShowFewerMore(true), sortData(projectData, size))
-			: (setShowFewerMore(false), sortData(projectData, size));
+	// toggleMoreFewer
+	const toggleMoreFewer = (size: number) =>
+		showMoreFewer === false
+			? (setShowMoreFewer(true), sortData(projectData, size))
+			: (setShowMoreFewer(false), sortData(projectData, size));
 
 	// renderMore button
 	const renderMore = () => {
 		return (
-			<h4 className='loadMoreDark' onClick={() => toggleFewerMore(18)}>
-				SHOW MORE PROJECTS<span className={'ms-2 textWhite text700'}>[ </span>
+			<h4 className={'moreFewer' + appTheme} onClick={() => toggleMoreFewer(18)}>
+				SHOW MORE PROJECTS<span className={'ms-2 text700 text' + appTheme}>[ </span>
 				<span className={'textSpotGrey text400'}>...</span>{' '}
-				<span className={'textWhite text700'}>]</span>
+				<span className={'text700 text' + appTheme}>]</span>
 			</h4>
 		);
 	};
@@ -65,14 +72,14 @@ export default function SetProjects(): JSX.Element {
 	// renderFewer button
 	const renderFewer = () => {
 		return (
-			<h4 className='loadMoreDark' onClick={() => toggleFewerMore(9)}>
-				SHOW FEWER PROJECTS<span className={'ms-2 textWhite text700'}>[ </span>
+			<h4 className={'moreFewer' + appTheme} onClick={() => toggleMoreFewer(9)}>
+				SHOW FEWER PROJECTS<span className={'ms-2 text700 text' + appTheme}>[ </span>
 				<span className={'textSpotGrey text400'}>...</span>{' '}
-				<span className={'textWhite text700'}>]</span>
+				<span className={'text700 text' + appTheme}>]</span>
 			</h4>
 		);
 	};
 
 	// buttons to show more or less projects
-	return <Row>{showFewerMore ? renderFewer() : renderMore()}</Row>;
+	return <Row>{showMoreFewer ? renderFewer() : renderMore()}</Row>;
 }

@@ -1,6 +1,6 @@
 // IMPORTS
 import React, { Component } from 'react';
-import { initType } from '../data/type';
+import { initType } from '../utilities/type';
 
 // CLASS TYPE
 class Type extends Component<any, any> {

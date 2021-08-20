@@ -30,15 +30,8 @@
 	align-items: center;
 }
 
-.navItemDarkProject {
-	color: $spotGrey;
-	margin-left: 13px;
-	border-bottom: 2px solid $grey;
-	padding-bottom: 3px;
-}
-
 // NAV ITEM DARK
-.navItemDark {
+.navItemDARK {
 	color: $spotGrey;
 	cursor: pointer;
 	margin-left: 13px;
@@ -52,32 +45,19 @@
 	}
 }
 
-.navItemActiveDark {
+.navItemActiveDARK {
 	color: $white;
 	border-bottom: 2px solid $peach;
 	// color: $peach;
 	// text-decoration-line: line-through;
 }
 
-.fakeNavItemDark {
-	cursor: default;
-	color: $spotGrey;
-	margin-left: 13px;
-	border-bottom: 2px solid transparent;
-	padding-bottom: 3px;
-}
-
-.fakeNavItemActiveDark {
-	cursor: default;
-	color: $white;
-	border-bottom: 2px solid $peach;
-}
-
 // NAV ITEM LIGHT
-.navItemLight {
+.navItemLIGHT {
 	color: $lightGrey;
 	cursor: pointer;
 	margin-left: 13px;
+	padding-top: 5px;
 	border-bottom: 2px solid transparent;
 	padding-bottom: 3px;
 	&:hover {
@@ -86,27 +66,13 @@
 	}
 }
 
-.navItemActiveLight {
-	color: $grey;
-	border-bottom: 2px solid $peach;
-}
-
-.fakeNavItemLight {
-	cursor: default;
-	color: $lightGrey;
-	margin-left: 13px;
-	border-bottom: 2px solid transparent;
-	padding-bottom: 3px;
-}
-
-.fakeNavItemActiveLight {
-	cursor: default;
+.navItemActiveLIGHT {
 	color: $grey;
 	border-bottom: 2px solid $peach;
 }
 
 // NAV BRAND DARK
-.brandDark {
+.brandDARK {
 	color: $yellow;
 	cursor: pointer;
 	border-bottom: 2px solid transparent;
@@ -120,12 +86,12 @@
 	}
 }
 
-.brandDark a {
+.brandDARK a {
 	color: $yellow;
 }
 
 // NAV BRAND LIGHT
-.brandLight {
+.brandLIGHT {
 	color: $blue;
 	cursor: pointer;
 	border-bottom: 2px solid transparent;
@@ -139,7 +105,7 @@
 	}
 }
 
-.brandLight a {
+.brandLIGHT a {
 	color: $blue;
 }
 
@@ -163,10 +129,9 @@
 .galleryWrap {
 	line-height: 30px;
 	margin-bottom: 10px;
-}
-
-.galleryWrap:hover .galleryIcon {
-	color: $spotGrey;
+	&:hover .galleryIcon {
+		color: $spotGrey;
+	}
 }
 
 .descriptionWrap {
@@ -181,7 +146,7 @@
 }
 
 // FILTER MENU DARK
-.filterItemDark {
+.filterItemDARK {
 	color: $spotGrey;
 	cursor: pointer;
 	margin-right: 13px;
@@ -193,13 +158,13 @@
 	}
 }
 
-.filterItemActiveDark {
+.filterItemActiveDARK {
 	color: $white;
 	border-bottom: 2px solid $peach;
 }
 
 // FILTER MENU LIGHT
-.filterItemLight {
+.filterItemLIGHT {
 	color: $lightGrey;
 	cursor: pointer;
 	margin-right: 13px;
@@ -211,7 +176,7 @@
 	}
 }
 
-.filterItemActiveLight {
+.filterItemActiveLIGHT {
 	color: $grey;
 	border-bottom: 2px solid $peach;
 }
@@ -222,35 +187,35 @@
 }
 
 // ABOUT LIST DARK
-.aboutListDark li {
+.aboutListDARK li {
 	color: $spotGrey;
 	font-weight: $light;
 	line-height: 1.5em;
 }
 
-.aboutListDark a {
+.aboutListDARK a {
 	color: $spotGrey;
 }
 
 // ABOUT LIST LIGHT
-.aboutListLight li {
+.aboutListLIGHT li {
 	color: $lightGrey;
 	font-weight: $light;
 	line-height: 1.5em;
 }
 
-.aboutListLight a {
+.aboutListLIGHT a {
 	color: $lightGrey;
 }
 
 // PROJECT
-.projectRowDark {
+.projectRowDARK {
 	background: $white;
 	border-bottom: 10px solid $spotGrey;
 	border-top: 10px solid $spotGrey;
 }
 
-.projectRowLight {
+.projectRowLIGHT {
 	background: $white;
 	border-bottom: 10px solid transparent;
 	border-top: 10px solid transparent;
@@ -314,8 +279,14 @@
 	line-height: 1.5em;
 }
 
-.footerCopyright {
+.footerCopyrightDARK {
 	line-height: 50px;
+	color: $yellow;
+}
+
+.footerCopyrightLIGHT {
+	line-height: 50px;
+	color: $blue;
 }
 
 .footerTemp {
@@ -332,13 +303,13 @@
 }
 
 // FOOTER LIST DARK
-.listDark li {
+.listDARK li {
 	color: $spotGrey;
 	font-weight: $light;
 	line-height: 1.5em;
 }
 
-.listDark a {
+.listDARK a {
 	color: $spotGrey;
 	&:hover {
 		color: $peach;
@@ -346,13 +317,13 @@
 }
 
 // FOOTER LIST LIGHT
-.listLight li {
+.listLIGHT li {
 	color: $lightGrey;
 	font-weight: $light;
 	line-height: 1.5em;
 }
 
-.listLight a {
+.listLIGHT a {
 	color: $lightGrey;
 	&:hover {
 		color: $peach;

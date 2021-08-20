@@ -4,29 +4,29 @@
 
 // FA
 
-.faIconDark,
-.faIconSmDark,
-.faIconLight,
-.faIconSmLight {
+.faIconDARK,
+.faIconSmDARK,
+.faIconLIGHT,
+.faIconSmLIGHT {
 	&:hover {
 		color: $peach;
 	}
 }
 
-.faIconSmDark,
-.faIconSmLight {
+.faIconSmDARK,
+.faIconSmLIGHT {
 	font-size: 15px;
 }
 
 // FA DARK
-.faIconDark {
+.faIconDARK {
 	cursor: pointer;
 	font-size: 30px;
 	margin-right: 20px;
 }
 
 // FA LIGHT
-.faIconLight {
+.faIconLIGHT {
 	cursor: pointer;
 	color: $grey;
 	font-size: 30px;
@@ -34,7 +34,7 @@
 }
 
 // IMG THEME ICON
-.imgThemeIconDark {
+.imgThemeIconDARK {
 	cursor: pointer;
 	font-size: 20px;
 	color: $yellow;
@@ -47,7 +47,7 @@
 	}
 }
 
-.imgThemeIconLight {
+.imgThemeIconLIGHT {
 	cursor: pointer;
 	font-size: 20px;
 	color: $blue;

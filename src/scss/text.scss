@@ -28,7 +28,7 @@
 	color: $pink;
 }
 
-.textLightGrey {
+.textLIGHTGrey {
 	color: $lightGrey;
 }
 
@@ -44,6 +44,14 @@
 	color: $yellow;
 }
 
+.textDARK {
+	color: $white;
+}
+
+.textLIGHT {
+	color: $grey;
+}
+
 .textThis {
 	color: $peach;
 	font-style: italic;
@@ -53,6 +61,14 @@
 }
 
 // TEXT BG COLOURS
+.textBgDARK {
+	background: $grey;
+}
+
+.textBgLIGHT {
+	background: $white;
+}
+
 .textGreyBg {
 	background: $grey;
 }
@@ -65,7 +81,7 @@
 	background: $pink;
 }
 
-.textLightGreyBg {
+.textLIGHTGreyBg {
 	background: $lightGrey;
 }
 
@@ -104,7 +120,7 @@
 }
 
 // LOAD MORE
-.loadMoreLight {
+.moreFewerLIGHT {
 	color: $blue;
 	font-weight: $regular;
 	margin-top: 0.5rem;
@@ -115,7 +131,7 @@
 	}
 }
 
-.loadMoreDark {
+.moreFewerDARK {
 	color: $yellow;
 	font-weight: $regular;
 	margin-top: 0.5rem;

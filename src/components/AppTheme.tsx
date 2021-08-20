@@ -45,7 +45,7 @@ export default function AppTheme(): JSX.Element {
 			<FontAwesomeIcon
 				onClick={() => handleImgTheme()}
 				icon={['fas', 'image']}
-				className={'imgThemeIconDark'}
+				className={'imgThemeIcon' + appTheme}
 			/>
 			<div
 				onClick={triggerToggle}

@@ -38,7 +38,7 @@
 }
 
 // COLLAPSE NAV ITEM DARK
-.navItemDarkCollapse {
+.navItemDARKCollapse {
   color: $spotGrey;
   cursor: pointer;
   padding: 10px;
@@ -50,13 +50,13 @@
 	}
 }
 
-.navItemActiveDarkCollapse {
+.navItemActiveDARKCollapse {
   color: $peach;
   border: 0.5px solid $spotGrey-t;
 }
 
 // COLLAPSE NAV ITEM LIGHT
-.navItemLightCollapse {
+.navItemLIGHTCollapse {
   color: $lightGrey;
   cursor: pointer;
   padding: 10px;
@@ -68,14 +68,14 @@
 	}
 }
 
-.navItemActiveLightCollapse {
+.navItemActiveLIGHTCollapse {
   color: $peach;
   border: 0.5px solid $lightGrey-t;
 }
 
 // PROJECT PAGE MENU STYLES
 // COLLAPSE NAV ITEM DARK
-.fakeNavItemDarkCollapse {
+.fakeNavItemDARKCollapse {
   color: $spotGrey;
   cursor: default;
   padding: 10px;
@@ -83,13 +83,13 @@
   border-radius: 3px;
 }
 
-.fakeNavItemActiveDarkCollapse {
+.fakeNavItemActiveDARKCollapse {
   color: $peach;
   border: 0.5px solid $spotGrey-t;
 }
 
 // COLLAPSE NAV ITEM LIGHT
-.fakeNavItemLightCollapse {
+.fakeNavItemLIGHTCollapse {
   color: $lightGrey;
   cursor: default;
   padding: 10px;
@@ -97,7 +97,7 @@
   border-radius: 3px;
 }
 
-.fakeNavItemActiveLightCollapse {
+.fakeNavItemActiveLIGHTCollapse {
   color: $peach;
   border: 0.5px solid $lightGrey-t;
 }
@@ -195,8 +195,8 @@
     visibility: hidden;
   }
 
-  .filterItemDark,
-  .filterItemLight {
+  .filterItemDARK,
+  .filterItemLIGHT {
     margin-top: 10px;
   }
 
@@ -249,8 +249,8 @@
     margin-right: 15px;
   }
 
-  .faIconDark,
-  .faIconLight {
+  .faIconDARK,
+  .faIconLIGHT {
     font-size: 25px;
     margin-right: 0;
   }

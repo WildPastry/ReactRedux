@@ -1,14 +1,21 @@
 // imports
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/reducers/rootReducer';
 import { SetSection } from '../types';
 import AppTheme from '../components/AppTheme';
 
 // Nav
 const Nav: React.FC<SetSection> = (props) => {
+	// useSelector for app theme
+	const appTheme = useSelector((state: RootState) => {
+		return state.setTheme.appTheme;
+	});
+
 	return (
 		<React.Fragment>
 			<div className='flex wrap pad navWrap'>
-				<p className={'brandDark'} onClick={() => props.handleSection('GALLERY')}>
+				<p className={'brand' + appTheme} onClick={() => props.handleSection('GALLERY')}>
 					mike parker <span className='text300'> portfolio </span>
 				</p>
 				{/* {burgerMenu} */}
@@ -16,13 +23,13 @@ const Nav: React.FC<SetSection> = (props) => {
 					<h4
 						id='navGallery'
 						onClick={() => props.handleSection('GALLERY')}
-						className={'navItemDark navItemActiveDark'}>
+						className={'navItem' + appTheme + ' navItemActive' + appTheme}>
 						GALLERY
 					</h4>
 					<h4
 						id='navAbout'
 						onClick={() => props.handleSection('ABOUT')}
-						className={'navItemDark'}>
+						className={'navItem' + appTheme}>
 						ABOUT
 					</h4>
 					<AppTheme />

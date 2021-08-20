@@ -35,7 +35,7 @@ export default function ProjectItem({
 	}
 	return (
 		<React.Fragment>
-			<div className='imgWrapDark col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+			<div className='imgWrapDARK col-xs-12 col-sm-6 col-md-4 col-lg-4'>
 				<MDBAnimation type='zoomIn'>
 					<img src={require('./../img/thumb/' + thumb[getRandomInt(2)])} alt={name} />
 				</MDBAnimation>

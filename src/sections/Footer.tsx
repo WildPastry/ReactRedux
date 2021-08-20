@@ -2,6 +2,8 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/reducers/rootReducer';
 import {
 	faGithub,
 	faLinkedinIn,
@@ -13,6 +15,11 @@ import {
 
 // Footer
 const Footer: React.FC = () => {
+	// useSelector for app theme
+	const appTheme = useSelector((state: RootState) => {
+		return state.setTheme.appTheme;
+	});
+
 	return (
 		<React.Fragment>
 			<div className='footer'>
@@ -23,42 +30,45 @@ const Footer: React.FC = () => {
 							href='https://www.linkedin.com/in/mike-parker-aa084310a'
 							target='_blank'
 							rel='noopener noreferrer'>
-							<FontAwesomeIcon icon={faLinkedinIn} className={'faIconDark'} />
+							<FontAwesomeIcon icon={faLinkedinIn} className={'faIcon' + appTheme} />
 						</a>
 						<a
 							href='https://github.com/WildPastry'
 							target='_blank'
 							rel='noopener noreferrer'>
-							<FontAwesomeIcon icon={faGithub} className={'faIconDark'} />
+							<FontAwesomeIcon icon={faGithub} className={'faIcon' + appTheme} />
 						</a>
 						<a
 							href='https://www.facebook.com/michael.parker.3532507'
 							target='_blank'
 							rel='noopener noreferrer'>
-							<FontAwesomeIcon icon={faFacebook} className={'faIconDark'} />
+							<FontAwesomeIcon icon={faFacebook} className={'faIcon' + appTheme} />
 						</a>
 						<a
 							href='https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F598356603%2F'
 							target='_blank'
 							rel='noopener noreferrer'>
-							<FontAwesomeIcon icon={faFacebookMessenger} className={'faIconDark'} />
+							<FontAwesomeIcon
+								icon={faFacebookMessenger}
+								className={'faIcon' + appTheme}
+							/>
 						</a>
 						<a
 							href='https://www.pinterest.co.uk/WildPastry/'
 							target='_blank'
 							rel='noopener noreferrer'>
-							<FontAwesomeIcon icon={faPinterest} className={'faIconDark'} />
+							<FontAwesomeIcon icon={faPinterest} className={'faIcon' + appTheme} />
 						</a>
 						<a
 							href='https://www.instagram.com/mikeparkernz/'
 							target='_blank'
 							rel='noopener noreferrer'>
-							<FontAwesomeIcon icon={faInstagram} className={'faIconDark'} />
+							<FontAwesomeIcon icon={faInstagram} className={'faIcon' + appTheme} />
 						</a>
 					</Col>
 					<Col sm={12} md={3} className='colWrap right responsiveText'>
-						<h4 className={'marBot textWhite'}>ARCHIVES</h4>
-						<ul className={'listDark'}>
+						<h4 className={'marBot text' + appTheme}>ARCHIVED SITES</h4>
+						<ul className={'list' + appTheme}>
 							<li>
 								<a
 									target='_blank'
@@ -86,8 +96,8 @@ const Footer: React.FC = () => {
 						</ul>
 					</Col>
 					<Col sm={12} md={3} className='colWrap right'>
-						<h4 className={'marBot textWhite'}>CONTACT</h4>
-						<ul className={'listDark'}>
+						<h4 className={'marBot text' + appTheme}>CONTACT</h4>
+						<ul className={'list' + appTheme}>
 							<li x-ms-format-detection='none'>
 								<span className='ms-2'>022 5025 485</span>
 							</li>
@@ -103,7 +113,7 @@ const Footer: React.FC = () => {
 					<div className='footerWrap'>
 						<div className='lineThinFooter' />
 						<div className='flex wrap responsiveFooterWrap'>
-							<p className={'footerCopyright textYellow text400 responsiveCopyRight'}>
+							<p className={'footerCopyright text400 responsiveCopyRight footerCopyright' + appTheme}>
 								&copy; mike parker{' '}
 								<span className='text300'>{new Date().getFullYear()}</span>
 							</p>

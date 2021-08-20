@@ -15,7 +15,7 @@ import Footer from './sections/Footer';
 import Error from './components/Error';
 import AppLoading from './components/AppLoading';
 import SetProjects from './components/SetProjects';
-import projectData from './data/projects.json';
+import projectData from './utilities/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
 import { MDBAnimation } from 'mdbreact';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -52,8 +52,13 @@ library.add(
 
 // App
 const App: React.FC = () => {
+		// useSelector for app theme
+		const appTheme = useSelector((state: RootState) => {
+			return state.setTheme.appTheme;
+		});
+
 	var htmlBody = document.getElementById('bg');
-	htmlBody.className = 'bgDark';
+	htmlBody.className = 'bg' + appTheme;
 
 	// const pageData = useSelector((state: RootState) => {
 	// 	return state.imageData;
@@ -69,6 +74,11 @@ const App: React.FC = () => {
 		// dispatch(setLoading(false));
 		return state.loadPage;
 	});
+
+		// sort data on page load (default to 9 for now - seems okay)
+		useEffect(() => {
+			window.scrollTo(0, 0);
+		}, []);
 
 	// showLoader
 	const showLoader = () => {

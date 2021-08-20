@@ -1,12 +1,19 @@
 // imports
 import React from 'react';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/reducers/rootReducer';
 import { Col, Row } from 'react-bootstrap';
-import { initSpace } from '../data/space';
+import { initSpace } from '../utilities/space';
 import { MDBAnimation } from 'mdbreact';
 
 // About
 const About: React.FC = () => {
+		// useSelector for app theme
+		const appTheme = useSelector((state: RootState) => {
+			return state.setTheme.appTheme;
+		});
+
 		// load effect
 		useEffect(() => {
 			initSpace();
@@ -17,19 +24,19 @@ const About: React.FC = () => {
 				<MDBAnimation type='fadeIn'>
 					<Row className='wrap'>
 						<div className='colWrap'>
-							<h1 className={'marBot textWhite'}>about me</h1>
+							<h1 className={'marBot text' + appTheme}>about me</h1>
 						</div>
 					</Row>
 					<Row>
 						<Col sm={12} md={6} lg={4} className='colWrap'>
-							<p className={'textWhite'}>
+							<p className={'text' + appTheme}>
 								JavaScript, TypeScript, and REACT front-end developer with a strong
 								background in design.
 								<br />
 								<br />
 								Currently developing software in Wellington for international government
 								agencies. Love the gym, tramping, swimming, DNB, animals and craft beer.
-								Constantly learning new techniques and improving my code.
+								Constantly learning new techniques and skills.
 								<br />
 								<br />
 							</p>
@@ -37,8 +44,8 @@ const About: React.FC = () => {
 								Call/Text <span className='textPeach ml-1'>022 5025 485</span>
 							</h3>
 							<div className='lineThinAbout' />
-							<h2 className={'marBot textWhite'}>clients</h2>
-							<ul className={'aboutListDark aboutListWrap'}>
+							<h2 className={'marBot text' + appTheme}>clients</h2>
+							<ul className={'aboutListWrap aboutList' + appTheme}>
 								<li>Wagamana</li>
 								<li>Tourism NZ</li>
 								<li>Wellington Botanic Garden</li>
@@ -54,7 +61,7 @@ const About: React.FC = () => {
 							</ul>
 						</Col>
 						<Col sm={12} md={6} lg={8} className='colWrap'>
-						<div id='space' className={'space textGreyBg'} />
+						<div id='space' className={'space textBg' + appTheme} />
 							{/* <div id='space' className={'space textWhiteBg'} ref={this.space} /> */}
 						</Col>
 					</Row>
