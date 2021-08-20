@@ -2,7 +2,7 @@
 import React from 'react';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { MDBAnimation } from 'mdbreact';
-import { SetSection } from '../features/types';
+import { SetSection } from '../types';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 

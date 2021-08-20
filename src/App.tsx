@@ -4,7 +4,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
-import { setLoading } from './features/slices/loadingSlice';
+import { setLoading } from './redux/slices/loadingSlice';
 import { useDispatch } from 'react-redux';
 import Nav from './sections/Nav';
 import Type from './sections/Type';
@@ -14,7 +14,7 @@ import About from './sections/About';
 import Footer from './sections/Footer';
 import Error from './components/Error';
 import AppLoading from './components/AppLoading';
-import SetProjects from './features/SetProjects';
+import SetProjects from './components/SetProjects';
 import projectData from './data/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
 import { MDBAnimation } from 'mdbreact';
@@ -62,6 +62,7 @@ const App: React.FC = () => {
 
 	const pageData = useSelector((state: RootState) => {
 		// console.log(state.loadPage);
+		console.log(state.setTheme);
 		// console.log(state.setProjects);
 		// console.log(state.filterProjects);
 		// dispatch(setLoading(false));
@@ -82,7 +83,7 @@ const App: React.FC = () => {
 	// const [showAbout, setShowAbout] = useState(false);
 	// const toggleAbout = () =>
 	// 	showAbout === false ? setShowAbout(true) : setShowAbout(false);
-	const [theme, setTheme] = useState('DARK');
+	// const [theme, setTheme] = useState('DARK');
 	// // toggle project page
 	// const [showProject, setShowProject] = useState(false);
 	// const toggleProject = () =>

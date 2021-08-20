@@ -22,6 +22,11 @@ export interface Loading {
 	isError: boolean;
 }
 
+export interface Theme {
+	theme: string;
+	imgTheme: string;
+}
+
 export enum ProjectFilter {
 	ShowAll = 'SHOW_ALL',
 	ShowCompleted = 'SHOW_COMPLETED',

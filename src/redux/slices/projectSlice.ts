@@ -1,8 +1,8 @@
 // imports
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, AppDispatch } from '../../redux';
+import { AppThunk, AppDispatch } from '..';
 import { setError } from './loadingSlice';
-import { Project } from '../types';
+import { Project } from '../../types';
 
 // set initialState
 const initialState: Project[] = [];

@@ -1,6 +1,6 @@
 import React from 'react';
-import { setProjectFilter } from './slices/filterSlice';
-import { ProjectFilter } from './types';
+import { setProjectFilter } from '../redux/slices/filterSlice';
+import { ProjectFilter } from '../types';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ProjectFilter } from '../types';
+import { ProjectFilter } from '../../types';
 
 const initialState = ProjectFilter.ShowAll;
 

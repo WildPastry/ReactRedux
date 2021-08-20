@@ -1,13 +1,12 @@
 // imports
 import React from 'react';
 import FilterButton from './FilterButton';
-import { ProjectFilter } from './types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Row } from 'react-bootstrap';
+import { ProjectFilter } from '../types';
+
 
 export default function ProjectFilters(): JSX.Element {
 	return (
-		<Row className='wrap'>
+		<React.Fragment>
 			{/* <FilterButton projectFilter={ProjectFilter.ShowAll} text={'All'} />
 			<FilterButton projectFilter={ProjectFilter.ShowActive} text={'Active'} />
 			<FilterButton projectFilter={ProjectFilter.ShowCompleted} text={'Completed'} /> */}
@@ -23,20 +22,6 @@ export default function ProjectFilters(): JSX.Element {
 				<h4 className='filterItemDark'>PHP</h4>
 				<h4 className='filterItemDark'>Graphic</h4>
 			</div>
-			<div className='galleryWrap flex pad'>
-			<h4 className={'textWhite text400'}>THEME</h4>
-				<img
-					className='galleryRGBIcon'
-					src={require('./../icon/rgb.svg')}
-					alt='RBG Icon'
-				/>
-				<div>
-					<FontAwesomeIcon
-						icon={['fas', 'fill-drip']}
-						className={'galleryFillIconDark'}
-					/>
-				</div>
-			</div>
-		</Row>
+		</React.Fragment>
 	);
 }

@@ -1,13 +1,18 @@
 import React from 'react';
-import SetProjects from '../features/SetProjects';
-import ProjectGallery from '../features/ProjectGallery';
-import ProjectFilters from '../features/ProjectFilters';
+import SetProjects from '../components/SetProjects';
+import ProjectGallery from '../components/ProjectGallery';
+import ProjectFilters from '../components/ProjectFilters';
+import AppTheme from '../components/AppTheme';
+import { Row } from 'react-bootstrap';
 
 // Gallery
 const Gallery: React.FC = () => {
 	return (
 		<React.Fragment>
+			<Row className='wrap'>
 			<ProjectFilters />
+			<AppTheme />
+		</Row>
 			<ProjectGallery />
 			<SetProjects />			
 		</React.Fragment>

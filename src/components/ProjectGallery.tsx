@@ -4,9 +4,9 @@ import { Row } from 'react-bootstrap';
 import ProjectItem from './ProjectItem';
 import { RootState } from '../redux/reducers/rootReducer';
 import { useSelector, useDispatch } from 'react-redux';
-import { filterProjects } from './slices/projectSlice';
-import { ProjectFilter } from './types';
-import { Project } from './types';
+import { filterProjects } from '../redux/slices/projectSlice';
+import { ProjectFilter } from '../types';
+import { Project } from '../types';
 
 // getfilteredProjects function
 const getfilteredProjects = (projects: Project[], filter: ProjectFilter) => {

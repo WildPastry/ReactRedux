@@ -3,7 +3,7 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setProjects } from './slices/projectSlice';
+import { setProjects } from '../redux/slices/projectSlice';
 import projectData from '../data/projects.json';
 
 // SetProjects
