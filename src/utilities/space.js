@@ -1,5 +1,5 @@
 // @ts-ignore
-export function initSpace() {
+export function initSpace(theme) {
   const TAU = 2 * Math.PI;
   const OFFSET = 0;
 
@@ -13,10 +13,8 @@ export function initSpace() {
 
   class FractalClock {
     constructor(settings) {
-      var spaceBg = document.getElementById('space');
-      spaceBg.innerHTML = '';
-      var canvasBg = spaceBg.className;
-      if (canvasBg === 'space textBgDARK') {
+      document.getElementById('space').innerHTML = '';
+      if (theme === 'DARK') {
         this.settings = {
           colour: {
             background: [41, 41, 41],
