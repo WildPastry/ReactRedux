@@ -82,7 +82,7 @@ const App: React.FC = () => {
 	// const [showAbout, setShowAbout] = useState(false);
 	// const toggleAbout = () =>
 	// 	showAbout === false ? setShowAbout(true) : setShowAbout(false);
-
+	const [theme, setTheme] = useState('DARK');
 	// // toggle project page
 	// const [showProject, setShowProject] = useState(false);
 	// const toggleProject = () =>

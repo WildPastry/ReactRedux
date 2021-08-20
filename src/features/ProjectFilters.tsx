@@ -1,17 +1,16 @@
+// imports
 import React from 'react';
 import FilterButton from './FilterButton';
 import { ProjectFilter } from './types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Row } from 'react-bootstrap';
-import { MDBAnimation } from 'mdbreact';
 
 export default function ProjectFilters(): JSX.Element {
 	return (
 		<Row className='wrap'>
-			<MDBAnimation type='fadeIn'>
-			<FilterButton projectFilter={ProjectFilter.ShowAll} text={'All'} />
+			{/* <FilterButton projectFilter={ProjectFilter.ShowAll} text={'All'} />
 			<FilterButton projectFilter={ProjectFilter.ShowActive} text={'Active'} />
-			<FilterButton projectFilter={ProjectFilter.ShowCompleted} text={'Completed'} />
+			<FilterButton projectFilter={ProjectFilter.ShowCompleted} text={'Completed'} /> */}
 			<div className='filterWrap flex pad'>
 				<h4 className='filterItemDark'>ALL</h4>
 				<h4 className='filterItemDark'>UI/UX</h4>
@@ -25,6 +24,7 @@ export default function ProjectFilters(): JSX.Element {
 				<h4 className='filterItemDark'>Graphic</h4>
 			</div>
 			<div className='galleryWrap flex pad'>
+			<h4 className={'textWhite text400'}>THEME</h4>
 				<img
 					className='galleryRGBIcon'
 					src={require('./../icon/rgb.svg')}
@@ -37,7 +37,6 @@ export default function ProjectFilters(): JSX.Element {
 					/>
 				</div>
 			</div>
-			</MDBAnimation>
 		</Row>
 	);
 }

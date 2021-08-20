@@ -1,3 +1,4 @@
+// imports
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import ProjectItem from './ProjectItem';
@@ -7,6 +8,7 @@ import { filterProjects } from './slices/projectSlice';
 import { ProjectFilter } from './types';
 import { Project } from './types';
 
+// getfilteredProjects function
 const getfilteredProjects = (projects: Project[], filter: ProjectFilter) => {
 	switch (filter) {
 		case ProjectFilter.ShowAll:
@@ -20,6 +22,7 @@ const getfilteredProjects = (projects: Project[], filter: ProjectFilter) => {
 	}
 };
 
+// ProjectList function
 export default function ProjectList() {
 	const dispatch = useDispatch();
 

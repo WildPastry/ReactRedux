@@ -1,6 +1,8 @@
+// imports
 import React from 'react';
 import { MDBAnimation } from 'mdbreact';
 
+// set up ProjectProps interface
 interface ProjectProps {
 	id: string;
 	name: string;
@@ -20,8 +22,8 @@ interface ProjectProps {
 	onClick: () => any;
 }
 
+// ProjectItem function
 export default function ProjectItem({
-	id,
 	name,
 	fields,
 	thumb,

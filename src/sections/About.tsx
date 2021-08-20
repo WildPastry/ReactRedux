@@ -15,7 +15,7 @@ const About: React.FC = () => {
 							<h1 className={'marBot textWhite'}>about me</h1>
 						</div>
 						<div className='galleryWrap pad flex'>
-							<h4 className={'textGrey text400'}>THEME</h4>
+							<h4 className={'textWhite text400'}>THEME</h4>
 							{/* <div onClick={this.props.changeTheme}> */}
 							<div>
 								<FontAwesomeIcon
