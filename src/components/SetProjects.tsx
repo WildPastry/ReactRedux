@@ -81,5 +81,5 @@ export default function SetProjects(): JSX.Element {
 	};
 
 	// buttons to show more or less projects
-	return <Row>{showMoreFewer ? renderFewer() : renderMore()}</Row>;
+	return <Row className='pad'>{showMoreFewer ? renderFewer() : renderMore()}</Row>;
 }

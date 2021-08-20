@@ -111,12 +111,18 @@ const Footer: React.FC = () => {
 				</Row>
 				<Row>
 					<div className='footerWrap'>
-						<div className='lineThinFooter' />
 						<div className='flex wrap responsiveFooterWrap'>
-							<p className={'footerCopyright text400 responsiveCopyRight footerCopyright' + appTheme}>
-								&copy; mike parker{' '}
-								<span className='text300'>{new Date().getFullYear()}</span>
-							</p>
+							<div>
+								<div className='lineThinFooter' />
+								<p
+									className={
+										'footerCopyright text400 responsiveCopyRight footerCopyright' +
+										appTheme
+									}>
+									&copy; mike parker{' '}
+									<span className='text300'>{new Date().getFullYear()}</span>
+								</p>
+							</div>
 						</div>
 					</div>
 				</Row>

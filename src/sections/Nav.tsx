@@ -12,6 +12,8 @@ const Nav: React.FC<SetSection> = (props) => {
 		return state.setTheme.appTheme;
 	});
 
+	console.log(props.handleSection)
+	
 	return (
 		<React.Fragment>
 			<div className='flex wrap pad navWrap'>

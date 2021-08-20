@@ -4,45 +4,45 @@
 
 // RESET
 * {
-  @include reset(0, 0, border-box, none, none);
-  font-family: $font;
+	@include reset(0, 0, border-box, none, none);
+	font-family: $font;
 }
 
 // BODY
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  color: $grey;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	color: $grey;
 }
 
 // BODY BGS
 .bgLIGHT {
-  background: $white;
+	background: $white;
 }
 
 .bgDARK {
-  background: $grey;
+	background: $grey;
 }
 
 // CODE
 code {
-  font-family: $font;
+	font-family: $font;
 }
 
 // TYPOGRAPHY
 p {
-  font-weight: $light;
-  line-height: 1.5em;
-  letter-spacing: 0.2px;
+	font-weight: $light;
+	line-height: 1.5em;
+	letter-spacing: 0.2px;
 }
 
 a {
-  letter-spacing: 0.4px;
+	letter-spacing: 0.4px;
 }
 
 h1,
@@ -56,140 +56,146 @@ svg,
 input,
 img,
 .brand {
-  @include transitions($speed, $speed, $speed, $speed);
+	@include transitions($speed, $speed, $speed, $speed);
 }
 
 h1,
 h2 {
-  font-weight: $bold;
-  letter-spacing: 0.8px;
+	font-weight: $bold;
+	letter-spacing: 0.8px;
 }
 
 h3,
 h4,
 h5 {
-  font-weight: $regular;
-  letter-spacing: 0.4px;
+	font-weight: $regular;
+	letter-spacing: 0.4px;
 }
 
 // SELECTION
 ::selection {
-  background: $black;
+	background: $black;
 }
 
 ::-moz-selection {
-  background: $black;
+	background: $black;
 }
 
 // SCROLL
 .scroll {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 // FLEX
 .flex {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .flexFooter {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 }
 
 // WRAP
 .wrap {
-  justify-content: space-between;
+	justify-content: space-between;
 }
 
 .wrapStart {
-  justify-content: flex-start;
+	justify-content: flex-start;
 }
 
 .wrapEnd {
-  justify-content: flex-end;
+	justify-content: flex-end;
 }
 
 // LINE
 .line {
-  border-bottom: 4px solid $lightGrey;
-  margin: 20px 5px;
+	border-bottom: 4px solid $lightGrey;
+	margin: 20px 5px;
 }
 
 .lineNoMar {
-  border-bottom: 4px solid $lightGrey;
-  margin-bottom: 10px;
-  margin: 10px 5px;
+	border-bottom: 4px solid $lightGrey;
+	margin-bottom: 10px;
+	margin: 10px 5px;
 }
 
 .lineThin {
-  border-bottom: 1px solid $lightGrey;
-  margin-bottom: 10px;
-  margin-top: 10px;
+	border-bottom: 1px solid $lightGrey;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .lineThinFooter {
-  border-bottom: 1px solid $lightGrey;
+	border-bottom: 1px solid $lightGrey;
 }
 
 .lineThinAbout {
-  border-bottom: 1px solid $lightGrey;
-  margin: 15px 0 15px 0;
+	border-bottom: 1px solid $lightGrey;
+	margin: 15px 0 15px 0;
 }
 
 // PAD
 .pad {
-  padding: 5px;
+	padding: 5px;
 }
 
 .padLeft {
-  padding-left: 0;
+	padding-left: 0;
 }
 
 .padRight {
-  padding-right: 0;
+	padding-right: 0;
 }
 
 // MAR
 .mar {
-  margin: 15px auto;
+	margin: 15px auto;
 }
 
 .marTop {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .marBot {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .marLeft {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 
 .marBotProject {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .marBotFooter {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 // ALIGN
 .center {
-  text-align: center;
+	text-align: center;
 }
 
 .left {
-  text-align: left;
+	text-align: left;
 }
 
 .right {
-  text-align: right;
+	text-align: right;
+}
+
+// BOOTSTRAP
+.row {
+	--bs-gutter-x: 0;
+	--bs-gutter-y: 0;
 }

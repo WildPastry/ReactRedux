@@ -52,19 +52,19 @@ library.add(
 
 // App
 const App: React.FC = () => {
-		// useSelector for app theme
-		const appTheme = useSelector((state: RootState) => {
-			return state.setTheme.appTheme;
-		});
+	// useSelector for app theme
+	const appTheme = useSelector((state: RootState) => {
+		return state.setTheme.appTheme;
+	});
 
-	var htmlBody = document.getElementById('bg');
-	htmlBody.className = 'bg' + appTheme;
+	// add background to body
+	document.getElementById('bg').className = 'bg' + appTheme;
 
 	// const pageData = useSelector((state: RootState) => {
 	// 	return state.imageData;
 	// });
 	// dispatch
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
 	const pageData = useSelector((state: RootState) => {
 		// console.log(state.loadPage);
@@ -75,10 +75,10 @@ const App: React.FC = () => {
 		return state.loadPage;
 	});
 
-		// sort data on page load (default to 9 for now - seems okay)
-		useEffect(() => {
-			window.scrollTo(0, 0);
-		}, []);
+	// sort data on page load (default to 9 for now - seems okay)
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	// showLoader
 	const showLoader = () => {
@@ -99,6 +99,7 @@ const App: React.FC = () => {
 	// const [showProject, setShowProject] = useState(false);
 	// const toggleProject = () =>
 	// 	showProject === false ? setShowProject(true) : setShowProject(false);
+	// useState([{ section: 'GALLERY', active: 'GALLERY'}]);
 
 	// Declare multiple state variables!
 	const [section, setSection] = useState('GALLERY');

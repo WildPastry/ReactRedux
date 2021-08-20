@@ -11,6 +11,7 @@ export default function AppTheme(): JSX.Element {
 	// dispatch
 	const dispatch = useDispatch();
 
+	// trigger the toggle of dark/light mode
 	const [toggle, setToggle] = useState(false);
 
 	const triggerToggle = () => {
@@ -45,7 +46,7 @@ export default function AppTheme(): JSX.Element {
 			<FontAwesomeIcon
 				onClick={() => handleImgTheme()}
 				icon={['fas', 'image']}
-				className={'imgThemeIcon' + appTheme}
+				className={'imgThemeIcon' + ImgTheme}
 			/>
 			<div
 				onClick={triggerToggle}

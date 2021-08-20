@@ -1,5 +1,7 @@
 // imports
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/reducers/rootReducer';
 import { MDBAnimation } from 'mdbreact';
 
 // set up ProjectProps interface
@@ -29,13 +31,21 @@ export default function ProjectItem({
 	thumb,
 	filtered,
 	onClick
-}: ProjectProps) {
+}: ProjectProps): JSX.Element {
+	// useSelectors for app and img themes
+	const appTheme = useSelector((state: RootState) => {
+		return state.setTheme.appTheme;
+	});
+	const ImgTheme = useSelector((state: RootState) => {
+		return state.setTheme.imgTheme;
+	});
+	// display random thumbnail
 	function getRandomInt(max: number) {
 		return Math.floor(Math.random() * max);
 	}
 	return (
 		<React.Fragment>
-			<div className='imgWrapDARK col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+			<div className={'col-xs-12 col-sm-6 col-md-4 col-lg-4 imgWrap' + ImgTheme}>
 				<MDBAnimation type='zoomIn'>
 					<img src={require('./../img/thumb/' + thumb[getRandomInt(2)])} alt={name} />
 				</MDBAnimation>
@@ -45,7 +55,7 @@ export default function ProjectItem({
 						style={{
 							textDecoration: filtered ? 'line-through' : 'none'
 						}}
-						className={'textWhite text700'}>
+						className={'text700 text' + appTheme}>
 						{name}
 					</p>
 					<p className={'textSpotGrey text400'}>
