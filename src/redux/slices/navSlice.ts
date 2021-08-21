@@ -15,7 +15,7 @@ const navSlice = createSlice({
 		setNav(state, action: PayloadAction<string>) {
 			state.currentSection = action.payload;			
 		},
-		setProject(state, action: PayloadAction<string>) {
+		setProject(state, action: PayloadAction<number>) {
 			state.currentProject = action.payload;			
 		}
 	}

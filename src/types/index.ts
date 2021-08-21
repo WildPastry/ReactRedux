@@ -1,6 +1,6 @@
 // export types
 export interface Project {
-	id: string;
+	id: number;
 	name: string;
 	fields: any[];
 	client: string;
@@ -29,7 +29,7 @@ export interface Theme {
 
 export interface Navigation {
 	currentSection: string;
-	currentProject: string;
+	currentProject: number;
 }
 
 

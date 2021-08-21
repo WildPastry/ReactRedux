@@ -37,10 +37,10 @@ library.add(
 
 // App
 const App: React.FC = () => {
-		// scroll to top on page load
-		useEffect(() => {
-			window.scrollTo(0, 0);
-		}, []);
+	// scroll to top on page load
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	// useSelectors for page data / app theme / navigation
 	const pageData = useSelector((state: RootState) => {
@@ -52,6 +52,7 @@ const App: React.FC = () => {
 	});
 
 	const currentSection = useSelector((state: RootState) => {
+		console.log(state);
 		return state.setNav.currentSection;
 	});
 

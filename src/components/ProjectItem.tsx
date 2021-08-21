@@ -7,7 +7,7 @@ import { MDBAnimation } from 'mdbreact';
 
 // set up ProjectProps interface
 interface ProjectProps {
-	id: string;
+	id: number;
 	name: string;
 	fields: any[];
 	client: string;
@@ -46,22 +46,23 @@ export default function ProjectItem({
 	const dispatch = useDispatch();
 
 	// handle function for navigation
-	const handleNav = (section: string, id: string) => {
+	const handleNav = (section: string, id: number) => {
 		console.log(section, id);
 		dispatch(setProject(id));
 		dispatch(setNav(section));
+		window.scrollTo(0, 0);
 	};
 
 	// display random thumbnail
-	function getRandomInt(max: number) {
-		return Math.floor(Math.random() * max);
-	}
+	// function getRandomInt(max: number) {
+	// 	return Math.floor(Math.random() * max);
+	// }
 	return (
 		<React.Fragment>
 			<div className={'col-xs-12 col-sm-6 col-md-4 col-lg-4 imgWrap' + ImgTheme}>
 				<MDBAnimation type='zoomIn'>
 					<img
-						src={require('./../img/thumb/' + thumb[getRandomInt(2)])}
+						src={require('./../img/thumb/' + thumb[0])}
 						alt={name}
 						onClick={() => handleNav('PROJECT', id)}
 					/>
