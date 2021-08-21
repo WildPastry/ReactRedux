@@ -1,9 +1,9 @@
 // imports
 import React from 'react';
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { Container, Col, Row } from 'react-bootstrap';
+import { MDBAnimation } from 'mdbreact';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faChevronLeft, faChevronRight, faTh } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,46 +18,92 @@ const Project: React.FC = () => {
 		return state.setProjects;
 	});
 
-	const currentProjectID = useSelector((state: RootState) => {
+	const currentProject = useSelector((state: RootState) => {
 		return state.setNav.currentProject;
 	});
 
-	// check data
-	useEffect(() => {
-		// console.log(allProjects, currentProjectID);
-		var currentProject = allProjects.find(x => x.id === currentProjectID);
-		console.log(currentProject)
-	}, []);
-
-	// const [showCurrentProject, setShowCurrentProject] = useState(currentProject);
+	// store current project
+	let proj = allProjects.find(x => x.id === currentProject);
 
 	return (
 		<React.Fragment>
-				<Container fluid className='responsiveMar'>
-					<Row className='wrap marBotProject'>
+			<MDBAnimation type='fadeIn'>
+				{/* <Container fluid className='responsiveMar'> */}
+					<Row className='wrap responsiveMar marBotProject'>
 						<Col sm={12} className='colWrap'>
-							<h1 className={'marBot text' + appTheme}>PROJECT #</h1>
+							<h1 className={'marBot text' + appTheme}>{proj.name}</h1>
 						</Col>
-						<Col sm={12} lg={7} className='colWrap'></Col>
-						<Col sm={12} lg={5} className='colWrap right'></Col>
+						<Col sm={12} lg={7} className='colWrap'>
+						<h2 className={'text300 textSpot' + appTheme}>{proj.intro}</h2>
+						<br />
+						<p className={'text' + appTheme}>{proj.desc}</p>
+						</Col>
+						<Col sm={12} lg={5} className='colWrap right'>
+
+						<ul>
+									<li className='projectListItem'>
+										<span className={'text700 text' + appTheme}>
+											{proj.fields[0]}
+											<span className='textLightGrey text700'> / </span>
+											{proj.fields[1]}
+											<span className='textLightGrey text700'> / </span>
+											{proj.fields[2]}
+										</span>
+									</li>
+									<li className='projectListItem'>
+										<span className={'text700 text' + appTheme}>
+											{proj.client}
+										</span>
+									</li>
+									<li className='projectListItem'>
+										<span className={'text700 text' + appTheme}>
+											{proj.timeline}
+										</span>
+									</li>
+									<li className='projectListItem marTop projectListItemVisible'>
+										<span className={'text700 text' + appTheme}>
+											<a
+												target='_blank'
+												rel='noopener noreferrer'
+												className={'textPeach projectsLink'}
+												href={proj.url}>
+												{proj.website}
+											</a>
+										</span>
+									</li>
+									<li className='projectListItem projectListItemVisible'>
+										<span className={'text700 text' + appTheme}>
+											<a
+												target='_blank'
+												rel='noopener noreferrer'
+												className={'textPeach projectsLink'}
+												href={proj.gitUrl}>
+												{proj.git}
+											</a>
+										</span>
+									</li>
+								</ul>
+
+
+
+						</Col>
 						<Col sm={12} className='colWrap'>
 							<div className='lineThin mar' />
 						</Col>
-						<Col sm={12} className='colWrap flex wrap'></Col>
+						<Col sm={12} className='colWrap flex wrap'>...</Col>
 					</Row>
-				</Container>
-
-				<Container fluid></Container>
-				<Container fluid>
+				{/* </Container>
+				<Container fluid> */}
 					<Row>
 						<Col sm={12} className='moreProjectsWrap'>
 							<h3 className='center marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
-						<Col xs={12} sm={4} className='imgWrapDark'></Col>
-						<Col xs={12} sm={4} className='imgWrapDark'></Col>
-						<Col xs={12} sm={4} className='imgWrapDark'></Col>
+						<Col xs={12} sm={4} className='imgWrapDark'>...</Col>
+						<Col xs={12} sm={4} className='imgWrapDark'>...</Col>
+						<Col xs={12} sm={4} className='imgWrapDark'>...</Col>
 					</Row>
-				</Container>
+				{/* </Container> */}
+		</MDBAnimation>
 		</React.Fragment>
 	);
 };
@@ -360,7 +406,7 @@ export default Project;
 // 							<Col sm={12} lg={5} className='colWrap right'>
 // 								<ul>
 // 									<li className='projectListItem'>
-// 										<span className={this.props.projectDetails}>
+// 										<span className={'text700 text' + appTheme}>
 // 											{this.state.currentProjectFields[0]}
 // 											<span className='textLightGrey text700'> / </span>
 // 											{this.state.currentProjectFields[1]}
