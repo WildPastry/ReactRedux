@@ -1,36 +1,50 @@
 // imports
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
-import { SetSection } from '../types';
+import { setNav } from '../redux/slices/navSlice';
 import AppTheme from '../components/AppTheme';
 
 // Nav
-const Nav: React.FC<SetSection> = (props) => {
-	// useSelector for app theme
+const Nav: React.FC = () => {
+	// useSelectors for app theme and navigation
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
 	});
 
-	console.log(props.handleSection)
+	// const currentSection = useSelector((state: RootState) => {
+	// 	return state.setNav.currentSection;
+	// });
+
+		// dispatch
+		const dispatch = useDispatch();
+
+	// console.log(props.handleNav)
 	
+		// handle function for app theme
+		const handleNav = (section: string) => {
+			// let currentTheme: string;
+			// currentSection === 'DARK' ? (currentTheme = 'LIGHT') : (currentTheme = 'DARK');
+			dispatch(setNav(section));
+		};
+
 	return (
 		<React.Fragment>
 			<div className='flex wrap pad navWrap'>
-				<p className={'brand' + appTheme} onClick={() => props.handleSection('GALLERY')}>
+				<p className={'brand' + appTheme} onClick={() => handleNav('GALLERY')}>
 					mike parker <span className='text300'> portfolio </span>
 				</p>
 				{/* {burgerMenu} */}
 				<div className='menu flex navWrap'>
 					<h4
 						id='navGallery'
-						onClick={() => props.handleSection('GALLERY')}
+						onClick={() => handleNav('GALLERY')}
 						className={'navItem' + appTheme + ' navItemActive' + appTheme}>
 						GALLERY
 					</h4>
 					<h4
 						id='navAbout'
-						onClick={() => props.handleSection('ABOUT')}
+						onClick={() => handleNav('ABOUT')}
 						className={'navItem' + appTheme}>
 						ABOUT
 					</h4>

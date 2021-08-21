@@ -4,7 +4,7 @@ import { Row } from 'react-bootstrap';
 import ProjectItem from './ProjectItem';
 import { RootState } from '../redux/reducers/rootReducer';
 import { useSelector, useDispatch } from 'react-redux';
-import { filterProjects } from '../redux/slices/projectSlice';
+import { setFilters } from '../redux/slices/projectSlice';
 import { ProjectFilter } from '../types';
 import { Project } from '../types';
 
@@ -27,7 +27,7 @@ export default function ProjectList() {
 	const dispatch = useDispatch();
 
 	const projects = useSelector((state: RootState) =>
-		getfilteredProjects(state.setProjects, state.filterProjects)
+		getfilteredProjects(state.setProjects, state.setFilters)
 	);
 
 	return (
@@ -36,7 +36,7 @@ export default function ProjectList() {
 				<ProjectItem
 					key={project.id}
 					{...project}
-					onClick={() => dispatch(filterProjects(project))}
+					onClick={() => dispatch(setFilters(project))}
 				/>
 			))}
 		</Row>

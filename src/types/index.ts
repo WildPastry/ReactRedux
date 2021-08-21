@@ -27,6 +27,11 @@ export interface Theme {
 	imgTheme: string;
 }
 
+export interface Navigation {
+	currentSection: string;
+}
+
+
 export enum ProjectFilter {
 	ShowAll = 'SHOW_ALL',
 	ShowCompleted = 'SHOW_COMPLETED',

@@ -1,7 +1,7 @@
 // imports
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk, AppDispatch } from '..';
-import { setError } from './loadingSlice';
+import { setError } from './loadSlice';
 import { Project } from '../../types';
 
 // set initialState
@@ -17,7 +17,7 @@ const projectSlice = createSlice({
 		setProjects(state, action: PayloadAction<Project[]>) {
 			action.payload.forEach((proj: any) => state.push(proj));
 		},
-		filterProjects(state, action: PayloadAction<Project>) {
+		setFilters(state, action: PayloadAction<Project>) {
 			let project = state.find((project) => project.id === action.payload.id);
 			if (project) {
 				project.filtered = !project.filtered;
@@ -27,7 +27,7 @@ const projectSlice = createSlice({
 });
 
 // export filter actions from projectSlice
-export const { filterProjects } = projectSlice.actions;
+export const { setFilters } = projectSlice.actions;
 
 // setProjects function
 export const setProjects =

@@ -5,9 +5,9 @@ import { ProjectFilter } from '../../types';
 // set initialState
 const initialState = ProjectFilter.ShowAll;
 
-// create loadingSlice with the project filter action
-const projectFilterSlice = createSlice({
-	name: 'filterProjects',
+// create filterSlice with the project filter action
+const filterSlice = createSlice({
+	name: 'setFilters',
 	initialState,
 	reducers: {
 		setProjectFilter(_state, action: PayloadAction<ProjectFilter>) {
@@ -16,8 +16,8 @@ const projectFilterSlice = createSlice({
 	}
 });
 
-// export filter actions from projectFilterSlice
-export const { setProjectFilter } = projectFilterSlice.actions;
+// export filter actions from filterSlice
+export const { setProjectFilter } = filterSlice.actions;
 
 // export reducer
-export default projectFilterSlice.reducer;
+export default filterSlice.reducer;

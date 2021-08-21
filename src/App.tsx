@@ -37,9 +37,13 @@ library.add(
 
 // App
 const App: React.FC = () => {
-	// useSelector for app theme
+	// useSelectors for app theme and navigation
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
+	});
+
+	const currentSection = useSelector((state: RootState) => {
+		return state.setNav.currentSection;
 	});
 
 	// add background to body
@@ -53,7 +57,7 @@ const App: React.FC = () => {
 
 	const pageData = useSelector((state: RootState) => {
 		// console.log(state.loadPage);
-		console.log(state.setTheme);
+		console.log(state.setNav);
 		// console.log(state.setProjects);
 		// console.log(state.filterProjects);
 		// dispatch(setLoading(false));
@@ -86,22 +90,22 @@ const App: React.FC = () => {
 	// 	showProject === false ? setShowProject(true) : setShowProject(false);
 	// useState([{ section: 'GALLERY', active: 'GALLERY'}]);
 
-	const [section, setSection] = useState('GALLERY');
+	// const [section, setSection] = useState('GALLERY');
 	// const [project, setProject] = useState('PROJECT');
 	// const [about, setAbout] = useState('ABOUT');
-	const handleSection = (section: string) => {
-		console.log(section);
-		setSection(section);
-	};
+	// const handleSection = (section: string) => {
+	// 	console.log(section);
+	// 	setSection(section);
+	// };
 
 	// logic for rendering sections
 	let renderSection: JSX.Element;
 
-	if (section === 'GALLERY') {
+	if (currentSection === 'GALLERY') {
 		renderSection = <Gallery />;
-	} else if (section === 'PROJECT') {
+	} else if (currentSection === 'PROJECT') {
 		renderSection = <Project />;
-	} else if (section === 'ABOUT') {
+	} else if (currentSection === 'ABOUT') {
 		renderSection = <About />;
 	}
 
@@ -115,7 +119,7 @@ const App: React.FC = () => {
 		) : (
 			<React.Fragment>
 				<Container fluid>
-					<Nav handleSection={handleSection} />
+					<Nav />
 					{/* <Type /> */}
 					<MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
 				</Container>
