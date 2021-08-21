@@ -1,7 +1,8 @@
 // imports
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
+import { setNav, setProject } from '../redux/slices/navSlice';
 import { MDBAnimation } from 'mdbreact';
 
 // set up ProjectProps interface
@@ -26,6 +27,7 @@ interface ProjectProps {
 
 // ProjectItem function
 export default function ProjectItem({
+	id,
 	name,
 	fields,
 	thumb,
@@ -39,6 +41,17 @@ export default function ProjectItem({
 	const ImgTheme = useSelector((state: RootState) => {
 		return state.setTheme.imgTheme;
 	});
+
+	// dispatch
+	const dispatch = useDispatch();
+
+	// handle function for navigation
+	const handleNav = (section: string, id: string) => {
+		console.log(section, id);
+		dispatch(setProject(id));
+		dispatch(setNav(section));
+	};
+
 	// display random thumbnail
 	function getRandomInt(max: number) {
 		return Math.floor(Math.random() * max);
@@ -47,7 +60,11 @@ export default function ProjectItem({
 		<React.Fragment>
 			<div className={'col-xs-12 col-sm-6 col-md-4 col-lg-4 imgWrap' + ImgTheme}>
 				<MDBAnimation type='zoomIn'>
-					<img src={require('./../img/thumb/' + thumb[getRandomInt(2)])} alt={name} />
+					<img
+						src={require('./../img/thumb/' + thumb[getRandomInt(2)])}
+						alt={name}
+						onClick={() => handleNav('PROJECT', id)}
+					/>
 				</MDBAnimation>
 				<div className='descriptionWrap'>
 					<p

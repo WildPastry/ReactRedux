@@ -29,6 +29,7 @@ export interface Theme {
 
 export interface Navigation {
 	currentSection: string;
+	currentProject: string;
 }
 
 

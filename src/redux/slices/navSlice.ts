@@ -4,7 +4,8 @@ import { Navigation } from '../../types';
 
 // set initialState
 const initialState = {
-	currentSection: 'GALLERY'
+	currentSection: 'GALLERY',
+	currentProject: null
 } as Navigation;
 
 const navSlice = createSlice({
@@ -12,13 +13,16 @@ const navSlice = createSlice({
 	initialState,
 	reducers: {
 		setNav(state, action: PayloadAction<string>) {
-			state.currentSection = action.payload;
+			state.currentSection = action.payload;			
+		},
+		setProject(state, action: PayloadAction<string>) {
+			state.currentProject = action.payload;			
 		}
 	}
 });
 
-// export theme actions from navSlice
-export const { setNav } = navSlice.actions;
+// export nav actions from navSlice
+export const { setNav, setProject } = navSlice.actions;
 
 // export reducer
 export default navSlice.reducer;

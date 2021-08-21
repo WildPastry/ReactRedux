@@ -8,13 +8,9 @@ import AppTheme from '../components/AppTheme';
 
 // Nav
 const Nav: React.FC = () => {
-	// useSelectors for app theme and navigation
+	// useSelector for app theme
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
-	});
-
-	const currentSection = useSelector((state: RootState) => {
-		return state.setNav.currentSection;
 	});
 
 	// dispatch

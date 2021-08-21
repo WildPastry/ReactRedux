@@ -37,7 +37,16 @@ library.add(
 
 // App
 const App: React.FC = () => {
-	// useSelectors for app theme and navigation
+		// scroll to top on page load
+		useEffect(() => {
+			window.scrollTo(0, 0);
+		}, []);
+
+	// useSelectors for page data / app theme / navigation
+	const pageData = useSelector((state: RootState) => {
+		return state.loadPage;
+	});
+
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
 	});
@@ -49,26 +58,6 @@ const App: React.FC = () => {
 	// add background to body
 	document.getElementById('bg').className = 'bg' + appTheme;
 
-	// const pageData = useSelector((state: RootState) => {
-	// 	return state.imageData;
-	// });
-	// dispatch
-	// const dispatch = useDispatch();
-
-	const pageData = useSelector((state: RootState) => {
-		// console.log(state.loadPage);
-		console.log(state.setNav);
-		// console.log(state.setProjects);
-		// console.log(state.filterProjects);
-		// dispatch(setLoading(false));
-		return state.loadPage;
-	});
-
-	// scroll to top on page load
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-
 	// showLoader
 	const showLoader = () => {
 		return <AppLoading />;
@@ -78,25 +67,6 @@ const App: React.FC = () => {
 	const errorContainer = () => {
 		return <Error />;
 	};
-
-	// // toggle about page
-	// const [showAbout, setShowAbout] = useState(false);
-	// const toggleAbout = () =>
-	// 	showAbout === false ? setShowAbout(true) : setShowAbout(false);
-	// const [theme, setTheme] = useState('DARK');
-	// // toggle project page
-	// const [showProject, setShowProject] = useState(false);
-	// const toggleProject = () =>
-	// 	showProject === false ? setShowProject(true) : setShowProject(false);
-	// useState([{ section: 'GALLERY', active: 'GALLERY'}]);
-
-	// const [section, setSection] = useState('GALLERY');
-	// const [project, setProject] = useState('PROJECT');
-	// const [about, setAbout] = useState('ABOUT');
-	// const handleSection = (section: string) => {
-	// 	console.log(section);
-	// 	setSection(section);
-	// };
 
 	// logic for rendering sections
 	let renderSection: JSX.Element;
@@ -111,7 +81,6 @@ const App: React.FC = () => {
 
 	// renderApp
 	const renderApp = (pageData: any) => {
-		console.log(pageData);
 		// show error container if there is one
 		// otherwise display the app
 		return pageData.isError ? (

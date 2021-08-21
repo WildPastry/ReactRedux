@@ -34,7 +34,6 @@ export const setProjects =
 	(projects: any[]): AppThunk =>
 	async (dispatch: AppDispatch) => {
 		try {
-			console.log(projects, projects.length);
 			// reset projects first
 			dispatch(projectSlice.actions.resetProjects());
 			// map each project
