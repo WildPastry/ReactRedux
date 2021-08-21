@@ -67,11 +67,11 @@ const About: React.FC = () => {
 						</ul>
 					</Col>
 					<Col sm={12} md={6} lg={8} className='colWrap'>
-						<div
+						{/* <div
 							id='space'
 							className={'space textBg' + appTheme}
 							ref={spaceRef as React.RefObject<HTMLDivElement>}
-						/>
+						/> */}
 					</Col>
 				</Row>
 			</MDBAnimation>

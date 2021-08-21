@@ -2,17 +2,14 @@ import React from 'react';
 import SetProjects from '../components/SetProjects';
 import ProjectGallery from '../components/ProjectGallery';
 import ProjectFilters from '../components/ProjectFilters';
-import { Row } from 'react-bootstrap';
 
 // Gallery
 const Gallery: React.FC = () => {
 	return (
 		<React.Fragment>
-			<Row className='wrap'>
-			<ProjectFilters />
-		</Row>
+				<ProjectFilters />
 			<ProjectGallery />
-			<SetProjects />			
+			<SetProjects />
 		</React.Fragment>
 	);
 };

@@ -2,7 +2,7 @@
 export interface Project {
 	id: string;
 	name: string;
-	fields: [{ src: string; id: string }];
+	fields: any[];
 	client: string;
 	timeline: string;
 	website: string;

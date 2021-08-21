@@ -1,11 +1,9 @@
-// import frameworks
-import { useRef, useEffect, useState } from 'react';
+// imports
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
-import { setLoading } from './redux/slices/loadingSlice';
-import { useDispatch } from 'react-redux';
 import Nav from './sections/Nav';
 import Type from './sections/Type';
 import Gallery from './sections/Gallery';
@@ -14,14 +12,11 @@ import About from './sections/About';
 import Footer from './sections/Footer';
 import Error from './components/Error';
 import AppLoading from './components/AppLoading';
-import SetProjects from './components/SetProjects';
-import projectData from './utilities/projects.json';
 import ScrollUpButton from 'react-scroll-up-button';
 import { MDBAnimation } from 'mdbreact';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
-	faFillDrip,
 	faEnvelope,
 	faChevronLeft,
 	faChevronRight,
@@ -39,16 +34,6 @@ library.add(
 	faTh,
 	faMapMarkerAlt
 );
-
-// VARIABLES AND TYPES
-// var randomNumber: any[] | number[] | (string | number)[];
-// var htmlBody = document.getElementById('bg');
-// htmlBody.className = 'bgDark';
-// var currentEverything: string;
-// var currentBranding: string;
-// var currentGraphic: string;
-// var currentUx: string;
-// var currentWeb: string;
 
 // App
 const App: React.FC = () => {
@@ -75,7 +60,7 @@ const App: React.FC = () => {
 		return state.loadPage;
 	});
 
-	// sort data on page load (default to 9 for now - seems okay)
+	// scroll to top on page load
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -101,7 +86,6 @@ const App: React.FC = () => {
 	// 	showProject === false ? setShowProject(true) : setShowProject(false);
 	// useState([{ section: 'GALLERY', active: 'GALLERY'}]);
 
-	// Declare multiple state variables!
 	const [section, setSection] = useState('GALLERY');
 	// const [project, setProject] = useState('PROJECT');
 	// const [about, setAbout] = useState('ABOUT');
@@ -110,12 +94,9 @@ const App: React.FC = () => {
 		setSection(section);
 	};
 
+	// logic for rendering sections
 	let renderSection: JSX.Element;
 
-	// section === 'GALLERY' ? currentSection = <Gallery /> :
-
-	// const renderSection = () => {
-	// function renderSection() {
 	if (section === 'GALLERY') {
 		renderSection = <Gallery />;
 	} else if (section === 'PROJECT') {
@@ -123,23 +104,6 @@ const App: React.FC = () => {
 	} else if (section === 'ABOUT') {
 		renderSection = <About />;
 	}
-	//  };
-
-	// 		if (currentPage === 'gallery') {
-	// 	display = (
-	// 	<div>gallery</div>
-	// 	);
-	// } else if (currentPage === 'project') {
-	// 	// PROJECT PAGE
-	// 	display = (
-	// 		<div>project</div>
-	// 	);
-	// } else if (currentPage === 'about') {
-	// 	display = (
-	// 		<div>about</div>
-	// 	);
-	// }
-	// console.log(section)
 
 	// renderApp
 	const renderApp = (pageData: any) => {
@@ -152,14 +116,9 @@ const App: React.FC = () => {
 			<React.Fragment>
 				<Container fluid>
 					<Nav handleSection={handleSection} />
+					{/* <Type /> */}
 					<MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
 				</Container>
-				{/* <button onClick={() => toggleProject()}>PROJECT</button> */}
-				{/* <Type /> */}
-				{/* <Gallery /> */}
-				{/* <SetProjects /> */}
-				{/* {showProject ? <Project /> : null}
-				{showAbout ? <About /> : null} */}
 				<Footer />
 				<ScrollUpButton
 					StopPosition={0}
@@ -788,7 +747,7 @@ export default App;
 // 				<React.Fragment>
 // 					<MDBAnimation type='fadeIn'>{projectDisplay}</MDBAnimation>
 // 				</React.Fragment>
-// 				<Footer
+// 				<Footerw
 // 					faIcon={this.state.faIcon}
 // 					faIconSm={this.state.faIconSm}
 // 					list={this.state.list}

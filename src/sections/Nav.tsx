@@ -21,7 +21,7 @@ const Nav: React.FC<SetSection> = (props) => {
 					mike parker <span className='text300'> portfolio </span>
 				</p>
 				{/* {burgerMenu} */}
-				<div className='menu flex'>
+				<div className='menu flex navWrap'>
 					<h4
 						id='navGallery'
 						onClick={() => props.handleSection('GALLERY')}

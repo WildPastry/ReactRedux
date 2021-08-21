@@ -1,5 +1,7 @@
+// imports
 import configData from './config.json';
-// @ts-ignore
+
+// export initType
 export function initType() {
   const delayValue = (configData as any).DELAY;
   const stepValue = (configData as any).STEP;
@@ -7,6 +9,7 @@ export function initType() {
   const timeValue = (configData as any).TIMEOUT;
 
   const typeDiv = document.getElementById('type');
+  typeDiv.innerHTML = '';
   const p = document.createElement('h1');
   typeDiv.appendChild(p);
 
@@ -15,6 +18,7 @@ export function initType() {
     'HTML & CSS',
     'TypeScript',
     'React',
+    'Redux',
     'SASS',
     'JavaScript',
     'React Native',

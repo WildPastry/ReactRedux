@@ -1,4 +1,4 @@
-// @ts-ignore
+// export initSpace
 export function initSpace(theme) {
   const TAU = 2 * Math.PI;
   const OFFSET = 0;

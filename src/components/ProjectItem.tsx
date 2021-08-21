@@ -8,7 +8,7 @@ import { MDBAnimation } from 'mdbreact';
 interface ProjectProps {
 	id: string;
 	name: string;
-	fields: [{ src: string; id: string }];
+	fields: any[];
 	client: string;
 	timeline: string;
 	website: string;
@@ -55,16 +55,15 @@ export default function ProjectItem({
 						style={{
 							textDecoration: filtered ? 'line-through' : 'none'
 						}}
-						className={'text700 text' + appTheme}>
+						className={'text700 textMed' + appTheme}>
 						{name}
 					</p>
-					<p className={'textSpotGrey text400'}>
-						{fields.map((field) => (
-							<span key={field.id} className='me-2'>
-								{field.src}
-								{/* <span className='textLightGrey text400'> / </span> */}
-							</span>
-						))}
+					<p className={'text400 textFlip' + appTheme}>
+						{fields[0]}
+						<span className='textLightGrey text400'> / </span>
+						{fields[1]}
+						<span className='textLightGrey text400'> / </span>
+						{fields[2]}
 					</p>
 				</div>
 			</div>

@@ -33,33 +33,6 @@
 	margin-right: 20px;
 }
 
-// IMG THEME ICON
-.imgThemeIconDARK {
-	cursor: pointer;
-	font-size: 20px;
-	color: $spotGrey;
-	margin-left: 15px;
-	margin-right: 15px;
-	height: auto;
-	padding-bottom: 3px;
-	&:hover {
-		color: $peach;
-	}
-}
-
-.imgThemeIconLIGHT {
-	cursor: pointer;
-	font-size: 20px;
-	color: $purple;
-	margin-left: 15px;
-	margin-right: 15px;
-	height: auto;
-	padding-bottom: 3px;
-	&:hover {
-		color: $peach;
-	}
-}
-
 // PROJECT
 .projectIcon {
 	font-size: 40px;
@@ -159,6 +132,31 @@
 	color: #00a0d2;
 }
 
+// IMG THEME ICON
+.imgThemeIconDARK {
+	cursor: pointer;
+	height: 25px;
+	margin-left: 13px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	&:hover {
+		-webkit-filter: grayscale(0%);
+		filter: grayscale(0%);
+	}
+}
+
+.imgThemeIconLIGHT {
+	cursor: pointer;
+	height: 25px;
+	margin-left: 13px;
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+	&:hover {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
+}
+
 // TOGGLE BUTTON
 .wrg-toggle {
 	touch-action: pan-x;
@@ -166,6 +164,7 @@
 	position: relative;
 	cursor: pointer;
 	background-color: transparent;
+	margin-left: 13px;
 	border: 0;
 	padding: 0;
 	-webkit-touch-callout: none;
@@ -196,7 +195,7 @@
 	width: 10px;
 	height: 10px;
 	top: 0;
-	bottom: 5px;
+	bottom: 0;
 	margin-top: auto;
 	margin-bottom: auto;
 	line-height: 0;
