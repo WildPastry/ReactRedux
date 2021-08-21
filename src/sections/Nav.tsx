@@ -1,5 +1,6 @@
 // imports
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { setNav } from '../redux/slices/navSlice';
@@ -12,21 +13,20 @@ const Nav: React.FC = () => {
 		return state.setTheme.appTheme;
 	});
 
-	// const currentSection = useSelector((state: RootState) => {
-	// 	return state.setNav.currentSection;
-	// });
+	const currentSection = useSelector((state: RootState) => {
+		return state.setNav.currentSection;
+	});
 
-		// dispatch
-		const dispatch = useDispatch();
+	// dispatch
+	const dispatch = useDispatch();
 
-	// console.log(props.handleNav)
-	
-		// handle function for app theme
-		const handleNav = (section: string) => {
-			// let currentTheme: string;
-			// currentSection === 'DARK' ? (currentTheme = 'LIGHT') : (currentTheme = 'DARK');
-			dispatch(setNav(section));
-		};
+	// handle function for navigation and active menu item
+	const [showActive, setShowActive] = useState('GALLERY');
+
+	const handleNav = (section: string) => {
+		setShowActive(section);
+		dispatch(setNav(section));
+	};
 
 	return (
 		<React.Fragment>
@@ -37,15 +37,21 @@ const Nav: React.FC = () => {
 				{/* {burgerMenu} */}
 				<div className='menu flex navWrap'>
 					<h4
-						id='navGallery'
 						onClick={() => handleNav('GALLERY')}
-						className={'navItem' + appTheme + ' navItemActive' + appTheme}>
+						className={`${
+							showActive === 'GALLERY'
+								? 'navItem' + appTheme + ' navItemActive' + appTheme
+								: 'navItem' + appTheme
+						}`}>
 						GALLERY
 					</h4>
 					<h4
-						id='navAbout'
 						onClick={() => handleNav('ABOUT')}
-						className={'navItem' + appTheme}>
+						className={`${
+							showActive === 'ABOUT'
+								? 'navItem' + appTheme + ' navItemActive' + appTheme
+								: 'navItem' + appTheme
+						}`}>
 						ABOUT
 					</h4>
 					<AppTheme />

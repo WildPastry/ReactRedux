@@ -1,6 +1,6 @@
 // imports
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
