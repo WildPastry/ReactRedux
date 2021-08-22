@@ -70,11 +70,12 @@ const App: React.FC = () => {
 
 	// logic for rendering sections
 	let renderSection: JSX.Element;
+	let renderProject: JSX.Element;
 
 	if (currentSection === 'GALLERY') {
 		renderSection = <Gallery />;
 	} else if (currentSection === 'PROJECT') {
-		renderSection = <Project />;
+		renderProject = <Project />;
 	} else if (currentSection === 'ABOUT') {
 		renderSection = <About />;
 	}
@@ -90,8 +91,11 @@ const App: React.FC = () => {
 				<Container fluid>
 					<Nav />
 					{/* <Type /> */}
-					<MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
+					<MDBAnimation type='fadeIn'>
+						{renderSection}
+					</MDBAnimation>
 				</Container>
+				{renderProject}
 				<Footer />
 				<ScrollUpButton
 					StopPosition={0}

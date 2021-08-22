@@ -1,12 +1,13 @@
 // imports
 import React from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { setNav, setProject } from '../redux/slices/navSlice';
 import { Container, Col, Row } from 'react-bootstrap';
 import { MDBAnimation } from 'mdbreact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faTh } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faRandom, faTh } from '@fortawesome/free-solid-svg-icons';
 
 // Project
 const Project: React.FC = () => {
@@ -29,17 +30,59 @@ const Project: React.FC = () => {
 	// handle functions for navigation
 	const handleNav = (section: string, id: number) => {
 		// logic for navigation at the end or start of the project array
-		if (id === 0) {id = allProjects.length} 
-		else if (id === (+allProjects.length + 1)) {id = 1}
+		if (id === 0) { id = allProjects.length }
+		else if (id === (+allProjects.length + 1)) { id = 1 }
 		// set current project using ID 
 		// then navigate to correct section and scroll to top
-		dispatch(setNav(section)); 
+		dispatch(setNav(section));
 		dispatch(setProject(id));
 		window.scrollTo(0, 0);
 	};
 
 	// store current project
 	let proj = allProjects.find(x => x.id === currentProject);
+
+	// // select random project functions
+	// const [showProjects, setShowProjects] = useState([]);
+
+	// // const randomProjects = () => {
+	// let selectRandom: React.SetStateAction<any[]> = [];
+	// while (selectRandom.length < 3) {
+	// 	var r = Math.floor(Math.random() * 12);
+	// 	if (selectRandom.indexOf(r) === -1 || r != 0) {
+	// 		selectRandom.push(r);
+	// 	}
+	// }
+	// 	setShowProjects(selectRandom);
+
+	// }
+	// const selectRandom = () => {
+	// 	var randomNum = Math.floor(Math.random() * allProjects.length)
+	// 	return randomNum
+	// }
+	// const randomProjects = useCallback(		
+	// 	() => {
+	// 		console.log(allProjects)
+	// 		let random = [];
+	// 		while (random.length < 3) {
+	// 			var r = Math.floor(Math.random() * allProjects.length);
+	// 			if ((random.indexOf(r) === -1) || r != 0) {
+	// 				random.push(r);
+	// 			}
+	// 		}
+	// 		setShowProjects(random);
+	// 	},
+	// 	[]
+	// );
+
+	// run random project function on page load
+	// useEffect(() => {
+	// 	randomProjects();
+	// }, [randomProjects]);
+
+	// console.log(allProjects, showProjects);
+	// console.log(allProjects[showProjects[0]]);
+	// console.log(allProjects[1].id);
 
 	return (
 		<React.Fragment>
@@ -169,30 +212,33 @@ const Project: React.FC = () => {
 				{/* navigation controls */}
 				<Container fluid>
 					<Row>
-						<Col sm={12} className='moreProjectsWrap'>
+						{/* <Col sm={12} className='moreProjectsWrap'>
 							<h3 className='center marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
 							<img
+								onClick={() => handleNav('PROJECT', allProjects[selectRandom[0]].id)}
 								src={require('./../img/thumb/' +
-									allProjects[0].thumb[1])}
+									allProjects[selectRandom[0]].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
 							<img
+								onClick={() => handleNav('PROJECT', allProjects[selectRandom()].id)}
 								src={require('./../img/thumb/' +
-									allProjects[1].thumb[1])}
+									allProjects[selectRandom()].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
 							<img
+								onClick={() => handleNav('PROJECT', allProjects[selectRandom()].id)}
 								src={require('./../img/thumb/' +
-									allProjects[2].thumb[1])}
+									allProjects[selectRandom()].thumb[1])}
 								alt='Gallery'
 							/>
-						</Col>
+						</Col> */}
 					</Row>
 				</Container>
 			</MDBAnimation>
