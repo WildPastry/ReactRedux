@@ -7,7 +7,7 @@ import { setNav, setProject } from '../redux/slices/navSlice';
 import { Container, Col, Row } from 'react-bootstrap';
 import { MDBAnimation } from 'mdbreact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faRandom, faTh } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faTh } from '@fortawesome/free-solid-svg-icons';
 
 // Project
 const Project: React.FC = () => {
@@ -30,59 +30,40 @@ const Project: React.FC = () => {
 	// handle functions for navigation
 	const handleNav = (section: string, id: number) => {
 		// logic for navigation at the end or start of the project array
-		if (id === 0) { id = allProjects.length }
-		else if (id === (+allProjects.length + 1)) { id = 1 }
-		// set current project using ID 
+		if (id === 0) {
+			id = allProjects.length;
+		} else if (id === +allProjects.length + 1) {
+			id = 1;
+		}
+		// set current project using ID
 		// then navigate to correct section and scroll to top
 		dispatch(setNav(section));
 		dispatch(setProject(id));
+		randomProjects();
 		window.scrollTo(0, 0);
 	};
 
 	// store current project
-	let proj = allProjects.find(x => x.id === currentProject);
+	let proj = allProjects.find((x) => x.id === currentProject);
 
-	// // select random project functions
-	// const [showProjects, setShowProjects] = useState([]);
+	// select random project functions
+	const [showProjects, setShowProjects] = useState([1, 2, 3]);
 
-	// // const randomProjects = () => {
-	// let selectRandom: React.SetStateAction<any[]> = [];
-	// while (selectRandom.length < 3) {
-	// 	var r = Math.floor(Math.random() * 12);
-	// 	if (selectRandom.indexOf(r) === -1 || r != 0) {
-	// 		selectRandom.push(r);
-	// 	}
-	// }
-	// 	setShowProjects(selectRandom);
-
-	// }
-	// const selectRandom = () => {
-	// 	var randomNum = Math.floor(Math.random() * allProjects.length)
-	// 	return randomNum
-	// }
-	// const randomProjects = useCallback(		
-	// 	() => {
-	// 		console.log(allProjects)
-	// 		let random = [];
-	// 		while (random.length < 3) {
-	// 			var r = Math.floor(Math.random() * allProjects.length);
-	// 			if ((random.indexOf(r) === -1) || r != 0) {
-	// 				random.push(r);
-	// 			}
-	// 		}
-	// 		setShowProjects(random);
-	// 	},
-	// 	[]
-	// );
+	const randomProjects = useCallback(() => {
+		let random = [];
+		while (random.length < 3) {
+			var r = Math.floor(Math.random() * allProjects.length);
+			if (random.indexOf(r) === -1 || r != 0) {
+				random.push(r);
+			}
+		}
+		setShowProjects(random);
+	}, []);
 
 	// run random project function on page load
-	// useEffect(() => {
-	// 	randomProjects();
-	// }, [randomProjects]);
-
-	// console.log(allProjects, showProjects);
-	// console.log(allProjects[showProjects[0]]);
-	// console.log(allProjects[1].id);
+	useEffect(() => {
+		randomProjects();
+	}, [randomProjects]);
 
 	return (
 		<React.Fragment>
@@ -109,14 +90,10 @@ const Project: React.FC = () => {
 									</span>
 								</li>
 								<li className='projectListItem'>
-									<span className={'text700 text' + appTheme}>
-										{proj.client}
-									</span>
+									<span className={'text700 text' + appTheme}>{proj.client}</span>
 								</li>
 								<li className='projectListItem'>
-									<span className={'text700 text' + appTheme}>
-										{proj.timeline}
-									</span>
+									<span className={'text700 text' + appTheme}>{proj.timeline}</span>
 								</li>
 								<li className='projectListItem marTop projectListItemVisible'>
 									<span className={'text700 text' + appTheme}>
@@ -156,17 +133,15 @@ const Project: React.FC = () => {
 						</Col>
 						{/* navigation controls */}
 						<Col sm={12} className='colWrap flex wrap'>
-							<div className='iconWrap'
-								onClick={() => handleNav('PROJECT', (proj.id - 1))}>
+							<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id - 1)}>
 								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
+							</div>
+							<div className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
+								<FontAwesomeIcon icon={faTh} className='gridIcon' />
 							</div>
 							<div
 								className='iconWrap'
-								onClick={() => handleNav('GALLERY', proj.id)}>
-								<FontAwesomeIcon icon={faTh} className='gridIcon' />
-							</div>
-							<div className='iconWrap'
-								onClick={() => handleNav('PROJECT', (+proj.id + 1))}>
+								onClick={() => handleNav('PROJECT', +proj.id + 1)}>
 								<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 							</div>
 						</Col>
@@ -176,35 +151,29 @@ const Project: React.FC = () => {
 				<div className={'projectRow' + appTheme}>
 					<Container fluid>
 						<Row className='marBotProject'>
-							{proj.images.map(
-								(currentImage: { [x: string]: string }) => (
-									<Col sm={12} key={currentImage['id']} className='projectWrap'>
-										<MDBAnimation type='zoomIn'>
-											<img
-												src={require('./../img/project/' + currentImage['src'])}
-												alt={proj.name}
-											/>
-										</MDBAnimation>
-									</Col>
-								)
-							)}
+							{proj.images.map((currentImage: { [x: string]: string }) => (
+								<Col sm={12} key={currentImage['id']} className='projectWrap'>
+									<MDBAnimation type='zoomIn'>
+										<img
+											src={require('./../img/project/' + currentImage['src'])}
+											alt={proj.name}
+										/>
+									</MDBAnimation>
+								</Col>
+							))}
 						</Row>
 					</Container>
 				</div>
 				{/* navigation controls */}
 				<Container fluid>
 					<Col sm={12} className='colWrap flex wrap'>
-						<div className='iconWrap'
-							onClick={() => handleNav('PROJECT', proj.id)}>
+						<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
 							<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 						</div>
-						<div
-							className='iconWrap'
-							onClick={() => handleNav('GALLERY', proj.id)}>
+						<div className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
 							<FontAwesomeIcon icon={faTh} className='gridIcon' />
 						</div>
-						<div className='iconWrap'
-							onClick={() => handleNav('PROJECT', proj.id)}>
+						<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
 							<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 						</div>
 					</Col>
@@ -212,33 +181,30 @@ const Project: React.FC = () => {
 				{/* navigation controls */}
 				<Container fluid>
 					<Row>
-						{/* <Col sm={12} className='moreProjectsWrap'>
+						<Col sm={12} className='moreProjectsWrap'>
 							<h3 className='center marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
 							<img
-								onClick={() => handleNav('PROJECT', allProjects[selectRandom[0]].id)}
-								src={require('./../img/thumb/' +
-									allProjects[selectRandom[0]].thumb[1])}
+								onClick={() => handleNav('PROJECT', allProjects[showProjects[0]].id)}
+								src={require('./../img/thumb/' + allProjects[showProjects[0]].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
 							<img
-								onClick={() => handleNav('PROJECT', allProjects[selectRandom()].id)}
-								src={require('./../img/thumb/' +
-									allProjects[selectRandom()].thumb[1])}
+								onClick={() => handleNav('PROJECT', allProjects[showProjects[1]].id)}
+								src={require('./../img/thumb/' + allProjects[showProjects[1]].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
 							<img
-								onClick={() => handleNav('PROJECT', allProjects[selectRandom()].id)}
-								src={require('./../img/thumb/' +
-									allProjects[selectRandom()].thumb[1])}
+								onClick={() => handleNav('PROJECT', allProjects[showProjects[2]].id)}
+								src={require('./../img/thumb/' + allProjects[showProjects[2]].thumb[1])}
 								alt='Gallery'
 							/>
-						</Col> */}
+						</Col>
 					</Row>
 				</Container>
 			</MDBAnimation>
