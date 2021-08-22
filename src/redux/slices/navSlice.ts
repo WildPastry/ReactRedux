@@ -5,7 +5,7 @@ import { Navigation } from '../../types';
 // set initialState
 const initialState = {
 	currentSection: 'GALLERY',
-	currentProject: null
+	currentProject: 1
 } as Navigation;
 
 const navSlice = createSlice({

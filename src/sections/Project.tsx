@@ -28,11 +28,14 @@ const Project: React.FC = () => {
 
 	// handle functions for navigation
 	const handleNav = (section: string, id: number) => {
+
 		console.log(section, id);
-		// section === 'GALLERY' ? id = null : id = id;
-		// dispatch(setProject(id));
-		// dispatch(setNav(section));
-		// window.scrollTo(0, 0);
+
+		if (id === 0) {id = 9} else if (id === 10) {id = 1}
+
+		dispatch(setNav(section)); 
+		dispatch(setProject(id));
+		window.scrollTo(0, 0);
 	};
 
 	// store current project
@@ -41,153 +44,157 @@ const Project: React.FC = () => {
 	return (
 		<React.Fragment>
 			<MDBAnimation type='fadeIn'>
-			<Container fluid className='responsiveMar'>
-				<Row className='wrap responsiveMar marBotProject'>
-					<Col sm={12} className='colWrap'>
-						<h1 className={'marBot text' + appTheme}>{proj.name}</h1>
-					</Col>
-					<Col sm={12} lg={7} className='colWrap'>
-						<h2 className={'text300 textSpot' + appTheme}>{proj.intro}</h2>
-						<br />
-						<p className={'text' + appTheme}>{proj.desc}</p>
-					</Col>
-					<Col sm={12} lg={5} className='colWrap right'>
-						<ul>
-							<li className='projectListItem'>
-								<span className={'text700 text' + appTheme}>
-									{proj.fields[0]}
-									<span className='textLightGrey text700'> / </span>
-									{proj.fields[1]}
-									<span className='textLightGrey text700'> / </span>
-									{proj.fields[2]}
-								</span>
-							</li>
-							<li className='projectListItem'>
-								<span className={'text700 text' + appTheme}>
-									{proj.client}
-								</span>
-							</li>
-							<li className='projectListItem'>
-								<span className={'text700 text' + appTheme}>
-									{proj.timeline}
-								</span>
-							</li>
-							<li className='projectListItem marTop projectListItemVisible'>
-								<span className={'text700 text' + appTheme}>
-									<a
-										target='_blank'
-										rel='noopener noreferrer'
-										className={'textPeach projectsLink'}
-										href={proj.url}>
-										{proj.website}
-									</a>
-								</span>
-							</li>
-							<li className='projectListItem projectListItemVisible'>
-								<span className={'text700 text' + appTheme}>
-									<a
-										target='_blank'
-										rel='noopener noreferrer'
-										className={'textPeach projectsLink'}
-										href={proj.gitUrl}>
-										{proj.git}
-									</a>
-								</span>
-							</li>
-						</ul>
-						<div className='projectIconsWrap responsiveWrap'>
-							{proj.icons.map((currentIcon: any) => (
-								<FontAwesomeIcon
-									key={currentIcon['id']}
-									icon={['fab', currentIcon['src']]}
-									className='projectIcon'
-								/>
-							))}
-						</div>
-					</Col>
-					<Col sm={12} className='colWrap'>
-						<div className='lineThin mar' />
-					</Col>
-					<Col sm={12} className='colWrap flex wrap'>
-						<div className='iconWrap'
-							onClick={() => handleNav('PROJECT', 22)}>
-							<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
-						</div>
-						<div
-							className='iconWrap'
-							onClick={() => handleNav('GALLERY', proj.id)}>
-							<FontAwesomeIcon icon={faTh} className='gridIcon' />
-						</div>
-						<div className='iconWrap'
-							onClick={() => handleNav('PROJECT', 21)}>
-							<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
-						</div>
-					</Col>
-				</Row>
-				</Container>				
+				<Container fluid className='responsiveMar'>
+					<Row className='wrap responsiveMar marBotProject'>
+						<Col sm={12} className='colWrap'>
+							<h1 className={'marBot text' + appTheme}>{proj.name}</h1>
+						</Col>
+						<Col sm={12} lg={7} className='colWrap'>
+							<h2 className={'text300 textSpot' + appTheme}>{proj.intro}</h2>
+							<br />
+							<p className={'text' + appTheme}>{proj.desc}</p>
+						</Col>
+						<Col sm={12} lg={5} className='colWrap right'>
+							<ul>
+								<li className='projectListItem'>
+									<span className={'text700 text' + appTheme}>
+										{proj.fields[0]}
+										<span className='textLightGrey text700'> / </span>
+										{proj.fields[1]}
+										<span className='textLightGrey text700'> / </span>
+										{proj.fields[2]}
+									</span>
+								</li>
+								<li className='projectListItem'>
+									<span className={'text700 text' + appTheme}>
+										{proj.client}
+									</span>
+								</li>
+								<li className='projectListItem'>
+									<span className={'text700 text' + appTheme}>
+										{proj.timeline}
+									</span>
+								</li>
+								<li className='projectListItem marTop projectListItemVisible'>
+									<span className={'text700 text' + appTheme}>
+										<a
+											target='_blank'
+											rel='noopener noreferrer'
+											className={'textPeach projectsLink'}
+											href={proj.url}>
+											{proj.website}
+										</a>
+									</span>
+								</li>
+								<li className='projectListItem projectListItemVisible'>
+									<span className={'text700 text' + appTheme}>
+										<a
+											target='_blank'
+											rel='noopener noreferrer'
+											className={'textPeach projectsLink'}
+											href={proj.gitUrl}>
+											{proj.git}
+										</a>
+									</span>
+								</li>
+							</ul>
+							<div className='projectIconsWrap responsiveWrap'>
+								{proj.icons.map((currentIcon: any) => (
+									<FontAwesomeIcon
+										key={currentIcon['id']}
+										icon={['fab', currentIcon['src']]}
+										className='projectIcon'
+									/>
+								))}
+							</div>
+						</Col>
+						<Col sm={12} className='colWrap'>
+							<div className='lineThin mar' />
+						</Col>
+						{/* navigation controls */}
+						<Col sm={12} className='colWrap flex wrap'>
+							<div className='iconWrap'
+								onClick={() => handleNav('PROJECT', (proj.id - 1))}>
+								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
+							</div>
+							<div
+								className='iconWrap'
+								onClick={() => handleNav('GALLERY', proj.id)}>
+								<FontAwesomeIcon icon={faTh} className='gridIcon' />
+							</div>
+							<div className='iconWrap'
+								onClick={() => handleNav('PROJECT', (+proj.id + 1))}>
+								<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
+							</div>
+						</Col>
+						{/* navigation controls */}
+					</Row>
+				</Container>
 				<div className={'projectRow' + appTheme}>
-						<Container fluid>
-							<Row className='marBotProject'>
-								{proj.images.map(
-									(currentImage: { [x: string]: string }) => (
-										<Col sm={12} key={currentImage['id']} className='projectWrap'>
-											<MDBAnimation type='zoomIn'>
-												<img
-													src={require('./../img/project/' + currentImage['src'])}
-													alt={proj.name}
-												/>
-											</MDBAnimation>
-										</Col>
-									)
-								)}
-							</Row>
-						</Container>
-					</div>
 					<Container fluid>
-					<Col sm={12} className='colWrap flex wrap'>
-						<div className='iconWrap'
-							onClick={() => handleNav('PROJECT', 22)}>
-							<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
-						</div>
-						<div
-							className='iconWrap'
-							onClick={() => handleNav('GALLERY', proj.id)}>
-							<FontAwesomeIcon icon={faTh} className='gridIcon' />
-						</div>
-						<div className='iconWrap'
-							onClick={() => handleNav('PROJECT', 21)}>
-							<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
-						</div>
-					</Col>
-					</Container>
-					<Container fluid>
-						<Row>
-							<Col sm={12} className='moreProjectsWrap'>
-								<h3 className='center marBotProject textPeach'>MORE PROJECTS</h3>
-							</Col>
-							<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
-								<img 
-									src={require('./../img/thumb/' +
-										allProjects[0].thumb[1])}
-									alt='Gallery'
-								/>
-							</Col>
-							<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
-								<img 
-									src={require('./../img/thumb/' +
-										allProjects[1].thumb[1])}
-									alt='Gallery'
-								/>
-							</Col>
-							<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
-								<img 
-									src={require('./../img/thumb/' +
-										allProjects[2].thumb[1])}
-									alt='Gallery'
-								/>
-							</Col>
+						<Row className='marBotProject'>
+							{proj.images.map(
+								(currentImage: { [x: string]: string }) => (
+									<Col sm={12} key={currentImage['id']} className='projectWrap'>
+										<MDBAnimation type='zoomIn'>
+											<img
+												src={require('./../img/project/' + currentImage['src'])}
+												alt={proj.name}
+											/>
+										</MDBAnimation>
+									</Col>
+								)
+							)}
 						</Row>
 					</Container>
+				</div>
+				{/* navigation controls */}
+				<Container fluid>
+					<Col sm={12} className='colWrap flex wrap'>
+						<div className='iconWrap'
+							onClick={() => handleNav('PROJECT', proj.id)}>
+							<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
+						</div>
+						<div
+							className='iconWrap'
+							onClick={() => handleNav('GALLERY', proj.id)}>
+							<FontAwesomeIcon icon={faTh} className='gridIcon' />
+						</div>
+						<div className='iconWrap'
+							onClick={() => handleNav('PROJECT', proj.id)}>
+							<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
+						</div>
+					</Col>
+				</Container>
+				{/* navigation controls */}
+				<Container fluid>
+					<Row>
+						<Col sm={12} className='moreProjectsWrap'>
+							<h3 className='center marBotProject textPeach'>MORE PROJECTS</h3>
+						</Col>
+						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
+							<img
+								src={require('./../img/thumb/' +
+									allProjects[0].thumb[1])}
+								alt='Gallery'
+							/>
+						</Col>
+						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
+							<img
+								src={require('./../img/thumb/' +
+									allProjects[1].thumb[1])}
+								alt='Gallery'
+							/>
+						</Col>
+						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
+							<img
+								src={require('./../img/thumb/' +
+									allProjects[2].thumb[1])}
+								alt='Gallery'
+							/>
+						</Col>
+					</Row>
+				</Container>
 			</MDBAnimation>
 		</React.Fragment>
 	);

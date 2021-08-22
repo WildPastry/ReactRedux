@@ -53,10 +53,6 @@ export default function ProjectItem({
 		window.scrollTo(0, 0);
 	};
 
-	// display random thumbnail
-	// function getRandomInt(max: number) {
-	// 	return Math.floor(Math.random() * max);
-	// }
 	return (
 		<React.Fragment>
 			<div className={'col-xs-12 col-sm-6 col-md-4 col-lg-4 imgWrap' + ImgTheme}>

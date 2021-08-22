@@ -32,7 +32,6 @@ export interface Navigation {
 	currentProject: number;
 }
 
-
 export enum ProjectFilter {
 	ShowAll = 'SHOW_ALL',
 	ShowCompleted = 'SHOW_COMPLETED',
