@@ -29,10 +29,10 @@ const Project: React.FC = () => {
 	// handle functions for navigation
 	const handleNav = (section: string, id: number) => {
 		console.log(section, id);
-		section === 'GALLERY' ? id = null : id = id;
-		dispatch(setProject(id));
-		dispatch(setNav(section));
-		window.scrollTo(0, 0);
+		// section === 'GALLERY' ? id = null : id = id;
+		// dispatch(setProject(id));
+		// dispatch(setNav(section));
+		// window.scrollTo(0, 0);
 	};
 
 	// store current project
