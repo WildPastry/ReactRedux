@@ -8,9 +8,13 @@ import AppTheme from '../components/AppTheme';
 
 // Nav
 const Nav: React.FC = () => {
-	// useSelector for app theme
+	// useSelector for app theme and navigation
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
+	});
+
+	const currentSection = useSelector((state: RootState) => {
+		return state.setNav.currentSection;
 	});
 
 	// dispatch
@@ -35,7 +39,7 @@ const Nav: React.FC = () => {
 					<h4
 						onClick={() => handleNav('GALLERY')}
 						className={`${
-							showActive === 'GALLERY'
+							currentSection === 'GALLERY'
 								? 'navItem' + appTheme + ' navItemActive' + appTheme
 								: 'navItem' + appTheme
 						}`}>
@@ -44,7 +48,7 @@ const Nav: React.FC = () => {
 					<h4
 						onClick={() => handleNav('ABOUT')}
 						className={`${
-							showActive === 'ABOUT'
+							currentSection === 'ABOUT'
 								? 'navItem' + appTheme + ' navItemActive' + appTheme
 								: 'navItem' + appTheme
 						}`}>

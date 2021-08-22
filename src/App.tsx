@@ -52,7 +52,6 @@ const App: React.FC = () => {
 	});
 
 	const currentSection = useSelector((state: RootState) => {
-		console.log(state);
 		return state.setNav.currentSection;
 	});
 
