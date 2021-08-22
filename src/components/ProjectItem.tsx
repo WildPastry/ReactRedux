@@ -47,7 +47,8 @@ export default function ProjectItem({
 
 	// handle function for navigation
 	const handleNav = (section: string, id: number) => {
-		console.log(section, id);
+		// set current project using ID 
+		// then navigate to correct section and scroll to top
 		dispatch(setProject(id));
 		dispatch(setNav(section));
 		window.scrollTo(0, 0);

@@ -1,6 +1,5 @@
 // imports
 import React from 'react';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { setNav } from '../redux/slices/navSlice';
@@ -20,11 +19,8 @@ const Nav: React.FC = () => {
 	// dispatch
 	const dispatch = useDispatch();
 
-	// handle function for navigation and active menu item
-	const [showActive, setShowActive] = useState('GALLERY');
-
+	// handle function for navigation
 	const handleNav = (section: string) => {
-		setShowActive(section);
 		dispatch(setNav(section));
 	};
 
