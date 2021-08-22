@@ -1,7 +1,9 @@
 // imports
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
+import { HamburgerSqueeze } from 'react-animated-burgers';
 import { setNav } from '../redux/slices/navSlice';
 import AppTheme from '../components/AppTheme';
 
@@ -24,13 +26,60 @@ const Nav: React.FC = () => {
 		dispatch(setNav(section));
 	};
 
+	// logic functions for hamburger and mobile menu
+	const [showMenu, setShowMenu] = useState(false);
+
+	const toggleMenu = () => (showMenu === false ? setShowMenu(true) : setShowMenu(false));
+
+	// logic for rendering collapsed menu
+	let collapseMenu: JSX.Element;
+
+	if (showMenu === true) {
+		collapseMenu = (
+			<div className={'menuActive'}>
+				<h4
+					onClick={() => handleNav('GALLERY')}
+					className={`${
+						currentSection === 'GALLERY'
+							? 'menuActiveItem navItemCollapse' +
+							  appTheme +
+							  ' navItemActiveCollapse' +
+							  appTheme
+							: 'menuActiveItem navItemCollapse' + appTheme
+					}`}>
+					GALLERY
+				</h4>
+				<h4
+					onClick={() => handleNav('ABOUT')}
+					className={`${
+						currentSection === 'ABOUT'
+							? 'menuActiveItem navItemCollapse' +
+							  appTheme +
+							  ' navItemActiveCollapse' +
+							  appTheme
+							: 'menuActiveItem navItemCollapse' + appTheme
+					}`}>
+					ABOUT
+				</h4>
+			</div>
+		);
+	}
+
 	return (
 		<React.Fragment>
 			<div className='flex wrap pad navWrap'>
 				<p className={'brand' + appTheme} onClick={() => handleNav('GALLERY')}>
 					mike parker <span className='text300'> portfolio </span>
 				</p>
-				{/* {burgerMenu} */}
+				<div className='menuCollapse'>
+					<HamburgerSqueeze
+						className='menuBurger'
+						isActive={showMenu}
+						toggleButton={toggleMenu}
+						buttonWidth={30}
+						barColor={`${appTheme === 'DARK' ? '#fff' : '#292929'}`}
+					/>
+				</div>
 				<div className='menu flex navWrap'>
 					<h4
 						onClick={() => handleNav('GALLERY')}
@@ -53,7 +102,7 @@ const Nav: React.FC = () => {
 					<AppTheme />
 				</div>
 			</div>
-			{/* {collapseMenu} */}
+			{collapseMenu}
 		</React.Fragment>
 	);
 };
@@ -61,148 +110,3 @@ const Nav: React.FC = () => {
 // EXPORT Nav
 Nav.displayName = 'Nav';
 export default Nav;
-
-// class Nav extends Component<any, any> {
-// 	constructor(props: any) {
-// 		super(props);
-// 		this.state = {
-// 			isActive: false,
-// 			collapseMenu: false,
-// 			collapseMenuFalse: 'hidden menuActive',
-// 			collapseMenuTrue: 'visible menuActive'
-// 		};
-// 		this.changePageFromNav = this.changePageFromNav.bind(this);
-// 		this.toggleMenu = this.toggleMenu.bind(this);
-// 	}
-
-// 	changePageFromNav(value: any) {
-// 		this.props.changePageFromNav(value);
-// 	}
-
-// 	toggleMenu = () => {
-// 		if (this.state.collapseMenu === false) {
-// 			this.setState({
-// 				collapseMenu: true
-// 			});
-// 		} else if (this.state.collapseMenu === true) {
-// 			this.setState({
-// 				collapseMenu: false
-// 			});
-// 		}
-// 		this.setState({
-// 			isActive: !this.state.isActive
-// 		});
-// 	};
-
-// 	render() {
-// 		let projectName;
-// 		this.props.currentProjectName !== ''
-// 			? (projectName = this.props.currentProjectName)
-// 			: (projectName = ' ... ');
-
-// 		let collapseMenu;
-// 		let burgerMenu;
-// 		if (this.props.light === false) {
-// 			burgerMenu = (
-// 				<div className='menuCollapse'>
-// 					<HamburgerSqueeze
-// 						className='menuBurger'
-// 						isActive={this.state.isActive}
-// 						toggleButton={this.toggleMenu}
-// 						buttonWidth={30}
-// 						barColor={'#fff'}
-// 					/>
-// 				</div>
-// 			);
-// 		} else if (this.props.light === true) {
-// 			burgerMenu = (
-// 				<div className='menuCollapse'>
-// 					<HamburgerSqueeze
-// 						className='menuBurger'
-// 						isActive={this.state.isActive}
-// 						toggleButton={this.toggleMenu}
-// 						buttonWidth={30}
-// 						barColor={'#292929'}
-// 					/>
-// 				</div>
-// 			);
-// 		}
-// 		if (this.state.collapseMenu === true) {
-// 			collapseMenu = (
-// 				<div className={this.state.collapseMenuTrue}>
-// 					<h4
-// 						id='navGallery'
-// 						className={this.props.navGalleryActive}
-// 						onClick={this.changePageFromNav.bind(this, 'gallery')}>
-// 						GALLERY
-// 					</h4>
-// 					<h4 id='navProject' className={this.props.navProjectActive}>
-// 						PROJECT
-// 						<span className='textLightGrey text400 marLeft'> [ {projectName} ]</span>
-// 					</h4>
-// 					<h4
-// 						id='navAbout'
-// 						className={this.props.navAboutActive}
-// 						onClick={this.changePageFromNav.bind(this, 'about')}>
-// 						ABOUT
-// 					</h4>
-// 				</div>
-// 			);
-// 		} else if (this.state.collapseMenu === false) {
-// 			collapseMenu = (
-// 				<div className={this.state.collapseMenuFalse}>
-// 					<h4
-// 						id='navGallery'
-// 						className={this.props.navGallery}
-// 						onClick={this.changePageFromNav.bind(this, 'gallery')}>
-// 						GALLERY
-// 					</h4>
-// 					<h4 id='navProject' className={this.props.navProject}>
-// 						PROJECT
-// 						<span className='textLightGrey text400 marLeft'> [ {projectName} ]</span>
-// 					</h4>
-// 					<h4
-// 						id='navAbout'
-// 						className={this.props.navAbout}
-// 						onClick={this.changePageFromNav.bind(this, 'about')}>
-// 						ABOUT
-// 					</h4>
-// 				</div>
-// 			);
-// 		}
-// 		return (
-// 			<React.Fragment>
-// 				<MDBAnimation type='fadeIn'>
-// 					<div className='flex wrap pad navWrap'>
-// 						<p
-// 							className={this.props.brand}
-// 							onClick={this.changePageFromNav.bind(this, 'gallery')}>
-// 							mike parker <span className='text300'> portfolio </span>
-// 						</p>
-// 						{burgerMenu}
-// 						<div className='menu flex'>
-// 							<h4
-// 								id='navGallery'
-// 								className={this.props.navGallery}
-// 								onClick={this.changePageFromNav.bind(this, 'gallery')}>
-// 								GALLERY
-// 							</h4>
-// 							<h4 id='navProject' className={this.props.navProject}>
-// 								PROJECT
-// 								<span className='textLightGrey text400 marLeft'>[ {projectName} ]</span>
-// 							</h4>
-// 							<h4
-// 								id='navAbout'
-// 								className={this.props.navAbout}
-// 								onClick={this.changePageFromNav.bind(this, 'about')}>
-// 								ABOUT
-// 							</h4>
-// 						</div>
-// 					</div>
-// 					{collapseMenu}
-// 				</MDBAnimation>
-// 			</React.Fragment>
-// 		);
-// 	}
-// }
-// export default Nav;

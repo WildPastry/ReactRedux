@@ -42,7 +42,7 @@ export default function ProjectFilters(): JSX.Element {
 			<div className={'filterWrap flex pad'}>
 				<h4 className={'filterItem' + appTheme + ' filterItemActive' + appTheme}>ALL</h4>
 				<h4 className={'filterItem' + appTheme}>UI/UX</h4>
-				<h4 className={'filterItem' + appTheme}>Graphics</h4>
+				<h4 className={'filterItem' + appTheme}>Graphic</h4>
 				<h4 className={'filterItem' + appTheme}>TypeScript</h4>
 				<h4 className={'filterItem' + appTheme}>JavaScript</h4>
 				<h4 className={'filterItem' + appTheme}>JQuery</h4>

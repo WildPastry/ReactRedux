@@ -38,7 +38,7 @@
 }
 
 // COLLAPSE NAV ITEM DARK
-.navItemDARKCollapse {
+.navItemCollapseDARK {
   color: $spotGrey;
   cursor: pointer;
   padding: 10px;
@@ -46,17 +46,17 @@
   border-radius: 3px;
   &:hover {
     color: $peach;
-    background: $white;
+    background: $yellow;
 	}
 }
 
-.navItemActiveDARKCollapse {
+.navItemActiveCollapseDARK {
   color: $peach;
   border: 0.5px solid $spotGrey-t;
 }
 
 // COLLAPSE NAV ITEM LIGHT
-.navItemLIGHTCollapse {
+.navItemCollapseLIGHT {
   color: $lightGrey;
   cursor: pointer;
   padding: 10px;
@@ -64,40 +64,11 @@
   border-radius: 3px;
   &:hover {
     color: $white;
-    background: $grey;
+    background: $blue;
 	}
 }
 
-.navItemActiveLIGHTCollapse {
-  color: $peach;
-  border: 0.5px solid $lightGrey-t;
-}
-
-// PROJECT PAGE MENU STYLES
-// COLLAPSE NAV ITEM DARK
-.fakeNavItemDARKCollapse {
-  color: $spotGrey;
-  cursor: default;
-  padding: 10px;
-  border: 0.5px solid transparent;
-  border-radius: 3px;
-}
-
-.fakeNavItemActiveDARKCollapse {
-  color: $peach;
-  border: 0.5px solid $spotGrey-t;
-}
-
-// COLLAPSE NAV ITEM LIGHT
-.fakeNavItemLIGHTCollapse {
-  color: $lightGrey;
-  cursor: default;
-  padding: 10px;
-  border: 0.5px solid transparent;
-  border-radius: 3px;
-}
-
-.fakeNavItemActiveLIGHTCollapse {
+.navItemActiveCollapseLIGHT {
   color: $peach;
   border: 0.5px solid $lightGrey-t;
 }
