@@ -15,6 +15,9 @@
 // MENU COLLAPSE
 .menuActive {
 	padding: 5px;
+	@include bp(md_min) {
+		display: none;
+	}
 }
 
 .menuActiveItem {
@@ -79,42 +82,6 @@
 }
 
 // MEDIA QUERIES
-@media screen and (min-width: 577px) {
-	.menuActive {
-		display: none;
-	}
-}
-
-@media screen and (max-width: 992px) {
-	.right {
-		margin-top: 15px;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	#space {
-		padding-left: 0;
-	}
-
-	.responsiveText {
-		text-align: left;
-	}
-
-	.right {
-		margin-bottom: 15px;
-		text-align: left;
-	}
-
-	.projectIcon {
-		margin-right: 20px;
-		margin-left: 0;
-	}
-
-	.aboutListWrap {
-		margin-bottom: 15px;
-	}
-}
-
 @media screen and (max-width: 576px) {
 	.menu {
 		display: none;
@@ -134,10 +101,6 @@
 	.responsiveWrap {
 		display: flex;
 		justify-content: flex-start;
-	}
-
-	.responsiveText {
-		margin-bottom: 0;
 	}
 
 	.lineThinFooter {

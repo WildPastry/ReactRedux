@@ -1,19 +1,55 @@
-// IMPORT
-@import "variables";
+// imports
+@import 'variables';
 
-// RESET
-@mixin reset ($pad: null, $mar: null, $box: null, $deco: null, $listo: null) {
-  padding: $pad;
-  margin: $mar;
-  box-sizing: $box;
-  text-decoration: $deco;
-  list-style-type: $listo;
+// reset
+@mixin reset($pad: null, $mar: null, $box: null, $deco: null, $listo: null) {
+	padding: $pad;
+	margin: $mar;
+	box-sizing: $box;
+	text-decoration: $deco;
+	list-style-type: $listo;
 }
 
-// TRANSITIONS
-@mixin transitions ($web: null, $moz: null, $o: null, $all: null) {
-  -webkit-transition: $web;
-  -moz-transition: $moz;
-  -o-transition: $o;
-  transition: $all;
+// transitions
+@mixin transitions($web: null, $moz: null, $o: null, $all: null) {
+	-webkit-transition: $web;
+	-moz-transition: $moz;
+	-o-transition: $o;
+	transition: $all;
+}
+
+// media breakpoints
+@mixin bp($point) {
+	$bp-xs: 'screen and (max-width: 390px)';
+	$bp-sm: 'screen and (max-width: 480px)';
+	$bp-md: 'screen and (max-width: 576px)';
+	$bp-lg: 'screen and (max-width: 768px)';
+	$bp-xl: 'screen and (max-width: 992px)';
+	$bp-md_min: 'screen and (min-width: 577px)';
+
+	@if $point == xs {
+		@media #{$bp-xs} {
+			@content;
+		}
+	} @else if $point == sm {
+		@media #{$bp-sm} {
+			@content;
+		}
+	} @else if $point == md {
+		@media #{$bp-md} {
+			@content;
+		}
+	} @else if $point == lg {
+		@media #{$bp-lg} {
+			@content;
+		}
+	} @else if $point == xl {
+		@media #{$bp-xl} {
+			@content;
+		}
+	} @else if $point == md_min {
+		@media #{$bp-md_min} {
+			@content;
+		}
+	}
 }

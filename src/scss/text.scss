@@ -171,3 +171,12 @@
 .textCenter {
     text-align: center;
 }
+
+.responsiveText {
+	@include bp(lg) {
+		text-align: left;
+	}
+	@include bp(md) {
+		margin-bottom: 0;
+	}
+}

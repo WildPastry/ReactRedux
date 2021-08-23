@@ -127,6 +127,9 @@
 		height: 100% !important;
 		width: 100% !important;
 	}
+	@include bp(lg) {
+		padding-left: 0;
+	}
 }
 
 // GALLERY
@@ -188,6 +191,9 @@
 // ABOUT
 .aboutListWrap {
 	line-height: 1.5em;
+	@include bp(lg) {
+		margin-bottom: 15px;
+	}
 }
 
 // ABOUT LIST DARK

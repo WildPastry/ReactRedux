@@ -37,6 +37,10 @@
 .projectIcon {
 	font-size: 40px;
 	margin-left: 20px;
+	@include bp(lg) {
+		margin-right: 20px;
+		margin-left: 0;
+	}
 }
 
 .gridIcon {

@@ -27,7 +27,7 @@ const Type: React.FC = () => {
 		<React.Fragment>
 			<div className='typeWrap pad'>
 				<p className={'textHide text' + appTheme}>
-					<span className='textThis'>this </span>stack using react
+					<span className='textThis'>this </span>site built with react
 					<span className='textLightGrey text400'> / </span>redux
 					<span className='textLightGrey text400'> / </span>typescript
 				</p>

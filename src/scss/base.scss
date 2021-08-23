@@ -38,11 +38,11 @@ code {
 p {
 	font-weight: $light;
 	line-height: 1.5em;
-	letter-spacing: 0.2px;
+	letter-spacing: 0.5px;
 }
 
 a {
-	letter-spacing: 0.4px;
+	letter-spacing: 0.5px;
 }
 
 h1,
@@ -196,6 +196,13 @@ h5 {
 
 .right {
 	text-align: right;
+	@include bp(xl) {
+		margin-top: 15px;
+	}
+	@include bp(lg) {
+		margin-bottom: 15px;
+		text-align: left;
+	}
 }
 
 // BOOTSTRAP
