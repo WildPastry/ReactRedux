@@ -90,14 +90,10 @@ const App: React.FC = () => {
 			<React.Fragment>
 				<Container fluid>
 					<Nav />
-					{/* <Type /> */}
-					<MDBAnimation type='fadeIn'>
-						{renderSection}
-						</MDBAnimation>
+					<Type />
+					<MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
 				</Container>
-				<MDBAnimation type='fadeIn'>
-					{renderProject}
-					</MDBAnimation>
+				<MDBAnimation type='fadeIn'>{renderProject}</MDBAnimation>
 				<Footer />
 				<ScrollUpButton
 					StopPosition={0}

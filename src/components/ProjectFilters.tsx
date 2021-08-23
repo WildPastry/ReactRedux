@@ -1,6 +1,5 @@
 // imports
 import React from 'react';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { setImgTheme } from '../redux/slices/themeSlice';
@@ -43,12 +42,13 @@ export default function ProjectFilters(): JSX.Element {
 				<h4 className={'filterItem' + appTheme + ' filterItemActive' + appTheme}>ALL</h4>
 				<h4 className={'filterItem' + appTheme}>UI/UX</h4>
 				<h4 className={'filterItem' + appTheme}>Graphic</h4>
-				<h4 className={'filterItem' + appTheme}>TypeScript</h4>
+				<h4 className={'filterItem' + appTheme}>Development</h4>
+				{/* <h4 className={'filterItem' + appTheme}>TypeScript</h4>
 				<h4 className={'filterItem' + appTheme}>JavaScript</h4>
 				<h4 className={'filterItem' + appTheme}>JQuery</h4>
 				<h4 className={'filterItem' + appTheme}>React</h4>
 				<h4 className={'filterItem' + appTheme}>React Native</h4>
-				<h4 className={'filterItem' + appTheme}>PHP</h4>
+				<h4 className={'filterItem' + appTheme}>PHP</h4> */}
 			</div>
 			<div className={'galleryWrap flex pad'}>
 				<h4 className={'text400 textSpot' + appTheme}>IMG THEME</h4>

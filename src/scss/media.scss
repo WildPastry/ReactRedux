@@ -4,246 +4,259 @@
 
 // RESPONSIVE MARGIN
 .responsiveMar {
-  margin-top: 5px;
+	margin-top: 5px;
+}
+
+.mobileAppTheme {
+	display: none;
+	visibility: hidden;
 }
 
 // MENU COLLAPSE
 .menuActive {
-  padding: 5px;
+	padding: 5px;
 }
 
 .menuActiveItem {
-  margin: 10px 0 10px 0;
-  text-align: right;
+	margin: 10px 0 10px 0;
+	text-align: right;
 }
 
 .menuCollapse {
-  display: none;
-  visibility: hidden;
-  cursor: pointer;
+	display: none;
+	visibility: hidden;
+	cursor: pointer;
 }
 
 .menuBurger {
-  padding: 0 !important;
+	padding: 0 !important;
 }
 
 .visible {
-  visibility: visible;
-  display: block;
+	visibility: visible;
+	display: block;
 }
 
 .hidden {
-  visibility: hidden;
-  display: none;
+	visibility: hidden;
+	display: none;
 }
 
 // COLLAPSE NAV ITEM DARK
 .navItemCollapseDARK {
-  color: $spotGrey;
-  cursor: pointer;
-  padding: 10px;
-  border: 0.5px solid transparent;
-  border-radius: 3px;
-  &:hover {
-    color: $peach;
-    background: $yellow;
+	color: $spotGrey;
+	cursor: pointer;
+	padding: 10px;
+	border: 0.5px solid transparent;
+	border-radius: 3px;
+	&:hover {
+		color: $peach;
+		background: $yellow;
 	}
 }
 
 .navItemActiveCollapseDARK {
-  color: $peach;
-  border: 0.5px solid $spotGrey-t;
+	color: $peach;
+	border: 0.5px solid $spotGrey-t;
 }
 
 // COLLAPSE NAV ITEM LIGHT
 .navItemCollapseLIGHT {
-  color: $lightGrey;
-  cursor: pointer;
-  padding: 10px;
-  border: 0.5px solid transparent;
-  border-radius: 3px;
-  &:hover {
-    color: $white;
-    background: $blue;
+	color: $lightGrey;
+	cursor: pointer;
+	padding: 10px;
+	border: 0.5px solid transparent;
+	border-radius: 3px;
+	&:hover {
+		color: $white;
+		background: $blue;
 	}
 }
 
 .navItemActiveCollapseLIGHT {
-  color: $peach;
-  border: 0.5px solid $lightGrey-t;
+	color: $peach;
+	border: 0.5px solid $lightGrey-t;
 }
 
 // MEDIA QUERIES
 @media screen and (min-width: 577px) {
-  .menuActive {
-    display: none;
-  }
+	.menuActive {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 992px) {
-  .right {
-    margin-top: 15px;
-  }
+	.right {
+		margin-top: 15px;
+	}
 }
 
 @media screen and (max-width: 768px) {
-  #space {
-    padding-left: 0;
-  }
+	#space {
+		padding-left: 0;
+	}
 
-  .responsiveText {
-    text-align: left;
-  }
+	.responsiveText {
+		text-align: left;
+	}
 
-  .right {
-    margin-bottom: 15px;
-    text-align: left;
-  }
+	.right {
+		margin-bottom: 15px;
+		text-align: left;
+	}
 
-  .projectIcon {
-    margin-right: 20px;
-    margin-left: 0;
-  }
+	.projectIcon {
+		margin-right: 20px;
+		margin-left: 0;
+	}
 
-  .aboutListWrap {
-    margin-bottom: 15px;
-  }
+	.aboutListWrap {
+		margin-bottom: 15px;
+	}
 }
 
 @media screen and (max-width: 576px) {
-  .menu {
-    display: none;
-    visibility: hidden;
-  }
+	.menu {
+		display: none;
+		visibility: hidden;
+	}
 
-  .menuCollapse {
-    display: inline;
+	.menuCollapse {
+		display: inline;
+		visibility: visible;
+	}
+
+	.menuCollapseItems {
+		display: none;
+		visibility: hidden;
+	}
+
+	.responsiveWrap {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.responsiveText {
+		margin-bottom: 0;
+	}
+
+	.lineThinFooter {
+		margin-top: 10px;
+	}
+
+	.lineThin {
+		margin-top: 0;
+	}
+
+	.responsive {
+		margin-bottom: 0;
+	}
+
+	.typeWrap h1 {
+		font-size: 1.4em;
+	}
+
+	.mobileAppTheme {
+		display: inline-block;
     visibility: visible;
-  }
+	}
 
-  .menuCollapseItems {
-    display: none;
-    visibility: hidden;
-  }
-
-  .responsiveWrap {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .responsiveText {
-    margin-bottom: 0;
-  }
-
-  .lineThinFooter {
-    margin-top: 10px;
-  }
-
-  .lineThin {
-    margin-top: 0;
-  }
-
-  .responsive {
-    margin-bottom: 0;
-  }
-
-  .typeWrap h1 {
-    font-size: 1.4em;
-  }
+	.wrg-toggle {
+		margin-left: 0;
+	}
 }
 
 @media screen and (max-width: 480px) {
-  .typeWrap h1 {
-    font-size: 1.2em;
-  }
+	.typeWrap h1 {
+		font-size: 1.2em;
+	}
 
-  .projectIcon {
-    font-size: 26px;
-  }
+	.projectIcon {
+		font-size: 26px;
+	}
 
-  .filterWrap {
-    display: none;
-    visibility: hidden;
-  }
+	.filterWrap {
+		display: none;
+		visibility: hidden;
+	}
 
-  .filterItemDARK,
-  .filterItemLIGHT {
-    margin-top: 10px;
-  }
+	.filterItemDARK,
+	.filterItemLIGHT {
+		margin-top: 10px;
+	}
 
-  .responsiveFooterWrap {
-    display: block;
-  }
+	.responsiveFooterWrap {
+		display: block;
+	}
 
-  .responsiveCopyRight {
-    margin-left: 0;
-    line-height: 24px;
-  }
+	.responsiveCopyRight {
+		margin-left: 0;
+		line-height: 24px;
+	}
 
-  .weatherWrap {
-    justify-content: space-between;
-  }
+	.weatherWrap {
+		justify-content: space-between;
+	}
 
-  .galleryWrap {
-    width: 100%;
-    justify-content: flex-end;
-    margin-bottom: 0;
-  }
+	.galleryWrap {
+		display: none;
+		visibility: hidden;
+	}
 }
 
 @media screen and (max-width: 390px) {
-  .textHide {
-    display: none;
-    visibility: hidden;
-  }
+	.textHide {
+		display: none;
+		visibility: hidden;
+	}
 
-  .typeWrap h1 {
-    font-size: 1.1em;
-    font-weight: $regular;
-    letter-spacing: 0px;
-  }
+	.typeWrap h1 {
+		font-size: 1.1em;
+		font-weight: $regular;
+		letter-spacing: 0px;
+	}
 
-  .typeWrap {
-    line-height: 20px;
-  }
+	.typeWrap {
+		line-height: 20px;
+	}
 
-  .miniWrap {
-    justify-content: space-between;
-  }
+	.miniWrap {
+		justify-content: space-between;
+	}
 
-  .projectIconsWrap {
-    margin-top: 0;
-  }
+	.projectIconsWrap {
+		margin-top: 0;
+	}
 
-  .projectIcon {
-    font-size: 25px;
-    margin-right: 15px;
-  }
+	.projectIcon {
+		font-size: 25px;
+		margin-right: 15px;
+	}
 
-  .faIconDARK,
-  .faIconLIGHT {
-    font-size: 25px;
-    margin-right: 0;
-  }
+	.faIconDARK,
+	.faIconLIGHT {
+		font-size: 25px;
+		margin-right: 0;
+	}
 
-  .projectListItem {
-    display: none;
-    visibility: hidden;
-  }
+	.projectListItem {
+		display: none;
+		visibility: hidden;
+	}
 
- .projectListItemVisible {
-   display: block;
-   visibility: visible;
-   margin-top: 0;
-   margin-bottom: 20px;
- }
+	.projectListItemVisible {
+		display: block;
+		visibility: visible;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
 
-  h1 {
-    font-size: 1.4em;
-  }
+	h1 {
+		font-size: 1.4em;
+	}
 
-  h2 {
-    font-size: 1.1em;
-    line-height: 1.3em;
-  }
+	h2 {
+		font-size: 1.1em;
+		line-height: 1.3em;
+	}
 }

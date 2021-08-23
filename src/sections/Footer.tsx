@@ -98,12 +98,10 @@ const Footer: React.FC = () => {
 					<Col sm={12} md={3} className='colWrap right'>
 						<h4 className={'marBot text' + appTheme}>CONTACT</h4>
 						<ul className={'list' + appTheme}>
-							<li x-ms-format-detection='none'>
-								<span className='ms-2'>022 5025 485</span>
+							<li x-ms-format-detection='none'>022 5025 485
 							</li>
 							<li>
-								<a href='mailto:mike@mikeparker.co.nz'>
-									<span className='ms-2'>mike@mikeparker.co.nz</span>
+								<a href='mailto:mike@mikeparker.co.nz'>mike@mikeparker.co.nz
 								</a>
 							</li>
 						</ul>
