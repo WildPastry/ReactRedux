@@ -150,13 +150,22 @@
 }
 
 // scroll up icon
-.scrollUpIcon {
-	background: $grey-t !important;
+.scrollUpIconDARK {
+	background: $none !important;
 	svg {
 		fill: $white !important;
 	}
 	:hover {
-		fill: $peach !important;
+		fill: $yellow !important;
+	}
+}
+.scrollUpIconLIGHT {
+	background: $none !important;
+	svg {
+		fill: $grey !important;
+	}
+	:hover {
+		fill: $blue !important;
 	}
 }
 

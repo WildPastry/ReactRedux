@@ -100,7 +100,7 @@ const App: React.FC = () => {
 					ShowAtPosition={200}
 					EasingType='easeOutCubic'
 					AnimationDuration={300}
-					ContainerClassName='scrollUpIcon'
+					ContainerClassName={'scrollUpIcon' + appTheme}
 				/>
 			</React.Fragment>
 		);
