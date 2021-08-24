@@ -29,7 +29,7 @@ export function initSpace(theme) {
       } else {
         this.settings = {
           colour: {
-            background: [240, 240, 240],
+            background: [255, 255, 255],
             line: [59, 156, 103]
           },
           depth: 7,

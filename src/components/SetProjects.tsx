@@ -62,7 +62,7 @@ export default function SetProjects(): JSX.Element {
 	const renderMore = () => {
 		return (
 			<h4 className={'moreFewer' + appTheme} onClick={() => toggleMoreFewer(18)}>
-				SHOW MORE PROJECTS<span className={'ms-2 text700 text' + appTheme}>[ </span>
+				LOAD MORE<span className={'ms-2 text700 text' + appTheme}>[ </span>
 				<span className={'textSpotGrey text400'}>...</span>{' '}
 				<span className={'text700 text' + appTheme}>]</span>
 			</h4>
@@ -81,5 +81,5 @@ export default function SetProjects(): JSX.Element {
 	};
 
 	// buttons to show more or less projects
-	return <Row className='pad'>{showMoreFewer ? renderFewer() : renderMore()}</Row>;
+	return <Row className='pad'>{showMoreFewer ? null : renderMore()}</Row>;
 }

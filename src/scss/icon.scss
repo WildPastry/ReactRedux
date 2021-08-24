@@ -103,6 +103,9 @@
 }
 
 .techIconWrap {
+	margin-top: 25px;
+	justify-content: flex-end;
+	display: flex;
 	@include bp(xs) {
 		margin-top: 0;
 	}

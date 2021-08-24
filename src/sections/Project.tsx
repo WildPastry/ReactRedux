@@ -16,6 +16,10 @@ const Project: React.FC = () => {
 		return state.setTheme.appTheme;
 	});
 
+	const ImgTheme = useSelector((state: RootState) => {
+		return state.setTheme.imgTheme;
+	});
+
 	const allProjects = useSelector((state: RootState) => {
 		return state.setProjects;
 	});
@@ -150,6 +154,7 @@ const Project: React.FC = () => {
 				</Container>
 				<div className={'projectRow' + appTheme}>
 					<Container fluid>
+						{/* project images */}
 						<Row className='marBotProject'>
 							{proj.images.map((currentImage: { [x: string]: string }) => (
 								<Col sm={12} key={currentImage['id']} className='projectWrap'>
@@ -162,6 +167,7 @@ const Project: React.FC = () => {
 								</Col>
 							))}
 						</Row>
+						{/* project images */}
 					</Container>
 				</div>
 				{/* navigation controls */}
@@ -184,21 +190,21 @@ const Project: React.FC = () => {
 						<Col sm={12} className='moreProjectsWrap'>
 							<h3 className='textCenter marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
-						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
+						<Col xs={12} sm={4} className={'imgWrap' + ImgTheme}>
 							<img
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[0]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[0]].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
-						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
+						<Col xs={12} sm={4} className={'imgWrap' + ImgTheme}>
 							<img
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[1]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[1]].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
-						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
+						<Col xs={12} sm={4} className={'imgWrap' + ImgTheme}>
 							<img
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[2]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[2]].thumb[1])}

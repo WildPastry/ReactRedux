@@ -38,6 +38,7 @@ export default function ProjectItem({
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
 	});
+	
 	const ImgTheme = useSelector((state: RootState) => {
 		return state.setTheme.imgTheme;
 	});
