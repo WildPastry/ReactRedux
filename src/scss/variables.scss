@@ -1,49 +1,52 @@
-// VARIABLES
+// variables
+
+// main
 $white: #f0f0f0;
 $black: #161616;
-$black-t: rgba(0, 0, 0, 0.850);
-$grey-t: rgba(21, 21, 21, 0.600);
-$lightGrey-t: rgba(21, 21, 21, 0.350);
-$spotGrey-t: rgba(138, 138, 138, 0.350);
 
-// COLOURS
+// transparent
+$black-t: rgba(0, 0, 0, 0.85);
+$grey-t: rgba(21, 21, 21, 0.6);
+$lightGrey-t: rgba(21, 21, 21, 0.35);
+$spotGrey-t: rgba(138, 138, 138, 0.35);
+
+// colours
 $blue: #65b1fc;
 $grey: #292929;
 $peach: #ff6666;
 $pink: #ff99ff;
 $purple: #d279fc;
-$peachPink: #ec407a;
 $yellow: #ffda45;
 $teal: #3b9c67;
 
-// LIGHT COLOURS
+// light colours
 $lightGrey: #616161;
 $spotGrey: #b6b6b6;
 
-// WEATHER ICONS
-$color-sun: #EDC951;
-$color-cloud: #00A0B0;
+// weather icon colours
+$color-sun: #edc951;
+$color-cloud: #00a0b0;
 $color-cloud-light: #00cee3;
 $color-cloud-dark: #008997;
 $color-rain-cloud: #666;
 $color-rain-cloud-light: #999;
 $color-rain-cloud-dark: #555;
-$color-snow-cloud: #CCC;
+$color-snow-cloud: #ccc;
 $color-main-background: #222;
-$color-rainbow-red: #BD1E52;
-$color-rainbow-red: #BD1E52;
-$color-rainbow-orange: #E88024;
-$color-rainbow-yellow: #F8CB10;
-$color-rainbow-green: #899C3B;
+$color-rainbow-red: #bd1e52;
+$color-rainbow-red: #bd1e52;
+$color-rainbow-orange: #e88024;
+$color-rainbow-yellow: #f8cb10;
+$color-rainbow-green: #899c3b;
 
-// FONT
+// main font
 $font: 'Roboto', sans-serif;
 
-// FONT WEIGHTS
+// font weights
 $thin: 100;
 $light: 300;
 $regular: 400;
 $bold: 700;
 
-// TRANSITIONS
+// transitions
 $speed: all 0.2s ease-in-out;

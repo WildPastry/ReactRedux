@@ -1,13 +1,13 @@
-// IMPORT
+// imports
 @import 'variables';
 @import 'mixins';
 
+// image styles
 .imgWrapDARK,
 .imgWrapLIGHT {
 	padding: 5px;
 }
 
-// IMAGE DARK
 .imgWrapDARK img {
 	cursor: pointer;
 	height: auto;
@@ -20,7 +20,6 @@
 	}
 }
 
-// IMAGE LIGHT
 .imgWrapLIGHT img {
 	cursor: pointer;
 	height: auto;

@@ -1,9 +1,8 @@
-// IMPORT
+// imports
 @import 'variables';
 @import 'mixins';
 
-// FA
-
+// font awesome icons
 .faIconDARK,
 .faIconSmDARK,
 .faIconLIGHT,
@@ -18,68 +17,28 @@
 	font-size: 15px;
 }
 
-// FA DARK
 .faIconDARK {
 	cursor: pointer;
 	font-size: 30px;
 	margin-right: 20px;
+	@include bp(xs) {
+		font-size: 25px;
+		margin-right: 0;
+	}
 }
 
-// FA LIGHT
 .faIconLIGHT {
 	cursor: pointer;
 	color: $grey;
 	font-size: 30px;
 	margin-right: 20px;
-}
-
-// PROJECT
-.projectIcon {
-	font-size: 40px;
-	margin-left: 20px;
-	@include bp(lg) {
-		margin-right: 20px;
-		margin-left: 0;
+	@include bp(xs) {
+		font-size: 25px;
+		margin-right: 0;
 	}
 }
 
-.gridIcon {
-	color: $lightGrey;
-	cursor: pointer;
-	font-size: 30px;
-}
-
-.prevIcon,
-.nextIcon {
-	color: $lightGrey;
-	cursor: pointer;
-	font-size: 30px;
-}
-
-.prevIcon:hover,
-.nextIcon:hover,
-.gridIcon:hover {
-	color: $spotGrey;
-}
-
-// FOOTER
-.footerIcon {
-	font-size: 22px;
-	margin-top: 13px;
-}
-
-// SCROLL UP
-.scrollUpIcon {
-	background: $grey-t !important;
-	svg {
-		fill: $white !important;
-	}
-	:hover {
-		fill: $peach !important;
-	}
-}
-
-// FA BRAND COLOURS
+// font awesome colours
 .fa-buffer {
 	color: #fb3e44;
 }
@@ -136,7 +95,72 @@
 	color: #00a0d2;
 }
 
-// IMG THEME ICON
+// project page icons
+.iconWrap {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.techIconWrap {
+	@include bp(xs) {
+		margin-top: 0;
+	}
+}
+
+.projectIcon {
+	font-size: 40px;
+	margin-left: 20px;
+	@include bp(lg) {
+		margin-right: 20px;
+		margin-left: 0;
+	}
+	@include bp(sm) {
+		font-size: 26px;
+	}
+	@include bp(xs) {
+		font-size: 25px;
+		margin-right: 15px;
+	}
+}
+
+.gridIcon {
+	color: $lightGrey;
+	cursor: pointer;
+	font-size: 30px;
+}
+
+.prevIcon,
+.nextIcon {
+	color: $lightGrey;
+	cursor: pointer;
+	font-size: 30px;
+}
+
+.prevIcon:hover,
+.nextIcon:hover,
+.gridIcon:hover {
+	color: $spotGrey;
+}
+
+// footer icons
+.footerIcon {
+	font-size: 22px;
+	margin-top: 13px;
+}
+
+// scroll up icon
+.scrollUpIcon {
+	background: $grey-t !important;
+	svg {
+		fill: $white !important;
+	}
+	:hover {
+		fill: $peach !important;
+	}
+}
+
+// image theme (rgb) icon
 .imgThemeIconDARK {
 	cursor: pointer;
 	height: 25px;
@@ -161,8 +185,8 @@
 	}
 }
 
-// TOGGLE BUTTON
-.wrg-toggle {
+// app theme toggle button
+.appTheme {
 	touch-action: pan-x;
 	display: inline-block;
 	position: relative;
@@ -177,12 +201,15 @@
 	user-select: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-tap-highlight-color: transparent;
-	&:hover .wrg-toggle-circle {
+	&:hover .appThemeCircle {
 		border: 2px solid $peach;
+	}
+	@include bp(md) {
+		margin-left: 0;
 	}
 }
 
-.wrg-toggle-input {
+.appThemeInput {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -193,8 +220,8 @@
 	width: 1px;
 }
 
-.wrg-toggle-check,
-.wrg-toggle-uncheck {
+.appThemeCheck,
+.appThemeUncheck {
 	position: absolute;
 	width: 10px;
 	height: 10px;
@@ -206,16 +233,16 @@
 	opacity: 0;
 	transition: opacity 0.25s ease;
 }
-.wrg-toggle-check {
+.appThemeCheck {
 	left: 8px;
 }
-.wrg-toggle-uncheck {
+.appThemeUncheck {
 	opacity: 1;
 	right: 10px;
 }
 
-.wrg-toggle-uncheck span,
-.wrg-toggle-check span {
+.appThemeUncheck span,
+.appThemeCheck span {
 	align-items: center;
 	display: flex;
 	height: 10px;
@@ -224,7 +251,7 @@
 	width: 10px;
 }
 
-.wrg-toggle-container {
+.appThemeContainer {
 	width: 50px;
 	height: 24px;
 	padding: 0;
@@ -233,7 +260,7 @@
 	transition: all 0.2s ease;
 }
 
-.wrg-toggle-circle {
+.appThemeCircle {
 	transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 	position: absolute;
 	top: 1px;
@@ -247,19 +274,21 @@
 	transition: all 0.25s ease;
 }
 
-.wrg-toggle--checked .wrg-toggle-check {
+.appThemeChecked .appThemeCheck {
 	opacity: 1;
 }
-.wrg-toggle--checked .wrg-toggle-uncheck {
+.appThemeChecked .appThemeUncheck {
 	opacity: 0;
 }
-.wrg-toggle--checked .wrg-toggle-circle {
+.appThemeChecked .appThemeCircle {
 	left: 27px;
 }
 
-// PROJECT PREV / NEXT ICONS
-.iconWrap {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+.mobileAppTheme {
+	display: none;
+	visibility: hidden;
+	@include bp(md) {
+		display: inline-block;
+		visibility: visible;
+	}
 }

@@ -118,7 +118,7 @@ const Project: React.FC = () => {
 									</span>
 								</li>
 							</ul>
-							<div className='projectIconsWrap responsiveWrap'>
+							<div className='techIconWrap responsiveWrap'>
 								{proj.icons.map((currentIcon: any) => (
 									<FontAwesomeIcon
 										key={currentIcon['id']}
@@ -182,7 +182,7 @@ const Project: React.FC = () => {
 				<Container fluid>
 					<Row>
 						<Col sm={12} className='moreProjectsWrap'>
-							<h3 className='center marBotProject textPeach'>MORE PROJECTS</h3>
+							<h3 className='textCenter marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + appTheme}>
 							<img

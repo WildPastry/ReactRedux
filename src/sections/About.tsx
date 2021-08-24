@@ -69,7 +69,7 @@ const About: React.FC = () => {
 					<Col sm={12} md={6} lg={8} className='colWrap'>
 						<div
 							id='space'
-							className={'space textBg' + appTheme}
+							className={'space bg' + appTheme}
 							ref={spaceRef as React.RefObject<HTMLDivElement>}
 						/>
 					</Col>

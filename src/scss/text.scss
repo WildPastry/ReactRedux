@@ -1,49 +1,17 @@
-// IMPORT
+// imports
 @import 'variables';
 @import 'mixins';
 
-// TEXT STYLES
-.textItalic {
-	font-style: italic;
-}
-
-// TEXT COLOURS
-.textBlue {
-	color: $blue;
-}
-
-.textGrey {
-	color: $grey;
-}
-
-.textPeach {
-	color: $peach;
-}
-
-.textPeachPink {
-	color: $peachPink;
-}
-
-.textPink {
-	color: $pink;
-}
-
-.textLightGrey {
-	color: $lightGrey;
-}
-
-.textSpotGrey {
-	color: $spotGrey;
-}
-
+// main text colours
 .textWhite {
 	color: $white;
 }
 
-.textYellow {
-	color: $yellow;
+.textBlack {
+	color: $black;
 }
 
+// theme text colours
 .textDARK {
 	color: $white;
 }
@@ -76,6 +44,47 @@
 	color: $lightGrey;
 }
 
+// text colours
+.textBlue {
+	color: $blue;
+}
+
+.textGrey {
+	color: $grey;
+}
+
+.textPeach {
+	color: $peach;
+}
+
+.textPink {
+	color: $pink;
+}
+
+.textPurple {
+	color: $purple;
+}
+
+.textYellow {
+	color: $yellow;
+}
+
+.textTeal {
+	color: $teal;
+}
+
+// light text colours
+.textLightGrey {
+	color: $lightGrey;
+}
+
+.textSpotGrey {
+	color: $spotGrey;
+}
+
+// custom text styles
+
+// this text in type section
 .textThis {
 	color: $peach;
 	font-style: italic;
@@ -84,66 +93,7 @@
 	margin-bottom: 5px;
 }
 
-// TEXT BG COLOURS
-.textBgDARK {
-	background: $grey;
-}
-
-.textBgLIGHT {
-	background: $white;
-}
-
-.textGreyBg {
-	background: $grey;
-}
-
-.textPeachBg {
-	background: $peach;
-}
-
-.textPinkBg {
-	background: $pink;
-}
-
-.textLIGHTGreyBg {
-	background: $lightGrey;
-}
-
-.textSpotGreyBg {
-	background: $spotGrey;
-}
-
-.textWhiteBg {
-	background: $white;
-}
-
-.textBlackBg {
-	background: $black;
-}
-
-.textYellowBg {
-	background: $yellow;
-}
-
-// TEXT WEIGHTS
-.text100 {
-	font-weight: $thin;
-}
-
-.text300 {
-	font-weight: $light;
-}
-
-.text400 {
-	font-weight: $regular;
-}
-
-.text700 {
-	font-weight: $bold;
-	letter-spacing: 0.5px;
-}
-
-// LOAD MORE
+// more fewer text in gallery section
 .moreFewerLIGHT {
 	color: $blue;
 	font-weight: $regular;
@@ -166,12 +116,47 @@
 	}
 }
 
-// TEXT CENTER
-
-.textCenter {
-    text-align: center;
+// text weights
+.text100 {
+	font-weight: $thin;
 }
 
+.text300 {
+	font-weight: $light;
+}
+
+.text400 {
+	font-weight: $regular;
+}
+
+.text700 {
+	font-weight: $bold;
+	letter-spacing: 0.5px;
+}
+
+// text styles and alignments
+.textItalic {
+	font-style: italic;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.textRight {
+	text-align: right;
+	@include bp(xl) {
+		margin-top: 15px;
+	}
+	@include bp(lg) {
+		margin-bottom: 15px;
+		text-align: left;
+	}
+}
+
+// responsive text styles
+
+// footer (ARCHIVED SITES)
 .responsiveText {
 	@include bp(lg) {
 		text-align: left;

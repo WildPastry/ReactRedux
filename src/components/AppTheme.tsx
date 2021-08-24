@@ -34,17 +34,17 @@ export default function AppTheme(): JSX.Element {
 		<React.Fragment>
 			<div
 				onClick={triggerToggle}
-				className={`wrg-toggle ${toggle ? 'wrg-toggle--checked' : ''}`}>
-				<div className='wrg-toggle-container'>
-					<div className='wrg-toggle-check'>
+				className={`appTheme ${toggle ? 'appThemeChecked' : ''}`}>
+				<div className='appThemeContainer'>
+					<div className='appThemeCheck'>
 						<span>🌞</span>
 					</div>
-					<div className='wrg-toggle-uncheck'>
+					<div className='appThemeUncheck'>
 						<span>🌜</span>
 					</div>
 				</div>
-				<div className='wrg-toggle-circle'></div>
-				<input className='wrg-toggle-input' type='checkbox' aria-label='Toggle Button' />
+				<div className='appThemeCircle'></div>
+				<input className='appThemeInput' type='checkbox' aria-label='Toggle Button' />
 			</div>
 		</React.Fragment>
 	);

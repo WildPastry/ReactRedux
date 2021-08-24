@@ -1,36 +1,37 @@
-// IMPORT
+// imports
 @import 'variables';
 @import 'mixins';
 
-// ROOT
+// root
 #root {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
 }
 
-// BOOTSTRAP
+// bootstrap over-writes
 .container-fluid {
 	flex-grow: 1;
 	margin: 20px auto 0 auto;
-	max-width: 1400px;
+	max-width: 1350px;
 }
 
 .row {
 	margin-left: 0;
 	margin-right: 0;
+	--bs-gutter-x: 0;
+	--bs-gutter-y: 0;
 }
 
 .colWrap {
 	padding: 5px;
 }
 
-// NAV
+// navigation styles
 .navWrap {
 	align-items: center;
 }
 
-// NAV ITEM DARK
 .navItemDARK {
 	color: $spotGrey;
 	cursor: pointer;
@@ -39,8 +40,6 @@
 	border-bottom: 2px solid transparent;
 	padding-bottom: 1px;
 	&:hover {
-		// color: $peach;
-		// text-decoration-line: line-through;
 		border-bottom: 2px solid $peach;
 	}
 }
@@ -48,11 +47,8 @@
 .navItemActiveDARK {
 	color: $white;
 	border-bottom: 2px solid $peach;
-	// color: $peach;
-	// text-decoration-line: line-through;
 }
 
-// NAV ITEM LIGHT
 .navItemLIGHT {
 	color: $lightGrey;
 	cursor: pointer;
@@ -71,7 +67,6 @@
 	border-bottom: 2px solid $peach;
 }
 
-// NAV BRAND DARK
 .brandDARK {
 	color: $yellow;
 	cursor: pointer;
@@ -90,7 +85,6 @@
 	color: $yellow;
 }
 
-// NAV BRAND LIGHT
 .brandLIGHT {
 	color: $blue;
 	cursor: pointer;
@@ -109,16 +103,114 @@
 	color: $blue;
 }
 
-// TYPE
-.typeWrap {
-	line-height: 40px;
+.navItemCollapseDARK {
+	color: $spotGrey;
+	cursor: pointer;
+	padding: 10px;
+	border: 0.5px solid transparent;
+	border-radius: 3px;
+	&:hover {
+		color: $peach;
+		background: $yellow;
+	}
 }
 
+.navItemActiveCollapseDARK {
+	color: $peach;
+	border: 0.5px solid $spotGrey-t;
+}
+
+.navItemCollapseLIGHT {
+	color: $lightGrey;
+	cursor: pointer;
+	padding: 10px;
+	border: 0.5px solid transparent;
+	border-radius: 3px;
+	&:hover {
+		color: $white;
+		background: $blue;
+	}
+}
+
+.navItemActiveCollapseLIGHT {
+	color: $peach;
+	border: 0.5px solid $lightGrey-t;
+}
+
+.menu {
+	@include bp(xl) {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.menuCollapseItems {
+	@include bp(md) {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.menuActive {
+	padding: 5px;
+	@include bp(md_min) {
+		display: none;
+	}
+}
+
+.menuActiveItem {
+	margin: 10px 0 10px 0;
+	text-align: right;
+}
+
+.menuCollapse {
+	display: none;
+	visibility: hidden;
+	cursor: pointer;
+	@include bp(md) {
+		display: inline;
+		visibility: visible;
+	}
+}
+
+.menuBurger {
+	padding: 0 !important;
+}
+
+// type section
 #type {
 	height: 40px;
 }
 
-// SPACE
+.typeWrap {
+	line-height: 40px;
+	@include bp(xs) {
+		line-height: 20px;
+	}
+}
+
+.typeWrap h1 {
+	@include bp(md) {
+		font-size: 1.4em;
+	}
+	@include bp(sm) {
+		font-size: 1.3em;
+	}
+	@include bp(xs) {
+		font-size: 1.2em;
+		// font-weight: $regular;
+		letter-spacing: 0px;
+	}
+}
+
+.textHide {
+	@include bp(xs) {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+// space section
 #space {
 	cursor: pointer;
 	height: 55vh;
@@ -132,12 +224,16 @@
 	}
 }
 
-// GALLERY
+// gallery section
 .galleryWrap {
 	line-height: 30px;
 	margin-bottom: 10px;
 	&:hover .galleryIcon {
 		color: $spotGrey;
+	}
+	@include bp(sm) {
+		display: none;
+		visibility: hidden;
 	}
 }
 
@@ -146,13 +242,16 @@
 	margin-bottom: 5px;
 }
 
-// FILTER MENU
+// filters
 .filterWrap {
 	align-items: center;
 	margin-bottom: 10px;
+	@include bp(sm) {
+		display: none;
+		visibility: hidden;
+	}
 }
 
-// FILTER MENU DARK
 .filterItemDARK {
 	color: $spotGrey;
 	cursor: pointer;
@@ -163,6 +262,9 @@
 		color: $white;
 		border-bottom: 2px solid $peach;
 	}
+	@include bp(sm) {
+		margin-top: 10px;
+	}
 }
 
 .filterItemActiveDARK {
@@ -170,7 +272,6 @@
 	border-bottom: 2px solid $peach;
 }
 
-// FILTER MENU LIGHT
 .filterItemLIGHT {
 	color: $lightGrey;
 	cursor: pointer;
@@ -181,6 +282,9 @@
 		color: $grey;
 		border-bottom: 2px solid $peach;
 	}
+	@include bp(sm) {
+		margin-top: 10px;
+	}
 }
 
 .filterItemActiveLIGHT {
@@ -188,7 +292,7 @@
 	border-bottom: 2px solid $peach;
 }
 
-// ABOUT
+// about section
 .aboutListWrap {
 	line-height: 1.5em;
 	@include bp(lg) {
@@ -196,7 +300,6 @@
 	}
 }
 
-// ABOUT LIST DARK
 .aboutListDARK li {
 	color: $spotGrey;
 	font-weight: $light;
@@ -207,7 +310,6 @@
 	color: $spotGrey;
 }
 
-// ABOUT LIST LIGHT
 .aboutListLIGHT li {
 	color: $lightGrey;
 	font-weight: $light;
@@ -218,7 +320,7 @@
 	color: $lightGrey;
 }
 
-// PROJECT
+// project section
 .projectRowDARK {
 	background: $white;
 	border-bottom: 10px solid $spotGrey;
@@ -250,6 +352,19 @@
 	&:hover {
 		color: $peach;
 	}
+	@include bp(xs) {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.projectListItemVisible {
+	@include bp(xs) {
+		display: block;
+		visibility: visible;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
 }
 
 .projectIconsWrap {
@@ -271,7 +386,11 @@
 	}
 }
 
-// FOOTER
+.responsiveMar {
+	margin-top: 5px;
+}
+
+// footer section
 .footer {
 	flex-shrink: 0;
 	margin: 0 auto 30px auto;
@@ -301,7 +420,6 @@
 	color: $blue;
 }
 
-// FOOTER LINK
 .footer a {
 	color: $white;
 	&:hover {
@@ -309,7 +427,6 @@
 	}
 }
 
-// FOOTER LIST DARK
 .listDARK li {
 	color: $spotGrey;
 	font-weight: $light;
@@ -323,7 +440,6 @@
 	}
 }
 
-// FOOTER LIST LIGHT
 .listLIGHT li {
 	color: $lightGrey;
 	font-weight: $light;
@@ -337,7 +453,12 @@
 	}
 }
 
-// TOOLTIP
+.weatherWrap {
+	@include bp(sm) {
+		justify-content: space-between;
+	}
+}
+
 .tooltipWrap {
 	cursor: pointer;
 	margin-left: 13px;
@@ -347,7 +468,26 @@
 	color: $peach;
 }
 
-// ERROR CONTAINER
+.responsiveFooterWrap {
+	@include bp(sm) {
+		display: block;
+	}
+}
+
+.responsiveCopyRight {
+	@include bp(sm) {
+		margin-left: 0;
+		line-height: 24px;
+	}
+}
+
+.miniWrap {
+	@include bp(xs) {
+		justify-content: space-between;
+	}
+}
+
+// error container
 .fullPageFixed {
 	background: $grey;
 	bottom: 0;
@@ -368,4 +508,12 @@
 	right: 0;
 	top: 0;
 	width: 100%;
+}
+
+// footer and project section
+.responsiveWrap {
+	@include bp(md) {
+		display: flex;
+		justify-content: flex-start;
+	}
 }

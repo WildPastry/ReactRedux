@@ -1,14 +1,14 @@
-// IMPORT
+// imports
 @import 'variables';
 @import 'mixins';
 
-// RESET
+// reset
 * {
 	@include reset(0, 0, border-box, none, none);
 	font-family: $font;
 }
 
-// BODY
+// body
 html,
 body {
 	height: 100%;
@@ -20,7 +20,7 @@ body {
 	color: $grey;
 }
 
-// BODY BGS
+// background colours
 .bgLIGHT {
 	background: $white;
 }
@@ -29,12 +29,12 @@ body {
 	background: $grey;
 }
 
-// CODE
+// code
 code {
 	font-family: $font;
 }
 
-// TYPOGRAPHY
+// typography and links
 p {
 	font-weight: $light;
 	line-height: 1.5em;
@@ -69,10 +69,23 @@ h3,
 h4,
 h5 {
 	font-weight: $regular;
-	letter-spacing: 0.4px;
+	letter-spacing: 0.5px;
 }
 
-// SELECTION
+h1 {
+	@include bp(xs) {
+		font-size: 1.4em;
+	}
+}
+
+h2 {
+	@include bp(xs) {
+		font-size: 1.1em;
+		line-height: 1.3em;
+	}
+}
+
+// selection
 ::selection {
 	background: $black;
 }
@@ -81,12 +94,12 @@ h5 {
 	background: $black;
 }
 
-// SCROLL
+// scroll
 .scroll {
 	overflow: hidden;
 }
 
-// FLEX
+// flex
 .flex {
 	display: flex;
 	flex-direction: row;
@@ -103,7 +116,6 @@ h5 {
 	flex: 1;
 }
 
-// WRAP
 .wrap {
 	justify-content: space-between;
 }
@@ -116,7 +128,7 @@ h5 {
 	justify-content: flex-end;
 }
 
-// LINE
+// lines
 .line {
 	border-bottom: 4px solid $lightGrey;
 	margin: 20px 5px;
@@ -132,10 +144,16 @@ h5 {
 	border-bottom: 1px solid $lightGrey;
 	margin-bottom: 10px;
 	margin-top: 10px;
+	@include bp(md) {
+		margin-top: 0;
+	}
 }
 
 .lineThinFooter {
 	border-bottom: 1px solid $lightGrey;
+	@include bp(md) {
+		margin-top: 10px;
+	}
 }
 
 .lineThinAbout {
@@ -143,7 +161,7 @@ h5 {
 	margin: 15px 0 15px 0;
 }
 
-// PAD
+// padding
 .pad {
 	padding: 5px;
 }
@@ -156,7 +174,7 @@ h5 {
 	padding-right: 0;
 }
 
-// MAR
+// margin
 .mar {
 	margin: 15px auto;
 }
@@ -181,32 +199,18 @@ h5 {
 	margin-bottom: 5px;
 }
 
-// ALIGN
+// alignment
 .align {
 	align-items: center;
 }
 
-.center {
-	text-align: center;
+// visibility
+.visible {
+	visibility: visible;
+	display: block;
 }
 
-.left {
-	text-align: left;
-}
-
-.right {
-	text-align: right;
-	@include bp(xl) {
-		margin-top: 15px;
-	}
-	@include bp(lg) {
-		margin-bottom: 15px;
-		text-align: left;
-	}
-}
-
-// BOOTSTRAP
-.row {
-	--bs-gutter-x: 0;
-	--bs-gutter-y: 0;
+.hidden {
+	visibility: hidden;
+	display: none;
 }

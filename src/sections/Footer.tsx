@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 							<FontAwesomeIcon icon={faInstagram} className={'faIcon' + appTheme} />
 						</a>
 					</Col>
-					<Col sm={12} md={3} className='colWrap right responsiveText'>
+					<Col sm={12} md={3} className='colWrap textRight responsiveText'>
 						<h4 className={'marBot text' + appTheme}>ARCHIVED SITES</h4>
 						<ul className={'list' + appTheme}>
 							<li>
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
 							</li>
 						</ul>
 					</Col>
-					<Col sm={12} md={3} className='colWrap right'>
+					<Col sm={12} md={3} className='colWrap textRight'>
 						<h4 className={'marBot text' + appTheme}>CONTACT</h4>
 						<ul className={'list' + appTheme}>
 							<li x-ms-format-detection='none'>022 5025 485
