@@ -51,7 +51,7 @@ export default function ProjectFilters(): JSX.Element {
 				<h4 className={'filterItem' + appTheme}>PHP</h4> */}
 			</div>
 			<div className={'galleryWrap flex pad'}>
-				<h4 className={'text400 textSpot' + appTheme}>IMG THEME</h4>
+				<h4 className={'text400 textDualGrey'}>IMG THEME</h4>
 				<img
 					className={'imgThemeIcon' + ImgTheme}
 					src={require('./../icon/rgb.svg')}

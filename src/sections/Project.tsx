@@ -74,17 +74,60 @@ const Project: React.FC = () => {
 			<MDBAnimation type='fadeIn'>
 				<Container fluid className='responsiveMar'>
 					<Row className='wrap responsiveMar marBotProject'>
+						{/* project title */}
 						<Col sm={12} className='colWrap'>
 							<h1 className={'marBot text' + appTheme}>{proj.name}</h1>
 						</Col>
+						{/* project intro */}
 						<Col sm={12} lg={7} className='colWrap'>
-							<h2 className={'text300 textSpot' + appTheme}>{proj.intro}</h2>
+							<h2 className={'text300 textDualGrey'}>{proj.intro}</h2>
 							<br />
 							<p className={'text' + appTheme}>{proj.desc}</p>
+							{/* tech icons */}
+							<div className='techIconWrap'>
+								{proj.icons.map((currentIcon: any) => (
+									<FontAwesomeIcon
+										key={currentIcon['id']}
+										icon={['fab', currentIcon['src']]}
+										className='projectIcon'
+									/>
+								))}
+							</div>
+							{/* <div className='techIconWrap'>
+										{proj.icons.map((tech: any) => (
+										<span key={tech['id']} className={'techIcon techIcon' + appTheme}>{tech['src']}</span>
+								))}
+							</div> */}
 						</Col>
+						{/* project details and links */}
 						<Col sm={12} lg={5} className='colWrap right'>
-							<ul>
-								<li className='projectListItem'>
+							<ul className={'projectListWrap projectList' + appTheme}>
+								<h2 className={'marBot text' + appTheme}>details</h2>
+								<li>
+									{proj.fields[0]} / {proj.fields[1]} / {proj.fields[2]}
+								</li>
+								<li>{proj.client}</li>
+								<li>{proj.timeline}</li>
+
+								<li className='marTop'><a
+											target='_blank'
+											rel='noopener noreferrer'
+											className={'textPeach projectsLink'}
+											href={proj.url}>
+											{proj.website}
+										</a></li>
+								<li><a
+											target='_blank'
+											rel='noopener noreferrer'
+											className={'textPeach projectsLink'}
+											href={proj.gitUrl}>
+											{proj.git}
+										</a></li>
+										{/* <h2 className={'marBot text' + appTheme}>details</h2>
+										{proj.icons.map((currentIcon: any) => (
+										<li key={currentIcon['id']}>{currentIcon['src']}</li>
+								))} */}
+								{/* <li className='projectListItem'>
 									<span className={'text700 text' + appTheme}>
 										{proj.fields[0]}
 										<span className='textLightGrey text700'> / </span>
@@ -120,17 +163,8 @@ const Project: React.FC = () => {
 											{proj.git}
 										</a>
 									</span>
-								</li>
+								</li> */}
 							</ul>
-							<div className='techIconWrap responsiveWrap'>
-								{proj.icons.map((currentIcon: any) => (
-									<FontAwesomeIcon
-										key={currentIcon['id']}
-										icon={['fab', currentIcon['src']]}
-										className='projectIcon'
-									/>
-								))}
-							</div>
 						</Col>
 						<Col sm={12} className='colWrap'>
 							<div className='lineThin mar' />
