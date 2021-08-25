@@ -221,7 +221,7 @@ const Project: React.FC = () => {
 				{/* navigation controls */}
 				<Container fluid>
 					<Row>
-						<Col sm={12} className='moreProjectsWrap'>
+						<Col sm={12}>
 							<h3 className='textCenter marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
 						<Col xs={12} sm={4} className={'imgWrap' + ImgTheme}>

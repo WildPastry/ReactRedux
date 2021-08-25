@@ -100,10 +100,9 @@
 // more fewer text in gallery section
 .moreFewerLIGHT {
 	color: $blue;
-	font-weight: $regular;
-	margin-top: 0.5rem;
+	text-align: center;
+	margin-top: 20px;
 	cursor: pointer;
-	width: 300px;
 	&:hover {
 		color: $peach;
 	}
@@ -111,10 +110,10 @@
 
 .moreFewerDARK {
 	color: $yellow;
-	font-weight: $regular;
-	margin-top: 0.5rem;
+	text-align: center;
+	margin: 15px auto;
+	margin-top: 20px;
 	cursor: pointer;
-	width: 300px;
 	&:hover {
 		color: $peach;
 	}

@@ -6,6 +6,7 @@ import { RootState } from '../redux/reducers/rootReducer';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { setNav } from '../redux/slices/navSlice';
 import AppTheme from '../components/AppTheme';
+import ImgTheme from '../components/ImgTheme';
 
 // Nav
 const Nav: React.FC = () => {
@@ -99,7 +100,8 @@ const Nav: React.FC = () => {
 						}`}>
 						ABOUT
 					</h4>
-					<AppTheme />
+					<ImgTheme />
+					<AppTheme />					
 				</div>
 			</div>
 			{collapseMenu}
