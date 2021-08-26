@@ -57,7 +57,7 @@ export default function ProjectItem({
 
 	return (
 		<React.Fragment>
-			<div className={'col-xs-12 col-sm-6 col-md-4 col-lg-4 imgWrap' + ImgTheme}>
+			<div className={'col-sm-12 col-md-6 col-lg-4 imgWrap' + ImgTheme}>
 				<MDBAnimation type='zoomIn'>
 					<img
 						src={require('./../img/thumb/' + thumb[0])}

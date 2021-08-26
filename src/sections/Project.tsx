@@ -84,7 +84,7 @@ const Project: React.FC = () => {
 							<br />
 							<p className={'text' + appTheme}>{proj.desc}</p>
 							{/* tech icons */}
-							<div className='techIconWrap'>
+							{/* <div className='techIconWrap'>
 								{proj.icons.map((currentIcon: any) => (
 									<FontAwesomeIcon
 										key={currentIcon['id']}
@@ -92,7 +92,7 @@ const Project: React.FC = () => {
 										className='projectIcon'
 									/>
 								))}
-							</div>
+							</div> */}
 							{/* <div className='techIconWrap'>
 										{proj.icons.map((tech: any) => (
 										<span key={tech['id']} className={'techIcon techIcon' + appTheme}>{tech['src']}</span>
@@ -100,7 +100,7 @@ const Project: React.FC = () => {
 							</div> */}
 						</Col>
 						{/* project details and links */}
-						<Col sm={12} lg={5} className='colWrap right'>
+						<Col sm={12} lg={5} className='projectDetails colWrap right'>
 							<ul className={'projectListWrap projectList' + appTheme}>
 								<h2 className={'marBot text' + appTheme}>details</h2>
 								<li>

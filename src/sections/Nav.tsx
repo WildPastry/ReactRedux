@@ -26,6 +26,7 @@ const Nav: React.FC = () => {
 	// handle function for navigation
 	const handleNav = (section: string) => {
 		dispatch(setNav(section));
+		window.scrollTo(0, 0);
 	};
 
 	// logic functions for hamburger and mobile menu
@@ -70,7 +71,7 @@ const Nav: React.FC = () => {
 	return (
 		<React.Fragment>
 			<div className={'navWrap bg' + appTheme}>
-				<Container fluid>
+				<Container fluid className='navMenuWrap'>
 					<div className='nav pad'>
 						<p className={'brand' + appTheme} onClick={() => handleNav('GALLERY')}>
 							mike parker <span className='text300'> portfolio </span>

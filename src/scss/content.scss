@@ -33,6 +33,15 @@
 	position: sticky;
 	top: 0;
 	z-index: 1;
+	@include bp(xs) {
+		padding-bottom: 10px;
+	}
+}
+
+.navMenuWrap {
+	@include bp(xs) {
+		margin-top: 10px;
+	}
 }
 
 .nav {
@@ -182,8 +191,17 @@
 }
 
 // type section
+.sectionWrap {
+	@include bp(xs) {
+		margin-top: 0;
+	}
+}
+
 #type {
 	height: 40px;
+	@include bp(xs) {
+		height: 20px;
+	}
 }
 
 .typeWrap {
@@ -202,7 +220,7 @@
 	}
 	@include bp(xs) {
 		font-size: 1.2em;
-		// font-weight: $regular;
+		font-weight: $regular;
 		letter-spacing: 0px;
 	}
 }
@@ -350,6 +368,15 @@
 .projectListWrap {
 	text-align: right;
 	line-height: 1.5em;
+	@include bp(xl) {
+		text-align: left;
+	}
+}
+
+.projectDetails {
+	@include bp(xl) {
+		margin-top: 10px;
+	}
 }
 
 .projectListDARK li {
@@ -363,31 +390,6 @@
 	font-weight: $light;
 	line-height: 1.5em;
 }
-
-// .projectListItem {
-// 	text-align: right;
-// 	cursor: default;
-// 	font-weight: $light;
-// 	font-size: 1.2em;
-// 	color: $spotGrey;
-// 	line-height: 1.5em;
-// 	&:hover {
-// 		color: $peach;
-// 	}
-// 	@include bp(xs) {
-// 		display: none;
-// 		visibility: hidden;
-// 	}
-// }
-
-// .projectListItemVisible {
-// 	@include bp(xs) {
-// 		display: block;
-// 		visibility: visible;
-// 		margin-top: 0;
-// 		margin-bottom: 20px;
-// 	}
-// }
 
 .prevNextIconWrap {
 	margin-top: 20px;
@@ -406,6 +408,9 @@
 
 .responsiveMar {
 	margin-top: 25px;
+	@include bp(xs) {
+		margin-top: 5px;
+	}
 }
 
 // footer section
