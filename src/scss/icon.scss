@@ -23,7 +23,6 @@
 	margin-right: 20px;
 	@include bp(xs) {
 		font-size: 25px;
-		margin-right: 0;
 	}
 }
 
@@ -34,66 +33,8 @@
 	margin-right: 20px;
 	@include bp(xs) {
 		font-size: 25px;
-		margin-right: 0;
 	}
 }
-
-// font awesome colours
-// .fa-buffer {
-// 	color: #fb3e44;
-// }
-
-// .fa-sass {
-// 	color: #cf649a;
-// }
-
-// .fa-react {
-// 	color: #61dafb;
-// }
-
-// .fa-bootstrap {
-// 	color: #7251a3;
-// }
-
-// .fa-js {
-// 	color: #f5de19;
-// }
-
-// .fa-git {
-// 	color: #f05033;
-// }
-
-// .fa-node {
-// 	color: #79b461;
-// }
-
-// .fa-npm {
-// 	color: #fb3e44;
-// }
-
-// .fa-grunt {
-// 	color: #fba919;
-// }
-
-// .fa-less {
-// 	color: #4b8fe9;
-// }
-
-// .fa-html5 {
-// 	color: #ee681f;
-// }
-
-// .fa-gulp {
-// 	color: #f05033;
-// }
-
-// .fa-php {
-// 	color: #8892bf;
-// }
-
-// .fa-wordpress {
-// 	color: #00a0d2;
-// }
 
 // project page icons
 .iconWrap {
@@ -257,7 +198,7 @@
 	width: 10px;
 	height: 10px;
 	top: 0;
-	bottom: 0;
+	bottom: 5px;
 	margin-top: auto;
 	margin-bottom: auto;
 	line-height: 0;

@@ -1,6 +1,7 @@
 // imports
 import React from 'react';
 import { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { HamburgerSqueeze } from 'react-animated-burgers';
@@ -68,43 +69,47 @@ const Nav: React.FC = () => {
 
 	return (
 		<React.Fragment>
-			<div className='flex wrap pad navWrap'>
-				<p className={'brand' + appTheme} onClick={() => handleNav('GALLERY')}>
-					mike parker <span className='text300'> portfolio </span>
-				</p>
-				<div className='menuCollapse'>
-					<HamburgerSqueeze
-						className='menuBurger'
-						isActive={showMenu}
-						toggleButton={toggleMenu}
-						buttonWidth={30}
-						barColor={`${appTheme === 'DARK' ? '#fff' : '#292929'}`}
-					/>
-				</div>
-				<div className='menu flex navWrap'>
-					<h4
-						onClick={() => handleNav('GALLERY')}
-						className={`${
-							currentSection === 'GALLERY'
-								? 'navItem' + appTheme + ' navItemActive' + appTheme
-								: 'navItem' + appTheme
-						}`}>
-						GALLERY
-					</h4>
-					<h4
-						onClick={() => handleNav('ABOUT')}
-						className={`${
-							currentSection === 'ABOUT'
-								? 'navItem' + appTheme + ' navItemActive' + appTheme
-								: 'navItem' + appTheme
-						}`}>
-						ABOUT
-					</h4>
-					<ImgTheme />
-					<AppTheme />					
-				</div>
+			<div className={'navWrap bg' + appTheme}>
+				<Container fluid>
+					<div className='nav pad'>
+						<p className={'brand' + appTheme} onClick={() => handleNav('GALLERY')}>
+							mike parker <span className='text300'> portfolio </span>
+						</p>
+						<div className='menu flex'>
+							<h4
+								onClick={() => handleNav('GALLERY')}
+								className={`${
+									currentSection === 'GALLERY'
+										? 'navItem' + appTheme + ' navItemActive' + appTheme
+										: 'navItem' + appTheme
+								}`}>
+								GALLERY
+							</h4>
+							<h4
+								onClick={() => handleNav('ABOUT')}
+								className={`${
+									currentSection === 'ABOUT'
+										? 'navItem' + appTheme + ' navItemActive' + appTheme
+										: 'navItem' + appTheme
+								}`}>
+								ABOUT
+							</h4>
+							<ImgTheme />
+							<AppTheme />
+						</div>
+						<div className='menuCollapse'>
+							<HamburgerSqueeze
+								className='menuBurger'
+								isActive={showMenu}
+								toggleButton={toggleMenu}
+								buttonWidth={30}
+								barColor={`${appTheme === 'DARK' ? '#fff' : '#292929'}`}
+							/>
+						</div>
+					</div>
+					{collapseMenu}
+				</Container>
 			</div>
-			{collapseMenu}
 		</React.Fragment>
 	);
 };

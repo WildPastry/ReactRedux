@@ -29,10 +29,20 @@
 
 // navigation styles
 .navWrap {
+	padding-bottom: 20px;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
 .navItemDARK {
+	height: 30px;
 	color: $spotGrey;
 	cursor: pointer;
 	margin-left: 13px;
@@ -50,6 +60,7 @@
 }
 
 .navItemLIGHT {
+	height: 30px;
 	color: $lightGrey;
 	cursor: pointer;
 	margin-left: 13px;
@@ -73,16 +84,16 @@
 	border-bottom: 2px solid transparent;
 	padding-bottom: 1px;
 	font-weight: $bold;
+	font-size: 1.3em;
 	letter-spacing: 0.4px;
 	@include transitions($speed, $speed, $speed, $speed);
 	&:hover {
 		border-bottom: 2px solid $yellow;
 		color: $yellow;
 	}
-}
-
-.brandDARK a {
-	color: $yellow;
+	@include bp(md) {
+		font-size: 1em;
+	}
 }
 
 .brandLIGHT {
@@ -91,16 +102,16 @@
 	border-bottom: 2px solid transparent;
 	padding-bottom: 1px;
 	font-weight: $bold;
+	font-size: 1.3em;
 	letter-spacing: 0.4px;
 	@include transitions($speed, $speed, $speed, $speed);
 	&:hover {
 		border-bottom: 2px solid $blue;
 		color: $blue;
 	}
-}
-
-.brandLIGHT a {
-	color: $blue;
+	@include bp(md) {
+		font-size: 1em;
+	}
 }
 
 .navItemCollapseDARK {
@@ -138,16 +149,19 @@
 }
 
 .menu {
-	@include bp(xl) {
+	@include bp(md) {
 		display: none;
 		visibility: hidden;
 	}
 }
 
-.menuCollapseItems {
+.menuCollapse {
+	display: none;
+	visibility: hidden;
+	cursor: pointer;
 	@include bp(md) {
-		display: none;
-		visibility: hidden;
+		display: block;
+		visibility: visible;
 	}
 }
 
@@ -161,16 +175,6 @@
 .menuActiveItem {
 	margin: 10px 0 10px 0;
 	text-align: right;
-}
-
-.menuCollapse {
-	display: none;
-	visibility: hidden;
-	cursor: pointer;
-	@include bp(md) {
-		display: inline;
-		visibility: visible;
-	}
 }
 
 .menuBurger {
@@ -529,5 +533,8 @@
 	@include bp(md) {
 		display: flex;
 		justify-content: flex-start;
+	}
+	@include bp(xs) {
+		justify-content: space-between;
 	}
 }

@@ -17,7 +17,7 @@ export function initSpace(theme) {
       if (theme === 'DARK') {
         this.settings = {
           colour: {
-            background: [41, 41, 41],
+            background: [35, 35, 35],
             line: [255, 153, 255]
           },
           depth: 7,
