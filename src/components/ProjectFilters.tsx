@@ -19,7 +19,7 @@ export default function ProjectFilters(): JSX.Element {
 		// };
 
 	return (
-		<div className='flex wrap'>
+		<div className='flex wrap mar50'>
 			{/* <FilterButton projectFilter={ProjectFilter.ShowAll} text={'All'} />
 			<FilterButton projectFilter={ProjectFilter.ShowActive} text={'Active'} />
 			<FilterButton projectFilter={ProjectFilter.ShowCompleted} text={'Completed'} /> */}
@@ -29,7 +29,7 @@ export default function ProjectFilters(): JSX.Element {
 				<h4 className={'filterItem' + appTheme}>Branding</h4>
 				<h4 className={'filterItem' + appTheme}>Marketing</h4>
 				<h4 className={'filterItem' + appTheme}>Websites</h4>
-				<h4 className={'filterItem' + appTheme}>UI/UX</h4>
+				<h4 className={'filterItem' + appTheme}>UX</h4>
 				{/* <h4 className={'filterItem' + appTheme}>TypeScript</h4>
 				<h4 className={'filterItem' + appTheme}>JavaScript</h4>
 				<h4 className={'filterItem' + appTheme}>JQuery</h4>

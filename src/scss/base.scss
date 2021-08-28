@@ -82,7 +82,7 @@ h1 {
 h2 {
 	@include bp(xs) {
 		font-size: 1.1em;
-		line-height: 1.3em;
+		line-height: 1.7em;
 	}
 }
 
@@ -198,6 +198,10 @@ h2 {
 
 .marBotFooter {
 	margin-bottom: 5px;
+}
+
+.mar50 {
+	margin-top: 50px;
 }
 
 // alignment

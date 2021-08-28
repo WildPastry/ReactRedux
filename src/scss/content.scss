@@ -13,7 +13,7 @@
 .container-fluid {
 	flex-grow: 1;
 	margin: 20px auto 0 auto;
-	max-width: 1350px;
+	max-width: 1450px;
 }
 
 .row {
@@ -366,11 +366,7 @@
 }
 
 .projectListWrap {
-	text-align: right;
 	line-height: 1.5em;
-	@include bp(xl) {
-		text-align: left;
-	}
 }
 
 .projectDetails {
@@ -407,7 +403,7 @@
 }
 
 .responsiveMar {
-	margin-top: 25px;
+	margin-top: 35px;
 	@include bp(xs) {
 		margin-top: 5px;
 	}
@@ -417,7 +413,7 @@
 .footer {
 	flex-shrink: 0;
 	margin: 0 auto 30px auto;
-	max-width: 1350px;
+	max-width: 1450px;
 	padding-left: 15px;
 	padding-right: 15px;
 	width: 100%;

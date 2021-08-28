@@ -56,12 +56,23 @@ const Project: React.FC = () => {
 	const randomProjects = useCallback(() => {
 		let random = [];
 		while (random.length < 3) {
-			var r = Math.floor(Math.random() * allProjects.length);
-			if (random.indexOf(r) === -1 || r != 0) {
-				random.push(r);
+			var num = Math.floor(Math.random() * allProjects.length);
+			if (random.indexOf(num) === -1 || num != 0) {
+				random.push(num);
 			}
 		}
+		console.log(random);
 		setShowProjects(random);
+
+		// let random = new Set();
+    // while (random.size < 3) {
+    //     random.add(Math.floor(Math.random() * (allProjects.length - 1 + 1) + 1));
+    // }
+
+		// let uniqueNumbers = Array.from(random) ;
+		// console.log(uniqueNumbers)
+		// setShowProjects(uniqueNumbers as number[]);
+
 	}, []);
 
 	// run random project function on page load
@@ -73,104 +84,52 @@ const Project: React.FC = () => {
 		<React.Fragment>
 			<MDBAnimation type='fadeIn'>
 				<Container fluid className='responsiveMar'>
-					<Row className='wrap responsiveMar marBotProject'>
-						{/* project title */}
-						<Col sm={12} className='colWrap'>
-							<h1 className={'marBot text' + appTheme}>{proj.name}</h1>
-						</Col>
-						{/* project intro */}
-						<Col sm={12} lg={7} className='colWrap'>
-							<h2 className={'text300 textDualGrey'}>{proj.intro}</h2>
-							<br />
-							<p className={'text' + appTheme}>{proj.desc}</p>
-							{/* tech icons */}
-							{/* <div className='techIconWrap'>
-								{proj.icons.map((currentIcon: any) => (
-									<FontAwesomeIcon
-										key={currentIcon['id']}
-										icon={['fab', currentIcon['src']]}
-										className='projectIcon'
-									/>
-								))}
-							</div> */}
-							{/* <div className='techIconWrap'>
-										{proj.icons.map((tech: any) => (
-										<span key={tech['id']} className={'techIcon techIcon' + appTheme}>{tech['src']}</span>
-								))}
-							</div> */}
-						</Col>
-						{/* project details and links */}
-						<Col sm={12} lg={5} className='projectDetails colWrap right'>
+					<Row className='wrap marBotProject'>
+
+						{/* project details / technology / links */}
+						<Col sm={12} lg={4} className='projectDetails colWrap right'>
 							<ul className={'projectListWrap projectList' + appTheme}>
-								<h2 className={'marBot text' + appTheme}>details</h2>
-								<li>
-									{proj.fields[0]} / {proj.fields[1]} / {proj.fields[2]}
-								</li>
+								{/* <p className={'marBot text700 text' + appTheme}>DETAILS</p>
 								<li>{proj.client}</li>
 								<li>{proj.timeline}</li>
-
-								<li className='marTop'><a
-											target='_blank'
-											rel='noopener noreferrer'
-											className={'textPeach projectsLink'}
-											href={proj.url}>
-											{proj.website}
-										</a></li>
-								<li><a
-											target='_blank'
-											rel='noopener noreferrer'
-											className={'textPeach projectsLink'}
-											href={proj.gitUrl}>
-											{proj.git}
-										</a></li>
-										{/* <h2 className={'marBot text' + appTheme}>details</h2>
-										{proj.icons.map((currentIcon: any) => (
-										<li key={currentIcon['id']}>{currentIcon['src']}</li>
-								))} */}
-								{/* <li className='projectListItem'>
-									<span className={'text700 text' + appTheme}>
-										{proj.fields[0]}
-										<span className='textLightGrey text700'> / </span>
-										{proj.fields[1]}
-										<span className='textLightGrey text700'> / </span>
-										{proj.fields[2]}
-									</span>
+								<li>{proj.fields[0]}</li>
+								<li>{proj.fields[1]}</li>
+								<li>{proj.fields[2]}</li> */}
+								<p className={'marBot text700 text' + appTheme}>TECHNOLOGY</p>
+								{proj.icons.map((tech: any) => (
+								<li key={tech['id']}>{tech['src']}</li>
+							))}
+								<li className='marTop'>
+									<a
+										target='_blank'
+										rel='noopener noreferrer'
+										className={'textPeach projectsLink'}
+										href={proj.url}>
+										{proj.website}
+									</a>
 								</li>
-								<li className='projectListItem'>
-									<span className={'text700 text' + appTheme}>{proj.client}</span>
+								<li>
+									<a
+										target='_blank'
+										rel='noopener noreferrer'
+										className={'textPeach projectsLink'}
+										href={proj.gitUrl}>
+										{proj.git}
+									</a>
 								</li>
-								<li className='projectListItem'>
-									<span className={'text700 text' + appTheme}>{proj.timeline}</span>
-								</li>
-								<li className='projectListItem marTop projectListItemVisible'>
-									<span className={'text700 text' + appTheme}>
-										<a
-											target='_blank'
-											rel='noopener noreferrer'
-											className={'textPeach projectsLink'}
-											href={proj.url}>
-											{proj.website}
-										</a>
-									</span>
-								</li>
-								<li className='projectListItem projectListItemVisible'>
-									<span className={'text700 text' + appTheme}>
-										<a
-											target='_blank'
-											rel='noopener noreferrer'
-											className={'textPeach projectsLink'}
-											href={proj.gitUrl}>
-											{proj.git}
-										</a>
-									</span>
-								</li> */}
 							</ul>
 						</Col>
-						<Col sm={12} className='colWrap'>
-							<div className='lineThin mar' />
+
+						{/* project name / intro / desc */}
+						<Col sm={12} lg={8} className='colWrap'>
+							<h1 className={'marBot text' + appTheme}>{proj.name}</h1>
+							<h2 className={'text300 textDualGrey'}>{proj.intro}</h2>
+							<br />
+							<p className={'projectText text' + appTheme}>{proj.desc}</p>
 						</Col>
+
 						{/* navigation controls */}
-						<Col sm={12} className='colWrap flex wrap'>
+						<Col sm={12} className='mar50 colWrap flex wrap'>
 							<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id - 1)}>
 								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 							</div>

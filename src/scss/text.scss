@@ -88,6 +88,14 @@
 
 // custom text styles
 
+// project text on project page
+.projectText {
+	font-weight: $light;
+	line-height: 1.5em;
+	letter-spacing: 0.7px;
+	font-size: 1.2em;
+}
+
 // this text in type section
 .textThis {
 	color: $peach;

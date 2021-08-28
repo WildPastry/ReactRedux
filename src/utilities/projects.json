@@ -2,9 +2,9 @@
   {
     "id": 3,
     "name": "Bull Breed Rescue",
-    "fields": ["Wordpress", "UX", "Web"],
+    "fields": ["WordPress", "WooCommerce", "Web"],
     "client": "Yoobee School of Design",
-    "timeline": "21 days - Jun & Jul 2019",
+    "timeline": "Jun - Jul 2019",
     "website": "view live site",
     "thumb": ["bbr-01.jpg", "bbr-02.jpg"],
     "images": [
@@ -47,35 +47,35 @@
     ],
     "icons": [
       {
-        "src": "less",
+        "src": "LESS",
         "id": "001bbrIcon"
       },
       {
-        "src": "wordpress",
+        "src": "WordPress",
         "id": "002bbrIcon"
       },
       {
-        "src": "bootstrap",
+        "src": "Bootstrap",
         "id": "003bbrIcon"
       },
       {
-        "src": "node",
+        "src": "Node.Js",
         "id": "004bbrIcon"
       },
       {
-        "src": "npm",
+        "src": "NPM",
         "id": "005bbrIcon"
       },
       {
-        "src": "git",
+        "src": "GitHub",
         "id": "006bbrIcon"
       },
       {
-        "src": "js",
+        "src": "JavaScript",
         "id": "007bbrIcon"
       },
       {
-        "src": "php",
+        "src": "PHP",
         "id": "008bbrIcon"
       }
     ],
@@ -90,7 +90,7 @@
     "name": "Method",
     "fields": ["Data Visualization", "UX", "Web"],
     "client": "Yoobee School of Design",
-    "timeline": "23 days - Mar & Apr 2019",
+    "timeline": "Apr 2019",
     "website": "view live site",
     "thumb": ["method-01.gif", "method-02.jpg"],
     "images": [
@@ -133,31 +133,31 @@
     ],
     "icons": [
       {
-        "src": "sass",
+        "src": "SASS",
         "id": "001methodIcon"
       },
       {
-        "src": "react",
+        "src": "React",
         "id": "002methodIcon"
       },
       {
-        "src": "bootstrap",
+        "src": "Bootstrap",
         "id": "003methodIcon"
       },
       {
-        "src": "node",
+        "src": "Node.Js",
         "id": "004methodIcon"
       },
       {
-        "src": "npm",
+        "src": "NPM",
         "id": "005methodIcon"
       },
       {
-        "src": "git",
+        "src": "GitHub",
         "id": "006methodIcon"
       },
       {
-        "src": "js",
+        "src": "JavaScript",
         "id": "007methodIcon"
       }
     ],
@@ -172,7 +172,7 @@
     "name": "WeatherWise",
     "fields": ["Data Visualization", "UX", "Web"],
     "client": "Yoobee School of Design",
-    "timeline": "19 days - Mar 2019",
+    "timeline": "Mar 2019",
     "website": "view live site",
     "thumb": ["ww-01.jpg", "ww-02.jpg"],
     "images": [
@@ -211,31 +211,31 @@
     ],
     "icons": [
       {
-        "src": "sass",
+        "src": "React Native",
         "id": "001wwIcon"
       },
       {
-        "src": "grunt",
+        "src": "Firebase",
         "id": "002wwIcon"
       },
       {
-        "src": "bootstrap",
+        "src": "Formik",
         "id": "003wwIcon"
       },
       {
-        "src": "node",
+        "src": "Node.Js",
         "id": "004wwIcon"
       },
       {
-        "src": "npm",
+        "src": "NPM",
         "id": "005wwIcon"
       },
       {
-        "src": "git",
+        "src": "GitHub",
         "id": "006wwIcon"
       },
       {
-        "src": "js",
+        "src": "JavaScript",
         "id": "007wwIcon"
       }
     ],
@@ -250,7 +250,7 @@
     "name": "Tourism NZ",
     "fields": ["Data Visualization", "UX", "Web"],
     "client": "Yoobee School of Design",
-    "timeline": "29 days - Nov & Dec 2018",
+    "timeline": "Nov - Dec 2018",
     "website": "view live site",
     "thumb": ["tour-01.jpg", "tour-02.jpg"],
     "images": [
@@ -293,27 +293,27 @@
     ],
     "icons": [
       {
-        "src": "less",
+        "src": "LESS",
         "id": "001tourIcon"
       },
       {
-        "src": "gulp",
+        "src": "Gulp",
         "id": "002tourIcon"
       },
       {
-        "src": "node",
+        "src": "Node.Js",
         "id": "004tourIcon"
       },
       {
-        "src": "npm",
+        "src": "NPM",
         "id": "005tourIcon"
       },
       {
-        "src": "git",
+        "src": "GitHub",
         "id": "006tourIcon"
       },
       {
-        "src": "js",
+        "src": "JavaScript",
         "id": "007tourIcon"
       }
     ],
@@ -328,7 +328,7 @@
     "name": "Wagamama",
     "fields": ["Hospitality", "UX", "Web"],
     "client": "Yoobee School of Design",
-    "timeline": "21 days - Sep 2018",
+    "timeline": "Sep 2018",
     "website": "view live site",
     "thumb": ["wag-01.jpg", "wag-02.jpg"],
     "images": [
@@ -367,15 +367,15 @@
     ],
     "icons": [
       {
-        "src": "sass",
+        "src": "SASS",
         "id": "001wagIcon"
       },
       {
-        "src": "html5",
+        "src": "HTML 5",
         "id": "002wagIcon"
       },
       {
-        "src": "js",
+        "src": "JavaScript",
         "id": "007wagIcon"
       }
     ],
@@ -390,7 +390,7 @@
     "name": "Wellington Botanic Garden",
     "fields": ["Research", "UX", "Web"],
     "client": "Yoobee School of Design",
-    "timeline": "19 days - Aug & Sep 2018",
+    "timeline": "Aug - Sep 2018",
     "website": "view live site",
     "thumb": ["wbg-01.jpg", "wbg-02.jpg"],
     "images": [
@@ -417,31 +417,19 @@
       {
         "src": "wbg/06.jpg",
         "id": "006wbgImage"
-      },
-      {
-        "src": "wbg/07.jpg",
-        "id": "007wbgImage"
-      },
-      {
-        "src": "wbg/08.jpg",
-        "id": "008wbgImage"
-      },
-      {
-        "src": "wbg/09.jpg",
-        "id": "009wbgImage"
       }
     ],
     "icons": [
       {
-        "src": "sass",
+        "src": "SASS",
         "id": "001wbgIcon"
       },
       {
-        "src": "html5",
+        "src": "HTML 5",
         "id": "002wbgIcon"
       },
       {
-        "src": "js",
+        "src": "JavaScript",
         "id": "007wbgIcon"
       }
     ],
@@ -499,11 +487,11 @@
     ],
     "icons": [
       {
-        "src": "buffer",
+        "src": "Adobe InDesign",
         "id": "001jvIcon"
       },
       {
-        "src": "html5",
+        "src": "HTML 5",
         "id": "002jvIcon"
       }
     ],
@@ -561,7 +549,7 @@
     ],
     "icons": [
       {
-        "src": "buffer",
+        "src": "Adobe InDesign",
         "id": "001fcIcon"
       }
     ],
@@ -615,11 +603,11 @@
     ],
     "icons": [
       {
-        "src": "buffer",
+        "src": "Adobe InDesign",
         "id": "001scIcon"
       },
       {
-        "src": "html5",
+        "src": "HTML 5",
         "id": "002scIcon"
       }
     ],
@@ -677,7 +665,7 @@
     ],
     "icons": [
       {
-        "src": "buffer",
+        "src": "Adobe InDesign",
         "id": "001hanIcon"
       }
     ],
@@ -735,16 +723,16 @@
     ],
     "icons": [
       {
-        "src": "buffer",
+        "src": "Adobe InDesign",
         "id": "001wpIcon"
       },
       {
-        "src": "html5",
+        "src": "HTML 5",
         "id": "002wpIcon"
       }
     ],
-    "intro": "Waterford Press has been publishing newspapers and corporate products for over 25 years and is going stronger than ever.",
-    "desc": "I worked on newspapers, magazines and advertising print material products for a variety of their clients. Most of the publications were worked on simultaneously and included high print numbers. Publications included; Go Travel New Zealand, Go Travel The Pacific, Business South, Business North and the Real Tonga In-flight Magazine.",
+    "intro": "Waterford Press has been publishing newspapers and corporate InDesign for over 25 years and is going stronger than ever.",
+    "desc": "I worked on newspapers, magazines and advertising print material InDesign for a variety of their clients. Most of the publications were worked on simultaneously and included high print numbers. Publications included; Go Travel New Zealand, Go Travel The Pacific, Business South, Business North and the Real Tonga In-flight Magazine.",
     "url": "http://www.waterfordpress.co.nz",
     "git": " ",
     "gitUrl": " "
@@ -797,7 +785,7 @@
     ],
     "icons": [
       {
-        "src": "buffer",
+        "src": "Adobe InDesign",
         "id": "001gtnzIcon"
       }
     ],
@@ -810,7 +798,7 @@
   {
     "id": 1,
     "name": "SimpleWeather",
-    "fields": ["React Native", "UX", "Mobile"],
+    "fields": ["Database", "UX", "Mobile"],
     "client": "Personal Project",
     "timeline": "Feb 2020 - Aug 2021",
     "website": "view live site",
@@ -855,31 +843,31 @@
     ],
     "icons": [
       {
-        "src": "sass",
+        "src": "SASS",
         "id": "001swIcon"
       },
       {
-        "src": "react",
+        "src": "React",
         "id": "002swIcon"
       },
       {
-        "src": "bootstrap",
+        "src": "Bootstrap",
         "id": "003swIcon"
       },
       {
-        "src": "node",
+        "src": "Node.Js",
         "id": "004swIcon"
       },
       {
-        "src": "npm",
+        "src": "NPM",
         "id": "005swIcon"
       },
       {
-        "src": "git",
+        "src": "GitHub",
         "id": "006swIcon"
       },
       {
-        "src": "js",
+        "src": "JavaScript",
         "id": "007swIcon"
       }
     ],
@@ -937,8 +925,16 @@
     ],
     "icons": [
       {
-        "src": "buffer",
+        "src": "InDesign",
         "id": "001gmIcon"
+      },
+      {
+        "src": "Illustrator",
+        "id": "002gmIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "003gmIcon"
       }
     ],
     "intro": "Gas Monkey needed a funky modern brand identity to represent their Tex-Mex style cuisine and primate infused ideas.",
