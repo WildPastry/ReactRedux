@@ -1,5 +1,6 @@
 // imports
 import React from 'react';
+import { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/reducers/rootReducer';
@@ -36,6 +37,11 @@ library.add(
 
 // App
 const App: React.FC = () => {
+		// scroll to top
+		useEffect(() => {
+			window.scrollTo(0, 0);
+		}, []);
+
 	// useSelectors for page data / app theme / navigation
 	const pageData = useSelector((state: RootState) => {
 		return state.loadPage;

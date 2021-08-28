@@ -33,13 +33,13 @@
 	position: sticky;
 	top: 0;
 	z-index: 1;
-	@include bp(xs) {
+	@include bp(sm) {
 		padding-bottom: 10px;
 	}
 }
 
 .navMenuWrap {
-	@include bp(xs) {
+	@include bp(sm) {
 		margin-top: 10px;
 	}
 }
@@ -192,7 +192,7 @@
 
 // type section
 .sectionWrap {
-	@include bp(xs) {
+	@include bp(sm) {
 		margin-top: 0;
 	}
 }
