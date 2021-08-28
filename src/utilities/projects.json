@@ -367,7 +367,7 @@
     ],
     "icons": [
       {
-        "src": "SASS",
+        "src": "UX Pin",
         "id": "001wagIcon"
       },
       {
@@ -375,8 +375,12 @@
         "id": "002wagIcon"
       },
       {
+        "src": "SASS",
+        "id": "003wagIcon"
+      },
+      {
         "src": "JavaScript",
-        "id": "007wagIcon"
+        "id": "004wagIcon"
       }
     ],
     "intro": "Wagamama wants to improve customer engagement and sales by providing table ordering via digital devices.",
@@ -421,7 +425,7 @@
     ],
     "icons": [
       {
-        "src": "SASS",
+        "src": "Adobe XD",
         "id": "001wbgIcon"
       },
       {
@@ -429,8 +433,12 @@
         "id": "002wbgIcon"
       },
       {
+        "src": "SASS",
+        "id": "003wbgIcon"
+      },
+      {
         "src": "JavaScript",
-        "id": "007wbgIcon"
+        "id": "004wbgIcon"
       }
     ],
     "intro": "Wellington City Council need a stand-alone website for the Botanic Garden, to attract more visitors and keep locals engaged.",
@@ -487,12 +495,20 @@
     ],
     "icons": [
       {
-        "src": "Adobe InDesign",
+        "src": "Illustrator",
         "id": "001jvIcon"
       },
       {
-        "src": "HTML 5",
+        "src": "InDesign",
         "id": "002jvIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "003jvIcon"
+      },
+      {
+        "src": "HTML 5",
+        "id": "004jvIcon"
       }
     ],
     "intro": "That sense of adventure to discover the world is at the heart of Jules Verne, an international company based in Central London.",
@@ -549,8 +565,16 @@
     ],
     "icons": [
       {
-        "src": "Adobe InDesign",
+        "src": "Illustrator",
         "id": "001fcIcon"
+      },
+      {
+        "src": "InDesign",
+        "id": "002fcIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "003fcIcon"
       }
     ],
     "intro": "Four Corners is a magazine distributed throughout the United Kingdom which features information about international travel.",
@@ -603,12 +627,20 @@
     ],
     "icons": [
       {
-        "src": "Adobe InDesign",
+        "src": "Illustrator",
         "id": "001scIcon"
       },
       {
-        "src": "HTML 5",
+        "src": "InDesign",
         "id": "002scIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "003scIcon"
+      },
+      {
+        "src": "HTML 5",
+        "id": "004scIcon"
       }
     ],
     "intro": "Solcroft is a well-established creative agency based in North London, specialising in visual communication.",
@@ -665,8 +697,16 @@
     ],
     "icons": [
       {
-        "src": "Adobe InDesign",
+        "src": "Illustrator",
         "id": "001hanIcon"
+      },
+      {
+        "src": "InDesign",
+        "id": "002hanIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "003hanIcon"
       }
     ],
     "intro": "Hanover is an award-winning communications consultancy with offices in London, Brussels, Dublin and the Middle East.",
@@ -723,12 +763,20 @@
     ],
     "icons": [
       {
-        "src": "Adobe InDesign",
+        "src": "Illustrator",
         "id": "001wpIcon"
       },
       {
-        "src": "HTML 5",
+        "src": "InDesign",
         "id": "002wpIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "003wpIcon"
+      },
+      {
+        "src": "HTML 5",
+        "id": "004wpIcon"
       }
     ],
     "intro": "Waterford Press has been publishing newspapers and corporate InDesign for over 25 years and is going stronger than ever.",
@@ -785,8 +833,16 @@
     ],
     "icons": [
       {
-        "src": "Adobe InDesign",
+        "src": "Illustrator",
         "id": "001gtnzIcon"
+      },
+      {
+        "src": "InDesign",
+        "id": "002gtnzIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "003gtnzIcon"
       }
     ],
     "intro": "An international magazine with a wide readership, Go Travel New Zealand is a rich information source for tourists.",
@@ -925,11 +981,11 @@
     ],
     "icons": [
       {
-        "src": "InDesign",
+        "src": "Illustrator",
         "id": "001gmIcon"
       },
       {
-        "src": "Illustrator",
+        "src": "InDesign",
         "id": "002gmIcon"
       },
       {

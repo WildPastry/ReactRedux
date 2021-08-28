@@ -18,7 +18,7 @@ export function initSpace(theme) {
         this.settings = {
           colour: {
             background: [35, 35, 35],
-            line: [255, 153, 255]
+            line: [255, 218, 69]
           },
           depth: 7,
           lineWidth: 1,
@@ -30,7 +30,7 @@ export function initSpace(theme) {
         this.settings = {
           colour: {
             background: [255, 255, 255],
-            line: [59, 156, 103]
+            line: [101, 177, 252]
           },
           depth: 7,
           lineWidth: 1,
