@@ -1,5 +1,6 @@
 // imports
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { setNav, setProject } from '../redux/slices/navSlice';
@@ -30,8 +31,7 @@ interface ProjectProps {
 export default function ProjectItem({
 	id,
 	name,
-	thumb,
-	onClick
+	thumb
 }: ProjectProps): JSX.Element {
 	// useSelector for img theme
 	const ImgTheme = useSelector((state: RootState) => {
@@ -50,11 +50,42 @@ export default function ProjectItem({
 		window.scrollTo(0, 0);
 	};
 
+	const useMove = () => {
+		const [state, setState] = useState({x: 0, y: 0})
+	
+		const handleMouseMove = (e: { persist: () => void; clientX: any; clientY: any; }) => {
+			e.persist()
+			setState(state => ({...state, x: e.clientX, y: e.clientY}))
+		}
+		return {
+			x: state.x,
+			y: state.y,
+			handleMouseMove,
+		}
+	}
+
+	const Hook = () => {
+		const {x, y, handleMouseMove} = useMove()
+		return (
+			<div className="mouseArea" onMouseMove={handleMouseMove}>
+				<div className="mouseInfo">
+					<p>The current mouse position is ({x}, {y})</p>
+				</div>
+			</div>
+		)
+	}
+
 	return (
 		<React.Fragment>
-			<div className={'col-sm-12 col-md-6 col-lg-4 imgWrap' + ImgTheme}>
+			<div className={'col-sm-12 col-md-6 col-lg-4'}>
+				<Hook />
+				<img 
+				className={'imgHover'}
+				src={require('./../img/thumb/' + thumb[1])}
+				alt={name} />
 				<MDBAnimation type='zoomIn'>
 					<img
+						className={'imgWrap' + ImgTheme}
 						src={require('./../img/thumb/' + thumb[0])}
 						alt={name}
 						onClick={() => handleNav('PROJECT', id)}
@@ -64,3 +95,13 @@ export default function ProjectItem({
 		</React.Fragment>
 	);
 }
+
+{/* <div className='image'>
+
+	<div className='hover-container'>
+		<img className='image-hover'/>
+		</div>
+
+		<img className='' data-grid-image data-srcset-landscape='https://marxdesign.co.nz/wp-content/uploads/2020/12/SL_WaterWeb-Hero-Landscape-1024x774.jpg' data-srcset-portrait='https://marxdesign.co.nz/wp-content/uploads/2020/12/SL_Water-Hero_Portrait-1024x1354.jpg' data-src-landscape='https://marxdesign.co.nz/wp-content/uploads/2020/12/SL_WaterWeb-Hero-Landscape-1024x774.jpg' data-src-portrait='https://marxdesign.co.nz/wp-content/uploads/2020/12/SL_Water-Hero_Portrait-1024x1354.jpg' />
+
+		</div> */}

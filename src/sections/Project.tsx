@@ -50,7 +50,7 @@ const Project: React.FC = () => {
 	// store current project
 	let proj = allProjects.find((x) => x.id === currentProject);
 
-	// select random project functions
+	// select random project
 	const [showProjects, setShowProjects] = useState([1, 2, 3]);
 
 	const randomProjects = useCallback(() => {
@@ -61,7 +61,6 @@ const Project: React.FC = () => {
 				random.push(num);
 			}
 		}
-		console.log(random);
 		setShowProjects(random);
 	}, []);
 

@@ -3,6 +3,7 @@ import React from 'react';
 import FilterButton from './FilterButton';
 import { ProjectFilter } from '../types';
 
+// ProjectFilters
 export default function ProjectFilters(): JSX.Element {
 	return (
 		<div className='flex wrap mar50'>

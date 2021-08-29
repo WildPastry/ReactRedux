@@ -90,7 +90,7 @@ const App: React.FC = () => {
 			<React.Fragment>
 				<Nav />
 				<Container fluid className='sectionWrap'>
-					{/* <Type /> */}
+					<Type />
 					<MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
 				</Container>
 				<MDBAnimation type='fadeIn'>{renderProject}</MDBAnimation>

@@ -28,11 +28,6 @@ const getfilteredProjects = (projects: Project[], filter: ProjectFilter) => {
 	}
 };
 
-// const filter = 'nature';
-// const filteredResult = initialState.filter((item) => {
-//     return (item.tags.indexOf(filter) >= 0);
-// });
-
 // ProjectList function
 export default function ProjectList() {
 	const dispatch = useDispatch();

@@ -9,6 +9,7 @@ interface FilterButtonProps {
 	text: string;
 }
 
+// FilterButton
 export default function FilterButton({
 	projectFilter,
 	text
@@ -21,6 +22,7 @@ export default function FilterButton({
 	// dispatch
 	const dispatch = useDispatch();
 
+	// show visible filter
 	const visibleFilter = useSelector((state: RootState) => state.setFilters);
 
 	return (

@@ -71,11 +71,11 @@ export default function SetProjects(): JSX.Element {
 	const renderFewer = () => {
 		return (
 			<h3 className={'moreFewer' + appTheme} onClick={() => toggleMoreFewer(9)}>
-				LESS
+				HIDE
 			</h3>
 		);
 	};
 
 	// buttons to show more or less projects
-	return <Row className='pad'>{showMoreFewer ? null : renderMore()}</Row>;
+	return <Row className='pad'>{showMoreFewer ? renderFewer() : renderMore()}</Row>;
 }
