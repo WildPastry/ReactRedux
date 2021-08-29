@@ -2,10 +2,11 @@
   {
     "id": 3,
     "name": "Bull Breed Rescue",
-    "fields": ["WordPress", "WooCommerce", "Web"],
+    "fields": ["CMS", "Database", "WordPress"],
+    "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Jun - Jul 2019",
-    "website": "view live site",
+    "website": "view site",
     "thumb": ["bbr-01.jpg", "bbr-02.jpg"],
     "images": [
       {
@@ -47,40 +48,32 @@
     ],
     "icons": [
       {
-        "src": "LESS",
+        "src": "Bootstrap",
         "id": "001bbrIcon"
       },
       {
-        "src": "WordPress",
+        "src": "JavaScript",
         "id": "002bbrIcon"
       },
       {
-        "src": "Bootstrap",
+        "src": "LESS",
         "id": "003bbrIcon"
       },
       {
-        "src": "Node.Js",
+        "src": "Photoshop",
         "id": "004bbrIcon"
       },
       {
-        "src": "NPM",
+        "src": "PHP",
         "id": "005bbrIcon"
       },
       {
-        "src": "GitHub",
+        "src": "WordPress",
         "id": "006bbrIcon"
-      },
-      {
-        "src": "JavaScript",
-        "id": "007bbrIcon"
-      },
-      {
-        "src": "PHP",
-        "id": "008bbrIcon"
       }
     ],
-    "intro": "Utilising Wordpress, I created a fully customizable theme from scratch to meet the needs of my client’s requirements for their website.",
-    "desc": "The theme includes server side PHP code to create and display options for the client to customize many aspects of the site. Some of these options include site colours, images, text and font styles, social media icons, slideshow, secure map with key, business location, site logo, shop, and more.",
+    "intro": "Utilising WordPress, I created a fully customizable theme from scratch to meet the needs of my client’s requirements for their website.",
+    "desc": "The theme includes server-side PHP code to create and display options for the client to customize many aspects of the site. Some of these options include site colours, images, text and font styles, social media icons, slideshow, secure map with key, business location, site logo, shop, and more.",
     "url": "https://bbr.mikeparker.co.nz",
     "git": "view code",
     "gitUrl": "https://github.com/WildPastry/nonproflite"
@@ -88,10 +81,11 @@
   {
     "id": 2,
     "name": "Method",
-    "fields": ["Data Visualization", "UX", "Web"],
+    "fields": ["API", "Behance", "Data Visualization"],
+    "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Apr 2019",
-    "website": "view live site",
+    "website": "view site",
     "thumb": ["method-01.gif", "method-02.jpg"],
     "images": [
       {
@@ -133,31 +127,31 @@
     ],
     "icons": [
       {
-        "src": "SASS",
+        "src": "Axios",
         "id": "001methodIcon"
       },
       {
-        "src": "React",
+        "src": "Bootstrap",
         "id": "002methodIcon"
       },
       {
-        "src": "Bootstrap",
+        "src": "Illustrator",
         "id": "003methodIcon"
       },
       {
-        "src": "Node.Js",
+        "src": "JavaScript",
         "id": "004methodIcon"
       },
       {
-        "src": "NPM",
+        "src": "React",
         "id": "005methodIcon"
       },
       {
-        "src": "GitHub",
+        "src": "UX Pin",
         "id": "006methodIcon"
       },
       {
-        "src": "JavaScript",
+        "src": "Webpack",
         "id": "007methodIcon"
       }
     ],
@@ -170,10 +164,11 @@
   {
     "id": 7,
     "name": "WeatherWise",
-    "fields": ["Data Visualization", "UX", "Web"],
+    "fields": ["API", "Data Visualization", "Weather"],
+    "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Mar 2019",
-    "website": "view live site",
+    "website": "view site",
     "thumb": ["ww-01.jpg", "ww-02.jpg"],
     "images": [
       {
@@ -211,32 +206,28 @@
     ],
     "icons": [
       {
-        "src": "React Native",
+        "src": "Adobe XD",
         "id": "001wwIcon"
       },
       {
-        "src": "Firebase",
+        "src": "Grunt",
         "id": "002wwIcon"
       },
       {
-        "src": "Formik",
+        "src": "Illustrator",
         "id": "003wwIcon"
       },
       {
-        "src": "Node.Js",
+        "src": "JavaScript",
         "id": "004wwIcon"
       },
       {
-        "src": "NPM",
+        "src": "JQuery",
         "id": "005wwIcon"
       },
       {
-        "src": "GitHub",
+        "src": "SASS",
         "id": "006wwIcon"
-      },
-      {
-        "src": "JavaScript",
-        "id": "007wwIcon"
       }
     ],
     "intro": "WeatherWise is a contemporary application which brings you more than the daily forecast, powered by Dark Sky.",
@@ -248,10 +239,11 @@
   {
     "id": 5,
     "name": "Tourism NZ",
-    "fields": ["Data Visualization", "UX", "Web"],
+    "fields": ["Geocoding", "Journey Planner", "Travel"],
+    "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Nov - Dec 2018",
-    "website": "view live site",
+    "website": "view site",
     "thumb": ["tour-01.jpg", "tour-02.jpg"],
     "images": [
       {
@@ -293,7 +285,7 @@
     ],
     "icons": [
       {
-        "src": "LESS",
+        "src": "Adobe XD",
         "id": "001tourIcon"
       },
       {
@@ -301,20 +293,20 @@
         "id": "002tourIcon"
       },
       {
-        "src": "Node.Js",
-        "id": "004tourIcon"
-      },
-      {
-        "src": "NPM",
-        "id": "005tourIcon"
-      },
-      {
-        "src": "GitHub",
-        "id": "006tourIcon"
+        "src": "Illustrator",
+        "id": "003tourIcon"
       },
       {
         "src": "JavaScript",
-        "id": "007tourIcon"
+        "id": "004tourIcon"
+      },
+      {
+        "src": "JQuery",
+        "id": "005tourIcon"
+      },
+      {
+        "src": "LESS",
+        "id": "006tourIcon"
       }
     ],
     "intro": "Tourism New Zealand need a single page web application aimed at visitors needing hired transport for short periods of time.",
@@ -326,10 +318,11 @@
   {
     "id": 4,
     "name": "Wagamama",
-    "fields": ["Hospitality", "UX", "Web"],
+    "fields": ["E-Commerce", "Hospitality", "Menu"],
+    "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Sep 2018",
-    "website": "view live site",
+    "website": "view site",
     "thumb": ["wag-01.jpg", "wag-02.jpg"],
     "images": [
       {
@@ -367,20 +360,24 @@
     ],
     "icons": [
       {
-        "src": "UX Pin",
+        "src": "JavaScript",
         "id": "001wagIcon"
       },
       {
-        "src": "HTML 5",
+        "src": "JQuery",
         "id": "002wagIcon"
       },
       {
-        "src": "SASS",
+        "src": "Illustrator",
         "id": "003wagIcon"
       },
       {
-        "src": "JavaScript",
+        "src": "Photoshop",
         "id": "004wagIcon"
+      },
+      {
+        "src": "SASS",
+        "id": "005wagIcon"
       }
     ],
     "intro": "Wagamama wants to improve customer engagement and sales by providing table ordering via digital devices.",
@@ -392,10 +389,11 @@
   {
     "id": 6,
     "name": "Wellington Botanic Garden",
-    "fields": ["Research", "UX", "Web"],
+    "fields": ["Information", "Research", "UX"],
+    "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Aug - Sep 2018",
-    "website": "view live site",
+    "website": "view site",
     "thumb": ["wbg-01.jpg", "wbg-02.jpg"],
     "images": [
       {
@@ -429,16 +427,24 @@
         "id": "001wbgIcon"
       },
       {
-        "src": "HTML 5",
+        "src": "Bootstrap",
         "id": "002wbgIcon"
       },
       {
-        "src": "SASS",
+        "src": "JavaScript",
         "id": "003wbgIcon"
       },
       {
-        "src": "JavaScript",
+        "src": "JQuery",
         "id": "004wbgIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "005wbgIcon"
+      },
+      {
+        "src": "SASS",
+        "id": "006wbgIcon"
       }
     ],
     "intro": "Wellington City Council need a stand-alone website for the Botanic Garden, to attract more visitors and keep locals engaged.",
@@ -450,7 +456,8 @@
   {
     "id": 8,
     "name": "Jules Verne",
-    "fields": ["Branding", "Graphic", "Web"],
+    "fields": ["Advertising", "Branding", "Graphic"],
+    "type": ["BRANDING", "GRAPHIC", "MARKETING"],
     "client": "Kuoni Travel & Jules Verne",
     "timeline": "Apr 2016 - Feb 2018",
     "website": "vjv.com",
@@ -495,20 +502,24 @@
     ],
     "icons": [
       {
-        "src": "Illustrator",
+        "src": "HTML & CSS",
         "id": "001jvIcon"
       },
       {
-        "src": "InDesign",
+        "src": "Illustrator",
         "id": "002jvIcon"
       },
       {
-        "src": "Photoshop",
+        "src": "InDesign",
         "id": "003jvIcon"
       },
       {
-        "src": "HTML 5",
+        "src": "JavaScript",
         "id": "004jvIcon"
+      },
+      {
+        "src": "Photoshop",
+        "id": "005jvIcon"
       }
     ],
     "intro": "That sense of adventure to discover the world is at the heart of Jules Verne, an international company based in Central London.",
@@ -521,6 +532,7 @@
     "id": 11,
     "name": "Four Corners",
     "fields": ["Advertising", "Editorial", "Graphic"],
+    "type": ["GRAPHIC", "MARKETING"],
     "client": "Kuoni Travel & Jules Verne",
     "timeline": "Apr 2016 - Feb 2018",
     "website": " ",
@@ -586,7 +598,8 @@
   {
     "id": 12,
     "name": "Solcroft",
-    "fields": ["Graphic", "Editorial", "Web"],
+    "fields": ["Editorial", "Graphic", "Web"],
+    "type": ["BRANDING", "GRAPHIC"],
     "client": "Solcroft",
     "timeline": "Feb - Apr 2016",
     "website": " ",
@@ -637,10 +650,6 @@
       {
         "src": "Photoshop",
         "id": "003scIcon"
-      },
-      {
-        "src": "HTML 5",
-        "id": "004scIcon"
       }
     ],
     "intro": "Solcroft is a well-established creative agency based in North London, specialising in visual communication.",
@@ -653,6 +662,7 @@
     "id": 13,
     "name": "Hanover",
     "fields": ["Corporate", "Editorial", "Graphic"],
+    "type": ["MARKETING"],
     "client": "Hanover",
     "timeline": "Apr 2016",
     "website": "hanovercomms.com",
@@ -722,6 +732,7 @@
     "timeline": "Feb 2014 - Jan 2016",
     "website": "waterfordpress.co.nz",
     "fields": ["Advertising", "Graphic", "Web"],
+    "type": ["GRAPHIC", "MARKETING"],
     "thumb": ["wp-01.jpg", "wp-02.jpg"],
     "images": [
       {
@@ -763,24 +774,24 @@
     ],
     "icons": [
       {
-        "src": "Illustrator",
+        "src": "HTML & CSS",
         "id": "001wpIcon"
       },
       {
-        "src": "InDesign",
+        "src": "Illustrator",
         "id": "002wpIcon"
       },
       {
-        "src": "Photoshop",
+        "src": "InDesign",
         "id": "003wpIcon"
       },
       {
-        "src": "HTML 5",
+        "src": "Photoshop",
         "id": "004wpIcon"
       }
     ],
-    "intro": "Waterford Press has been publishing newspapers and corporate InDesign for over 25 years and is going stronger than ever.",
-    "desc": "I worked on newspapers, magazines and advertising print material InDesign for a variety of their clients. Most of the publications were worked on simultaneously and included high print numbers. Publications included; Go Travel New Zealand, Go Travel The Pacific, Business South, Business North and the Real Tonga In-flight Magazine.",
+    "intro": "Waterford Press has been publishing newspapers and corporate design for over 25 years and is going stronger than ever.",
+    "desc": "I worked on newspapers, magazines and advertising print material design for a variety of their clients. Most of the publications were worked on simultaneously and included high print numbers. Publications included; Go Travel New Zealand, Go Travel The Pacific, Business South, Business North and the Real Tonga In-flight Magazine.",
     "url": "http://www.waterfordpress.co.nz",
     "git": " ",
     "gitUrl": " "
@@ -789,6 +800,7 @@
     "id": 10,
     "name": "Go Travel New Zealand",
     "fields": ["Advertising", "Graphic", "Typography"],
+    "type": ["GRAPHIC", "MARKETING"],
     "client": "Waterford Press",
     "timeline": "Feb 2014 - Jan 2016",
     "website": "gotravelnewzealand.com",
@@ -846,7 +858,7 @@
       }
     ],
     "intro": "An international magazine with a wide readership, Go Travel New Zealand is a rich information source for tourists.",
-    "desc": "Containing up to date information about popular activities, attractions and accommodation, Go Travel New Zealand also has engaging feature articles and experience stories presented in a highly visual context. Communicating directly with clients was a vital part of making this magazine a success, and managing my junior design team to help with content.",
+    "desc": "Containing up to date information about popular activities, attractions and accommodation, Go Travel New Zealand also has engaging feature articles and experience stories presented in a highly visual context. Communicating directly with clients was a vital part of making this magazine a success and managing my junior design team to help with content.",
     "url": "https://gotravelnewzealand.com",
     "git": " ",
     "gitUrl": " "
@@ -854,10 +866,11 @@
   {
     "id": 1,
     "name": "SimpleWeather",
-    "fields": ["Database", "UX", "Mobile"],
+    "fields": ["API", "Data Visualization", "Mobile"],
+    "type": ["APP"],
     "client": "Personal Project",
     "timeline": "Feb 2020 - Aug 2021",
-    "website": "view live site",
+    "website": "view site",
     "thumb": ["sw-01.jpg", "sw-02.jpg"],
     "images": [
       {
@@ -899,36 +912,36 @@
     ],
     "icons": [
       {
-        "src": "SASS",
+        "src": "After Effects",
         "id": "001swIcon"
       },
       {
-        "src": "React",
+        "src": "Android Studio",
         "id": "002swIcon"
       },
       {
-        "src": "Bootstrap",
+        "src": "Firebase",
         "id": "003swIcon"
       },
       {
-        "src": "Node.Js",
+        "src": "Illustrator",
         "id": "004swIcon"
       },
       {
-        "src": "NPM",
+        "src": "JavaScript",
         "id": "005swIcon"
       },
       {
-        "src": "GitHub",
+        "src": "Photoshop",
         "id": "006swIcon"
       },
       {
-        "src": "JavaScript",
+        "src": "React Native",
         "id": "007swIcon"
       }
     ],
     "intro": "Fast, accurate, and intuitive weather app designed for iOS and Android.",
-    "desc": "The goal was to create a web interface which is intuitive to use and displays dynamic data from the Behance API in an easily understandable representation. All project dependencies are managed, and common tasks automated, to keep our workflow controlled. The result is a quick and responsive web interface with a strong visual hierarchy.",
+    "desc": "SimpleWeather is a straightforward and accessible free App which displays weather data using strong typography and bold, bright colours. API Integration from four services which provide data for weather, places, time zones and cloud storage for user accounts. Smart navigation using StackNavigator and featuring secure authentication for account creation, signing in and password recovery.",
     "url": "https://sw.mikeparker.co.nz",
     "git": "view code",
     "gitUrl": "https://github.com/WildPastry/SimpleWeatherLanding"
@@ -937,6 +950,7 @@
     "id": 9,
     "name": "Gas Monkey",
     "fields": ["Branding", "Graphic", "Typography"],
+    "type": ["BRANDING", "GRAPHIC", "MARKETING"],
     "client": "Gas Monkey",
     "timeline": "Jan - Dec 2015",
     "website": " ",

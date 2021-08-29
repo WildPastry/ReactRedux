@@ -57,22 +57,12 @@ const Project: React.FC = () => {
 		let random = [];
 		while (random.length < 3) {
 			var num = Math.floor(Math.random() * allProjects.length);
-			if (random.indexOf(num) === -1 || num != 0) {
+			if (random.indexOf(num) === -1) {
 				random.push(num);
 			}
 		}
 		console.log(random);
 		setShowProjects(random);
-
-		// let random = new Set();
-    // while (random.size < 3) {
-    //     random.add(Math.floor(Math.random() * (allProjects.length - 1 + 1) + 1));
-    // }
-
-		// let uniqueNumbers = Array.from(random) ;
-		// console.log(uniqueNumbers)
-		// setShowProjects(uniqueNumbers as number[]);
-
 	}, []);
 
 	// run random project function on page load
@@ -85,16 +75,9 @@ const Project: React.FC = () => {
 			<MDBAnimation type='fadeIn'>
 				<Container fluid className='responsiveMar'>
 					<Row className='wrap marBotProject'>
-
 						{/* project details / technology / links */}
 						<Col sm={12} lg={4} className='projectDetails colWrap right'>
 							<ul className={'projectListWrap projectList' + appTheme}>
-								{/* <p className={'marBot text700 text' + appTheme}>DETAILS</p>
-								<li>{proj.client}</li>
-								<li>{proj.timeline}</li>
-								<li>{proj.fields[0]}</li>
-								<li>{proj.fields[1]}</li>
-								<li>{proj.fields[2]}</li> */}
 								<p className={'marBot text700 text' + appTheme}>TECHNOLOGY</p>
 								{proj.icons.map((tech: any) => (
 								<li key={tech['id']}>{tech['src']}</li>
@@ -119,15 +102,14 @@ const Project: React.FC = () => {
 								</li>
 							</ul>
 						</Col>
-
 						{/* project name / intro / desc */}
 						<Col sm={12} lg={8} className='colWrap'>
-							<h1 className={'marBot text' + appTheme}>{proj.name}</h1>
+							<h1 className={'text' + appTheme}>{proj.name}</h1>
+							<br />
 							<h2 className={'text300 textDualGrey'}>{proj.intro}</h2>
 							<br />
 							<p className={'projectText text' + appTheme}>{proj.desc}</p>
 						</Col>
-
 						{/* navigation controls */}
 						<Col sm={12} className='mar50 colWrap flex wrap'>
 							<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id - 1)}>

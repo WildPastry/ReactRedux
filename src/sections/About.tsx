@@ -29,15 +29,12 @@ const About: React.FC = () => {
 		<React.Fragment>
 			<MDBAnimation type='fadeIn'>
 				<Row className='wrap'>
-					<div className='colWrap'>
-						<h1 className={'marBot text' + appTheme}>about me</h1>
-					</div>
-				</Row>
-				<Row>
-					<Col sm={12} md={6} lg={4} className='colWrap'>
+					<Col sm={12}><h1 className={'colWrap marBot text' + appTheme}>About</h1></Col>
+					<br />
+					<Col sm={12} md={6} lg={4} className='colWrap'>						
 						<p className={'text' + appTheme}>
-							JavaScript, TypeScript, and REACT front-end developer with a strong
-							background in design.
+							TypeScript, React and PHP front-end developer with a strong background in
+							design.
 							<br />
 							<br />
 							Currently developing software in Wellington for international government
@@ -46,24 +43,27 @@ const About: React.FC = () => {
 							<br />
 							<br />
 						</p>
-						<h3 className={'textSpotGrey'} x-ms-format-detection='none'>
+						<h3 className={'marBot textSpotGrey'} x-ms-format-detection='none'>
 							Call/Text <span className='textPeach ml-1'>022 5025 485</span>
 						</h3>
-						<div className='lineThinAbout' />
-						<h2 className={'marBot text' + appTheme}>clients</h2>
 						<ul className={'aboutListWrap aboutList' + appTheme}>
-							<li>Wagamana</li>
-							<li>Tourism NZ</li>
-							<li>Wellington Botanic Garden</li>
-							<li>Kuoni Travel</li>
+							<p className={'marTop marBot text700 text' + appTheme}>CLIENTS</p>
+							<li>Department of Fire and Emergency Services</li>
 							<li>England and Wales Cricket Board</li>
 							<li>Hanover Communications</li>
-							<li>Queensland Police</li>
-							<li>Bushfires Northern Territory</li>
+							<li>Jules Verne</li>
+							<li>Kuoni Travel</li>
 							<li>Main Roads Western Australia</li>
-							<li>Victoria Police</li>
-							<li>Water Corporation Western Australia</li>
+							<li>Northern Territory Bushfires</li>						
+							<li>Queensland Police</li>							
 							<li>Tasmania Police</li>
+							<li>Tight 5 Hospitality</li>
+							<li>Tourism NZ</li>
+							<li>Victoria Police</li>
+							<li>Wagamana</li>
+							<li>Water Corporation Western Australia</li>
+							<li>Waterford Press</li>
+							<li>Wellington Botanic Garden</li>
 						</ul>
 					</Col>
 					<Col sm={12} md={6} lg={8} className='colWrap'>
@@ -73,7 +73,31 @@ const About: React.FC = () => {
 							ref={spaceRef as React.RefObject<HTMLDivElement>}
 						/>
 					</Col>
+					{/* <Col>
+					<ul className={'aboutListWrap aboutList' + appTheme}>
+							<p className={'marBot text700 text' + appTheme}>CLIENTS & PROJECTS</p>
+							<li>Department of Fire and Emergency Services</li>
+							<li>England and Wales Cricket Board</li>
+							<li>Hanover Communications</li>
+							<li>Jules Verne</li>
+							<li>Kuoni Travel</li>
+							<li>Main Roads Western Australia</li>
+							<li>Northern Territory Bushfires</li>						
+							<li>Queensland Police</li>							
+							<li>Tasmania Police</li>
+							<li>Tight 5 Hospitality</li>
+							<li>Tourism NZ</li>
+							<li>Victoria Police</li>
+							<li>Wagamana</li>
+							<li>Water Corporation Western Australia</li>
+							<li>Waterford Press</li>
+							<li>Wellington Botanic Garden</li>
+						</ul>
+					</Col> */}
 				</Row>
+				{/* <Row className='wrap'>
+					<p className={'marBot text700 text' + appTheme}>CLIENTS & PROJECTS</p>
+				</Row> */}
 			</MDBAnimation>
 		</React.Fragment>
 	);

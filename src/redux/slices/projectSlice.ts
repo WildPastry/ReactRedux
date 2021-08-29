@@ -42,6 +42,7 @@ export const setProjects =
 					desc: proj.desc,
 					name: proj.name,
 					fields: proj.fields,
+					type: proj.type,
 					client: proj.client,
 					timeline: proj.timeline,
 					website: proj.website,

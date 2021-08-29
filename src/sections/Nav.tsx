@@ -95,7 +95,7 @@ const Nav: React.FC = () => {
 								}`}>
 								ABOUT
 							</h4>
-							{/* <ImgTheme /> */}
+							<ImgTheme />
 							<AppTheme />
 						</div>
 						<div className='menuCollapse'>

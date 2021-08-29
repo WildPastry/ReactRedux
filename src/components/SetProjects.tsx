@@ -44,7 +44,7 @@ export default function SetProjects(): JSX.Element {
 		[resizeData]
 	);
 
-	// sort data on page load (default to 9 for now - seems okay)
+	// sort data on page load
 	useEffect(() => {
 		sortData(projectData, 9);
 	}, [sortData]);

@@ -88,16 +88,21 @@ h2 {
 
 // selection
 ::selection {
-	background: $black;
+	color: $peach;
 }
 
 ::-moz-selection {
-	background: $black;
+	color: $peach;
 }
 
 // scroll
 .scroll {
 	overflow: hidden;
+}
+
+// positions
+.positionRelative {
+	position: relative;
 }
 
 // flex

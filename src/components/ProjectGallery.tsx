@@ -13,14 +13,25 @@ const getfilteredProjects = (projects: Project[], filter: ProjectFilter) => {
 	switch (filter) {
 		case ProjectFilter.ShowAll:
 			return projects;
-		case ProjectFilter.ShowCompleted:
-			return projects.filter((t) => t.filtered);
-		case ProjectFilter.ShowActive:
-			return projects.filter((t) => !t.filtered);
+		case ProjectFilter.ShowApps:
+			return projects.filter((proj) => proj.type.indexOf('APP') >= 0);
+		case ProjectFilter.ShowBranding:
+			return projects.filter((proj) => proj.type.indexOf('BRANDING') >= 0);
+		case ProjectFilter.ShowGraphic:
+			return projects.filter((proj) => proj.type.indexOf('GRAPHIC') >= 0);
+		case ProjectFilter.ShowMarketing:
+			return projects.filter((proj) => proj.type.indexOf('MARKETING') >= 0);
+		case ProjectFilter.ShowWebsites:
+			return projects.filter((proj) => proj.type.indexOf('WEBSITE') >= 0);
 		default:
 			throw new Error('Unknown filter: ' + filter);
 	}
 };
+
+// const filter = 'nature';
+// const filteredResult = initialState.filter((item) => {
+//     return (item.tags.indexOf(filter) >= 0);
+// });
 
 // ProjectList function
 export default function ProjectList() {

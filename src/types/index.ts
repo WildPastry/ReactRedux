@@ -3,6 +3,7 @@ export interface Project {
 	id: number;
 	name: string;
 	fields: any[];
+	type: any[];
 	client: string;
 	timeline: string;
 	website: string;
@@ -34,12 +35,15 @@ export interface Navigation {
 
 export enum ProjectFilter {
 	ShowAll = 'SHOW_ALL',
-	ShowCompleted = 'SHOW_COMPLETED',
-	ShowActive = 'SHOW_ACTIVE'
+	ShowApps = 'APP',
+	ShowBranding = 'BRANDING',
+	ShowGraphic = 'GRAPHIC',
+	ShowMarketing = 'MARKETING',
+	ShowWebsites = 'WEBSITE'
 }
 
 export interface SetSection {
-	handleSection: (section: string) => void
+	handleSection: (section: string) => void;
 }
 
 interface Set<T> {

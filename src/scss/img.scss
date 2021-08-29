@@ -31,3 +31,24 @@
 		filter: grayscale(100%);
 	}
 }
+
+// client logos
+.icon-slider-wrapper {
+	overflow: hidden;
+}
+
+.icon-slider {
+	background: url('../img/icon-slider.png') repeat-x;
+	height: 150px;
+	width: 9600px;
+	animation: slide 25s linear infinite;
+}
+
+@keyframes slide {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-3200px, 0, 0);
+	}
+}
