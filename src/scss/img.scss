@@ -3,69 +3,77 @@
 @import 'mixins';
 
 // image styles
-.imgWrapDARK,
-.imgWrapLIGHT {
+.imgWrap {
 	padding: 5px;
-}
-
-.imgWrapDARK {
 	cursor: pointer;
 	height: auto;
 	width: 100%;
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
-	&:hover {
-		-webkit-filter: grayscale(0%);
-		filter: grayscale(0%);
-	}
 }
 
-.imgWrapLIGHT {
-	cursor: pointer;
-	height: auto;
-	width: 100%;
+.imgWrapActive {
 	-webkit-filter: grayscale(0%);
-	filter: grayscale(0%);
-	&:hover {
-		-webkit-filter: grayscale(100%);
-		filter: grayscale(100%);
-	}
+		filter: grayscale(0%);
 }
 
 // hover images
-// .imgHoverWrap {
-// 	&:hover {
-// 		.imgHover {
-// 			opacity: 1;
-// 			visibility: visible;
-// 		}
-// 	}
-// }
 .mouseArea {
-	height: 50px;
+	height: 150px;
 }
 .mouseInfo {
 	color: $peach;
 	visibility: hidden;
 	opacity: 0;
 	transition: 0.5s;
+	&:hover {
+		visibility: visible;
+		opacity: 0.75;
+		transition: opacity 0.5s;
+	}
 }
-:hover .mouseInfo {
-	visibility: visible;
-	opacity: 0.75;
-	transition: opacity 0.5s;
-}
+
 .showImg {
 	width: 100%;
 }
 
-.imgHover {
-	width: 70%;
-	height: auto;
-	// transform: scale(1,0);
-	// opacity: 0;
-	// visibility: hidden;
-	// width: 70%;
-	// height: auto;
-	z-index: 1;
+.imgHoverWrap {
+	position: relative;
 }
+
+.imgHover {
+	width: 300px;
+	height: auto;
+	// position: absolute;
+	// top: 50%;
+	// left: 50%;
+	// transform: translate(-50%, -50%);
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 10;
+	// @include transitions($speed, $speed, $speed, $speed);
+}
+
+.zIndex {
+	z-index: 5;
+}
+.imgHoverActive {
+	opacity: 1;
+	visibility: visible;
+}
+
+// .cursor {
+//   .cheese {
+//     cursor: none;
+//     width: 200px;
+
+//     &:hover + #cursor {
+//       display: block;
+//     }
+//   }
+
+//   #cursor {
+//     position: absolute;
+//   }
+// }

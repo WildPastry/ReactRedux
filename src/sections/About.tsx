@@ -51,19 +51,19 @@ const About: React.FC = () => {
 							<li>Department of Fire and Emergency Services</li>
 							<li>England and Wales Cricket Board</li>
 							<li>Hanover Communications</li>
-							<li>Jules Verne</li>
+							{/* <li>Jules Verne</li> */}
 							<li>Kuoni Travel</li>
 							<li>Main Roads Western Australia</li>
 							<li>Northern Territory Bushfires</li>						
 							<li>Queensland Police</li>							
-							<li>Tasmania Police</li>
-							<li>Tight 5 Hospitality</li>
-							<li>Tourism NZ</li>
+							{/* <li>Tasmania Police</li> */}
+							{/* <li>Tight 5 Hospitality</li> */}
+							{/* <li>Tourism NZ</li> */}
 							<li>Victoria Police</li>
-							<li>Wagamana</li>
-							<li>Water Corporation Western Australia</li>
+							{/* <li>Wagamana</li> */}
+							{/* <li>Water Corporation Western Australia</li>
 							<li>Waterford Press</li>
-							<li>Wellington Botanic Garden</li>
+							<li>Wellington Botanic Garden</li> */}
 						</ul>
 					</Col>
 					<Col sm={12} md={6} lg={8} className='colWrap'>
