@@ -51,8 +51,8 @@ export default function ProjectItem({ id, name, thumb }: ProjectProps): JSX.Elem
 	const [showImgHover, setShowImgHover] = useState(false);
 
 	// toggleImgHover
-	const toggleImgHover = () =>
-		showImgHover === false ? setShowImgHover(true) : setShowImgHover(false);
+	const showImg = () => setShowImgHover(true);
+	const hideImg = () => setShowImgHover(false);
 
 	// const useMove = () => {
 	// 	const [state, setState] = useState({ x: 0, y: 0 });
@@ -198,22 +198,22 @@ export default function ProjectItem({ id, name, thumb }: ProjectProps): JSX.Elem
 	// };
 
 	return (
-		<React.Fragment>
+		<React.Fragment> 
 
 			{/* <div id="object">OBJECT</div> */}
 			{/* Mouse position x:{position.client.x} y:{position.client.y} */}
 			<div
 				className={'col-sm-12 col-md-6 col-lg-4 imgHoverWrap'}
 				// onMouseMove={handleMouseMove}
-				onMouseEnter={toggleImgHover}
-				onMouseLeave={toggleImgHover}>
+				onMouseEnter={showImg}
+				onMouseLeave={hideImg}>
+					{/* <div className={`${showImgHover ? 'square imgHoverActive' : 'square'}`}></div> */}
 				{/* <Cursor /> */}
 				<MouseTooltip
           visible={showImgHover}
           // offsetX={-150}
           // offsetY={-100}
 					className={'zIndex'}
-					
         >
           				<img
 									onClick={() => handleNav('PROJECT', id)}
@@ -239,6 +239,19 @@ export default function ProjectItem({ id, name, thumb }: ProjectProps): JSX.Elem
 						onClick={() => handleNav('PROJECT', id)}
 					/>
 				</MDBAnimation>
+				{/* <div className='descriptionWrap'>
+					<p
+						className={'text700 textMed' + appTheme}>
+						{name}
+					</p>
+					<p className={'text400 textFlip' + appTheme}>
+						{fields[0]}
+						<span className='textLightGrey text400'> / </span>
+						{fields[1]}
+						<span className='textLightGrey text400'> / </span>
+						{fields[2]}
+					</p>
+				</div> */}
 			</div>
 		</React.Fragment>
 	);
