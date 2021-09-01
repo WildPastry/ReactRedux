@@ -69,13 +69,6 @@ const Project: React.FC = () => {
 		randomProjects();
 	}, [randomProjects]);
 
-	// toggle ImgHover state
-	const [showImgHover, setShowImgHover] = useState(true);
-
-	// toggleImgHover
-	const toggleImgHover = () =>
-		showImgHover === false ? setShowImgHover(true) : setShowImgHover(false);
-
 	return (
 		<React.Fragment>
 			<MDBAnimation type='fadeIn'>
@@ -118,31 +111,9 @@ const Project: React.FC = () => {
 						</Col>
 						{/* navigation controls */}
 						<Col sm={12} className='mar50 colWrap flex wrap'>
-
-							<div
-								// onMouseEnter={toggleImgHover}
-								// onMouseLeave={toggleImgHover}
-								className='iconWrap'
-								onClick={() => handleNav('PROJECT', proj.id - 1)}>
-									<img
-										className={`${showImgHover ? 'imgHover imgHoverActive' : 'imgHover'}`}
-										src={require('./../img/thumb/' + proj.thumb[1])}
-										alt={proj.name}
-									/>
-									<div className='descriptionWrap' style={{background:'#242424'}}>
-										<p className={'text700 textMed' + appTheme}>{proj.name}</p>
-										<p className={'text400 textFlip' + appTheme}>
-											{proj.fields[0]}
-											<span className='textLightGrey text400'> / </span>
-											{proj.fields[1]}
-											<span className='textLightGrey text400'> / </span>
-											{proj.fields[2]}
-										</p>
-									</div>
-							
+							<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id - 1)}>
 								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 							</div>
-
 							<div className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
 								<FontAwesomeIcon icon={faTh} className='gridIcon' />
 							</div>

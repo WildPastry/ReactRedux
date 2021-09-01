@@ -37,10 +37,10 @@ library.add(
 
 // App
 const App: React.FC = () => {
-		// scroll to top
-		useEffect(() => {
-			window.scrollTo(0, 0);
-		}, []);
+	// scroll to top
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	// useSelectors for page data / app theme / navigation
 	const pageData = useSelector((state: RootState) => {
@@ -90,7 +90,7 @@ const App: React.FC = () => {
 			<React.Fragment>
 				<Nav />
 				<Container fluid className='sectionWrap'>
-					{/* <Type /> */}
+					<Type />
 					<MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
 				</Container>
 				<MDBAnimation type='fadeIn'>{renderProject}</MDBAnimation>
