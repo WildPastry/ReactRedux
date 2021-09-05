@@ -16,10 +16,6 @@ const Project: React.FC = () => {
 		return state.setTheme.appTheme;
 	});
 
-	const ImgTheme = useSelector((state: RootState) => {
-		return state.setTheme.imgTheme;
-	});
-
 	const allProjects = useSelector((state: RootState) => {
 		return state.setProjects;
 	});

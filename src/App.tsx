@@ -58,11 +58,6 @@ const App: React.FC = () => {
 	// add background to body
 	document.getElementById('bg').className = 'bg' + appTheme;
 
-	// showLoader
-	const showLoader = () => {
-		return <AppLoading />;
-	};
-
 	// errorContainer
 	const errorContainer = () => {
 		return <Error />;
