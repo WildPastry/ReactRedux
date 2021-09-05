@@ -164,22 +164,25 @@ const Project: React.FC = () => {
 						<Col sm={12}>
 							<h3 className='textCenter marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
-						<Col xs={12} sm={4} className={'imgWrap' + ImgTheme}>
+						<Col xs={12} sm={4}>
 							<img
+								className={'imgWrap'}
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[0]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[0]].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
-						<Col xs={12} sm={4} className={'imgWrap' + ImgTheme}>
+						<Col xs={12} sm={4}>
 							<img
+								className={'imgWrap'}
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[1]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[1]].thumb[1])}
 								alt='Gallery'
 							/>
 						</Col>
-						<Col xs={12} sm={4} className={'imgWrap' + ImgTheme}>
+						<Col xs={12} sm={4}>
 							<img
+								className={'imgWrap'}
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[2]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[2]].thumb[1])}
 								alt='Gallery'

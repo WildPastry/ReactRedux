@@ -523,7 +523,7 @@
       }
     ],
     "intro": "That sense of adventure to discover the world is at the heart of Jules Verne, an international company based in Central London.",
-    "desc": "Jules Verne sell innovative small group escorted tours which offer authentic travel with a twist for people who love to see the world. Packed with special touches and little extras, our expert guides will show you the true character of each destination. During my two years of employment I developed a variety of work including brochures, advertising campaigns, online material, stationary, and exhibition stands.",
+    "desc": "Jules Verne sell innovative small group escorted tours which offer authentic travel with a twist for people who love to see the world. Packed with special touches and little extras, our expert guides will show you the true character of each destination. During my two years of employment I developed a variety of work including brochures, advertising campaigns and online material.",
     "url": "https://www.vjv.com",
     "git": " ",
     "gitUrl": " "
@@ -940,7 +940,7 @@
     "desc": "SimpleWeather is a straightforward and accessible free App which displays weather data using strong typography and bold, bright colours. API Integration from four services which provide data for weather, places, time zones and cloud storage for user accounts. Smart navigation using StackNavigator and featuring secure authentication for account creation, signing in and password recovery.",
     "url": "https://sw.mikeparker.co.nz",
     "git": "view code",
-    "gitUrl": "https://github.com/WildPastry/SimpleWeatherLanding"
+    "gitUrl": "https://github.com/WildPastry/SimpleWeather"
   },
   {
     "id": 9,

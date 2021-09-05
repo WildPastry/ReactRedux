@@ -84,10 +84,9 @@ const App: React.FC = () => {
 	const renderApp = (pageData: any) => {
 		// show error container if there is one
 		// otherwise display the app
-		return pageData.isError ? (
-			errorContainer()
-		) : (
+		return (
 			<React.Fragment>
+				{pageData.isLoading ? <AppLoading /> : null}
 				<Nav />
 				<Container fluid className='sectionWrap'>
 					<Type />
@@ -106,7 +105,7 @@ const App: React.FC = () => {
 		);
 	};
 	// wait for page to load before displaying
-	return pageData.isLoading ? showLoader() : renderApp(pageData);
+	return pageData.isError ? errorContainer() : renderApp(pageData);
 };
 
 // EXPORT App
