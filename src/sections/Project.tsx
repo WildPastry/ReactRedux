@@ -58,7 +58,7 @@ const Project: React.FC = () => {
 			}
 		}
 		setShowProjects(random);
-	}, []);
+	}, [allProjects]);
 
 	// run random project function on page load
 	useEffect(() => {
@@ -66,19 +66,20 @@ const Project: React.FC = () => {
 	}, [randomProjects]);
 
 	return (
-		<React.Fragment>
+		<section>
 			<MDBAnimation type='fadeIn'>
-				<Container fluid className='responsiveMar'>
+				<Container aria-label='Project Section' fluid className='responsiveMar'>
 					<Row className='wrap marBotProject'>
 						{/* project details / technology / links */}
 						<Col sm={12} lg={4} className='projectDetails colWrap right'>
-							<ul className={'projectListWrap projectList' + appTheme}>
+							<ul aria-label='Project Technologies List' className={'projectListWrap projectList' + appTheme}>
 								<p className={'marBot text700 text' + appTheme}>TECHNOLOGY</p>
 								{proj.icons.map((tech: any) => (
-									<li key={tech['id']}>{tech['src']}</li>
+									<li aria-label={tech['src']} key={tech['id']}>{tech['src']}</li>
 								))}
 								<li className='marTop'>
 									<a
+										aria-label='Link To Live Project Website'
 										target='_blank'
 										rel='noopener noreferrer'
 										className={'textPeach projectsLink'}
@@ -88,6 +89,7 @@ const Project: React.FC = () => {
 								</li>
 								<li>
 									<a
+										aria-label='Link To Project Code'
 										target='_blank'
 										rel='noopener noreferrer'
 										className={'textPeach projectsLink'}
@@ -99,21 +101,22 @@ const Project: React.FC = () => {
 						</Col>
 						{/* project name / intro / desc */}
 						<Col sm={12} lg={8} className='colWrap'>
-							<h1 className={'text' + appTheme}>{proj.name}</h1>
+							<h1 aria-label='Project Heading' className={'text' + appTheme}>{proj.name}</h1>
 							<br />
-							<h2 className={'text300 textDualGrey'}>{proj.intro}</h2>
+							<h2 aria-label='Project Introduction' className={'text300 textDualGrey'}>{proj.intro}</h2>
 							<br />
-							<p className={'projectText text' + appTheme}>{proj.desc}</p>
+							<p aria-label='Project Description' className={'projectText text' + appTheme}>{proj.desc}</p>
 						</Col>
 						{/* navigation controls */}
 						<Col sm={12} className='mar50 colWrap flex wrap'>
-							<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id - 1)}>
+							<div aria-label='View Previous Project' className='iconWrap' onClick={() => handleNav('PROJECT', proj.id - 1)}>
 								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 							</div>
-							<div className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
+							<div aria-label='View Project Gallery' className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
 								<FontAwesomeIcon icon={faTh} className='gridIcon' />
 							</div>
 							<div
+							aria-label='View Next Project'
 								className='iconWrap'
 								onClick={() => handleNav('PROJECT', +proj.id + 1)}>
 								<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
@@ -130,6 +133,7 @@ const Project: React.FC = () => {
 								<Col sm={12} key={currentImage['id']} className='projectWrap'>
 									<MDBAnimation type='zoomIn'>
 										<img
+											aria-label={proj.name + ' Project Image ' + currentImage['id']}
 											src={require('./../img/project/' + currentImage['src'])}
 											alt={proj.name}
 										/>
@@ -143,13 +147,13 @@ const Project: React.FC = () => {
 				{/* navigation controls */}
 				<Container fluid>
 					<Col sm={12} className='colWrap flex wrap'>
-						<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
+						<div aria-label='View Previous Project' className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
 							<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 						</div>
-						<div className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
+						<div aria-label='View Project Gallery' className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
 							<FontAwesomeIcon icon={faTh} className='gridIcon' />
 						</div>
-						<div className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
+						<div aria-label='View Next Project' className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
 							<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 						</div>
 					</Col>
@@ -158,10 +162,11 @@ const Project: React.FC = () => {
 				<Container fluid>
 					<Row>
 						<Col sm={12}>
-							<h3 className='textCenter marBotProject textPeach'>MORE PROJECTS</h3>
+							<h3 aria-label='More Projects' className='textCenter marBotProject textPeach'>MORE PROJECTS</h3>
 						</Col>
 						<Col xs={12} sm={4}>
 							<img
+								aria-label={'View Project ' + allProjects[showProjects[0]].name}
 								className={'imgWrap'}
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[0]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[0]].thumb[1])}
@@ -170,6 +175,7 @@ const Project: React.FC = () => {
 						</Col>
 						<Col xs={12} sm={4}>
 							<img
+								aria-label={'View Project ' + allProjects[showProjects[1]].name}
 								className={'imgWrap'}
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[1]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[1]].thumb[1])}
@@ -178,6 +184,7 @@ const Project: React.FC = () => {
 						</Col>
 						<Col xs={12} sm={4}>
 							<img
+								aria-label={'View Project ' + allProjects[showProjects[2]].name}
 								className={'imgWrap'}
 								onClick={() => handleNav('PROJECT', allProjects[showProjects[2]].id)}
 								src={require('./../img/thumb/' + allProjects[showProjects[2]].thumb[1])}
@@ -187,7 +194,7 @@ const Project: React.FC = () => {
 					</Row>
 				</Container>
 			</MDBAnimation>
-		</React.Fragment>
+		</section>
 	);
 };
 

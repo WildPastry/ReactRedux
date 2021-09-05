@@ -7,11 +7,11 @@ import ProjectFilters from '../components/ProjectFilters';
 // Gallery
 const Gallery: React.FC = () => {
 	return (
-		<React.Fragment>
+		<section aria-label='Gallery Section'>
 			<ProjectFilters />
 			<ProjectGallery />
 			<SetProjects />
-		</React.Fragment>
+		</section>
 	);
 };
 

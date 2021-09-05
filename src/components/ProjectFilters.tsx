@@ -6,7 +6,7 @@ import { ProjectFilter } from '../types';
 // ProjectFilters
 export default function ProjectFilters(): JSX.Element {
 	return (
-		<div className='flex wrap mar50'>
+		<section className='flex wrap mar50'>
 			<div className={'filterWrap flex pad'}>
 				<FilterButton projectFilter={ProjectFilter.ShowAll} text={'ALL'} />
 				<FilterButton projectFilter={ProjectFilter.ShowApps} text={'Apps'} />
@@ -15,6 +15,6 @@ export default function ProjectFilters(): JSX.Element {
 				<FilterButton projectFilter={ProjectFilter.ShowMarketing} text={'Marketing'} />
 				<FilterButton projectFilter={ProjectFilter.ShowWebsites} text={'Websites'} />
 			</div>
-		</div>
+		</section>
 	);
 }

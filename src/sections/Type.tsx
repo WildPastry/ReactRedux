@@ -25,7 +25,7 @@ const Type: React.FC = () => {
 
 	return (
 		<React.Fragment>
-			<div className='typeWrap pad'>
+			<div aria-label='Animated Typography Section' className='typeWrap pad'>
 				<p className={'textHide text' + appTheme}>
 					<span className='textThis'>this </span>site built with react
 					<span className='textLightGrey text400'> / </span>redux

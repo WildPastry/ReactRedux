@@ -77,10 +77,8 @@ const App: React.FC = () => {
 
 	// renderApp
 	const renderApp = (pageData: any) => {
-		// show error container if there is one
-		// otherwise display the app
 		return (
-			<React.Fragment>
+			<main aria-label='Main Section'>
 				{pageData.isLoading ? <AppLoading /> : null}
 				<Nav />
 				<Container fluid className='sectionWrap'>
@@ -90,16 +88,18 @@ const App: React.FC = () => {
 				<MDBAnimation type='fadeIn'>{renderProject}</MDBAnimation>
 				<Footer />
 				<ScrollUpButton
+					aria-label='Scroll Up Button'
 					StopPosition={0}
 					ShowAtPosition={200}
 					EasingType='easeOutCubic'
 					AnimationDuration={300}
 					ContainerClassName={'scrollUpIcon' + appTheme}
 				/>
-			</React.Fragment>
+			</main>
 		);
 	};
-	// wait for page to load before displaying
+	// show error container if there is one
+	// otherwise display the app
 	return pageData.isError ? errorContainer() : renderApp(pageData);
 };
 

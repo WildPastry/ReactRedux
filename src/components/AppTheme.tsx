@@ -31,21 +31,21 @@ export default function AppTheme(): JSX.Element {
 	};
 
 	return (
-		<React.Fragment>
+		<section aria-label='Dark And Light Mode Section'>
 			<div
 				onClick={triggerToggle}
 				className={`appTheme ${toggle ? 'appThemeChecked' : ''}`}>
 				<div className='appThemeContainer'>
 					<div className='appThemeCheck'>
-						<span>🌞</span>
+						<span role='img' aria-label='Activate Dark Mode'>🌞</span>
 					</div>
 					<div className='appThemeUncheck'>
-						<span>🌜</span>
+						<span role='img' aria-label='Activate Light Mode'>🌜</span>
 					</div>
 				</div>
 				<div className='appThemeCircle'></div>
 				<input className='appThemeInput' type='checkbox' aria-label='Toggle Button' />
 			</div>
-		</React.Fragment>
+		</section>
 	);
 }
