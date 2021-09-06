@@ -56,13 +56,14 @@ export default function ProjectItem({
 			<Col xs={12} sm={6} md={4}>
 				<MDBAnimation type='zoomIn'>
 					<img
+						aria-label='Project Gallery Image'
 						src={require('./../img/thumb/' + thumb[0])}
 						onClick={() => handleNav('PROJECT', id)}
 						className={'imgWrap'}
 						alt={name}
 					/>
 				</MDBAnimation>
-				<div className='descriptionWrap'>
+				<div aria-label='Project Gallery Description' className='descriptionWrap'>
 					<p className={'text700 textMed' + appTheme}>{name}</p>
 					<p className={'text400 textFlip' + appTheme}>
 						{fields[0]}

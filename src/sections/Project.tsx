@@ -39,7 +39,7 @@ const Project: React.FC = () => {
 		// then navigate to correct section and scroll to top
 		dispatch(setNav(section));
 		dispatch(setProject(id));
-		randomProjects();
+		randomProjects(id);
 		window.scrollTo(0, 0);
 	};
 
@@ -49,20 +49,23 @@ const Project: React.FC = () => {
 	// select random project
 	const [showProjects, setShowProjects] = useState([1, 2, 3]);
 
-	const randomProjects = useCallback(() => {
-		let random = [];
-		while (random.length < 3) {
-			var num = Math.floor(Math.random() * allProjects.length);
-			if (random.indexOf(num) === -1) {
-				random.push(num);
+	const randomProjects = useCallback(
+		(id: number) => {
+			let random = [];
+			while (random.length < 3) {
+				var num = Math.floor(Math.random() * allProjects.length);
+				if (random.indexOf(num) === -1 && num != id) {
+					random.push(num);
+				}
 			}
-		}
-		setShowProjects(random);
-	}, [allProjects]);
+			setShowProjects(random);
+		},
+		[allProjects]
+	);
 
 	// run random project function on page load
 	useEffect(() => {
-		randomProjects();
+		randomProjects(proj.id);
 	}, [randomProjects]);
 
 	return (
@@ -71,11 +74,20 @@ const Project: React.FC = () => {
 				<Container aria-label='Project Section' fluid className='responsiveMar'>
 					<Row className='wrap marBotProject'>
 						{/* project details / technology / links */}
-						<Col sm={12} lg={4} className='projectDetails colWrap right'>
-							<ul aria-label='Project Technologies List' className={'projectListWrap projectList' + appTheme}>
+						<Col
+							xs={{ span: 12, order: 2 }}
+							sm={{ span: 12, order: 2 }}
+							lg={{ span: 2, order: 1 }}
+							xl={{ span: 4, order: 1 }}
+							className='projectDetails colWrap right'>
+							<ul
+								aria-label='Project Technologies List'
+								className={'projectListWrap projectList' + appTheme}>
 								<p className={'marBot text700 text' + appTheme}>TECHNOLOGY</p>
 								{proj.icons.map((tech: any) => (
-									<li aria-label={tech['src']} key={tech['id']}>{tech['src']}</li>
+									<li aria-label={tech['src']} key={tech['id']}>
+										{tech['src']}
+									</li>
 								))}
 								<li className='marTop'>
 									<a
@@ -100,30 +112,51 @@ const Project: React.FC = () => {
 							</ul>
 						</Col>
 						{/* project name / intro / desc */}
-						<Col sm={12} lg={8} className='colWrap'>
-							<h1 aria-label='Project Heading' className={'text' + appTheme}>{proj.name}</h1>
+						<Col
+							xs={{ span: 12, order: 1 }}
+							sm={{ span: 12, order: 1 }}
+							lg={{ span: 10, order: 2 }}
+							xl={{ span: 8, order: 2 }}
+							className='colWrap'>
+							<h1 aria-label='Project Heading' className={'text' + appTheme}>
+								{proj.name}
+							</h1>
 							<br />
-							<h2 aria-label='Project Introduction' className={'text300 textDualGrey'}>{proj.intro}</h2>
+							<h2 aria-label='Project Introduction' className={'text300 textDualGrey'}>
+								{proj.intro}
+							</h2>
 							<br />
-							<p aria-label='Project Description' className={'projectText text' + appTheme}>{proj.desc}</p>
+							<p
+								aria-label='Project Description'
+								className={'projectText text' + appTheme}>
+								{proj.desc}
+							</p>
 						</Col>
-						{/* navigation controls */}
-						<Col sm={12} className='mar50 colWrap flex wrap'>
-							<div aria-label='View Previous Project' className='iconWrap' onClick={() => handleNav('PROJECT', proj.id - 1)}>
-								<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
-							</div>
-							<div aria-label='View Project Gallery' className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
-								<FontAwesomeIcon icon={faTh} className='gridIcon' />
-							</div>
-							<div
-							aria-label='View Next Project'
-								className='iconWrap'
-								onClick={() => handleNav('PROJECT', +proj.id + 1)}>
-								<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
-							</div>
-						</Col>
-						{/* navigation controls */}
 					</Row>
+				</Container>
+				{/* navigation controls */}
+				<Container fluid>
+					<Col sm={12} className='mar50 colWrap flex wrap'>
+						<div
+							aria-label='View Previous Project'
+							className='iconWrap'
+							onClick={() => handleNav('PROJECT', proj.id - 1)}>
+							<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
+						</div>
+						<div
+							aria-label='View Project Gallery'
+							className='iconWrap'
+							onClick={() => handleNav('GALLERY', proj.id)}>
+							<FontAwesomeIcon icon={faTh} className='gridIcon' />
+						</div>
+						<div
+							aria-label='View Next Project'
+							className='iconWrap'
+							onClick={() => handleNav('PROJECT', +proj.id + 1)}>
+							<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
+						</div>
+					</Col>
+					{/* navigation controls */}
 				</Container>
 				<div className={'projectRow' + appTheme}>
 					<Container fluid>
@@ -147,13 +180,22 @@ const Project: React.FC = () => {
 				{/* navigation controls */}
 				<Container fluid>
 					<Col sm={12} className='colWrap flex wrap'>
-						<div aria-label='View Previous Project' className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
+						<div
+							aria-label='View Previous Project'
+							className='iconWrap'
+							onClick={() => handleNav('PROJECT', proj.id - 1)}>
 							<FontAwesomeIcon icon={faChevronLeft} className='prevIcon' />
 						</div>
-						<div aria-label='View Project Gallery' className='iconWrap' onClick={() => handleNav('GALLERY', proj.id)}>
+						<div
+							aria-label='View Project Gallery'
+							className='iconWrap'
+							onClick={() => handleNav('GALLERY', proj.id)}>
 							<FontAwesomeIcon icon={faTh} className='gridIcon' />
 						</div>
-						<div aria-label='View Next Project' className='iconWrap' onClick={() => handleNav('PROJECT', proj.id)}>
+						<div
+							aria-label='View Next Project'
+							className='iconWrap'
+							onClick={() => handleNav('PROJECT', +proj.id + 1)}>
 							<FontAwesomeIcon icon={faChevronRight} className='nextIcon' />
 						</div>
 					</Col>
@@ -162,7 +204,11 @@ const Project: React.FC = () => {
 				<Container fluid>
 					<Row>
 						<Col sm={12}>
-							<h3 aria-label='More Projects' className='textCenter marBotProject textPeach'>MORE PROJECTS</h3>
+							<h3
+								aria-label='More Projects'
+								className='textCenter marBotProject textPeach'>
+								MORE PROJECTS
+							</h3>
 						</Col>
 						<Col xs={12} sm={4}>
 							<img

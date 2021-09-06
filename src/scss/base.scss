@@ -207,6 +207,9 @@ h2 {
 
 .mar50 {
 	margin-top: 50px;
+	@include bp(xs) {
+		margin-top: 25px;
+	}
 }
 
 // alignment

@@ -2,7 +2,7 @@
   {
     "id": 3,
     "name": "Bull Breed Rescue",
-    "fields": ["CMS", "Database", "WordPress"],
+    "fields": ["CMS", "Database", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Jun - Jul 2019",
@@ -81,7 +81,7 @@
   {
     "id": 2,
     "name": "Method",
-    "fields": ["API", "Behance", "Data Visualization"],
+    "fields": ["API", "Data Visualization", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Apr 2019",
@@ -164,7 +164,7 @@
   {
     "id": 7,
     "name": "WeatherWise",
-    "fields": ["API", "Data Visualization", "Weather"],
+    "fields": ["API", "Data Visualization", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Mar 2019",
@@ -239,7 +239,7 @@
   {
     "id": 5,
     "name": "Tourism NZ",
-    "fields": ["Geocoding", "Journey Planner", "Travel"],
+    "fields": ["API", "Geocoding", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Nov - Dec 2018",
@@ -318,7 +318,7 @@
   {
     "id": 4,
     "name": "Wagamama",
-    "fields": ["E-Commerce", "Hospitality", "Menu"],
+    "fields": ["E-Commerce", "UX", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Sep 2018",
@@ -389,7 +389,7 @@
   {
     "id": 6,
     "name": "Wellington Botanic Garden",
-    "fields": ["Information", "Research", "UX"],
+    "fields": ["Research", "UX", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Aug - Sep 2018",
