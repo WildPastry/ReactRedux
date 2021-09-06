@@ -54,7 +54,7 @@ const Project: React.FC = () => {
 			let random = [];
 			while (random.length < 3) {
 				var num = Math.floor(Math.random() * allProjects.length);
-				if (random.indexOf(num) === -1 && num != id) {
+				if (random.indexOf(num) === -1 && num != id && num != 0) {
 					random.push(num);
 				}
 			}
