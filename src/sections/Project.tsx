@@ -30,10 +30,10 @@ const Project: React.FC = () => {
 	// handle functions for navigation
 	const handleNav = (section: string, id: number) => {
 		// logic for navigation at the end or start of the project array
-		if (id === 0) {
-			id = allProjects.length;
-		} else if (id === +allProjects.length + 1) {
-			id = 1;
+		if (id === -1) {
+			id = allProjects.length -1;
+		} else if (id === allProjects.length) {
+			id = 0;
 		}
 		// set current project using ID
 		// then navigate to correct section and scroll to top
@@ -47,17 +47,20 @@ const Project: React.FC = () => {
 	let proj = allProjects.find((x) => x.id === currentProject);
 
 	// select random project
-	const [showProjects, setShowProjects] = useState([1, 2, 3]);
+	const [showProjects, setShowProjects] = useState([0, 1, 2]);
 
 	const randomProjects = useCallback(
 		(id: number) => {
 			let random = [];
+			console.log('MUST NOT ADD: ',id);
 			while (random.length < 3) {
 				var num = Math.floor(Math.random() * allProjects.length);
-				if (random.indexOf(num) === -1 && num != id && num != 0) {
+				console.log(num);
+				if (random.indexOf(num) === -1 && num != id) {
 					random.push(num);
 				}
 			}
+			console.log(random)
 			setShowProjects(random);
 		},
 		[allProjects]
