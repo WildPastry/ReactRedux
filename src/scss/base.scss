@@ -30,6 +30,19 @@ body {
 	background: $black;
 }
 
+// scroll
+.scroll {
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	background: $peach;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $lightPeach;
+}
+
 // code
 code {
 	font-family: $font;
@@ -93,11 +106,6 @@ h2 {
 
 ::-moz-selection {
 	color: $peach;
-}
-
-// scroll
-.scroll {
-	overflow: hidden;
 }
 
 // positions
