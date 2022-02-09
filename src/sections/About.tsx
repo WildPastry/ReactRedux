@@ -35,13 +35,12 @@ const About: React.FC = () => {
 					<br />
 					<Col sm={12} md={6} lg={4} className='colWrap'>
 						<p aria-label='About Description' className={'text' + appTheme}>
-							TypeScript, React and PHP front-end developer with a strong background in
+							TypeScript, Angular, and React front-end developer with a strong background in
 							design.
 							<br />
 							<br />
-							Currently developing software in Wellington for international government
-							agencies. Love the gym, tramping, swimming, DNB, animals and craft beer.
-							Constantly learning new techniques and skills.
+							Currently developing Angular software in Wellington for Snapper. Love the gym, tramping, swimming, DNB, animals and craft beer.
+							Constantly improving by learning new techniques and skills.
 							<br />
 							<br />
 						</p>
