@@ -50,19 +50,6 @@ const About: React.FC = () => {
 							x-ms-format-detection='none'>
 							Call/Text <span className='textPeach ml-1'>022 5025 485</span>
 						</h3>
-						<ul aria-label='Client List' className={'aboutListWrap aboutList' + appTheme}>
-							<p className={'marTop marBot text700 text' + appTheme}>CLIENTS</p>
-							<li>Department of Fire and Emergency Services</li>
-							<li>England and Wales Cricket Board</li>
-							<li>Hanover Communications</li>
-							<li>Kuoni Travel</li>
-							<li>Main Roads Western Australia</li>
-							<li>Northern Territory Bushfires</li>
-							<li>Queensland Police</li>
-							<li>Tasmania Police</li>
-							<li>Tight 5 Hospitality</li>
-							<li>Victoria Police</li>
-						</ul>
 					</Col>
 					<Col sm={12} md={6} lg={8} className='colWrap'>
 						<div
