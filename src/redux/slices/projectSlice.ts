@@ -1,7 +1,7 @@
 // imports
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppThunk, AppDispatch } from '..';
-import { setError } from './loadSlice';
+import { setError, setLoading } from './loadSlice';
 import { Project } from '../../types';
 
 // set initialState
@@ -57,6 +57,7 @@ export const setProjects =
 				}));
 				// dispatch projects once finished mapping
 				dispatch(projectSlice.actions.setProjects(setProject));
+				setTimeout(() => {dispatch(setLoading(false))},1000);
 			} catch (err) {
 				// create error page if errors
 				dispatch(setError(true));

@@ -4,7 +4,7 @@ import { Loading } from '../../types';
 
 // set initialState
 const initialState = {
-	isLoading: false,
+	isLoading: true,
 	isError: false
 } as Loading;
 

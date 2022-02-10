@@ -21,30 +21,34 @@ const Footer: React.FC = () => {
 	});
 
 	return (
-		<React.Fragment>
+		<footer aria-label='Footer Section'>
 			<div className='footer'>
 				<div className='line' />
 				<Row>
 					<Col sm={12} md={6} className='colWrap responsiveWrap miniWrap'>
 						<a
+							aria-label='Linkedin'
 							href='https://www.linkedin.com/in/mike-parker-aa084310a'
 							target='_blank'
 							rel='noopener noreferrer'>
 							<FontAwesomeIcon icon={faLinkedinIn} className={'faIcon' + appTheme} />
 						</a>
 						<a
+							aria-label='GitHub'
 							href='https://github.com/WildPastry'
 							target='_blank'
 							rel='noopener noreferrer'>
 							<FontAwesomeIcon icon={faGithub} className={'faIcon' + appTheme} />
 						</a>
 						<a
+							aria-label='Facebook'
 							href='https://www.facebook.com/michael.parker.3532507'
 							target='_blank'
 							rel='noopener noreferrer'>
 							<FontAwesomeIcon icon={faFacebook} className={'faIcon' + appTheme} />
 						</a>
 						<a
+							aria-label='Facebook Messenger'
 							href='https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F598356603%2F'
 							target='_blank'
 							rel='noopener noreferrer'>
@@ -54,12 +58,14 @@ const Footer: React.FC = () => {
 							/>
 						</a>
 						<a
+							aria-label='Pinterest'
 							href='https://www.pinterest.co.uk/WildPastry/'
 							target='_blank'
 							rel='noopener noreferrer'>
 							<FontAwesomeIcon icon={faPinterest} className={'faIcon' + appTheme} />
 						</a>
 						<a
+							aria-label='Instagram'
 							href='https://www.instagram.com/mikeparkernz/'
 							target='_blank'
 							rel='noopener noreferrer'>
@@ -67,10 +73,13 @@ const Footer: React.FC = () => {
 						</a>
 					</Col>
 					<Col sm={12} md={3} className='colWrap textRight responsiveText'>
-						<h4 className={'marBot text' + appTheme}>ARCHIVED SITES</h4>
+						<h4 aria-label='Archived Websites' className={'marBot text' + appTheme}>
+							ARCHIVED SITES
+						</h4>
 						<ul className={'list' + appTheme}>
 							<li>
 								<a
+									aria-label='The Fear Board'
 									target='_blank'
 									rel='noopener noreferrer'
 									href='https://fear.mikeparker.co.nz/'>
@@ -79,6 +88,7 @@ const Footer: React.FC = () => {
 							</li>
 							<li>
 								<a
+									aria-label='School of Kennedy'
 									target='_blank'
 									rel='noopener noreferrer'
 									href='https://sok.mikeparker.co.nz/'>
@@ -87,6 +97,7 @@ const Footer: React.FC = () => {
 							</li>
 							<li>
 								<a
+									aria-label='Let Nature In'
 									target='_blank'
 									rel='noopener noreferrer'
 									href='https://nat.mikeparker.co.nz/'>
@@ -96,12 +107,16 @@ const Footer: React.FC = () => {
 						</ul>
 					</Col>
 					<Col sm={12} md={3} className='colWrap textRight'>
-						<h4 className={'marBot text' + appTheme}>CONTACT</h4>
-						<ul className={'list' + appTheme}>
-							<li x-ms-format-detection='none'>022 5025 485
+						<h4 aria-label='Contact Heading' className={'marBot text' + appTheme}>
+							CONTACT
+						</h4>
+						<ul aria-label='Contact Details List' className={'list' + appTheme}>
+							<li aria-label='Mobile Phone Number' x-ms-format-detection='none'>
+								022 5025 485
 							</li>
 							<li>
-								<a href='mailto:mike@mikeparker.co.nz'>mike@mikeparker.co.nz
+								<a aria-label='Email Address' href='mailto:mike@mikeparker.co.nz'>
+									mike@mikeparker.co.nz
 								</a>
 							</li>
 						</ul>
@@ -113,6 +128,7 @@ const Footer: React.FC = () => {
 							<div>
 								<div className='lineThinFooter' />
 								<p
+									aria-label='Copyright'
 									className={
 										'footerCopyright text400 responsiveCopyRight footerCopyright' +
 										appTheme
@@ -125,7 +141,7 @@ const Footer: React.FC = () => {
 					</div>
 				</Row>
 			</div>
-		</React.Fragment>
+		</footer>
 	);
 };
 

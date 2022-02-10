@@ -7,7 +7,6 @@ import { RootState } from '../redux/reducers/rootReducer';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { setNav } from '../redux/slices/navSlice';
 import AppTheme from '../components/AppTheme';
-import ImgTheme from '../components/ImgTheme';
 
 // Nav
 const Nav: React.FC = () => {
@@ -41,6 +40,7 @@ const Nav: React.FC = () => {
 		collapseMenu = (
 			<div className={'menuActive'}>
 				<h4
+					aria-label='Gallery Button Mobile'
 					onClick={() => handleNav('GALLERY')}
 					className={`${
 						currentSection === 'GALLERY'
@@ -53,6 +53,7 @@ const Nav: React.FC = () => {
 					GALLERY
 				</h4>
 				<h4
+					aria-label='About Button Mobile'
 					onClick={() => handleNav('ABOUT')}
 					className={`${
 						currentSection === 'ABOUT'
@@ -69,15 +70,16 @@ const Nav: React.FC = () => {
 	}
 
 	return (
-		<React.Fragment>
-			<div className={'navWrap bg' + appTheme}>
+		<header aria-label='Header Section'>
+			<nav aria-label='Navigation Section' className={'navWrap bg' + appTheme}>
 				<Container fluid className='navMenuWrap'>
 					<div className='nav pad'>
-						<p className={'brand' + appTheme} onClick={() => handleNav('GALLERY')}>
+						<p aria-label='Mike Parker Portfolio' className={'brand' + appTheme} onClick={() => handleNav('GALLERY')}>
 							mike parker <span className='text300'> portfolio </span>
 						</p>
 						<div className='menu flex'>
 							<h4
+								aria-label='Gallery Button'
 								onClick={() => handleNav('GALLERY')}
 								className={`${
 									currentSection === 'GALLERY'
@@ -87,6 +89,7 @@ const Nav: React.FC = () => {
 								GALLERY
 							</h4>
 							<h4
+								aria-label='About Button'
 								onClick={() => handleNav('ABOUT')}
 								className={`${
 									currentSection === 'ABOUT'
@@ -95,11 +98,11 @@ const Nav: React.FC = () => {
 								}`}>
 								ABOUT
 							</h4>
-							{/* <ImgTheme /> */}
 							<AppTheme />
 						</div>
 						<div className='menuCollapse'>
 							<HamburgerSqueeze
+								aria-label='Hamburger Menu'
 								className='menuBurger'
 								isActive={showMenu}
 								toggleButton={toggleMenu}
@@ -110,8 +113,8 @@ const Nav: React.FC = () => {
 					</div>
 					{collapseMenu}
 				</Container>
-			</div>
-		</React.Fragment>
+			</nav>
+		</header>
 	);
 };
 

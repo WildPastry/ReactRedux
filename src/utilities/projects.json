@@ -1,8 +1,8 @@
 [
   {
-    "id": 3,
+    "id": 2,
     "name": "Bull Breed Rescue",
-    "fields": ["CMS", "Database", "WordPress"],
+    "fields": ["CMS", "Database", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Jun - Jul 2019",
@@ -79,9 +79,9 @@
     "gitUrl": "https://github.com/WildPastry/nonproflite"
   },
   {
-    "id": 2,
+    "id": 1,
     "name": "Method",
-    "fields": ["API", "Behance", "Data Visualization"],
+    "fields": ["API", "Data Visualization", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Apr 2019",
@@ -162,9 +162,9 @@
     "gitUrl": "https://github.com/WildPastry/Method"
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "WeatherWise",
-    "fields": ["API", "Data Visualization", "Weather"],
+    "fields": ["API", "Data Visualization", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Mar 2019",
@@ -237,9 +237,9 @@
     "gitUrl": "https://github.com/WildPastry/WeatherWise"
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "Tourism NZ",
-    "fields": ["Geocoding", "Journey Planner", "Travel"],
+    "fields": ["API", "Geocoding", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Nov - Dec 2018",
@@ -316,9 +316,9 @@
     "gitUrl": "https://github.com/WildPastry/Tourism-NZ"
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "Wagamama",
-    "fields": ["E-Commerce", "Hospitality", "Menu"],
+    "fields": ["E-Commerce", "UX", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Sep 2018",
@@ -387,9 +387,9 @@
     "gitUrl": "https://github.com/WildPastry/Wagamama"
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "Wellington Botanic Garden",
-    "fields": ["Information", "Research", "UX"],
+    "fields": ["Research", "UX", "Web"],
     "type": ["WEBSITE"],
     "client": "Yoobee School of Design",
     "timeline": "Aug - Sep 2018",
@@ -454,7 +454,7 @@
     "gitUrl": "https://github.com/WildPastry/Wellington-Botanic-Garden"
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "Jules Verne",
     "fields": ["Advertising", "Branding", "Graphic"],
     "type": ["BRANDING", "GRAPHIC", "MARKETING"],
@@ -523,13 +523,13 @@
       }
     ],
     "intro": "That sense of adventure to discover the world is at the heart of Jules Verne, an international company based in Central London.",
-    "desc": "Jules Verne sell innovative small group escorted tours which offer authentic travel with a twist for people who love to see the world. Packed with special touches and little extras, our expert guides will show you the true character of each destination. During my two years of employment I developed a variety of work including brochures, advertising campaigns, online material, stationary, and exhibition stands.",
+    "desc": "Jules Verne sell innovative small group escorted tours which offer authentic travel with a twist for people who love to see the world. Packed with special touches and little extras, our expert guides will show you the true character of each destination. During my two years of employment I developed a variety of work including brochures, advertising campaigns and online material.",
     "url": "https://www.vjv.com",
     "git": " ",
     "gitUrl": " "
   },
   {
-    "id": 11,
+    "id": 10,
     "name": "Four Corners",
     "fields": ["Advertising", "Editorial", "Graphic"],
     "type": ["GRAPHIC", "MARKETING"],
@@ -596,7 +596,7 @@
     "gitUrl": " "
   },
   {
-    "id": 12,
+    "id": 11,
     "name": "Solcroft",
     "fields": ["Editorial", "Graphic", "Web"],
     "type": ["BRANDING", "GRAPHIC"],
@@ -659,7 +659,7 @@
     "gitUrl": " "
   },
   {
-    "id": 13,
+    "id": 12,
     "name": "Hanover",
     "fields": ["Corporate", "Editorial", "Graphic"],
     "type": ["MARKETING"],
@@ -726,7 +726,7 @@
     "gitUrl": " "
   },
   {
-    "id": 14,
+    "id": 13,
     "name": "Waterford Press",
     "client": "Waterford Press",
     "timeline": "Feb 2014 - Jan 2016",
@@ -797,7 +797,7 @@
     "gitUrl": " "
   },
   {
-    "id": 10,
+    "id": 8,
     "name": "Go Travel New Zealand",
     "fields": ["Advertising", "Graphic", "Typography"],
     "type": ["GRAPHIC", "MARKETING"],
@@ -864,7 +864,7 @@
     "gitUrl": " "
   },
   {
-    "id": 1,
+    "id": 0,
     "name": "SimpleWeather",
     "fields": ["API", "Data Visualization", "Mobile"],
     "type": ["APP"],
@@ -940,7 +940,7 @@
     "desc": "SimpleWeather is a straightforward and accessible free App which displays weather data using strong typography and bold, bright colours. API Integration from four services which provide data for weather, places, time zones and cloud storage for user accounts. Smart navigation using StackNavigator and featuring secure authentication for account creation, signing in and password recovery.",
     "url": "https://sw.mikeparker.co.nz",
     "git": "view code",
-    "gitUrl": "https://github.com/WildPastry/SimpleWeatherLanding"
+    "gitUrl": "https://github.com/WildPastry/SimpleWeather"
   },
   {
     "id": 9,
