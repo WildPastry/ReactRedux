@@ -1,3 +1,3 @@
 ## React Typescript
 
-React template connected with typescript 
+React template with typescript
