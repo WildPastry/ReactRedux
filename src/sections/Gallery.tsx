@@ -8,9 +8,9 @@ import ProjectFilters from '../components/ProjectFilters';
 const Gallery: React.FC = () => {
 	return (
 		<section aria-label='Gallery Section'>
-			<ProjectFilters />
-			<ProjectGallery />
-			<SetProjects />
+			<ProjectFilters/>
+			<ProjectGallery/>
+			<SetProjects/>
 		</section>
 	);
 };

@@ -22,7 +22,7 @@ import {
   faChevronRight,
   faTh,
   faMapMarkerAlt,
-  faImage,
+  faImage
 } from "@fortawesome/free-solid-svg-icons";
 import "./scss/main.scss";
 library.add(
@@ -60,7 +60,7 @@ const App: React.FC = () => {
 
   // errorContainer
   const errorContainer = () => {
-    return <Error />;
+    return <Error/>;
   };
 
   // logic for rendering sections
@@ -68,11 +68,11 @@ const App: React.FC = () => {
   let renderProject: JSX.Element;
 
   if (currentSection === "GALLERY") {
-    renderSection = <Gallery />;
+    renderSection = <Gallery/>;
   } else if (currentSection === "PROJECT") {
-    renderProject = <Project />;
+    renderProject = <Project/>;
   } else if (currentSection === "ABOUT") {
-    renderSection = <About />;
+    renderSection = <About/>;
   }
 
   // renderApp
@@ -80,13 +80,13 @@ const App: React.FC = () => {
     return (
       <main aria-label="Main Section">
         {pageData.isLoading ? <AppLoading /> : null}
-        <Nav />
+        <Nav/>
         <Container fluid className="sectionWrap">
-          <Type />
+          <Type/>
           <MDBAnimation type="fadeIn">{renderSection}</MDBAnimation>
         </Container>
         <MDBAnimation type="fadeIn">{renderProject}</MDBAnimation>
-        <Footer />
+        <Footer/>
         <ScrollUpButton
           aria-label="Scroll Up Button"
           StopPosition={0}

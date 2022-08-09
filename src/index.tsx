@@ -13,7 +13,7 @@ import App from './App';
 // render app
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<App/>
 	</Provider>,
 	document.getElementById('root')
 );
