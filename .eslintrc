@@ -28,29 +28,14 @@
 
         "plugin:@typescript-eslint/recommended",
 
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
 
-        "plugin:@angular-eslint/recommended",
-
-        "plugin:@angular-eslint/template/process-inline-templates"
       ],
 
       "rules": {
         "@typescript-eslint/no-inferrable-types": 0, // DONE
 
         "@typescript-eslint/no-unsafe-assignment": 1, // DONE
-
-        "@angular-eslint/directive-selector": [
-          "error",
-
-          {
-            "type": "attribute",
-
-            "prefix": "snapper-analytics-for-everyone",
-
-            "style": "camelCase"
-          }
-        ],
 
         "array-callback-return": 0, //enforce `return` statements in callbacks of array methods // DONE - OFF
 
@@ -412,7 +397,7 @@
 
         "line-comment-position": 1, // enforce position of line comments // DONE
 
-        "linebreak-style": 1, // enforce consistent linebreak style // DONE
+        "linebreak-style": 0, // enforce consistent linebreak style // OFF
 
         "lines-around-comment": 1, // require empty lines around comments // DONE
 
@@ -497,8 +482,6 @@
 
     {
       "files": ["*.html"],
-
-      "extends": ["plugin:@angular-eslint/template/recommended"],
 
       "rules": {}
     }

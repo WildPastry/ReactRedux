@@ -5,7 +5,7 @@ import { RootState } from '../redux/reducers/rootReducer';
 import { setNav, setProject } from '../redux/slices/navSlice';
 import { Col } from 'react-bootstrap';
 import { MDBAnimation } from 'mdbreact';
-import { ProjectItem } from '../types';
+import { Project } from '../types';
 
 // ProjectItem function
 export default function ProjectItem({
@@ -13,7 +13,7 @@ export default function ProjectItem({
 	fields,
 	name,
 	thumb
-}: ProjectItem): JSX.Element {
+}: Project): JSX.Element {
 	// useSelectors for app and img themes
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
