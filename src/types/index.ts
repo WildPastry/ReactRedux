@@ -1,5 +1,5 @@
 // export types
-export interface Project {
+export interface ProjectItem {
 	id: number;
 	name: string;
 	fields: any[];
@@ -16,6 +16,7 @@ export interface Project {
 	git: string;
 	gitUrl: string;
 	filtered: boolean;
+  onClick: () => any;
 }
 
 export interface Loading {

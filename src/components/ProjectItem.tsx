@@ -5,27 +5,7 @@ import { RootState } from '../redux/reducers/rootReducer';
 import { setNav, setProject } from '../redux/slices/navSlice';
 import { Col } from 'react-bootstrap';
 import { MDBAnimation } from 'mdbreact';
-
-// set up ProjectProps interface
-interface ProjectProps {
-	id: number;
-	name: string;
-	fields: any[];
-	type: any[];
-	client: string;
-	timeline: string;
-	website: string;
-	thumb: any[];
-	images: [{ src: string; id: string }];
-	icons: [{ src: string; id: string }];
-	intro: string;
-	desc: string;
-	url: string;
-	git: string;
-	gitUrl: string;
-	filtered: boolean;
-	onClick: () => any;
-}
+import { ProjectItem } from '../types';
 
 // ProjectItem function
 export default function ProjectItem({
@@ -33,7 +13,7 @@ export default function ProjectItem({
 	fields,
 	name,
 	thumb
-}: ProjectProps): JSX.Element {
+}: ProjectItem): JSX.Element {
 	// useSelectors for app and img themes
 	const appTheme = useSelector((state: RootState) => {
 		return state.setTheme.appTheme;
