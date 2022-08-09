@@ -2,12 +2,12 @@
 export interface ProjectItem {
 	id: number;
 	name: string;
-	fields: any[];
-	type: any[];
+	fields: [string, string, string];
+	type: [string];
 	client: string;
 	timeline: string;
 	website: string;
-	thumb: any[];
+	thumb: [string, string];
 	images: [{ src: string; id: string }];
 	icons: [{ src: string; id: string }];
 	intro: string;
