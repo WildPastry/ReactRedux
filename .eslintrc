@@ -15,11 +15,11 @@
 
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": ["*.ts", "*.tsx"],
 
       "parserOptions": {
         "project": ["**/tsconfig.json"],
-
+        "sourceType": "module",
         "createDefaultProgram": true
       },
 
@@ -33,7 +33,7 @@
       ],
 
       "rules": {
-        "@typescript-eslint/no-inferrable-types": 0, // DONE
+        "@typescript-eslint/no-inferrable-types": 0, // DONE - OFF
 
         "@typescript-eslint/no-unsafe-assignment": 1, // DONE
 
@@ -113,9 +113,9 @@
 
         "max-depth": 1, //enforce a maximum depth that blocks can be nested // DONE
 
-        "max-lines": ["error", { "max": 400, "skipBlankLines": true }], //enforce a maximum number of lines per file // DONE - CUSTOMISED
+        "max-lines": ["warn", { "max": 400, "skipBlankLines": true }], //enforce a maximum number of lines per file // DONE - CUSTOMISED
 
-        "max-lines-per-function": 1, //enforce a maximum number of lines of code in a function // DONE
+        "max-lines-per-function": ["warn", { "max": 100 }], //enforce a maximum number of lines of code in a function // DONE - CUSTOMISED
 
         "max-nested-callbacks": 1, //enforce a maximum depth that callbacks can be nested // DONE
 
@@ -410,7 +410,7 @@
 
         "max-statements-per-line": 1, // enforce a maximum number of statements allowed per line // DONE
 
-        "multiline-ternary": 1, // enforce newlines between operands of ternary expressions // DONE
+        "multiline-ternary": 0, // enforce newlines between operands of ternary expressions // DONE - OFF
 
         "new-parens": 1, // enforce or disallow parentheses when invoking a constructor with no arguments // DONE
 

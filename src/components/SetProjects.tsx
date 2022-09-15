@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../redux/reducers/rootReducer';
 import { setProjects } from '../redux/slices/projectSlice';
 import projectData from '../utilities/projects.json';
+import { AppDispatch } from '../redux';
 
 // SetProjects
 export default function SetProjects(): JSX.Element {
@@ -16,7 +17,7 @@ export default function SetProjects(): JSX.Element {
 	});
 
 	// dispatch
-	const dispatch = useDispatch();
+	const dispatch = useDispatch<AppDispatch>();
 
 	// send resized and sorted data to dispatch
 	const handleDispatch = useCallback(
