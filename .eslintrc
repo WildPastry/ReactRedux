@@ -15,12 +15,17 @@
 
   "overrides": [
     {
+      "plugins": ["react"],
+
       "files": ["*.ts", "*.tsx"],
 
       "parserOptions": {
         "project": ["**/tsconfig.json"],
         "sourceType": "module",
-        "createDefaultProgram": true
+        "createDefaultProgram": true,
+        "ecmaFeatures": {
+          "jsx": true
+        }
       },
 
       "extends": [
@@ -33,6 +38,18 @@
       ],
 
       "rules": {
+        "react/jsx-uses-react": 1,
+
+        "react/jsx-uses-vars": 1,
+
+        "react/function-component-definition": [
+          1,
+          {
+            "namedComponents": ["function-declaration", "arrow-function"],
+            "unnamedComponents": "arrow-function"
+          }
+        ],
+
         "@typescript-eslint/no-inferrable-types": 0, // DONE - OFF
 
         "@typescript-eslint/no-unsafe-assignment": 1, // DONE
@@ -95,7 +112,7 @@
 
         "func-names": 1, //require or disallow named `function` expressions // DONE
 
-        "func-style": ["warn", "declaration"], //enforce the consistent use of either `function` declarations or expressions // DONE - CUSTOMISED
+        "func-style": 0, //enforce the consistent use of either `function` declarations or expressions // DONE - OFF
 
         "grouped-accessor-pairs": 1, //require grouped accessor pairs in object literals and classes // DONE
 
@@ -478,12 +495,6 @@
 
         "yield-star-spacing": 1 // require or disallow spacing around the `*` in `yield*` expressions // DONE
       }
-    },
-
-    {
-      "files": ["*.html"],
-
-      "rules": {}
     }
   ]
 }
