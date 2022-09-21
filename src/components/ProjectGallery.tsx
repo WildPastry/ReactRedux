@@ -11,6 +11,7 @@ const getfilteredProjects = (
   projects: Project[],
   filter: ProjectFilter
 ): Project[] => {
+  console.log(filter)
   switch (filter) {
   case ProjectFilter.ShowAll:
     return projects;
