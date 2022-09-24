@@ -52,7 +52,7 @@
 
         "@typescript-eslint/no-inferrable-types": 0, // DONE - OFF
 
-        "@typescript-eslint/no-unsafe-assignment": 1, // DONE
+        "@typescript-eslint/no-unsafe-assignment": 0, // DONE - OFF
 
         "array-callback-return": 0, //enforce `return` statements in callbacks of array methods // DONE - OFF
 

@@ -6,22 +6,18 @@ import { Project } from '../types';
 import React from 'react';
 import { RootState } from '../redux/reducers/rootReducer';
 
-// ProjectItem function
 export default function ProjectItem({
   id,
   fields,
   name,
   thumb
 }: Project): JSX.Element {
-  // UseSelectors for app and img themes
   const appTheme = useSelector((state: RootState): string => {
     return state.setTheme.appTheme;
   });
 
-  // Dispatch
   const dispatch = useDispatch();
 
-  // Handle function for navigation
   const handleNav = (section: string, id: number): void => {
     // Set current project using ID then navigate to correct section and scroll to top
     dispatch(setProject(id));

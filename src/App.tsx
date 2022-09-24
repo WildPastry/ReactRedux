@@ -1,30 +1,28 @@
-// imports
-import React from "react";
-import { useEffect } from "react";
-import { Container } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { RootState } from "./redux/reducers/rootReducer";
-import Nav from "./sections/Nav";
-import Type from "./sections/Type";
-import Gallery from "./sections/Gallery";
-import Project from "./sections/Project";
-import About from "./sections/About";
-import Footer from "./sections/Footer";
-import Error from "./components/Error";
-import AppLoading from "./components/AppLoading";
-import ScrollUpButton from "react-scroll-up-button";
-import { MDBAnimation } from "mdbreact";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import React, { useEffect } from 'react';
 import {
-  faEnvelope,
   faChevronLeft,
   faChevronRight,
-  faTh,
+  faEnvelope,
+  faImage,
   faMapMarkerAlt,
-  faImage
-} from "@fortawesome/free-solid-svg-icons";
-import "./scss/main.scss";
+  faTh
+} from '@fortawesome/free-solid-svg-icons';
+import About from './sections/About';
+import AppLoading from './components/AppLoading';
+import { Container } from 'react-bootstrap';
+import Error from './components/Error';
+import Footer from './sections/Footer';
+import Gallery from './sections/Gallery';
+import { Loading } from './types';
+import { MDBAnimation } from 'mdbreact';
+import Nav from './sections/Nav';
+import Project from './sections/Project';
+import { RootState } from './redux/reducers/rootReducer';
+import ScrollUpButton from 'react-scroll-up-button';
+import Type from './sections/Type';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { useSelector } from 'react-redux';
 library.add(
   fab,
   faImage,
@@ -35,14 +33,13 @@ library.add(
   faMapMarkerAlt
 );
 
-// App
 const App: React.FC = () => {
-  // scroll to top
+  // Scroll to top
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // useSelectors for page data / app theme / navigation
+  // UseSelectors for page data / app theme / navigation
   const pageData = useSelector((state: RootState) => {
     return state.loadPage;
   });
@@ -55,28 +52,27 @@ const App: React.FC = () => {
     return state.setNav.currentSection;
   });
 
-  // add background to body
-  document.getElementById("bg").className = "bg" + appTheme;
+  // Add background to body
+  document.getElementById('bg').className = `bg${appTheme}`;
 
-  // errorContainer
+  // Error container
   const errorContainer = () => {
     return <Error/>;
   };
 
-  // logic for rendering sections
+  // Logic for rendering sections
   let renderSection: JSX.Element;
   let renderProject: JSX.Element;
 
-  if (currentSection === "GALLERY") {
+  if (currentSection === 'GALLERY') {
     renderSection = <Gallery/>;
-  } else if (currentSection === "PROJECT") {
+  } else if (currentSection === 'PROJECT') {
     renderProject = <Project/>;
-  } else if (currentSection === "ABOUT") {
+  } else if (currentSection === 'ABOUT') {
     renderSection = <About/>;
   }
 
-  // renderApp
-  const renderApp = (pageData: any) => {
+  const renderApp = (pageData: Loading) => {
     return (
       <main aria-label="Main Section">
         {pageData.isLoading ? <AppLoading /> : null}
@@ -93,16 +89,15 @@ const App: React.FC = () => {
           ShowAtPosition={200}
           EasingType="easeOutCubic"
           AnimationDuration={300}
-          ContainerClassName={"scrollUpIcon" + appTheme}
+          ContainerClassName={`scrollUpIcon${appTheme}`}
         />
       </main>
     );
   };
-  // show error container if there is one
-  // otherwise display the app
+
+  // Logic for showing error container
   return pageData.isError ? errorContainer() : renderApp(pageData);
 };
 
-// EXPORT App
-App.displayName = "App";
+App.displayName = 'App';
 export default App;

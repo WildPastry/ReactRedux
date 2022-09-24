@@ -1,13 +1,12 @@
-// export types
 export interface Project {
   id: number;
   name: string;
-  fields: any[];
-  type: any[];
+  fields: string[];
+  type: string[];
   client: string;
   timeline: string;
   website: string;
-  thumb: any[];
+  thumb: string[];
   images: [{ src: string; id: string }];
   icons: [{ src: string; id: string }];
   intro: string;
@@ -16,7 +15,7 @@ export interface Project {
   git: string;
   gitUrl: string;
   filtered: boolean;
-  onClick: () => any;
+  onClick: () => unknown;
 }
 
 export interface Loading {

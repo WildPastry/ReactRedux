@@ -6,12 +6,10 @@ import { RootState } from '../redux/reducers/rootReducer';
 import { Row } from 'react-bootstrap';
 import { setFilters } from '../redux/slices/projectSlice';
 
-// GetfilteredProjects function
 const getfilteredProjects = (
   projects: Project[],
   filter: ProjectFilter
 ): Project[] => {
-  console.log(filter)
   switch (filter) {
   case ProjectFilter.ShowAll:
     return projects;
@@ -26,11 +24,10 @@ const getfilteredProjects = (
   case ProjectFilter.ShowWebsites:
     return projects.filter((proj) => proj.type.indexOf('WEBSITE') >= 0);
   default:
-    throw new Error(`Unknown filter: ${filter}`);
+    return projects;
   }
 };
 
-// ProjectList function
 export default function ProjectList(): JSX.Element {
   const dispatch = useDispatch();
 
