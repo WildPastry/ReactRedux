@@ -54,6 +54,8 @@
 
         "@typescript-eslint/no-unsafe-assignment": 0, // DONE - OFF
 
+        "@typescript-eslint/no-unsafe-member-access": 0, // DONE - OFF
+
         "array-callback-return": 0, //enforce `return` statements in callbacks of array methods // DONE - OFF
 
         "no-await-in-loop": 0, //disallow `await` inside of loops // DONE - OFF
@@ -75,8 +77,6 @@
         "no-use-before-define": 0, //disallow the use of variables before they are defined // DONE - OFF
 
         "require-atomic-updates": 1, //disallow assignments that can lead to race conditions due to usage of `await` or `yield` // DONE
-
-        // ESlint Suggestions: https://eslint.org/docs/rules/
 
         "accessor-pairs": 0, //enforce getter and setter pairs in objects and classes // DONE - OFF
 
@@ -120,7 +120,7 @@
 
         "id-denylist": 1, //disallow specified identifiers // DONE
 
-        "id-length": 1, //enforce minimum and maximum identifier lengths // DONE
+        "id-length": 0, //enforce minimum and maximum identifier lengths // DONE - OFF
 
         "id-match": 1, //require identifiers to match a specified regular expression // DONE
 
@@ -130,9 +130,9 @@
 
         "max-depth": 1, //enforce a maximum depth that blocks can be nested // DONE
 
-        "max-lines": ["warn", { "max": 400, "skipBlankLines": true }], //enforce a maximum number of lines per file // DONE - CUSTOMISED
+        "max-lines": ["warn", { "max": 600, "skipBlankLines": true }], //enforce a maximum number of lines per file // DONE - CUSTOMISED
 
-        "max-lines-per-function": ["warn", { "max": 100 }], //enforce a maximum number of lines of code in a function // DONE - CUSTOMISED
+        "max-lines-per-function": ["warn", { "max": 300 }], //enforce a maximum number of lines of code in a function // DONE - CUSTOMISED
 
         "max-nested-callbacks": 1, //enforce a maximum depth that callbacks can be nested // DONE
 
@@ -372,7 +372,7 @@
 
         "array-bracket-spacing": 1, // enforce consistent spacing inside array brackets // DONE
 
-        "array-element-newline": 1, // enforce line breaks after each array element // DONE
+        "array-element-newline": 0, // enforce line breaks after each array element // DONE - OFF
 
         "arrow-parens": 1, // require parentheses around arrow function arguments // DONE
 
@@ -453,7 +453,7 @@
 
         "object-curly-spacing": ["warn", "always"], // enforce consistent spacing inside braces // DONE
 
-        "object-property-newline": 1, // enforce placing object properties on separate lines // DONE
+        "object-property-newline": 0, // enforce placing object properties on separate lines // DONE - OFF
 
         "operator-linebreak": 1, // enforce consistent linebreak style for operators // DONE
 

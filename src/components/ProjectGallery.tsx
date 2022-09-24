@@ -6,6 +6,7 @@ import { RootState } from '../redux/reducers/rootReducer';
 import { Row } from 'react-bootstrap';
 import { setFilters } from '../redux/slices/projectSlice';
 
+// Logic for showing projects based on filter
 const getfilteredProjects = (
   projects: Project[],
   filter: ProjectFilter
