@@ -3,7 +3,7 @@ import { RootState } from '../redux/reducers/rootReducer';
 import { useSelector } from 'react-redux';
 
 const Error: React.FC = () => {
-  // UseSelectors for app theme
+  // UseSelector for app theme
   const appTheme = useSelector((state: RootState) => {
     return state.setTheme.appTheme;
   });
