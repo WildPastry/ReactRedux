@@ -1,19 +1,19 @@
-// import polyfills and styles
+// Import polyfills and styles
 import 'react-app-polyfill/ie11';
 import 'mdbreact/dist/css/mdb.css';
 import './scss/main.scss';
 
-// import frameworks
+// Import frameworks
+import App from './App';
+import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import store from './redux';
-import App from './App';
 
-// render app
+// Render app with store wrapper
 ReactDOM.render(
-	<Provider store={store}>
-		<App/>
-	</Provider>,
-	document.getElementById('root')
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById('root')
 );

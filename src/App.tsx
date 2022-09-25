@@ -33,6 +33,7 @@ library.add(
   faMapMarkerAlt
 );
 
+// App
 const App: React.FC = () => {
   // Scroll to top
   useEffect(() => {
@@ -99,5 +100,6 @@ const App: React.FC = () => {
   return pageData.isError ? errorContainer() : renderApp(pageData);
 };
 
+// EXPORT App
 App.displayName = 'App';
 export default App;
