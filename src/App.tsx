@@ -96,6 +96,7 @@ const App: React.FC = () => {
   };
 
   // Logic for showing error container
+  return errorContainer();
   return pageData.isError ? errorContainer() : renderApp(pageData);
 };
 

@@ -510,8 +510,19 @@
 }
 
 // error container
-.fullPageFixed {
+.fullPageFixedDARK {
 	background: $grey;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 99;
+}
+
+.fullPageFixedLIGHT {
+	background: $white;
 	bottom: 0;
 	left: 0;
 	overflow: hidden;
@@ -523,13 +534,31 @@
 
 .fullPageFixedInner {
 	bottom: 0;
-	height: 100px;
+	height: 200px;
 	left: 0;
 	margin: auto;
 	position: absolute;
 	right: 0;
 	top: 0;
 	width: 100%;
+}
+
+.errorDARK {
+	color: $yellow;
+	font-weight: $bold;
+	font-size: 4em;
+	@include bp(md) {
+		font-size: 2em;
+	}
+}
+
+.errorLIGHT {
+	color: $blue;
+	font-weight: $bold;
+	font-size: 4em;
+	@include bp(md) {
+		font-size: 2em;
+	}
 }
 
 // footer and project section
