@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import {
+  faBorderAll,
   faChevronLeft,
   faChevronRight,
   faEnvelope,
   faImage,
-  faMapMarkerAlt,
-  faTh
+  faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import About from './sections/About';
 import AppLoading from './components/AppLoading';
@@ -29,7 +29,7 @@ library.add(
   faEnvelope,
   faChevronLeft,
   faChevronRight,
-  faTh,
+  faBorderAll,
   faMapMarkerAlt
 );
 

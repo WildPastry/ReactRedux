@@ -58,7 +58,7 @@ export default function SetProjects(): JSX.Element {
   const renderMore = () => {
     return (
       <h3 className={`moreFewer${appTheme}`} onClick={() => toggleMoreFewer(18)}>
-        LOAD MORE
+        MORE
       </h3>
     );
   };
@@ -67,7 +67,7 @@ export default function SetProjects(): JSX.Element {
   const renderFewer = () => {
     return (
       <h3 className={`moreFewer${appTheme}`} onClick={() => toggleMoreFewer(9)}>
-        HIDE
+        FEWER
       </h3>
     );
   };

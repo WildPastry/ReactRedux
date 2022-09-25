@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import React, { useCallback, useEffect, useState } from 'react';
-import { faChevronLeft, faChevronRight, faTh } from '@fortawesome/free-solid-svg-icons';
+import { faBorderAll, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { setNav, setProject } from '../redux/slices/navSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,16 +26,17 @@ const Project: React.FC = () => {
   // Handle functions for navigation
   const handleNav = (section: string, id: number) => {
     // Logic for navigation at the end or start of the project array
-    // if (id === -1) {
-    //   id = allProjects.length - 1;
-    // } else if (id === allProjects.length) {
-    //   id = 0;
-    // }
+    let currentId: number = id;
+    if (id === -1) {
+      currentId = allProjects.length - 1;
+    } else if (id === allProjects.length) {
+      currentId = 0;
+    }
 
     // Set current project using ID then navigate to correct section and scroll to top
     dispatch(setNav(section));
-    dispatch(setProject(id));
-    randomProjects(id);
+    dispatch(setProject(currentId));
+    randomProjects(currentId);
     window.scrollTo(0, 0);
   };
 
@@ -144,7 +145,7 @@ const Project: React.FC = () => {
               aria-label="View Project Gallery"
               className="iconWrap"
               onClick={() => handleNav('GALLERY', proj.id)}>
-              <FontAwesomeIcon icon={faTh} className="gridIcon" />
+              <FontAwesomeIcon icon={faBorderAll} className="gridIcon" />
             </div>
             <div
               aria-label="View Next Project"
@@ -185,7 +186,7 @@ const Project: React.FC = () => {
               aria-label="View Project Gallery"
               className="iconWrap"
               onClick={() => handleNav('GALLERY', proj.id)}>
-              <FontAwesomeIcon icon={faTh} className="gridIcon" />
+              <FontAwesomeIcon icon={faBorderAll} className="gridIcon" />
             </div>
             <div
               aria-label="View Next Project"

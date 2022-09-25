@@ -21,9 +21,7 @@ export default function AppTheme(): JSX.Element {
 
   // Handle function for app theme
   const handleAppTheme = () => {
-    // let currentTheme: string;
     appTheme === 'DARK' ? dispatch(setTheme('LIGHT')) : dispatch(setTheme('DARK'));
-    // dispatch(setTheme(currentTheme));
   };
 
   return (

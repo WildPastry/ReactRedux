@@ -42,14 +42,6 @@
 
         "react/jsx-uses-vars": 1,
 
-        "react/function-component-definition": [
-          1,
-          {
-            "namedComponents": ["function-declaration", "arrow-function"],
-            "unnamedComponents": "arrow-function"
-          }
-        ],
-
         "@typescript-eslint/no-inferrable-types": 0, // DONE - OFF
 
         "@typescript-eslint/no-unsafe-assignment": 0, // DONE - OFF
@@ -280,7 +272,7 @@
 
         "no-unneeded-ternary": 0, //disallow ternary operators when simpler alternatives exist // DONE - OFF
 
-        "no-unused-expressions": 1, //disallow unused expressions // DONE
+        "no-unused-expressions": 0, //disallow unused expressions // DONE - OFF
 
         "no-unused-labels": 1, //disallow unused labels // DONE
 
