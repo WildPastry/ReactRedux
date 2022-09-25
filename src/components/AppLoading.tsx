@@ -2,31 +2,31 @@ import React from 'react';
 
 // AppLoading
 const AppLoading = () => {
-	return (
-		<>
-			<div className='loader'>
-				<div className='loader-inner'>
-					<div className='loader-line-wrap'>
-						<div className='loader-line'></div>
-					</div>
-					<div className='loader-line-wrap'>
-						<div className='loader-line'></div>
-					</div>
-					<div className='loader-line-wrap'>
-						<div className='loader-line'></div>
-					</div>
-					<div className='loader-line-wrap'>
-						<div className='loader-line'></div>
-					</div>
-					<div className='loader-line-wrap'>
-						<div className='loader-line'></div>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div className="loader">
+        <div className="loaderInner">
+          <div className="loaderLineWrap">
+            <div className="loaderLine"></div>
+          </div>
+          <div className="loaderLineWrap">
+            <div className="loaderLine"></div>
+          </div>
+          <div className="loaderLineWrap">
+            <div className="loaderLine"></div>
+          </div>
+          <div className="loaderLineWrap">
+            <div className="loaderLine"></div>
+          </div>
+          <div className="loaderLineWrap">
+            <div className="loaderLine"></div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
-// export AppLoading
+// EXPORT AppLoading
 AppLoading.displayName = 'AppLoading';
 export default AppLoading;

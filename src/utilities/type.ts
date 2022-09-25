@@ -1,7 +1,6 @@
-// imports
+/* eslint-disable */
 import configData from './config.json';
 
-// export initType
 export function initType() {
   const delayValue = (configData as any).DELAY;
   const stepValue = (configData as any).STEP;

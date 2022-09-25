@@ -1,544 +1,564 @@
-// imports
 @import 'variables';
 @import 'mixins';
 
 // root
 #root {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 // bootstrap over-writes
 .container-fluid {
-	flex-grow: 1;
-	margin: 20px auto 0 auto;
-	max-width: 1450px;
+  flex-grow: 1;
+  margin: 20px auto 0 auto;
+  max-width: 1450px;
 }
 
 .row {
-	margin-left: 0;
-	margin-right: 0;
-	--bs-gutter-x: 0;
-	--bs-gutter-y: 0;
+  margin-left: 0;
+  margin-right: 0;
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
 }
 
 .colWrap {
-	padding: 5px;
+  padding: 5px;
 }
 
 // navigation styles
 .navWrap {
-	padding-bottom: 20px;
-	position: sticky;
-	top: 0;
-	z-index: 1;
-	@include bp(sm) {
-		padding-bottom: 10px;
-	}
+  padding-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  @include bp(sm) {
+    padding-bottom: 10px;
+  }
 }
 
 .navMenuWrap {
-	@include bp(sm) {
-		margin-top: 10px;
-	}
+  @include bp(sm) {
+    margin-top: 10px;
+  }
 }
 
 .nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navItemDARK {
-	color: $spotGrey;
-	cursor: pointer;
-	margin-left: 13px;
-	border-bottom: 2px solid transparent;
-	&:hover {
-		border-bottom: 2px solid $peach;
-	}
+  color: $spotGrey;
+  cursor: pointer;
+  margin-left: 13px;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    border-bottom: 2px solid $peach;
+  }
 }
 
 .navItemActiveDARK {
-	color: $white;
-	border-bottom: 2px solid $peach;
+  color: $white;
+  border-bottom: 2px solid $peach;
 }
 
 .navItemLIGHT {
-	color: $lightGrey;
-	cursor: pointer;
-	margin-left: 13px;
-	border-bottom: 2px solid transparent;
-	&:hover {
-		color: $grey;
-		border-bottom: 2px solid $peach;
-	}
+  color: $lightGrey;
+  cursor: pointer;
+  margin-left: 13px;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    color: $grey;
+    border-bottom: 2px solid $peach;
+  }
 }
 
 .navItemActiveLIGHT {
-	color: $grey;
-	border-bottom: 2px solid $peach;
+  color: $grey;
+  border-bottom: 2px solid $peach;
 }
 
 .brandDARK {
-	color: $yellow;
-	cursor: pointer;
-	border-bottom: 2px solid transparent;
-	font-weight: $bold;
-	font-size: 1.3em;
-	letter-spacing: 0.4px;
-	@include transitions($speed, $speed, $speed, $speed);
-	&:hover {
-		border-bottom: 2px solid $yellow;
-		color: $yellow;
-	}
-	@include bp(md) {
-		font-size: 1em;
-	}
+  color: $yellow;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-weight: $bold;
+  font-size: 1.3em;
+  letter-spacing: 0.4px;
+  @include transitions($speed, $speed, $speed, $speed);
+  &:hover {
+    border-bottom: 2px solid $yellow;
+    color: $yellow;
+  }
+  @include bp(md) {
+    font-size: 1em;
+  }
 }
 
 .brandLIGHT {
-	color: $blue;
-	cursor: pointer;
-	border-bottom: 2px solid transparent;
-	font-weight: $bold;
-	font-size: 1.3em;
-	letter-spacing: 0.4px;
-	@include transitions($speed, $speed, $speed, $speed);
-	&:hover {
-		border-bottom: 2px solid $blue;
-		color: $blue;
-	}
-	@include bp(md) {
-		font-size: 1em;
-	}
+  color: $blue;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-weight: $bold;
+  font-size: 1.3em;
+  letter-spacing: 0.4px;
+  @include transitions($speed, $speed, $speed, $speed);
+  &:hover {
+    border-bottom: 2px solid $blue;
+    color: $blue;
+  }
+  @include bp(md) {
+    font-size: 1em;
+  }
 }
 
 .navItemCollapseDARK {
-	color: $spotGrey;
-	cursor: pointer;
-	padding: 10px;
-	border: 0.5px solid transparent;
-	border-radius: 3px;
-	&:hover {
-		color: $peach;
-		background: $yellow;
-	}
+  color: $spotGrey;
+  cursor: pointer;
+  padding: 10px;
+  border: 0.5px solid transparent;
+  border-radius: 3px;
+  &:hover {
+    color: $peach;
+    background: $yellow;
+  }
 }
 
 .navItemActiveCollapseDARK {
-	color: $peach;
-	border: 0.5px solid $spotGrey-t;
+  color: $peach;
+  border: 0.5px solid $spotGrey-t;
 }
 
 .navItemCollapseLIGHT {
-	color: $lightGrey;
-	cursor: pointer;
-	padding: 10px;
-	border: 0.5px solid transparent;
-	border-radius: 3px;
-	&:hover {
-		color: $white;
-		background: $blue;
-	}
+  color: $lightGrey;
+  cursor: pointer;
+  padding: 10px;
+  border: 0.5px solid transparent;
+  border-radius: 3px;
+  &:hover {
+    color: $white;
+    background: $blue;
+  }
 }
 
 .navItemActiveCollapseLIGHT {
-	color: $peach;
-	border: 0.5px solid $lightGrey-t;
+  color: $peach;
+  border: 0.5px solid $lightGrey-t;
 }
 
 .menu {
-	@include bp(md) {
-		display: none;
-		visibility: hidden;
-	}
+  @include bp(md) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .menuCollapse {
-	display: none;
-	visibility: hidden;
-	cursor: pointer;
-	@include bp(md) {
-		display: block;
-		visibility: visible;
-	}
+  display: none;
+  visibility: hidden;
+  cursor: pointer;
+  @include bp(md) {
+    display: block;
+    visibility: visible;
+  }
 }
 
 .menuActive {
-	padding: 5px;
-	@include bp(md_min) {
-		display: none;
-	}
+  padding: 5px;
+  @include bp(md_min) {
+    display: none;
+  }
 }
 
 .menuActiveItem {
-	margin: 10px 0 10px 0;
-	text-align: right;
+  margin: 10px 0 10px 0;
+  text-align: right;
 }
 
 .menuBurger {
-	padding: 0 !important;
+  padding: 0 !important;
 }
 
 // type section
 .sectionWrap {
-	@include bp(sm) {
-		margin-top: 0;
-	}
+  @include bp(sm) {
+    margin-top: 0;
+  }
 }
 
 #type {
-	height: 40px;
-	@include bp(xs) {
-		height: 20px;
-	}
+  height: 40px;
+  @include bp(xs) {
+    height: 20px;
+  }
 }
 
 .typeWrap {
-	line-height: 40px;
-	@include bp(xs) {
-		line-height: 20px;
-	}
+  line-height: 40px;
+  @include bp(xs) {
+    line-height: 20px;
+  }
 }
 
 .typeWrap h1 {
-	@include bp(md) {
-		font-size: 1.4em;
-	}
-	@include bp(sm) {
-		font-size: 1.3em;
-	}
-	@include bp(xs) {
-		font-size: 1em;
-		font-weight: $regular;
-		letter-spacing: 0px;
-	}
+  @include bp(md) {
+    font-size: 1.4em;
+  }
+  @include bp(sm) {
+    font-size: 1.3em;
+  }
+  @include bp(xs) {
+    font-size: 1em;
+    font-weight: $regular;
+    letter-spacing: 0px;
+  }
 }
 
 .textHide {
-	@include bp(xs) {
-		display: none;
-		visibility: hidden;
-	}
+  @include bp(xs) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 // space section
 #space {
-	cursor: pointer;
-	height: 45vh;
-	padding-left: 50px;
-	canvas {
-		height: 100% !important;
-		width: 100% !important;
-	}
-	@include bp(lg) {
-		padding-left: 0;
-	}
+  cursor: pointer;
+  height: 45vh;
+  padding-left: 50px;
+  canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  @include bp(lg) {
+    padding-left: 0;
+  }
 }
 
 // gallery section
 .galleryWrap {
-	line-height: 30px;
-	margin-bottom: 10px;
-	&:hover .galleryIcon {
-		color: $spotGrey;
-	}
-	@include bp(sm) {
-		display: none;
-		visibility: hidden;
-	}
+  line-height: 30px;
+  margin-bottom: 10px;
+  &:hover .galleryIcon {
+    color: $spotGrey;
+  }
+  @include bp(sm) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .descriptionWrap {
-	padding: 0 5px 10px 5px;
+  padding: 0 5px 10px 5px;
 }
 
 // filters
 .filterWrapSection {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-top: 50px;
-	@include bp(sm) {
-		margin-top: 20px;
-	}
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  @include bp(sm) {
+    margin-top: 20px;
+  }
 }
 
 .filterWrap {
-	align-items: center;
-	margin-bottom: 10px;
-	@include bp(sm) {
-		display: none;
-		visibility: hidden;
-	}
+  align-items: center;
+  margin-bottom: 10px;
+  @include bp(sm) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
-.filterItemDARK {
-	color: $spotGrey;
-	cursor: pointer;
-	margin-right: 13px;
-	border-bottom: 2px solid transparent;
-	padding-bottom: 1px;
-	&:hover {
-		color: $white;
-		border-bottom: 2px solid $peach;
-	}
-	@include bp(sm) {
-		margin-top: 10px;
-	}
-}
-
-.filterItemActiveDARK {
-	color: $white;
-	border-bottom: 2px solid $peach;
-}
-
-.filterItemLIGHT {
-	color: $lightGrey;
-	cursor: pointer;
-	margin-right: 13px;
-	border-bottom: 2px solid transparent;
-	padding-bottom: 1px;
-	&:hover {
-		color: $grey;
-		border-bottom: 2px solid $peach;
-	}
-	@include bp(sm) {
-		margin-top: 10px;
-	}
-}
-
-.filterItemActiveLIGHT {
-	color: $grey;
-	border-bottom: 2px solid $peach;
+.filterItem {
+  cursor: pointer;
+  margin-right: 13px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  @include bp(sm) {
+    margin-top: 10px;
+  }
+  &DARK {
+    color: $spotGrey;
+    &:hover {
+      color: $white;
+      border-bottom: 2px solid $peach;
+    }
+    &Active {
+      color: $white;
+      border-bottom: 2px solid $peach;
+    }
+  }
+  &LIGHT {
+    color: $lightGrey;
+    &:hover {
+      color: $grey;
+      border-bottom: 2px solid $peach;
+    }
+    &Active {
+      color: $grey;
+      border-bottom: 2px solid $peach;
+    }
+  }
 }
 
 // about section
 .aboutListWrap {
-	line-height: 1.5em;
-	@include bp(lg) {
-		margin-bottom: 15px;
-	}
+  line-height: 1.5em;
+  @include bp(lg) {
+    margin-bottom: 15px;
+  }
 }
 
 .aboutListDARK li {
-	color: $spotGrey;
-	font-weight: $light;
-	line-height: 1.5em;
+  color: $spotGrey;
+  font-weight: $light;
+  line-height: 1.5em;
 }
 
 .aboutListDARK a {
-	color: $spotGrey;
+  color: $spotGrey;
 }
 
 .aboutListLIGHT li {
-	color: $lightGrey;
-	font-weight: $light;
-	line-height: 1.5em;
+  color: $lightGrey;
+  font-weight: $light;
+  line-height: 1.5em;
 }
 
 .aboutListLIGHT a {
-	color: $lightGrey;
+  color: $lightGrey;
 }
 
 // project section
 .projectRowDARK {
-	margin-top: 20px;
-	background: $white;
-	border-bottom: 10px solid $spotGrey;
-	border-top: 10px solid $spotGrey;
+  margin-top: 20px;
+  background: $white;
+  border-bottom: 10px solid $spotGrey;
+  border-top: 10px solid $spotGrey;
 }
 
 .projectRowLIGHT {
-	margin-top: 20px;
-	background: $white;
-	border-bottom: 10px solid transparent;
-	border-top: 10px solid transparent;
+  margin-top: 20px;
+  background: $white;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
 }
 
 .projectWrap {
-	padding: 5px;
-	margin: 10px auto;
+  padding: 5px;
+  margin: 10px auto;
 }
 
 .projectWrap img {
-	height: auto;
-	width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 .projectListWrap {
-	line-height: 1.5em;
+  line-height: 1.5em;
 }
 
 .projectDetails {
-	@include bp(xl) {
-		margin-top: 10px;
-	}
+  @include bp(xl) {
+    margin-top: 10px;
+  }
 }
 
 .projectListDARK li {
-	color: $white;
-	font-weight: $light;
-	line-height: 1.5em;
+  color: $white;
+  font-weight: $light;
+  line-height: 1.5em;
 }
 
 .projectListLIGHT li {
-	color: $grey;
-	font-weight: $light;
-	line-height: 1.5em;
+  color: $grey;
+  font-weight: $light;
+  line-height: 1.5em;
 }
 
 .prevNextIconWrap {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .projectsLink {
-	font-weight: $regular;
-	font-size: 1em;
-	border-bottom: 2px solid transparent;
-	padding-bottom: 1px;
-	&:hover {
-		color: $peach;
-		border-bottom: 2px solid $peach;
-	}
+  font-weight: $regular;
+  font-size: 1em;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 1px;
+  &:hover {
+    color: $peach;
+    border-bottom: 2px solid $peach;
+  }
 }
 
 .responsiveMar {
-	margin-top: 35px;
-	@include bp(xs) {
-		margin-top: 5px;
-	}
+  margin-top: 35px;
+  @include bp(xs) {
+    margin-top: 5px;
+  }
 }
 
 // footer section
 .footer {
-	flex-shrink: 0;
-	margin: 0 auto 30px auto;
-	max-width: 1450px;
-	padding-left: 15px;
-	padding-right: 15px;
-	width: 100%;
+  flex-shrink: 0;
+  margin: 0 auto 30px auto;
+  max-width: 1450px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 }
 
 .footerWrap {
-	line-height: 30px;
+  line-height: 30px;
 }
 
 .footerListWrap {
-	line-height: 1.5em;
+  line-height: 1.5em;
 }
 
 .footerCopyrightDARK {
-	margin-top: 5px;
-	line-height: 30px;
-	color: $yellow;
+  margin-top: 5px;
+  line-height: 30px;
+  color: $yellow;
 }
 
 .footerCopyrightLIGHT {
-	margin-top: 5px;
-	line-height: 30px;
-	color: $blue;
+  margin-top: 5px;
+  line-height: 30px;
+  color: $blue;
 }
 
 .footer a {
-	color: $white;
-	&:hover {
-		color: $peach;
-	}
+  color: $white;
+  &:hover {
+    color: $peach;
+  }
 }
 
 .listDARK li {
-	color: $spotGrey;
-	font-weight: $light;
-	line-height: 1.5em;
+  color: $spotGrey;
+  font-weight: $light;
+  line-height: 1.5em;
 }
 
 .listDARK a {
-	color: $spotGrey;
-	&:hover {
-		color: $peach;
-	}
+  color: $spotGrey;
+  &:hover {
+    color: $peach;
+  }
 }
 
 .listLIGHT li {
-	color: $lightGrey;
-	font-weight: $light;
-	line-height: 1.5em;
+  color: $lightGrey;
+  font-weight: $light;
+  line-height: 1.5em;
 }
 
 .listLIGHT a {
-	color: $lightGrey;
-	&:hover {
-		color: $peach;
-	}
+  color: $lightGrey;
+  &:hover {
+    color: $peach;
+  }
 }
 
 .weatherWrap {
-	@include bp(sm) {
-		justify-content: space-between;
-	}
+  @include bp(sm) {
+    justify-content: space-between;
+  }
 }
 
 .tooltipWrap {
-	cursor: pointer;
-	margin-left: 13px;
+  cursor: pointer;
+  margin-left: 13px;
 }
 
 .tooltipWrap:hover .footerIcon {
-	color: $peach;
+  color: $peach;
 }
 
 .responsiveFooterWrap {
-	@include bp(sm) {
-		display: block;
-	}
+  @include bp(sm) {
+    display: block;
+  }
 }
 
 .responsiveCopyRight {
-	@include bp(sm) {
-		margin-left: 0;
-		line-height: 24px;
-	}
+  @include bp(sm) {
+    margin-left: 0;
+    line-height: 24px;
+  }
 }
 
 .miniWrap {
-	@include bp(xs) {
-		justify-content: space-between;
-	}
+  @include bp(xs) {
+    justify-content: space-between;
+  }
 }
 
 // error container
-.fullPageFixed {
-	background: $grey;
-	bottom: 0;
-	left: 0;
-	overflow: hidden;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 99;
+.fullPageFixedDARK {
+  background: $grey;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.fullPageFixedLIGHT {
+  background: $white;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99;
 }
 
 .fullPageFixedInner {
-	bottom: 0;
-	height: 100px;
-	left: 0;
-	margin: auto;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 100%;
+  bottom: 0;
+  height: 200px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.errorDARK {
+  color: $yellow;
+  font-weight: $bold;
+  font-size: 4em;
+  @include bp(md) {
+    font-size: 2em;
+  }
+}
+
+.errorLIGHT {
+  color: $blue;
+  font-weight: $bold;
+  font-size: 4em;
+  @include bp(md) {
+    font-size: 2em;
+  }
 }
 
 // footer and project section
 .responsiveWrap {
-	@include bp(md) {
-		display: flex;
-		justify-content: flex-start;
-	}
-	@include bp(xs) {
-		justify-content: space-between;
-	}
+  @include bp(md) {
+    display: flex;
+    justify-content: flex-start;
+  }
+  @include bp(xs) {
+    justify-content: space-between;
+  }
 }

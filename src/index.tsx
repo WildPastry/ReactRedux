@@ -1,19 +1,22 @@
-// import polyfills and styles
+// Import polyfills and styles
 import 'react-app-polyfill/ie11';
 import 'mdbreact/dist/css/mdb.css';
 import './scss/main.scss';
 
-// import frameworks
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from './redux';
+// Import frameworks
+import React, { StrictMode } from 'react';
 import App from './App';
+import { Provider } from 'react-redux';
+import { createRoot } from 'react-dom/client';
+import store from './redux';
 
-// render app
-ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('root')
+// Render app with store wrapper
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+root.render(
+  <Provider store={store}>
+    <StrictMode>
+      <App />
+    </StrictMode>
+  </Provider>
 );

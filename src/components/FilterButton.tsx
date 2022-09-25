@@ -1,39 +1,38 @@
-import React from 'react';
-import { setProjectFilter } from '../redux/slices/filterSlice';
-import { ProjectFilter } from '../types';
 import { useDispatch, useSelector } from 'react-redux';
+import { ProjectFilter } from '../types';
+import React from 'react';
 import { RootState } from '../redux/reducers/rootReducer';
+import { setProjectFilter } from '../redux/slices/filterSlice';
 
 interface FilterButtonProps {
-	projectFilter: ProjectFilter;
-	text: string;
+  projectFilter: ProjectFilter;
+  text: string;
 }
 
 // FilterButton
 export default function FilterButton({
-	projectFilter,
-	text
+  projectFilter,
+  text
 }: FilterButtonProps): JSX.Element {
-	// useSelector for app theme
-	const appTheme = useSelector((state: RootState) => {
-		return state.setTheme.appTheme;
-	});
+  // UseSelector for app theme
+  const appTheme = useSelector((state: RootState) => {
+    return state.setTheme.appTheme;
+  });
 
-	// dispatch
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	// show visible filter
-	const visibleFilter = useSelector((state: RootState) => state.setFilters);
+  // Show visible filter
+  const visibleFilter = useSelector((state: RootState) => state.setFilters);
 
-	return (
-		<h4
-			className={`${
-				visibleFilter === projectFilter
-					? 'filterItem' + appTheme + ' filterItemActive' + appTheme
-					: 'filterItem' + appTheme
-			}`}
-			onClick={() => dispatch(setProjectFilter(projectFilter))}>
-			{text}
-		</h4>
-	);
+  return (
+    <h4
+      className={`${
+        visibleFilter === projectFilter
+          ? `filterItem filterItem${appTheme} filterItem${appTheme}Active`
+          : `filterItem filterItem${appTheme}`
+      }`}
+      onClick={() => dispatch(setProjectFilter(projectFilter))}>
+      {text}
+    </h4>
+  );
 }

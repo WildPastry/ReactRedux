@@ -1,4 +1,4 @@
-// export initSpace
+/* eslint-disable */
 export function initSpace(theme) {
   const TAU = 2 * Math.PI;
   const OFFSET = 0;

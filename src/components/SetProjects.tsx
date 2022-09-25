@@ -1,81 +1,77 @@
-// imports
-import React from 'react';
-import { Row } from 'react-bootstrap';
-import { useCallback, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../redux';
+import { Project } from '../types';
 import { RootState } from '../redux/reducers/rootReducer';
-import { setProjects } from '../redux/slices/projectSlice';
+import { Row } from 'react-bootstrap';
 import projectData from '../utilities/projects.json';
+import { setProjects } from '../redux/slices/projectSlice';
 
-// SetProjects
 export default function SetProjects(): JSX.Element {
-	// useSelector for app theme
-	const appTheme = useSelector((state: RootState) => {
-		return state.setTheme.appTheme;
-	});
+  // UseSelector for app theme
+  const appTheme = useSelector((state: RootState) => {
+    return state.setTheme.appTheme;
+  });
 
-	// dispatch
-	const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
-	// send resized and sorted data to dispatch
-	const handleDispatch = useCallback(
-		(projects: any[]) => {
-			dispatch(setProjects(projects));
-		},
-		[dispatch]
-	);
+  // Send resized and sorted data to dispatch
+  const handleDispatch = useCallback(
+    (projects: Project[]) => {
+      dispatch(setProjects(projects));
+    },
+    [dispatch]
+  );
 
-	// resize the current data array
-	const resizeData = useCallback(
-		(dataArray: any[], size: number) => {
-			const resizedData = [].concat(dataArray).slice(0, size);
-			handleDispatch(resizedData);
-		},
-		[handleDispatch]
-	);
+  // Resize the current data array
+  const resizeData = useCallback(
+    (dataArray: Project[], size: number) => {
+      const resizedData: Project[] = [].concat(dataArray).slice(0, size);
+      handleDispatch(resizedData);
+    },
+    [handleDispatch]
+  );
 
-	// sort the current data array
-	const sortData = useCallback(
-		(dataArray: any[], size: number) => {
-			const sortedData = [].concat(dataArray).sort((a, b) => (a.id > b.id ? 1 : -1));
-			resizeData(sortedData, size);
-		},
-		[resizeData]
-	);
+  // Sort the current data array
+  const sortData = useCallback(
+    (dataArray: Project[], size: number) => {
+      const sortedData: Project[] = [].concat(dataArray).sort((a, b) => (a.id > b.id ? 1 : -1));
+      resizeData(sortedData, size);
+    },
+    [resizeData]
+  );
 
-	// sort data on page load
-	useEffect(() => {
-		sortData(projectData, 9);
-	}, [sortData]);
+  // Sort data on page load
+  useEffect(() => {
+    sortData(projectData, 9);
+  }, [sortData]);
 
-	// toggle MoreFewer state
-	const [showMoreFewer, setShowMoreFewer] = useState(false);
+  // Toggle MoreFewer state
+  const [showMoreFewer, setShowMoreFewer] = useState(false);
 
-	// toggleMoreFewer
-	const toggleMoreFewer = (size: number) =>
-		showMoreFewer === false
-			? (setShowMoreFewer(true), sortData(projectData, size))
-			: (setShowMoreFewer(false), sortData(projectData, size));
+  // ToggleMoreFewer
+  const toggleMoreFewer = (size: number) => (showMoreFewer === false
+    ? (setShowMoreFewer(true), sortData(projectData, size))
+    : (setShowMoreFewer(false), sortData(projectData, size)));
 
-	// renderMore button
-	const renderMore = () => {
-		return (
-			<h3 className={'moreFewer' + appTheme} onClick={() => toggleMoreFewer(18)}>
-				LOAD MORE
-			</h3>
-		);
-	};
+  // RenderMore button
+  const renderMore = () => {
+    return (
+      <h3 className={`moreFewer${appTheme}`} onClick={() => toggleMoreFewer(18)}>
+        MORE
+      </h3>
+    );
+  };
 
-	// renderFewer button
-	const renderFewer = () => {
-		return (
-			<h3 className={'moreFewer' + appTheme} onClick={() => toggleMoreFewer(9)}>
-				HIDE
-			</h3>
-		);
-	};
+  // RenderFewer button
+  const renderFewer = () => {
+    return (
+      <h3 className={`moreFewer${appTheme}`} onClick={() => toggleMoreFewer(9)}>
+        FEWER
+      </h3>
+    );
+  };
 
-	// buttons to show more or less projects
-	return <Row className='pad'>{showMoreFewer ? renderFewer() : renderMore()}</Row>;
+  // Buttons to show more or fewer projects
+  return <Row className="pad">{showMoreFewer ? renderFewer() : renderMore()}</Row>;
 }
