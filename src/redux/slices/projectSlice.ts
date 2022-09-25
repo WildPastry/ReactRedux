@@ -65,4 +65,5 @@ export const setProjects =
     }
   };
 
+// Export reducer
 export default projectSlice.reducer;
