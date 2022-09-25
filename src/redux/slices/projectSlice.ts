@@ -58,7 +58,7 @@ export const setProjects =
       dispatch(projectSlice.actions.setProjects(setProject));
       setTimeout(() => {
         dispatch(setLoading(false));
-      }, 1000);
+      }, 1500);
     } catch (err) {
       // Create error page if failed
       dispatch(setError(true));

@@ -76,7 +76,6 @@ const App: React.FC = () => {
   const renderApp = (pageData: Loading) => {
     return (
       <main aria-label="Main Section">
-        <AppLoading />
         {pageData.isLoading ? <AppLoading /> : null}
         <Nav/>
         <Container fluid className="sectionWrap">
