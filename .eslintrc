@@ -17,7 +17,7 @@
     {
       "plugins": ["react"],
 
-      "files": ["*.ts", "*.tsx"],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
 
       "parserOptions": {
         "project": ["**/tsconfig.json"],
