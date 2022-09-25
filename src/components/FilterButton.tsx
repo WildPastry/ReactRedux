@@ -28,8 +28,8 @@ export default function FilterButton({
     <h4
       className={`${
         visibleFilter === projectFilter
-          ? `filterItem${appTheme} filterItemActive${appTheme}`
-          : `filterItem${appTheme}`
+          ? `filterItem filterItem${appTheme} filterItem${appTheme}Active`
+          : `filterItem filterItem${appTheme}`
       }`}
       onClick={() => dispatch(setProjectFilter(projectFilter))}>
       {text}
