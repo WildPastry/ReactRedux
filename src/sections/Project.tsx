@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MDBAnimation } from 'mdbreact';
 import { RootState } from '../redux/reducers/rootReducer';
 
+// Project
 const Project: React.FC = () => {
   // UseSelectors for app theme / projects / current project
   const appTheme = useSelector((state: RootState) => {
@@ -240,5 +241,6 @@ const Project: React.FC = () => {
   );
 };
 
+// EXPORT Project
 Project.displayName = 'Project';
 export default Project;
