@@ -1,3 +1,3 @@
-## React Typescript
+## Portfolio
 
-React template with typescript
+Portfolio built with React, Redux, and Typescript.
