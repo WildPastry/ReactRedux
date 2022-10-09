@@ -1,3 +1,3 @@
 ## Portfolio
 
-Portfolio built with React, Redux, and Typescript.
+Portfolio built with React, Redux, and Typescript
