@@ -1,4 +1,4 @@
-import { Project, ProjectFilter } from '../types';
+import { Project, ProjectFilter } from '../models/app.model';
 import { useDispatch, useSelector } from 'react-redux';
 import ProjectItem from './ProjectItem';
 import React from 'react';

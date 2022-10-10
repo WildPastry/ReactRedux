@@ -24,7 +24,7 @@ export default function ImgTheme(): JSX.Element {
         className={'imgThemeIcon'}
         src={require('./../icon/rgb.svg')}
         onClick={() => handleImgTheme()}
-        alt="RBG Icon"
+        alt='RBG Icon'
       />
     </React.Fragment>
   );

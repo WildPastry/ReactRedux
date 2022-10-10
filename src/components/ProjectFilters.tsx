@@ -1,10 +1,10 @@
 import FilterButton from './FilterButton';
-import { ProjectFilter } from '../types';
+import { ProjectFilter } from '../models/app.model';
 import React from 'react';
 
 export default function ProjectFilters(): JSX.Element {
   return (
-    <section aria-label="Gallery Filter Section" className="filterWrapSection">
+    <section aria-label='Gallery Filter Section' className='filterWrapSection'>
       <div className={'filterWrap flex pad'}>
         <FilterButton projectFilter={ProjectFilter.ShowAll} text={'ALL'}/>
         <FilterButton projectFilter={ProjectFilter.ShowApps} text={'Apps'}/>

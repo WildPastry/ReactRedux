@@ -6,7 +6,7 @@ import SetProjects from '../components/SetProjects';
 // Gallery
 const Gallery: React.FC = () => {
   return (
-    <section aria-label="Gallery Section">
+    <section aria-label='Gallery Section'>
       <ProjectFilters/>
       <ProjectGallery/>
       <SetProjects/>

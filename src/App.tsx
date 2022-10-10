@@ -13,7 +13,7 @@ import { Container } from 'react-bootstrap';
 import Error from './components/Error';
 import Footer from './sections/Footer';
 import Gallery from './sections/Gallery';
-import { Loading } from './types';
+import { Loading } from './models/app.model';
 import { MDBAnimation } from 'mdbreact';
 import Nav from './sections/Nav';
 import Project from './sections/Project';
@@ -75,20 +75,20 @@ const App: React.FC = () => {
 
   const renderApp = (pageData: Loading) => {
     return (
-      <main aria-label="Main Section">
+      <main aria-label='Main Section'>
         {pageData.isLoading ? <AppLoading /> : null}
         <Nav/>
-        <Container fluid className="sectionWrap">
+        <Container fluid className='sectionWrap'>
           <Type/>
-          <MDBAnimation type="fadeIn">{renderSection}</MDBAnimation>
+          <MDBAnimation type='fadeIn'>{renderSection}</MDBAnimation>
         </Container>
-        <MDBAnimation type="fadeIn">{renderProject}</MDBAnimation>
+        <MDBAnimation type='fadeIn'>{renderProject}</MDBAnimation>
         <Footer/>
         <ScrollUpButton
-          aria-label="Scroll Up Button"
+          aria-label='Scroll Up Button'
           StopPosition={0}
           ShowAtPosition={200}
-          EasingType="easeOutCubic"
+          EasingType='easeOutCubic'
           AnimationDuration={300}
           ContainerClassName={`scrollUpIcon${appTheme}`}
         />

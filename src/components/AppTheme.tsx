@@ -7,7 +7,7 @@ export default function AppTheme(): JSX.Element {
   const dispatch = useDispatch();
 
   // Trigger the toggle of dark/light mode
-  const [toggle, setToggle] = useState(false);
+  const [ toggle, setToggle ] = useState(false);
 
   const triggerToggle = () => {
     setToggle(!toggle);
@@ -25,20 +25,20 @@ export default function AppTheme(): JSX.Element {
   };
 
   return (
-    <section aria-label="Dark And Light Mode Section">
+    <section aria-label='Dark And Light Mode Section'>
       <div
         onClick={triggerToggle}
         className={`appTheme ${toggle ? 'appThemeChecked' : ''}`}>
-        <div className="appThemeContainer">
-          <div className="appThemeCheck">
-            <span role="img" aria-label="Activate Dark Mode">🌞</span>
+        <div className='appThemeContainer'>
+          <div className='appThemeCheck'>
+            <span role='img' aria-label='Activate Dark Mode'>🌞</span>
           </div>
-          <div className="appThemeUncheck">
-            <span role="img" aria-label="Activate Light Mode">🌜</span>
+          <div className='appThemeUncheck'>
+            <span role='img' aria-label='Activate Light Mode'>🌜</span>
           </div>
         </div>
-        <div className="appThemeCircle"></div>
-        <input className="appThemeInput" type="checkbox" aria-label="Toggle Button" />
+        <div className='appThemeCircle' />
+        <input className='appThemeInput' type='checkbox' aria-label='Toggle Button' />
       </div>
     </section>
   );

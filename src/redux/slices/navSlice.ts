@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Navigation } from '../../types';
+import { Navigation } from '../../models/app.model';
 
 // Set initialState
 const initialState = {

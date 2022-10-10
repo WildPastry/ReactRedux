@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../redux';
-import { Project } from '../types';
+import { Project } from '../models/app.model';
 import { RootState } from '../redux/reducers/rootReducer';
 import { Row } from 'react-bootstrap';
 import projectData from '../utilities/projects.json';
@@ -20,7 +20,7 @@ export default function SetProjects(): JSX.Element {
     (projects: Project[]) => {
       dispatch(setProjects(projects));
     },
-    [dispatch]
+    [ dispatch ]
   );
 
   // Resize the current data array
@@ -29,7 +29,7 @@ export default function SetProjects(): JSX.Element {
       const resizedData: Project[] = [].concat(dataArray).slice(0, size);
       handleDispatch(resizedData);
     },
-    [handleDispatch]
+    [ handleDispatch ]
   );
 
   // Sort the current data array
@@ -38,16 +38,16 @@ export default function SetProjects(): JSX.Element {
       const sortedData: Project[] = [].concat(dataArray).sort((a, b) => (a.id > b.id ? 1 : -1));
       resizeData(sortedData, size);
     },
-    [resizeData]
+    [ resizeData ]
   );
 
   // Sort data on page load
   useEffect(() => {
     sortData(projectData, 9);
-  }, [sortData]);
+  }, [ sortData ]);
 
   // Toggle MoreFewer state
-  const [showMoreFewer, setShowMoreFewer] = useState(false);
+  const [ showMoreFewer, setShowMoreFewer ] = useState(false);
 
   // ToggleMoreFewer
   const toggleMoreFewer = (size: number) => (showMoreFewer === false
@@ -73,5 +73,5 @@ export default function SetProjects(): JSX.Element {
   };
 
   // Buttons to show more or fewer projects
-  return <Row className="pad">{showMoreFewer ? renderFewer() : renderMore()}</Row>;
+  return <Row className='pad'>{showMoreFewer ? renderFewer() : renderMore()}</Row>;
 }

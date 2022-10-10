@@ -11,13 +11,13 @@ const Error: React.FC = () => {
   return (
     <>
       <div className={`fullPageFixed${appTheme}`}>
-        <div className="fullPageFixedInner">
+        <div className='fullPageFixedInner'>
           <h1 className={`marBot textCenter error${appTheme}`}>404</h1>
           <h4 className={`marBot20 textCenter text${appTheme}`}>
             Oops! Something is messy... Hit me up below if you feel like it!
           </h4>
           <h3 className={`textCenter list${appTheme}`}>
-            <a href="mailto:mike@mikeparker.co.nz">
+            <a href='mailto:mike@mikeparker.co.nz'>
               <span>mike@mikeparker.co.nz</span>
             </a>
           </h3>
