@@ -14,20 +14,20 @@ export function initType() {
 
   const prefix = 'DEVELOPING WITH ';
   const skills = [
-    'HTML & CSS',
     'TypeScript',
     'React',
     'Redux',
     'SASS',
-    'JavaScript',
+    'Angular',
+    'HTML & CSS',
     'React Native',
     'LESS',
     'PHP',
     'Bootstrap',
-    'jQuery',
     'EXPO',
+    'JavaScript',
     'Node.js',
-    'Wordpress'
+    'Cypress'
   ].map(s => `${s}`);
   const delay = delayValue;
   const step = stepValue;
