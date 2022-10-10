@@ -19,23 +19,23 @@ const Type: React.FC = () => {
   const { ref: typeRef } = useHandleSpace<HTMLDivElement>();
 
   // Load external JS function
-  useEffect(() => initType(), [appTheme]);
+  useEffect(() => initType(), [ appTheme ]);
 
   return (
     <React.Fragment>
-      <div aria-label="Animated Typography Section" className="typeWrap pad">
+      <div aria-label='Animated Typography Section' className='typeWrap pad'>
         <p className={`textHide text${appTheme}`}>
-          <span className="textThis">this </span>site built with react
-          <span className="textLightGrey text400"> / </span>redux
-          <span className="textLightGrey text400"> / </span>typescript
+          <span className='textThis'>this </span>site built with react
+          <span className='textLightGrey text400'> / </span>redux
+          <span className='textLightGrey text400'> / </span>typescript
         </p>
         <div
-          id="type"
+          id='type'
           className={`text${appTheme}`}
           ref={typeRef as React.RefObject<HTMLDivElement>}
         />
       </div>
-      <div className="lineNoMar" />
+      <div className='lineNoMar' />
     </React.Fragment>
   );
 };

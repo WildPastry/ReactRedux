@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ProjectFilter } from '../types';
+import { ProjectFilter } from '../models/app.model';
 import React from 'react';
 import { RootState } from '../redux/reducers/rootReducer';
 import { setProjectFilter } from '../redux/slices/filterSlice';

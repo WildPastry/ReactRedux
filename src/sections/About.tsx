@@ -21,18 +21,18 @@ const About: React.FC = () => {
   const { ref: spaceRef } = useHandleSpace<HTMLDivElement>();
 
   // Load external JS function
-  useEffect(() => initSpace(appTheme), [appTheme]);
+  useEffect(() => initSpace(appTheme), [ appTheme ]);
 
   return (
-    <section aria-label="About Section">
-      <MDBAnimation type="fadeIn">
-        <Row className="wrap">
+    <section aria-label='About Section'>
+      <MDBAnimation type='fadeIn'>
+        <Row className='wrap'>
           <Col sm={12}>
             <h1 className={`colWrap marBot text${appTheme}`}>About</h1>
           </Col>
           <br />
-          <Col sm={12} md={6} lg={4} className="colWrap">
-            <p aria-label="About Description" className={`text${appTheme}`}>
+          <Col sm={12} md={6} lg={4} className='colWrap'>
+            <p aria-label='About Description' className={`text${appTheme}`}>
               TypeScript, Angular, and React front-end developer with a strong background in design.
               <br />
               <br />
@@ -43,16 +43,15 @@ const About: React.FC = () => {
               <br />
             </p>
             <h3
-              aria-label="About Contact Number"
-              className={'marBot textSpotGrey'}
-              x-ms-format-detection="none">
-              Call/Text <span className="textPeach ml-1">022 5025 485</span>
+              aria-label='About Contact Number'
+              className={'marBot textSpotGrey'}>
+              Call/Text <span className='textPeach ml-1'>022 5025 485</span>
             </h3>
           </Col>
-          <Col sm={12} md={6} lg={8} className="colWrap">
+          <Col sm={12} md={6} lg={8} className='colWrap'>
             <div
-              aria-label="Space Animation"
-              id="space"
+              aria-label='Space Animation'
+              id='space'
               className={`space bg${appTheme}`}
               ref={spaceRef as React.RefObject<HTMLDivElement>}
             />

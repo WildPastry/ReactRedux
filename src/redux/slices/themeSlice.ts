@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Theme } from '../../types';
+import { Theme } from '../../models/app.model';
 
 // Set initialState
 const initialState = {

@@ -41,7 +41,3 @@ export enum ProjectFilter {
   ShowMarketing = 'MARKETING',
   ShowWebsites = 'WEBSITE'
 }
-
-export interface SetSection {
-  handleSection: (section: string) => void;
-}

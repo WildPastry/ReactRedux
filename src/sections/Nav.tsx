@@ -27,7 +27,7 @@ const Nav: React.FC = () => {
   };
 
   // Logic functions for hamburger and mobile menu
-  const [showMenu, setShowMenu] = useState(false);
+  const [ showMenu, setShowMenu ] = useState(false);
 
   const toggleMenu = () => (showMenu === false ? setShowMenu(true) : setShowMenu(false));
 
@@ -38,7 +38,7 @@ const Nav: React.FC = () => {
     collapseMenu = (
       <div className={'menuActive'}>
         <h4
-          aria-label="Gallery Button Mobile"
+          aria-label='Gallery Button Mobile'
           onClick={() => handleNav('GALLERY')}
           className={`${
             currentSection === 'GALLERY'
@@ -48,7 +48,7 @@ const Nav: React.FC = () => {
           GALLERY
         </h4>
         <h4
-          aria-label="About Button Mobile"
+          aria-label='About Button Mobile'
           onClick={() => handleNav('ABOUT')}
           className={`${
             currentSection === 'ABOUT'
@@ -62,16 +62,16 @@ const Nav: React.FC = () => {
   }
 
   return (
-    <header aria-label="Header Section">
-      <nav aria-label="Navigation Section" className={`navWrap bg${appTheme}`}>
-        <Container fluid className="navMenuWrap">
-          <div className="nav pad">
-            <p aria-label="Mike Parker Portfolio" className={`brand${appTheme}`} onClick={() => handleNav('GALLERY')}>
-              mike parker <span className="text300"> portfolio </span>
+    <header aria-label='Header Section'>
+      <nav aria-label='Navigation Section' className={`navWrap bg${appTheme}`}>
+        <Container fluid className='navMenuWrap'>
+          <div className='nav pad'>
+            <p aria-label='Mike Parker Portfolio' className={`brand${appTheme}`} onClick={() => handleNav('GALLERY')}>
+              mike parker <span className='text300'> portfolio </span>
             </p>
-            <div className="menu flex">
+            <div className='menu flex'>
               <h4
-                aria-label="Gallery Button"
+                aria-label='Gallery Button'
                 onClick={() => handleNav('GALLERY')}
                 className={`${
                   currentSection === 'GALLERY'
@@ -81,7 +81,7 @@ const Nav: React.FC = () => {
                GALLERY
               </h4>
               <h4
-                aria-label="About Button"
+                aria-label='About Button'
                 onClick={() => handleNav('ABOUT')}
                 className={`${
                   currentSection === 'ABOUT'
@@ -92,10 +92,10 @@ const Nav: React.FC = () => {
               </h4>
               <AppTheme />
             </div>
-            <div className="menuCollapse">
+            <div className='menuCollapse'>
               <HamburgerSqueeze
-                aria-label="Hamburger Menu"
-                className="menuBurger"
+                aria-label='Hamburger Menu'
+                className='menuBurger'
                 isActive={showMenu}
                 toggleButton={toggleMenu}
                 buttonWidth={30}

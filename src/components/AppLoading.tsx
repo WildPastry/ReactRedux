@@ -4,22 +4,22 @@ import React from 'react';
 const AppLoading = () => {
   return (
     <>
-      <div className="loader">
-        <div className="loaderInner">
-          <div className="loaderLineWrap">
-            <div className="loaderLine"></div>
+      <div className='loader'>
+        <div className='loaderInner'>
+          <div className='loaderLineWrap'>
+            <div className='loaderLine' />
           </div>
-          <div className="loaderLineWrap">
-            <div className="loaderLine"></div>
+          <div className='loaderLineWrap'>
+            <div className='loaderLine' />
           </div>
-          <div className="loaderLineWrap">
-            <div className="loaderLine"></div>
+          <div className='loaderLineWrap'>
+            <div className='loaderLine' />
           </div>
-          <div className="loaderLineWrap">
-            <div className="loaderLine"></div>
+          <div className='loaderLineWrap'>
+            <div className='loaderLine' />
           </div>
-          <div className="loaderLineWrap">
-            <div className="loaderLine"></div>
+          <div className='loaderLineWrap'>
+            <div className='loaderLine' />
           </div>
         </div>
       </div>
