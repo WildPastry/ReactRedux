@@ -1,3 +1,3 @@
-## Portfolio
+## ReactRedux
 
-Portfolio built with React, Redux, and Typescript
+React / Redux / Thunk
