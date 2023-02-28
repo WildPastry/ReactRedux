@@ -1,3 +1,11 @@
-## Portfolio
+# ReactRedux
+React with ReduxToolkit and ReduxThunk
 
-Portfolio built with React, Redux, and Typescript
+## Development
+
+* **React** <br>
+* **TypeScript** <br>
+* **Redux Toolkit** <br>
+* **Redux Thunk** <br>
+* **SASS** <br>
+* **Font Awesome** <br>
