@@ -1,3 +1,5 @@
+/* eslint-disable max-lines-per-function */
+/* eslint-disable max-len */
 import { Col, Container, Row } from "react-bootstrap";
 import React, { useCallback, useEffect, useState } from "react";
 import {

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AppTheme from "../components/AppTheme";

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { Col, Row } from "react-bootstrap";
 import {
   faFacebook,
