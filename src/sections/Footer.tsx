@@ -145,9 +145,9 @@ const Footer: React.FC = () => {
               <li>
                 <a
                   aria-label="Email Address"
-                  href="mailto:mike@mikeparker.co.nz"
+                  href="mailto:mparkernzdev@gmail.com"
                 >
-                  mike@mikeparker.co.nz
+                  mparkernzdev@gmail.com
                 </a>
               </li>
             </ul>

@@ -17,8 +17,8 @@ const Error: React.FC = () => {
             Oops! Something is messy... Hit me up below if you feel like it!
           </h4>
           <h3 className={`textCenter list${appTheme}`}>
-            <a href="mailto:mike@mikeparker.co.nz">
-              <span>mike@mikeparker.co.nz</span>
+            <a href="mailto:mparkernzdev@gmail.com">
+              <span>mparkernzdev@gmail.com</span>
             </a>
           </h3>
         </div>
