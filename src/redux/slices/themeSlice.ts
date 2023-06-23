@@ -1,14 +1,14 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Theme } from '../../models/app.model';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Theme } from "../../models/app.model";
 
 // Set initialState
 const initialState = {
-  appTheme: 'DARK',
-  imgTheme: 'DARK'
+  appTheme: "DARK",
+  imgTheme: "DARK",
 } as Theme;
 
 const themeSlice = createSlice({
-  name: 'setTheme',
+  name: "setTheme",
   initialState,
   reducers: {
     setTheme(state, action: PayloadAction<string>) {
@@ -16,8 +16,8 @@ const themeSlice = createSlice({
     },
     setImgTheme(state, action: PayloadAction<string>) {
       state.imgTheme = action.payload;
-    }
-  }
+    },
+  },
 });
 
 // Export theme actions from themeSlice

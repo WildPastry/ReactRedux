@@ -1,7 +1,7 @@
-import { AppDispatch, AppThunk } from '..';
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { setError, setLoading } from './loadSlice';
-import { Project } from '../../models/app.model';
+import { AppDispatch, AppThunk } from "..";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { setError, setLoading } from "./loadSlice";
+import { Project } from "../../models/app.model";
 
 // Set initialState
 const initialState: Project[] = [];
@@ -11,7 +11,7 @@ const initialState: Project[] = [];
  * Including: Reset projects, set projects and filter projects
  */
 const projectSlice = createSlice({
-  name: 'setProjects',
+  name: "setProjects",
   initialState,
   reducers: {
     resetProjects: () => initialState,
@@ -23,15 +23,16 @@ const projectSlice = createSlice({
       if (project) {
         project.filtered = !project.filtered;
       }
-    }
-  }
+    },
+  },
 });
 
 // Export filter actions from projectSlice
 export const { setFilters } = projectSlice.actions;
 
 export const setProjects =
-  (projects: Project[]): AppThunk => (dispatch: AppDispatch) => {
+  (projects: Project[]): AppThunk =>
+  (dispatch: AppDispatch) => {
     try {
       // Reset projects first
       dispatch(projectSlice.actions.resetProjects());
@@ -52,7 +53,7 @@ export const setProjects =
         url: proj.url,
         git: proj.git,
         gitUrl: proj.gitUrl,
-        filtered: false
+        filtered: false,
       }));
       // Dispatch projects once finished mapping
       dispatch(projectSlice.actions.setProjects(setProject));

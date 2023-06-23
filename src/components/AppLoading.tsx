@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 
 // AppLoading
 const AppLoading = () => {
   return (
     <>
-      <div className='loader'>
-        <div className='loaderInner'>
-          <div className='loaderLineWrap'>
-            <div className='loaderLine' />
+      <div className="loader">
+        <div className="loaderInner">
+          <div className="loaderLineWrap">
+            <div className="loaderLine" />
           </div>
-          <div className='loaderLineWrap'>
-            <div className='loaderLine' />
+          <div className="loaderLineWrap">
+            <div className="loaderLine" />
           </div>
-          <div className='loaderLineWrap'>
-            <div className='loaderLine' />
+          <div className="loaderLineWrap">
+            <div className="loaderLine" />
           </div>
-          <div className='loaderLineWrap'>
-            <div className='loaderLine' />
+          <div className="loaderLineWrap">
+            <div className="loaderLine" />
           </div>
-          <div className='loaderLineWrap'>
-            <div className='loaderLine' />
+          <div className="loaderLineWrap">
+            <div className="loaderLine" />
           </div>
         </div>
       </div>
@@ -28,5 +28,5 @@ const AppLoading = () => {
 };
 
 // EXPORT AppLoading
-AppLoading.displayName = 'AppLoading';
+AppLoading.displayName = "AppLoading";
 export default AppLoading;

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import AppTheme from '../components/AppTheme';
-import { Container } from 'react-bootstrap';
-import { HamburgerSqueeze } from 'react-animated-burgers';
-import { RootState } from '../redux/reducers/rootReducer';
-import { setNav } from '../redux/slices/navSlice';
+/* eslint-disable max-len */
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import AppTheme from "../components/AppTheme";
+import { Container } from "react-bootstrap";
+import { HamburgerSqueeze } from "react-animated-burgers";
+import { RootState } from "../redux/reducers/rootReducer";
+import { setNav } from "../redux/slices/navSlice";
 
 // Nav
 const Nav: React.FC = () => {
@@ -27,34 +28,37 @@ const Nav: React.FC = () => {
   };
 
   // Logic functions for hamburger and mobile menu
-  const [ showMenu, setShowMenu ] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const toggleMenu = () => (showMenu === false ? setShowMenu(true) : setShowMenu(false));
+  const toggleMenu = () =>
+    showMenu === false ? setShowMenu(true) : setShowMenu(false);
 
   // Logic for rendering collapsed menu
   let collapseMenu: JSX.Element;
 
   if (showMenu === true) {
     collapseMenu = (
-      <div className={'menuActive'}>
+      <div className={"menuActive"}>
         <h4
-          aria-label='Gallery Button Mobile'
-          onClick={() => handleNav('GALLERY')}
+          aria-label="Gallery Button Mobile"
+          onClick={() => handleNav("GALLERY")}
           className={`${
-            currentSection === 'GALLERY'
+            currentSection === "GALLERY"
               ? `menuActiveItem navItemCollapse${appTheme} navItemActiveCollapse${appTheme}`
               : `menuActiveItem navItemCollapse${appTheme}`
-          }`}>
+          }`}
+        >
           GALLERY
         </h4>
         <h4
-          aria-label='About Button Mobile'
-          onClick={() => handleNav('ABOUT')}
+          aria-label="About Button Mobile"
+          onClick={() => handleNav("ABOUT")}
           className={`${
-            currentSection === 'ABOUT'
+            currentSection === "ABOUT"
               ? `menuActiveItem navItemCollapse${appTheme} navItemActiveCollapse${appTheme}`
               : `menuActiveItem navItemCollapse${appTheme}`
-          }`}>
+          }`}
+        >
           ABOUT
         </h4>
       </div>
@@ -62,44 +66,50 @@ const Nav: React.FC = () => {
   }
 
   return (
-    <header aria-label='Header Section'>
-      <nav aria-label='Navigation Section' className={`navWrap bg${appTheme}`}>
-        <Container fluid className='navMenuWrap'>
-          <div className='nav pad'>
-            <p aria-label='Mike Parker Portfolio' className={`brand${appTheme}`} onClick={() => handleNav('GALLERY')}>
-              mike parker <span className='text300'> portfolio </span>
+    <header aria-label="Header Section">
+      <nav aria-label="Navigation Section" className={`navWrap bg${appTheme}`}>
+        <Container fluid className="navMenuWrap">
+          <div className="nav pad">
+            <p
+              aria-label="Mike Parker Portfolio"
+              className={`brand${appTheme}`}
+              onClick={() => handleNav("GALLERY")}
+            >
+              mike parker <span className="text300"> portfolio </span>
             </p>
-            <div className='menu flex'>
+            <div className="menu flex">
               <h4
-                aria-label='Gallery Button'
-                onClick={() => handleNav('GALLERY')}
+                aria-label="Gallery Button"
+                onClick={() => handleNav("GALLERY")}
                 className={`${
-                  currentSection === 'GALLERY'
+                  currentSection === "GALLERY"
                     ? `navItem${appTheme} navItemActive${appTheme}`
                     : `navItem${appTheme}`
-                }`}>
-               GALLERY
+                }`}
+              >
+                GALLERY
               </h4>
               <h4
-                aria-label='About Button'
-                onClick={() => handleNav('ABOUT')}
+                aria-label="About Button"
+                onClick={() => handleNav("ABOUT")}
                 className={`${
-                  currentSection === 'ABOUT'
+                  currentSection === "ABOUT"
                     ? `navItem${appTheme} navItemActive${appTheme}`
                     : `navItem${appTheme}`
-                }`}>
+                }`}
+              >
                 ABOUT
               </h4>
               <AppTheme />
             </div>
-            <div className='menuCollapse'>
+            <div className="menuCollapse">
               <HamburgerSqueeze
-                aria-label='Hamburger Menu'
-                className='menuBurger'
+                aria-label="Hamburger Menu"
+                className="menuBurger"
                 isActive={showMenu}
                 toggleButton={toggleMenu}
                 buttonWidth={30}
-                barColor={`${appTheme === 'DARK' ? '#fff' : '#292929'}`}
+                barColor={`${appTheme === "DARK" ? "#fff" : "#292929"}`}
               />
             </div>
           </div>
@@ -111,5 +121,5 @@ const Nav: React.FC = () => {
 };
 
 // EXPORT Nav
-Nav.displayName = 'Nav';
+Nav.displayName = "Nav";
 export default Nav;

@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
-import React from 'react';
-import { RootState } from '../redux/reducers/rootReducer';
-import { setImgTheme } from '../redux/slices/themeSlice';
+import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { RootState } from "../redux/reducers/rootReducer";
+import { setImgTheme } from "../redux/slices/themeSlice";
 
 export default function ImgTheme(): JSX.Element {
   const dispatch = useDispatch();
@@ -14,17 +14,17 @@ export default function ImgTheme(): JSX.Element {
   // Handle function for img theme
   const handleImgTheme = () => {
     let currentTheme: string;
-    ImgTheme === 'DARK' ? (currentTheme = 'LIGHT') : (currentTheme = 'DARK');
+    ImgTheme === "DARK" ? (currentTheme = "LIGHT") : (currentTheme = "DARK");
     dispatch(setImgTheme(currentTheme));
   };
 
   return (
     <React.Fragment>
       <img
-        className={'imgThemeIcon'}
-        src={require('./../icon/rgb.svg')}
+        className={"imgThemeIcon"}
+        src={require("./../icon/rgb.svg")}
         onClick={() => handleImgTheme()}
-        alt='RBG Icon'
+        alt="RBG Icon"
       />
     </React.Fragment>
   );
