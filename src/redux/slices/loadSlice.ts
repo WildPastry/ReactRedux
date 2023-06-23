@@ -1,10 +1,10 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Loading } from '../../models/app.model';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Loading } from "../../models/app.model";
 
 // Set initialState
 const initialState = {
   isLoading: true,
-  isError: false
+  isError: false,
 } as Loading;
 
 /*
@@ -12,7 +12,7 @@ const initialState = {
  * Including: App loading state and app error state
  */
 const loadingSlice = createSlice({
-  name: 'loadPage',
+  name: "loadPage",
   initialState,
   reducers: {
     setLoading(state, action: PayloadAction<boolean>) {
@@ -20,8 +20,8 @@ const loadingSlice = createSlice({
     },
     setError(state, action: PayloadAction<boolean>) {
       state.isError = action.payload;
-    }
-  }
+    },
+  },
 });
 
 // Export loading actions from loadingSlice

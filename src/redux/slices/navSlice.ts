@@ -1,14 +1,14 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Navigation } from '../../models/app.model';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Navigation } from "../../models/app.model";
 
 // Set initialState
 const initialState = {
-  currentSection: 'GALLERY',
-  currentProject: 0
+  currentSection: "GALLERY",
+  currentProject: 0,
 } as Navigation;
 
 const navSlice = createSlice({
-  name: 'setNav',
+  name: "setNav",
   initialState,
   reducers: {
     setNav(state, action: PayloadAction<string>) {
@@ -16,8 +16,8 @@ const navSlice = createSlice({
     },
     setProject(state, action: PayloadAction<number>) {
       state.currentProject = action.payload;
-    }
-  }
+    },
+  },
 });
 
 // Export nav actions from navSlice

@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { ProjectFilter } from '../models/app.model';
-import React from 'react';
-import { RootState } from '../redux/reducers/rootReducer';
-import { setProjectFilter } from '../redux/slices/filterSlice';
+import { useDispatch, useSelector } from "react-redux";
+import { ProjectFilter } from "../models/app.model";
+import React from "react";
+import { RootState } from "../redux/reducers/rootReducer";
+import { setProjectFilter } from "../redux/slices/filterSlice";
 
 interface FilterButtonProps {
   projectFilter: ProjectFilter;
@@ -12,7 +12,7 @@ interface FilterButtonProps {
 // FilterButton
 export default function FilterButton({
   projectFilter,
-  text
+  text,
 }: FilterButtonProps): JSX.Element {
   // UseSelector for app theme
   const appTheme = useSelector((state: RootState) => {
@@ -31,7 +31,8 @@ export default function FilterButton({
           ? `filterItem filterItem${appTheme} filterItem${appTheme}Active`
           : `filterItem filterItem${appTheme}`
       }`}
-      onClick={() => dispatch(setProjectFilter(projectFilter))}>
+      onClick={() => dispatch(setProjectFilter(projectFilter))}
+    >
       {text}
     </h4>
   );
