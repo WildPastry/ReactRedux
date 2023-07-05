@@ -5,6 +5,7 @@
 > What is the reason for this PR?
 
 - [ ] New feature
+- [ ] Refactor
 - [ ] Bugfix
 - [ ] Versions
 - [ ] Documentation
