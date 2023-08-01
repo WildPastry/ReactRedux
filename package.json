@@ -18,14 +18,14 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react-dom": "18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "@typescript-eslint/parser": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
     "@wildpastry/eslint-config": "^1.6.4",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^5.3.0",
+    "bootstrap": "^5.3.1",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-flowtype": "^8.0.3",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -35,11 +35,11 @@
     "react-app-polyfill": "^3.0.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.1.1",
+    "react-redux": "^8.1.2",
     "react-scripts": "^5.0.1",
     "react-scroll-up-button": "^1.6.4",
     "redux": "^4.2.1",
-    "sass": "^1.64.1",
+    "sass": "^1.64.2",
     "sass-loader": "^13.3.2",
     "styled-components": "^6.0.5",
     "typescript": "^5.1.6",
@@ -52,9 +52,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react": "^18.2.16",
+    "@types/react": "^18.2.18",
     "@types/react-lazyload": "^3.2.0",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.33.0"
+    "eslint": "^8.46.0",
+    "eslint-plugin-react": "^7.33.1"
   }
 }
