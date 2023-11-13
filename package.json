@@ -52,7 +52,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react": "^18.2.34",
+    "@types/react": "^18.2.37",
     "@types/react-lazyload": "^3.2.2",
     "eslint": "^8.53.0",
     "eslint-plugin-react": "^7.33.2"
