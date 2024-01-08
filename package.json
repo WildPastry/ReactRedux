@@ -41,7 +41,7 @@
     "redux": "^5.0.0",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
-    "styled-components": "^6.1.1",
+    "styled-components": "^6.1.7",
     "typescript": "^5.3.3",
     "web-vitals": "^3.5.0"
   },
