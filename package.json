@@ -22,7 +22,7 @@
     "@typescript-eslint/parser": "^7.0.1",
     "@wildpastry/eslint-config": "^1.6.4",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.3",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.29.1",
