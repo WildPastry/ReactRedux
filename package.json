@@ -55,6 +55,6 @@
     "@types/react": "^18.2.64",
     "@types/react-lazyload": "^3.2.3",
     "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.0"
+    "eslint-plugin-react": "^7.34.1"
   }
 }
