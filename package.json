@@ -12,15 +12,15 @@
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-brands-svg-icons": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@reduxjs/toolkit": "^2.2.1",
-    "@types/react-dom": "18.2.21",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "@wildpastry/eslint-config": "^1.6.4",
+    "@reduxjs/toolkit": "^2.2.3",
+    "@types/react-dom": "18.2.24",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "@wildpastry/eslint-config": "^1.6.5",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.3.3",
     "eslint-config-react-app": "^7.0.1",
@@ -33,16 +33,16 @@
     "react": "^18.2.0",
     "react-animated-burgers": "^1.2.8",
     "react-app-polyfill": "^3.0.0",
-    "react-bootstrap": "^2.10.1",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
     "react-scripts": "^5.0.1",
     "react-scroll-up-button": "^1.6.4",
     "redux": "^5.0.1",
-    "sass": "^1.71.1",
+    "sass": "^1.74.1",
     "sass-loader": "^14.1.1",
     "styled-components": "^6.1.8",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.4",
     "web-vitals": "^3.5.2"
   },
   "browserslist": [
@@ -52,9 +52,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react": "^18.2.64",
+    "@types/react": "^18.2.74",
     "@types/react-lazyload": "^3.2.3",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.0"
+    "eslint": "^9.0.0",
+    "eslint-plugin-react": "^7.34.1"
   }
 }
