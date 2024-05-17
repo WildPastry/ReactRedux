@@ -15,11 +15,11 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@reduxjs/toolkit": "^2.2.3",
+    "@fortawesome/react-fontawesome": "^0.2.1",
+    "@reduxjs/toolkit": "^2.2.5",
     "@types/react-dom": "18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
     "@wildpastry/eslint-config": "^1.6.5",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.3.3",
@@ -39,11 +39,11 @@
     "react-scripts": "^5.0.1",
     "react-scroll-up-button": "^1.6.4",
     "redux": "^5.0.1",
-    "sass": "^1.77.0",
+    "sass": "^1.77.2",
     "sass-loader": "^14.2.1",
-    "styled-components": "^6.1.9",
+    "styled-components": "^6.1.11",
     "typescript": "^5.4.5",
-    "web-vitals": "^3.5.2"
+    "web-vitals": "^4.0.0"
   },
   "browserslist": [
     ">0.2%",
@@ -52,7 +52,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react": "^18.3.1",
+    "@types/react": "^18.3.2",
     "@types/react-lazyload": "^3.2.3",
     "eslint": "^9.2.0",
     "eslint-plugin-react": "^7.34.1"
