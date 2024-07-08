@@ -42,7 +42,7 @@
     "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
     "styled-components": "^6.1.11",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.3",
     "web-vitals": "^4.1.1"
   },
   "browserslist": [
