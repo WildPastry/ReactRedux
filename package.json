@@ -43,7 +43,7 @@
     "sass-loader": "^16.0.0",
     "styled-components": "^6.1.12",
     "typescript": "^5.5.4",
-    "web-vitals": "^4.2.2"
+    "web-vitals": "^4.2.3"
   },
   "browserslist": [
     ">0.2%",
