@@ -54,7 +54,7 @@
   "devDependencies": {
     "@types/react": "^18.3.5",
     "@types/react-lazyload": "^3.2.3",
-    "eslint": "^9.9.1",
+    "eslint": "^9.10.0",
     "eslint-plugin-react": "^7.35.2"
   }
 }
