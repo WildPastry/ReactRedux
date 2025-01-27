@@ -36,6 +36,8 @@ export default function ProjectList(): JSX.Element {
     getfilteredProjects(state.setProjects, state.setFilters)
   );
 
+  console.log(projects)
+
   return (
     <Row>
       {projects.map((project) => (
