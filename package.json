@@ -18,7 +18,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@reduxjs/toolkit": "^2.4.0",
     "@types/react-dom": "18.3.1",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
     "@typescript-eslint/parser": "^8.16.0",
     "@wildpastry/eslint-config": "^1.6.5",
     "babel-eslint": "^10.1.0",
