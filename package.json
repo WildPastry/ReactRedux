@@ -17,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@reduxjs/toolkit": "^2.5.1",
-    "@types/react-dom": "19.0.3",
+    "@types/react-dom": "19.0.4",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
     "@wildpastry/eslint-config": "^1.6.5",
