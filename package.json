@@ -39,7 +39,7 @@
     "react-scripts": "^5.0.1",
     "react-scroll-up-button": "^1.6.4",
     "redux": "^5.0.1",
-    "sass": "^1.86.3",
+    "sass": "^1.87.0",
     "sass-loader": "^16.0.5",
     "styled-components": "^6.1.17",
     "typescript": "^5.8.3",
