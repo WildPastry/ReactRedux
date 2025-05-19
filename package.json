@@ -20,7 +20,7 @@
     "@types/react-dom": "19.1.5",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
-    "@wildpastry/eslint-config": "^1.6.5",
+    "@wildpastry/eslint-config": "^1.7.3",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.3.6",
     "eslint-config-react-app": "^7.0.1",
