@@ -30,7 +30,7 @@
     "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-react-hooks": "^5.2.0",
     "mdbreact": "^5.2.0",
-    "react": "^19.1.0",
+    "react": "^19.1.1",
     "react-animated-burgers": "^1.2.8",
     "react-app-polyfill": "^3.0.0",
     "react-bootstrap": "^2.10.10",
