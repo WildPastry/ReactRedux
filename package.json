@@ -19,7 +19,7 @@
     "@reduxjs/toolkit": "^2.8.2",
     "@types/react-dom": "19.1.7",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
-    "@typescript-eslint/parser": "^8.39.0",
+    "@typescript-eslint/parser": "^8.40.0",
     "@wildpastry/eslint-config": "^1.7.9",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.3.7",
