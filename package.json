@@ -18,8 +18,8 @@
     "@fortawesome/react-fontawesome": "^3.0.2",
     "@reduxjs/toolkit": "^2.9.0",
     "@types/react-dom": "19.1.9",
-    "@typescript-eslint/eslint-plugin": "^8.43.0",
-    "@typescript-eslint/parser": "^8.43.0",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
     "@wildpastry/eslint-config": "^1.7.9",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.3.8",
@@ -39,7 +39,7 @@
     "react-scripts": "^5.0.1",
     "react-scroll-up-button": "^1.6.4",
     "redux": "^5.0.1",
-    "sass": "^1.92.1",
+    "sass": "^1.93.1",
     "sass-loader": "^16.0.5",
     "styled-components": "^6.1.19",
     "typescript": "^5.9.2",
@@ -52,9 +52,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react": "^19.1.12",
+    "@types/react": "^19.1.13",
     "@types/react-lazyload": "^3.2.3",
-    "eslint": "^9.35.0",
+    "eslint": "^9.36.0",
     "eslint-plugin-react": "^7.37.5"
   }
 }
