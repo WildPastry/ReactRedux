@@ -16,10 +16,10 @@
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.0",
-    "@reduxjs/toolkit": "^2.9.0",
-    "@types/react-dom": "19.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.45.0",
-    "@typescript-eslint/parser": "^8.45.0",
+    "@reduxjs/toolkit": "^2.9.2",
+    "@types/react-dom": "19.2.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
     "@wildpastry/eslint-config": "^1.7.9",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^5.3.8",
@@ -28,7 +28,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-react-hooks": "^6.1.1",
+    "eslint-plugin-react-hooks": "^7.0.0",
     "mdbreact": "^5.2.0",
     "react": "^19.2.0",
     "react-animated-burgers": "^1.2.8",
@@ -52,9 +52,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react": "^19.2.0",
+    "@types/react": "^19.2.2",
     "@types/react-lazyload": "^3.2.3",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "eslint-plugin-react": "^7.37.5"
   }
 }
