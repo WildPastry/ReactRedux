@@ -28,7 +28,7 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "mdbreact": "^5.2.0",
     "react": "^19.2.0",
     "react-animated-burgers": "^1.2.8",
@@ -40,7 +40,7 @@
     "react-scroll-up-button": "^1.6.4",
     "redux": "^5.0.1",
     "sass": "^1.93.2",
-    "sass-loader": "^16.0.5",
+    "sass-loader": "^16.0.6",
     "styled-components": "^6.1.19",
     "typescript": "^5.9.3",
     "web-vitals": "^5.1.0"
