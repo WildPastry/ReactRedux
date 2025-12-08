@@ -16,7 +16,7 @@
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.1",
-    "@reduxjs/toolkit": "^2.11.0",
+    "@reduxjs/toolkit": "^2.11.1",
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.48.1",
