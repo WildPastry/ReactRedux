@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import { Col, Row } from "react-bootstrap";
 import {
-  faFacebook,
   faFacebookMessenger,
   faGithub,
   faInstagram,
@@ -45,17 +44,6 @@ const Footer: React.FC = () => {
             >
               <FontAwesomeIcon
                 icon={faGithub}
-                className={`faIcon${appTheme}`}
-              />
-            </a>
-            <a
-              aria-label="Facebook"
-              href="https://www.facebook.com/michael.parker.3532507"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                icon={faFacebook}
                 className={`faIcon${appTheme}`}
               />
             </a>

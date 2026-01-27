@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 import { RootState } from "../redux/reducers/rootReducer";
 import { setImgTheme } from "../redux/slices/themeSlice";
+import { JSX } from "react/jsx-runtime";
 
 export default function ImgTheme(): JSX.Element {
   const dispatch = useDispatch();

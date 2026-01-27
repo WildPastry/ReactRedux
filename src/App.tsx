@@ -23,6 +23,7 @@ import Type from "./sections/Type";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { useSelector } from "react-redux";
+import { JSX } from "react/jsx-runtime";
 library.add(
   fab,
   faImage,

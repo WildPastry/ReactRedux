@@ -3,6 +3,7 @@ import { ProjectFilter } from "../models/app.model";
 import React from "react";
 import { RootState } from "../redux/reducers/rootReducer";
 import { setProjectFilter } from "../redux/slices/filterSlice";
+import { JSX } from "react/jsx-runtime";
 
 interface FilterButtonProps {
   projectFilter: ProjectFilter;

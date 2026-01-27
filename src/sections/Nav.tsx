@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AppTheme from "../components/AppTheme";
 import { Container } from "react-bootstrap";
-import { HamburgerSqueeze } from "react-animated-burgers";
 import { RootState } from "../redux/reducers/rootReducer";
 import { setNav } from "../redux/slices/navSlice";
+import { JSX } from "react/jsx-runtime";
 
 // Nav
 const Nav: React.FC = () => {
@@ -102,7 +102,7 @@ const Nav: React.FC = () => {
               </h4>
               <AppTheme />
             </div>
-            <div className="menuCollapse">
+            {/* <div className="menuCollapse">
               <HamburgerSqueeze
                 aria-label="Hamburger Menu"
                 className="menuBurger"
@@ -111,7 +111,7 @@ const Nav: React.FC = () => {
                 buttonWidth={30}
                 barColor={`${appTheme === "DARK" ? "#fff" : "#292929"}`}
               />
-            </div>
+            </div> */}
           </div>
           {collapseMenu}
         </Container>

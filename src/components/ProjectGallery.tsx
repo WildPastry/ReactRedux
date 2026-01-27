@@ -5,6 +5,7 @@ import React from "react";
 import { RootState } from "../redux/reducers/rootReducer";
 import { Row } from "react-bootstrap";
 import { setFilters } from "../redux/slices/projectSlice";
+import { JSX } from "react/jsx-runtime";
 
 // Logic for showing projects based on filter
 const getfilteredProjects = (
