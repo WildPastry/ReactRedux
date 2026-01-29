@@ -17,7 +17,6 @@
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@reduxjs/toolkit": "^2.11.2",
-    "@types/react-dom": "19.2.3",
     "bootstrap": "^5.3.8",
     "mdbreact": "^5.2.0",
     "react": "^19.2.4",
@@ -26,12 +25,9 @@
     "react-dom": "^19.2.4",
     "react-redux": "^9.2.0",
     "react-scripts": "^5.0.1",
-    "react-scroll-up-button": "^1.6.4",
     "redux": "^5.0.1",
     "sass": "^1.97.3",
-    "sass-loader": "^16.0.6",
-    "styled-components": "^6.3.8",
-    "typescript": "^5.9.3"
+    "styled-components": "^6.3.8"
   },
   "browserslist": [
     ">0.2%",
@@ -41,16 +37,19 @@
   ],
   "devDependencies": {
     "@eslint/js": "^9.39.2",
-    "@types/react-lazyload": "^3.2.3",
     "@types/react": "^19.2.10",
+    "@types/react-dom": "19.2.3",
+    "@types/react-lazyload": "^3.2.3",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
     "@typescript-eslint/parser": "^8.54.0",
     "@wildpastry/eslint-config": "^1.8.9",
+    "eslint": "^9.39.2",
     "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.26",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint": "^9.39.2",
+    "sass-loader": "^16.0.6",
+    "typescript": "^5.9.3",
     "typescript-eslint": "^8.54.0"
   }
 }
