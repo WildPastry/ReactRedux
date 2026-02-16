@@ -37,7 +37,7 @@
   ],
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.13",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "19.2.3",
     "@types/react-lazyload": "^3.2.3",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
