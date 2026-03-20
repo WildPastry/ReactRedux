@@ -5,7 +5,6 @@ import { MDBAnimation } from "mdbreact";
 import { Project } from "../models/app.model";
 import React from "react";
 import { RootState } from "../redux/reducers/rootReducer";
-import { JSX } from "react/jsx-runtime";
 
 export default function ProjectItem({
   id,

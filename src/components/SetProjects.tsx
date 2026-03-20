@@ -6,7 +6,6 @@ import { RootState } from "../redux/reducers/rootReducer";
 import { Row } from "react-bootstrap";
 import projectData from "../utilities/projects.json";
 import { setProjects } from "../redux/slices/projectSlice";
-import { JSX } from "react/jsx-runtime";
 
 export default function SetProjects(): JSX.Element {
   // UseSelector for app theme

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/reducers/rootReducer";
 import { setTheme } from "../redux/slices/themeSlice";
-import { JSX } from "react/jsx-runtime";
 
 export default function AppTheme(): JSX.Element {
   const dispatch = useDispatch();

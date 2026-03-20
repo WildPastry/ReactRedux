@@ -18,11 +18,11 @@ import { MDBAnimation } from "mdbreact";
 import Nav from "./sections/Nav";
 import Project from "./sections/Project";
 import { RootState } from "./redux/reducers/rootReducer";
+import ScrollUpButton from "react-scroll-up-button";
 import Type from "./sections/Type";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { useSelector } from "react-redux";
-import { JSX } from "react/jsx-runtime";
 library.add(
   fab,
   faImage,
@@ -84,14 +84,14 @@ const App: React.FC = () => {
         </Container>
         <MDBAnimation type="fadeIn">{renderProject}</MDBAnimation>
         <Footer />
-        {/* <ScrollUpButton
+        <ScrollUpButton
           aria-label="Scroll Up Button"
           StopPosition={0}
           ShowAtPosition={200}
           EasingType="easeOutCubic"
           AnimationDuration={300}
           ContainerClassName={`scrollUpIcon${appTheme}`}
-        /> */}
+        />
       </main>
     );
   };
