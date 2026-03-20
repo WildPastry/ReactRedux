@@ -1,12 +1,9 @@
 /* eslint-disable max-len */
 import { Col, Row } from "react-bootstrap";
 import {
-  faFacebook,
-  faFacebookMessenger,
   faGithub,
   faInstagram,
   faLinkedinIn,
-  faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -45,39 +42,6 @@ const Footer: React.FC = () => {
             >
               <FontAwesomeIcon
                 icon={faGithub}
-                className={`faIcon${appTheme}`}
-              />
-            </a>
-            <a
-              aria-label="Facebook"
-              href="https://www.facebook.com/michael.parker.3532507"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                icon={faFacebook}
-                className={`faIcon${appTheme}`}
-              />
-            </a>
-            <a
-              aria-label="Facebook Messenger"
-              href="https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F598356603%2F"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                icon={faFacebookMessenger}
-                className={`faIcon${appTheme}`}
-              />
-            </a>
-            <a
-              aria-label="Pinterest"
-              href="https://www.pinterest.co.uk/WildPastry/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                icon={faPinterest}
                 className={`faIcon${appTheme}`}
               />
             </a>

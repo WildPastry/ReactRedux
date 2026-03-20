@@ -37,8 +37,7 @@ const About: React.FC = () => {
               background in design.
               <br />
               <br />
-              Currently developing Angular software remotely in CHCH.
-              Love the gym, tramping, swimming, mountain biking, DNB, and animals. Constantly improving by learning new techniques and skills.
+              Currently developing Angular software remotely in CHCH. Love the gym, tramping, swimming, mountain biking, DNB, and wildlife. Constantly improving by learning new techniques and skills.
               <br />
               <br />
             </p>
