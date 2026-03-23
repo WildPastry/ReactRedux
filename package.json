@@ -40,7 +40,7 @@
     "react-scroll-up-button": "^1.6.4",
     "redux": "^4.2.1",
     "sass": "^1.63.6",
-    "sass-loader": "^13.3.2",
+    "sass-loader": "^16.0.7",
     "styled-components": "^5.3.11",
     "typescript": "^5.1.0",
     "web-vitals": "^3.3.2"
