@@ -30,7 +30,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "mdbreact": "^5.2.0",
-    "react": "^19.2.5",
+    "react": "^19.2.6",
     "react-animated-burgers": "^1.2.8",
     "react-app-polyfill": "^3.0.0",
     "react-bootstrap": "^2.10.10",
@@ -52,7 +52,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.15",
     "@types/react-lazyload": "^3.2.3",
     "eslint": "^10.2.1",
     "eslint-plugin-react": "^7.37.5"
